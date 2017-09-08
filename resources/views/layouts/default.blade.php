@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -23,9 +21,15 @@
     <!--page level css-->
     @yield('header_styles')
     <!--end of page level css-->
+    <script>
+        window.Spark = <?php echo json_encode(array_merge(
+                Spark::scriptVariables(), []
+        )); ?>;
+    </script>
 </head>
 
 <body>
+<div id="spark-app" v-cloak>
     <!-- Header Start -->
     <header>
         <!-- Icon Section Start -->
@@ -71,7 +75,7 @@
                     <span><a href="#"><i class="livicon" data-name="responsive-menu" data-size="25" data-loop="true" data-c="#757b87" data-hc="#ccc"></i>
                     </a></span>
                 </button>
-                <a class="navbar-brand" href="{{ route('welcome') }}"><img src="{{ asset('assets/images/tits.png') }}" alt="logo" class="logo_position">
+                <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('assets/images/tits.png') }}" alt="logo" class="logo_position">
                 </a>
             </div>
             <div class="collapse navbar-collapse" id="collapse">
@@ -224,21 +228,20 @@
             </div>
         </div>
     </div>
-    <!--global js starts-->
-    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/lib.js') }}"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script>
-        // Async loading of external fonts.
-        link=document.createElement('link');
-        link.href='https://fonts.googleapis.com/css?family=Raleway:100,300,600';
-        link.rel='stylesheet';
-        document.getElementsByTagName('head')[0].appendChild(link);
-    </script>
-    <!--global js end-->
-    <!-- begin page level js -->
-    @yield('footer_scripts')
-    <!-- end page level js -->
+</div>
+<!--global js starts-->
+<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/lib.js') }}"></script>
+<script>
+    // Async loading of external fonts.
+    link=document.createElement('link');
+    link.href='https://fonts.googleapis.com/css?family=Raleway:100,300,600';
+    link.rel='stylesheet';
+    document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+<!--global js end-->
+<!-- begin page level js -->
+@yield('footer_scripts')
+<!-- end page level js -->
 </body>
-
 </html>

@@ -44,36 +44,31 @@ mix.less('resources/assets/less/app.less', 'public/css')
         }
    });
 
+// Images
 mix.copy(resourcesAssets + 'images', destImages, false);
 mix.copy(resourcesAssets + 'img', destImg, false);
 
-mix.combine(
-    [
-        srcCss + 'fonts.css',
-        srcCss +  'font-awesome.min.css',
-        srcCss +  'custom.css'
-    ], destCss + 'lib.css');
+// CSS
+mix.combine([
+    srcCss +  'font-awesome.min.css'
+], destCss + 'lib.css');
 
-mix.copy(paths.owlcarousel + 'owl.carousel.css',  destVendors + 'owl_carousel/css');
-mix.copy(paths.owlcarousel + 'owl.theme.css',  destVendors + 'owl_carousel/css');
-mix.copy(paths.owlcarousel + 'owl.transitions.css',  destVendors + 'owl_carousel/css');
-mix.copy(paths.owlcarousel + 'owl.carousel.min.js',  destVendors + 'owl_carousel/js');
+mix.copy(vendors +'owl.carousel/owl-carousel/' + 'owl.carousel.css',  destVendors + 'owl_carousel/css');
+mix.copy(vendors +'owl.carousel/owl-carousel/' + 'owl.theme.css',  destVendors + 'owl_carousel/css');
+mix.copy(vendors +'owl.carousel/owl-carousel/' + 'owl.transitions.css',  destVendors + 'owl_carousel/css');
+mix.copy(vendors +'owl.carousel/owl-carousel/' + 'owl.carousel.min.js',  destVendors + 'owl_carousel/js');
 
-// default layout
-mix.copy( srcCss + 'custom.css', destCss);
-
-//mix.copy( srcJs + 'josh_frontend.js', destJs);
 mix.copy( srcJs + 'livicons-1.4.min.js', destJs);
 
 // index page
 mix.copy( srcCss + 'tabbular.css', destCss);
 mix.copy( srcCss + 'animate.min.css', destCss);
 mix.copy( srcCss + 'jquery.circliful.css', destCss);
-
+mix.copy( srcCss + 'contact.css', destCss);
+mix.copy( vendors + 'gmaps/gmaps.min.js', destJs);
 mix.copy( srcJs + 'carousel.js', destJs);
-//mix.copy( srcJs + 'index.js', destJs);
 mix.copy( srcJs + 'jquery.circliful.js', destJs);
-mix.copy(paths.wow + 'wow.min.js',  destVendors + 'wow/js');
+mix.copy( vendors + 'wow/dist/' + 'wow.min.js',  destVendors + 'wow/js');
 mix.combine(
     [
         vendors + 'raphael/raphael-min.js',

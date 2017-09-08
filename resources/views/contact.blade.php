@@ -9,7 +9,7 @@ Contact
 {{-- page level styles --}}
 @section('header_styles')
     <!--page level css starts-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend/contact.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/contact.css') }}">
     <!--end of page level css-->
 @stop
 
@@ -46,8 +46,7 @@ Contact
                         <textarea name="contact-msg"
                                   class="form-control input-lg no-resize resize_vertical"
                                   rows="6"
-                                  placeholder="message" required>
-                        </textarea>
+                                  placeholder="message" required></textarea>
                     </div>
                     <div class="form-group recaptcha">
                         {!! Recaptcha::render() !!}
@@ -62,7 +61,7 @@ Contact
             <div class="col-md-6 col-sm-6" id="address_margt">
                 <div class="media media-right">
                     <div class="media-left media-top">
-                        <a href="#">
+                        <a href="#address" title="write us!">
                             <div class="box-icon">
                                 <i class="livicon" data-name="home" data-size="22" data-loop="true" data-c="#fff" data-hc="#fff"></i>
                             </div>
@@ -80,7 +79,7 @@ Contact
                 </div>
                 <div class="media padleft10">
                     <div class="media-left media-top">
-                        <a href="tel:1-208-859-9133">
+                        <a href="tel:1-208-859-9133" title="call us!">
                             <div class="box-icon">
                                 <i class="livicon" data-name="phone" data-size="22" data-loop="true" data-c="#fff" data-hc="#fff"></i>
                             </div>
@@ -101,21 +100,22 @@ Contact
 {{-- page level scripts --}}
 @section('footer_scripts')
     <!-- page level js starts-->
-    <script src="https://maps.google.com/maps/api/js?sensor=true&key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU"></script>
-    <script type="text/javascript" src="{{ asset('assets/vendors/gmaps/js/gmaps.min.js') }}" ></script>
+    <script></script>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/gmaps.min.js') }}" ></script>
     <!--page level js ends-->
     <script>
-
         $(document).ready(function() {
             var map = new GMaps({
                 el: '#map',
-                lat: 43.623479,
-                lng: -116.207606
+                lat: 43.6939533,
+                lng: -116.4819652,
             });
             map.addMarker({
-                lat: 43.623479,
-                lng: -116.207606,
-                title: 'Hobo Fly Fishing, LLC'
+                lat: 43.6939533,
+                lng: -116.4819652,
+                title: 'Hobo Fly Fishing, LLC',
+                label: 'Hobo Fly Fishing, LLC'
             });
         });
     </script>

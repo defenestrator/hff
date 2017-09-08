@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Hobo Fly Fishing'),
 
     /*
     |--------------------------------------------------------------------------
@@ -168,6 +168,8 @@ return [
          * Package Service Providers...
          */
 
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -228,7 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];

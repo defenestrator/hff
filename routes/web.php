@@ -11,18 +11,14 @@
 |
 */
 
-Route::get('/', 'WelcomeController@show')->name('welcome');
+Route::view('/', 'index')->name('home');
 
-Route::get('/home', 'HomeController@show')->name('home');
+Route::view('/contact', 'contact')->name('contact');
 
-Route::get('/index', function () {
-    return view('index');
-});
+Route::view('/terms', 'terms')->name('terms');
+Route::view('/privacy','privacy')->name('privacy');
+Route::view('/tools', 'tools')->name('tools');
+Route::view('blog', 'blog-placeholder');
 
+Route::post('contact',array('as' => 'contact','uses' => 'ContactFormController@create'));
 Route::post('/newsletter', 'NewsletterController@addSubscription')->name('newsletter');
-Route::get('/terms', function() {
-    return view('terms');
-})->name('terms');
-Route::get('/privacy', function() {
-    return view('privacy');
-})->name('privacy');

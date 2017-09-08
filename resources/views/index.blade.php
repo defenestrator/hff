@@ -10,11 +10,11 @@ Elite Fly Fishing at Hobo Prices
 @section('header_styles')
     <!--page level css starts-->
 
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend/tabbular.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/animate/animate.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/tabbular.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.min.css') }}" />
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.circliful.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.theme.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.carousel.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.theme.css') }}">
     <!--end of page level css-->
 @stop
 
