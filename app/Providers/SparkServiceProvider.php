@@ -13,11 +13,11 @@ class SparkServiceProvider extends ServiceProvider
      * @var array
      */
     protected $details = [
-        'vendor' => 'Your Company',
-        'product' => 'Your Product',
-        'street' => 'PO Box 111',
-        'location' => 'Your Town, NY 12345',
-        'phone' => '555-555-5555',
+        'vendor' => 'Hobo Fly Fishing, LLC ',
+        'product' => 'HoboFlyFishing.com',
+        'street' => '289 N Hullen Place',
+        'location' => 'Star, ID 83669',
+        'phone' => '(208) 859-9133',
     ];
 
     /**
@@ -25,7 +25,7 @@ class SparkServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $sendSupportEmailsTo = null;
+    protected $sendSupportEmailsTo = 'jeremyblc@gmail.com';
 
     /**
      * All of the application developer e-mail addresses.
@@ -33,7 +33,7 @@ class SparkServiceProvider extends ServiceProvider
      * @var array
      */
     protected $developers = [
-        //
+        'jeremyblc@gmail.com'
     ];
 
     /**
@@ -50,17 +50,31 @@ class SparkServiceProvider extends ServiceProvider
      */
     public function booted()
     {
-        Spark::useStripe()->noCardUpFront()->trialDays(10);
+        Spark::identifyTeamsByPath();
+        Spark::useStripe()->needsCardUpFront();
 
-        Spark::freePlan()
+        Spark::teamPlan('Monthly', 'larryville-monthly')
+            ->price(5)
             ->features([
-                'First', 'Second', 'Third'
+                'One',
+                'Two',
+                'Three'
             ]);
+        Spark::teamPlan('Annual', 'larryville-annual')->price(50)
+            ->features([
+                'One',
+                'Two',
+                'Three',
+                'Save $10 by signing up for an annual subscription.'
+            ])
+            ->yearly();
 
-        Spark::plan('Basic', 'provider-id-1')
-            ->price(10)
-            ->features([
-                'First', 'Second', 'Third'
-            ]);
+        Spark::freePlan('Free to all Anglers!');
+    }
+
+    public function register()
+    {
+        Spark::referToTeamAs('outfitter');
     }
 }
+
