@@ -1,0 +1,130 @@
+@extends('layouts/default')
+
+{{-- Page title --}}
+@section('title')
+Elite Fly Fishing at Hobo Prices
+@parent
+@stop
+
+{{-- page level styles --}}
+@section('header_styles')
+    <!--page level css starts-->
+
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend/tabbular.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/animate/animate.min.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.circliful.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.theme.css') }}">
+    <!--end of page level css-->
+@stop
+
+{{-- slider --}}
+@section('top')
+    <!--Carousel Start -->
+    <div id="owl-demo" class="owl-carousel owl-theme">
+        <div class="item"><img src="{{ asset('assets/images/gourley/DSC_0336.JPG') }}" alt="Saltwater Flats">
+        </div>
+        <div class="item"><img src="{{ asset('assets/images/gourley/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Sea Grass">
+        </div>
+        <div class="item"><img src="{{ asset('assets/images/gourley/grouper-websize.jpg') }}" alt="Big Grouper">
+        </div>
+        <div class="item"><img src="{{ asset('assets/images/os/tarpon.jpg') }}" alt="Hungry Tarpon">
+        </div>
+        <div class="item"><img src="{{ asset('assets/images/gourley/DSC_0193.JPG') }}" alt="Tropical Beach with Boat">
+        </div>
+    </div>
+    <!-- //Carousel End -->
+@stop
+{{-- content --}}
+@section('content')
+    <div class="container">
+        <section class="purchas-main">
+            <div class="container bg-border wow pulse" data-wow-duration="2.5s">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        @if( ! empty($success))
+                            <h1 class="purchae-hed">{{ $success }}</h1>
+                        @else
+                        <h1 class="purchae-hed text-center">Elite Destinations, Local Flavor</h1>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Service Section Start-->
+        <div class="row">
+            <div class="text-center">
+                <h3 class="border-primary"><span class="heading_border bg-primary">Angling Services</span></h3>
+            </div>
+            <div class="col-sm-6 col-md-3 wow bounceInLeft" data-wow-duration="1s">
+                <div class="box">
+                    <div class="box-icon">
+                        <i class="livicon icon" data-name="anchor" data-size="55" data-c="#464b17" data-hc="#464b17"></i>
+                    </div>
+                    <div class="info">
+                        <h3 class="success text-center">DIY Destinations</h3>
+                        <p>Get down and dirty, let us help you find some quiet out-of-the-way places.
+                        </p>
+                        <p>Do-it-yourself fly fishing has a significant learning curve, we can help you shorten it.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.2s">
+                <!-- Box Start -->
+                <div class="box">
+                    <div class="box-icon box-icon1">
+                        <i class="livicon icon1" data-name="paper-plane" data-size="55" data-c="#128BC6" data-hc="#128BC6"></i>
+                    </div>
+                    <div class="info">
+                        <h3 class="primary text-center">Hybrid Trips</h3>
+                        <p>
+                            All the freedom of DIY plus a day or two of guided fishing with local experts to get your feet wet.
+                        </p>
+                        <p>
+                            Holler at us and we can help you find your next adventure.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- //Easy to Use Section End -->
+            <!-- Clean Design Section Start -->
+            <div class="col-sm-6 col-md-3 wow bounceInUp" data-wow-duration="1.6s" data-wow-delay="0.8s">
+                <div class="box">
+                    <div class="box-icon box-icon2">
+                        <i class="livicon icon1" data-name="rocket" data-size="55" data-c="#f89a14" data-hc="#f89a14"></i>
+                    </div>
+                    <div class="info">
+                        <h3 class="warning text-center">Full Service Expeditions</h3>
+                        <p>Full Service trips, for when you want all the comforts of home
+                            and the absolute best fully-outfitted fishing experience.
+                            Check out our carefully curated angling lodges.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3 wow bounceInRight" data-wow-duration="2s" data-wow-delay="1.2s">
+                <div class="box">
+                    <div class="box-icon box-icon3">
+                        <i class="livicon icon1" data-name="share" data-size="55" data-c="#FFD43C" data-hc="#FFD43C"></i>
+                    </div>
+                    <div class="info">
+                        <h3 class="yellow text-center">Independent Guides</h3>
+                        <p>Connect directly with local guides via our independent outfitter listings.
+                            Book trips directly with them, using our platform, and get special perks found nowhere else.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- //Services Section End -->
+    <!-- //Container End -->
+@stop
+{{-- footer scripts --}}
+@section('footer_scripts')
+    <!-- page level js starts-->
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.circliful.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/vendors/wow/js/wow.min.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('assets/vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/carousel.js') }}"></script>
+    <!--page level js ends-->
+@stop
