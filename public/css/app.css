@@ -7521,11 +7521,6 @@ p label {
 .text-danger {
   color: #ef6f6c;
 }
-/* ---------- //Text-Success End---------- */
-/* ---------- Nav bar Css Start ---------- */
-.navbar-right {
-  margin-right: 30px;
-}
 .icon-position label {
   padding-left: 0;
   margin-left: 0;
@@ -7949,4 +7944,12 @@ a.contact-link:hover {
 }
 a.btn-primary {
   color: white;
+}
+header.site-header {
+  border-bottom: 2px solid #e7e7e7;
+}
+.featured-post-wide {
+  border: none;
+  border-bottom: 2px solid #ddd;
+  background: transparent;
 }

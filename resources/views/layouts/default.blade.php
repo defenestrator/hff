@@ -31,7 +31,7 @@
 <body>
 <div id="spark-app" v-cloak>
     <!-- Header Start -->
-    <header>
+    <header class="site-header">
         <!-- Icon Section Start -->
         <div class="icon-section">
             <div class="container">
