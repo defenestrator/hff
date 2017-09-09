@@ -115,7 +115,8 @@ Contact
                 lat: 43.6939533,
                 lng: -116.4819652,
                 title: 'Hobo Fly Fishing, LLC',
-                label: 'Hobo Fly Fishing, LLC'
+                label: 'Hobo Fly Fishing, LLC',
+                animation: google.maps.Animation.DROP
             });
         });
     </script>
