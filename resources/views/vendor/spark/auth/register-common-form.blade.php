@@ -3,8 +3,8 @@
         <label class="col-md-4 control-label">Register as an:</label>
         <div class="col-md-6">
             <div class="btn-group-lg pull right">
-                <button class="btn btn-primary" v-on:click="showAnglerRegistration" type="button" :class="{'active': angler_registration}">Angler</button>
-                <button class="btn btn-primary" v-on:click="showOutfitterRegistration" type="button" :class="{'active': outfitter_registration}">Outfitter</button>
+                <button class="btn btn-register" v-on:click="showAnglerRegistration" type="button" :class="{'active': angler_registration}">Angler</button>
+                <button class="btn btn-register" v-on:click="showOutfitterRegistration" type="button" :class="{'active': ! angler_registration}">Outfitter</button>
             </div>
         </div>
     </div>
@@ -43,88 +43,86 @@
         @endif
     </div>
     @endif
-    <div v-if=" angler_registration || outfitter_registration">
-        <!-- Name -->
-        <div class="form-group" :class="{'has-error': registerForm.errors.has('name')}">
-            <label class="col-md-4 control-label">Name</label>
+    <!-- Name -->
+    <div class="form-group" :class="{'has-error': registerForm.errors.has('name')}">
+        <label class="col-md-4 control-label">Name</label>
 
-            <div class="col-md-6">
-                <input type="text" class="form-control" name="name" v-model="registerForm.name" autofocus>
+        <div class="col-md-6">
+            <input type="text" class="form-control" name="name" v-model="registerForm.name" autofocus>
 
-                <span class="help-block" v-show="registerForm.errors.has('name')">
-                    @{{ registerForm.errors.get('name') }}
-                </span>
-            </div>
+            <span class="help-block" v-show="registerForm.errors.has('name')">
+                @{{ registerForm.errors.get('name') }}
+            </span>
         </div>
+    </div>
 
-        <!-- E-Mail Address -->
-        <div class="form-group" :class="{'has-error': registerForm.errors.has('email')}">
-            <label class="col-md-4 control-label">E-Mail Address</label>
+    <!-- E-Mail Address -->
+    <div class="form-group" :class="{'has-error': registerForm.errors.has('email')}">
+        <label class="col-md-4 control-label">E-Mail Address</label>
 
-            <div class="col-md-6">
-                <input type="email" class="form-control" name="email" v-model="registerForm.email">
+        <div class="col-md-6">
+            <input type="email" class="form-control" name="email" v-model="registerForm.email">
 
-                <span class="help-block" v-show="registerForm.errors.has('email')">
-                    @{{ registerForm.errors.get('email') }}
-                </span>
-            </div>
+            <span class="help-block" v-show="registerForm.errors.has('email')">
+                @{{ registerForm.errors.get('email') }}
+            </span>
         </div>
+    </div>
 
-        <!-- Password -->
-        <div class="form-group" :class="{'has-error': registerForm.errors.has('password')}">
-            <label class="col-md-4 control-label">Password</label>
+    <!-- Password -->
+    <div class="form-group" :class="{'has-error': registerForm.errors.has('password')}">
+        <label class="col-md-4 control-label">Password</label>
 
-            <div class="col-md-6">
-                <input type="password" class="form-control" name="password" v-model="registerForm.password">
+        <div class="col-md-6">
+            <input type="password" class="form-control" name="password" v-model="registerForm.password">
 
-                <span class="help-block" v-show="registerForm.errors.has('password')">
-                    @{{ registerForm.errors.get('password') }}
-                </span>
-            </div>
+            <span class="help-block" v-show="registerForm.errors.has('password')">
+                @{{ registerForm.errors.get('password') }}
+            </span>
         </div>
+    </div>
 
-        <!-- Password Confirmation -->
-        <div class="form-group" :class="{'has-error': registerForm.errors.has('password_confirmation')}">
-            <label class="col-md-4 control-label">Confirm Password</label>
+    <!-- Password Confirmation -->
+    <div class="form-group" :class="{'has-error': registerForm.errors.has('password_confirmation')}">
+        <label class="col-md-4 control-label">Confirm Password</label>
 
-            <div class="col-md-6">
-                <input type="password" class="form-control" name="password_confirmation" v-model="registerForm.password_confirmation">
+        <div class="col-md-6">
+            <input type="password" class="form-control" name="password_confirmation" v-model="registerForm.password_confirmation">
 
-                <span class="help-block" v-show="registerForm.errors.has('password_confirmation')">
-                    @{{ registerForm.errors.get('password_confirmation') }}
-                </span>
-            </div>
+            <span class="help-block" v-show="registerForm.errors.has('password_confirmation')">
+                @{{ registerForm.errors.get('password_confirmation') }}
+            </span>
         </div>
+    </div>
 
-        <!-- Terms And Conditions -->
-        <div v-if=" ! selectedPlan || selectedPlan.price == 0">
-            <div class="form-group" :class="{'has-error': registerForm.errors.has('terms')}">
-                <div class="col-md-6 col-md-offset-4">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" name="terms" v-model="registerForm.terms">
-                            I Accept The <a href="/terms" target="_blank">Terms Of Service</a>
-                        </label>
+    <!-- Terms And Conditions -->
+    <div v-if=" ! selectedPlan || selectedPlan.price == 0">
+        <div class="form-group" :class="{'has-error': registerForm.errors.has('terms')}">
+            <div class="col-md-6 col-md-offset-4">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="terms" v-model="registerForm.terms">
+                        I Accept The <a href="/terms" target="_blank">Terms Of Service</a>
+                    </label>
 
-                        <span class="help-block" v-show="registerForm.errors.has('terms')">
-                            @{{ registerForm.errors.get('terms') }}
-                        </span>
-                    </div>
+                    <span class="help-block" v-show="registerForm.errors.has('terms')">
+                        @{{ registerForm.errors.get('terms') }}
+                    </span>
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-md-6 col-md-offset-4">
-                <button class="btn btn-primary" @click.prevent="register" :disabled="registerForm.busy">
-                    <span v-if="registerForm.busy">
-                        <i class="fa fa-btn fa-spinner fa-spin"></i>Registering
-                    </span>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+            <button class="btn btn-primary" @click.prevent="register" :disabled="registerForm.busy">
+                <span v-if="registerForm.busy">
+                    <i class="fa fa-btn fa-spinner fa-spin"></i>Registering
+                </span>
 
-                    <span v-else>
-                        <i class="fa fa-btn fa-check-circle"></i>Register
-                    </span>
-                </button>
-            </div>
+                <span v-else>
+                    <i class="fa fa-btn fa-check-circle"></i>Register
+                </span>
+            </button>
         </div>
     </div>
 </form>

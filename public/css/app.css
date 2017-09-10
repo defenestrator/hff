@@ -7373,9 +7373,6 @@ body {
 [v-cloak] {
   display: none;
 }
-html {
-  background-color: #1a1a1a;
-}
 body {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   background-color: #F8F8FF;
@@ -7952,4 +7949,19 @@ header.site-header {
   border: none;
   border-bottom: 2px solid #ddd;
   background: transparent;
+}
+.btn-register:active:hover,
+.btn-register.active:hover,
+.open > .dropdown-toggle.btn-register:hover,
+.btn-register:active:focus,
+.btn-register.active:focus,
+.open > .dropdown-toggle.btn-register:focus,
+.btn-register:active.focus,
+.btn-register.active.focus,
+.open > .dropdown-toggle.btn-register.focus,
+.btn-register:active,
+.btn-register.active,
+.open > .dropdown-toggle.btn-register {
+  color: white;
+  background-color: #3097d1;
 }

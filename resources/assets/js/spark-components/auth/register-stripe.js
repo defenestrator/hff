@@ -15,7 +15,6 @@ Vue.component('spark-register-stripe', {
             country: null,
             taxRate: 0,
             angler_registration: true,
-            outfitter_registration: null,
             registerForm: $.extend(true, new SparkForm({
                 stripe_token: '',
                 plan: '',
@@ -49,10 +48,8 @@ Vue.component('spark-register-stripe', {
     methods: {
         showAnglerRegistration() {
             this.angler_registration = true;
-            this.outfitter_registration = false;
         },
         showOutfitterRegistration() {
-            this.outfitter_registration = true;
             this.angler_registration = false;
         }
     }
