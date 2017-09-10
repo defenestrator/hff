@@ -7950,6 +7950,9 @@ header.site-header {
   border-bottom: 2px solid #ddd;
   background: transparent;
 }
+.btn-register {
+  opacity: 0.7;
+}
 .btn-register:active:hover,
 .btn-register.active:hover,
 .open > .dropdown-toggle.btn-register:hover,
@@ -7964,4 +7967,5 @@ header.site-header {
 .open > .dropdown-toggle.btn-register {
   color: white;
   background-color: #3097d1;
+  opacity: 1;
 }
