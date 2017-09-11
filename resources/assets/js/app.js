@@ -15,7 +15,11 @@
  */
 
 require('spark-bootstrap');
+import wysiwyg from "vue-wysiwyg";
 
+Vue.use(wysiwyg, {
+    // options
+})
 require('./components/bootstrap');
 Vue.config.silent = true
 var app = new Vue({

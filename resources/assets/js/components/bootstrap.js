@@ -10,5 +10,6 @@
  */
 
 require('./../spark-components/bootstrap');
-require('./example')
 require('./home');
+Vue.component('new-blog', require('./New-Blog.vue'));
+Vue.component('editor', require('./Editor.vue'));

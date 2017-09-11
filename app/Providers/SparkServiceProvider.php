@@ -51,25 +51,33 @@ class SparkServiceProvider extends ServiceProvider
     public function booted()
     {
         Spark::identifyTeamsByPath();
-        Spark::useStripe()->needsCardUpFront();
+        Spark::useStripe()->teamTrialDays(10);
 
-        Spark::teamPlan('Monthly', 'larryville-monthly')
+        Spark::teamPlan('Standard Monthly Outfitter Listing', 'hobo-basic-monthly')
             ->price(5)
+            ->maxTeams(1)
             ->features([
-                'One',
-                'Two',
-                'Three'
+                'Basic listing for your company',
+                'Our cut is only $25 per booking!',
+                'Customers book and pay here',
+                'Skip the office-work hassle',
+                'We promote your brand'
             ]);
-        Spark::teamPlan('Annual', 'larryville-annual')->price(50)
+        Spark::teamPlan('Standard Yearly Outfitter Listing', 'hobo-basic-annual')
+            ->price(50)
+            ->maxTeams(1)
             ->features([
-                'One',
-                'Two',
-                'Three',
-                'Save $10 by signing up for an annual subscription.'
+                'Save 20% by paying yearly.',
+                'Basic listing for your company',
+                'Our cut is only $25 per booking!',
+                'Customers book and pay here',
+                'Skip the office-work hassle',
+                'We promote your brand'
             ])
             ->yearly();
 
         Spark::freePlan('Free to all Anglers!');
+        Spark::afterLoginRedirectTo('dashboard');
     }
 
     public function register()

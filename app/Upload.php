@@ -27,7 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\$related[] $morphedByMany
  * @mixin \Eloquent
  */
-Class Asset extends Model
+Class Upload extends Model
 {
     protected $fillable = ['type', 'privacy', 'uri'];
 

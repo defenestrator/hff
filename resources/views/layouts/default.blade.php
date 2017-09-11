@@ -80,28 +80,12 @@
             </div>
             <div class="collapse navbar-collapse" id="collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li {!! (Request::is('/') ? 'class="active"' : '') !!}><a href="{{ route('home') }}"> Home</a>
-                    </li>
-
                     <li {!! (Request::is('blog') || Request::is('blogitem/*') ? 'class="active"' : '') !!}><a href="{{ URL::to('blog') }}"> Blog</a>
                     </li>
-                    <li {!! (Request::is('contact') ? 'class="active"' : '') !!}><a href="{{ URL::to('contact') }}">Contact</a>
-                    </li>
-                    <li {{ (Request::is('tools') ? 'class=active' : '') }}><a href="{{ URL::to('tools') }}">Tools</a>
-                    </li>
-                    {{--based on anyone login or not display menu items--}}
-
                     @if(Auth::guest())
-                        {{--<li><a href="{{ URL::to('register') }}">Register</a>--}}
-                        {{--</li>--}}
-                        {{--<li><a href="{{ URL::to('login') }}">Login</a>--}}
-                        {{--</li>--}}
-                    @else
-                        @if(Auth::getUser()->inRole('admin'))
-                            <li{{ (Request::is('admin') ? 'class=active' : '') }}><a href="{{ URL::to('admin') }}">Admin</a></li>
-                        @endif
-                        <li {{ (Request::is('my-account') ? 'class=active' : '') }}><a href="{{ URL::to('my-account') }}">Profile</a>
+                        <li><a href="{{ URL::to('login') }}">Login</a>
                         </li>
+                    @else
                         <li><a href="{{ URL::to('logout') }}">Logout</a>
                         </li>
                     @endif

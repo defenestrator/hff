@@ -11,13 +11,13 @@
 |
 */
 
-Route::view('/', 'index')->name('home');
+Route::view('/', 'index')->name('home')->middleware(['guest']);
 
 Route::view('/contact', 'contact')->name('contact');
 
 Route::view('/terms', 'terms')->name('terms');
 Route::view('/privacy','privacy')->name('privacy');
-Route::view('/tools', 'tools')->name('tools');
+Route::view('/dashboard', 'dashboard')->name('dashboard');
 Route::view('blog', 'blog-placeholder');
 
 Route::post('contact',array('as' => 'contact','uses' => 'ContactFormController@create'));

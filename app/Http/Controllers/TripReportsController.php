@@ -1,10 +1,10 @@
-<?php namespace App\Api\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
 use App\TripReport;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class TripReportsController extends ApiController
+class TripReportsController extends Controller
 {
 
     public function __construct()

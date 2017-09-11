@@ -1,6 +1,6 @@
-<?php namespace App\Api\Http\Controllers;
+<?php namespace App\Http\Controllers;
 
-use App\Api\Flybox;
+use App\Flybox;
 
 /**
  * Class FlyboxesController
@@ -9,9 +9,6 @@ use App\Api\Flybox;
  */
 class FlyboxesController extends Controller
 {
-
-    protected $fractal;
-
     protected $resourceKey = 'flybox';
 
     public function __construct()
@@ -19,11 +16,8 @@ class FlyboxesController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     *
-     * @param \Illuminate\Http\Request $request
-     * @internal param $
+     * @param Request $request
+     * @return mixed
      */
     public function index(Request $request)
     {
@@ -33,11 +27,10 @@ class FlyboxesController extends Controller
         if ($limit > 100) {
             return $this->respondBadRequest('Bad Request, Naughty Request! Limit maximum is 100 per page.');
         } elseif ($countFlyboxes < 1) {
-            return $this->respondNotFound('There are no Users!?');
+            return $this->respondNotFound('There are no Flyboxes.');
         } else {
             $flyboxes = Flybox::paginate($limit);
-
-            return $this->fractal->paginatedCollection($flyboxes, new FlyboxTransformer, $this->resourceKey);
+            return $flyboxes;
         }
     }
 

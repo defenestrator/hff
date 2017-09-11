@@ -17,6 +17,8 @@
         "laravel/spark": "*@dev"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^2.4",
+        "doctrine/dbal": "^2.6",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",

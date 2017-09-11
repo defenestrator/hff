@@ -48,8 +48,14 @@
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fa m-r-xs fa-sign-in"></i>Login
                                 </button>
-
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                            </div>
+
+                            <div class="col-md-8 col-md-offset-4">
+                                <button type="submit" class="btn btn-primary invisible">
+                                    <i class="fa m-r-xs fa-sign-in"></i>Login
+                                </button>
+                                <a class=" btn btn-link" href="{{ url('/register') }}">Create A New Account</a>
                             </div>
                         </div>
                     </form>

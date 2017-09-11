@@ -6,7 +6,7 @@ use App\Fishery;
  * Class FisheriesController
  *
  */
-class FisheriesController extends ApiController
+class FisheriesController extends Controller
 {
 
     /**

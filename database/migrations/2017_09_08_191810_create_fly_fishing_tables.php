@@ -1,14 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateFlyFishingTables extends Migration
 {
 
     private $tables = [
-        'assets',
+        'uploads',
         'fisheries',
         'fishery_fish_species',
         'fishery_hatch',
@@ -55,9 +54,10 @@ class CreateFlyFishingTables extends Migration
         Schema::create('maps', function ($table) {
             $table->increments('id');
             $table->string('title');
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->decimal('lat', 10, 7);
             $table->decimal('lng', 11, 8);
+            $table->integer('zoom');
             $table->string('uri');
             $table->timestamps();
         });
@@ -88,9 +88,10 @@ class CreateFlyFishingTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create('assets', function ($table) {
+        Schema::create('uploads', function ($table) {
             $asset_type = array('image', 'video', 'link', 'document', 'other');
             $table->increments('id');
+            $table->string('uuid');
             $table->enum('type', $asset_type);
             $table->integer('user_id')->unsigned();
             $table->integer('privacy_id')->unsigned()->default(2);
@@ -179,7 +180,7 @@ class CreateFlyFishingTables extends Migration
             $table->integer('fish_species_id')->unsigned();
         });
 
-        Schema::create('fishery_hatch', function ($table) {
+        Schema::create('fishery_hatches', function ($table) {
             $table->integer('fishery_id')->unsigned();
             $table->integer('hatch_id')->unsigned();
         });

@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class DatabaseSeeder extends Seeder
 {
     private $tables = [
-        'assets',
         'fisheries',
         'fishery_fish_species',
         'fishery_hatch',
@@ -24,6 +23,7 @@ class DatabaseSeeder extends Seeder
         'reports',
         'buddy_user',
         'roles',
+        'uploads',
         'water_data',
         'weather'
     ];
@@ -67,8 +67,8 @@ class DatabaseSeeder extends Seeder
         $this->call(HatchesTableSeeder::class);
         $this->command->info('Hatches table seeded!');
 
-        $this->call(AssetsTableSeeder::class);
-        $this->command->info('Asset table seeded!');
+        $this->call(UploadsTableSeeder::class);
+        $this->command->info('Uploads table seeded!');
 
         $this->call(PreyTableSeeder::class);
         $this->command->info('Prey table seeded!');
