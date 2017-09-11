@@ -1,6 +1,11 @@
 <template>
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-8">
                 <div class="panel panel-default new-blog">
                     <div class="panel-heading">New Blog Post</div>
@@ -18,17 +23,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-3">
+                                <div class="col-md-3 col-sm-12">
                                     <button class="btn btn-primary">
                                         Save Draft
                                     </button>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4 col-sm-12">
                                     <button class="btn btn-warning">
                                         Publish
                                     </button>
                                 </div>
-                                <div class="col-md-2 col-md-offset-5">
+                                <div class="col-md-4 col-md-offset-1 col-sm-12">
                                     <button class="btn btn-danger">
                                         Delete
                                     </button>

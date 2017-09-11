@@ -19628,6 +19628,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -42087,7 +42092,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "container"
-  }, [_c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-md-8"
@@ -42102,12 +42107,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "role": "form"
     }
-  }, [_vm._m(0), _vm._v(" "), _c('div', {
+  }, [_vm._m(1), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_c('editor')], 1)]), _vm._v(" "), _vm._m(1)])])])]), _vm._v(" "), _vm._m(2)])])
+  }, [_c('editor')], 1)]), _vm._v(" "), _vm._m(2)])])])]), _vm._v(" "), _vm._m(3)])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_vm._v("\n             \n        ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
@@ -42127,15 +42138,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
-    staticClass: "col-md-3"
+    staticClass: "col-md-3 col-sm-12"
   }, [_c('button', {
     staticClass: "btn btn-primary"
   }, [_vm._v("\n                                    Save Draft\n                                ")])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2"
+    staticClass: "col-md-4 col-sm-12"
   }, [_c('button', {
     staticClass: "btn btn-warning"
   }, [_vm._v("\n                                    Publish\n                                ")])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2 col-md-offset-5"
+    staticClass: "col-md-4 col-md-offset-1 col-sm-12"
   }, [_c('button', {
     staticClass: "btn btn-danger"
   }, [_vm._v("\n                                    Delete\n                                ")])])])
