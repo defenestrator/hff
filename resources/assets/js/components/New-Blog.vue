@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <div class="panel panel-default">
+                <div class="panel panel-default new-blog">
                     <div class="panel-heading">New Blog Post</div>
 
                     <div class="panel-body">
@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <button class="btn btn-primary">
                                         Save Draft
                                     </button>
@@ -28,7 +28,7 @@
                                         Publish
                                     </button>
                                 </div>
-                                <div class="col-md-2 col-md-offset-6">
+                                <div class="col-md-2 col-md-offset-5">
                                     <button class="btn btn-danger">
                                         Delete
                                     </button>
