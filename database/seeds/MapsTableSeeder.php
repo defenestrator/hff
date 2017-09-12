@@ -16,6 +16,7 @@ class MapsTableSeeder extends DatabaseSeeder
                 'description' => $faker->paragraph(),
                 'lat' => $faker->latitude,
                 'lng' => $faker->longitude,
+                'zoom' => $faker->numberBetween(1,17),
                 'uri' => $faker->url
             ]);
         }

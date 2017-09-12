@@ -7,10 +7,9 @@ class CreateFlyFishingTables extends Migration
 {
 
     private $tables = [
-        'uploads',
         'fisheries',
         'fishery_fish_species',
-        'fishery_hatch',
+        'fishery_hatches',
         'fish_species',
         'flyboxes',
         'fly_patterns',
@@ -57,8 +56,8 @@ class CreateFlyFishingTables extends Migration
             $table->text('description')->nullable();
             $table->decimal('lat', 10, 7);
             $table->decimal('lng', 11, 8);
-            $table->integer('zoom');
-            $table->string('uri');
+            $table->integer('zoom')->nullable()->default(11);
+            $table->string('uri')->nullable();
             $table->timestamps();
         });
 
@@ -85,17 +84,6 @@ class CreateFlyFishingTables extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('hatch_type_id')->unsigned();
-            $table->timestamps();
-        });
-
-        Schema::create('uploads', function ($table) {
-            $asset_type = array('image', 'video', 'link', 'document', 'other');
-            $table->increments('id');
-            $table->string('uuid');
-            $table->enum('type', $asset_type);
-            $table->integer('user_id')->unsigned();
-            $table->integer('privacy_id')->unsigned()->default(2);
-            $table->string('uri');
             $table->timestamps();
         });
 

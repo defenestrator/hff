@@ -18,7 +18,7 @@ Route::view('/contact', 'contact')->name('contact');
 Route::view('/terms', 'terms')->name('terms');
 Route::view('/privacy','privacy')->name('privacy');
 Route::view('/dashboard', 'dashboard')->name('dashboard');
-Route::view('blog', 'blog-placeholder');
-
-Route::post('contact',array('as' => 'contact','uses' => 'ContactFormController@create'));
+Route::view('/blog', 'blog-placeholder');
+Route::post('/posts', 'PostsController@create');
+Route::post('/contact',array('as' => 'contact','uses' => 'ContactFormController@create'));
 Route::post('/newsletter', 'NewsletterController@addSubscription')->name('newsletter');

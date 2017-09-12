@@ -17,8 +17,6 @@ class LookupTableSeeder extends DatabaseSeeder
     public function run()
     {
         $faker = Faker::create();
-
-        $userIds = User::pluck('id')->all();
         $hatchIds = Hatch::pluck('id')->all();
         $fisheryIds = Fishery::pluck('id')->all();
         $fishSpeciesIds = FishSpecies::pluck('id')->all();
@@ -29,7 +27,7 @@ class LookupTableSeeder extends DatabaseSeeder
                 'fish_species_id' => $faker->randomElement($fishSpeciesIds)
             ]);
 
-            DB::table('fishery_hatch')->insert([
+            DB::table('fishery_hatches')->insert([
                 'fishery_id' => $faker->randomElement($fisheryIds),
                 'hatch_id' => $faker->randomElement($hatchIds)
             ]);

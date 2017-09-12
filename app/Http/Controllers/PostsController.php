@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,9 +22,15 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $request->validate([
+            'body' => 'required|min:8',
+            'slug' => 'required|min:2',
+            'title' => 'required|min:2'
+        ]);
+
+        return Post::create($request->all([]));
     }
 
     /**

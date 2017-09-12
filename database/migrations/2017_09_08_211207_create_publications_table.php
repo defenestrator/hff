@@ -16,6 +16,7 @@ class CreatePublicationsTable extends Migration
         Schema::create('publications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
+            $table->boolean('archived')->nullable();
             $table->timestamps();
         });
     }

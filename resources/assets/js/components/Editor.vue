@@ -1,5 +1,5 @@
 <template>
-    <wysiwyg rows="3" class="wysiwyg" v-model="myHTML" />
+
 </template>
 
 <script>

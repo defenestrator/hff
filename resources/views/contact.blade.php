@@ -109,14 +109,16 @@ Contact
             var map = new GMaps({
                 el: '#map',
                 lat: 43.6939533,
-                lng: -116.4819652,
+                lng: -116.4174612,
+                zoom: 13
             });
             map.addMarker({
-                lat: 43.6939533,
+                lat: 43.6936333,
                 lng: -116.4819652,
                 title: 'Hobo Fly Fishing, LLC',
-                label: 'Hobo Fly Fishing, LLC',
-                animation: google.maps.Animation.DROP
+                label: {text: 'Hobo Fly Fishing, LLC', color: "#2890d3"},
+                animation: google.maps.Animation.DROP,
+                icon: '/img/fish-icon-black-blue.png'
             });
         });
     </script>

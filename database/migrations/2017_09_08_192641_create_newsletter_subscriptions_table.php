@@ -16,9 +16,6 @@ class CreateNewsletterSubscriptionsTable extends Migration
         Schema::create('newsletter_subscriptions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email_address');
-            $table->boolean('subscribed');
-            $table->date('subscribed_on');
-            $table->date('unsubscribed_on')->nullable();
             $table->timestamps();
         });
     }

@@ -1,15 +1,19 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
+    private $user;
+    function __construct(User $user) {
+        $this->user = $user;
+    }
     private $tables = [
         'fisheries',
         'fishery_fish_species',
-        'fishery_hatch',
+        'fishery_hatches',
         'fish_species',
         'flyboxes',
         'fly_patterns',
@@ -19,11 +23,7 @@ class DatabaseSeeder extends Seeder
         'hatch_types',
         'maps',
         'prey',
-        'privacy',
         'reports',
-        'buddy_user',
-        'roles',
-        'uploads',
         'water_data',
         'weather'
     ];
@@ -42,6 +42,18 @@ class DatabaseSeeder extends Seeder
         $this->cleanDatabase();
 
         Model::unguard();
+
+        $this->user->create([
+            'email'     => 'jeremyblc@gmail.com',
+            'password'  => bcrypt(env('JEREMY_PASSWORD')) ,
+            'name'      => 'Jeremy Anderson'
+        ]);
+
+        $this->user->create([
+            'email'     => 'dgflatspirate@gmail.com',
+            'password'  => bcrypt(env('DAVE_PASSWORD')),
+            'name'      => 'Dave Gourley'
+        ]);
 
         $this->call(PrivacyTableSeeder::class);
         $this->command->info('Privacy table seeded!');
@@ -66,9 +78,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(HatchesTableSeeder::class);
         $this->command->info('Hatches table seeded!');
-
-        $this->call(UploadsTableSeeder::class);
-        $this->command->info('Uploads table seeded!');
 
         $this->call(PreyTableSeeder::class);
         $this->command->info('Prey table seeded!');
