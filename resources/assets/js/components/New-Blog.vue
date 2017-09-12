@@ -26,7 +26,9 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <vue-editor name="body" v-validate="'required|min:4'" v-model="newBlog.body"></vue-editor>
-                                    <span v-show="newBlog.saveError" class="help is-danger">Get your shit together. You need to put something in the body of the post.</span>
+                                    <span v-show="newBlog.saveError" class="help is-danger">
+                                        Get your shit together. Write something worth reading.
+                                        </span>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -44,20 +46,23 @@
                                     </button>
                                 </div>
                                 <div class="col-md-4 col-sm-12">
-                                    <button @click.prevent="publish" class="btn btn-warning" :disabled="newBlog.disabled">
+                                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newBlog.published }"  @click.prevent="publish" :disabled="newBlog.published">
                                     <span v-if="newBlog.publishBusy">
                                             <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
+                                         </span>
+                                         <span class="is-success" v-else-if="newBlog.published !== null">
+                                            <i class="fa fa-btn btn-success fa-check-circle"></i>Published! {{postId}}
                                          </span>
                                         <span v-else>
                                             <i class="fa fa-btn fa-newspaper-o"></i>Publish
                                         </span>
                                     </button>
                                 </div>
-                                <!--<div class="col-md-4 col-md-offset-1 col-sm-12">-->
-                                    <!--<button class="btn btn-danger">-->
-                                        <!--Delete-->
-                                    <!--</button>-->
-                                <!--</div>-->
+                                <div class="col-md-4 col-md-offset-1 col-sm-12">
+                                    <button :class="{'btn': true, 'is-danger': true, 'hidden': ! newBlog.published }" class="btn btn-danger">
+                                        Delete
+                                    </button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -98,6 +103,7 @@ export default {
                 saveBusy: false,
                 saveError: false,
                 publishBusy: false,
+                published: null,
                 errors: null
             }
         }
@@ -163,31 +169,35 @@ export default {
             this.newBlog.disabled = true
             this.newBlog.publishBusy = true
             if (this.newBlog.postId === null) {
+                this.newBlog.publishBusy = false
                 this.save()
-                return this.newBlog.publishBusy = false
+                return 
             }
-            axios.post(`/publications`, {
-                    title: this.newBlog.title,
-                    slug:  this.newBlog.slug,
-                    body:  this.newBlog.body
-                })
-                .then(result  => {
-                    alert('published!');
-                    this.newBlog.disabled = false
-                    this.newBlog.publishBusy = false
-                    return result
-                })
-                .catch(error => {
-                    this.newBlog.disbled = false
-                    this.newBlog.publishBusy = false
-                    return Promise.reject(error)
-                });
+            // axios.post(`/publications`, {
+            //         title: this.newBlog.title,
+            //         slug:  this.newBlog.slug,
+            //         body:  this.newBlog.body
+            //     })
+            //     .then(result  => {
+            //         alert('published!');
+            //         this.newBlog.disabled = false
+            //         this.newBlog.publishBusy = false
+            //         return result
+            //     })
+            //     .catch(error => {
+            //         this.newBlog.disbled = false
+            //         this.newBlog.publishBusy = false
+            //         return Promise.reject(error)
+            //     });
+                this.newBlog.disabled = false
+                this.newBlog.publishBusy = false
+                this.newBlog.published = true
             }
         },
         created() {
             this.validator = new VeeValidate.Validator({
                 title: 'required|min:2',
-                body: 'required|min:4'
+                body: 'required|min:140'
             });
             this.$set(this, 'errors', this.validator.errors);
         }
