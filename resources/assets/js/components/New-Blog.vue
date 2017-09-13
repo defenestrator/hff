@@ -8,27 +8,33 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default new-blog">
-                    <div class="panel-heading">New Blog Post <span v-show="newBlog.postId">postId: {{newBlog.postId}}</span></div>
+                    <div class="panel-heading">Blog Post<span v-show="newBlog.postId">: <strong>{{newBlog.title}}</strong></span></div>
 
                     <div class="panel-body">
-                        <form enctype='multipart/form-data' class="form-horizontal" role="form">
+                        <form class="form-horizontal" role="form">
                             <div class="form-group">
                                 <div class="col-md-12">
-                                <input v-validate="'required|min:2'" name="title" v-model="newBlog.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" class="" type="text" placeholder="Post Title" size="140" style="width:100%">
+                                <input v-validate="'required|min:2'" name="title" v-model="newBlog.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
                                 <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <div name="slug">Slug: {{newBlog.slug}} </div>
+                                    <div name="slug">slug: {{newBlog.slug}} </div>
+                                    <span v-show="newBlog.serverErrors" class="help is-danger">{{ newBlog.serverErrors }}</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <vue-editor name="body" v-validate="'required|min:4'" v-model="newBlog.body"></vue-editor>
                                     <span v-show="newBlog.saveError" class="help is-danger">
-                                        Get your shit together. Write something worth reading.
+                                        Get your shit together. Write something worth reading, won't you please?.
                                         </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <input-tag class="input-tag" name="tags" v-model="newBlog.tags" :tags="newBlog.tags" placeholder="add tag"></input-tag>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -51,21 +57,26 @@
                                             <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
                                          </span>
                                          <span class="is-success" v-else-if="newBlog.published !== null">
-                                            <i class="fa fa-btn btn-success fa-newspaper-o"></i>Published! {{newBlog.publicationId}}
+                                            <i class="fa fa-btn btn-success fa-newspaper-o"></i>Published!
                                          </span>
                                         <span v-else>
                                             <i class="fa fa-btn fa-newspaper-o"></i>Publish
                                         </span>
                                     </button>
                                 </div>
-                                <div class="col-md-2 col-md-offset-1 col-sm-12">
+                                <div class="col-md-2 col-sm-12">
                                     <button @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newBlog.published }">
                                         Unpublish
                                     </button>
                                 </div>
-                                <div class="col-md-2 col-md-offset-1 col-sm-12">
+                                <div class="col-md-2 col-sm-12">
                                     <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newBlog.published }" :disabled="! newBlog.postId">
                                         Delete
+                                    </button>
+                                </div>
+                                <div class="col-md-2 col-sm-12">
+                                    <button @click.prevent="newPost" class="btn btn-success">
+                                        New
                                     </button>
                                 </div>
                             </div>
@@ -81,6 +92,7 @@
 import { VueEditor } from 'vue2-editor'
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
+
 export default {
     validator: null,
     mounted() {
@@ -95,11 +107,13 @@ export default {
                 title: '',
                 slug: '',
                 body: '',
+                tags: [],
                 postId: null,
                 disabled: false,
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
+                serverErrors: null,
                 publishBusy: false,
                 published: null,
                 publicationId: null,
@@ -118,6 +132,7 @@ export default {
             * Watch the title and create slug.
             */
         'newBlog.title': function (val, oldVal) {
+            this.newBlog.serverErrors = null
             if (this.newBlog.slug == '' ||
                     this.newBlog.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
             ) {
@@ -131,46 +146,29 @@ export default {
             if (this.newBlog.postId) {
                 this.update()
             }
+        },
+        'newBlog.tags': function (val, oldVal) {
+            if (this.newBlog.postId) {
+                this.update()
+            }
         }
     },
     methods: {
-        clearErrors() {
-            this.errors.clear();
-        },
-        leeroyjenkins() {
-            if(confirm("Are you sure you want to do this?")) {
-                axios.delete(`/posts/`
-                                + this.newBlog.publicationId, {})
-                        .then(result  => {
-                    this.newBlog.disabled = false
-                this.newBlog.publishBusy = false
-                this.newBlog.postId = null
-                console.log(result)
-                return result   })
-            .catch(error => {
-                    this.newBlog.disabled = false
-                this.newBlog.publishBusy = false
-                return Promise.reject(error)
-            });
-                this.newBlog.disabled = false
-                this.newBlog.saveBusy = false
-                this.newBlog.saveDisabled = false
-                this.newBlog.postId = null
-            }
-        },
         save() {
             this.newBlog.saveError = false
             this.newBlog.saveBusy = true
             this.newBlog.disabled = true
             this.validator.validateAll({
                 title: this.newBlog.title,
-                body: this.newBlog.body
+                body: this.newBlog.body,
+                slug: this.newBlog.slug
                 }).then((result) => {
                     axios.post(`/posts`, {
                                 title: this.newBlog.title,
                                 user_id: Spark.state.user.id,
                                 slug:  this.newBlog.slug,
-                                body:  this.newBlog.body
+                                body:  this.newBlog.body,
+                                tags: this.newBlog.tags
                             })
                             .then(result  => {
                             this.newBlog.disabled = false
@@ -184,6 +182,7 @@ export default {
                                 this.newBlog.saveError = true
                                 this.newBlog.disabled = false
                                 this.newBlog.saveBusy = false
+                                this.newBlog.serverErrors = error.response.data.errors.slug[0]
                                 return Promise.reject(error)
                             })
                         })
@@ -223,20 +222,21 @@ export default {
             },
         unpublish() {
             axios.delete(`/publications/`
-                            + this.newBlog.publicationId, {})
-                    .then(result  => {
+                + this.newBlog.publicationId, {})
+            .then(result  => {
                 this.newBlog.disabled = false
-            this.newBlog.publishBusy = false
-            this.newBlog.publicationId = null
-            console.log(result)
-            return result   })
-        .catch(error => {
-                this.newBlog.disabled = false
-            this.newBlog.publishBusy = false
-            return Promise.reject(error)
-        });
+                this.newBlog.publishBusy = false
+                this.newBlog.publicationId = null
+                console.log(result)
+                return result
+            })
+            .catch(error => {
+                    this.newBlog.disabled = false
+                this.newBlog.publishBusy = false
+                return Promise.reject(error)
+            });
             this.newBlog.disabled = false
-            this.newBlog.publishBusy = false
+            this.newBlog.saveBusy = false
             this.newBlog.published = null
         },
         update() {
@@ -251,9 +251,10 @@ export default {
                         title: this.newBlog.title,
                         slug:  this.newBlog.slug,
                         body:  this.newBlog.body,
+                        tags:  this.newBlog.tags,
                         id:    this.newBlog.id
                     })
-                        .then(result  => {
+                    .then(result  => {
                         this.newBlog.disabled = false
                         this.newBlog.saveBusy = false
                         return result
@@ -262,6 +263,7 @@ export default {
                         this.newBlog.saveError = true
                         this.newBlog.disabled = false
                         this.newBlog.saveBusy = false
+                        this.newBlog.serverErrors = error.response.data.errors.slug[0]
                         return Promise.reject(error)
                     })
             })
@@ -270,16 +272,51 @@ export default {
                 this.newBlog.saveBusy = false
                 this.newBlog.saveError = true
             })
+        },
+        leeroyjenkins() {
+            if(confirm("Permanently destroy this post?")) {
+                axios.delete(`/posts/` + this.newBlog.postId, {})
+                .then(result  => {
+                    return true
+                })
+                .catch(error => {
+                    return Promise.reject(error)
+                });
+                this.newBlog.disabled = false
+                this.newBlog.saveBusy = false
+                this.newBlog.saveDisabled = false
+            }
+        },
+        newPost() {
+            if (!this.newBlog.postId) {
+                if (confirm('Abandon this post and start over?')) {
+                    this.clear()
+                }
+            } else {
+                this.clear()
+            }
+        },
+        clear() {
+            this.newBlog.disabled = false
+            this.newBlog.saveBusy = false
+            this.newBlog.saveDisabled = false
+            this.newBlog.published = null
+            this.newBlog.publicationId = null
+            this.newBlog.postId = null
+            this.newBlog.title = ''
+            this.newBlog.body = ''
+            this.newBlog.slug = ''
+            this.newBlog.tags = []
         }
     },
-
-        created() {
-            this.validator = new VeeValidate.Validator({
-                title: 'required|min:2',
-                body: 'required|min:40'
-            });
-            this.$set(this, 'errors', this.validator.errors);
-        }
+    created() {
+        this.validator = new VeeValidate.Validator({
+            title: 'required|min:2',
+            body: 'required|min:40',
+            slug: 'required'
+        });
+        this.$set(this, 'errors', this.validator.errors);
+    }
 }
 </script>
 <style>

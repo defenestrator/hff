@@ -26,11 +26,15 @@ class PostsController extends Controller
     {
         $request->validate([
             'body' => 'required|min:8',
-            'slug' => 'required|min:2',
+            'slug' => 'required|alpha_dash|unique:posts,slug',
             'title' => 'required|min:2'
         ]);
-
-        return $post->create($request->all([]));
+        return $post->create([
+            'user_id'  => $request->user_id,
+            'body'  => $request->body,
+            'title' => $request->title,
+            'slug' => $request->slug
+        ])->syncTags($request->tags);
     }
 
     /**
@@ -76,12 +80,18 @@ class PostsController extends Controller
     {
         $request->validate([
             'body' => 'required|min:8',
-            'slug' => 'required|min:2',
             'title' => 'required|min:2'
         ]);
         $content = $post->find($id);
+        if ($request->slug !== $content->slug) {
+            $request->validate([
+                'slug' => 'required|alpha_dash|unique:posts,slug'
+            ]);
+        }
         $content->update($request->all());
+        $content->syncTags($request->tags);
         $content->save();
+
         return response()->json($content);
     }
 

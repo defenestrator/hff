@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Tags\HasTags;
 
 /**
  * App\Post
@@ -11,5 +12,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Post extends Model
 {
+    use HasTags;
     protected $fillable = [ 'title', 'slug', 'user_id', 'body'];
 }

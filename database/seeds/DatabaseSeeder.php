@@ -46,12 +46,14 @@ class DatabaseSeeder extends Seeder
         $this->user->create([
             'email'     => 'jeremyblc@gmail.com',
             'password'  => bcrypt(env('JEREMY_PASSWORD')) ,
+            'uuid' => \Ramsey\Uuid\Uuid::uuid1(),
             'name'      => 'Jeremy Anderson'
         ]);
 
         $this->user->create([
             'email'     => 'dgflatspirate@gmail.com',
             'password'  => bcrypt(env('DAVE_PASSWORD')),
+            'uuid' => \Ramsey\Uuid\Uuid::uuid1(),
             'name'      => 'Dave Gourley'
         ]);
 
