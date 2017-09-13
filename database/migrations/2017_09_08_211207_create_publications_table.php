@@ -16,7 +16,11 @@ class CreatePublicationsTable extends Migration
         Schema::create('publications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
-            $table->boolean('archived')->nullable();
+            $table->integer('post_id')->nullable();
+            $table->integer('podcast_id')->nullable();
+            $table->integer('newsletter_id')->nullable();
+            $table->integer('report_id')->nullable();
+            $table->boolean('archived')->nullable()->default(false);
             $table->timestamps();
         });
     }

@@ -17,6 +17,7 @@
     <!--global css starts-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/lib.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+    <link href="/css/sweetalert.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!--end of global css-->
     <!--page level css-->
@@ -217,6 +218,7 @@
 <!--global js starts-->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/lib.js') }}"></script>
+<script src="/js/sweetalert.min.js"></script>
 <script>
     // Async loading of external fonts.
     link=document.createElement('link');

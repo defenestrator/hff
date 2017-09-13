@@ -22,7 +22,7 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create(Request $request, Post $post)
     {
         $request->validate([
             'body' => 'required|min:8',
@@ -30,7 +30,7 @@ class PostsController extends Controller
             'title' => 'required|min:2'
         ]);
 
-        return Post::create($request->all([]));
+        return $post->create($request->all([]));
     }
 
     /**
@@ -67,25 +67,32 @@ class PostsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Post $post
+     * @param $id
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Post $post, $id)
     {
-        //
+        $request->validate([
+            'body' => 'required|min:8',
+            'slug' => 'required|min:2',
+            'title' => 'required|min:2'
+        ]);
+        $content = $post->find($id);
+        $content->update($request->all());
+        $content->save();
+        return response()->json($content);
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
+     * @param Post $post
+     * @param $id
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Post $post, $id)
     {
-        //
+        $post->destroy($id);
+        return response()->json(['data' => 'ok']);
     }
 }
