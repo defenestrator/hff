@@ -31,6 +31,7 @@ class PostsController extends Controller
         ]);
         return $post->create([
             'user_id'  => $request->user_id,
+            'author' => $request->author,
             'body'  => $request->body,
             'title' => $request->title,
             'slug' => $request->slug

@@ -13,5 +13,5 @@ use Spatie\Tags\HasTags;
 class Post extends Model
 {
     use HasTags;
-    protected $fillable = [ 'title', 'slug', 'user_id', 'body'];
+    protected $fillable = [ 'title', 'slug', 'user_id', 'body', 'author'];
 }

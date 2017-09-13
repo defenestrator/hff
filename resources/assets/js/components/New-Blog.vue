@@ -35,6 +35,7 @@
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <input-tag class="input-tag" name="tags" v-model="newBlog.tags" :tags="newBlog.tags" placeholder="add tag"></input-tag>
+                                    <label for="tags">Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.</label>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -161,9 +162,10 @@ export default {
                 body: this.newBlog.body,
                 slug: this.newBlog.slug
                 }).then((result) => {
-                    axios.post(`/posts`, {
+                    axios.post(`/api/posts`, {
                                 title: this.newBlog.title,
                                 user_id: Spark.state.user.id,
+                                author: Spark.state.user.name,
                                 slug:  this.newBlog.slug,
                                 body:  this.newBlog.body,
                                 tags: this.newBlog.tags
@@ -194,7 +196,7 @@ export default {
                 this.save()
                 return
             }
-             axios.post(`/publications`, {
+             axios.post(`/api/publications`, {
                     type:    'post',
                     post_id: this.newBlog.postId
                  })
@@ -212,7 +214,7 @@ export default {
 
             },
         unpublish() {
-            axios.delete(`/publications/`
+            axios.delete(`/api/publications/`
                 + this.newBlog.publicationId, {})
             .then(result  => {
                 this.newBlog.disabled = false
@@ -238,7 +240,7 @@ export default {
                 title: this.newBlog.title,
                 body: this.newBlog.body
                 }).then((result) => {
-                    axios.put(`/posts/` + this.newBlog.postId, {
+                    axios.put(`/api/posts/` + this.newBlog.postId, {
                         title: this.newBlog.title,
                         slug:  this.newBlog.slug,
                         body:  this.newBlog.body,
@@ -262,11 +264,13 @@ export default {
                 this.newBlog.disabled = false
                 this.newBlog.saveBusy = false
                 this.newBlog.saveError = true
+            console.log(Promise.reject(error))
+                return Promise.reject(error)
             })
         },
         leeroyjenkins() {
             if(confirm("Permanently destroy this post?")) {
-                axios.delete(`/posts/` + this.newBlog.postId, {})
+                axios.delete(`/api/posts/` + this.newBlog.postId, {})
                 .then(result  => {
                     this.clear()
                 })

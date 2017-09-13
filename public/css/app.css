@@ -8038,6 +8038,9 @@ header.site-header {
   border-bottom: 2px solid #ddd;
   background: transparent;
 }
+.featured-post-wide img {
+  width: 100%;
+}
 .btn-register {
   opacity: 0.7;
 }
