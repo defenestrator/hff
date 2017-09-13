@@ -19684,7 +19684,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate___default.a);
                 body: '',
                 tags: [],
                 postId: null,
-                disabled: false,
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
@@ -19734,7 +19733,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate___default.a);
 
             this.newBlog.saveError = false;
             this.newBlog.saveBusy = true;
-            this.newBlog.disabled = true;
             this.validator.validateAll({
                 title: this.newBlog.title,
                 body: this.newBlog.body,
@@ -19747,7 +19745,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate___default.a);
                     body: _this.newBlog.body,
                     tags: _this.newBlog.tags
                 }).then(function (result) {
-                    _this.newBlog.disabled = false;
                     _this.newBlog.saveDisabled = true;
                     _this.newBlog.saveBusy = false;
                     _this.newBlog.postId = result.data.id;
@@ -19755,13 +19752,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate___default.a);
                     return result;
                 }).catch(function (error) {
                     _this.newBlog.saveError = true;
-                    _this.newBlog.disabled = false;
                     _this.newBlog.saveBusy = false;
                     _this.newBlog.serverErrors = error.response.data.errors.slug[0];
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
-                _this.newBlog.disabled = false;
                 _this.newBlog.saveBusy = false;
                 _this.newBlog.saveError = true;
             });
@@ -19769,7 +19764,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate___default.a);
         publish: function publish() {
             var _this2 = this;
 
-            this.newBlog.disabled = true;
             this.newBlog.publishBusy = true;
             if (this.newBlog.postId === null) {
                 this.newBlog.publishBusy = false;
@@ -19780,16 +19774,13 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate___default.a);
                 type: 'post',
                 post_id: this.newBlog.postId
             }).then(function (result) {
-                _this2.newBlog.disabled = false;
                 _this2.newBlog.publishBusy = false;
                 _this2.newBlog.publicationId = result.data.id;
                 return result;
             }).catch(function (error) {
-                _this2.newBlog.disabled = false;
                 _this2.newBlog.publishBusy = false;
                 return Promise.reject(error);
             });
-            this.newBlog.disabled = false;
             this.newBlog.publishBusy = false;
             this.newBlog.published = true;
         },
@@ -19845,15 +19836,14 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate___default.a);
             });
         },
         leeroyjenkins: function leeroyjenkins() {
+            var _this5 = this;
+
             if (confirm("Permanently destroy this post?")) {
                 axios.delete('/posts/' + this.newBlog.postId, {}).then(function (result) {
-                    return true;
+                    _this5.clear();
                 }).catch(function (error) {
                     return Promise.reject(error);
                 });
-                this.newBlog.disabled = false;
-                this.newBlog.saveBusy = false;
-                this.newBlog.saveDisabled = false;
             }
         },
         newPost: function newPost() {
@@ -46472,6 +46462,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-md-2 col-sm-12"
   }, [_c('button', {
     staticClass: "btn btn-success",
+    attrs: {
+      "disabled": !_vm.newBlog.title
+    },
     on: {
       "click": function($event) {
         $event.preventDefault();
@@ -56852,7 +56845,7 @@ module.exports = function() {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(307)();
-exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn.btn-warning.is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus, .btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\nbackground-color:transparent;\nborder:none;\noutline: 0;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 768px) {\n.new-blog .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n", ""]);
+exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn.btn-warning.is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus, .btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\nbackground-color:transparent;\nborder:none;\noutline: 0;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 991px) {\n.new-blog .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n", ""]);
 
 /***/ }),
 /* 400 */

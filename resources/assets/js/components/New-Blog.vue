@@ -75,7 +75,7 @@
                                     </button>
                                 </div>
                                 <div class="col-md-2 col-sm-12">
-                                    <button @click.prevent="newPost" class="btn btn-success">
+                                    <button @click.prevent="newPost" class="btn btn-success" :disabled="! newBlog.title">
                                         New
                                     </button>
                                 </div>
@@ -109,7 +109,6 @@ export default {
                 body: '',
                 tags: [],
                 postId: null,
-                disabled: false,
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
@@ -157,7 +156,6 @@ export default {
         save() {
             this.newBlog.saveError = false
             this.newBlog.saveBusy = true
-            this.newBlog.disabled = true
             this.validator.validateAll({
                 title: this.newBlog.title,
                 body: this.newBlog.body,
@@ -171,7 +169,6 @@ export default {
                                 tags: this.newBlog.tags
                             })
                             .then(result  => {
-                            this.newBlog.disabled = false
                             this.newBlog.saveDisabled = true
                             this.newBlog.saveBusy = false
                             this.newBlog.postId = result.data.id
@@ -180,42 +177,36 @@ export default {
                             })
                             .catch(error => {
                                 this.newBlog.saveError = true
-                                this.newBlog.disabled = false
                                 this.newBlog.saveBusy = false
                                 this.newBlog.serverErrors = error.response.data.errors.slug[0]
                                 return Promise.reject(error)
                             })
                         })
             .catch(error => {
-                this.newBlog.disabled = false
                 this.newBlog.saveBusy = false
                 this.newBlog.saveError = true
             })
         },
         publish() {
-            this.newBlog.disabled = true
             this.newBlog.publishBusy = true
             if (this.newBlog.postId === null) {
                 this.newBlog.publishBusy = false
                 this.save()
-                return 
+                return
             }
              axios.post(`/publications`, {
                     type:    'post',
                     post_id: this.newBlog.postId
                  })
                  .then(result  => {
-                     this.newBlog.disabled = false
                      this.newBlog.publishBusy = false
                      this.newBlog.publicationId = result.data.id
                      return result
                  })
                  .catch(error => {
-                     this.newBlog.disabled = false
                      this.newBlog.publishBusy = false
                      return Promise.reject(error)
                  });
-                this.newBlog.disabled = false
                 this.newBlog.publishBusy = false
                 this.newBlog.published = true
 
@@ -277,14 +268,11 @@ export default {
             if(confirm("Permanently destroy this post?")) {
                 axios.delete(`/posts/` + this.newBlog.postId, {})
                 .then(result  => {
-                    return true
+                    this.clear()
                 })
                 .catch(error => {
                     return Promise.reject(error)
                 });
-                this.newBlog.disabled = false
-                this.newBlog.saveBusy = false
-                this.newBlog.saveDisabled = false
             }
         },
         newPost() {
@@ -356,7 +344,7 @@ export default {
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
         .new-blog .btn
         {
             width:100%;
