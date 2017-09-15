@@ -21,6 +21,7 @@
     "urijs": "^1.17.0",
     "vee-validate": "^2.0.0-rc.14",
     "vue": "2.*",
+    "vue-carousel": "^0.6.5",
     "vue-wysiwyg": "^1.2.5",
     "vue2-editor": "^2.0.26"
   }

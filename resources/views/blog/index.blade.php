@@ -1,4 +1,4 @@
-@extends('layouts/default')
+@extends('master')
 
 {{-- Page title --}}
 @section('title')
@@ -7,29 +7,26 @@ Blog
 @stop
 
 {{-- page level styles --}}
-@section('header_styles')
+@section('page_styles')
     <!--page level css starts-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend/tabbular.css') }}">
     <!--end of page level css-->
 @stop
 
 @section('top')
+{{--Full-width top content might go here. --}}
 @stop
-
-
-{{-- Page content --}}
 @section('content')
 <div class="container">
     <div class="row">
         <div class="content">
             <div class="col-md-12">
-                <!-- BEGIN FEATURED POST -->
                 @foreach($posts as $post)
-                    <div class="featured-post-wide thumbnail">
+                    <div class="post">
                         <div class="featured-text relative-left">
                             <h3 class="primary"><a href="/blog/{{$post->slug}}">{{$post->title}}</a></h3>
                             <article>
-                                {!!html_entity_decode($post->body)!!}
+                                {!! $post->body !!}
                             </article>
                             <p>
                                 <strong>Tags: </strong>

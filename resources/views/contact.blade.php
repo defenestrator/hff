@@ -1,4 +1,4 @@
-@extends('layouts/default')
+@extends('master')
 
 {{-- Page title --}}
 @section('title')
@@ -7,7 +7,7 @@ Contact
 @stop
 
 {{-- page level styles --}}
-@section('header_styles')
+@section('page_styles')
     <!--page level css starts-->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/contact.css') }}">
     <!--end of page level css-->

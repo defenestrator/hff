@@ -1,10 +1,10 @@
 <?php namespace App\Http\Controllers;
 
-use App\TripReport;
+use App\Report;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class TripReportsController extends Controller
+class ReportsController extends Controller
 {
 
     public function __construct()
@@ -22,7 +22,7 @@ class TripReportsController extends Controller
      */
     public function index(Request $request, Response $response)
     {
-        $countUsers = TripReport::count();
+        $countUsers = Report::count();
         $limit = $request->input('limit', 25);
 
         if ($limit > 100) {
@@ -30,7 +30,7 @@ class TripReportsController extends Controller
         } elseif ($countUsers == 0) {
             return $this->respondNotFound('There are no Trip Reports!?');
         } else {
-            $tripReport = TripReport::paginate($limit);
+            $report = Report::paginate($limit);
 
             return $response->setContent([
                 'data' => ''

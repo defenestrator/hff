@@ -3,20 +3,14 @@ var path = require('path');
 
 const vendors = 'resources/assets/vendors/';
 const resourcesAssets = 'resources/assets/';
-const srcCss = resourcesAssets + 'less/';
 const srcJs = resourcesAssets + 'js/';
 
 const dest = 'public/assets/';
 const destImages = dest + 'images/';
-const destCss = dest + 'css/';
 const destJs = dest + 'js/';
 const destImg = dest + 'img/';
 const destVendors= dest + 'vendors/';
 
-const paths = {
-    'owlcarousel': vendors +'owl.carousel/owl-carousel/',
-    'wow' : vendors + 'wow/dist/',
-}
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -47,24 +41,7 @@ mix.less('resources/assets/less/app.less', 'public/css')
 // Images
 mix.copy(resourcesAssets + 'images', destImages, false);
 mix.copy(resourcesAssets + 'img', destImg, false);
-
-// CSS
-mix.combine([
-    srcCss +  'font-awesome.min.css'
-], destCss + 'lib.css');
-
-mix.copy(vendors +'owl.carousel/owl-carousel/' + 'owl.carousel.css',  destVendors + 'owl_carousel/css');
-mix.copy(vendors +'owl.carousel/owl-carousel/' + 'owl.theme.css',  destVendors + 'owl_carousel/css');
-mix.copy(vendors +'owl.carousel/owl-carousel/' + 'owl.transitions.css',  destVendors + 'owl_carousel/css');
-mix.copy(vendors +'owl.carousel/owl-carousel/' + 'owl.carousel.min.js',  destVendors + 'owl_carousel/js');
-
 mix.copy( srcJs + 'livicons-1.4.min.js', destJs);
-
-// index page
-mix.copy( srcCss + 'tabbular.css', destCss);
-mix.copy( srcCss + 'animate.min.css', destCss);
-mix.copy( srcCss + 'jquery.circliful.css', destCss);
-mix.copy( srcCss + 'contact.css', destCss);
 mix.copy( vendors + 'gmaps/gmaps.min.js', destJs);
 mix.copy( srcJs + 'carousel.js', destJs);
 mix.copy( srcJs + 'jquery.circliful.js', destJs);

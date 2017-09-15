@@ -1,8 +1,9 @@
 @import "./../../../node_modules/bootstrap/less/bootstrap";
-
-// @import "./spark/spark";
 @import "./../../../vendor/laravel/spark/resources/assets/less/spark";
-@import "./../../../node_modules/vue-wysiwyg/dist/vueWysiwyg.css";
+@import "./tabbular.css";
+@import "./animate.min.css";
+@import "./contact.css";
+
 
 html {
 }
@@ -25,18 +26,24 @@ body {
 }
 
 .navbar-toggle {
-  padding: 9px 10px 4px 10px;
-  margin: 8px 15px 0 0;
 }
+
+.jumbotron {
+  background-color:white;
+  box-shadow: #333333 0px 0px 8px;
+}
+
 .article img, .jumbotron img{
   width:100%;
 }
+
 .icon-section {
   background-color : #3ab0f5;
   line-height      : 7px;
   padding-top      : 10px;
   border-bottom-left-radius:4em;
 }
+
 .icon-section a:link,
 .icon-section a:visited {
   color:white;
@@ -142,6 +149,9 @@ p label {
   color            : #464b17;
   background-color : inherit;
 }
+.success {
+  color: #3f844e;
+}
 .footer-link {
   color: #CCCCCC;
 }
@@ -156,8 +166,11 @@ p label {
 .text-danger {
   color : #ef6f6c;
 }
-
-.navbar-right {
+.warning {
+  color:#f89a14;
+}
+.yellow {
+  color: #FFD43C;
 }
 .icon-position label {
   padding-left : 0;
@@ -168,83 +181,13 @@ p label {
   text-transform : uppercase;
   font-weight    : 300;
 }
-.navbar-default .navbar-nav > li > a:hover {
-  color : #337ab7;
-}
-
-/* ---------- Navbar  Dropdown menu Css ---------- */
-
-.navbar-nav .dropdown-menu:before {
-  bottom        : 15px;
-  width         : 0;
-  height        : 0;
-  left          : 100px;
-  z-index       : 1002;
-  content       : " ";
-  display       : block !important;
-  position      : relative;
-  border-bottom : 8px solid #ef6f6c;
-  border-right  : 8px solid transparent;
-  border-left   : 8px solid transparent;
-}
 
 .navbar-nav .dropdown-menu a:hover {
   border-left : 2px solid #ef6f6c;
 }
-/* ---------- //Navbar  Dropdown menu hover Css End ---------- */
-
-.navbar-default .navbar-nav > .open > a:hover,
-.navbar-default .navbar-nav > .open > a {
-  background-color : #fff !important;
-  color            : #464b17;
+.navbar-nav .dropdown-menu a {
+  border-left : 2px solid transparent;
 }
-.navbar-nav .dropdown-menu li:hover {
-  border : none;
-}
-.navbar {
-  margin-bottom    : 0;
-  background-color : transparent;
-  border           : none;
-}
-
-.navbar-toggle {
-  padding: 9px 10px 4px 10px;
-  margin: 11px 15px 0 0;
-}
-/* ---------- Nav bar Css End ---------- */
-/* ---------- Breadcrumb Css ---------- */
-
-.breadcrumb a,
-.breadcrumb a:visited,
-.breadcrumb a:hover,
-.breadcrumb a:active {
-  color           : #3d3d3d;
-  text-decoration : none;
-}
-.breadcum {
-  background-color : #DBD6D6;
-  border-top       : 2px solid #b7b0b0;
-  border-bottom    : 2px solid #b7b0b0;
-  padding          : 0 2%;
-}
-.breadcum .pull-right {
-  padding : 8px 15px;
-}
-.breadcrumb {
-  padding          : 8px 15px;
-  margin-bottom    : 0;
-  list-style       : none;
-  background-color : #DBD6D6;
-  border-radius    : 4px;
-  float            : left;
-}
-.breadcrumb > li + li:before {
-  padding : 0 5px;
-  color   : #3d3d3d;
-  content : none;
-}
-/* ---------- //Breadcrumb Css End ---------- */
-/* ---------- Breadcrumb Icon Section Css ---------- */
 
 .icon3 {
   position : relative;
@@ -255,15 +198,16 @@ p label {
   left : -1px;
   top  : 3px;
 }
-/* ---------- //Breadcrumb Icon Section End ---------- */
-/* ---------- Carousel Css ---------- */
-
+.navbar-inverse {
+  border:none;
+  background-color:transparent;
+}
 .carousel-indicators .active {
   width            : 14px;
   height           : 14px;
   margin           : 0;
-  background-color : #000;
-  border           : 1px solid #5E5E5E;
+  background-color : #ededed;
+  border           : 2px solid #5E5E5E;
 }
 .carousel-indicators li {
   border : 1px solid #5E5E5E;
@@ -273,23 +217,10 @@ p label {
 .carousel-caption {
   font-size : 30px;
 }
-/* ---------- //Carousel Css End ---------- */
 
 blockquote {
   border-left : 2px solid #ef6f6c;
 }
-/* ---------- Testimonial Images Css Start ---------- */
-
-.author {
-  padding       : 15px;
-  background    : #f6f6f6;
-  margin-bottom : 10px;
-}
-.author img {
-  width : 50px;
-}
-/* ---------- //Testimonial Images Css End ---------- */
-/* ---------- Feature Section Css ---------- */
 
 .features i {
   line-height : 2px;
@@ -332,7 +263,7 @@ blockquote {
 
 .box-icon {
   background-color : transparent;
-  border           : 1px solid #464b17;
+  border           : 1px solid #3f844e;
   border-radius    : 50%;
   display          : table;
   height           : 80px;
@@ -351,7 +282,7 @@ blockquote {
 /* ---------- Our Services Icon Border css ---------- */
 
 .box-icon1 {
-  border : 1px solid #66c5ff;
+  border : 1px solid #128BC6;
 }
 .box-icon2 {
   border : 1px solid #f89a14;
@@ -371,12 +302,12 @@ blockquote {
 .icon {
   position : relative;
   right    : 11px;
-  top      : 14px;
+  top      : 11px;
 }
 .icon1 {
   position : relative;
-  right    : 10px;
-  top      : 12px;
+  right    : 11px;
+  top      : 11px;
 }
 .feature-main {
   padding          : 50px 0;
@@ -395,21 +326,20 @@ blockquote {
   color         : #515763;
   text-align    : left
 }
-.purchas-main {
-  padding : 10px 0;
-}
+
 .bg-border {
   text-shadow: 1px 2px 4px #000;
   padding-top    : 20px;
   padding-bottom : 20px;
   width          : 100%;
 }
-.purchae-hed {
+.tagline {
   margin-bottom  : 20px;
   color:white;
   text-transform : uppercase;
   font-weight    : 300;
 }
+
 .purchase-styl {
   background-color : #3f844e;
   border           : none;
@@ -542,9 +472,10 @@ footer img {
 #owl-demo {
   margin : 0;
 }
-.owl-theme .owl-controls .owl-page span {
-  background-color: transparent !important;
-  box-shadow: 1px 1px 1px #000 !important;
+
+.VueCarousel-dot-inner {
+  background-color: transparent;
+  box-shadow: 1px 1px 1px #000;
 }
 #bar {
   width      : 0;
@@ -609,36 +540,33 @@ a.contact-link:hover {
   transition:all 0.5s;
 }
 
-.jumbotron {
-  background-color:white;
-  box-shadow: #333333 0px 0px 8px;
-}
 a.btn-primary {
   color:white;
 }
-header.site-header {
-  border-bottom: 2px solid #e7e7e7;
-}
 
-.featured-post-wide {
+.post {
   border:none;
   border-bottom: 2px solid #ddd;
   background:transparent;
 }
-.featured-post-wide img{
+
+.post img{
   width:100%;
 }
+
 .btn-register {
   opacity: 0.7;
 }
-.btn-register:active:hover, .btn-register.active:hover, .open > .dropdown-toggle.btn-register:hover, .btn-register:active:focus, .btn-register.active:focus, .open > .dropdown-toggle.btn-register:focus, .btn-register:active.focus, .btn-register.active.focus, .open > .dropdown-toggle.btn-register.focus,.btn-register:active, .btn-register.active, .open > .dropdown-toggle.btn-register {
+
+.btn-register:active:hover, .btn-register.active:hover, .open > .dropdown-toggle.btn-register:hover,
+.btn-register:active:focus, .btn-register.active:focus, .open > .dropdown-toggle.btn-register:focus,
+.btn-register:active.focus, .btn-register.active.focus, .open > .dropdown-toggle.btn-register.focus,
+.btn-register:active, .btn-register.active, .open > .dropdown-toggle.btn-register {
   color: white;
   background-color: #3097d1;
   opacity: 1;
 }
 
-.new-blog .btn {
-
+.VueCarousel-slide img {
+ width:100%;
 }
-
-

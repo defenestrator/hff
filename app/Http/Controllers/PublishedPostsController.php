@@ -17,8 +17,7 @@ class PublishedPostsController extends Controller
     public function index(Request $request, Post $post, Publication $publication)
     {
         $published = $publication->all('post_id');
-
-        $posts = $post->whereIn('id', $published)->paginate();
-        return view('blog.index')->with('posts', $posts);
+        $posts = $post->whereIn('id', $published)->paginate(5);
+        return view('blog.index')->with(compact('posts', $posts));
     }
 }

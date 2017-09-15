@@ -1,65 +1,43 @@
-@extends('layouts/default')
-
-{{-- Page title --}}
+@extends('master')
 @section('title')
-Elite Fly Fishing at Hobo Prices
+Have Rod Will Travel
 @parent
 @stop
-
-{{-- page level styles --}}
-@section('header_styles')
-    <!--page level css starts-->
-
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/tabbular.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/animate.min.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.circliful.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.carousel.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.theme.css') }}">
-    <!--end of page level css-->
+@section('page_styles')
 @stop
 
-{{-- slider --}}
 @section('top')
-    <!--Carousel Start -->
-    <div id="owl-demo" class="owl-carousel owl-theme">
-        <div class="item"><img src="{{ asset('assets/images/gourley/DSC_0336.JPG') }}" alt="Saltwater Flats">
-        </div>
-        <div class="item"><img src="{{ asset('assets/images/gourley/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Sea Grass">
-        </div>
-        <div class="item"><img src="{{ asset('assets/images/gourley/grouper-websize.jpg') }}" alt="Big Grouper">
-        </div>
-        <div class="item"><img src="{{ asset('assets/images/os/tarpon.jpg') }}" alt="Hungry Tarpon">
-        </div>
-        <div class="item"><img src="{{ asset('assets/images/gourley/DSC_0193.JPG') }}" alt="Tropical Beach with Boat">
-        </div>
-    </div>
-    <!-- //Carousel End -->
+<carousel :autoplay="true" :per-page="1" :pagination-enabled="false">
+    <slide><img style="width:100%" src="{{ asset('assets/images/gourley/DSC_0336.JPG') }}" alt="Saltwater Flats">
+    </slide>
+    <slide><img src="{{ asset('assets/images/gourley/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Sea Grass">
+    </slide>
+    <slide><img src="{{ asset('assets/images/gourley/DSC_0193.JPG') }}" alt="Tropical Beach with Boat">
+    </slide>
+    <slide><img src="{{ asset('assets/images/os/tarpon.jpg') }}" alt="Hungry Tarpon">
+    </slide>
+    <slide><img src="{{ asset('assets/images/gourley/grouper-websize.jpg') }}" alt="Big Grouper">
+    </slide>
+</carousel>
 @stop
 {{-- content --}}
 @section('content')
     <div class="container">
-        <section class="purchas-main">
+        <section>
             <div class="container bg-border wow pulse" data-wow-duration="2.5s">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        @if( ! empty($success))
-                            <h1 class="purchae-hed">{{ $success }}</h1>
-                        @else
-                        <h1 class="purchae-hed text-center">Elite Destinations, Local Flavor</h1>
-                        @endif
+                        <h1 class="tagline text-center">Elite Destinations, Local Flavor</h1>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Service Section Start-->
         <div class="row">
-            <div class="text-center">
-                <h3 class="border-primary"><span class="heading_border bg-primary">Angling Services</span></h3>
-            </div>
             <div class="col-sm-6 col-md-3 wow bounceInLeft" data-wow-duration="1s">
                 <div class="box">
                     <div class="box-icon">
-                        <i class="livicon icon" data-name="anchor" data-size="55" data-c="#464b17" data-hc="#464b17"></i>
+                        <i class="livicon icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#464b17"></i>
                     </div>
                     <div class="info">
                         <h3 class="success text-center">DIY Destinations</h3>
@@ -110,7 +88,7 @@ Elite Fly Fishing at Hobo Prices
                     <div class="info">
                         <h3 class="yellow text-center">Independent Guides</h3>
                         <p>Connect directly with local guides via our independent outfitter listings.
-                            Book trips directly with them, using our platform, and get special perks found nowhere else.</p>
+                            Book trips with them using our platform and get special perks found nowhere else.</p>
                     </div>
                 </div>
             </div>
