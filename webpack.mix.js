@@ -1,15 +1,6 @@
-let mix = require('laravel-mix');
-var path = require('path');
+const mix = require('laravel-mix');
+const path = require('path');
 
-const vendors = 'resources/assets/vendors/';
-const resourcesAssets = 'resources/assets/';
-const srcJs = resourcesAssets + 'js/';
-
-const dest = 'public/assets/';
-const destImages = dest + 'images/';
-const destJs = dest + 'js/';
-const destImg = dest + 'img/';
-const destVendors= dest + 'vendors/';
 
 /*
  |--------------------------------------------------------------------------
@@ -37,18 +28,6 @@ mix.less('resources/assets/less/app.less', 'public/css')
             }
         }
    });
-
+mix.combine()
 // Images
-mix.copy(resourcesAssets + 'images', destImages, false);
-mix.copy(resourcesAssets + 'img', destImg, false);
-mix.copy( srcJs + 'livicons-1.4.min.js', destJs);
-mix.copy( vendors + 'gmaps/gmaps.min.js', destJs);
-mix.copy( srcJs + 'carousel.js', destJs);
-mix.copy( srcJs + 'jquery.circliful.js', destJs);
-mix.copy( vendors + 'wow/dist/' + 'wow.min.js',  destVendors + 'wow/js');
-mix.combine(
-    [
-        vendors + 'raphael/raphael-min.js',
-        srcJs + 'livicons-1.4.min.js',
-        srcJs + 'josh_frontend.js'
-    ], destJs + 'lib.js');
+mix.copy('resources/assets/images', 'assets/images', false);

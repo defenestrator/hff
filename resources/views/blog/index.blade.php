@@ -57,7 +57,6 @@ Blog
     
 @stop
 
-{{-- page level scripts --}}
-@section('footer_scripts')
+@section('page_scripts')
 
 @stop

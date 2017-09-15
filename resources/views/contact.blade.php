@@ -98,7 +98,7 @@ Contact
 @stop
 
 {{-- page level scripts --}}
-@section('footer_scripts')
+@section('page_scripts')
     <!-- page level js starts-->
     <script></script>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU"></script>

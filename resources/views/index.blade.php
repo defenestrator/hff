@@ -98,11 +98,10 @@ Have Rod Will Travel
     <!-- //Container End -->
 @stop
 {{-- footer scripts --}}
-@section('footer_scripts')
-    <!-- page level js starts-->
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.circliful.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/vendors/wow/js/wow.min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('assets/vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/carousel.js') }}"></script>
-    <!--page level js ends-->
+@section('page_scripts')
+    <script type="text/javascript" src="{{ asset('js/wow.min.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('js/raphael-min.js') }}" ></script>
+    <script>
+        new WOW().init();
+    </script>
 @stop

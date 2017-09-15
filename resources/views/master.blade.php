@@ -14,7 +14,6 @@
         | Hobo Fly Fishing
         @show
     </title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/lib.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <link href="/css/sweetalert.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -47,99 +46,9 @@
     <!-- Content -->
     @yield('content')
 
-    <!-- Footer Section Start -->
-    <footer>
-        <div class="container footer-text">
-            <!-- About Us Section Start -->
-            <div class="col-sm-4">
-                <a href="#about"><h4>About Us</h4></a>
-                <p>
-                    What little wisdom we have gained is from those anglers who are our betters.
-                    The ones who smell like the water they fish. You know the ones.
-                    They have that knowing look when they see the rods on your truck; They know who the locals are.
-                </p>
-                <p>Forget <em>about us</em>. We just know a few anglers who <strong>live</strong> the water.</p>
-
-                <hr id="hr_border2">
-                <a href="#follow"><h4 class="menu">Follow Us</h4></a>
-                <ul class="list-inline">
-                    <li>
-                        <a href="https://fb.me/hoboflyfishing"> <i class="livicon" data-name="facebook" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/flyfishidaho"> <i class="livicon" data-name="twitter" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/hoboflyfishing/"> <i class="livicon" data-name="instagram" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/channel/UCJwjEQAWMuxqnw5VT4a9zpg"> <i class="livicon" data-name="youtube" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- //About us Section End -->
-
-            <div class="col-sm-4">
-
-                <div class="news menu">
-                    <a href="#newsletter"><h4>Newsletter</h4></a>
-                    <p>Get special deals and exclusive trip packages. We only send about one email per month.</p>
-                    <form method="POST" action="{{ route('newsletter') }}">
-                        {{ csrf_field() }}
-                        <div class="form-group">
-                            <input name="email"
-                                   type="email"
-                                   class="form-control input-lg"
-                                   placeholder="your email"
-                                   value="{{ old('email') }}"
-                                   aria-describedby="basic-addon2"
-                                   required
-                            >
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary text-white" role="button">Subscribe</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <!-- Contact Section Start -->
-                <a href="#contact"><h4>Contact</h4></a>
-                <ul class="list-unstyled">
-                    <li>289 N. Hullen Pl.</li>
-                    <li>Star, ID 83669</li>
-                    <li class="footer-link">
-                        <a href="tel:1-208-859-9133">
-                            <i class="livicon icon4 icon3"
-                               data-name="cellphone"
-                               data-size="18"
-                               data-loop="true"
-                               data-c="#ccc" data-hc="#ccc"></i> (208)859-9133
-                        </a>
-                    </li>
-                    <li class="footer-link">
-                        <a href="{{ URL::to('contact') }}">
-                            <i class="livicon icon3"
-                               data-name="mail-alt"
-                               data-size="20"
-                               data-loop="true"
-                               data-c="#ccc"
-                               data-hc="#ccc"
-                            ></i>
-                            info@hoboflyshing.com
-                        </a>
-                    </li>
-                </ul>
-                <!-- //Contact Section End -->
-            </div>
-        </div>
-    </footer>
-    <!-- //Footer Section End -->
+    @if(Auth::guest())
+        @include('parts.footer')
+    @endif
     <div class="copyright">
         <div class="container">
             <div class="legal"><ul class="inline">
@@ -166,7 +75,7 @@
 @endif
 <!--global js starts-->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/lib.js') }}"></script>
+<script src="{{asset('/js/livicons-1.4.min.js')}}"></script>
 <script src="/js/sweetalert.min.js"></script>
 <script>
     // Async loading of external fonts.
@@ -175,9 +84,6 @@
     link.rel='stylesheet';
     document.getElementsByTagName('head')[0].appendChild(link);
 </script>
-<!--global js end-->
-<!-- begin page level js -->
-@yield('footer_scripts')
-<!-- end page level js -->
+@yield('page_scripts')
 </body>
 </html>
