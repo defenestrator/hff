@@ -46,7 +46,7 @@ class PostsController extends Controller
      */
     public function show(Post $post, $id)
     {
-        return $post->where('id', $id)->first()->publication;
+        return $post->withAnyTags(['*'])->where('id', $id)->first()->publication;
     }
 
     /**
@@ -86,8 +86,7 @@ class PostsController extends Controller
             'slug' => $request->slug
         ]);
         $content->save();
-
-        return response()->json($content);
+        return $content;
     }
 
     /**
