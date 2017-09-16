@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,46 +27,29 @@
 <body>
 <div id="spark-app" v-cloak>
     <header class="site-header">
-    @if(Auth::guest())
-        @include('parts.icon-section')
-    @endif
+    {{-- Social and contact icon bar for guests only--}}
+        @if(Auth::guest())
+            @include('parts.icon-section')
+        @endif
 
-    @if(Auth::check())
-        @include('nav.user')
-    @else
-        @include('nav.guest')
-    @endif
+    {{-- Serve different navigation for guests vs logged users --}}
+        @if(Auth::check())
+            @include('nav.user')
+        @else
+            @include('nav.guest')
+        @endif
     </header>
-    <!-- //Header End -->
 
-    <!-- slider / breadcrumbs section -->
     @yield('top')
-
-    <!-- Content -->
-    @yield('content')
-
+    <div class="container">
+        @yield('content')
+    </div>
     @if(Auth::guest())
         @include('parts.footer')
     @endif
-    <div class="copyright">
-        <div class="container">
-            <div class="legal"><ul class="inline">
-                    <li class="text-white small">Copyright &copy; Hobo Fly Fishing, LLC {{ date('M d Y') }}</li>
-                    <li class="text-white"> </li>
-                    <li class="footer-link"><a href="{{ route('terms') }}">Terms</a>
-                    </li>
-                    <li class="footer-link"><a href="{{ route('privacy') }}">Privacy</a>
-                    </li>
-                    <li class="footer-link"><a href="{{ URL::to('login') }}">Login</a>
-                    </li>
-                    <li class="footer-link"><a href="{{ URL::to('register') }}">Register</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    @include('parts.bottom')
 </div>
-<!-- Application Level Modals -->
+<!-- Spark Application-Level Modals -->
 @if (Auth::check())
     @include('spark::modals.notifications')
     @include('spark::modals.support')
@@ -75,15 +57,8 @@
 @endif
 <!--global js starts-->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-<script src="{{asset('/js/livicons-1.4.min.js')}}"></script>
 <script src="/js/sweetalert.min.js"></script>
-<script>
-    // Async loading of external fonts.
-    link=document.createElement('link');
-    link.href='https://fonts.googleapis.com/css?family=Raleway:100,300,600';
-    link.rel='stylesheet';
-    document.getElementsByTagName('head')[0].appendChild(link);
-</script>
+<async-fonts></async-fonts>
 @yield('page_scripts')
 </body>
 </html>

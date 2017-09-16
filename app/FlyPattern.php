@@ -15,8 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property integer $privacy_id
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\Asset[] $assets
- * @property-read \Illuminate\Database\Eloquent\Collection|\Tag[] $tags
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Upload[] $uploads
  * @property-read \Privacy $privacy
  * @property-read \Illuminate\Database\Eloquent\Collection|\Comment[] $comments
  * @method static \Illuminate\Database\Query\Builder|\FlyPattern whereId($value)
@@ -34,14 +33,9 @@ class FlyPattern extends Model
 {
     protected $fillable = ['name', 'recipe', 'instructions', 'privacy'];
 
-    public function assets()
+    public function uploads()
     {
-        return $this->hasMany(Asset::class);
-    }
-
-    public function privacy()
-    {
-        return $this->hasOne(Asset::class);
+        return $this->hasMany(Upload::class);
     }
 
 }

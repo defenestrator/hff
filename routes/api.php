@@ -12,11 +12,16 @@
 */
 
 Route::group([
-    'middleware' => 'auth:api'
+    'middleware' => 'api'
 ], function () {
+    Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
+
+    Route::get('/posts', 'PostsController@index');
     Route::post('/posts', 'PostsController@create');
     Route::put('/posts/{id}', 'PostsController@update');
+    Route::get('/posts/{id}', 'PostsController@edit');
     Route::delete('/posts/{id}', 'PostsController@destroy');
+    Route::get('/publications/{postId}', 'PublishedPostsController@edit');
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');
 });

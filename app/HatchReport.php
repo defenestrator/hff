@@ -44,6 +44,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \App\Report $reports
  * @method static \Illuminate\Database\Eloquent\Builder|\App\HatchReport whereReportId($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Upload[] $uploads
  */
 class HatchReport extends Report
 {

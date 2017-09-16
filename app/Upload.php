@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 /**
- * Asset
+ * Upload
  *
  * @property integer $id
  * @property string $type

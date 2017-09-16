@@ -1,15 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Podcast;
+use App\Publication;
 use Illuminate\Http\Request;
 
 class PublishedPodcastsController extends Controller
 {
-    public function index(Request $request, Podcast $podcast, Publication $publication)
+    public function index(Podcast $podcast, Publication $publication)
     {
         $published = $publication->all('post_id');
-        $posts = $post->whereIn('id', $published)->paginate(5);
-        return view('blog.index')->with(compact('posts', $posts));
+        $podcasts = $podcast->whereIn('id', $published)->paginate(5);
+        return view('representations.index')->with('podcasts', $podcasts);
     }
 }

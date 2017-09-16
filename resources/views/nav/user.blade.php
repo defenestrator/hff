@@ -36,10 +36,10 @@
 
                     <!-- Notifications -->
                     <li>
-                        <a @click="showNotifications" class="has-activity-indicator">
+                        <a class="has-activity-indicator" @click="showNotifications">
                             <div class="navbar-icon">
                                 <i class="activity-indicator" v-if="hasUnreadNotifications || hasUnreadAnnouncements"></i>
-                                <i class="icon fa fa-bell"></i>
+                                <i class="fa fa-bell"></i>
                             </div>
                         </a>
                     </li>
@@ -68,7 +68,7 @@
 
                             <!-- Developer -->
                             @if (Spark::developer(Auth::user()->email))
-                                @include('spark::nav.developer')
+                                @include('nav.developer')
                             @endif
 
                             <!-- Subscription Reminders -->

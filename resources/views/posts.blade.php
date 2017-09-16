@@ -1,5 +1,5 @@
 @extends('master')
 
 @section('content')
-    <h1>search</h1>
+<new-post></new-post>
 @stop

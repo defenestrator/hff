@@ -1,23 +1,15 @@
 @extends('master')
 
-{{-- Page title --}}
 @section('title')
 Contact
 @parent
 @stop
-
-{{-- page level styles --}}
 @section('page_styles')
-    <!--page level css starts-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/contact.css') }}">
-    <!--end of page level css-->
 @stop
 
 @section('top')
 @stop
 
-
-{{-- Page content --}}
 @section('content')
     <!-- Map Section Start -->
     <div class="">
@@ -100,9 +92,10 @@ Contact
 {{-- page level scripts --}}
 @section('page_scripts')
     <!-- page level js starts-->
-    <script></script>
+    <script type="text/javascript" src="{{ asset('js/raphael-min.js') }}" ></script>
+
+    <script type="text/javascript" src="{{ asset('js/gmaps.min.js') }}" ></script>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/gmaps.min.js') }}" ></script>
     <!--page level js ends-->
     <script>
         $(document).ready(function() {

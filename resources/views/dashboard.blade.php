@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-12 col-md-offset-0" style="padding-top:25px;">
                     <ul class="nav nav-tabs" style="border-bottom:none;">
-                        <li class="active"><a href="#latest" data-twoggle="tab">Latest</a></li>
+                        <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
                         <li><a href="#fish" data-toggle="tab">Fish</a>
                         </li>
                         <li><a href="#fisheries" data-toggle="tab">Fisheries</a>
@@ -24,15 +24,13 @@
                         </li>
                         <li><a href="#trips" data-toggle="tab">Trips</a>
                         </li>
+                        <li><a href="#outfitters" data-toggle="tab">Outfitters</a>
+                        </li>
                     </ul>
                 <div class="panel with-nav-tabs panel-default panel-body">
                     <div class="tab-content">
-                        <div class="tab-pane fade in out active" id="latest">
-                            <article class="article">
-                                <h2>Latest Posts:</h2>
-
-                                <p>The most recent content additions</p>
-                            </article>
+                        <div class="tab-pane fade in out active" id="posts">
+                            <posts></posts>
                         </div>
                         <div class="tab-pane fade in out" id="fish">
                             <article class="article">
@@ -111,7 +109,7 @@
                                 <p>Add a trip.</p>
                             </article>
                             <article class="article">
-                                <h2>Edit Fly Boxes:</h2>
+                                <h2>Edit Trips:</h2>
 
                                 <p>
                                     <em><strong>from the list below</strong></em>
@@ -122,9 +120,6 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <new-blog></new-blog>
-            </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-0">
                 <div class="panel panel-default">

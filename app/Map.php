@@ -25,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\Map whereUpdatedAt($value)
  * @property-read \Illuminate\Database\Eloquent\Collection|\$related[] $morphedByMany
  * @mixin \Eloquent
+ * @property int|null $zoom
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Map whereZoom($value)
  */
 class Map extends Model
 {

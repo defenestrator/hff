@@ -9,8 +9,9 @@
  | your components that you write while building your applications.
  */
 
-require('./../spark-components/bootstrap');
-require('./home');
-Vue.component('new-blog', require('./New-Blog.vue'));
-Vue.component('editor', require('./Editor.vue'));
+require('./../spark-components/bootstrap')
+require('./home')
+Vue.component('posts', require('./Posts.vue'))
+Vue.component('editor', require('./Editor.vue'))
 Vue.component('input-tag', require('./InputTag.vue'))
+Vue.component('newsletter-signup', require('./NewsletterSignup.vue'))

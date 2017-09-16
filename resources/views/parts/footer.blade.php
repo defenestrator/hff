@@ -31,31 +31,8 @@
                 </li>
             </ul>
         </div>
-        <!-- //About us Section End -->
-
         <div class="col-sm-4">
-
-            <div class="news menu">
-                <a href="#newsletter"><h4>Newsletter</h4></a>
-                <p>Get special deals and exclusive trip packages. We only send about one email per month.</p>
-                <form method="POST" action="{{ route('newsletter') }}">
-                    {{ csrf_field() }}
-                    <div class="form-group">
-                        <input name="email"
-                               type="email"
-                               class="form-control input-lg"
-                               placeholder="your email"
-                               value="{{ old('email') }}"
-                               aria-describedby="basic-addon2"
-                               required
-                        >
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary text-white" role="button">Subscribe</button>
-                    </div>
-                </form>
-
-            </div>
+            <newsletter-signup></newsletter-signup>
         </div>
         <div class="col-sm-4">
             <!-- Contact Section Start -->

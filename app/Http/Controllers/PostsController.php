@@ -14,7 +14,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        return Post::paginate(50, ['title', 'author', 'body', 'slug', 'created_at', 'id']);
     }
 
     /**
@@ -66,9 +66,10 @@ class PostsController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Post $post, $id)
     {
-        //
+        return $post->where('id', '=', $id)
+            ->first();
     }
 
     /**

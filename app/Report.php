@@ -36,11 +36,11 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Report whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Report whereUserId($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Upload[] $uploads
  */
 class Report extends Model
 {
     protected $fillable = [
-        'asset',
         'user_id',
         'fishery_id',
         'start_time',
@@ -62,9 +62,9 @@ class Report extends Model
         return $this->hasMany(HatchReport::class);
     }
 
-    public function assets()
+    public function uploads()
     {
-        return $this->hasMany(Asset::class);
+        return $this->hasMany(Upload::class);
     }
 
     public function fishery()
