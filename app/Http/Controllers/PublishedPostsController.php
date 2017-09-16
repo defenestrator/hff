@@ -19,15 +19,16 @@ class PublishedPostsController extends Controller
         $published = $publication->all('post_id');
         $posts = $post->whereIn('id', $published)->paginate(5);
 
-        return view('publications.blog.index')->with('posts', $posts);
+        return view('publications.posts.index')->with('posts', $posts);
     }
 
     public function show(Post $post, $slug)
     {
-        return view('publications.blog.show')
-            ->with('post', $post)
-            ->where('slug', '=', $slug)
+        $data = $post->where('slug', '=', $slug)
             ->first();
+        return view('publications.posts.show')
+            ->with('post', $data);
+
     }
 
     public function edit(Publication $publication, $postId)

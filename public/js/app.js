@@ -26900,6 +26900,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
             this.newPost.saveBusy = false;
             this.newPost.published = null;
         },
+        checkPublication: function checkPublication() {},
         editPublication: function editPublication() {
             var _this5 = this;
 
@@ -26969,7 +26970,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
         },
         clear: function clear() {
             this.newPost.saveBusy = false;
-            this.newPost.saveDisabled = false;
+            this.newPost.saveDisabled = false, this.newPost.publishBusy = true;
             this.newPost.published = null;
             this.newPost.publicationId = null;
             this.newPost.postId = null;
@@ -26983,6 +26984,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
 
             axios.get('/api/posts/' + id, {}).then(function (result) {
                 _this8.clear();
+                _this8.index = false;
                 _this8.newPost.title = result.data.title;
                 _this8.newPost.slug = result.data.slug;
                 _this8.newPost.body = result.data.body;
@@ -49622,7 +49624,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "col-md-12"
   }, [_c('button', {
-    staticClass: "btn btn-success",
+    staticClass: "btn btn-create",
     attrs: {
       "id": "create"
     },
@@ -49661,7 +49663,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("Edit")])])])
-  }))]), _vm._v(" "), _c('form', {
+  }))]), _vm._v(" "), (!_vm.index) ? _c('form', {
     staticClass: "form-horizontal new-post",
     attrs: {
       "role": "form"
@@ -49848,6 +49850,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('input-tag', {
     staticClass: "input-tag",
     attrs: {
+      "id": "tags",
       "name": "tags",
       "tags": _vm.newPost.tags,
       "placeholder": "add tag"
@@ -49863,11 +49866,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "for": "tags"
     }
-  }, [_vm._v("Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.")])], 1)])])])])
+  }, [_vm._v("Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.")])], 1)])]) : _vm._e()])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"
-  }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Author")]), _vm._v(" "), _c('th', [_vm._v("Created at")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+  }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Created at")]), _vm._v(" "), _c('th', [_vm._v("Publication")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

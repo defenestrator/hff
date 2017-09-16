@@ -1,7 +1,7 @@
 <template>
 <div class="row">
     <div class="col-md-12">
-        <button @click.prevent="toggleIndex" id="create" class="btn btn-success">
+        <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Create</span>
             <span v-if="! index">Index</span>
         </button>
@@ -9,8 +9,8 @@
             <thead  class="thead-inverse">
             <tr>
                 <th>Title</th>
-                <th>Author</th>
                 <th>Created at</th>
+                <th>Publication</th>
                 <th>Edit</th>
             </tr>
             </thead>
@@ -23,7 +23,7 @@
             </tr>
             </tbody>
         </table>
-        <form class="form-horizontal new-post" role="form">
+        <form class="form-horizontal new-post" v-if="! index" role="form">
             <div class="form-group">
                 <div class="col-md-2 col-sm-12">
                     <button @click.prevent="createNewPost" class="btn btn-success" :disabled="! newPost.title">
@@ -89,7 +89,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <input-tag class="input-tag" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder="add tag"></input-tag>
+                    <input-tag class="input-tag" id="tags" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder="add tag"></input-tag>
                     <label for="tags">Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.</label>
                 </div>
             </div>
@@ -257,6 +257,9 @@ export default {
             this.newPost.saveBusy = false
             this.newPost.published = null
         },
+        checkPublication(){
+
+        },
         editPublication(){
             axios.get(`/api/publications/`
                     + this.newPost.postId, {})
@@ -328,7 +331,8 @@ export default {
         },
         clear() {
             this.newPost.saveBusy = false
-            this.newPost.saveDisabled = false
+            this.newPost.saveDisabled = false,
+            this.newPost.publishBusy = true
             this.newPost.published = null
             this.newPost.publicationId = null
             this.newPost.postId = null
@@ -341,6 +345,7 @@ export default {
             axios.get(`/api/posts/`+id, {})
             .then(result  => {
                 this.clear()
+                this.index = false
                 this.newPost.title = result.data.title;
                 this.newPost.slug = result.data.slug;
                 this.newPost.body = result.data.body;
