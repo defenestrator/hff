@@ -73,14 +73,18 @@ class PostsController extends Controller
             'body' => 'required|min:8',
             'title' => 'required|min:2'
         ]);
-        $content = $post->find($id);
+        $content = $post->find($id)->syncTags($request->tags);
         if ($request->slug !== $content->slug) {
             $request->validate([
                 'slug' => 'required|alpha_dash|unique:posts,slug'
             ]);
         }
         $content->syncTags($request->tags);
-        $content->update($request->all());
+        $content->update([
+            'body'  => $request->body,
+            'title' => $request->title,
+            'slug' => $request->slug
+        ]);
         $content->save();
 
         return response()->json($content);

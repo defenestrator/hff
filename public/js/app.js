@@ -20373,20 +20373,21 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
 
             this.clear();
             this.newPost.saveDisabled = true;
+            this.saveBusy = true;
             this.index = false;
             axios.get('/api/posts/' + id, {}).then(function (result) {
                 _this8.newPost.title = result.data.title;
                 _this8.newPost.slug = result.data.slug;
                 _this8.newPost.body = result.data.body;
+                _this8.newPost.postId = result.data.id;
+                _this8.newPost.saveDisabled = true;
+                _this8.checkPublication(result.data.id);
                 if (!length(result.data.tags, 0)) {
                     _this8.newPost.tags = result.data.tags;
                 } else {
                     _this8.newPost.tags = [];
                 }
-                _this8.newPost.postId = result.data.id;
-                _this8.newPost.saveDisabled = true;
-                _this8.checkPublication(result.data.id);
-                return _this8.newPost;
+                return _this8.newPost.tags;
             }).catch(function (error) {
                 return Promise.reject(error);
             });

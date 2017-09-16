@@ -338,21 +338,22 @@ export default {
         edit(id){
             this.clear()
             this.newPost.saveDisabled = true
+            this.saveBusy = true
             this.index = false
             axios.get(`/api/posts/`+ id, {})
             .then(result  => {
                 this.newPost.title = result.data.title;
                 this.newPost.slug = result.data.slug;
                 this.newPost.body = result.data.body;
+                this.newPost.postId = result.data.id;
+                this.newPost.saveDisabled = true
+                this.checkPublication(result.data.id)
                 if (! length(result.data.tags, 0)) {
                     this.newPost.tags = result.data.tags;
                 } else {
                     this.newPost.tags = [];
                 }
-                this.newPost.postId = result.data.id;
-                this.newPost.saveDisabled = true
-                this.checkPublication(result.data.id)
-                return this.newPost
+                return this.newPost.tags
             })
             .catch(error => {
                     return Promise.reject(error)
