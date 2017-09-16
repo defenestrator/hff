@@ -6,13 +6,13 @@
             <div class="form-group">
                 <input v-validate="'required|email'" v-model="newsletterEmail" name="newsletterEmail"
                        type="email"
-                       :class="{'form-control': true, 'input-lg': true, 'is-danger': errors.has('email') }"
+                       :class="{'form-control': true, 'is-danger': errors.has('email') }"
                        placeholder="your email"
                        value=""
                        aria-describedby="basic-addon2"
                        required
                 >
-                <button @click.prevent="signup" type="submit" class="btn btn-primary btn-lg" role="button" :disabled="errors.has('email')">Go</button>
+                <button @click.prevent="signup" type="submit" class="btn btn-primary btn-sm" role="button" :disabled="errors.has('email')">Go</button>
                 <div style="padding:1em;"><span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span></div>
             </div>
         </form>
