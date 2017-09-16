@@ -29,14 +29,36 @@ use Spatie\Tags\HasTags;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post withAllTags($tags, $type = null)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post withAnyTags($tags, $type = null)
+ * @property-read \App\Publication $publication
  */
 class Post extends Model
 {
     use HasTags;
     protected $fillable = [ 'title', 'slug', 'user_id', 'body', 'author'];
+    protected $publication = null;
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function publication()
+    {
+        return $this->hasOne(Publication::class);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function publishedPosts()
+    {
+        $published = Publication::all('post_id');
+        return $this->whereIn('id', $published)->paginate(15);
     }
 }

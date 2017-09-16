@@ -39,25 +39,14 @@ class PostsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Post $post, $id)
     {
-        //
+        return $post->where('id', $id)->first()->publication;
     }
 
     /**
@@ -90,8 +79,8 @@ class PostsController extends Controller
                 'slug' => 'required|alpha_dash|unique:posts,slug'
             ]);
         }
-        $content->update($request->all());
         $content->syncTags($request->tags);
+        $content->update($request->all());
         $content->save();
 
         return response()->json($content);

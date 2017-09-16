@@ -30,4 +30,12 @@ class PublicationsController extends Controller
     {
         return $publication->destroy($id);
     }
+
+    /**
+     * @param Publication $publication
+     * @param $id
+     */
+    public function show(Publication $publication, $id)
+    {
+    }
 }

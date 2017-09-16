@@ -89,8 +89,8 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <input-tag class="input-tag" id="tags" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder="add tag"></input-tag>
-                    <label for="tags">Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.</label>
+                    <input-tag class="input-tag" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder="add tag"></input-tag>
+                    <label>Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.</label>
                 </div>
             </div>
         </form>
@@ -239,73 +239,67 @@ export default {
 
             },
         unpublish() {
+            const postId = this.newPost.postId
             axios.delete(`/api/publications/`
                 + this.newPost.publicationId, {})
             .then(result  => {
-
-                this.newPost.publishBusy = false
                 this.newPost.publicationId = null
-                console.log(result)
+                this.newPost.publishBusy = false
+                this.newPost.published = null
+                this.checkPublication(postId)
                 return result
             })
             .catch(error => {
-
                 this.newPost.publishBusy = false
                 return Promise.reject(error)
             });
-
-            this.newPost.saveBusy = false
-            this.newPost.published = null
         },
-        checkPublication(){
-
-        },
-        editPublication(){
-            axios.get(`/api/publications/`
-                    + this.newPost.postId, {})
+        checkPublication(id){
+            axios.get(`/api/posts/publications/` + id, {})
                 .then(result  => {
-                    this.newPost.publishBusy = false
                     this.newPost.publicationId = result.data.id
-                    this.newPost.published = true
+                    if (this.newPost.publicationId === undefined) {
+                        this.newPost.publicationId = null
+                        this.newPost.published = null
+                    } else {
+                        this.newPost.published = true
+                        this.newPost.publishBusy = false
+                    }
                     return result.data
                 })
                 .catch(error => {
-                    this.newPost.publishBusy = false
                     return Promise.reject(error)
-                });
+                })
         },
         update() {
             this.newPost.saveError = false
             this.newPost.saveBusy = true
-                        this.validator.validateAll({
+            this.validator.validateAll({
                 title: this.newPost.title,
                 body: this.newPost.body
                 }).then((result) => {
                     axios.put(`/api/posts/` + this.newPost.postId, {
                         title: this.newPost.title,
+                        user_id: Spark.state.user.id,
+                        author: Spark.state.user.name,
                         slug:  this.newPost.slug,
                         body:  this.newPost.body,
-                        tags:  this.newPost.tags,
-                        id:    this.newPost.id
+                        tags: this.newPost.tags
                     })
                     .then(result  => {
-
                         this.newPost.saveBusy = false
                         return result
                     })
                     .catch(error => {
                         this.newPost.saveError = true
-
                         this.newPost.saveBusy = false
                         this.newPost.serverErrors = error.response.data.errors.slug[0]
                         return Promise.reject(error)
                     })
             })
             .catch(error => {
-
                 this.newPost.saveBusy = false
                 this.newPost.saveError = true
-            console.log(Promise.reject(error))
                 return Promise.reject(error)
             })
         },
@@ -331,8 +325,8 @@ export default {
         },
         clear() {
             this.newPost.saveBusy = false
-            this.newPost.saveDisabled = false,
-            this.newPost.publishBusy = true
+            this.newPost.saveDisabled = false
+            this.newPost.publishBusy = false
             this.newPost.published = null
             this.newPost.publicationId = null
             this.newPost.postId = null
@@ -342,18 +336,23 @@ export default {
             this.newPost.tags = []
         },
         edit(id){
-            axios.get(`/api/posts/`+id, {})
+            this.clear()
+            this.newPost.saveDisabled = true
+            this.index = false
+            axios.get(`/api/posts/`+ id, {})
             .then(result  => {
-                this.clear()
-                this.index = false
                 this.newPost.title = result.data.title;
                 this.newPost.slug = result.data.slug;
                 this.newPost.body = result.data.body;
-                this.newPost.tags = result.data.tags;
+                if (! length(result.data.tags, 0)) {
+                    this.newPost.tags = result.data.tags;
+                } else {
+                    this.newPost.tags = [];
+                }
                 this.newPost.postId = result.data.id;
                 this.newPost.saveDisabled = true
-                this.editPublication(this.newPost.postId)
-                return this.post
+                this.checkPublication(result.data.id)
+                return this.newPost
             })
             .catch(error => {
                     return Promise.reject(error)

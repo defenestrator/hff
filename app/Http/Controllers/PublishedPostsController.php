@@ -31,8 +31,4 @@ class PublishedPostsController extends Controller
 
     }
 
-    public function edit(Publication $publication, $postId)
-    {
-        return $publication->findOrFail($postId);
-    }
 }

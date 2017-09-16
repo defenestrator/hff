@@ -21,7 +21,7 @@ Route::group([
     Route::put('/posts/{id}', 'PostsController@update');
     Route::get('/posts/{id}', 'PostsController@edit');
     Route::delete('/posts/{id}', 'PostsController@destroy');
-    Route::get('/publications/{postId}', 'PublishedPostsController@edit');
+    Route::get('/posts/publications/{postId}', 'PostsController@show');
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');
 });
