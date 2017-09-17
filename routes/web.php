@@ -14,6 +14,7 @@ Route::get('/posts/{slug}', 'PublishedPostsController@show')->name('posts.show')
 Route::get('/podcasts', 'PublishedPodcastsController@index')->name('podcasts.index');
 Route::get('/podcasts/{slug}', 'PublishedPodcastsController@show')->name('podcasts.show');
 
+Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 // PUBLIC WEB AUTH ROUTES
 Route::group(['middleware' => ['auth:web', 'dev']], function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');

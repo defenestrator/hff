@@ -34,7 +34,7 @@
                         <p>
                             <strong>Tags: </strong>
                             @forelse($post->tags as $tag)
-                                <a href="{{ URL::to('blog/'.mb_strtolower($tag).'/tag') }}">{{ $tag }}</a>,
+                                <a href="{{ URL::to('posts/'.mb_strtolower($tag->slug).'/tag') }}">{{ $tag->name }}</a>,
                             @empty
                                 No Tags
                             @endforelse

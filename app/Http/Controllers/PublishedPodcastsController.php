@@ -11,6 +11,6 @@ class PublishedPodcastsController extends Controller
     {
         $published = $publication->all('post_id');
         $podcasts = $podcast->whereIn('id', $published)->paginate(5);
-        return view('representations.index')->with('podcasts', $podcasts);
+        return view('representations.index')->with('podcasts', $podcasts->slug);
     }
 }
