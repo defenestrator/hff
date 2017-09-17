@@ -26800,7 +26800,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vee_validate__["a" /* default */]);
         },
         'newPost.body': function newPostBody(val, oldVal) {
             if (this.newPost.postId) {
-                this.update();
+                this.newPost.saveDisabled = false;
             }
         },
         'newPost.tags': function newPostTags(val, oldVal) {

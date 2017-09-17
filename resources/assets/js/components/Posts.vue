@@ -154,7 +154,7 @@ export default {
         },
         'newPost.body': function (val, oldVal) {
             if (this.newPost.postId) {
-                this.update()
+                this.newPost.saveDisabled = false
             }
         },
         'newPost.tags': function (val, oldVal) {

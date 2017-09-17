@@ -8071,3 +8071,7 @@ a.btn-primary {
 .vue-input-tag-wrapper {
   max-height: 44px;
 }
+.taglinks a {
+  color: #128BC6;
+  font-weight: 600;
+}

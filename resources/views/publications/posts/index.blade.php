@@ -24,8 +24,13 @@ Blog
                             {!! $post->body !!}
                         </article>
                         <p>
-                            <strong>Tags: </strong>
-                            <a href="#">tags</a>
+                            <span class="taglinks"><strong>Tags: </strong>
+                            @forelse($post->tags as $tag)
+                                <a href="{{ URL::to('posts/'.mb_strtolower($tag->slug).'/tag') }}">{{ $tag->name }}</a>,
+                            @empty
+                                No Tags
+                            @endforelse
+                            </span>
                         </p>
                         <p class="additional-post-wrap">
                             <span class="additional-post">
