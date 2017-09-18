@@ -8,11 +8,11 @@ Route::view('/privacy','privacy')->name('privacy');
 Route::post('/contact',array('as' => 'contact','uses' => 'ContactFormController@create'));
 
 // Publicly published assets:
-Route::get('/posts', 'PublishedPostsController@index')->name('posts.index');
-Route::get('/posts/{slug}', 'PublishedPostsController@show')->name('posts.show');
+Route::get('publications/posts', 'PublishedPostsController@index')->name('publications.posts.index');
+Route::get('publications/posts/{slug}', 'PublishedPostsController@show')->name('publications.posts.show');
 
-Route::get('/podcasts', 'PublishedPodcastsController@index')->name('podcasts.index');
-Route::get('/podcasts/{slug}', 'PublishedPodcastsController@show')->name('podcasts.show');
+Route::get('publications/podcasts', 'PublishedPodcastsController@index')->name('publications.podcasts.index');
+Route::get('publications/podcasts/{slug}', 'PublishedPodcastsController@show')->name('publications.podcasts.show');
 
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 

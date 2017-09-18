@@ -21,8 +21,8 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/posts" class="navbar-link">Blog</a></li>
-                <li><a href="/podcasts" class="navbar-link">Podcast</a></li>
+                <li><a href="{{route('publications.posts.index')}}" class="navbar-link">Blog</a></li>
+                <li><a href="{{route('publications.podcasts.index')}}" class="navbar-link">Podcast</a></li>
             </ul>
         </div>
     </div>

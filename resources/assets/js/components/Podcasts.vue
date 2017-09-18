@@ -14,7 +14,9 @@
             <thead  class="thead-inverse">
             <tr>
                 <th>Title</th>
-                <th>Author</th>
+                <th>Season</th>
+                <th>Created at</th>
+                <th>Publication</th>
                 <th>Edit</th>
             </tr>
             </thead>
