@@ -35,7 +35,7 @@ class PostsController extends Controller
             'body'  => $request->body,
             'title' => $request->title,
             'slug' => $request->slug
-        ])->syncTags($request->tags);
+        ])->tag($request->tags);
     }
 
     /**
@@ -46,19 +46,17 @@ class PostsController extends Controller
      */
     public function show(Post $post, $id)
     {
-        return $post->withAnyTags(['*'])->where('id', $id)->first()->publication;
+        return $post->where('id', $id)->first()->publication;
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
+     * @param Post $post
+     * @param $id
+     * @return \Illuminate\Database\Eloquent\Model|null|static
      */
     public function edit(Post $post, $id)
     {
-        return $post->where('id', '=', $id)
-            ->first();
+        return $post->where('id', '=', $id)->first();
     }
 
     /**
@@ -73,18 +71,19 @@ class PostsController extends Controller
             'body' => 'required|min:8',
             'title' => 'required|min:2'
         ]);
-        $content = $post->find($id)->syncTags($request->tags);
+        $content = $post->find($id);
         if ($request->slug !== $content->slug) {
             $request->validate([
                 'slug' => 'required|alpha_dash|unique:posts,slug'
             ]);
         }
-        $content->syncTags($request->tags);
+
         $content->update([
             'body'  => $request->body,
             'title' => $request->title,
             'slug' => $request->slug
         ]);
+        $content->tag($request->tags);
         $content->save();
         return $content;
     }

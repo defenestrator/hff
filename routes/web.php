@@ -15,9 +15,12 @@ Route::get('/podcasts', 'PublishedPodcastsController@index')->name('podcasts.ind
 Route::get('/podcasts/{slug}', 'PublishedPodcastsController@show')->name('podcasts.show');
 
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
-// PUBLIC WEB AUTH ROUTES
-Route::group(['middleware' => ['auth:web', 'dev']], function () {
-    Route::view('/dashboard', 'dashboard')->name('dashboard');
-});
 
 // ADMIN AKA 'DEVELOPER' AUTH ROUTES
+Route::group(['middleware' => ['auth:web', 'dev']], function () {
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
+    Route::get('/posts/{id}/edit', 'PostsController@edit');
+    Route::get('/posts/{id}/tags', 'PostTagsController@edit');
+});
+
+

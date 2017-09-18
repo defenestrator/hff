@@ -22,6 +22,8 @@ Route::group([
     Route::get('/posts/{id}', 'PostsController@edit');
     Route::delete('/posts/{id}', 'PostsController@destroy');
     Route::get('/posts/publications/{postId}', 'PostsController@show');
+    Route::get('posts/{id}/tags', 'PostTagsController@index');
+
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');
 });

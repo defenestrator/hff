@@ -9,12 +9,11 @@ use Illuminate\Http\Request;
 class PublishedPostsController extends Controller
 {
     /**
-     * @param Request $request
      * @param Post $post
      * @param Publication $publication
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return $this
      */
-    public function index(Request $request, Post $post, Publication $publication)
+    public function index(Post $post, Publication $publication)
     {
         $published = $publication->all('post_id');
         $posts = $post->whereIn('id', $published)->paginate(5);
@@ -22,13 +21,16 @@ class PublishedPostsController extends Controller
         return view('publications.posts.index')->with('posts', $posts);
     }
 
+    /**
+     * @param Post $post
+     * @param $slug
+     * @return $this
+     */
     public function show(Post $post, $slug)
     {
-        $data = $post->where('slug', '=', $slug)
-            ->first();
-        return view('publications.posts.show')
-            ->with('post', $data);
+        $data = $post->where('slug', '=', $slug)->first();
 
+        return view('publications.posts.show')->with('post', $data);
     }
 
 }

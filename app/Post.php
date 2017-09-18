@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Tags\HasTags;
+use Cviebrock\EloquentTaggable\Taggable;
 
 /**
  * App\Post
@@ -17,7 +17,6 @@ use Spatie\Tags\HasTags;
  * @property string $body
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
- * @property \Illuminate\Database\Eloquent\Collection|\Spatie\Tags\Tag[] $tags
  * @property-read \App\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereAuthor($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereBody($value)
@@ -30,10 +29,20 @@ use Spatie\Tags\HasTags;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post withAllTags($tags, $type = null)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post withAnyTags($tags, $type = null)
  * @property-read \App\Publication $publication
+ * @property-read array $tag_array
+ * @property-read array $tag_array_normalized
+ * @property-read string $tag_list
+ * @property-read string $tag_list_normalized
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Cviebrock\EloquentTaggable\Models\Tag[] $tags
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post isNotTagged()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post isTagged()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post withoutAllTags($tags, $includeUntagged = false)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post withoutAnyTags($tags, $includeUntagged = false)
  */
 class Post extends Model
 {
-    use HasTags;
+    use Taggable;
+
     protected $fillable = [ 'title', 'slug', 'user_id', 'body', 'author'];
     protected $publication = null;
 
@@ -61,4 +70,5 @@ class Post extends Model
         $published = Publication::all('post_id');
         return $this->whereIn('id', $published)->paginate(15);
     }
+
 }

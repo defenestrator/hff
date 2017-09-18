@@ -2,9 +2,14 @@
 <div class="row">
     <div class="col-md-12">
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
-            <span v-if="index">Create</span>
+            <span v-if="index">Write</span>
             <span v-if="! index">Index</span>
         </button>
+        <div v-show="! index">
+            <button @click.prevent="createNewPost" class="btn btn-primary":disabled="! newPost.title">
+                New
+            </button>
+        </div>
         <table v-show="index" class="table table-striped table-inverse">
             <thead  class="thead-inverse">
             <tr>
@@ -24,13 +29,52 @@
             </tbody>
         </table>
         <form class="form-horizontal new-post" v-if="! index" role="form">
+
             <div class="form-group">
-                <div class="col-md-2 col-sm-12">
-                    <button @click.prevent="createNewPost" class="btn btn-success" :disabled="! newPost.title">
-                        New
+                <div class="col-md-12">
+                    <input v-validate="'required|min:2'" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
+                    <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div name="slug">slug: {{newPost.slug}} </div>
+                    <span v-show="newPost.serverErrors" class="help is-danger">{{ newPost.serverErrors }}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <vue-editor name="body" v-validate="'required|min:4'" v-model="newPost.body"></vue-editor>
+                    <span v-show="newPost.saveError" class="help is-danger">
+                        Get your shit together. Write something worth reading, won't you please?.
+                        </span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input-tag class="input-tag" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder=""></input-tag>
+                    <label>Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div v-show="newPost.postId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saveDisabled">
+                            <span v-if="newPost.saveBusy">
+                                <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
+                             </span>
+                            <span v-else-if="newPost.saved">
+                                <i class="fa fa-btn fa-check-circle"></i>Saved!
+                             </span>
+                        <span v-else-if="newPost.saved == false">
+                                <i class="fa fa-btn fa-check-circle"></i>Update
+                             </span>
+                            <span v-else>
+                                <i class="fa fa-btn fa-check-circle"></i>Updated
+                            </span>
+
                     </button>
                 </div>
-                <div class="col-md-2 col-sm-12">
+                <div v-show="! newPost.postId" class="col-md-2 col-sm-12">
                     <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saveDisabled">
                             <span v-if="newPost.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
@@ -67,32 +111,6 @@
                     </button>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <input v-validate="'required|min:2'" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
-                    <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <div name="slug">slug: {{newPost.slug}} </div>
-                    <span v-show="newPost.serverErrors" class="help is-danger">{{ newPost.serverErrors }}</span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <vue-editor name="body" v-validate="'required|min:4'" v-model="newPost.body"></vue-editor>
-                    <span v-show="newPost.saveError" class="help is-danger">
-                        Get your shit together. Write something worth reading, won't you please?.
-                        </span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <input-tag class="input-tag" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder="add tag"></input-tag>
-                    <label>Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.</label>
-                </div>
-            </div>
         </form>
         </div>
     </div>
@@ -123,6 +141,7 @@ export default {
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
+                saved: false,
                 serverErrors: null,
                 publishBusy: false,
                 published: null,
@@ -140,7 +159,7 @@ export default {
         },
         /**
             * Watch the title and create slug.
-            */
+        */
         'newPost.title': function (val, oldVal) {
             this.newPost.serverErrors = null
             if (this.newPost.slug == '' ||
@@ -148,19 +167,16 @@ export default {
             ) {
                 this.newPost.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
             }
-            if (this.newPost.postId) {
-                this.update()
-            }
+            this.newPost.saved = false
+            this.newPost.saveDisabled = false
         },
         'newPost.body': function (val, oldVal) {
-            if (this.newPost.postId) {
-                this.newPost.saveDisabled = false
-            }
+            this.newPost.saved = false
+            this.newPost.saveDisabled = false
         },
         'newPost.tags': function (val, oldVal) {
-            if (this.newPost.postId) {
-                this.update()
-            }
+                this.newPost.saved = false
+                this.newPost.saveDisabled = false
         }
     },
     methods: {
@@ -174,9 +190,11 @@ export default {
                 return Promise.reject(error)
             })
         },
+
         toggleIndex() {
             this.index = this.index ? false : true
         },
+
         save() {
             this.newPost.saveError = false
             this.newPost.saveBusy = true
@@ -194,10 +212,11 @@ export default {
                                 tags: this.newPost.tags
                             })
                             .then(result  => {
-                            this.newPost.saveDisabled = true
-                            this.newPost.saveBusy = false
-                            this.newPost.postId = result.data.id
-                            console.log(result)
+                                this.newPost.saveDisabled = true
+                                this.newPost.saveBusy = false
+                                this.newPost.saved= true
+                                this.newPost.postId = result.data.id
+                                console.log(result)
                              return result
                             })
                             .catch(error => {
@@ -214,6 +233,7 @@ export default {
                 return Promise.reject(error)
             })
         },
+
         publish() {
             this.newPost.publishBusy = true
             if (this.newPost.postId === null) {
@@ -238,6 +258,7 @@ export default {
                 this.newPost.published = true
 
             },
+
         unpublish() {
             const postId = this.newPost.postId
             axios.delete(`/api/publications/`
@@ -254,6 +275,7 @@ export default {
                 return Promise.reject(error)
             });
         },
+
         checkPublication(id){
             axios.get(`/api/posts/publications/` + id, {})
                 .then(result  => {
@@ -271,9 +293,11 @@ export default {
                     return Promise.reject(error)
                 })
         },
+
         update() {
             this.newPost.saveError = false
             this.newPost.saveBusy = true
+            this.newPost.saveDisabled = true
             this.validator.validateAll({
                 title: this.newPost.title,
                 body: this.newPost.body
@@ -288,6 +312,7 @@ export default {
                     })
                     .then(result  => {
                         this.newPost.saveBusy = false
+                        this.newPost.saved = true
                         return result
                     })
                     .catch(error => {
@@ -303,6 +328,7 @@ export default {
                 return Promise.reject(error)
             })
         },
+
         leeroyjenkins() {
             if(confirm("Permanently destroy this post?")) {
                 axios.delete(`/api/posts/` + this.newPost.postId, {})
@@ -314,6 +340,7 @@ export default {
                 });
             }
         },
+
         createNewPost() {
             if (!this.newPost.postId) {
                 if (confirm('Abandon this post and start over?')) {
@@ -324,6 +351,7 @@ export default {
             }
         },
         clear() {
+            this.newPost.saved = false
             this.newPost.saveBusy = false
             this.newPost.saveDisabled = false
             this.newPost.publishBusy = false
@@ -336,32 +364,40 @@ export default {
             this.newPost.tags = []
         },
         edit(id){
-            this.clear()
             this.newPost.saveDisabled = true
             this.saveBusy = true
             this.index = false
-            axios.get(`/api/posts/`+ id, {})
-            .then(result  => {
+            this.newPost.postId = id
+            this.getTags(this.newPost.postId)
+            axios.get(`/posts/`+ id + '/edit', {})
+            .then(result => {
                 this.newPost.title = result.data.title;
                 this.newPost.slug = result.data.slug;
                 this.newPost.body = result.data.body;
                 this.newPost.postId = result.data.id;
+                this.checkPublication(id)
+                this.saveBusy = false
+                this.newPost.saved = true
                 this.newPost.saveDisabled = true
-                this.checkPublication(result.data.id)
-                if (! length(result.data.tags, 0)) {
-                    this.newPost.tags = result.data.tags;
-                } else {
-                    this.newPost.tags = [];
-                }
-                return this.newPost.tags
-            })
+
+                return result.data
+                })
             .catch(error => {
-                    return Promise.reject(error)
+                return Promise.reject(error)
             })
+        },
+        getTags(id) {
+            axios.get(`/posts/`+ id + '/tags', {})
+                .then(result => {
+                    this.newPost.tags = result.data;
+                    return result.data.tags
+                })
+                .catch(error => {
+                    return Promise.reject(error)
+                })
         }
-
-
     },
+
     created() {
         this.validator = new VeeValidate.Validator({
             title: 'required|min:2',

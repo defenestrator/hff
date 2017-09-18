@@ -26,7 +26,7 @@ Blog
                         <p>
                             <span class="taglinks"><strong>Tags: </strong>
                             @forelse($post->tags as $tag)
-                                <a href="{{ URL::to('posts/'.mb_strtolower($tag->slug).'/tag') }}">{{ $tag->name }}</a>,
+                                <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
                             @empty
                                 No Tags
                             @endforelse
