@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
     {
 
         if (App::environment() !== 'local') {
-//            die(PHP_EOL . 'Don\'t get yourself fired, silly.' . PHP_EOL);
+            die(PHP_EOL . 'Don\'t get yourself fired, silly.' . PHP_EOL);
         }
 
         $this->cleanDatabase();

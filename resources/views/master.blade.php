@@ -57,6 +57,7 @@
 @endif
 <!--global js starts-->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+<script src="{{asset('/js/livicons-1.4.min.js')}}"></script>
 <script src="/js/sweetalert.min.js"></script>
 <async-fonts></async-fonts>
 @yield('page_scripts')
