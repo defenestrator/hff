@@ -22,7 +22,7 @@
                         <div class="featured-text relative-left">
                             <h3 class="primary"><a href="/publications/podcasts/{{$podcast->slug}}">{{$podcast->title}}</a></h3>
                             <article>
-                               Episdoe {!! $podcast->episode !!} Season {!! $podcast->season !!}
+                               Episode {!! $podcast->episode !!} Season {!! $podcast->season !!}
                             </article>
                             <p>
                             <span class="taglinks"><strong>Tags: </strong>
