@@ -5,12 +5,13 @@ use App\Post;
 use App\Tag;
 use Illuminate\Http\Request;
 
-class PostTagsController extends Controller
+class PostTagsController extends ContentController
 {
     public function index(Post $post, $normalized)
     {
-        $dingus = $post->withAllTags([$normalized])->get();
-        return view('publications.posts.index')->with('posts', $dingus);
+        $posts = $post->withAllTags([$normalized])->get();
+        $smartass = $this->smartass;
+        return view('publications.posts.index', compact('posts', 'smartass'));
     }
 
     public function show(Post $post, $id)
