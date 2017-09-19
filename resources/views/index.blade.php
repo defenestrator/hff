@@ -177,8 +177,7 @@ Have Rod Will Travel
                     <img src="{{asset('assets/images/the-dude-1.jpg') }}"
                          alt="Yeah, well, that's just, like, your opinion, man."
                          title="Yeah, well, that's just, like, your opinion, man."
-                    ><br><br>
-                    <p class="small">Yeah, well, that's just, like, your opinion, man.</p>
+                    >
                 </article>
             </div>
         </div>
