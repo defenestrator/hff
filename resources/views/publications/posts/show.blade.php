@@ -39,6 +39,9 @@
                                 No Tags
                             @endforelse
                         </p>
+                        <p>
+                        <div id="disqus_thread"></div>
+                        </p>
                     </div>
                 </div>
             </div>

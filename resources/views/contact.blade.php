@@ -24,21 +24,29 @@ Contact
                 <h2>Holler at us!</h2>
                 <!-- Notifications -->
                 <div id="notific">
-                @include('notifications')
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
                 <form class="contact" id="contact" action="{{route('contact')}}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <div class="form-group">
-                        <input type="text" name="contact-name" class="form-control input-lg" placeholder="name" required>
+                        <input type="text" name="contact-name" class="form-control input-lg" placeholder="{{ old('contact-name') }}" required />
                     </div>
                     <div class="form-group">
-                        <input type="email" name="contact-email" class="form-control input-lg" placeholder="email" required>
+                        <input type="email" name="contact-email" class="form-control input-lg" placeholder="{{ old('contact-email') }}" required></input>
                     </div>
                     <div class="form-group">
                         <textarea name="contact-msg"
                                   class="form-control input-lg no-resize resize_vertical"
                                   rows="6"
-                                  placeholder="message" required></textarea>
+                                  placeholder="message" required>{{ old('contact-msg') }}</textarea>
                     </div>
                     <div class="form-group recaptcha">
                         {!! Recaptcha::render() !!}
@@ -93,7 +101,7 @@ Contact
 @section('page_scripts')
     <!-- page level js starts-->
     <script type="text/javascript" src="{{ asset('js/raphael-min.js') }}" ></script>
-
+    <script src="{{asset('/js/livicons-1.4.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('js/gmaps.min.js') }}" ></script>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU"></script>
     <!--page level js ends-->

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
+use App\Showcase;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class ShowcasesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Showcase  $showcase
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $blog)
+    public function show(Showcase $showcase)
     {
         //
     }
@@ -52,10 +52,10 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Showcase  $showcase
      * @return \Illuminate\Http\Response
      */
-    public function edit(Blog $blog)
+    public function edit(Showcase $showcase)
     {
         //
     }
@@ -64,10 +64,10 @@ class BlogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Blog  $blog
+     * @param  \App\Showcase  $showcase
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(Request $request, Showcase $showcase)
     {
         //
     }
@@ -75,10 +75,10 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Blog  $blog
+     * @param  \App\Showcase  $showcase
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Blog $blog)
+    public function destroy(Showcase $showcase)
     {
         //
     }

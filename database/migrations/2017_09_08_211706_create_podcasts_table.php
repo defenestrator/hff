@@ -15,6 +15,13 @@ class CreatePodcastsTable extends Migration
     {
         Schema::create('podcasts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('slug')->unique();
+            $table->integer('episode');
+            $table->integer('season');
+            $table->string('file');
+            $table->string('cover_image');
+            $table->longText('notes');
             $table->timestamps();
         });
     }

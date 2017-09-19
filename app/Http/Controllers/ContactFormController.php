@@ -12,9 +12,9 @@ class ContactFormController extends Controller
     {
         // Data to be used on the email view
         $request->validate([
-            'contact-name' => 'required',
+            'contact-name' => 'required|min:2',
             'contact-email' => 'required|email',
-            'contact-msg' => 'required|min:8',
+            'contact-msg' => 'required|min:7',
         ]);
 
         // Send the activation code through email
@@ -23,8 +23,10 @@ class ContactFormController extends Controller
             'email_address' => $request->get('contact-email'),
             'message' => $request->get('contact-msg'),
         ]);
-
+        if ($this->errors) {
+            return redirect('contact')->withInput()->with('errors', $this->errors);
+        }
         //Redirect to contact page
-        return redirect('contact')->with('success', Lang::get('auth/message.contact.success'));
+        return view('index')->with('success', 'We will get back to you as quick as we can!');
     }
 }

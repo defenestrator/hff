@@ -24,6 +24,14 @@ Route::group([
     Route::get('/posts/publications/{postId}', 'PostsController@show');
     Route::get('posts/{id}/tags', 'PostTagsController@index');
 
+    Route::get('/podcasts', 'PodcastsController@index');
+    Route::post('/podcasts', 'PodcastsController@create');
+    Route::put('/podcasts/{id}', 'PodcastsController@update');
+    Route::get('/podcasts/{id}', 'PodcastsController@edit');
+    Route::delete('/podcasts/{id}', 'PodcastsController@destroy');
+    Route::get('/podcasts/publications/{postId}', 'PodcastsController@show');
+    Route::get('podcasts/{id}/tags', 'PodcastTagsController@index');
+
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');
 });

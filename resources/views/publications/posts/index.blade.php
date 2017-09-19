@@ -19,7 +19,7 @@ Blog
             @foreach($posts as $post)
                 <div class="post">
                     <div class="featured-text relative-left">
-                        <h3 class="primary"><a href="/posts/{{$post->slug}}">{{$post->title}}</a></h3>
+                        <h3 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h3>
                         <article>
                             {!! $post->body !!}
                         </article>
@@ -44,7 +44,7 @@ Blog
                         </p>
                         <hr>
                         <p class="text-right">
-                            <a href="#" class="btn btn-primary text-white">be a smartass</a>
+                            <a href="/publications/posts/{{ $post->slug }}#disqus_thread" class="btn btn-primary">{{$smartass}}</a>
                         </p>
                     </div>
                 </div>

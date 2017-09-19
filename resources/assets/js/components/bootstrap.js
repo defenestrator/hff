@@ -12,6 +12,7 @@
 require('./../spark-components/bootstrap')
 require('./home')
 Vue.component('posts', require('./Posts.vue'))
+Vue.component('podcasts', require('./Podcasts.vue'))
 Vue.component('editor', require('./Editor.vue'))
 Vue.component('input-tag', require('./InputTag.vue'))
 Vue.component('newsletter-signup', require('./NewsletterSignup.vue'))

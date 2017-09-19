@@ -4,9 +4,9 @@ use App\Fishery;
 
 /**
  * Class FisheriesController
- *
+ * @package App\Http\Controllers
  */
-class FisheriesController extends Controller
+class FisheriesController extends ContentController
 {
 
     /**

@@ -7,7 +7,7 @@ use App\Flybox;
  *
  * @package Hatches\Http\Controllers
  */
-class FlyboxesController extends Controller
+class FlyboxesController extends ContentController
 {
     protected $resourceKey = 'flybox';
 

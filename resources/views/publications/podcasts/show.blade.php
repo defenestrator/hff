@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('title')
-{{$post->title}}
+{{$podcast->title}}
 @parent
 @stop
 
@@ -14,27 +14,27 @@
 
 @section('content')
     <div class="container">
-        <h2 class="primary marl12">{{ $post->title }}</h2>
+        <h2 class="primary marl12">{{ $podcast->title }}</h2>
         <div class="row content">
             <div class="col-sm-12 col-md-12">
-                <div class=" post">
-                    {!! $post->body !!}
+                <div class=" podcast">
+                    {!! $podcast->file !!}
                     <div class="the-box no-border blog-detail-content">
-                        <p class="additional-post-wrap">
-                            <span class="additional-post">
-                                    <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i> by&nbsp;<a href="#">{{ $post->author }}</a>
+                        <p class="additional-podcast-wrap">
+                            <span class="additional-podcast">
+                                    <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i> Season <a href="#">{{ $podcast->season }}</a>
                                 </span>
-                            <span class="additional-post">
-                                    <i class="livicon" data-name="clock" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i><a href="#"> {{$post->created_at}} </a>
+                            <span class="additional-podcast">
+                                    <i class="livicon" data-name="clock" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i>Episode <a href="#"> {{$podcast->episode}} </a>
                                 </span>
                         </p>
                         <p class="text-justify">
-                            {!! $post->content !!}
+                            {!! $podcast->notes !!}
                         </p>
                         <p>
                             <strong>Tags: </strong>
-                            @forelse($post->tags as $tag)
-                                <a href="{{ URL::to('posts/'.mb_strtolower($tag->normalized).'/tag') }}">{{ $tag->name }}</a>,
+                            @forelse($podcast->tags as $tag)
+                                <a href="{{ URL::to('podcasts/'.mb_strtolower($tag->normalized).'/tag') }}">{{ $tag->name }}</a>,
                             @empty
                                 No Tags
                             @endforelse

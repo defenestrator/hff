@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Cviebrock\EloquentTaggable\Taggable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -17,5 +18,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Podcast extends Model
 {
-    //
+    use Taggable;
+    protected $table = 'podcasts';
+    protected $fillable = ['title', 'episode', 'season', 'file', 'slug', 'cover_image'];
+
+    public function publication()
+    {
+        return $this->hasOne(Publication::class);
+    }
 }

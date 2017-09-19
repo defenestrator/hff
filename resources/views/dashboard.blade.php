@@ -12,6 +12,7 @@
             <div class="col-md-12 col-md-offset-0" style="padding-top:25px;">
                     <ul class="nav nav-tabs" style="border-bottom:none;">
                         <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
+                        <li><a href="#podcasts" data-toggle="tab">Podcasts</a></li>
                         <li><a href="#fish" data-toggle="tab">Fish</a>
                         </li>
                         <li><a href="#fisheries" data-toggle="tab">Fisheries</a>
@@ -31,6 +32,9 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in out active" id="posts">
                             <posts></posts>
+                        </div>
+                        <div class="tab-pane fade in out" id="podcasts">
+                            <podcasts></podcasts>
                         </div>
                         <div class="tab-pane fade in out" id="fish">
                             <article class="article">

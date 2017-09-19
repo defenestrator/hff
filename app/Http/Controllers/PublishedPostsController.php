@@ -6,7 +6,7 @@ use App\Post;
 use App\Publication;
 use Illuminate\Http\Request;
 
-class PublishedPostsController extends Controller
+class PublishedPostsController extends ContentController
 {
     /**
      * @param Post $post
@@ -17,8 +17,9 @@ class PublishedPostsController extends Controller
     {
         $published = $publication->all('post_id');
         $posts = $post->whereIn('id', $published)->paginate(5);
+        $smartass = $this->smartass;
 
-        return view('publications.posts.index')->with('posts', $posts);
+        return view('publications.posts.index', compact('posts', 'smartass'));
     }
 
     /**

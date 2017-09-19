@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Podcast;
 use Illuminate\Http\Request;
 
-class PodcastController extends Controller
+class PodcastsController extends ContentController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class PodcastController extends Controller
      */
     public function index()
     {
-        //
+        return Podcast::paginate(50, ['title', 'season', 'episode', 'slug', 'file', 'cover_image', 'created_at']);
     }
 
     /**
@@ -22,11 +22,22 @@ class PodcastController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, Post $post)
     {
-        //
+        $request->validate([
+            'slug' => 'required|alpha_dash|unique:posts,slug',
+            'episode' => 'required',
+            'season' => 'required',
+            'title' => 'required|min:2'
+        ]);
+        return $post->create([
+            'slug'  => $request->slug,
+            'episode' => $request->episode,
+            'season'  => $request->season,
+            'title' => $request->title,
+            'file' => $request->upload
+        ])->tag($request->tags);
     }
-
     /**
      * Store a newly created resource in storage.
      *

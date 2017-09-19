@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Yajra\Disqus\DisqusServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
         /*

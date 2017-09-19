@@ -6155,6 +6155,10 @@ vue-template-es2015-compiler@^1.2.2:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.5.3.tgz#22787de4e37ebd9339b74223bc467d1adee30545"
 
+vue-upload-component@^2.5.1-beta.2:
+  version "2.5.1-beta.2"
+  resolved "https://registry.yarnpkg.com/vue-upload-component/-/vue-upload-component-2.5.1-beta.2.tgz#0e2b6a09a03bb76fe6ce2111c8d440b7ff6bf1f4"
+
 vue-wysiwyg@^1.2.5:
   version "1.2.6"
   resolved "https://registry.yarnpkg.com/vue-wysiwyg/-/vue-wysiwyg-1.2.6.tgz#b9ada0338f887279b4bf1b3cc2ebb92a56271720"

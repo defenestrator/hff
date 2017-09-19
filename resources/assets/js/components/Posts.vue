@@ -20,15 +20,13 @@
             </thead>
             <tbody class="resource-list">
             <tr v-for="post in posts" class="table-hover">
-                    <td><a :href="'posts/' + post.slug" >{{ post.title }}</a></td>
+                    <td><strong>{{ post.title }}</strong></td>
                 <td>{{ post.author }}</td>
-                <td>{{ post.created_at }}</td>
                 <td><button @click.prevent="(edit(post.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>
             </tbody>
         </table>
         <form class="form-horizontal new-post" v-if="! index" role="form">
-
             <div class="form-group">
                 <div class="col-md-12">
                     <input v-validate="'required|min:2'" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
@@ -51,7 +49,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <input-tag class="input-tag" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder=""></input-tag>
+                    <input-tag class="input-tag" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder="add tag"></input-tag>
                     <label>Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.</label>
                 </div>
             </div>

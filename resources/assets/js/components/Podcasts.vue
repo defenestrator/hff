@@ -2,11 +2,11 @@
 <div class="row">
     <div class="col-md-12">
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
-            <span v-if="index">Write</span>
+            <span v-if="index">Upload</span>
             <span v-if="! index">Index</span>
         </button>
         <div v-show="! index">
-            <button @click.prevent="createNewPost" class="btn btn-primary":disabled="! newPost.title">
+            <button @click.prevent="createNewPodcast" class="btn btn-primary":disabled="! newPodcast.title">
                 New
             </button>
         </div>
@@ -14,59 +14,73 @@
             <thead  class="thead-inverse">
             <tr>
                 <th>Title</th>
+                <th>Episode</th>
                 <th>Season</th>
-                <th>Created at</th>
-                <th>Publication</th>
                 <th>Edit</th>
             </tr>
             </thead>
             <tbody class="resource-list">
-            <tr v-for="post in posts" class="table-hover">
-                    <td><a :href="'posts/' + post.slug" >{{ post.title }}</a></td>
-                <td>{{ post.author }}</td>
-                <td>{{ post.created_at }}</td>
-                <td><button @click.prevent="(edit(post.id))"role="button" class="btn btn-warning">Edit</button></td>
+            <tr v-for="podcast in podcasts" class="table-hover">
+                <td><strong>{{ podcast.title }}</strong></td>
+                <td>{{ podcast.episode }}</td>
+                <td>{{ podcast.season }}</td>
+                <td>{{ podcast.slug }}</td>
+                <td><button @click.prevent="(edit(podcast.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>
             </tbody>
         </table>
-        <form class="form-horizontal new-post" v-if="! index" role="form">
-
+        <form enctype='multipart/form-data' class="form-horizontal podcast" v-if="! index" role="form">
             <div class="form-group">
                 <div class="col-md-12">
-                    <input v-validate="'required|min:2'" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
+                    <input v-validate="'required|min:2'" name="title" v-model="newPodcast.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Podcast Title" style="width:100%">
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <div name="slug">slug: {{newPost.slug}} </div>
-                    <span v-show="newPost.serverErrors" class="help is-danger">{{ newPost.serverErrors }}</span>
+                    <div name="slug">slug: {{newPodcast.slug}} </div>
+                    <span v-show="newPodcast.serverErrors" class="help is-danger">{{ newPodcast.serverErrors }}</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <vue-editor name="body" v-validate="'required|min:4'" v-model="newPost.body"></vue-editor>
-                    <span v-show="newPost.saveError" class="help is-danger">
-                        Get your shit together. Write something worth reading, won't you please?.
+                    <ul>
+                        <li v-for="file in files">{{file.name}} - Error: {{file.error}}, Success: {{file.success}}</li>
+                    </ul>
+                    <file-upload
+                            ref="upload"
+                            v-model="files"
+                            :post-action="postAction"
+                            :put-action="putAction"
+                            @input-file="inputFile"
+                            @input-filter="inputFilter"
+                            class="btn btn-success"
+                    >
+                        Upload file
+                    </file-upload>
+                    <button v-show="!$refs.upload || !$refs.upload.active" @click.prevent="$refs.upload.active = true" type="button">Start upload</button>
+                    <button v-show="$refs.upload && $refs.upload.active" @click.prevent="$refs.upload.active = false" type="button">Stop upload</button>
+                    <span v-show="newPodcast.saveError" class="help is-danger">
+                        Get your shit together. Post something worth hearing, won't you please?.
                         </span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <input-tag class="input-tag" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder=""></input-tag>
+                    <input-tag class="input-tag" name="tags" v-model="newPodcast.tags" :tags="newPodcast.tags" placeholder="add tag"></input-tag>
                     <label>Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.</label>
                 </div>
             </div>
             <div class="form-group">
-                <div v-show="newPost.postId" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saveDisabled">
-                            <span v-if="newPost.saveBusy">
+                <div v-show="newPodcast.podcastId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPodcast.saveError }" @click.prevent="update" :disabled="newPodcast.saveDisabled">
+                            <span v-if="newPodcast.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
                              </span>
-                            <span v-else-if="newPost.saved">
+                            <span v-else-if="newPodcast.saved">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
-                        <span v-else-if="newPost.saved == false">
+                        <span v-else-if="newPodcast.saved == false">
                                 <i class="fa fa-btn fa-check-circle"></i>Update
                              </span>
                             <span v-else>
@@ -75,12 +89,12 @@
 
                     </button>
                 </div>
-                <div v-show="! newPost.postId" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saveDisabled">
-                            <span v-if="newPost.saveBusy">
+                <div v-show="! newPodcast.podcastId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPodcast.saveError }" @click.prevent="save" :disabled="newPodcast.saveDisabled">
+                            <span v-if="newPodcast.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                              </span>
-                            <span v-else-if="newPost.postId !== null">
+                            <span v-else-if="newPodcast.podcastId !== null">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
                             <span v-else>
@@ -89,11 +103,11 @@
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published">
-                        <span v-if="newPost.publishBusy">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPodcast.published }"  @click.prevent="publish" :disabled="newPodcast.published">
+                        <span v-if="newPodcast.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
                              </span>
-                             <span class="is-success" v-else-if="newPost.published !== null">
+                             <span class="is-success" v-else-if="newPodcast.published !== null">
                                 <i class="fa fa-btn btn-success fa-newspaper-o"></i>Published!
                              </span>
                             <span v-else>
@@ -102,12 +116,12 @@
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newPost.published }">
+                    <button @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newPodcast.published }">
                         Unpublish
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newPost.published }" :disabled="! newPost.postId">
+                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newPodcast.published }" :disabled="! newPodcast.podcastId">
                         Delete
                     </button>
                 </div>
@@ -118,8 +132,8 @@
 </template>
 
 <script>
-import { VueEditor } from 'vue2-editor'
 import VeeValidate from 'vee-validate';
+const VueUploadComponent = require('vue-upload-component')
 Vue.use(VeeValidate);
 export default {
     validator: null,
@@ -127,18 +141,30 @@ export default {
         this.getIndex()
     },
     components: {
-        VueEditor
+        FileUpload: VueUploadComponent
     },
     data() {
         return {
+            files: [],
+            accept: 'image/png,image/gif,image/jpeg,image/webp',
+            extensions: /\.(gif|jpe?g|png|webp)$/i,
             index: true,
-            posts: [],
-            newPost: {
+            podcasts: [],
+            multiple: false,
+            directory: false,
+            drop: true,
+            auto: false,
+            postAction: '/api/podcasts',
+            putAction: '/api/podcasts',
+            newPodcast: {
                 title: '',
                 slug: '',
+                file: null,
+                episode: null,
+                season: null,
                 body: '',
                 tags: [],
-                postId: null,
+                podcastId: null,
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
@@ -152,6 +178,11 @@ export default {
         }
     },
     watch: {
+        auto(auto) {
+            if (auto && !this.$refs.upload.uploaded && !this.$refs.upload.active) {
+                this.$refs.upload.active = true
+            }
+        },
         title(value) {
             this.validator.validate('title', value);
         },
@@ -161,132 +192,158 @@ export default {
         /**
             * Watch the title and create slug.
         */
-        'newPost.title': function (val, oldVal) {
-            this.newPost.serverErrors = null
-            if (this.newPost.slug == '' ||
-                    this.newPost.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
+        'newPodcast.title': function (val, oldVal) {
+            this.newPodcast.serverErrors = null
+            if (this.newPodcast.slug == '' ||
+                    this.newPodcast.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
             ) {
-                this.newPost.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
+                this.newPodcast.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
             }
-            this.newPost.saved = false
-            this.newPost.saveDisabled = false
+            this.newPodcast.saved = false
+            this.newPodcast.saveDisabled = false
         },
-        'newPost.body': function (val, oldVal) {
-            this.newPost.saved = false
-            this.newPost.saveDisabled = false
+        'newPodcast.body': function (val, oldVal) {
+            this.newPodcast.saved = false
+            this.newPodcast.saveDisabled = false
         },
-        'newPost.tags': function (val, oldVal) {
-                this.newPost.saved = false
-                this.newPost.saveDisabled = false
+        'newPodcast.tags': function (val, oldVal) {
+                this.newPodcast.saved = false
+                this.newPodcast.saveDisabled = false
         }
     },
     methods: {
         getIndex() {
-            axios.get(`/api/posts`, {})
+            axios.get(`/api/podcasts`, {})
             .then(result  => {
-                this.posts = result.data.data
-                return this.posts
+                this.podcasts = result.data.data
+                return this.podcasts
             })
             .catch(error => {
                 return Promise.reject(error)
             })
         },
+        inputFile: function(newFile, oldFile) {
+            if (newFile && oldFile && !newFile.active && oldFile.active) {
+                // Get response data
+                console.log('response', newFile.response)
+                if (newFile.xhr) {
+                    //  Get the response status code
+                    //  Required html5 support
+                    console.log('status', newFile.xhr.status)
+                }
+            }
+        },
 
+        inputFilter: function(newFile, oldFile, prevent) {
+            if (newFile && !oldFile) {
+                // Filter non-image file
+                if (!/\.(jpeg|jpe|jpg|gif|png|webp)$/i.test(newFile.file)) {
+                    return prevent()
+                }
+            }
+
+            // Create a blob field
+            newFile.blob = ''
+            let URL = window.URL || window.webkitURL
+            if (URL && URL.createObjectURL) {
+                newFile.blob = URL.createObjectURL(newFile.file)
+            }
+        },
         toggleIndex() {
             this.index = this.index ? false : true
         },
 
         save() {
-            this.newPost.saveError = false
-            this.newPost.saveBusy = true
+            this.newPodcast.saveError = false
+            this.newPodcast.saveBusy = true
             this.validator.validateAll({
-                title: this.newPost.title,
-                body: this.newPost.body,
-                slug: this.newPost.slug
+                title: this.newPodcast.title,
+                body: this.newPodcast.body,
+                slug: this.newPodcast.slug
                 }).then((result) => {
-                    axios.post(`/api/posts`, {
-                                title: this.newPost.title,
+                    axios.podcast(`/api/podcasts`, {
+                                title: this.newPodcast.title,
                                 user_id: Spark.state.user.id,
                                 author: Spark.state.user.name,
-                                slug:  this.newPost.slug,
-                                body:  this.newPost.body,
-                                tags: this.newPost.tags
+                                slug:  this.newPodcast.slug,
+                                body:  this.newPodcast.body,
+                                tags: this.newPodcast.tags
                             })
                             .then(result  => {
-                                this.newPost.saveDisabled = true
-                                this.newPost.saveBusy = false
-                                this.newPost.saved= true
-                                this.newPost.postId = result.data.id
+                                this.newPodcast.saveDisabled = true
+                                this.newPodcast.saveBusy = false
+                                this.newPodcast.saved= true
+                                this.newPodcast.podcastId = result.data.id
                                 console.log(result)
                              return result
                             })
                             .catch(error => {
-                                this.newPost.saveError = true
-                                this.newPost.saveBusy = false
-                                this.newPost.serverErrors = error.response.data.errors.slug[0]
+                                this.newPodcast.saveError = true
+                                this.newPodcast.saveBusy = false
+                                this.newPodcast.serverErrors = error.response.data.errors.slug[0]
                                 return Promise.reject(error)
                             })
                         })
             .catch(error => {
-                this.newPost.saveBusy = false
-                this.newPost.saveError = true
+                this.newPodcast.saveBusy = false
+                this.newPodcast.saveError = true
                 this.errors = Promise.reject(error)
                 return Promise.reject(error)
             })
         },
 
         publish() {
-            this.newPost.publishBusy = true
-            if (this.newPost.postId === null) {
-                this.newPost.publishBusy = false
+            this.newPodcast.publishBusy = true
+            if (this.newPodcast.podcastId === null) {
+                this.newPodcast.publishBusy = false
                 this.save()
                 return
             }
-             axios.post(`/api/publications`, {
-                    type:    'post',
-                    post_id: this.newPost.postId
+             axios.podcast(`/api/publications`, {
+                    type:    'podcast',
+                    podcast_id: this.newPodcast.podcastId
                  })
                  .then(result  => {
-                     this.newPost.publishBusy = false
-                     this.newPost.publicationId = result.data.id
+                     this.newPodcast.publishBusy = false
+                     this.newPodcast.publicationId = result.data.id
                      return result
                  })
                  .catch(error => {
-                     this.newPost.publishBusy = false
+                     this.newPodcast.publishBusy = false
                      return Promise.reject(error)
                  });
-                this.newPost.publishBusy = false
-                this.newPost.published = true
+                this.newPodcast.publishBusy = false
+                this.newPodcast.published = true
 
             },
 
         unpublish() {
-            const postId = this.newPost.postId
+            const podcastId = this.newPodcast.podcastId
             axios.delete(`/api/publications/`
-                + this.newPost.publicationId, {})
+                + this.newPodcast.publicationId, {})
             .then(result  => {
-                this.newPost.publicationId = null
-                this.newPost.publishBusy = false
-                this.newPost.published = null
-                this.checkPublication(postId)
+                this.newPodcast.publicationId = null
+                this.newPodcast.publishBusy = false
+                this.newPodcast.published = null
+                this.checkPublication(podcastId)
                 return result
             })
             .catch(error => {
-                this.newPost.publishBusy = false
+                this.newPodcast.publishBusy = false
                 return Promise.reject(error)
             });
         },
 
         checkPublication(id){
-            axios.get(`/api/posts/publications/` + id, {})
+            axios.get(`/api/podcasts/publications/` + id, {})
                 .then(result  => {
-                    this.newPost.publicationId = result.data.id
-                    if (this.newPost.publicationId === undefined) {
-                        this.newPost.publicationId = null
-                        this.newPost.published = null
+                    this.newPodcast.publicationId = result.data.id
+                    if (this.newPodcast.publicationId === undefined) {
+                        this.newPodcast.publicationId = null
+                        this.newPodcast.published = null
                     } else {
-                        this.newPost.published = true
-                        this.newPost.publishBusy = false
+                        this.newPodcast.published = true
+                        this.newPodcast.publishBusy = false
                     }
                     return result.data
                 })
@@ -296,43 +353,43 @@ export default {
         },
 
         update() {
-            this.newPost.saveError = false
-            this.newPost.saveBusy = true
-            this.newPost.saveDisabled = true
+            this.newPodcast.saveError = false
+            this.newPodcast.saveBusy = true
+            this.newPodcast.saveDisabled = true
             this.validator.validateAll({
-                title: this.newPost.title,
-                body: this.newPost.body
+                title: this.newPodcast.title,
+                body: this.newPodcast.body
                 }).then((result) => {
-                    axios.put(`/api/posts/` + this.newPost.postId, {
-                        title: this.newPost.title,
+                    axios.put(`/api/podcasts/` + this.newPodcast.podcastId, {
+                        title: this.newPodcast.title,
                         user_id: Spark.state.user.id,
                         author: Spark.state.user.name,
-                        slug:  this.newPost.slug,
-                        body:  this.newPost.body,
-                        tags: this.newPost.tags
+                        slug:  this.newPodcast.slug,
+                        body:  this.newPodcast.body,
+                        tags: this.newPodcast.tags
                     })
                     .then(result  => {
-                        this.newPost.saveBusy = false
-                        this.newPost.saved = true
+                        this.newPodcast.saveBusy = false
+                        this.newPodcast.saved = true
                         return result
                     })
                     .catch(error => {
-                        this.newPost.saveError = true
-                        this.newPost.saveBusy = false
-                        this.newPost.serverErrors = error.response.data.errors.slug[0]
+                        this.newPodcast.saveError = true
+                        this.newPodcast.saveBusy = false
+                        this.newPodcast.serverErrors = error.response.data.errors.slug[0]
                         return Promise.reject(error)
                     })
             })
             .catch(error => {
-                this.newPost.saveBusy = false
-                this.newPost.saveError = true
+                this.newPodcast.saveBusy = false
+                this.newPodcast.saveError = true
                 return Promise.reject(error)
             })
         },
 
         leeroyjenkins() {
-            if(confirm("Permanently destroy this post?")) {
-                axios.delete(`/api/posts/` + this.newPost.postId, {})
+            if(confirm("Permanently destroy this podcast?")) {
+                axios.delete(`/api/podcasts/` + this.newPodcast.podcastId, {})
                 .then(result  => {
                     this.clear()
                 })
@@ -342,9 +399,9 @@ export default {
             }
         },
 
-        createNewPost() {
-            if (!this.newPost.postId) {
-                if (confirm('Abandon this post and start over?')) {
+        createNewPodcast() {
+            if (!this.newPodcast.podcastId) {
+                if (confirm('Abandon this podcast and start over?')) {
                     this.clear()
                 }
             } else {
@@ -352,34 +409,34 @@ export default {
             }
         },
         clear() {
-            this.newPost.saved = false
-            this.newPost.saveBusy = false
-            this.newPost.saveDisabled = false
-            this.newPost.publishBusy = false
-            this.newPost.published = null
-            this.newPost.publicationId = null
-            this.newPost.postId = null
-            this.newPost.title = ''
-            this.newPost.body = ''
-            this.newPost.slug = ''
-            this.newPost.tags = []
+            this.newPodcast.saved = false
+            this.newPodcast.saveBusy = false
+            this.newPodcast.saveDisabled = false
+            this.newPodcast.publishBusy = false
+            this.newPodcast.published = null
+            this.newPodcast.publicationId = null
+            this.newPodcast.podcastId = null
+            this.newPodcast.title = ''
+            this.newPodcast.body = ''
+            this.newPodcast.slug = ''
+            this.newPodcast.tags = []
         },
         edit(id){
-            this.newPost.saveDisabled = true
+            this.newPodcast.saveDisabled = true
             this.saveBusy = true
             this.index = false
-            this.newPost.postId = id
-            this.getTags(this.newPost.postId)
-            axios.get(`/posts/`+ id + '/edit', {})
+            this.newPodcast.podcastId = id
+            this.getTags(this.newPodcast.podcastId)
+            axios.get(`/podcasts/`+ id + '/edit', {})
             .then(result => {
-                this.newPost.title = result.data.title;
-                this.newPost.slug = result.data.slug;
-                this.newPost.body = result.data.body;
-                this.newPost.postId = result.data.id;
+                this.newPodcast.title = result.data.title;
+                this.newPodcast.slug = result.data.slug;
+                this.newPodcast.body = result.data.body;
+                this.newPodcast.podcastId = result.data.id;
                 this.checkPublication(id)
                 this.saveBusy = false
-                this.newPost.saved = true
-                this.newPost.saveDisabled = true
+                this.newPodcast.saved = true
+                this.newPodcast.saveDisabled = true
 
                 return result.data
                 })
@@ -388,9 +445,9 @@ export default {
             })
         },
         getTags(id) {
-            axios.get(`/posts/`+ id + '/tags', {})
+            axios.get(`/podcasts/`+ id + '/tags', {})
                 .then(result => {
-                    this.newPost.tags = result.data;
+                    this.newPodcast.tags = result.data;
                     return result.data.tags
                 })
                 .catch(error => {
@@ -447,14 +504,14 @@ export default {
     border-top-right-radius: 4px;
     }
     @media (max-width: 991px) {
-        .new-post .btn
+        .new-podcast .btn
         {
             width:100%;
             padding:1.34em;
             margin: 0.66em 0;
         }
     }
-    .post-index {
+    .podcast-index {
         position:relative;
         display:block
     }

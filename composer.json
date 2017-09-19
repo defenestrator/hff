@@ -15,7 +15,8 @@
         "laravel/cashier": "~7.0",
         "laravel/framework": "5.5.*",
         "laravel/spark": "*@dev",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "yajra/laravel-disqus": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.4",

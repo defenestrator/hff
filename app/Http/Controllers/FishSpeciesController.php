@@ -7,7 +7,7 @@ use App\FishSpecies;
  *
  * @package Hatches\Http\Controllers
  */
-class FishSpeciesController extends Controller
+class FishSpeciesController extends ContentController
 {
 
     protected $fractal;
