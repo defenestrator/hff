@@ -11,6 +11,7 @@
 
 require('./../spark-components/bootstrap')
 require('./home')
+require('./')
 Vue.component('posts', require('./Posts.vue'))
 Vue.component('podcasts', require('./Podcasts.vue'))
 Vue.component('editor', require('./Editor.vue'))
