@@ -16,4 +16,4 @@ Vue.component('podcasts', require('./Podcasts.vue'))
 Vue.component('editor', require('./Editor.vue'))
 Vue.component('input-tag', require('./InputTag.vue'))
 Vue.component('newsletter-signup', require('./NewsletterSignup.vue'))
-
+Vue.component('newsletter-signup-registration', require('./NewsletterSignupRegistration.vue'))

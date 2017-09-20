@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 // PUBLIC GUEST VIEW ROUTES
 Route::view('/', 'index')->name('home')->middleware(['guest']);
 
@@ -18,11 +19,16 @@ Route::get('publications/podcasts/{slug}', 'PublishedPodcastsController@show')->
 
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 
-// ADMIN AKA 'DEVELOPER' AUTH ROUTES
-Route::group(['middleware' => ['auth:web', 'dev']], function () {
+// AUTH ROUTES
+Route::group(['middleware' => ['auth:web']], function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
     Route::get('/posts/{id}/edit', 'PostsController@edit');
     Route::get('/posts/{id}/tags', 'PostTagsController@edit');
+    // CMS ROUTES
+    Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
+        Route::view('/podcasts', 'cms.podcasts');
+        Route::view('/posts', 'cms.podcasts');
+    });
 });
 
 

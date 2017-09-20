@@ -12,8 +12,6 @@
                 @else
                     <li class="footer-link"><a href="{{ route('login') }}">Login</a>
                     </li>
-                    <li class="footer-link"><a href="{{ route('register') }}">Register</a>
-                    </li>
                 @endif
             </ul>
         </div>

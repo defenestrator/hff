@@ -1,3 +1,6 @@
+<h3>Get notified of updates by signing up for the newsletter!</h3>
+<newsletter-signup-registration></newsletter-signup-registration>
+<h2>Registrations are currently closed</h2>
 <form class="form-horizontal" role="form">
     <div class="form-group">
         <label class="col-md-4 control-label">Register as an:</label>
@@ -114,7 +117,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-6 col-md-offset-4">
-            <button class="btn btn-primary" @click.prevent="register" :disabled="registerForm.busy">
+            <button class="btn btn-primary" @click.prevent="register" disabled>
                 <span v-if="registerForm.busy">
                     <i class="fa fa-btn fa-spinner fa-spin"></i>Registering
                 </span>
@@ -126,3 +129,4 @@
         </div>
     </div>
 </form>
+

@@ -11,15 +11,15 @@
 
         <div class="row">
             <div class="col-md-12 col-md-offset-0" style="padding-top:25px;">
-                <div class="panel panel-default panel-body">
+                <div class="panel with-nav-tabs panel-default panel-body">
                     <div class="tab-content">
-                        <div id="posts">
-                            <h2>Posts List goes here.</h2>
+                        <div class="tab-pane fade in out active" id="posts">
+                            <posts></posts>
                         </div>
-                        <div id="podcasts">
-                            <h2>Podcasts List goes here.</h2>
+                        <div class="tab-pane fade in out" id="podcasts">
+                            <podcasts></podcasts>
                         </div>
-                        <div id="fish">
+                        <div class="tab-pane fade in out" id="fish">
                             <article class="article">
                                 <h2>New Fish Species:</h2>
 
@@ -33,7 +33,7 @@
                                 </p>
                             </article>
                         </div>
-                        <div id="fisheries">
+                        <div class="tab-pane fade in out" id="fisheries">
                             <article class="article">
                                 <h2>New Fishery:</h2>
 
@@ -47,7 +47,7 @@
                                 </p>
                             </article>
                         </div>
-                        <div id="hatches">
+                        <div class="tab-pane fade in out" id="hatches">
                             <article class="article">
                                 <h2>New Hatch:</h2>
 
@@ -61,7 +61,7 @@
                                 </p>
                             </article>
                         </div>
-                        <div id="flies">
+                        <div class="tab-pane fade in out" id="flies">
                             <article class="article">
                                 <h2>New Fly Pattern:</h2>
 
@@ -75,7 +75,7 @@
                                 </p>
                             </article>
                         </div>
-                        <div id="flyboxes">
+                        <div class="tab-pane fade in out" id="flyboxes">
                             <article class="article">
                                 <h2>Build a New Fly Box:</h2>
 
@@ -89,7 +89,7 @@
                                 </p>
                             </article>
                         </div>
-                        <div id="trips">
+                        <div class="tab-pane fade in out" id="trips">
                             <article class="article">
                                 <h2>Build a New Trip:</h2>
 
