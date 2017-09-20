@@ -23,6 +23,7 @@
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 export default {
+    name: 'newsletter-signup',
     validator: null,
     data() {
         return {
@@ -53,7 +54,7 @@ export default {
                     .catch(error => {
                         this.error = true
                         swal({
-                            title: 'Something\'s fucky',
+                            title: 'Something\'s not right',
                             text: 'Something went wrong.',
                             type: 'danger',
                             timer: 2000
@@ -63,7 +64,7 @@ export default {
                 .catch(error => {
                     this.error = true
                     swal({
-                        title: 'Something\'s fucky',
+                        title: 'Something\'s not right',
                         text: 'Something went wrong.',
                         type: 'danger',
                         timer: 2000
@@ -87,5 +88,4 @@ export default {
         }
     },
 }
-
 </script>

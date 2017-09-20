@@ -32,7 +32,7 @@
             </ul>
         </div>
         <div class="col-sm-4">
-            <newsletter-signup></newsletter-signup>
+            <newsletter-signup id="newsletter-signup"></newsletter-signup>
         </div>
         <div class="col-sm-4">
             <!-- Contact Section Start -->

@@ -26569,6 +26569,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 /* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'newsletter-signup',
     validator: null,
     data: function data() {
         return {
@@ -26599,7 +26600,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                 }).catch(function (error) {
                     _this.error = true;
                     swal({
-                        title: 'Something\'s fucky',
+                        title: 'Something\'s not right',
                         text: 'Something went wrong.',
                         type: 'danger',
                         timer: 2000
@@ -26608,7 +26609,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                 }).catch(function (error) {
                     _this.error = true;
                     swal({
-                        title: 'Something\'s fucky',
+                        title: 'Something\'s not right',
                         text: 'Something went wrong.',
                         type: 'danger',
                         timer: 2000
@@ -27527,6 +27528,7 @@ Vue.component('podcasts', __webpack_require__(309));
 Vue.component('editor', __webpack_require__(306));
 Vue.component('input-tag', __webpack_require__(307));
 Vue.component('newsletter-signup', __webpack_require__(308));
+new Vue({ el: '#newsletter-signup' });
 Vue.component('newsletter-signup-registration', __webpack_require__(422));
 
 /***/ }),
