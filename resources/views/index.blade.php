@@ -126,7 +126,7 @@ Have Rod Will Travel
             <div class="panel-body">
                 <article class="article">
 
-                    <h2>Hobo Fly Fishing App: official release in Q4 2017</h2>
+                    <h2>Hobo Fly Fishing: official release in Q4 2017</h2>
 
                     <h3><em>The</em> premium app for hardcore fly anglers</h3>
 

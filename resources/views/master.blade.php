@@ -55,7 +55,6 @@
     @include('spark::modals.support')
     @include('spark::modals.session-expired')
 @endif
-<!--global js starts-->
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/raphael-min.js') }}" ></script>
 <script src="{{asset('/js/livicons-1.4.min.js')}}"></script>

@@ -33,7 +33,10 @@ class SparkServiceProvider extends ServiceProvider
      * @var array
      */
     protected $developers = [
-        'jeremyblc@gmail.com'
+        'jeremyblc@gmail.com',
+        'travhill1@gmail.com' ,
+        'phillipsrog@gmail.com',
+        'dgflatspirate@gmail.com'
     ];
 
     /**

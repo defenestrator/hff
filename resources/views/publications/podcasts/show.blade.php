@@ -14,11 +14,12 @@
 
 @section('content')
     <div class="container">
+        <h3>Podcasts Coming, October 1st, 2017.</h3>
         <h2 class="primary marl12">{{ $podcast->title }}</h2>
         <div class="row content">
             <div class="col-sm-12 col-md-12">
                 <div class=" podcast">
-                    {!! $podcast->file !!}
+
                     <div class="the-box no-border blog-detail-content">
                         <p class="additional-podcast-wrap">
                             <span class="additional-podcast">
