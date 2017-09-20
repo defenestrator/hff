@@ -24,7 +24,7 @@ Contact
             <div class="col-md-6">
                 <h2>Holler at us!</h2>
                 <!-- Notifications -->
-                <div id="notific">
+                <div id="errors">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>

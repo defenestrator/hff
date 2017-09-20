@@ -95,8 +95,8 @@ Have Rod Will Travel
 
 <div class="row">
     <div class="col-md-5 col-md-offset-0">
-        <section class="jumbotron">
-                <div class="container">
+        <section>
+                <div>
                     <img src="{{ asset('assets/images/gourley/20150712_082521.png') }}"
                          alt="This guy knows what he is doing."
                          title="This guy knows what he is doing." >
@@ -109,7 +109,7 @@ Have Rod Will Travel
         </section>
     </div>
     <div class="col-md-7 col-md-offset-0">
-        <section class="jumbotron">
+        <section>
             <h2>Here's the deal</h2>
             <article class="article">
                 <h3>This should be fun</h3>
@@ -174,4 +174,6 @@ Have Rod Will Travel
     <script>
         new WOW().init();
     </script>
+    {{--The Big Lebowski is a trademark and copyright of Universal Studios, used here in accordance under the Fair Use clause, title 17 section 107 USC,
+    source: http://static6.businessinsider.com/image/56b36fc72e5265b6008b4cd0-1190-625/jeff-bridges-says-hes-all-in-for-starring-in-a-big-lebowski-sequel-its-a-great-idea.jpg --}}
 @stop
