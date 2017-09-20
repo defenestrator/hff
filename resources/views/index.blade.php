@@ -38,7 +38,7 @@ Have Rod Will Travel
     <div class="col-sm-6 col-md-3 wow bounceInLeft" data-wow-duration="1s">
         <div class="box">
             <div class="box-icon">
-                <i class="livicon icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#464b17"></i>
+                <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#464b17"></i>
             </div>
             <div class="info">
                 <h3 class="success text-center">DIY Destinations</h3>

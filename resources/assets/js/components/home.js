@@ -1,5 +1,5 @@
 Vue.component('home', {
-    props: ['user'],
+    props: ['user', 'notifications', 'hasUnreadAnnouncements', 'loadingNotifications'],
 
     mounted() {
         //

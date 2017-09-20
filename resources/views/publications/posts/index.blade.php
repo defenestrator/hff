@@ -44,7 +44,7 @@ Blog
                         </p>
                         <hr>
                         <p class="text-right">
-                            <a href="/publications/posts/{{ $post->slug }}#disqus_thread" class="btn btn-primary">{{$smartass}}</a>
+                            <a href="/publications/posts/{{ $post->slug }}#disqus_thread"> <button class="btn btn-primary">{{$smartass}}</button></a>
                         </p>
                     </div>
                 </div>

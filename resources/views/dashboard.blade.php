@@ -1,18 +1,18 @@
-@extends('master')
+@extends('spark::layouts.app')
 
 {{-- Page title --}}
 @section('title')
     Dashboard
-    @parent
+@parent
 @stop
 {{-- content --}}
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-md-offset-0" style="padding-top:25px;">
-                    <ul class="nav nav-tabs" style="border-bottom:none;">
-                        <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
-                        <li><a href="#podcasts" data-toggle="tab">Podcasts</a></li>
+                    <ul class="nav navbar-nav" style="border-bottom:none;">
+                        <li class="active"><a href="/cms/podcasts">Posts</a></li>
+                        <li><a href="/cms/podcasts">Podcasts</a></li>
                         <li><a href="#fish" data-toggle="tab">Fish</a>
                         </li>
                         <li><a href="#fisheries" data-toggle="tab">Fisheries</a>
@@ -28,6 +28,10 @@
                         <li><a href="#outfitters" data-toggle="tab">Outfitters</a>
                         </li>
                     </ul>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-12 col-md-offset-0" style="padding-top:25px;">
                 <div class="panel with-nav-tabs panel-default panel-body">
                     <div class="tab-content">
                         <div class="tab-pane fade in out active" id="posts">
