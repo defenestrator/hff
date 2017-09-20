@@ -112,8 +112,7 @@ Have Rod Will Travel
                          title="This guy knows what he is doing." >
                 </div>
                 <h4>Learn the terrain.</h4>
-                <p>We can give you a little help getting started on new water, no guide required.
-                    If you are the type who likes to cut trail and learn the quirks of a fishery by
+                <p>If you are the type who likes to cut trail and learn the quirks of a fishery by
                     exploring with your buddies, give us a jingle and we'll get you on the right track.
                 </p>
             </article>

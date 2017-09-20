@@ -11,7 +11,7 @@ class PostTagsController extends ContentController
     {
         $posts = $post->withAllTags([$normalized])->get();
         $smartass = $this->smartass;
-        return view('publications.posts.index', compact('posts', 'smartass'));
+        return view('publications.posts.index', compact('posts' , 'smartass'));
     }
 
     public function show(Post $post, $id)
