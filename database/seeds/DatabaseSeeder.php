@@ -68,6 +68,7 @@ class DatabaseSeeder extends Seeder
             'name'      => 'Dave Gourley'
         ]);
         $this->command->info('Users seeded!');
+
         Post::create([
             'body' => $this->body,
             'author' => 'Dave Gourley',
@@ -77,8 +78,8 @@ class DatabaseSeeder extends Seeder
         ]);
         Post::create([
             'body' => $this->body2,
-            'slug' => 'backcountry-river-guides-steelhead-on-the-salmon-river-with-veteran-guide-brent-sawyer',
-            'title' => 'Backcountry River Guides - Steelhead on the Salmon River with Veteran Guide Brent Sawyer',
+            'slug' => 'steelhead-on-the-salmon-river-with-backcountry-river-guides-and-brent-sawyer',
+            'title' => 'Steelhead on the Salmon River with Backcountry River Guides and Brent Sawyer',
             'author' => 'Jeremy Anderson',
             'user_id' => 2
         ]);
