@@ -2,9 +2,9 @@ let mix = require('laravel-mix');
 var path = require('path');
 
 mix.less('resources/assets/less/app.less', 'public/css')
-   .copy('node_modules/sweetalert/dist/sweetalert.min.js', 'public/js/sweetalert.min.js')
-   .copy('node_modules/sweetalert/src/sweetalert.css', 'public/css/sweetalert.css')
-   .js('resources/assets/js/app.js', 'public/js')
+   .copy('./node_modules/sweetalert/dist/sweetalert.min.js', 'public/js/sweetalert.min.js')
+   .copy('./resources/assets/less/sweetalert2.min.css', 'public/css/sweetalert.css')
+   .js('./resources/assets/js/app.js', 'public/js')
    .webpackConfig({
         resolve: {
             modules: [
