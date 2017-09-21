@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Hobo Fly Fishing'),
+    'name' => env('APP_NAME', 'Hobo Fly Fishing'), \\;
 
     /*
     |--------------------------------------------------------------------------
