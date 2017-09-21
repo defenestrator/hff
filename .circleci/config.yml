@@ -24,6 +24,8 @@ jobs:
           name: Install PHP GD Extension
           command: sudo docker-php-ext-install gd
       - run: composer install -n --prefer-dist
+      - run: php artisan key:generate
+      - run: php artisan migrate
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
