@@ -12,18 +12,20 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run: sudo apt install -y libsqlite3-dev
+      - run: sudo apt-get install -y libpng-dev
+      - run:
+          name: Install PHP GD Extension
+          command: sudo docker-php-ext-install gd
       - restore_cache:
           keys:
           - dependency-cache-{{ checksum "package.json" }}
           - v1-dependencies-{{ checksum "composer.lock" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-{{ checksum "composer.json" }}
-          - v1-dependencies-
-      - run: sudo apt-get install -y libpng-dev
-      - run:
-          name: Install PHP GD Extension
-          command: sudo docker-php-ext-install gd
       - run: composer install -n --prefer-dist
+      - run: cp .env.example .env
+      - run: touch storage/testing.sqlite
       - run: php artisan key:generate
       - run: php artisan migrate
       - save_cache:
