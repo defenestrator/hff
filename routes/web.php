@@ -7,7 +7,7 @@ Route::view('/terms', 'terms')->name('terms');
 Route::view('/privacy','privacy')->name('privacy');
 
 Route::view('/contact', 'contact')->name('contact');
-Route::post('/contact',array('as' => 'contact','uses' => 'ContactFormController@create'));
+Route::post('/contact','ContactFormController@create')->name('contact');
 
 // Publicly published assets:
 Route::get('publications/posts', 'PublishedPostsController@index')->name('publications.posts.index');

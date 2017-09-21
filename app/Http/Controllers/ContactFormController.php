@@ -14,19 +14,24 @@ class ContactFormController extends Controller
         $request->validate([
             'contact-name' => 'required|min:2',
             'contact-email' => 'required|email',
-            'contact-msg' => 'required|min:7',
+            'contact-msg' => 'required|min:7'
         ]);
 
-        // Send the activation code through email
+        if (env(! 'testing')) {
+            $request->validate([
+                'g-recaptcha-response' => 'required|recaptcha'
+            ]);
+        }
+        // Save the message to DB
         ContactFormMessage::create([
             'name' => $request->get('contact-name'),
             'email_address' => $request->get('contact-email'),
             'message' => $request->get('contact-msg'),
         ]);
-        if ($this->errors) {
-            return redirect('contact')->withInput()->with('errors', $this->errors);
+
+        if (response('error')) {
+            return redirect('contact')->withInput()->with('errors', $this->error);
         }
-        //Redirect to contact page
         return view('index')->with('success', 'We will get back to you as quick as we can!');
     }
 }
