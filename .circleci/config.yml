@@ -36,3 +36,7 @@ jobs:
 
       # run tests!
       - run: vendor/bin/phpunit
+notify:
+  webhooks:
+    # A list of hook hashes, containing the URL field
+    - url: https://envoyer.io/deploy/l4BO7bIv4NbB4rcBsNZSlSV0oK4hU8QAH7DhDSRs

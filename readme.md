@@ -1,5 +1,7 @@
 # Hobo Fly Fishing
 
+[![CircleCI](https://circleci.com/gh/defenestrator/hff/tree/master.svg?style=svg)](https://circleci.com/gh/defenestrator/hff/tree/master)
+
 #### Get Composer packages
 
 `composer install`
