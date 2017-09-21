@@ -6,7 +6,6 @@ version: 2
 jobs:
   build:
     docker:
-      # Cowabunghole
       # specify the version you desire here
       - image: circleci/php:7.1.8-browsers
       - image: circleci/node:4.8.2
