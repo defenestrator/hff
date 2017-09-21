@@ -115,10 +115,9 @@ Have Rod Will Travel
                 <h3>This should be fun</h3>
 
                 <p>Don't be fooled by the goofy 'free advice' some other places claim to give away.
-                    You know there's no free lunch and, like us, you are probably tired of sporty slick
-                    salesman lying to you. We make a couple bucks when we book a trip,
+                    You know there's no free lunch. We make a couple bucks when we book a trip,
                     and we earn it by providing you better tools and sharp intelligence for all
-                    the destinations we list.
+                    the destinations we list. We don't send <em>The 6th Dude</em> along for a trip on your dime.
                 </p>
             </article>
         </section>
