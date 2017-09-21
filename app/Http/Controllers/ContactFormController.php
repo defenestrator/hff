@@ -24,7 +24,8 @@ class ContactFormController extends Controller
         }
         // Save the message to DB
         ContactFormMessage::create([
-            'name' => $request->get('contact-name'),
+            'name' => $request
+                ->get('contact-name'),
             'email_address' => $request->get('contact-email'),
             'message' => $request->get('contact-msg'),
         ]);

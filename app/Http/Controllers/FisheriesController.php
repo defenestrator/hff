@@ -6,7 +6,7 @@ use App\Fishery;
  * Class FisheriesController
  * @package App\Http\Controllers
  */
-class FisheriesController extends ContentController
+class FisheryController extends ContentController
 {
 
     /**
