@@ -1,4 +1,4 @@
-# Hobo Fly Fishing CI and CD brought to you by CircleCI, Slack, and Envoyer.io
+
 version: 2
 jobs:
   build:
