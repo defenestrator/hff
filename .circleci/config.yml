@@ -1,7 +1,4 @@
-# PHP CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-php/ for more details
-#
+# Hobo Fly Fishing CI and CD brought to you by CircleCI, Slack, and Envoyer.io
 version: 2
 jobs:
   build:
