@@ -19,7 +19,10 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-{{ checksum "composer.json" }}
           - v1-dependencies-
-
+      - run: sudo apt-get install -y libpng-dev
+      - run:
+          name: Install PHP GD Extension
+          command: sudo docker-php-ext-install gd
       - run: composer install -n --prefer-dist
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
