@@ -18,9 +18,7 @@ Route::get('publications/podcasts', 'PublishedPodcastsController@index')->name('
 Route::get('publications/podcasts/{slug}', 'PublishedPodcastsController@show')->name('publications.podcasts.show');
 
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
-Route::get('/loaderio-f9078dd3e7e9c306ca90d525395dc64b.html', function() {
-    return view('loader-io');
-});
+Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io')->name('loader-io');
 // AUTH ROUTES
 Route::group(['middleware' => ['auth:web']], function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
