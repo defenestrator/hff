@@ -31,17 +31,4 @@ class ExampleTest extends TestCase
         $response->assertSee('</html>');
         $response->isValidateable();
     }
-
-    public function test_post_valid_contact_form_results_in_()
-    {
-        $response = $this->post('/contact', [
-            'name' => 'Bob Loblaw',
-            'email_address' => 'bob@example.com',
-            'message' => 'This is a valid message.',
-        ]);
-        $response->isSuccessful();
-        $response->assertStatus(200);
-        $response->assertSeeText('success', 'We will get back to you as quick as we can!');
-    }
-
 }
