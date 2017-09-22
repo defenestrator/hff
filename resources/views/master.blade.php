@@ -15,6 +15,7 @@
     </title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/libs.css') }}">
+    <script src="//{{ Request::getHost() }}:6001/socket.io/socket.io.js"></script>
     @yield('page_styles')
     <script>
         window.Spark = <?php echo json_encode(array_merge(
