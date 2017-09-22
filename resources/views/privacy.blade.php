@@ -6,7 +6,7 @@
     @stop
 
 @section('page_styles')
-
+@stop
 @section('top')
     <div class="full-width">
         <img src="{{ asset('assets/images/gourley/rod-rack.jpg') }}" >

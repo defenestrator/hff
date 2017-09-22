@@ -40,8 +40,8 @@ class ExampleTest extends TestCase
             'message' => 'This is a valid message.',
         ]);
         $response->isSuccessful();
-        $response->assertStatus(302);
-        $response->assertDontSeeText('success', 'We will get back to you as quick as we can!');
+        $response->assertStatus(200);
+        $response->assertSeeText('success', 'We will get back to you as quick as we can!');
     }
 
 }
