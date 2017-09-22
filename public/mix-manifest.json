@@ -3,5 +3,7 @@
   "/mix.js": "/mix.js",
   "/css/app.css": "/css/app.css",
   "/assets/css/lib.css": "/assets/css/lib.css",
-  "/assets/js/lib.js": "/assets/js/lib.js"
+  "/assets/js/lib.js": "/assets/js/lib.js",
+  "/css/libs.css": "/css/libs.css",
+  "/js/libs.js": "/js/libs.js"
 }

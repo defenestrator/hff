@@ -14,8 +14,7 @@
         @show
     </title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-    <link href="/css/sweetalert.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/libs.css') }}">
     @yield('page_styles')
     <script>
         window.Spark = <?php echo json_encode(array_merge(
@@ -55,11 +54,13 @@
     @include('spark::modals.support')
     @include('spark::modals.session-expired')
 @endif
+
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/raphael-min.js') }}" ></script>
-<script src="{{asset('/js/livicons-1.4.min.js')}}"></script>
-<script src="/js/sweetalert.min.js"></script>
+<script type="text/javascript" src="{{ asset('js/libs.js') }}" ></script>
+
 <async-fonts></async-fonts>
+
 @yield('page_scripts')
+
 </body>
 </html>

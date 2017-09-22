@@ -2,20 +2,12 @@
 
 {{-- Page title --}}
 @section('title')
-    Register an Account
+    Terms of Service
     @parent
     @stop
 
-    {{-- page level styles --}}
-    @section('page_styles')
-            <!--page level css starts-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend/tabbular.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/animate/animate.min.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend/jquery.circliful.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.carousel.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendors/owl_carousel/css/owl.theme.css') }}">
+@section('page_styles')
 
-    <!--end of page level css-->
 @stop
 @section('top')
     <div class="full-width">

@@ -2,9 +2,18 @@ let mix = require('laravel-mix');
 var path = require('path');
 
 mix.less('resources/assets/less/app.less', 'public/css')
-   .copy('./node_modules/sweetalert/dist/sweetalert.min.js', 'public/js/sweetalert.min.js')
-   .copy('./resources/assets/less/sweetalert2.min.css', 'public/css/sweetalert.css')
    .js('./resources/assets/js/app.js', 'public/js')
+   .styles([
+        './resources/assets/less/sweetalert2.min.css',
+        './resources/assets/less/animate.min.css',
+        './resources/assets/less/font-awesome.min.css'
+    ], 'public/css/libs.css')
+    .scripts([
+        './resources/assets/js/sweetalert.min.js',
+        './resources/assets/js/raphael-min.js',
+        './resources/assets/js/livicons-1.4.min.js'
+    ], 'public/js/libs.js')
+    .copy('resources/assets/images', 'public/assets/images', false)
    .webpackConfig({
         resolve: {
             modules: [
@@ -16,6 +25,3 @@ mix.less('resources/assets/less/app.less', 'public/css')
             }
         }
    });
-
-// Images
-mix.copy('resources/assets/images', 'public/assets/images', false);
