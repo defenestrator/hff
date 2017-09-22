@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/defenestrator/hff/tree/master.svg?style=svg)](https://circleci.com/gh/defenestrator/hff/tree/master)
 
+### This is a Laravel PHP App
+
 #### Get Composer packages
 
 `composer install`
