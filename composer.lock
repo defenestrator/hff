@@ -65,16 +65,16 @@
         },
         {
             "name": "aws/aws-php-sns-message-validator",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-php-sns-message-validator.git",
-                "reference": "4f6c042df3a0de832d36e7413ccaa24c584aa1a2"
+                "reference": "7b8eee4a56fe27d70395f1d87cc35a0651889d9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-php-sns-message-validator/zipball/4f6c042df3a0de832d36e7413ccaa24c584aa1a2",
-                "reference": "4f6c042df3a0de832d36e7413ccaa24c584aa1a2",
+                "url": "https://api.github.com/repos/aws/aws-php-sns-message-validator/zipball/7b8eee4a56fe27d70395f1d87cc35a0651889d9f",
+                "reference": "7b8eee4a56fe27d70395f1d87cc35a0651889d9f",
                 "shasum": ""
             },
             "require": {
@@ -114,20 +114,20 @@
                 "sdk",
                 "webhooks"
             ],
-            "time": "2017-08-29T16:21:02+00:00"
+            "time": "2017-09-27T23:05:21+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.36.14",
+            "version": "3.36.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "4ceceb6f1584574497da727b961676db29cbf9a1"
+                "reference": "f8bb15a002e709cba85de3981b0ffac7968fffb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4ceceb6f1584574497da727b961676db29cbf9a1",
-                "reference": "4ceceb6f1584574497da727b961676db29cbf9a1",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f8bb15a002e709cba85de3981b0ffac7968fffb5",
+                "reference": "f8bb15a002e709cba85de3981b0ffac7968fffb5",
                 "shasum": ""
             },
             "require": {
@@ -194,7 +194,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-09-22T19:41:14+00:00"
+            "time": "2017-09-27T22:02:13+00:00"
         },
         {
             "name": "bugsnag/bugsnag",
@@ -2402,16 +2402,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.10",
+            "version": "v2.0.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d"
+                "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/634bae8e911eefa89c1abfbf1b66da679ac8f54d",
-                "reference": "634bae8e911eefa89c1abfbf1b66da679ac8f54d",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/5da4d3c796c275c55f057af5a643ae297d96b4d8",
+                "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8",
                 "shasum": ""
             },
             "require": {
@@ -2446,7 +2446,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-03-13T16:27:32+00:00"
+            "time": "2017-09-27T21:40:39+00:00"
         },
         {
             "name": "phenx/php-font-lib",
@@ -3298,16 +3298,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "6.1.1",
+            "version": "6.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "8b384b74edd13b16562cda194eff6613d82df8c5"
+                "reference": "f75f704173ab5d9f17c8e7a0c3d65629c519953d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/8b384b74edd13b16562cda194eff6613d82df8c5",
-                "reference": "8b384b74edd13b16562cda194eff6613d82df8c5",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/f75f704173ab5d9f17c8e7a0c3d65629c519953d",
+                "reference": "f75f704173ab5d9f17c8e7a0c3d65629c519953d",
                 "shasum": ""
             },
             "require": {
@@ -3372,20 +3372,20 @@
                 "media",
                 "spatie"
             ],
-            "time": "2017-09-24T12:17:03+00:00"
+            "time": "2017-09-25T14:27:02+00:00"
         },
         {
             "name": "spatie/laravel-responsecache",
-            "version": "4.0.1",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-responsecache.git",
-                "reference": "ba18210c3c42d0eb5ddf805bf55e20eb435e6206"
+                "reference": "fba611740aea10106752b35fe919848e1bd43c0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/ba18210c3c42d0eb5ddf805bf55e20eb435e6206",
-                "reference": "ba18210c3c42d0eb5ddf805bf55e20eb435e6206",
+                "url": "https://api.github.com/repos/spatie/laravel-responsecache/zipball/fba611740aea10106752b35fe919848e1bd43c0f",
+                "reference": "fba611740aea10106752b35fe919848e1bd43c0f",
                 "shasum": ""
             },
             "require": {
@@ -3441,7 +3441,7 @@
                 "response",
                 "spatie"
             ],
-            "time": "2017-08-30T16:30:30+00:00"
+            "time": "2017-09-26T16:22:32+00:00"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -3541,16 +3541,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v5.2.2",
+            "version": "v5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "661ea818d28b90b5f6537e9a91722d6cc6b91649"
+                "reference": "9e8d565e991ca82c91d708b281063cefd69d7b2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/661ea818d28b90b5f6537e9a91722d6cc6b91649",
-                "reference": "661ea818d28b90b5f6537e9a91722d6cc6b91649",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/9e8d565e991ca82c91d708b281063cefd69d7b2c",
+                "reference": "9e8d565e991ca82c91d708b281063cefd69d7b2c",
                 "shasum": ""
             },
             "require": {
@@ -3592,7 +3592,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2017-09-20T18:00:35+00:00"
+            "time": "2017-09-27T20:35:23+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -4652,16 +4652,16 @@
         },
         {
             "name": "yajra/laravel-disqus",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-disqus.git",
-                "reference": "5869690cb55f8050aea949ef0ee2671259441dc5"
+                "reference": "da177f338643767896a79e9372596b557e4de4e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-disqus/zipball/5869690cb55f8050aea949ef0ee2671259441dc5",
-                "reference": "5869690cb55f8050aea949ef0ee2671259441dc5",
+                "url": "https://api.github.com/repos/yajra/laravel-disqus/zipball/da177f338643767896a79e9372596b557e4de4e1",
+                "reference": "da177f338643767896a79e9372596b557e4de4e1",
                 "shasum": ""
             },
             "require": {
@@ -4708,7 +4708,7 @@
                 "laravel",
                 "yajra"
             ],
-            "time": "2017-08-31T14:05:11+00:00"
+            "time": "2017-09-26T01:33:39+00:00"
         }
     ],
     "packages-dev": [
