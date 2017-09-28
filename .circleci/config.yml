@@ -11,6 +11,7 @@ jobs:
       - checkout
       - run: sudo apt install -y libsqlite3-dev
       - run: sudo apt-get install -y libpng-dev
+      - run: sudo apt-get install php-imagick
       - run:
           name: Install PHP GD Extension
           command: sudo docker-php-ext-install gd
