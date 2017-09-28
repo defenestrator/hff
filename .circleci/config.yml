@@ -11,6 +11,7 @@ jobs:
       - checkout
       - run: sudo apt install -y libsqlite3-dev
       - run: sudo apt-get install -y libpng-dev
+      - run: sudo apt-get install -y libmagickwand-dev
       - run: sudo pecl install imagick-3.4.3 && docker-php-ext-enable imagick
       - run:
           name: Install PHP GD Extension
