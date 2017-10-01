@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-12 col-md-offset-0">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="/cms/podcasts">Posts</a></li>
+            <li class="active"><a href="/cms/posts">Posts</a></li>
             <li><a href="/cms/podcasts">Podcasts</a></li>
             <li><a href="#fish" data-toggle="tab">Fish</a>
             </li>

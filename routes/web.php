@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth:web']], function () {
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
         Route::view('/podcasts', 'cms.podcasts');
-        Route::view('/posts', 'cms.podcasts');
+        Route::view('/posts', 'cms.posts');
     });
 });
 
