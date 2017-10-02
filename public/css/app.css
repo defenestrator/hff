@@ -7532,7 +7532,7 @@ body {
 }
 .navbar-default {
   border: none;
-  background: transparent;
+  background: #F8F8FF;
 }
 .jumbotron {
   background-color: white;
@@ -7700,8 +7700,8 @@ p label {
   top: 3px;
 }
 .navbar-inverse {
-  border: none;
-  background-color: transparent;
+  border-bottom: 1px solid #ccc;
+  background-color: #F8F8FF;
 }
 .carousel-indicators .active {
   width: 14px;

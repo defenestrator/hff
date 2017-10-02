@@ -120,7 +120,6 @@ import trumbowyg from 'vue-trumbowyg';
 // Import editor css
 import 'trumbowyg/dist/ui/trumbowyg.css';
 
-import { VueEditor } from 'vue2-editor'
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 export default {
@@ -129,7 +128,6 @@ export default {
         this.getIndex()
     },
     components: {
-        VueEditor,
         trumbowyg
     },
     data() {

@@ -54,12 +54,8 @@
     @include('spark::modals.support')
     @include('spark::modals.session-expired')
 @endif
-
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/libs.js') }}" ></script>
-
-<async-fonts></async-fonts>
-
 @yield('page_scripts')
 
 </body>
