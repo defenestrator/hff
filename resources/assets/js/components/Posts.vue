@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <vue-editor name="body" v-validate="'required|min:4'" v-model="newPost.body"></vue-editor>
+                    <trumbowyg :config="trumbowygConfig" name="body" v-validate="'required|min:4'" v-model="newPost.body"></trumbowyg>
                     <span v-show="newPost.saveError" class="help is-danger">
                         Get your shit together. Write something worth reading, won't you please?.
                         </span>
@@ -114,6 +114,12 @@
 </template>
 
 <script>
+// Import this component
+import trumbowyg from 'vue-trumbowyg';
+
+// Import editor css
+import 'trumbowyg/dist/ui/trumbowyg.css';
+
 import { VueEditor } from 'vue2-editor'
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
@@ -123,7 +129,8 @@ export default {
         this.getIndex()
     },
     components: {
-        VueEditor
+        VueEditor,
+        trumbowyg
     },
     data() {
         return {
@@ -144,6 +151,27 @@ export default {
                 published: null,
                 publicationId: null,
                 errors: null
+            },
+            trumbowygConfig: {
+                btns: [
+                    ['viewHTML'],
+                    ['undo', 'redo'], // Only supported in Blink browsers
+                    ['formatting'],
+                    ['strong', 'em', 'del'],
+                    ['superscript', 'subscript'],
+                    ['link'],
+                    ['insertImage'],
+                    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+                    ['unorderedList', 'orderedList'],
+                    ['horizontalRule'],
+                    ['removeformat'],
+                    ['upload']
+                ],
+                plugins: {
+                    upload: {
+                        // Some upload plugin options, see details below
+                    }
+                }
             }
         }
     },

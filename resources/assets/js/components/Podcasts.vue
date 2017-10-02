@@ -162,7 +162,7 @@ export default {
                 file: null,
                 episode: null,
                 season: null,
-                body: '',
+                body: 'Hi!',
                 tags: [],
                 podcastId: null,
                 saveDisabled: false,
