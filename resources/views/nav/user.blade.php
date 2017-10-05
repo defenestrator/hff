@@ -34,15 +34,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     @includeIf('nav.user-right')
 
-                    <!-- Notifications -->
-                    <li>
-                        <a class="has-activity-indicator" @click="showNotifications">
-                            <div class="navbar-icon">
-                                <i class="activity-indicator" v-if="hasUnreadNotifications || hasUnreadAnnouncements"></i>
-                                <i class="fa fa-bell"></i>
-                            </div>
-                        </a>
-                    </li>
 
                     <li class="dropdown">
                         <!-- User Photo / Name -->
