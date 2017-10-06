@@ -9,6 +9,8 @@
           | {{ config('app.name') }}
         @show
     </title>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/libs.css') }}">
     @yield('page_styles')
