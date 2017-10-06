@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Laravel\Spark\Spark;
+use Laravel\Spark\Exceptions\IneligibleForPlan;
 use Laravel\Spark\Providers\AppServiceProvider as ServiceProvider;
 
 class SparkServiceProvider extends ServiceProvider
@@ -54,16 +55,7 @@ class SparkServiceProvider extends ServiceProvider
     public function booted()
     {
         Spark::useStripe()->noCardUpFront();
-        Spark::plan('Free Angler Plan', 'free-angler-plan')->maxTeams(0)->price(0);
-        Spark::plan('Outfitter Basic Membership', 'outfitter-basic')
-            ->trialDays(10)
-            ->maxTeams(1)
-            ->price(20);
-        Spark::plan('Secret Gold Business Owner Plan', 'secret-gold-admin')
-            ->price(0)
-            ->maxTeams(500)
-            ->yearly()
-            ->archived();
+        Spark::freePlan('Free Angler Plan', 'free-angler-plan')->maxTeams(0);
         Spark::afterLoginRedirectTo('dashboard');
         Spark::identifyTeamsByPath();
     }
