@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
     {
 
         if (App::environment() !== 'local') {
-//            die(PHP_EOL . 'Don\'t get yourself fired, silly.' . PHP_EOL);
+            die(PHP_EOL . 'Don\'t get yourself fired, silly.' . PHP_EOL);
         }
 
         $this->cleanDatabase();
@@ -48,24 +48,27 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->user->create([
-            'email'     => 'jeremyblc@gmail.com',
-            'password'  => bcrypt(env('JEREMY_PASSWORD')) ,
-            'uuid' => \Ramsey\Uuid\Uuid::uuid1(),
-            'name'      => 'Jeremy Anderson'
+            'email'                 => 'jeremyblc@gmail.com',
+            'password'              => bcrypt(env('JEREMY_PASSWORD')) ,
+            'uuid'                  => \Ramsey\Uuid\Uuid::uuid1(),
+            'name'                  => 'Jeremy Anderson',
+            'current_billing_plan'  => 'secret-gold-admin'
         ]);
 
         $this->user->create([
-            'email'     => 'phillipsrog@gmail.com',
-            'password'  => bcrypt(env('ROGER_PASSWORD')) ,
-            'uuid' => \Ramsey\Uuid\Uuid::uuid1(),
-            'name'      => 'Roger Phillips'
+            'email'                 => 'phillipsrog@gmail.com',
+            'password'              => bcrypt(env('ROGER_PASSWORD')) ,
+            'uuid'                  => \Ramsey\Uuid\Uuid::uuid1(),
+            'name'                  => 'Roger Phillips',
+            'current_billing_plan'  => 'secret-gold-admin'
         ]);
 
         $this->user->create([
-            'email'     => 'dgflatspirate@gmail.com',
-            'password'  => bcrypt(env('DAVE_PASSWORD')),
-            'uuid' => \Ramsey\Uuid\Uuid::uuid1(),
-            'name'      => 'Dave Gourley'
+            'email'                 => 'dgflatspirate@gmail.com',
+            'password'              => bcrypt(env('DAVE_PASSWORD')),
+            'uuid'                  => \Ramsey\Uuid\Uuid::uuid1(),
+            'name'                  => 'Dave Gourley',
+            'current_billing_plan'  => 'secret-gold-admin'
         ]);
         $this->command->info('Users seeded!');
 
