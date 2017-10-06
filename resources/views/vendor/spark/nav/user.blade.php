@@ -86,10 +86,7 @@
 
                             <li class="divider"></li>
 
-                            @if (Spark::usesTeams() && (Spark::createsAdditionalTeams() || Spark::showsTeamSwitcher()))
-                                <!-- Team Settings -->
                                 @include('spark::nav.teams')
-                            @endif
 
                             @if (Spark::hasSupportAddress())
                                 <!-- Support -->

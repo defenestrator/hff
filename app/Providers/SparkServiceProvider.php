@@ -25,7 +25,7 @@ class SparkServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $sendSupportEmailsTo = 'jeremyblc@gmail.com';
+    protected $sendSupportEmailsTo = 'jeremy@hoboflyfishing.com';
 
     /**
      * All of the application developer e-mail addresses.
@@ -53,32 +53,7 @@ class SparkServiceProvider extends ServiceProvider
      */
     public function booted()
     {
-        Spark::identifyTeamsByPath();
-        Spark::useStripe()->teamTrialDays(10);
-
-        Spark::teamPlan('Standard Monthly Outfitter Listing', 'hobo-basic-monthly')
-            ->price(5)
-            ->maxTeams(1)
-            ->features([
-                'Basic listing for your company',
-                'Our cut is only $25 per booking!',
-                'Customers book and pay here',
-                'Skip the office-work hassle',
-                'We promote your brand'
-            ]);
-        Spark::teamPlan('Standard Yearly Outfitter Listing', 'hobo-basic-annual')
-            ->price(50)
-            ->maxTeams(1)
-            ->features([
-                'Save 20% by paying yearly.',
-                'Basic listing for your company',
-                'Our cut is only $25 per booking!',
-                'Customers book and pay here',
-                'Skip the office-work hassle',
-                'We promote your brand'
-            ])
-            ->yearly();
-
+        Spark::useStripe()->noCardUpFront();
         Spark::freePlan('Free to all Anglers!');
         Spark::afterLoginRedirectTo('dashboard');
     }

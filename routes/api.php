@@ -30,7 +30,12 @@ Route::group([
     Route::get('/podcasts/{id}', 'PodcastsController@edit');
     Route::delete('/podcasts/{id}', 'PodcastsController@destroy');
     Route::get('/podcasts/publications/{postId}', 'PodcastsController@show');
-    Route::get('podcasts/{id}/tags', 'PodcastTagsController@index');
+//    Route::get('podcasts/{id}/tags', 'PodcastTagsController@index');
+
+    // Registrations are closed, hacker.
+    Route::post('register', function(){
+       return 'no';
+    });
 
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');
