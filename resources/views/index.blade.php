@@ -38,7 +38,7 @@ Have Rod Will Travel
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.2s">
+    <div class="col-sm-6 col-md-3 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
         <!-- Box Start -->
         <div class="box">
             <div class="box-icon box-icon1">
@@ -55,7 +55,7 @@ Have Rod Will Travel
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3 wow bounceInUp" data-wow-duration="1.6s" data-wow-delay="0.8s">
+    <div class="col-sm-6 col-md-3 wow bounceInUp" data-wow-duration="1.6s" data-wow-delay="0.1s">
         <div class="box">
             <div class="box-icon box-icon2">
                 <i class="livicon icon1" data-name="rocket" data-size="55" data-c="#f89a14" data-hc="#f89a14"></i>
@@ -68,7 +68,7 @@ Have Rod Will Travel
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3 wow bounceInRight" data-wow-duration="2s" data-wow-delay="1.2s">
+    <div class="col-sm-6 col-md-3 wow bounceInRight" data-wow-duration="2s" data-wow-delay="0.2s">
         <div class="box">
             <div class="box-icon box-icon3">
                 <i class="livicon icon1" data-name="share" data-size="55" data-c="#FFD43C" data-hc="#FFD43C"></i>
