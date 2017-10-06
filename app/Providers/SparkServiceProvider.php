@@ -64,7 +64,6 @@ class SparkServiceProvider extends ServiceProvider
             ->price(20);
         Spark::plan('Secret Gold Business Owner Plan', 'secret-gold-admin')
             ->price(0)
-            ->maxTeams(1000)
             ->yearly();
         Spark::afterLoginRedirectTo('dashboard');
     }
