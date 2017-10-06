@@ -33,9 +33,9 @@ Route::group([
 //    Route::get('podcasts/{id}/tags', 'PodcastTagsController@index');
 
     // Registrations are closed, hacker.
-    Route::post('register', function(){
-       return 'no';
-    });
+//    Route::post('register', function(){
+//       return 'no';
+//    });
 
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');
