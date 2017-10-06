@@ -35,7 +35,7 @@ Route::group(['middleware' => ['auth:web']], function () {
 });
 
 // Registrations are closed, hacker.
-//Route::post('register', function(){
-//    return 'no';
-//});
+Route::post('register', function(){
+    return 'no';
+});
 
