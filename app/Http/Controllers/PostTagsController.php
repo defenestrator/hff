@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class PostTagsController extends ContentController
 {
+    /**
+     * @param Post $post
+     * @param $normalized
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(Post $post, $normalized)
     {
-        $posts = $post->withAllTags([$normalized])->get();
+        $posts = $post->withAnyTags([$normalized])->get();
         $smartass = $this->smartass;
         return view('publications.posts.index', compact('posts' , 'smartass'));
     }
