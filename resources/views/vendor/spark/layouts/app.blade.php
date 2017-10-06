@@ -26,18 +26,31 @@
         )); ?>;
     </script>
 </head>
-<body class="with-navbar">
+<body>
     <div id="spark-app" v-cloak>
-        <!-- Navigation -->
-        @if (Auth::check())
-            @include('spark::nav.user')
-        @else
-            @include('spark::nav.guest')
-        @endif
+        <header class="site-header">
+            {{-- Social and contact icon bar for guests only--}}
+            @if(Auth::guest())
+                @include('parts.icon-section')
+            @endif
 
+            <!-- Navigation -->
+            @if (Auth::check())
+                @include('nav.user')
+            @else
+                @include('nav.guest')
+            @endif
+        </header>
+
+        @yield('top')
         <!-- Main Content -->
-        @yield('content')
-
+        <div class="container">
+            @yield('content')
+        </div>
+        @if(Auth::guest())
+        @include('parts.footer')
+        @endif
+        @include('parts.bottom')
         <!-- Application Level Modals -->
         @if (Auth::check())
             @include('spark::modals.notifications')
@@ -45,8 +58,8 @@
             @include('spark::modals.session-expired')
         @endif
     </div>
-
     <!-- JavaScript -->
+    <script type="text/javascript" src="{{ asset('js/libs.js') }}" ></script>
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="/js/sweetalert.min.js"></script>
     @yield('page_scripts')

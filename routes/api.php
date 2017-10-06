@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -33,7 +33,7 @@ Route::group([
 //    Route::get('podcasts/{id}/tags', 'PodcastTagsController@index');
 
     // Registrations are closed, hacker.
-    Route::post('register', function(){
+    Route::any('register', function(){
        return 'no';
     });
 

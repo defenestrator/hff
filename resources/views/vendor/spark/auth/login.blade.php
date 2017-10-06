@@ -55,7 +55,7 @@
                                 <button type="submit" class="btn btn-primary invisible">
                                     <i class="fa m-r-xs fa-sign-in"></i>Login
                                 </button>
-                                <a class=" btn btn-link" href="{{ url('/register') }}">Create A New Account</a>
+                                {{--<a class=" btn btn-link" href="{{ url('/register') }}">Create A New Account</a>--}}
                             </div>
                         </div>
                     </form>
