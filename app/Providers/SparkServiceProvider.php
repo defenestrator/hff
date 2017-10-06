@@ -54,6 +54,7 @@ class SparkServiceProvider extends ServiceProvider
     public function booted()
     {
         Spark::useStripe()->noCardUpFront();
+        Spark::freePlan('Free Angler Plan')->maxTeams(0);
         Spark::plan('Outfitter Basic Membership', 'outfitter-basic')
             ->trialDays(10)
             ->maxTeams(1)
@@ -62,6 +63,7 @@ class SparkServiceProvider extends ServiceProvider
             ->price(0)
             ->yearly()->archived();
         Spark::afterLoginRedirectTo('dashboard');
+        Spark::identifyTeamsByPath();
     }
 
     public function register()
