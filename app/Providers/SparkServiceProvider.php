@@ -55,7 +55,7 @@ class SparkServiceProvider extends ServiceProvider
     public function booted()
     {
         Spark::useStripe()->noCardUpFront();
-        Spark::freePlan('Free Angler Plan', 'free-angler-plan')->maxTeams(0);
+        Spark::freePlan('Free Angler Plan', 'free-angler-plan');
         Spark::afterLoginRedirectTo('dashboard');
         Spark::identifyTeamsByPath();
     }
