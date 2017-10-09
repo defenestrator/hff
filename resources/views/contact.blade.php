@@ -100,6 +100,8 @@ Contact
 
 {{-- page level scripts --}}
 @section('page_scripts')
+    <script src="{{asset('/js/livicons-1.4.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/raphael-min.js') }}" ></script>
     <script type="text/javascript" src="{{ asset('js/gmaps.min.js') }}" ></script>
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU"></script>
     <!--page level js ends-->
