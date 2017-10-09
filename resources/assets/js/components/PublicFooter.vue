@@ -70,5 +70,4 @@
 </template>
 <script>
     Vue.component('newsletter-signup', require('./NewsletterSignup.vue'))
-    new Vue({ el: '#newsletter-signup' })
 </script>

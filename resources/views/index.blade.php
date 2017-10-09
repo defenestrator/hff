@@ -156,6 +156,8 @@ Have Rod Will Travel
 {{-- footer scripts --}}
 @section('page_scripts')
     <script type="text/javascript" src="{{ asset('js/wow.min.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('js/raphael-min.js') }}" ></script>
+    <script src="{{asset('/js/livicons-1.4.min.js')}}"></script>
     <script>
         new WOW().init();
     </script>
