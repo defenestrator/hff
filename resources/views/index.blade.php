@@ -90,7 +90,7 @@ Have Rod Will Travel
                     <li>Custom offline maps, find your way around with no network connection.</li>
                     <li>Specialized fly patterns, designed by local angling wizards. </li>
                     <li>Logistical support; so you don't get stuck in a bad spot.</li>
-                    <li>Learn from Our Mistakes&trade;. We've made a few, maybe.</li>
+                    <li><a href="https://hoboflyfishing.com/publications/posts/we-learned-the-hard-way-so-you-don-t-have-to" title="We learned the hard way so you don't have to">Learn from Our Mistakes</a>&trade;. We've made a few, maybe.</li>
                     <li>Other surprises, merchandise, and promo items as available.</li>
                     </ul>
                 </p>
