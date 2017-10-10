@@ -1,7 +1,7 @@
 <div class="copyright">
     <div class="container">
         <div class="legal"><ul class="inline">
-                <li class="text-white small">Copyright &copy; Hobo Fly Fishing, LLC {{ date('M d Y') }}</li>
+                <li class="text-white small">&copy; Hobo Fly Fishing, LLC - {{ date('M d, Y') }}</li>
                 <li class="footer-link"><a href="{{ route('terms') }}">Terms</a>
                 </li>
                 <li class="footer-link"><a href="{{ route('privacy') }}">Privacy</a>
