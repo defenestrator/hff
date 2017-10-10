@@ -14,7 +14,7 @@ class PostTagsController extends ContentController
      */
     public function index(Post $post, $normalized)
     {
-        $posts = $post->withAnyTags([$normalized])->get();
+        $posts = $post->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get();
         $smartass = $this->smartass;
         return view('publications.posts.index', compact('posts' , 'smartass'));
     }
