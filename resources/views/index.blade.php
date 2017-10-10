@@ -87,11 +87,16 @@ Have Rod Will Travel
                     and we earn it by providing personalized support for all
                     the destinations we list.
                     <ul style="list-style-type:circle">
-                    <li>Custom offline maps, find your way around with no network connection.</li>
-                    <li>Specialized fly patterns, designed by local angling wizards. </li>
+                    <li>Custom offline maps. Find your way around with no network connection.</li>
+                    <li>Specialized fly patterns designed by local wizards. </li>
                     <li>Logistical support; so you don't get stuck in a bad spot.</li>
-                    <li><a href="https://hoboflyfishing.com/publications/posts/we-learned-the-hard-way-so-you-don-t-have-to" title="We learned the hard way so you don't have to">Learn from Our Mistakes</a>&trade;. We've made a few, maybe.</li>
-                    <li>Other surprises, merchandise, and promo items as available.</li>
+                    <li>
+                        <a href="https://hoboflyfishing.com/publications/posts/we-learned-the-hard-way-so-you-don-t-have-to"
+                           title="We learned the hard way so you don't have to">
+                            Learn from Our Mistakes</a>.&trade;
+                         We've made a few, maybe.
+                    </li>
+                    <li>Surprises, merchandise, and promo items as available.</li>
                     </ul>
                 </p>
             </article>
