@@ -23,7 +23,7 @@ class ExampleTest extends TestCase
         $response = $this->get('/');
         $response->assertViewIs('index');
         $response->assertSeeText('info@hoboflyfishing.com');
-        $response->assertSee('Self-Guided Destinations');
+        $response->assertSee('Self-Guided Adventures');
         $response->assertSee('Hybrid Trips');
         $response->assertSee('Full Service Expeditions');
         $response->assertSee('<html');
