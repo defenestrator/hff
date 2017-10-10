@@ -70,8 +70,8 @@ Have Rod Will Travel
                 <p>When you want the finest angling vacation experience check out our carefully curated full-service
                     lodges and resorts.</p>
                 <p>For those who love top-tier living.</p>
-                <p> These are great getaways for the family, as they typically offer activities for the non-angling
-                    members of your family, in addition to the great fishing!</p>
+                <p> These are great family getaways, as they typically offer activities for the non-angling
+                    members of the group, in addition to the great fishing!</p>
             </div>
         </div>
     </div>
