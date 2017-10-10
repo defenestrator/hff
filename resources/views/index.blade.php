@@ -23,77 +23,6 @@ Have Rod Will Travel
     </div>
 </section>
 <!-- Service Section Start-->
-
-<div class="row">
-    <div class="col-md-5 col-md-offset-0">
-        <section>
-                <div>
-                    <img src="{{ asset('assets/images/gourley/20150712_082521.png') }}"
-                         alt="This guy knows what he is doing."
-                         title="This guy knows what he is doing." >
-                </div>
-                <h4>Learn the terrain.</h4>
-                <p>If you are the type who likes to cut trail and learn the quirks of a fishery by
-                    exploring with your buddies, give us a jingle and we'll get you on the right track.
-                </p>
-            </article>
-        </section>
-    </div>
-    <div class="col-md-7 col-md-offset-0">
-        <section>
-            <h2>Here's the deal</h2>
-            <article class="article">
-                <h3>This should be fun</h3>
-
-                <p>Don't be fooled by the goofy 'free advice' some other places claim to give away.
-                    You know there's no free lunch. We make a couple bucks when we book a trip,
-                    and we earn it by providing you better tools and sharp intelligence for all
-                    the destinations we list. We don't send <em>The 6th Dude</em> along for a trip on your dime.
-                </p>
-            </article>
-        </section>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-6 col-md-offset-0">
-        <section>
-                <article class="article">
-                    <h2>Hobo Fly Fishing Soft Launch, October 2017</h2>
-
-                    <h3>Cultivate knowledge.</h3>
-
-                    <p>There is a lot of mythology in the sport of fly fishing. A lot of it is considered
-                        <em>accepted wisdom</em>, but there is very little
-                        usable data available. We are building a service for
-                        fly fishers who want facts, not fables. Take
-                        control of your angling data and catch more fish!</p>
-                    <p>Use real facts, not unreliable memories, to improve your success on the water.</p>
-                    <p>Track your success on-stream with offline fisheries maps and
-                        automatically correlate GPS information with weather, hydrology, hatch activity, and
-                        other custom data that you and others collect <em>without interrupting your cast.</em>
-                        Keep it a secret, share with a few buddies, or share it with the world. It is up to you.</p>
-                    <p>We will provide our customer with custom tools, gear checklists, and local knowledge to help take the uncertainty out of planning an expedition</p>
-                    <p>If you ever have any questions, don't wait, <a href="/contact">drop us a line. </a> We love to talk fishing.</p>
-                </article>
-            </section>
-        </div>
-
-<div class="col-md-5 col-md-offset-1">
-        <section class="jumbotron">
-                <article class="article">
-                    <p>We will never have a hundred names on our "Pro Staff." We don't want them.
-                    </p>
-                    <p>
-                        90% are meaningless headshots next to the name of some random clown they met at the bar.
-                    </p>
-                    <img src="{{asset('assets/images/the-dude-1.jpg') }}"
-                         alt="Yeah, well, that's just, like, your opinion, man."
-                         title="Yeah, well, that's just, like, your opinion, man."
-                    >
-                </article>
-        </section>
-    </div>
-</div>
 <div class="row">
     <div class="col-sm-6 col-md-3 wow bounceInLeft" data-wow-duration="1s">
         <div class="box">
@@ -152,6 +81,52 @@ Have Rod Will Travel
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-7 col-md-offset-0">
+        <section>
+            <h2>Hobo Fly Fishing Soft Launch, October 2017</h2>
+            <article class="article">
+                <h3>This should be fun</h3>
+
+                <p>Don't be fooled by the goofy 'free advice' some other places claim to give away.
+                    You know there's no free lunch. We make a couple bucks when we book a trip,
+                    and we earn it by providing you better tools and sharp intelligence for all
+                    the destinations we list. We don't send <em>The 5th Dude</em> along for a trip on your dime.
+                </p>
+            </article>
+        </section>
+        <section>
+                <div>
+                    <img src="{{ asset('assets/images/gourley/20150712_082521.png') }}"
+                         alt="This guy knows what he is doing."
+                         title="This guy knows what he is doing." >
+                </div>
+                <h4>Learn the terrain.</h4>
+                <p>If you are the type who likes to cut trail and learn the quirks of a fishery by
+                    exploring with your buddies, give us a jingle and we'll get you on the right track.
+                </p>
+            </article>
+        </section>
+
+    </div>
+    <div class="col-md-5 col-md-offset-0">
+        <section class="jumbotron">
+            <article class="article">
+                <p>We will never have a hundred names on our "Pro Staff." We don't want them.
+                </p>
+                <p>
+                    90% are meaningless headshots next to the name of some random clown they met at the bar.
+                </p>
+                <img src="{{asset('assets/images/the-dude-1.jpg') }}"
+                     alt="Yeah, well, that's just, like, your opinion, man."
+                     title="Yeah, well, that's just, like, your opinion, man."
+                >
+            </article>
+        </section>
+    </div>
+</div>
+
 
 @stop
 {{-- footer scripts --}}
