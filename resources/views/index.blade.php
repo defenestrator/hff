@@ -82,9 +82,9 @@ Have Rod Will Travel
         <section>
             <article class="article">
                 <header style="background-color:#0b3e6f; color:white; padding:1em; border-radius:1em; margin-top:2em;">
-                <h2 class="text-center wow fadeInLeftBig">Don't be fooled by '<strong>free advice</strong>'</h2>
-                <h3 class="text-center">We don't send <span class="wow fadeIn"><strong>The 5th Dude</strong></span> along for the trip</h3>
-                <p class="text-center">(on your dime)</p>
+                <h2 class="text-center">Don't be fooled by <span class="wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">'<strong>free advice</strong>'</span></h2>
+                <h3 class="text-center">We don't send <span class="wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s"><strong>The 5th Dude</strong></span> along for the trip</h3>
+                <p class="text-center"><span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">(on your dime)</span></p>
                 <h4>It's that simple.</h4>
                 </header>
                 <br>
