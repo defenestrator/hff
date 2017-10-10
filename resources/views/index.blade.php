@@ -30,7 +30,7 @@ Have Rod Will Travel
                 <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#464b17"></i>
             </div>
             <div class="info">
-                <h3 class="success text-center">Self-Guided Destinations</h3>
+                <h3 class="success text-center">Self-Guided Adventures</h3>
                 <p>Find some quiet places, and some uneducated fish.
                 </p>
                 <p>If you love to challenge yourself, and expand your understanding of what this great sport has to offer, these trips are for you.
