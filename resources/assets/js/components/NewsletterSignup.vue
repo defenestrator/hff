@@ -1,7 +1,7 @@
 <template>
     <div>
-        <a href="#newsletter"><h4>Newsletter</h4></a>
-        <p>Get special deals and exclusive trip packages. We only send about one email per month.</p>
+        <a href="#newsletter"><h4>Riding the Reels</h4></a>
+        <p>Get special deals and exclusive trip packages! We only send about one newsletter per month.</p>
         <form class="form-inline newsletter">
             <div class="form-group">
                 <input v-validate="'required|email'" v-model="newsletterEmail" name="newsletterEmail"
