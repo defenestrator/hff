@@ -7,7 +7,7 @@
             <p>
                 Whatever wisdom we have comes from those anglers who are our betters.
                 The ones who smell like the water they fish. You know the ones.
-                They have that knowing look when they see the rods on your truck; They know who the locals are.
+                They give you 'the look' when they see rods on your truck; They know who the locals are.
             </p>
             <p>Forget <em>about us</em>. We just know a few anglers who <strong>live</strong> the water.</p>
 
