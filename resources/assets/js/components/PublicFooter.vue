@@ -9,7 +9,7 @@
                 The ones who smell like the water they fish. You know the ones.
                 They give you 'the look' when they see rods on your truck; They know who the locals are.
             </p>
-            <p>Forget <em>about us</em>. We just know a few anglers who <strong>live</strong> the water.</p>
+            <p>Forget about us. We just know a few anglers who <strong>live</strong> the water.</p>
 
             <hr id="hr_border2">
             <a href="#follow"><h4 class="menu">Follow Us</h4></a>
