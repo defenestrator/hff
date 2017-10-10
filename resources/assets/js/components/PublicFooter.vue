@@ -5,7 +5,7 @@
         <div class="col-sm-4">
             <a href="#about"><h4>About Us</h4></a>
             <p>
-                What little wisdom we have gained is from those anglers who are our betters.
+                Whatever wisdom we have comes from those anglers who are our betters.
                 The ones who smell like the water they fish. You know the ones.
                 They have that knowing look when they see the rods on your truck; They know who the locals are.
             </p>
