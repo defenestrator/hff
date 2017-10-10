@@ -3,14 +3,14 @@
     <div class="container footer-text">
         <!-- About Us Section Start -->
         <div class="col-sm-4">
-            <a href="#about"><h4>About Us</h4></a>
+            <a href="#about"><h4>About Us?</h4></a>
             <p>
                 Whatever wisdom we have came from anglers who are our betters.
                 The ones who smell like the water they fish. You know the ones.
                 They give you 'the look' when they see rods on your truck. They know who the locals are.
                 We are lucky to know a few anglers who <strong>live</strong> the water.
             </p>
-            <p>Forget <em>about us.</em></p>
+            <h5>Forget <em>about us.</em></h5>
 
             <hr id="hr_border2">
             <a href="#follow"><h4 class="menu">Follow Us</h4></a>
