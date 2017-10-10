@@ -85,7 +85,7 @@ Have Rod Will Travel
                 <h2 class="text-center">Don't be fooled by <span class="wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">'<strong>free advice</strong>'</span></h2>
                 <h3 class="text-center">We don't send <span class="wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s"><strong>The 5th Dude</strong></span> along for the trip</h3>
                 <p class="text-center"><span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">(on your dime)</span></p>
-                <h4>It's that simple.</h4>
+                <h4><span class="wow fadeIn" data-wow-duration="2.0s" data-wow-delay="2.5s">It's that simple.</span></h4>
                 </header>
                 <br>
                 <p>We make a couple bucks when we book a trip,

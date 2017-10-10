@@ -4,7 +4,7 @@
         </slide>
         <slide><img src="/assets/images/gourley/bonefish.jpg" alt="Bonefish landed next to Fly Rod on Sea Grass">
         </slide>
-        <slide><img src="/assets/images/gourley/DSC_0193.JPG" alt="Tropical Beach with Boat">
+        <slide><img src="/assets/images/bully.jpg" alt="Bull Trout must be kept in the water.">
         </slide>
         <slide><img src="/assets/images/os/tarpon.jpg" alt="Hungry Tarpon">
         </slide>
