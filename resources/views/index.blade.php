@@ -101,10 +101,10 @@ Have Rod Will Travel
                 <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#464b17"></i>
             </div>
             <div class="info">
-                <h3 class="success text-center">DIY Destinations</h3>
+                <h3 class="success text-center">Self-Guided Destinations</h3>
                 <p>Get down and dirty, let us help you find some quiet out-of-the-way places.
                 </p>
-                <p>Do-it-yourself fly fishing has a significant learning curve, we can help you shorten it.
+                <p>Self-guided fly fishing has a significant learning curve, we can help you shorten it.
                 </p>
             </div>
         </div>
@@ -118,7 +118,7 @@ Have Rod Will Travel
             <div class="info">
                 <h3 class="primary text-center">Hybrid Trips</h3>
                 <p>
-                    All the freedom of DIY plus a day or two of guided fishing with local experts to get your feet wet.
+                    A few days of guided fishing and a few days to explore on your own, after fishing with local experts to get your feet wet.
                 </p>
                 <p>
                     Holler at us and we can help you find your next adventure.
