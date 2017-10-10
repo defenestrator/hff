@@ -16,7 +16,7 @@ class PublishedPostsController extends ContentController
     public function index(Post $post, Publication $publication)
     {
         $published = $publication->all('post_id');
-        $posts = $post->whereIn('id', $published)->paginate(5);
+        $posts = $post->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(5);
         $smartass = $this->smartass;
 
         return view('publications.posts.index', compact('posts', 'smartass'));
