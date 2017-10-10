@@ -26,7 +26,6 @@ class ExampleTest extends TestCase
         $response->assertSee('Self-Guided Destinations');
         $response->assertSee('Hybrid Trips');
         $response->assertSee('Full Service Expeditions');
-        $response->assertSee('Independent Guides');
         $response->assertSee('<html');
         $response->assertSee('</html>');
         $response->isValidateable();

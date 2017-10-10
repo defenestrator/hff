@@ -24,7 +24,7 @@ Have Rod Will Travel
 </section>
 <!-- Service Section Start-->
 <div class="row">
-    <div class="col-sm-8 col-md-4 wow bounceInLeft" data-wow-duration="1s">
+    <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
         <div class="box">
             <div class="box-icon">
                 <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#464b17"></i>
@@ -40,7 +40,7 @@ Have Rod Will Travel
             </div>
         </div>
     </div>
-    <div class="col-sm-8 col-md-4 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
+    <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
         <!-- Box Start -->
         <div class="box">
             <div class="box-icon box-icon1">
@@ -60,7 +60,7 @@ Have Rod Will Travel
             </div>
         </div>
     </div>
-    <div class="col-sm-8 col-md-4 wow bounceInRight" data-wow-duration="1.6s" data-wow-delay="0.1s">
+    <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="1.6s" data-wow-delay="0.1s">
         <div class="box">
             <div class="box-icon box-icon2">
                 <i class="livicon icon1" data-name="rocket" data-size="55" data-c="#f89a14" data-hc="#f89a14"></i>
