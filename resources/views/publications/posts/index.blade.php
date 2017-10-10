@@ -15,7 +15,7 @@ Blog
 @section('content')
 <div class="row">
     <div class="content">
-        <div class="col-md-12">
+        <div class="col-md-8 col-md-offset-2">
             @foreach($posts as $post)
                 <div class="post">
                     <div class="featured-text relative-left">

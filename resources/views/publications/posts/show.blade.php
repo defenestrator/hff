@@ -14,9 +14,10 @@
 
 @section('content')
     <div class="container">
-        <h2 class="primary marl12">{{ $post->title }}</h2>
+
         <div class="row content">
-            <div class="col-sm-12 col-md-12">
+            <div class="col-md-8 col-lg-offset-2">
+                <h2 class="primary marl12">{{ $post->title }}</h2>
                 <div class=" post">
                     {!! $post->body !!}
                     <div class="the-box no-border blog-detail-content">
