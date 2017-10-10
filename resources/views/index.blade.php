@@ -10,6 +10,7 @@ Have Rod Will Travel
 
 @section('top')
 <home-carousel></home-carousel>
+<h1 style="background-color:#1a1a1a; padding:3em 0;" class="tagline text-center bg-border wow pulse" data-wow-duration="2.5s">Elite Destinations, Local Flavor</h1>
 @stop
 
 @section('content')

@@ -1,5 +1,5 @@
 <template>
-    <carousel :autoplay="true" :per-page="1" :pagination-enabled="false" :autoplayHoverPause="false">
+    <carousel :autoplay="true" :per-page="1" :pagination-enabled="false" :autoplayHoverPause="true">
         <slide><img style="width:100%" src="/assets/images/gourley/DSC_0336.JPG" alt="Saltwater Flats">
         </slide>
         <slide><img src="/assets/images/gourley/bonefish.jpg" alt="Bonefish landed next to Fly Rod on Sea Grass">
