@@ -10,19 +10,13 @@ Have Rod Will Travel
 
 @section('top')
 <home-carousel></home-carousel>
-<h1 style="background-color:#1a1a1a; padding:3em 0;" class="tagline text-center bg-border wow pulse" data-wow-duration="2.5s">Elite Destinations, Local Flavor</h1>
+<h1 style="background-color:#1a1a1a; padding:3em 0;" class="tagline text-center bg-border wow pulse" data-wow-duration="2.5s">
+    Elite Destinations, Local Flavor
+</h1>
 @stop
 
 @section('content')
-<section>
-    <div class="container bg-border wow pulse" data-wow-duration="2.5s">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <h1 class="tagline text-center">Elite Destinations, Local Flavor</h1>
-            </div>
-        </div>
-    </div>
-</section>
+
 <!-- Service Section Start-->
 <div class="row">
     <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
@@ -83,10 +77,10 @@ Have Rod Will Travel
         <section>
             <article class="article">
                 <header style="background-color:#0b3e6f; color:white; padding:1em; border-radius:1em; margin-top:2em;">
-                <h2 class="text-center">Don't be fooled by <span class="wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s">'<strong>free advice</strong>'</span></h2>
-                <h3 class="text-center">We don't send <span class="wow fadeIn" data-wow-duration="2s" data-wow-delay="0.5s"><strong>The 5th Dude</strong></span> along for the trip</h3>
+                <h2 class="text-center">Don't be fooled by <span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">'<strong>free advice</strong>'</span></h2>
+                <h3 class="text-center">We don't send <span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s"><strong>The 5th Dude</strong></span> along for the trip</h3>
                 <p class="text-center"><span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">(on your dime)</span></p>
-                <h4><span class="wow fadeIn" data-wow-duration="2.0s" data-wow-delay="2.5s">It's that simple.</span></h4>
+                <h4><span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="2.0s">It's that simple.</span></h4>
                 </header>
                 <br>
                 <p>We make a couple bucks when we book a trip,
