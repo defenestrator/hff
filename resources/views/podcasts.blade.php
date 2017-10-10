@@ -1,4 +1,4 @@
-@extends('master')
+@extends('spark::layouts.app')
 
 @section('content')
 <podcast></podcast>
