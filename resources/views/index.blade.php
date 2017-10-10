@@ -24,21 +24,23 @@ Have Rod Will Travel
 </section>
 <!-- Service Section Start-->
 <div class="row">
-    <div class="col-sm-6 col-md-3 wow bounceInLeft" data-wow-duration="1s">
+    <div class="col-sm-8 col-md-4 wow bounceInLeft" data-wow-duration="1s">
         <div class="box">
             <div class="box-icon">
                 <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#464b17"></i>
             </div>
             <div class="info">
                 <h3 class="success text-center">Self-Guided Destinations</h3>
-                <p>Get down and dirty, let us help you find some quiet out-of-the-way places.
+                <p>Find some quiet places, and some uneducated fish.
+                </p>
+                <p>If you love to challenge yourself, and expand your understanding of what this great sport has to offer, these trips are for you.
                 </p>
                 <p>Self-guided fly fishing has a significant learning curve, we can help you shorten it.
                 </p>
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
+    <div class="col-sm-8 col-md-4 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
         <!-- Box Start -->
         <div class="box">
             <div class="box-icon box-icon1">
@@ -47,7 +49,10 @@ Have Rod Will Travel
             <div class="info">
                 <h3 class="primary text-center">Hybrid Trips</h3>
                 <p>
-                    A few days of guided fishing and a few days to explore on your own, after fishing with local experts to get your feet wet.
+                    After fishing with local guides to get your feet wet, spend a few days exploring the local fisheries with your buddies, and our help.
+                </p>
+                <p>
+                    We do deep research on the local scene, fishing and otherwise, to help you mix it up.
                 </p>
                 <p>
                     Holler at us and we can help you find your next adventure.
@@ -55,28 +60,18 @@ Have Rod Will Travel
             </div>
         </div>
     </div>
-    <div class="col-sm-6 col-md-3 wow bounceInUp" data-wow-duration="1.6s" data-wow-delay="0.1s">
+    <div class="col-sm-8 col-md-4 wow bounceInRight" data-wow-duration="1.6s" data-wow-delay="0.1s">
         <div class="box">
             <div class="box-icon box-icon2">
                 <i class="livicon icon1" data-name="rocket" data-size="55" data-c="#f89a14" data-hc="#f89a14"></i>
             </div>
             <div class="info">
                 <h3 class="warning text-center">Full Service Expeditions</h3>
-                <p>Full Service trips, for when you want all the comforts of home
-                    and the absolute best fully-outfitted fishing experience.
-                    Check out our carefully curated angling lodges.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-3 wow bounceInRight" data-wow-duration="2s" data-wow-delay="0.2s">
-        <div class="box">
-            <div class="box-icon box-icon3">
-                <i class="livicon icon1" data-name="share" data-size="55" data-c="#FFD43C" data-hc="#FFD43C"></i>
-            </div>
-            <div class="info">
-                <h3 class="yellow text-center">Independent Guides</h3>
-                <p>Connect directly with local guides via our independent outfitter listings.
-                    Book trips with them using our platform and get special perks found nowhere else.</p>
+                <p>When you want the finest angling vacation experience check out our carefully curated full-service
+                    lodges and resorts.</p>
+                <p>For those who love top-tier living.</p>
+                <p> These are great getaways for the family, as they typically offer activities for the non-angling
+                    members of your family, in addition to the great fishing!</p>
             </div>
         </div>
     </div>
@@ -85,49 +80,51 @@ Have Rod Will Travel
 <div class="row">
     <div class="col-md-7 col-md-offset-0">
         <section>
-            <h2>Hobo Fly Fishing Soft Launch, October 2017</h2>
             <article class="article">
-                <h3>This should be fun</h3>
-
-                <p>Don't be fooled by the goofy 'free advice' some other places claim to give away.
-                    You know there's no free lunch. We make a couple bucks when we book a trip,
-                    and we earn it by providing you better tools and sharp intelligence for all
-                    the destinations we list. We don't send <em>The 5th Dude</em> along for a trip on your dime.
-                </p>
-            </article>
-        </section>
-        <section>
-                <div>
-                    <img src="{{ asset('assets/images/gourley/20150712_082521.png') }}"
-                         alt="This guy knows what he is doing."
-                         title="This guy knows what he is doing." >
-                </div>
-                <h4>Learn the terrain.</h4>
-                <p>If you are the type who likes to cut trail and learn the quirks of a fishery by
-                    exploring with your buddies, give us a jingle and we'll get you on the right track.
+                <header style="background-color:#0b3e6f; color:white; padding:1em; border-radius:1em; margin-top:2em;">
+                <h2>Don't be fooled by the 'free advice' game</h2>
+                <h3 class="text-center">We don't send <strong>The 5th Dude</strong> along for the trip</h3>
+                <p class="text-center">(on your dime)</p>
+                <h4>It's that simple.</h4>
+                </header>
+                <br>
+                <p>We make a couple bucks when we book a trip,
+                    and we earn it by providing personalized support for all
+                    the destinations we list.
+                    <ul style="list-style-type:circle">
+                    <li>Custom offline maps, find your way around with no network connection.</li>
+                    <li>Specialized fly patterns, designed by local angling wizards. </li>
+                    <li>Logistical support; so you don't get stuck in a bad spot.</li>
+                    <li>Learn from Our Mistakes&trade;. We've made a few, maybe.</li>
+                    <li>Other surprises, merchandise, and promo items as available.</li>
+                    </ul>
                 </p>
             </article>
         </section>
 
     </div>
     <div class="col-md-5 col-md-offset-0">
-        <section class="jumbotron">
+        <section style="margin-top:2em;">
             <article class="article">
                 <p>We will never have a hundred names on our "Pro Staff." We don't want them.
                 </p>
                 <p>
                     90% are meaningless headshots next to the name of some random clown they met at the bar.
                 </p>
-                <img src="{{asset('assets/images/the-dude-1.jpg') }}"
+                <img src="{{asset('assets/images/the-dude-1.jpg') }}" style="border-radius:1em;"
                      alt="Yeah, well, that's just, like, your opinion, man."
                      title="Yeah, well, that's just, like, your opinion, man."
                 >
             </article>
         </section>
+
     </div>
 </div>
-
-
+<div class="row">
+    <div class="col-md-12 col-md-offset-0">
+        &nbsp;
+    </div>
+</div>
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
