@@ -128,7 +128,6 @@ Have Rod Will Travel
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
-    <script type="text/javascript" src="{{ asset('js/wow.min.js') }}" ></script>
     <script>
         new WOW().init();
     </script>

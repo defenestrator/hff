@@ -6,5 +6,8 @@
   "/assets/js/lib.js": "/assets/js/lib.js",
   "/css/libs.css": "/css/libs.css",
   "/js/libs.js": "/js/libs.js",
-  "/js/apps.js": "/js/apps.js"
+  "/js/apps.js": "/js/apps.js",
+  "/js/sweetalert.min.js": "/js/sweetalert.min.js",
+  "/resources/assets/js/compiled.js": "/resources/assets/js/compiled.js",
+  "/js/hoboscript.js": "/js/hoboscript.js"
 }

@@ -1,6 +1,5 @@
 let mix = require('laravel-mix');
 var path = require('path');
-
 mix.less('resources/assets/less/app.less', 'public/css')
     .copy('./node_modules/trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js','public/js')
     .copy('./node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js', 'public/js')
@@ -22,10 +21,11 @@ mix.less('resources/assets/less/app.less', 'public/css')
             }
         }
    })
+    .js('./resources/assets/js/app.js', 'public/js/')
     .combine([
-            './resources/assets/js/sweetalert.min.js',
-            './resources/assets/js/raphael-min.js',
-            './resources/assets/js/livicons-1.4.min.js'
+        './resources/assets/js/sweetalert.min.js',
+        './resources/assets/js/raphael-min.js',
+        './resources/assets/js/livicons-1.4.min.js',
+        './resources/assets/js/wow.min.js',
         ],
-        'public/js/libs.js' )
-    .js('./resources/assets/js/app.js', 'public/js')
+        'public/js/hoboscript.js' )
