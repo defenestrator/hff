@@ -59,11 +59,8 @@
         @endif
     </div>
     <!-- JavaScript -->
-    <script type="text/javascript" src="{{ asset('js/libs.js') }}" ></script>
-    <script src="{{ mix('js/app.js') }}"></script>
-    <script src="/js/sweetalert.min.js"></script>
-    <script type="text/javascript" src="{{ asset('js/raphael-min.js') }}" ></script>
-    <script src="{{asset('/js/livicons-1.4.min.js')}}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/libs.js') }}"></script>
     @if(config('app.env') == 'production')
     <script type="text/javascript">
         var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||

@@ -5,5 +5,6 @@
   "/assets/css/lib.css": "/assets/css/lib.css",
   "/assets/js/lib.js": "/assets/js/lib.js",
   "/css/libs.css": "/css/libs.css",
-  "/js/libs.js": "/js/libs.js"
+  "/js/libs.js": "/js/libs.js",
+  "/js/apps.js": "/js/apps.js"
 }

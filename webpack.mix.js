@@ -22,7 +22,10 @@ mix.less('resources/assets/less/app.less', 'public/css')
             }
         }
    })
+    .combine([
+            './resources/assets/js/sweetalert.min.js',
+            './resources/assets/js/raphael-min.js',
+            './resources/assets/js/livicons-1.4.min.js'
+        ],
+        'public/js/libs.js' )
     .js('./resources/assets/js/app.js', 'public/js')
-    .scripts([
-        './resources/assets/js/sweetalert.min.js',
-    ], 'public/js/libs.js');
