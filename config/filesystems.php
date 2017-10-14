@@ -60,9 +60,18 @@ return [
             'key' => env('AWS_KEY'),
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
+            'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
         ],
 
+        'DO' => [
+            'driver' => 's3',
+            'key' => env('AWS_KEY'),
+            'secret' => env('AWS_SECRET'),
+            'region' => env('AWS_REGION'),
+            'bucket' => env('AWS_BUCKET'),
+            'endpoint' => env('AWS_URL')
+        ],
     ],
 
 ];

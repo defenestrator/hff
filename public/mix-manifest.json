@@ -9,5 +9,8 @@
   "/js/apps.js": "/js/apps.js",
   "/js/sweetalert.min.js": "/js/sweetalert.min.js",
   "/resources/assets/js/compiled.js": "/resources/assets/js/compiled.js",
-  "/js/hoboscript.js": "/js/hoboscript.js"
+  "/js/hoboscript.js": "/js/hoboscript.js",
+  "storage/app/public/assets/css/styles.css": "storage/app/public/assets/css/styles.css",
+  "./storage/app/public/assets/js.app.js": "./storage/app/public/assets/js.app.js",
+  "./storage/app/public/assets/js/app.js": "./storage/app/public/assets/js/app.js"
 }

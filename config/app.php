@@ -54,8 +54,6 @@ return [
 
     'url' => env('APP_URL', 'https://hoboflyfishing.com'),
 
-    'cdn' => env('APP_CDN', 'https://cdn.hoboflyfishing.com'),
-
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

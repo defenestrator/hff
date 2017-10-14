@@ -51,8 +51,7 @@
         @endif
     </div>
     <!-- JavaScript -->
-    <script src="/js/app.js"></script>
-    <script src="/js/hoboscript.js"></script>
+    <script src="{{ asset('storage/assets/js/app.js') }}"></script>
     @if(config('app.env') == 'production')
     <script type="text/javascript">
         var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||
