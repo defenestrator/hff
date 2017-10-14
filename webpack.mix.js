@@ -6,7 +6,7 @@ mix.less('resources/assets/less/app.less', 'public/css')
         './resources/assets/less/animate.min.css',
         './resources/assets/less/font-awesome.min.css'
     ], 'public/css/libs.css')
-    .combine(['public/css/app.css','public/css/libs.css' ], 'storage/app/public/assets/css/styles.css')
+    .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css')
    .webpackConfig({
         resolve: {
             modules: [
@@ -24,16 +24,14 @@ mix.less('resources/assets/less/app.less', 'public/css')
         './resources/assets/js/raphael-min.js',
         './resources/assets/js/livicons-1.4.min.js',
         './resources/assets/js/wow.min.js',
+        './resources/assets/gmaps.min.js',
+        './node_modules/trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js',
+        './node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js',
+        './node_modules/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js',
         ],
         'public/js/hoboscript.js' )
     .combine([
         'public/js/app.js',
         'public/js/hoboscript.js',
-        './node_modules/trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js',
-        './node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js',
-        './node_modules/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js',
-    ], './storage/app/public/assets/js/app.js')
-    .copy([
-
-    ], './storage/app/public/assets/js')
-    .copy('resources/assets/images', 'storage/app/public/assets/images', false)
+    ], 'public/js/script.js')
+    .copy('resources/assets/images', 'public/images', false)

@@ -10,15 +10,15 @@ Have Rod Will Travel
 
 @section('top')
     <carousel :autoplay="true" :per-page="1" :pagination-enabled="false" :autoplayHoverPause="true">
-        <slide><img style="width:100%" src="{{ asset('/storage/assets/images/gourley/DSC_0336.JPG') }}" alt="Saltwater Flats">
+        <slide><img style="width:100%" src="{{ asset('images/gourley/DSC_0336.JPG') }}" alt="Saltwater Flats">
         </slide>
-        <slide><img src="{{ asset('/storage/assets/images/gourley/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Sea Grass">
+        <slide><img src="{{ asset('images/gourley/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Sea Grass">
         </slide>
-        <slide><img src="{{ asset('/storage/assets/images/bully.jpg') }}" alt="Bull Trout must be kept in the water.">
+        <slide><img src="{{ asset('images/bully.jpg') }}" alt="Bull Trout must be kept in the water.">
         </slide>
-        <slide><img src="{{ asset('/storage/assets/images/os/tarpon.jpg') }}" alt="Hungry Tarpon">
+        <slide><img src="{{ asset('images/os/tarpon.jpg') }}" alt="Hungry Tarpon">
         </slide>
-        <slide><img src="{{ asset('/storage/assets/images/gourley/grouper-websize.jpg') }}" alt="Big Grouper">
+        <slide><img src="{{ asset('images/gourley/grouper-websize.jpg') }}" alt="Big Grouper">
         </slide>
     </carousel>
 <h1 style="background-color:#1a1a1a; padding:3em 0;" class="tagline text-center bg-border wow pulse" data-wow-duration="2.5s">
@@ -122,7 +122,7 @@ Have Rod Will Travel
                 <p>
                     90% are meaningless headshots next to the name of some random clown they met at the bar.
                 </p>
-                <img src="{{ config('app.cdn') }}/assets/images/the-dude-1.jpg" style="border-radius:1em;"
+                <img src="{{ asset('images/the-dude-1.jpg') }}" style="border-radius:1em;"
                      alt="Yeah, well, that's just, like, your opinion, man."
                      title="Yeah, well, that's just, like, your opinion, man."
                 >
