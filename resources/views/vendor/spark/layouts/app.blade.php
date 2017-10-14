@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', config('app.name'))</title>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ config('app.cdn') }}/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
     @yield('scripts', '')
@@ -51,8 +51,8 @@
         @endif
     </div>
     <!-- JavaScript -->
-    <script src="/js/app.js"></script>
-    <script src="/js/hoboscript.js"></script>
+    <script src="{{ config('app.cdn') }}/js/app.js"></script>
+    <script src="{{ config('app.cdn') }}/js/hoboscript.js"></script>
     @if(config('app.env') == 'production')
     <script type="text/javascript">
         var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||

@@ -14,7 +14,6 @@ require('./home')
 Vue.component('posts', require('./Posts.vue'))
 Vue.component('podcasts', require('./Podcasts.vue'))
 Vue.component('input-tag', require('./InputTag.vue'))
-Vue.component('home-carousel', require('./HomeCarousel.vue'))
 Vue.component('public-footer', require('./PublicFooter.vue'))
 Vue.component('newsletter-signup-registration', require('./NewsletterSignupRegistration.vue'))
 
