@@ -122,13 +122,12 @@ Have Rod Will Travel
                 <p>
                     90% are meaningless headshots next to the name of some random clown they met at the bar.
                 </p>
-                <img src="//cdn.hoboflyfishing.comassets/images/the-dude-1.jpg" style="border-radius:1em;"
+                <img src="{{ config('app.cdn') }}/assets/images/the-dude-1.jpg" style="border-radius:1em;"
                      alt="Yeah, well, that's just, like, your opinion, man."
                      title="Yeah, well, that's just, like, your opinion, man."
                 >
             </article>
         </section>
-
     </div>
 </div>
 <div class="row">
