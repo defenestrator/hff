@@ -1,4 +1,4 @@
-@extends('spark::layouts.app')
+@extends('layouts.app')
 
 @section('title')
 Have Rod Will Travel

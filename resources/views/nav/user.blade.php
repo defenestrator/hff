@@ -63,7 +63,7 @@
                             @endif
 
                             <!-- Subscription Reminders -->
-                            @include('spark::nav.subscriptions')
+                            @include('nav.subscriptions')
 
                             <!-- Settings -->
                             <li class="dropdown-header">Settings</li>

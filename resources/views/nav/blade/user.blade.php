@@ -15,19 +15,18 @@
             <!-- Branding Image -->
             <a class="navbar-brand" href="/home">
                 <!-- Spark -->
-                <img src="/img/mono-logo.png" style="height: 32px;">
+                <img src="/images/hobo.png" style="height: 32px;">
             </a>
         </div>
-
         <div class="collapse navbar-collapse" id="spark-navbar-collapse">
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                @includeIf('spark::nav.user-left')
+                @includeIf('nav.user-left')
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                @includeIf('spark::nav.user-right')
+                @includeIf('nav.user-right')
 
                 <li class="dropdown">
                     <!-- User Photo / Name -->
@@ -53,11 +52,11 @@
 
                         <!-- Developer -->
                         @if (Spark::developer(Auth::user()->email))
-                            @include('spark::nav.developer')
+                            @include('nav.developer')
                         @endif
 
                         <!-- Subscription Reminders -->
-                        @include('spark::nav.subscriptions')
+                        @include('nav.subscriptions')
 
                         <!-- Settings -->
                         <li class="dropdown-header">Settings</li>
@@ -71,7 +70,7 @@
 
                         @if (Spark::usesTeams() && (Spark::createsAdditionalTeams() || Spark::showsTeamSwitcher()))
                             <!-- Team Settings -->
-                            @include('spark::nav.blade.teams')
+                            @include('nav.blade.teams')
                         @endif
 
                         <li class="divider"></li>
