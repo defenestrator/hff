@@ -107,7 +107,7 @@ Contact
                 el: '#map',
                 center: {
                     lat: 43.6939533,
-                    lng: -116.4174612,
+                    lng: -116.4674612,
                 },
                 zoom: 13
             })
@@ -116,30 +116,12 @@ Contact
                 position: myLatLng,
                 map: map,
                 title: 'Hobo Fly Fishing, LLC',
-                label: {text: 'Hobo Fly Fishing, LLC', color: "#2890d3"},
+                label: {text: 'Hobo Fly Fishing, LLC'},
                 animation: google.maps.Animation.DROP,
-                icon: '/img/fish-icon-black-blue.png'
+//                icon: '/img/fish-icon-black-blue.png'
             });
         }
-
     </script>
-    <script src="
-    https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU&callback=initMap"
-            async defer>
-        map.
-    </script>
-    <!--page level js ends-->
-    <script>
-//        $(document).ready(function() {
-//            var map;
-//            function initMap() {
-//                map = new google.maps.Map(document.getElementById('map'), {
-//
-//                })
-//            }
-//
-//            initMap();
-//        });
-
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU&callback=initMap" async defer>
     </script>
 @stop

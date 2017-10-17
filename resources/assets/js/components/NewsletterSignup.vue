@@ -30,9 +30,6 @@ export default {
             newsletterEmail: ''
         }
     },
-    mounted() {
-        console.log('Newsletter Subscription Component mounted.')
-    },
     methods: {
         signup() {
             this.validator.validateAll({
