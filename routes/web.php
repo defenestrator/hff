@@ -22,9 +22,7 @@ Route::get('/publications/podcasts/{slug}', 'PublishedPodcastsController@show')-
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 
 // LOADER.IO AUTHENTICATION
-Route::any('loaderio-f9078dd3e7e9c306ca90d525395dc64b', function(){
-    return view('loader-io');
-});
+Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
 
 // AUTH ROUTES
 Route::group(['middleware' => ['auth:web']], function () {
