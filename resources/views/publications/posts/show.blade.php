@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.static')
 
 @section('title')
 {{$post->title}}
@@ -6,7 +6,7 @@
 @stop
 
 @section('page_styles')
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/frontend/blog.css') }}">
+
 @stop
 
 @section('top')
@@ -16,7 +16,7 @@
     <div class="container">
 
         <div class="row content">
-            <div class="col-md-8 col-lg-offset-2">
+            <div class="col-md-8 col-md-offset-2">
                 <h2 class="primary marl12">{{ $post->title }}</h2>
                 <div class=" post">
                     {!! $post->body !!}
