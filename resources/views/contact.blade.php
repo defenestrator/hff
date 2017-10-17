@@ -10,7 +10,7 @@ Contact
 @section('top')
         <!-- Map Section Start -->
 <div class="">
-    <div id="map" style="width:100%; height:400px;"></div>
+    <div id="map" style="width:100%; height:50vh;"></div>
 </div>
 @stop
 
@@ -100,27 +100,46 @@ Contact
 
 {{-- page level scripts --}}
 @section('page_scripts')
-    <script src="{{asset('/js/livicons-1.4.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('js/raphael-min.js') }}" ></script>
-    <script type="text/javascript" src="{{ asset('js/gmaps.min.js') }}" ></script>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU"></script>
-    <!--page level js ends-->
     <script>
-        $(document).ready(function() {
-            var map = new GMaps({
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
                 el: '#map',
-                lat: 43.6939533,
-                lng: -116.4174612,
+                center: {
+                    lat: 43.6939533,
+                    lng: -116.4174612,
+                },
                 zoom: 13
-            });
-            map.addMarker({
-                lat: 43.6936333,
-                lng: -116.4819652,
+            })
+            var myLatLng ={lat:43.6936333, lng:-116.4819652}
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
                 title: 'Hobo Fly Fishing, LLC',
                 label: {text: 'Hobo Fly Fishing, LLC', color: "#2890d3"},
                 animation: google.maps.Animation.DROP,
                 icon: '/img/fish-icon-black-blue.png'
             });
-        });
+        }
+
+    </script>
+    <script src="
+    https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU&callback=initMap"
+            async defer>
+        map.
+    </script>
+    <!--page level js ends-->
+    <script>
+//        $(document).ready(function() {
+//            var map;
+//            function initMap() {
+//                map = new google.maps.Map(document.getElementById('map'), {
+//
+//                })
+//            }
+//
+//            initMap();
+//        });
+
     </script>
 @stop
