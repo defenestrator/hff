@@ -32,7 +32,7 @@
                     <h3>Which would you prefer to pay for on an Alaskan fishing trip, great fishing or an overpriced bottle of wine?</h3>
                     <p>
                     </p>
-                    <p>If you said great fishing, we have a camp for you in the heart of Alaska’s finest fishing waters.
+                    <p>If you said great fishing, we have a camp in the heart of Alaska’s finest fishing waters.
                         Naknek River Camp offers world-class salmon and trout fishing for affordable prices.
                     </p>
                     <p>Don’t worry, you won’t be camped in a Walmart tent with a bear-proof
