@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@extends('layouts.app')
 
 @section('title')
-    Deep Creek Lodge
+    Costa De Cocos
     @parent
 @stop
 
@@ -13,10 +14,9 @@
     </style>
 @stop
 @section('content')
-    <h1>Deep Creek Lodge</h1>
+    <h1>Costa de Cocos</h1>
     <h2>Coming Soon.</h2>
     <sales-inquiry></sales-inquiry>
-    <img style="width:100%;" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg" />
-
-    <h2>&nbsp;</h2>
+    <img src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg" />
+<h2>&nbsp;</h2>
 @stop

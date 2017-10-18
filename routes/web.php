@@ -11,6 +11,8 @@ Route::post('/contact','ContactFormController@create')->name('contact');
 
 // Static Trip Pages
 Route::view('trips/backcountry-river-guides', 'trips.backcountry-river-guides')->name('backcountry-river-guides');
+Route::view('trips/costa-de-cocos', 'trips.costa-de-cocos')->name('costa-de-cocos');
+Route::view('trips/deep-creek-lodge', 'trips.deep-creek-lodge')->name('deep-creek-lodge');
 // Publicly published assets:
 Route::get('/publications/posts', 'PublishedPostsController@index')->name('publications.posts.index');
 Route::get('/publications/posts/{slug}', 'PublishedPostsController@show')->name('publications.posts.show');

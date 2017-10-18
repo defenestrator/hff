@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Steelhead on The River of No Return - Backcountry River Guides
+    Backcountry River Guides
     @parent
 @stop
 
@@ -35,8 +35,8 @@
                     </p>
                     <img src="{{ asset('images/backcountry-river-guides/slide2-2767.jpg') }}" alt="More Steelhead.">
                     <p>
-                        If you want to catch some big ocean run fish without literally rubbing elbows with people you've never met,
-                        this is the most exciting opportunity in the lower 48!
+                        If you want to hook into some fierce ocean-run redbands without literally rubbing elbows with
+                        people you've never met, this is the most exciting opportunity in the lower 48!
                     </p>
 
                     <p>This fishery has a short peak each year. The water temps and flows are historically best from

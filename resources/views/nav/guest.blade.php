@@ -32,7 +32,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/trips/deep-creek-lodge">
                                 Deep Creek Lodge
                                 <div class="thumbnail">
                                     <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
@@ -47,7 +47,7 @@
                         <li class="divider"></li>
                         <li role="presentation" class="dropdown-header">Bonefish and Permit</li>
                         <li>
-                            <a href="#">
+                            <a href="/trips/costa-de-cocos">
                                 Costa de Cocos
                                 <div class="thumbnail">
                                     <img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">
