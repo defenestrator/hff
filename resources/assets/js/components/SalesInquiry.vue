@@ -36,7 +36,9 @@ export default {
         }
     },
     methods: {
+
         signup() {
+            const alertResponse = 'Thanks for your interest in ' + this.message
             this.validator.validateAll({
                   email: this.email
               })
@@ -47,7 +49,7 @@ export default {
                     })
                     .then(result => {
                         swal({
-                            title: 'Thanks for contacting us!',
+                            title: alertResponse,
                             text: 'Expect a response very soon!',
                             type: 'success',
                             timer: 3000

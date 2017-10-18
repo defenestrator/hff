@@ -21,9 +21,11 @@ Have Rod Will Travel
         </slide>
         <slide><img src="{{ asset('images/carousels/home/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Sea Grass" title="Bonefish landed next to Fly Rod on Sea Grass">
         </slide>
-        <slide><img src="{{ asset('images/carousels/home/flats.jpg') }}" alt="Remote Saltwater Flats" title="Remote Saltwater Flats">
+        <slide><img src="{{ asset('images/carousels/home/flats.jpg') }}" alt="Remote Saltwater Flats"
+                    title="Remote Saltwater Flats">
         </slide>
-        <slide><img src="{{ asset('images/carousels/home/tarpon.jpg') }}" alt="Hungry Islamorada Tarpon" title="Hungry Ismadorada Tarpon"></slide>
+        <slide><img src="{{ asset('images/carousels/home/tarpon.jpg') }}" alt="Hungry Islamorada Tarpon"
+                    title="Hungry Ismadorada Tarpon"></slide>
     </carousel>
 <h1 style="background-color:#1a1a1a; padding:3em 0;" class="tagline text-center bg-border wow pulse" data-wow-duration="2.5s">
     Elite Destinations, Local Flavor
@@ -31,7 +33,9 @@ Have Rod Will Travel
 @stop
 
 @section('content')
-
+<h2 class="text-center">We are the official booking agents for more than 25 lodges worldwide</h2>
+<h4 class="text-center">...working our butts off to get them all listed.</h4>
+<h3 class="text-center">Hold on to your hat, tons of good stuff is on the way!</h3>
 <!-- Service Section Start-->
 <div class="row">
     <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
@@ -43,7 +47,8 @@ Have Rod Will Travel
                 <h3 class="success text-center">Self-Guided Adventures</h3>
                 <p>Find some quiet places, and some uneducated fish.
                 </p>
-                <p>If you love to challenge yourself, and expand your understanding of what this great sport has to offer, these trips are for you.
+                <p>If you love to challenge yourself, and expand your understanding of what this great sport has to offer,
+                    these trips are for you.
                 </p>
                 <p>Self-guided fly fishing has a significant learning curve, we can help you shorten it.
                 </p>
