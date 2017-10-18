@@ -14,7 +14,7 @@
                                 type="submit"
                                 role="button"
                                 :disabled="errors.has('email')">
-                            Ask!
+                            Learn More!
                         </button>
                     </span>
 

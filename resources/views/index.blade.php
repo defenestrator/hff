@@ -27,7 +27,7 @@ Have Rod Will Travel
         <slide><img src="{{ asset('images/carousels/home/tarpon.jpg') }}" alt="Hungry Islamorada Tarpon"
                     title="Hungry Ismadorada Tarpon"></slide>
     </carousel>
-<h1 style="background-color:#1a1a1a; padding:3em 0;" class="tagline text-center bg-border wow pulse" data-wow-duration="2.5s">
+<h1 style="background-color:#1a1a1a; padding:2em 1em 2em 1em;" class="tagline text-center bg-border wow pulse" data-wow-duration="2.5s">
     Elite Destinations, Local Flavor
 </h1>
 @stop
