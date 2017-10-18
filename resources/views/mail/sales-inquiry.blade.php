@@ -4,7 +4,7 @@
     <div style="border:1px solid gray; padding:12px;">
         <h3>From:</h3>
         <p>{{ $data->address }}</p>
-        <h3>Message:</h3>
+        <h3>Interested in:</h3>
         <p>{{ $data->message }}</p>
 
 
