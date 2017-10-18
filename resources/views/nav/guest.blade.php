@@ -52,7 +52,7 @@
                                 <div class="thumbnail">
                                     <img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">
                                     <div class="caption">
-                                        <p>Xcalac, MX, on the border of Belize!</p>
+                                        <p>Xcalac, MX, on the Belize border!</p>
                                     </div>
                                 </div>
                             </a>

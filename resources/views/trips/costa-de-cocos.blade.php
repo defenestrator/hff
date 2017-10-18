@@ -63,12 +63,11 @@
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <p> Is an egg-white omelet and a caffè latte at some extravagant lodge across the border in Belize worth three grand?
+                    <p> Is an egg-white omelet and a caffè latte at some extravagant lodge across the border worth three grand?
                     </p>
-                    <h4 class="text-center">Nope.</h4>
                     <hr>
                     <p>Heck, you could use that money toward a second trip to Costa de Cocos!</p>
-                    <p class="text-center"><strong>The price is to low to print!</strong></p>
+                    <p class="text-center"><strong>The price is too low to print!</strong></p>
                     <h3 class="text-center"><strong> $???? </strong> Drop us a line!</h3>
                     <sales-inquiry></sales-inquiry>
                     <p>The fish don't know if they are in Belize or Mexico, it's all the same water.</p>
