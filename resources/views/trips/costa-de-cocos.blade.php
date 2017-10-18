@@ -78,6 +78,7 @@
                     </p>
                     <img src="/images/costa-de-cocos/scuba-with-tarpon.jpg" />
                     <p>The fish don't know if they are in Belize or Mexico, it's all the same water.</p>
+                    <p>If you have particular needs or desires, let us know, and we'll build a trip just for you.</p>
                 </article>
             </section>
         </div>
@@ -104,7 +105,6 @@
                     <img src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg"
                          alt="Otto and Alberto with a nice Permit"
                          title="Otto and Alberto with a nice Permit">
-                    <p>If you have particular needs or desires, let us know, and we'll build a trip just for you.</p>
                 </article>
             </section>
         </div>
