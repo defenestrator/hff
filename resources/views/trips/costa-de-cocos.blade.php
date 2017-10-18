@@ -40,6 +40,7 @@
                         path, but still accessible. What’s more, you can fish guided, unguided or mix and match to suit
                         your budget.
                     </p>
+
                     {{--<p>Every fly caster has fished waters that infiltrated their inner-being. The Caribbean out the--}}
                         {{--front door of Costa de Cocos is among them, for the guys at Hobo Fly Fishing.--}}
                         {{--The inhabitants of this unspoiled expanse of saltwater paradise consume our thoughts,--}}
@@ -71,36 +72,38 @@
                         {{--working the water. And yes, at least a little luck. When you finally land a monstrous Permit,--}}
                         {{--or a lightning bolt of a Bonefish on some nameless flat devoid of other anglers, the victory will taste sweeter for it.--}}
                     {{--</p>--}}
-                    <p class="text-center">
-                        <iframe width="560"
-                                height="315"
-                                src="https://www.youtube-nocookie.com/embed/YCEpp1A04KY?rel=0"
-                                frameborder="0" allowfullscreen>
-                        </iframe>
-                    </p>
                     <p>
                         Our hybrid trip includes both guided and self-guided days in this amazing location. Our angler
                         support package will save you time, prevent logistical headaches, and reduce the pain of learning a new fishery.
                     </p>
                     <img src="/images/costa-de-cocos/scuba-with-tarpon.jpg" />
+                    <p>The fish don't know if they are in Belize or Mexico, it's all the same water.</p>
                 </article>
             </section>
         </div>
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <img src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg"
-                         alt="Otto and Alberto with a nice Permit"
-                         title="Otto and Alberto with a nice Permit">
+                    <p class="text-center">
+                        <iframe width="280"
+                                height="158"
+                                src="https://www.youtube-nocookie.com/embed/YCEpp1A04KY?rel=0"
+                                frameborder="0" allowfullscreen>
+                        </iframe>
+                    </p>
+
                     <p> Is an egg-white omelet and a caffè latte at some extravagant lodge across the border worth three grand?
                     </p>
-                    <hr>
                     <p>Heck, you could use that money toward a second trip to Costa de Cocos!</p>
+                    <img src="http://www.costadecocos.com/images/costa%20de%20cocos%20fishing%20lg.jpg">
                     <p class="text-center"><strong>The price is too low to publish.</strong></p>
                     <h3 class="text-center">Drop us a line!</h3>
                     <sales-inquiry></sales-inquiry>
-                    <p>The fish don't know if they are in Belize or Mexico, it's all the same water.</p>
-                    <img src="http://www.costadecocos.com/images/costa%20de%20cocos%20fishing%20lg.jpg">
+
+
+                    <img src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg"
+                         alt="Otto and Alberto with a nice Permit"
+                         title="Otto and Alberto with a nice Permit">
                     <p>If you have particular needs or desires, let us know, and we'll build a trip just for you.</p>
                 </article>
             </section>
