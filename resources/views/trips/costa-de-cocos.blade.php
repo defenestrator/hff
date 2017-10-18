@@ -20,8 +20,8 @@
                 <article class="article">
                     <h2>Top-tier flats fishing at amazingly affordable rates</h2>
                     <p></p>
-                    <h4>Every fly caster knows waters that have infiltrated their inner-being.</h4>
-                    <p>The Caribbean out the front door of Costa de Cocos are some of those waters.
+                    <h4>Every fly caster has fished waters that infiltrated their inner-being.</h4>
+                    <p>The Caribbean out the front door of Costa de Cocos is among them, for the guys at Hobo Fly Fishing.
                         The inhabitants of this unspoiled expanse of saltwater paradise consume our thoughts,
                         and sometimes lead to a lack of sleep or focus during the slog of everyday life.
 
