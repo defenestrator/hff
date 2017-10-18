@@ -1,18 +1,5 @@
 {
-  "/js/app.js": "/js/app.js",
-  "/mix.js": "/mix.js",
-  "/css/app.css": "/css/app.css",
-  "/assets/css/lib.css": "/assets/css/lib.css",
-  "/assets/js/lib.js": "/assets/js/lib.js",
-  "/css/libs.css": "/css/libs.css",
-  "/js/libs.js": "/js/libs.js",
-  "/js/apps.js": "/js/apps.js",
-  "/js/sweetalert.min.js": "/js/sweetalert.min.js",
-  "/resources/assets/js/compiled.js": "/resources/assets/js/compiled.js",
-  "/js/hoboscript.js": "/js/hoboscript.js",
-  "storage/app/public/assets/css/styles.css": "storage/app/public/assets/css/styles.css",
-  "./storage/app/public/assets/js.app.js": "./storage/app/public/assets/js.app.js",
-  "./storage/app/public/assets/js/app.js": "./storage/app/public/assets/js/app.js",
-  "/css/styles.css": "/css/styles.css",
-  "/js/script.js": "/js/script.js"
+  "/mix.js": "/mix.63f97db91341776ade66.js",
+  "/css/styles.css": "/css/styles.d41d8cd98f00b204e9800998ecf8427e.css",
+  "/js/script.js": "/js/script.d41d8cd98f00b204e9800998ecf8427e.js"
 }

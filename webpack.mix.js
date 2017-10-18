@@ -5,7 +5,7 @@ mix.less('resources/assets/less/app.less', 'public/css')
         './resources/assets/less/sweetalert2.min.css',
         './resources/assets/less/animate.min.css',
     ], 'public/css/libs.css')
-    .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css')
+    .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css').version()
    .webpackConfig({
         resolve: {
             modules: [
@@ -32,5 +32,5 @@ mix.less('resources/assets/less/app.less', 'public/css')
     .combine([
         'public/js/app.js',
         'public/js/hoboscript.js',
-    ], 'public/js/script.js')
+    ], 'public/js/script.js').version()
     .copy('resources/assets/images', 'public/images', false)
