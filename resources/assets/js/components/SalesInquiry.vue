@@ -19,7 +19,7 @@
                     </span>
 
         </div>
-        <div style="padding:1em;"><span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span></div>
+        <div style="min-height:24px;"><span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span></div>
     </form>
 </template>
 
@@ -32,7 +32,7 @@ export default {
     data() {
         return {
             email: '',
-            message: 'Please contact this customer about Backcountry River Guides',
+            message: document.title,
         }
     },
     methods: {
