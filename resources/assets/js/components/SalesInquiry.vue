@@ -9,7 +9,7 @@
                    aria-describedby="basic-addon2"
                    required>
                     <span class="input-group-btn">
-                        <button class="btn btn-danger"
+                        <button :class="{'btn': true, 'btn-danger': true, 'is-danger': errors.has('email') }"
                                 @click.prevent="signup"
                                 type="submit"
                                 role="button"
