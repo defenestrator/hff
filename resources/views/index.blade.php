@@ -34,7 +34,7 @@ Have Rod Will Travel
 
 @section('content')
 <h2 class="text-center">We are preferred booking agents for more than 25 lodges worldwide</h2>
-<h4 class="text-center">...working our butts off to get them all listed.</h4>
+<h4 class="text-center">There will be updates several times a day as we continue to add them.</h4>
 <h3 class="text-center">Hold on to your hat, tons of good stuff is on the way!</h3>
 <!-- Service Section Start-->
 <div class="row">
