@@ -4,7 +4,6 @@ mix.less('resources/assets/less/app.less', 'public/css')
     .styles([
         './resources/assets/less/sweetalert2.min.css',
         './resources/assets/less/animate.min.css',
-        './resources/assets/less/font-awesome.min.css'
     ], 'public/css/libs.css')
     .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css')
    .webpackConfig({

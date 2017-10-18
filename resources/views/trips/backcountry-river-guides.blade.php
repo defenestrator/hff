@@ -44,7 +44,7 @@
                         Get a shot at the most remote steelhead water in the continental USA, with Brent Sawyer and
                         Backcountry River Guides!
                     </p>
-                    <img src="{{ asset('images/backcountry-river-guides/slide3-2808.jpg') }}" alt="Even More Steelhead">
+                    <img src="{{ asset('images/backcountry-river-guides/steelie-hell.jpg') }}" alt="Even More Steelhead">
                 </article>
             </section>
 
