@@ -19,7 +19,7 @@ Have Rod Will Travel
         </slide>
         <slide><img src="{{ asset('images/carousels/home/bully.jpg') }}" alt="Bull Trout, keep 'em wet." title="Bull Trout must be kept in the water.">
         </slide>
-        <slide><img src="{{ asset('images/carousels/home/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Sea Grass" title="Bonefish landed next to Fly Rod on Sea Grass">
+        <slide><img src="{{ asset('images/carousels/home/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Eel Grass" title="Bonefish landed next to Fly Rod on Eel Grass">
         </slide>
         <slide><img src="{{ asset('images/carousels/home/flats.jpg') }}" alt="Remote Saltwater Flats"
                     title="Remote Saltwater Flats">
