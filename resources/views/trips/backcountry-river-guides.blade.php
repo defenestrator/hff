@@ -59,28 +59,6 @@
                     <h4 class="text-center">Nope.</h4>
                     <p class="text-center"><strong>4 anglers, 4 days. Fully outfitted.</strong></p>
                     <h3 class="text-center"><i class="fa fa-bolt"></i><strong> $4000 </strong><i class="fa fa-bolt"></i></h3>
-                    {{--<form>--}}
-                        {{--<div class="input-group">--}}
-                            {{--<input class="form-control" placeholder="your email"--}}
-                                   {{--name="email"--}}
-                                   {{--type="email"--}}
-                                   {{--class="form-control"--}}
-                                   {{--value=""--}}
-                                   {{--aria-describedby="basic-addon2"--}}
-                                   {{--required>--}}
-                            {{--<span class="input-group-btn">--}}
-                                {{--<button class="btn btn-danger"--}}
-                                        {{--method="POST"--}}
-                                        {{--action="/sales-inquiry"--}}
-                                        {{--type="submit"--}}
-                                        {{--role="button"--}}
-                                       {{-->--}}
-                                    {{--Ask!--}}
-                                {{--</button>--}}
-                            {{--</span>--}}
-
-                        {{--</div>--}}
-                    {{--</form>--}}
                     <sales-inquiry></sales-inquiry>
                     <img src="{{ asset('images/backcountry-river-guides/intrudershadow1.png') }}" alt="Intruder Alert!">
                     <p>Backcountry River Guides' trips are part of our "Full Service" lineup and we highly

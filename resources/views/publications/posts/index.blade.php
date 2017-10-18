@@ -1,4 +1,4 @@
-@extends('layouts.no-spark')
+@extends('layouts.app')
 
 {{-- Page title --}}
 @section('title')
