@@ -19,14 +19,11 @@
             <section>
                 <article class="article">
                     <h2>Top-tier flats fishing at amazingly affordable rates</h2>
-                    <p></p>
-                    <h4>Every fly caster has fished waters that infiltrated their inner-being.</h4>
-                    <p>The Caribbean out the front door of Costa de Cocos is among them, for the guys at Hobo Fly Fishing.
+                    <p>Every fly caster has fished waters that infiltrated their inner-being. The Caribbean out the
+                        front door of Costa de Cocos is among them, for the guys at Hobo Fly Fishing.
                         The inhabitants of this unspoiled expanse of saltwater paradise consume our thoughts,
                         and sometimes lead to a lack of sleep or focus during the slog of everyday life.
-
                     </p>
-
                     <p>
                         As we tie flies in anticipation of our return, Permit, Bonefish and giant Barracuda race through
                         our minds with each wrap we make. In an attempt to stay connected with the waters near Xcalak
