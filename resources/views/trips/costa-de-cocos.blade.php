@@ -100,7 +100,6 @@
                     <h3 class="text-center">Drop us a line!</h3>
                     <sales-inquiry></sales-inquiry>
                     <p>The fish don't know if they are in Belize or Mexico, it's all the same water.</p>
-                    <p>These packages are only available from Hobo Fly Fishing. </p>
                     <img src="http://www.costadecocos.com/images/costa%20de%20cocos%20fishing%20lg.jpg">
                     <p>If you have particular needs or desires, let us know, and we'll build a trip just for you.</p>
                 </article>
