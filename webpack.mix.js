@@ -6,7 +6,7 @@ mix.less('resources/assets/less/app.less', 'public/css')
         './resources/assets/less/animate.min.css',
     ], 'public/css/libs.css')
     .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css').version()
-   .webpackConfig({
+    .webpackConfig({
         resolve: {
             modules: [
                 path.resolve(__dirname, 'vendor/laravel/spark/resources/assets/js'),
@@ -16,21 +16,21 @@ mix.less('resources/assets/less/app.less', 'public/css')
                 'vue$': 'vue/dist/vue.js'
             }
         }
-   })
+    })
     .js('./resources/assets/js/app.js', 'public/js/')
     .combine([
-        './resources/assets/js/sweetalert.min.js',
-        './resources/assets/js/raphael-min.js',
-        './resources/assets/js/livicons-1.4.min.js',
-        './resources/assets/js/wow.min.js',
-        './resources/assets/gmaps.min.js',
-        './node_modules/trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js',
-        './node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js',
-        './node_modules/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js',
+            './resources/assets/js/sweetalert.min.js',
+            './resources/assets/js/raphael-min.js',
+            './resources/assets/js/livicons-1.4.min.js',
+            './resources/assets/js/wow.min.js',
+            './resources/assets/gmaps.min.js',
+            './node_modules/trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js',
+            './node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js',
+            './node_modules/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js',
         ],
         'public/js/hoboscript.js' )
     .combine([
         'public/js/app.js',
         'public/js/hoboscript.js',
-    ], 'public/js/script.js').version()
+    ], 'public/js/script.js')
     .copy('resources/assets/images', 'public/images', false)

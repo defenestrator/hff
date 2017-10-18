@@ -1,5 +1,9 @@
 {
   "/mix.js": "/mix.63f97db91341776ade66.js",
   "/css/styles.css": "/css/styles.d41d8cd98f00b204e9800998ecf8427e.css",
-  "/js/script.js": "/js/script.d41d8cd98f00b204e9800998ecf8427e.js"
+  "/js/script.js": "/js/script.d41d8cd98f00b204e9800998ecf8427e.js",
+  "/js/app.js": "/js/app.f88056dec9effeeeee8b.js",
+  "/css/app.css": "/css/app.bc4511fa089861f1e14bfa0d9d94dcea.css",
+  "/css/libs.css": "/css/libs.6aa3e4315ea2bf13a57e5007a74e7cf1.css",
+  "/js/hoboscript.js": "/js/hoboscript.2efdc63a55fbecce9986cd9f961d66da.js"
 }
