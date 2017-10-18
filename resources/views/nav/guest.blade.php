@@ -32,6 +32,17 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/trips/naknek-river-camp">
+                                Naknek River Camp
+                                <div class="thumbnail">
+                                    <img class="img-responsive" src="/images/naknek-river-camp/steelie.jpg">
+                                    <div class="caption">
+                                        <p>Bristol Bay, AK area!</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
                             <a href="/trips/deep-creek-lodge">
                                 Deep Creek Lodge
                                 <div class="thumbnail">

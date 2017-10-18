@@ -12,8 +12,19 @@
         }
     </style>
 @stop
+
+@section('top')
+    <img style="width:100%;"
+         src="http://www.orvis.com/flyfishingvideos/wp-content/uploads/2016/01/costa-de-cocos-bonefish-and-perm.jpg"
+         alt="Nice f***in' Permit, dude!"
+         title="Nice fu**in' Permit, dude!">
+    <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
+        Costa de Cocos
+    </h1>
+@stop
+
 @section('content')
-    <h1>Costa de Cocos</h1>
+
     <div class="row">
         <div class="col-sm-8 col-sm-offset-0">
             <section>
@@ -90,10 +101,16 @@
                     <sales-inquiry></sales-inquiry>
                     <p>The fish don't know if they are in Belize or Mexico, it's all the same water.</p>
                     <p>These packages are only available from Hobo Fly Fishing. </p>
-                    <p>If you have particular needs or desires, let us know, and we'll build a trip just for you.</p>
                     <img src="http://www.costadecocos.com/images/costa%20de%20cocos%20fishing%20lg.jpg">
+                    <p>If you have particular needs or desires, let us know, and we'll build a trip just for you.</p>
                 </article>
             </section>
         </div>
     </div>
+@stop
+{{-- footer scripts --}}
+@section('page_scripts')
+    <script>
+        new WOW().init();
+    </script>
 @stop
