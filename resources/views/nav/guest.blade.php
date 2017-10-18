@@ -16,7 +16,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li class="dropdown thumb-dropdown">
-                    <a href="/{{route('publications.posts.index')}}" class="dropdown-toggle" data-toggle="dropdown">Trips<span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown">Trips<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li role="presentation" class="dropdown-header">Steelhead and Salmon</li>
                         <li>
