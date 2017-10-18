@@ -22,35 +22,34 @@
                         <li>
                             <a href="/trips/backcountry-river-guides">
                                 Backcountry River Guides
-                                <div class="thumbnail">
-                                    <img class="img-responsive" src="/images/backcountry-river-guides/slide1-178.jpg">
-                                    <div class="caption">
-                                        <p>Idaho's Salmon River</p>
-                                    </div>
-                                </div>
-
+                                {{--<div class="thumbnail">--}}
+                                    {{--<img class="img-responsive" src="/images/backcountry-river-guides/slide1-178.jpg">--}}
+                                    {{--<div class="caption">--}}
+                                        {{--<p>Idaho's Salmon River</p>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </a>
                         </li>
                         <li>
                             <a href="/trips/naknek-river-camp">
                                 Naknek River Camp
-                                <div class="thumbnail">
-                                    <img class="img-responsive" src="/images/naknek-river-camp/steelie.jpg">
-                                    <div class="caption">
-                                        <p>Bristol Bay, AK area!</p>
-                                    </div>
-                                </div>
+                                {{--<div class="thumbnail">--}}
+                                    {{--<img class="img-responsive" src="/images/naknek-river-camp/steelie.jpg">--}}
+                                    {{--<div class="caption">--}}
+                                        {{--<p>Bristol Bay, AK area!</p>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </a>
                         </li>
                         <li>
                             <a href="/trips/deep-creek-lodge">
                                 Deep Creek Lodge
-                                <div class="thumbnail">
-                                    <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
-                                    <div class="caption">
-                                        <p>Coming Soon!</p>
-                                    </div>
-                                </div>
+                                {{--<div class="thumbnail">--}}
+                                    {{--<img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">--}}
+                                    {{--<div class="caption">--}}
+                                        {{--<p>Coming Soon!</p>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </a>
                         </li>
                         <li>
@@ -60,12 +59,12 @@
                         <li>
                             <a href="/trips/costa-de-cocos">
                                 Costa de Cocos
-                                <div class="thumbnail">
-                                    <img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">
-                                    <div class="caption">
-                                        <p>Xcalac, MX, on the Belize border!</p>
-                                    </div>
-                                </div>
+                                {{--<div class="thumbnail">--}}
+                                    {{--<img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">--}}
+                                    {{--<div class="caption">--}}
+                                        {{--<p>Xcalac, MX, on the Belize border!</p>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
                             </a>
                         </li>
                     </ul>
