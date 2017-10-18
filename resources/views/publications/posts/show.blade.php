@@ -1,4 +1,4 @@
-@extends('layouts.static')
+@extends('layouts.app')
 
 @section('title')
 {{$post->title}}
@@ -14,10 +14,9 @@
 
 @section('content')
     <div class="container">
-
         <div class="row content">
             <div class="col-md-8 col-md-offset-2">
-                <h2 class="primary marl12">{{ $post->title }}</h2>
+                <h3>{{ $post->title }}</h3>
                 <div class=" post">
                     {!! $post->body !!}
                     <div class="the-box no-border blog-detail-content">

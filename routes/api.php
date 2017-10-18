@@ -15,7 +15,7 @@ Route::group([
     'middleware' => 'api'
 ], function () {
     Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
-
+    Route::post('/sales-inquiry', 'SalesInquiryController@create');
     Route::get('/posts', 'PostsController@index');
     Route::post('/posts', 'PostsController@create');
     Route::put('/posts/{id}', 'PostsController@update');

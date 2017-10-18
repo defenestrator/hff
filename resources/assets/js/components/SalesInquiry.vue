@@ -1,53 +1,56 @@
 <template>
-    <div>
-        <a href="#newsletter"><h4>Riding the Reels</h4></a>
-        <p>Get special deals and exclusive trip packages! We only send about one newsletter per month.</p>
-        <form class="form-inline newsletter">
-            <div class="form-group">
-                <input v-validate="'required|email'" v-model="newsletterEmail" name="newsletterEmail"
-                       type="email"
-                       :class="{'form-control': true, 'is-danger': errors.has('email') }"
-                       placeholder="your email"
-                       value=""
-                       aria-describedby="basic-addon2"
-                       required
-                >
-                <button @click.prevent="signup" type="submit" class="btn btn-primary btn-sm" role="button" :disabled="errors.has('email')">Go</button>
-                <div style="padding:1em;"><span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span></div>
-            </div>
-        </form>
-    </div>
+    <form>
+        <div class="input-group">
+            <input class="form-control" placeholder="your email"
+                   v-validate="'required|email'" v-model="email" name="email"
+                   type="email"
+                   :class="{'form-control': true, 'is-danger': errors.has('email') }"
+                   value=""
+                   aria-describedby="basic-addon2"
+                   required>
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger"
+                                @click.prevent="signup"
+                                type="submit"
+                                role="button"
+                                :disabled="errors.has('email')">
+                            Ask!
+                        </button>
+                    </span>
+
+        </div>
+        <div style="padding:1em;"><span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span></div>
+    </form>
 </template>
 
 <script>
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 export default {
-    name: 'newsletter-signup',
+    name: 'sales-inquiry',
     validator: null,
     data() {
         return {
-            newsletterEmail: ''
+            email: '',
+            message: 'Please contact this customer about Backcountry River Guides',
         }
-    },
-    mounted() {
-        console.log('Newsletter Subscription Component mounted.')
     },
     methods: {
         signup() {
             this.validator.validateAll({
-                  email: this.newsletterEmail
+                  email: this.email
               })
                 .then(result => {
-                        axios.post(`/api/newsletter-subscriptions`, {
-                        email: this.newsletterEmail
+                        axios.post(`/api/sales-inquiry`, {
+                        email: this.email,
+                        message: this.message
                     })
                     .then(result => {
                         swal({
-                            title: 'Thanks for signing up!',
-                            text: 'We promise not to spam you.',
+                            title: 'Thanks for contacting us!',
+                            text: 'Expect a response very soon!',
                             type: 'success',
-                            timer: 2000
+                            timer: 3000
                         });
                         return result
                     })
