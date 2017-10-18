@@ -10,21 +10,20 @@ Have Rod Will Travel
 
 @section('top')
     <carousel :autoplay="true"
-              :autoplay-timeout="5000"
-              :per-page="1"
+              :autoplay-timeout="2000"
+              :per-page="2"
               :pagination-enabled="false"
-              :autoplay-hover-pause="true"
-              :loop="true">
-        <slide><img src="{{ asset('images/gourley/DSC_0336.JPG') }}" alt="Saltwater Flats">
+              :loop="true"
+              style="cursor: pointer;">
+        <slide><img src="{{ asset('images/carousels/home/grouper-websize.jpg') }}" alt="Big Grouper" title="Big Grouper">
         </slide>
-        <slide><img src="{{ asset('images/gourley/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Sea Grass">
+        <slide><img src="{{ asset('images/carousels/home/bully.jpg') }}" alt="Bull Trout, keep 'em wet." title="Bull Trout must be kept in the water.">
         </slide>
-        <slide><img src="{{ asset('images/bully.jpg') }}" alt="Bull Trout must be kept in the water.">
+        <slide><img src="{{ asset('images/carousels/home/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Sea Grass" title="Bonefish landed next to Fly Rod on Sea Grass">
         </slide>
-        <slide><img src="{{ asset('images/os/tarpon.jpg') }}" alt="Hungry Tarpon">
+        <slide><img src="{{ asset('images/carousels/home/flats.jpg') }}" alt="Remote Saltwater Flats" title="Remote Saltwater Flats">
         </slide>
-        <slide><img src="{{ asset('images/gourley/grouper-websize.jpg') }}" alt="Big Grouper">
-        </slide>
+        <slide><img src="{{ asset('images/carousels/home/tarpon.jpg') }}" alt="Hungry Islamorada Tarpon" title="Hungry Ismadorada Tarpon"></slide>
     </carousel>
 <h1 style="background-color:#1a1a1a; padding:3em 0;" class="tagline text-center bg-border wow pulse" data-wow-duration="2.5s">
     Elite Destinations, Local Flavor
