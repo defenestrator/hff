@@ -13,7 +13,6 @@
 @stop
 
 @section('content')
-    <div class="container">
         <div class="row content">
             <div class="col-md-8 col-md-offset-2">
                 <h3>{{ $post->title }}</h3>
@@ -46,5 +45,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @stop
