@@ -42,7 +42,7 @@
                         to plan trips only during the "peak" months. In these waters, amazing angling can be had on almost
                         every day of the year.
                     </p>
-                        <img src="http://www.costadecocos.com/images/costa%20de%20cocos%20fishing%20lg.jpg">
+
                     <p>
                         For saltwater ”DiY” anglers in search of new flats to stalk, this area
                         has few rivals. The thing about doing it yourself is; No matter how great you think
@@ -56,6 +56,10 @@
                                 src="https://www.youtube-nocookie.com/embed/YCEpp1A04KY?rel=0"
                                 frameborder="0" allowfullscreen>
                         </iframe>
+                    </p>
+                    <p>
+                        Our hybrid trip includes both guided and self-guided days in this amazing location. Our exclusive angler
+                        support package will save you time, prevent logistical headaches, and reduce the pain of learning a new fishery.
                     </p>
                 </article>
             </section>
@@ -74,13 +78,9 @@
                     <h3 class="text-center"><strong> $???? </strong> Drop us a line!</h3>
                     <sales-inquiry></sales-inquiry>
                     <p>The fish don't know if they are in Belize or Mexico, it's all the same water.</p>
-
-                    <p>
-                        Our hybrid trip includes both guided and self-guided days in this amazing location. Our exclusive angler
-                        support package will save you time and reduce the learning curve while it saves you money.
-                    </p>
                     <p>These packages are only available from Hobo Fly Fishing. </p>
                     <p>If you have particular needs or desires, let us know, and we'll build a trip just for you.</p>
+                    <img src="http://www.costadecocos.com/images/costa%20de%20cocos%20fishing%20lg.jpg">
                 </article>
             </section>
         </div>
