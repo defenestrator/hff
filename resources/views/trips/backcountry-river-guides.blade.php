@@ -30,7 +30,7 @@
                     Back Country River Guides has exclusive guide rights on two-hundred miles of Idaho's Salmon River,
                     120 of which travels through the Frank Church River of No Return Wilderness.
                     This spectacular roadless primitive area is lovingly referred to by locals as "The Frank."
-                    Some of this water has never seen a spey rod, a compelling fact that should excite anyone in
+                    Some of this water has never seen a spey rod, a fact that should excite anyone in
                     search of untouched steelies!
                     </p>
                     <img src="{{ asset('images/backcountry-river-guides/slide2-2767.jpg') }}" alt="More Steelhead.">
