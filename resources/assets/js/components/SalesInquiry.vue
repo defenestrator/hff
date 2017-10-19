@@ -14,7 +14,7 @@
                                 type="submit"
                                 role="button"
                                 :disabled="errors.has('email')">
-                            Learn More!
+                            Fish On!
                         </button>
                     </span>
 

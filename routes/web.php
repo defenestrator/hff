@@ -8,7 +8,8 @@ Route::view('/privacy','privacy')->name('privacy');
 
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact','ContactFormController@create')->name('contact');
-
+//Featured Specials
+Route::view('/flats-special', 'flats-special')->name('flats-special');
 // Static Trip Pages
 Route::view('/trips/backcountry-river-guides', 'trips.backcountry-river-guides')->name('backcountry-river-guides');
 Route::view('/trips/costa-de-cocos', 'trips.costa-de-cocos')->name('costa-de-cocos');
