@@ -29,7 +29,7 @@
         <div class="col-sm-8 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <h3>Which would you prefer to pay for on an Alaskan fishing trip, great fishing or an overpriced bottle of wine?</h3>
+                    <h3>Which would you prefer to pay for, on an Alaskan fishing trip, great fishing or an overpriced bottle of wine?</h3>
                     <p>
                     </p>
                     <p>If you said great fishing, we have a camp in the heart of Alaska’s finest fishing waters.
