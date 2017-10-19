@@ -16,7 +16,6 @@
             Flats Fishing Special
         </h2>
         <h2 class="feature-tagline text-center">Bonefish, Tarpon, Permit, Barracuda and Jacks</h2>
-        <h5 class="feature-tagline text-center">(oh my!)</h5>
         <h2 style="font-size:xx-large"class="feature-tagline text-center  wow pulse" data-wow-duration="2.5s">6 days for $1000</h2>
         <div style="margin: 0 auto;width:300px; max-width:70%"><sales-inquiry></sales-inquiry></div>
 
