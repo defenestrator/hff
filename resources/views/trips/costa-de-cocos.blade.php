@@ -34,6 +34,13 @@
                         legit shots at all these fish, push the mute button. Costa De Cocos is your gateway to saltwater
                         flyfishing without an arm-or-leg admission price.
                     </p>
+                    <p class="text-center">
+                        <iframe width="280"
+                                height="158"
+                                src="https://www.youtube-nocookie.com/embed/YCEpp1A04KY?rel=0"
+                                frameborder="0" allowfullscreen>
+                        </iframe>
+                    </p>
                     <p>This southern Yucatan resort has access to the second-largest barrier reef in the world and the
                         Sian Ka’an Bio Reserve, which means the fisheries are managed for sustainability. The area produces
                         excellent flats fishing and adjacent lagoons for tarpon, all in a place that’s off the beaten
@@ -78,21 +85,13 @@
                     </p>
                     <img src="/images/costa-de-cocos/scuba-with-tarpon.jpg" />
                     <p>The fish don't know if they are in Belize or Mexico, it's all the same water.</p>
-                    <p>If you have particular needs or desires, let us know, and we'll build a trip just for you.</p>
+
                 </article>
             </section>
         </div>
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <p class="text-center">
-                        <iframe width="280"
-                                height="158"
-                                src="https://www.youtube-nocookie.com/embed/YCEpp1A04KY?rel=0"
-                                frameborder="0" allowfullscreen>
-                        </iframe>
-                    </p>
-
                     <p> Is an egg-white omelet and a caffè latte at some extravagant lodge across the border worth three grand?
                     </p>
                     <p>Heck, you could use that money toward a second trip to Costa de Cocos!</p>
@@ -100,11 +99,10 @@
                     <p class="text-center"><strong>The price is too low to publish.</strong></p>
                     <h3 class="text-center">Drop us a line!</h3>
                     <sales-inquiry></sales-inquiry>
-
-
                     <img src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg"
                          alt="Otto and Alberto with a nice Permit"
                          title="Otto and Alberto with a nice Permit">
+                    <p>If you have particular needs or desires, let us know, and we'll build a trip just for you.</p>
                 </article>
             </section>
         </div>
