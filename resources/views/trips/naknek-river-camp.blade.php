@@ -50,11 +50,12 @@
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <p class="text-center"><img src="/images/naknek-river-camp/naknek-rivercamp-logo.png" /></p>
+                    <p class="text-center">
+                        <img src="/images/naknek-river-camp/steelie.jpg" /></p>
                     <p class="text-center"><strong>Less costly than you can imagine.</strong></p>
                     <h3 class="text-center">We know you're curious.</h3>
                     <sales-inquiry></sales-inquiry>
-                    <img src="/images/naknek-river-camp/steelie.jpg" />
+                    <img src="/images/naknek-river-camp/naknek-rivercamp-logo.png" />
                 </article>
             </section>
         </div>

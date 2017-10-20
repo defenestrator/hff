@@ -2,19 +2,28 @@
     <div>
         <a href="#newsletter"><h4>Riding the Reels</h4></a>
         <p>Get special deals and exclusive trip packages! We only send about one newsletter per month.</p>
-        <form class="form-inline newsletter">
-            <div class="form-group">
-                <input v-validate="'required|email'" v-model="newsletterEmail" name="newsletterEmail"
+        <form>
+            <div class="input-group">
+                <input class="form-control" placeholder="your email"
+                       v-validate="'required|email'" v-model="email" name="email"
                        type="email"
                        :class="{'form-control': true, 'is-danger': errors.has('email') }"
-                       placeholder="your email"
                        value=""
                        aria-describedby="basic-addon2"
-                       required
-                >
-                <button @click.prevent="signup" type="submit" class="btn btn-primary btn-sm" role="button" :disabled="errors.has('email')">Go</button>
-                <div style="padding:1em;"><span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span></div>
+                       required>
+                    <span class="input-group-btn">
+                        <button :class="{'btn': true, 'btn-danger': true, 'is-danger': errors.has('email') }"
+                                @click.prevent="signup"
+                                type="submit"
+                                style="font-size:18px;"
+                                role="button"
+                                :disabled="errors.has('email')">
+                            Go!
+                        </button>
+                    </span>
+
             </div>
+            <div style="min-height:24px;"><span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span></div>
         </form>
     </div>
 </template>

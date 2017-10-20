@@ -39,6 +39,7 @@
         <div class="container">
             @yield('content')
         </div>
+        @yield('bottom')
         @if(Auth::guest())
         @include('parts.footer')
         @endif

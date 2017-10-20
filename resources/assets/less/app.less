@@ -339,19 +339,23 @@ blockquote {
 }
 
 .bg-border {
-
   padding-top    : 20px;
   padding-bottom : 20px;
   width          : 100%;
 }
+
 .tagline {
-  text-shadow: 1px 2px 4px #787878;
-  padding:3em 0;
+  background: #262626 url('../images/cutty.jpg') center center no-repeat;
+  background-size:cover;
+  padding:4em 0;
   margin-bottom  : 20px;
-  color:#f8f8ff;
+  color:white;
+  text-shadow: 0px 0px 4px #3ab0f5, 0px 0px 6px #000, 0px 0px 4px #000;
   text-transform : uppercase;
   font-weight    : 300;
+  overflow-x:hidden;
 }
+
 .feature-tagline {
   text-shadow: 1px 2px 4px #bf542a;
   padding:1em 0;
@@ -460,8 +464,8 @@ blockquote {
 /* ---------- Footer Section Css ---------- */
 
 footer {
-  background: #262626;
-  background: linear-gradient(to bottom, #242424 0%,#1a1a1a 100%);
+  background: #060609 url('../images/squiggles.png') top left repeat;
+  background: linear-gradient(to bottom, #20303f 0%,#1a1a1a 100%);
 }
 footer h4 {
   color : #fff;
@@ -594,9 +598,10 @@ a.btn-primary {
 .VueCarousel-slide img {
  width:100%;
 }
-.newsletter input[type="email"], .form-inline  .btn-sm {
+.newsletter input[type="email"], .form-inline  .btn {
   margin-bottom: 10px;
 }
+
 .navbar-icon {
   font-size:21px;
 }

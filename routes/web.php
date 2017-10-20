@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 // PUBLIC GUEST VIEW ROUTES
 Route::view('/', 'index')->name('home');
-
+Route::view('/about', 'about')->name('about');
 Route::view('/terms', 'terms')->name('terms');
 Route::view('/privacy','privacy')->name('privacy');
 
