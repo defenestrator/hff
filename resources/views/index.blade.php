@@ -78,12 +78,6 @@ Have Rod Will Travel
                 <p>
                     After fishing with local guides to get your feet wet, spend a few days exploring the local fisheries with your buddies, and our help.
                 </p>
-                <p>
-                    We do deep research on the local scene, fishing and otherwise, to help you mix it up.
-                </p>
-                <p>
-                    Holler at us and we can help you find your next adventure.
-                </p>
             </div>
         </div>
     </div>
@@ -116,8 +110,8 @@ Have Rod Will Travel
 
 <div class="row">
     <div class="col-md-12 col-md-offset-0">
-        <h4 class="text-center">There will be updates several times a day as we continue to add them.</h4>
-        <h3 class="text-center">Hold on to your hat, tons of good stuff is on the way!</h3>
+        <h2 class="text-center">We continue to add new destinations.</h2>
+        <h3 class="text-center">More than 30 great fly fishing adventures are on the way!</h3>
     </div>
 </div>
 @stop
@@ -140,12 +134,11 @@ Have Rod Will Travel
         <slide><img src="{{ asset('images/carousels/home/tarpon.jpg') }}" alt="Hungry Islamorada Tarpon"
                     title="Hungry Ismadorada Tarpon"></slide>
     </carousel>
+<br>
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
     <script>
         new WOW().init();
     </script>
-    {{--The Big Lebowski is a trademark and copyright of Universal Studios, used here in accordance under the Fair Use clause, title 17 section 107 USC,
-    source: http://static6.businessinsider.com/image/56b36fc72e5265b6008b4cd0-1190-625/jeff-bridges-says-hes-all-in-for-starring-in-a-big-lebowski-sequel-its-a-great-idea.jpg --}}
 @stop
