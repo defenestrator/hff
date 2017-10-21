@@ -14,10 +14,10 @@
 
         <div class="collapse navbar-collapse" id="spark-navbar-collapse">
             <!-- Left Side Of Navbar -->
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" style="z-index:100">
                 <li class="dropdown thumb-dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">Places<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
+                    <ul class="scrollable-menu dropdown-menu" role="menu">
                         <li role="presentation" class="dropdown-header">Alaska</li>
                         <li>
                             <a href="/destinations/naknek-river-camp">
