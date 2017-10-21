@@ -1,11 +1,10 @@
 <template>
-    <form>
+    <form class="text-center">
         <div class="input-group">
             <input class="form-control" placeholder="your email"
                    v-validate="'required|email'" v-model="email" name="email"
                    type="email"
                    :class="{'form-control': true, 'is-danger': errors.has('email') }"
-                   value=""
                    aria-describedby="basic-addon2"
                    required>
                     <span class="input-group-btn">

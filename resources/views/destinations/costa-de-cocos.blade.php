@@ -6,16 +6,12 @@
 @stop
 
 @section('page_styles')
-    <style>
-        .article img {
-            margin-bottom:1em;
-        }
-    </style>
+
 @stop
 
 @section('top')
     <img style="width:100%;"
-         src="http://www.orvis.com/flyfishingvideos/wp-content/uploads/2016/01/costa-de-cocos-bonefish-and-perm.jpg"
+         src="../images/costa-de-cocos/costa-de-cocos-permit.jpg"
          alt="Nice f***in' Permit, dude!"
          title="Nice fu**in' Permit, dude!">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">

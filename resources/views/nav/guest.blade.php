@@ -16,55 +16,40 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li class="dropdown thumb-dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">Trips<span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown">Places<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li role="presentation" class="dropdown-header">Steelhead and Salmon</li>
+                        <li role="presentation" class="dropdown-header">Alaska</li>
                         <li>
-                            <a href="/trips/backcountry-river-guides">
-                                Backcountry River Guides
-                                {{--<div class="thumbnail">--}}
-                                    {{--<img class="img-responsive" src="/images/backcountry-river-guides/slide1-178.jpg">--}}
-                                    {{--<div class="caption">--}}
-                                        {{--<p>Idaho's Salmon River</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/trips/naknek-river-camp">
+                            <a href="/destinations/naknek-river-camp">
                                 Naknek River Camp
-                                {{--<div class="thumbnail">--}}
-                                    {{--<img class="img-responsive" src="/images/naknek-river-camp/steelie.jpg">--}}
-                                    {{--<div class="caption">--}}
-                                        {{--<p>Bristol Bay, AK area!</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
                             </a>
-                        </li>
-                        <li>
-                            <a href="/trips/deep-creek-lodge">
-                                Deep Creek Lodge
-                                {{--<div class="thumbnail">--}}
-                                    {{--<img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">--}}
-                                    {{--<div class="caption">--}}
-                                        {{--<p>Coming Soon!</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            </a>
-                        </li>
-                        <li>
                         </li>
                         <li class="divider"></li>
-                        <li role="presentation" class="dropdown-header">Bonefish and Permit</li>
+                        <li role="presentation" class="dropdown-header">British Columbia</li>
                         <li>
-                            <a href="/trips/costa-de-cocos">
+                            <a href="/destinations/deep-creek-lodge">
+                                Deep Creek Lodge
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li role="presentation" class="dropdown-header">Mexico</li>
+                        <li>
+                            <a href="/destinations/costa-de-cocos">
                                 Costa de Cocos
-                                {{--<div class="thumbnail">--}}
-                                    {{--<img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">--}}
-                                    {{--<div class="caption">--}}
-                                        {{--<p>Xcalac, MX, on the Belize border!</p>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li role="presentation" class="dropdown-header">Bahamas</li>
+                        <li>
+                            <a href="/destinations/two-boys-inn-andros">
+                                Two Boys Inn
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li role="presentation" class="dropdown-header">Idaho</li>
+                        <li>
+                            <a href="/destinations/backcountry-river-guides">
+                                Backcountry River Guides
                             </a>
                         </li>
                     </ul>
