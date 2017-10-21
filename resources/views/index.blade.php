@@ -109,7 +109,7 @@ Have Rod Will Travel
                     </div>
                     </div>
                 </a>
-                <a href="/destinations/balckfish-lodge" title="Blackfish Lodge">
+                <a href="/destinations/blackfish-lodge" title="Blackfish Lodge">
 
                     <div class="thumbnail">
                         <img class="img-responsive" src="/images/blackfish-lodge/763.c.jpg">
