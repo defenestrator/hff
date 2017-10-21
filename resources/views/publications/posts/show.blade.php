@@ -2,7 +2,6 @@
 
 @section('title')
 {{$post->title}}
-@parent
 @stop
 
 @section('page_styles')
