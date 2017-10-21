@@ -86,6 +86,9 @@ Have Rod Will Travel
                 <p>
                     After fishing with local guides to get your feet wet, spend a few days exploring the local fisheries with your buddies, and our help.
                 </p>
+                <p>
+                    Hybrid trips are a signature service of Hobo Fly Fishing, don't wait, ask us for more details.
+                </p>
             </div>
         </div>
     </div>
@@ -119,7 +122,7 @@ Have Rod Will Travel
                 <p>When you want the finest angling vacation experience check out our carefully curated full-service
                     lodges and resorts.</p>
                 <p>For those who love top-tier living.</p>
-                <p> These are great family getaways, as they typically offer activities for the non-angling
+                <p> These are often fun family getaways, as they typically offer activities for the non-angling
                     members of the group, in addition to the great fishing!</p>
             </div>
         </div>
