@@ -74,15 +74,7 @@ Have Rod Will Travel
                     </div>
                 </div>
                 </a>
-                <a href="/destinations/two-boys-inn-andros" title="Two Boys Inn, Andros Island, Bahamas">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="/images/two-boys-inn-andros/andros-bones.jpg">
-                        <div class="caption">
-                            <p>Two Boys Inn</p>
-                            <p>Andros Island, Bahamas</p>
-                        </div>
-                    </div>
-                </a>
+
                 <p>
                     After fishing with local guides to get your feet wet, spend a few days exploring the local fisheries with your buddies, and our help.
                 </p>
@@ -107,6 +99,15 @@ Have Rod Will Travel
                     <p>Backcountry River Guides</p>
                     <p>Idaho's Salmon River</p>
                     </div>
+                    </div>
+                </a>
+                <a href="/destinations/two-boys-inn-andros" title="Two Boys Inn, Andros Island, Bahamas">
+                    <div class="thumbnail">
+                        <img class="img-responsive" src="/images/two-boys-inn-andros/andros-bones.jpg">
+                        <div class="caption">
+                            <p>Two Boys Inn</p>
+                            <p>Andros Island, Bahamas</p>
+                        </div>
                     </div>
                 </a>
                 <a href="/destinations/blackfish-lodge" title="Blackfish Lodge">
