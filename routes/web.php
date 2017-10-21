@@ -13,6 +13,7 @@ Route::view('/features/flats-special', 'features.flats-special')->name('flats-sp
 Route::view('/features/alaska-special', 'features.alaska-special')->name('alaska-special');
 Route::view('/features/idaho-steelhead-special', 'features.idaho-steelhead-special')->name('idaho-steelhead-special');
 // Redirected Static Trip Pages
+Route::redirect('/flats-special', '/features/flats-special');
 Route::redirect('/trips/backcountry-river-guides', '/destinations/backcountry-river-guides');
 Route::redirect('/trips/costa-de-cocos', '/destinations/costa-de-cocos');
 Route::redirect('/trips/deep-creek-lodge', '/destinations/deep-creek-lodge');
