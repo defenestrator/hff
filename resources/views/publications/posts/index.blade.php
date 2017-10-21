@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-Blog
+      Blog - {{$pagetitle}}
 @parent
 @stop
 
