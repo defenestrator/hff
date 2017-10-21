@@ -28,13 +28,21 @@ Have Rod Will Travel
             </div>
             <div class="info">
                 <h3 class="success text-center">Self-Guided Adventures</h3>
-                <a href="/trips/naknek-river-camp">
-
+                <a href="/destinations/naknek-river-camp" title="Naknek River Camp">
                     <div class="thumbnail">
                         <img class="img-responsive" src="/images/naknek-river-camp/steelie.jpg">
                         <div class="caption">
                             <p>Naknek River Camp</p>
                             <p>Bristol Bay, AK</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/destinations/deep-creek-lodge" title="Deep Creek Lodge">
+                    <div class="thumbnail">
+                        <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
+                        <div class="caption">
+                            <p>Deep Creek Lodge</p>
+                            <p>North Coast, BC</p>
                         </div>
                     </div>
                 </a>
@@ -57,7 +65,7 @@ Have Rod Will Travel
             </div>
             <div class="info">
                 <h3 class="primary text-center">Hybrid Trips</h3>
-                <a href="/trips/costa-de-cocos">
+                <a href="/destinations/costa-de-cocos" title="Costa de Cocos">
                 <div class="thumbnail">
                     <img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">
                     <div class="caption">
@@ -66,14 +74,14 @@ Have Rod Will Travel
                     </div>
                 </div>
                 </a>
-                <a href="/trips/deep-creek-lodge">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
-                    <div class="caption">
-                        <p>Deep Creek Lodge</p>
-                        <p>North Coast, BC</p>
+                <a href="/destinations/two-boys-inn-andros" title="Two Boys Inn, Andros Island, Bahamas">
+                    <div class="thumbnail">
+                        <img class="img-responsive" src="/images/two-boys-inn-andros/andros-bones.jpg">
+                        <div class="caption">
+                            <p>Two Boys Inn</p>
+                            <p>Andros Island, Bahamas</p>
+                        </div>
                     </div>
-                </div>
                 </a>
                 <p>
                     After fishing with local guides to get your feet wet, spend a few days exploring the local fisheries with your buddies, and our help.
@@ -88,7 +96,7 @@ Have Rod Will Travel
             </div>
             <div class="info">
                 <h3 class="warning text-center">Full Service Expeditions</h3>
-                <a href="/trips/backcountry-river-guides">
+                <a href="/destinations/backcountry-river-guides" title="Backcountry River Guides">
 
                     <div class="thumbnail">
                     <img class="img-responsive" src="/images/backcountry-river-guides/slide1-178.jpg">
@@ -96,6 +104,16 @@ Have Rod Will Travel
                     <p>Backcountry River Guides</p>
                     <p>Idaho's Salmon River</p>
                     </div>
+                    </div>
+                </a>
+                <a href="/destinations/balckfish-lodge" title="Blackfish Lodge">
+
+                    <div class="thumbnail">
+                        <img class="img-responsive" src="/images/blackfish-lodge/763.c.jpg">
+                        <div class="caption">
+                            <p>Blackfish Lodge</p>
+                            <p>British Columbia, Canada</p>
+                        </div>
                     </div>
                 </a>
                 <p>When you want the finest angling vacation experience check out our carefully curated full-service

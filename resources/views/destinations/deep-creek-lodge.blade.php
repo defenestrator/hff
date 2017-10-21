@@ -10,7 +10,7 @@
 @stop
 @section('top')
     <div style="padding:2em 0;
-                background: #1a1a1a url('../images/deep-creek-lodge/stacks-image-9ecda6c.jpg') left center no-repeat;
+                background: #1a1a1a url('/images/deep-creek-lodge/stacks-image-9ecda6c.jpg') left center no-repeat;
                 background-size:cover; height:80vh;" >
         <h1 style="padding:0 0.5em; text-shadow:4px 4px 4px #000;" class="showcase-header feature-tagline text-center wow pulse" data-wow-duration="0.5s">
             <a id="deep-creek-lodge" title="Deep Creek Lodge, Terrace B.C."></a>Deep Creek Lodge

@@ -11,7 +11,7 @@
 
 @section('top')
     <div style="padding:2em 0;
-                background: #1a1a1a url('../images/two-boys-inn-andros/andros-bones.jpg') left center no-repeat;
+                background: #1a1a1a url('/images/two-boys-inn-andros/andros-bones.jpg') left center no-repeat;
                 background-size:cover; height:80vh;" >
     <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center wow pulse" data-wow-duration="0.5s">
         <a id="Two_Boys_Inn_Andros" title="Giant Bonefish at Two Boys Inn Andros Island Bahamas"></a>Two Boys Inn
