@@ -21,21 +21,28 @@
     </div>
 @stop
 @section('content')
-    <h2 class="feature-tagline text-center">Pacific Northwest Luxury</h2>
+    <h2 class="feature-tagline text-center">Pop Quiz</h2>
     <div class="row">
         <div class="col-md-8 col-md-offset-0">
             <section>
                 <article class="article">
-                    <p>You have probably heard of the Skeena before, the North Coast of British Columbia has some of the
-                        best pacific salmonid fishing there is. Terrace is a gorgeous town, and the number of fishing
-                        opportunities available for day excursions is startling! One tip we will give away; The best fishing is often
-                        in the numerous smaller streams that feed into the Skeena system.</p>
+                    <p>Pop quiz: What do fish from B.C.’s world-renowned Bulkley, Babine and Morice rivers have in
+                        common? They have to swim up the Skeena River and past Terrace, B.C. to get there.</p>
                     <img src="../images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
-                    <p>Our self-guided package at Deep Creek
-                        Lodge is affordable, the fishing is stellar, and the lodge itself is idyllic. Chase the northwestern
-                        fishing adventure of a lifetime during the day, then relax with a warm meal in the downright comfy Deep Creek Lodge.
+                    <p>Deep Creek Lodge in Terrace gives you a shot at those steelhead and salmon when they are fresh
+                        from saltwater and full of piss and vinegar. While it’s common for lodges upstream
+                        to charge $8K to $10K a week to fish those famous rivers, you can go for a fraction of
+                        that price and catch the same fish.
                     </p>
                     <img src="../images/deep-creek-lodge/stacks-image-34f32a5-1200x582.jpg">
+                    <p>Deep Creek Lodge offers fishing for steelhead, five species of salmon (Chinook, coho, sockeye,
+                        chum and humpback) on the Skeena, Copper, Kalum and the Kitimat rivers, as well as trout fishing
+                        for cutthroat and Dolly Varden char.
+                    </p>
+                    <p>
+                        With that much opportunity, Deep Creek Lodge offers a long season for anglers.
+                    </p>
+
                 </article>
             </section>
 
@@ -43,7 +50,12 @@
         <div class="col-md-4 col-md-offset-0">
             <section>
                 <article class="article">
-                    <p class="text-center"><strong>The price is too good to publish</strong></p>
+                    <p>
+                        Accommodations include four double rooms with twin or king size beds, a drying room for wet
+                        gear, and a lounge furnished with satellite TV, comfy couch and a fly tying table. All meals
+                        are included, which means local seafood and family recipes with Italian flare.
+                    </p>
+                    <p class="text-center"><strong>This trip is a great deal, and remember, the fish don’t care how much you paid it.</strong></p>
                     <h3 class="text-center"><strong>Ask us for details</strong></h3>
                     <sales-inquiry></sales-inquiry>
                     <p class="text-center"><iframe width="310" height="240" src="https://www.youtube.com/embed/iHd88IChX6U" frameborder="0" allowfullscreen></iframe></p>
