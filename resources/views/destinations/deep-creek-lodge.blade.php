@@ -21,12 +21,12 @@
     </div>
 @stop
 @section('content')
-    <h2 class="feature-tagline text-center">Pop Quiz</h2>
+    <h2 class="feature-tagline text-center">Pop Quiz:</h2>
     <div class="row">
         <div class="col-md-8 col-md-offset-0">
             <section>
                 <article class="article">
-                    <p>Pop quiz: What do fish from B.C.’s world-renowned Bulkley, Babine and Morice rivers have in
+                    <p>What do fish from B.C.’s world-renowned Bulkley, Babine and Morice rivers have in
                         common? They have to swim up the Skeena River and past Terrace, B.C. to get there.</p>
                     <img src="../images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
                     <p>Deep Creek Lodge in Terrace gives you a shot at those steelhead and salmon when they are fresh
