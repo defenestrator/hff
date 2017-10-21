@@ -11,16 +11,31 @@
 @stop
 @section('top')
     <div class="full-width">
-        <img src="{{ asset('assets/images/gourley/rod-rack.jpg') }}" >
+        <img src="{{ asset('/images/gourley/rod-rack.jpg') }}" >
     </div>
 @stop
 @section('content')
-    <div class="container">
+    <div class="container col-md-6 col-md-offset-3">
     <h1>TERMS OF SERVICE</h1>
         <p>hoboflyfishing.com - SAAS TERMS OF SERVICE</p>
-        <p>IMPORTANT: THIS AGREEMENT IS A LEGALLY BINDING AGREEMENT BETWEEN YOU AND Hobo Fly Fishing APPLICABLE TO YOUR PURCHASE AND/OR USE (INCLUDING FREE, “EVALUATION” AND/OR “TRIAL” USES) OF Hobo Fly Fishing's SAAS PRODUCTS AND/OR Hobo Fly Fishing's SYSTEM.  BY USING OUR SAAS YOU AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT.  IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT YOU MAY NOT USE ANY Hobo Fly Fishing SAAS PRODUCT NOR ACCESS THE SYSTEM.</p>
-        <p>This Terms of Service Agreement (&quot;Agreement&quot;) is by and between Hobo Fly Fishing, LLC (including its wholly-owned subsidiaries, licensors, and affiliates)(collectively, “Hobo Fly Fishing”) and the person or entity executing this Agreement (referred to herein as “You” or “Customer”). The terms “You”, “Your”,  and “Customer” include you and any of your owners, employees, partners, independent contractors, subsidiaries, affiliates, attorneys, agents, heirs, and assigns.  This Agreement is effective as of the date You click the “I Agree” button located below (“Effective Date”). Your use of and Hobo Fly Fishing’s provision of any SaaS product and access to Hobo Fly Fishing's System (as those terms are hereinafter defined) are governed by this Agreement.</p>
-        <p>This Agreement, together with Hobo Fly Fishing’s End User License Agreement (where applicable), sets out the terms that apply to the use of all Hobo Fly Fishing “software as a service” (“SaaS”) products.  SaaS consists generally of system administration, system management, and system monitoring activities that Hobo Fly Fishing performs for Hobo Fly Fishing programs, and includes the right to use the Hobo Fly Fishing programs, support services for such Hobo Fly Fishing programs, and other services provided by Hobo Fly Fishing.    </p>
+        <p>IMPORTANT: THIS AGREEMENT IS A LEGALLY BINDING AGREEMENT BETWEEN YOU AND Hobo Fly Fishing APPLICABLE TO YOUR
+            PURCHASE AND/OR USE (INCLUDING FREE, “EVALUATION” AND/OR “TRIAL” USES) OF Hobo Fly Fishing's SAAS PRODUCTS
+            AND/OR Hobo Fly Fishing's SYSTEM.  BY USING OUR SAAS YOU AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT.
+            IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT YOU MAY NOT USE ANY Hobo Fly Fishing SAAS
+            PRODUCT NOR ACCESS THE SYSTEM.</p>
+        <p>This Terms of Service Agreement (&quot;Agreement&quot;) is by and between Hobo Fly Fishing LLC
+            (including its wholly-owned subsidiaries, licensors, and affiliates, collectively referred to as; “Hobo Fly Fishing”)
+            and the person or entity executing this Agreement (referred to herein as “You” or “Customer”). The terms “You”
+            , “Your”,  and “Customer” include you and any of your owners, employees, partners, independent contractors,
+            subsidiaries, affiliates, attorneys, agents, heirs, and assigns.  This Agreement is effective as a pre-requisite
+            for accessing our system, this includes but is not limited to all services hosted at the domain hoboflyfishing.com.
+            Your use of and Hobo Fly Fishing’s provision of any SaaS product and access to Hobo Fly Fishing's System (as
+            those terms are hereinafter defined) are governed by this Agreement.</p>
+        <p>This Agreement, together with Hobo Fly Fishing’s End User License Agreement (where applicable), sets out the
+            terms that apply to the use of all Hobo Fly Fishing “software as a service” (“SaaS”) products.
+            SaaS consists generally of system administration, system management, and system monitoring activities that
+            Hobo Fly Fishing performs for Hobo Fly Fishing programs, and includes the right to use the Hobo Fly Fishing
+            programs, support services for such Hobo Fly Fishing programs, and other services provided by Hobo Fly Fishing.</p>
         <ol>
             <li>
                 <p>DEFINITIONS. The following capitalized terms shall have the following meanings whenever used in this Agreement.
@@ -48,7 +63,11 @@
                 2.5. System Revisions. Hobo Fly Fishing may revise System features and functions or the SLA at any time, including without limitation by removing such features and functions or reducing service levels. If any such revision to the System materially reduces features or functionality provided pursuant to an Order, You may within 30 days of the date of the revision terminate such Order, without cause, or terminate this Agreement without cause if such Order is the only one outstanding.
                 2.6. Other Hobo Fly Fishing Programs and Products.  Your purchase of SaaS products and/or access to and use of the System may be contingent on your purchase of other products and/or services sold or provided by Hobo Fly Fishing which are not SaaS products. Use of Hobo Fly Fishing products which are not SaaS products (i.e., software products which are not provided by subscription and/or are not provided as “software as a service”) requires agreement with Hobo Fly Fishing’s End-User License Agreement (available at: End User License Agreement) prior to the time such Hobo Fly Fishing products are purchased and/or accessed.</li>
         </ol>
-        <p>3.FEES. You agree to pay Hobo Fly Fishing the Subscription Fee set forth in each Order for each SaaS product for each Term. Payment of the Subscription Fee will entitle you to access to the SaaS product or service ordered only for the time period identified at the time of your Order.  Hobo Fly Fishing will not be required to refund  any portion of a Subscription Fee under any circumstances whatsoever.</p>
+        <p>3.FEES. You agree to pay Hobo Fly Fishing the Subscription Fee set forth in each Order for each SaaS product,
+            for each Term. Payment of the Subscription Fee will entitle you to access to the SaaS product or service ordered
+            only for the time period identified at the time of your Order.  Hobo Fly Fishing will not be required to refund
+            any portion of a Subscription Fee under any circumstances whatsoever. This provision does not apply to free accounts
+            which have limited access to our Services.</p>
         <p>4.CUSTOMER DATA AND PRIVACY.
             4.1. Use of Customer Data. Unless it receives your prior written consent, Hobo Fly Fishing: (a) shall not access, process, or otherwise use Customer Data other than as necessary to facilitate the System and Your use of SaaS products; and (b) shall not intentionally grant any third party access to Customer Data, including without limitation Hobo Fly Fishing’s other customers, except Hobo Fly Fishing’s subcontractors and vendors that are subject to a reasonable nondisclosure agreement. Notwithstanding the foregoing, Hobo Fly Fishing may disclose Customer Data as required by applicable law or by proper legal or governmental authority. Hobo Fly Fishing shall give endeavor to give You prompt notice of any such legal or governmental demand and reasonably cooperate with You in any effort to seek a protective order or otherwise to contest such required disclosure, at Your expense.
             4.2. Privacy Policy. The Privacy Policy does not apply to any third party website or service linked to the System or recommended or referred to through the System or by Hobo Fly Fishing.
