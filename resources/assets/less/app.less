@@ -51,9 +51,9 @@ h2, .h2 {
 }
 .icon-section {
   background-color : #3ab0f5;
-  line-height      : 7px;
-  padding-top      : 10px;
-  border-bottom-left-radius:4em;
+  line-height      : 0px;
+  padding-top      : 7px;
+  border-bottom-left-radius:2em;
 }
 
 .icon-section a:link,
@@ -214,7 +214,9 @@ p label {
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #418bca;
 }
-
+.navbar-nav > li > a, .navbar-brand, .hamburger{
+  height: 50px;
+}
 .navbar {
   border-top:none;
   border-bottom:1px solid #ccc;
@@ -661,8 +663,9 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
   background-color: #f8f8ff;
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .navbar .dropdown-menu > li > a:focus i, .navbar .dropdown-menu > li > a:hover i {
-  background-color: #3097D1;
-  color:white;
+  color:#3ab0f5;
+  background-color:inherit;
+  transition:all 0.25s;
 }
 //.thumb-dropdown .dropdown-menu > li {
 //  position: relative;
@@ -688,6 +691,22 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
 //  margin:0;
 //  color:white;
 //}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+  background-color: #3ab0f5;
+  color:white;
+}
 .navbar .dropdown-header {
   margin-bottom:0;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+  background-color:#f8f8ff;
+  color:#3ab0f5;
+  transition: all 0.25s;
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-color:#f8f8ff;
+    color:#3ab0f5;
+    transition: all 0.25s;
+  }
 }

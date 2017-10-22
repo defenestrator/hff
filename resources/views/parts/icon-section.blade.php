@@ -1,4 +1,4 @@
-<div class="icon-section" style="width:100%;">
+<div class="icon-section">
     <div class="container">
         <ul class="list-inline">
             <li>
