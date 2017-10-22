@@ -59,7 +59,7 @@
                     <h3 class="text-center"><strong>Ask us for details</strong></h3>
                     <sales-inquiry></sales-inquiry>
                     <p class="text-center"><iframe width="310" height="240" src="https://www.youtube.com/embed/iHd88IChX6U" frameborder="0" allowfullscreen></iframe></p>
-                    <img src="../images/deep-creek-lodge/DCL_logo_Site.png">
+                    <img class="logo" src="../images/deep-creek-lodge/DCL_logo_Site.png">
                 </article>
             </section>
         </div>

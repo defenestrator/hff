@@ -55,7 +55,7 @@
                     <p class="text-center"><strong>4 anglers, 4 days. Fully outfitted.</strong></p>
                     <h3 class="text-center"><strong> $4000 </strong></h3>
                     <sales-inquiry></sales-inquiry>
-                    <img src="{{ asset('images/backcountry-river-guides/intrudershadow1.png') }}" alt="Intruder Alert!" title="Intruder Alert!">
+                    <img class="logo" src="{{ asset('images/backcountry-river-guides/intrudershadow1.png') }}" alt="Intruder Alert!" title="Intruder Alert!">
                     <p>Backcountry River Guides' trips are part of our "Full Service" lineup and we highly
                         recommend them to any steelheaders chasing a world-class trip on a budget.</p>
 

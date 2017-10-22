@@ -51,7 +51,7 @@
                     <p class="text-center"><strong>Less costly than you can imagine.</strong></p>
                     <h3 class="text-center">We know you're curious.</h3>
                     <sales-inquiry></sales-inquiry>
-                    <img src="/images/naknek-river-camp/naknek-rivercamp-logo.png" />
+                    <img class="logo" src="/images/naknek-river-camp/naknek-rivercamp-logo.png" />
                 </article>
             </section>
         </div>
