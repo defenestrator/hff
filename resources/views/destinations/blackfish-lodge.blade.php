@@ -58,7 +58,11 @@
     </div>
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
-            <img src="/images/blackfish-lodge/slid1bkgrnd.jpg">
+            <section>
+            <article>
+                <img class="logo" src="/images/blackfish-lodge/slid1bkgrnd.jpg">
+            </article>
+</section>
         </div>
     </div>
 @stop
