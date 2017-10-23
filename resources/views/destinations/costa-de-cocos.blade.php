@@ -73,7 +73,7 @@
                         <li>Self-guided adventure time!</li>
                     </ul>
                     <h3 class="text-center">Only $4000!</h3>
-                    <p>(Four anglers, $1000/each)</p>
+                    <p class="text-center">(Four anglers, $1000/each)</p>
                     <sales-inquiry></sales-inquiry>
 
                     <img src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg"
