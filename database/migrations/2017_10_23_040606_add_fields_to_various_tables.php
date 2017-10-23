@@ -15,7 +15,7 @@ class AddFieldsToVariousTables extends Migration
     {
 
         Schema::table('destinations', function (Blueprint $table) {
-            $table->integer('team_id')->unsigned();
+            $table->integer('team_id')->unsigned()->nullable();
             $table->decimal('lat', 10, 7);
             $table->decimal('lng', 11, 8);
             $table->string('name');
