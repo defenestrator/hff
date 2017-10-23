@@ -37,15 +37,7 @@ Have Rod Will Travel
                         </div>
                     </div>
                 </a>
-                <a href="/destinations/deep-creek-lodge" title="Deep Creek Lodge">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
-                        <div class="caption">
-                            <p>Deep Creek Lodge</p>
-                            <p>North Coast, BC</p>
-                        </div>
-                    </div>
-                </a>
+
                 <p>Find some quiet places, and some uneducated fish.
                 </p>
                 <p>If you love to challenge yourself, and expand your understanding of what this great sport has to offer,
@@ -74,12 +66,20 @@ Have Rod Will Travel
                     </div>
                 </div>
                 </a>
-
+                <a href="/destinations/deep-creek-lodge" title="Deep Creek Lodge">
+                    <div class="thumbnail">
+                        <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
+                        <div class="caption">
+                            <p>Deep Creek Lodge</p>
+                            <p>North Coast, BC</p>
+                        </div>
+                    </div>
+                </a>
                 <p>
                     After fishing with local guides to get your feet wet, spend a few days exploring the local fisheries with your buddies, and our help.
                 </p>
                 <p>
-                    Hybrid trips are a signature service of Hobo Fly Fishing, don't wait, ask us for more details.
+                    Hybrid trips are a signature service of Hobo Fly Fishing, we expect them to sell fast, ask for more details.
                 </p>
             </div>
         </div>
