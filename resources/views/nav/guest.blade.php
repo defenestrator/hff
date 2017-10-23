@@ -57,6 +57,7 @@
                                 Backcountry River Guides
                             </a>
                         </li>
+                        <li class="divider"></li>
                     </ul>
                 </li>
                 <li><a href="{{route('publications.posts.index')}}" class="navbar-link dropdown">Blog</a></li>

@@ -54,6 +54,7 @@
                     <h4 class="text-center">Nope.</h4>
                     <p class="text-center"><strong>4 anglers, 4 days. Fully outfitted.</strong></p>
                     <h3 class="text-center"><strong> $4000 </strong></h3>
+                    <p class="text-center">(only $1000 per angler!)</p>
                     <sales-inquiry></sales-inquiry>
                     <img class="logo" src="{{ asset('images/backcountry-river-guides/intrudershadow1.png') }}" alt="Intruder Alert!" title="Intruder Alert!">
                     <p>Backcountry River Guides' trips are part of our "Full Service" lineup and we highly

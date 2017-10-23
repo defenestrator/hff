@@ -42,6 +42,7 @@
                 <article class="article">
                     <p class="text-center"><strong>5 days (6 nights) of guided fishing</strong></p>
                     <h3 class="text-center"><strong>Group value price $2,200</strong></h3>
+                    <p class="text-center">(per angler)</p>
                     <sales-inquiry></sales-inquiry>
                 </article>
             </section>
