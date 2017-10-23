@@ -16,11 +16,20 @@ class NewsletterSubscriptionsController extends Controller
         $this->validate($request, [
             'email' => 'required|email'
         ]);
-        if(NewsletterSubscription::where('email_address', '=', $request->email)->pluck('email_address')->first() == $request->email) {
+
+        if( NewsletterSubscription::where('email_address', '=', $request->email)
+            ->pluck('email_address')
+            ->first() == $request->email ) {
             return $request->email;
         };
+
         return NewsletterSubscription::create([
             'email_address' => $request->email
         ]);
+    }
+
+    public function confirm(NewsletterSubscription $subscription)
+    {
+        return ;
     }
 }

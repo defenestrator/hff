@@ -50,7 +50,8 @@ Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/posts/{id}/tags', 'PostTagsController@edit');
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
-        Route::view('/podcasts', 'cms.podcasts');
+        Route::get('/podcasts', 'PodcastsController@upload');
+        Route::post('/podcasts','PodcastsController@store');
         Route::view('/posts', 'cms.posts');
     });
 });

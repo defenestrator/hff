@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Podcast;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PodcastsController extends ContentController
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,30 +16,15 @@ class PodcastsController extends ContentController
      */
     public function index()
     {
+
         return Podcast::paginate(50, ['title', 'season', 'episode', 'slug', 'file', 'cover_image', 'created_at']);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request, Post $post)
+    public function upload()
     {
-        $request->validate([
-            'slug' => 'required|alpha_dash|unique:posts,slug',
-            'episode' => 'required',
-            'season' => 'required',
-            'title' => 'required|min:2'
-        ]);
-        return $post->create([
-            'slug'  => $request->slug,
-            'episode' => $request->episode,
-            'season'  => $request->season,
-            'title' => $request->title,
-            'file' => $request->upload
-        ])->tag($request->tags);
+        $files = Storage::disk('DO')->files('podcasts');
+        return view('cms.podcasts', compact('files'));
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -46,7 +33,9 @@ class PodcastsController extends ContentController
      */
     public function store(Request $request)
     {
-        //
+        Storage::disk('DO')->putFile('podcasts', request()->file, 'public');
+
+        return redirect()->back();
     }
 
     /**
@@ -92,5 +81,26 @@ class PodcastsController extends ContentController
     public function destroy(Podcast $podcast)
     {
         //
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Request $request, Post $post)
+    {
+        $request->validate([
+            'slug' => 'required|alpha_dash|unique:posts,slug',
+            'episode' => 'required',
+            'season' => 'required',
+            'title' => 'required|min:2'
+        ]);
+        return $post->create([
+            'slug'  => $request->slug,
+            'episode' => $request->episode,
+            'season'  => $request->season,
+            'title' => $request->title,
+            'file' => $request->upload
+        ])->tag($request->tags);
     }
 }
