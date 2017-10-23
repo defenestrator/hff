@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-{{ $post->title }}
+    {{ $post->title }}
 @stop
 
 @section('page_styles')
