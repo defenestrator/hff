@@ -33,7 +33,8 @@ Route::view('/destinations/two-boys-inn-andros', 'destinations.two-boys-inn-andr
 // Publicly published assets:
 Route::get('/publications/posts', 'PublishedPostsController@index')->name('publications.posts.index');
 Route::get('/publications/posts/{slug}', 'PublishedPostsController@show')->name('publications.posts.show');
-
+Route::redirect('publications/posts/steelhead-on-the-salmon-river-with-backcountry-river-guides-and-brent-sawyer',
+    '/publications/posts/backcountry-river-guides-steelhead');
 
 Route::get('/publications/podcasts', 'PublishedPodcastsController@index')->name('publications.podcasts.index');
 Route::get('/publications/podcasts/{slug}', 'PublishedPodcastsController@show')->name('publications.podcasts.show');
