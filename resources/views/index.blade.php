@@ -37,9 +37,7 @@ Have Rod Will Travel
             </div>
             <div class="info">
                 <h3 class="success text-center">Self-Guided Adventures</h3>
-                <p>Find some quiet places, and some uneducated fish.
-                </p>
-                <p>If you love to challenge yourself, and expand your understanding of what this great sport has to offer,
+                <p>Find some quiet places, and some uneducated fish. If you love to challenge yourself, and expand your understanding of what this great sport has to offer,
                     these trips are for you.
                 </p>
                 <p>Self-guided fly fishing has a significant learning curve, we can help you shorten it.
@@ -74,7 +72,6 @@ Have Rod Will Travel
                 <h3 class="warning text-center">Full Service Expeditions</h3>
                 <p>When you want the finest angling vacation experience check out our carefully curated full-service
                     lodges and resorts.</p>
-                <p>For those who love top-tier living.</p>
                 <p> These are often fun family getaways, as they typically offer activities for the non-angling
                     members of the group, in addition to the great fishing!</p>
             </div>
@@ -89,9 +86,9 @@ Have Rod Will Travel
     </div>
 <!-- Listings Section Start -->
 <div class="row">
-    <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
+    <div class="col-sm-4">
         <div class="info">
-            <a href="/destinations/naknek-river-camp" title="Naknek River Camp">
+            <a href="/destinations/alaska/naknek-river-camp" title="Naknek River Camp">
                 <div class="thumbnail">
                     <img class="img-responsive" src="/images/naknek-river-camp/steelie.jpg">
                     <div class="caption">
@@ -100,7 +97,7 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
-            <a href="/destinations/blackfish-lodge" title="Blackfish Lodge">
+            <a href="/destinations/british-columbia/blackfish-lodge" title="Blackfish Lodge">
 
                 <div class="thumbnail">
                     <img class="img-responsive" src="/images/blackfish-lodge/763.c.jpg">
@@ -110,33 +107,7 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
-        <div class="info">
-                <a href="/destinations/costa-de-cocos" title="Costa de Cocos">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">
-                        <div class="caption">
-                            <p>Costa de Cocos</p>
-                            <p>Xcalac, MX</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="/destinations/deep-creek-lodge" title="Deep Creek Lodge">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
-                        <div class="caption">
-                            <p>Deep Creek Lodge</p>
-                            <p>North Coast, BC</p>
-                        </div>
-                    </div>
-                </a>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="1.6s" data-wow-delay="0.1s">
-        <div class="info">
-            <a href="/destinations/backcountry-river-guides" title="Backcountry River Guides">
+            <a href="/destinations/idaho/backcountry-river-guides" title="Backcountry River Guides">
 
                 <div class="thumbnail">
                     <img class="img-responsive" src="/images/backcountry-river-guides/slide1-178.jpg">
@@ -146,16 +117,59 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
-            <a href="/destinations/two-boys-inn-andros" title="Two Boys Inn, Andros Island, Bahamas">
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="info">
+            <a href="/destinations/yucatan/costa-de-cocos" title="Costa de Cocos">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">
+                    <div class="caption">
+                        <p>Costa de Cocos</p>
+                        <p>Xcalac, MX</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/british-columbia/deep-creek-lodge" title="Deep Creek Lodge">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
+                    <div class="caption">
+                        <p>Deep Creek Lodge</p>
+                        <p>North Coast, BC</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/labrador/salmon-hole-lodge" title="Salmon Hole Lodge">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/salmon-hole-lodge/canada-tattoo.jpg">
+                    <div class="caption">
+                        <p>Salmon Hole Lodge</p>
+                        <p>Newfoundland, Canada</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="info">
+            <a href="/destinations/belize/mango-creek-lodge" title="Mango Creek Lodge">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/mango-creek-lodge/baby-tarpon.jpg">
+                    <div class="caption">
+                        <p>Mango Creek Lodge</p>
+                        <p>Honduras</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/bahamas/two-boys-inn-andros" title="Two Boys Inn, Andros Island, Bahamas">
                 <div class="thumbnail">
                     <img class="img-responsive" src="/images/two-boys-inn-andros/andros-bones.jpg">
                     <div class="caption">
                         <p>Two Boys Inn</p>
-                        <p>Andros Island, Bahamas</p>
+                        <p>Andros Island Bahamas</p>
                     </div>
                 </div>
             </a>
-
         </div>
     </div>
 </div>
