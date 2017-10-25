@@ -36,11 +36,21 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
+        $this->mapWebRedirectRoutes($router);
+
         $this->mapWebRoutes($router);
 
         $this->mapApiRoutes($router);
 
         //
+    }
+    protected function mapWebRedirectRoutes(Router $router)
+    {
+        $router->group([
+            'namespace' => $this->namespace, 'middleware' => ['web'],
+        ], function ($router) {
+            require base_path('routes/redirects.php');
+        });
     }
 
     /**
@@ -76,4 +86,6 @@ class RouteServiceProvider extends ServiceProvider
             require base_path('routes/api.php');
         });
     }
+
+
 }

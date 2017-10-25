@@ -6,11 +6,6 @@
 @stop
 
 @section('page_styles')
-    <style>
-        .article img {
-            margin-bottom:1em;
-        }
-    </style>
 @stop
 
 @section('top')

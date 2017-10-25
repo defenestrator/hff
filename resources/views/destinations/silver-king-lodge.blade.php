@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Rio Manso Lodge
+    Silver King Lodge
     @parent
 @stop
 
@@ -12,7 +12,7 @@
 @section('top')
     <img style="width:100%;"  src="" alt="" title="">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
-        Rio Manso Lodge
+        Silver King Lodge
     </h1>
 @stop
 

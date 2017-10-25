@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-
+    Ikari House, Christmas Island
     @parent
 @stop
 
@@ -12,18 +12,18 @@
 @section('top')
     <img style="width:100%;"  src="" alt="" title="">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
-        Title
+        Ikari House, Christmas Island
     </h1>
 @stop
 
 @section('content')
-    <h2>Tagline</h2>
+    <h2>Coming soon...</h2>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-0">
             <section>
                 <article class="article">
 
-                    <p>blurb</p>
+                    <p>...really soon.</p>
                 </article>
             </section>
 

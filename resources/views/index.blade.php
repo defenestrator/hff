@@ -15,7 +15,15 @@ Have Rod Will Travel
             Elite Destinations, Local Flavor
         </h1>
     </div>
+    <a style="color:white" href="/features/weekly-special">
+    <div class="weekly-special text-center">
+            <h3>Fish like a hobo, fish more often.</h3>
+            <h2>
+                Snag the Weekly Special!
+            </h2>
 
+    </div>
+    </a>
 @stop
 
 @section('content')
@@ -24,7 +32,7 @@ Have Rod Will Travel
     <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
         <div class="box">
             <div class="box-icon">
-                <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#464b17"></i>
+                <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#3f844e"></i>
             </div>
             <div class="info">
                 <h3 class="success text-center">Self-Guided Adventures</h3>
