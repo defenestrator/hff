@@ -27,6 +27,7 @@ Have Rod Will Travel
 @stop
 
 @section('content')
+
 <!-- Service Section Start-->
 <div class="row">
     <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
@@ -36,16 +37,6 @@ Have Rod Will Travel
             </div>
             <div class="info">
                 <h3 class="success text-center">Self-Guided Adventures</h3>
-                <a href="/destinations/naknek-river-camp" title="Naknek River Camp">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="/images/naknek-river-camp/steelie.jpg">
-                        <div class="caption">
-                            <p>Naknek River Camp</p>
-                            <p>Bristol Bay, AK</p>
-                        </div>
-                    </div>
-                </a>
-
                 <p>Find some quiet places, and some uneducated fish.
                 </p>
                 <p>If you love to challenge yourself, and expand your understanding of what this great sport has to offer,
@@ -65,24 +56,6 @@ Have Rod Will Travel
             </div>
             <div class="info">
                 <h3 class="primary text-center">Hybrid Trips</h3>
-                <a href="/destinations/costa-de-cocos" title="Costa de Cocos">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">
-                    <div class="caption">
-                        <p>Costa de Cocos</p>
-                        <p>Xcalac, MX</p>
-                    </div>
-                </div>
-                </a>
-                <a href="/destinations/deep-creek-lodge" title="Deep Creek Lodge">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
-                        <div class="caption">
-                            <p>Deep Creek Lodge</p>
-                            <p>North Coast, BC</p>
-                        </div>
-                    </div>
-                </a>
                 <p>
                     After fishing with local guides to get your feet wet, spend a few days exploring the local fisheries with your buddies, and our help.
                 </p>
@@ -99,35 +72,6 @@ Have Rod Will Travel
             </div>
             <div class="info">
                 <h3 class="warning text-center">Full Service Expeditions</h3>
-                <a href="/destinations/backcountry-river-guides" title="Backcountry River Guides">
-
-                    <div class="thumbnail">
-                    <img class="img-responsive" src="/images/backcountry-river-guides/slide1-178.jpg">
-                    <div class="caption">
-                    <p>Backcountry River Guides</p>
-                    <p>Idaho's Salmon River</p>
-                    </div>
-                    </div>
-                </a>
-                <a href="/destinations/two-boys-inn-andros" title="Two Boys Inn, Andros Island, Bahamas">
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="/images/two-boys-inn-andros/andros-bones.jpg">
-                        <div class="caption">
-                            <p>Two Boys Inn</p>
-                            <p>Andros Island, Bahamas</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="/destinations/blackfish-lodge" title="Blackfish Lodge">
-
-                    <div class="thumbnail">
-                        <img class="img-responsive" src="/images/blackfish-lodge/763.c.jpg">
-                        <div class="caption">
-                            <p>Blackfish Lodge</p>
-                            <p>British Columbia, Canada</p>
-                        </div>
-                    </div>
-                </a>
                 <p>When you want the finest angling vacation experience check out our carefully curated full-service
                     lodges and resorts.</p>
                 <p>For those who love top-tier living.</p>
@@ -137,7 +81,84 @@ Have Rod Will Travel
         </div>
     </div>
 </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-12 col-md-offset-0">
+            <h2 class="text-center">Lodges and Destinations</h2>
+        </div>
+    </div>
+<!-- Listings Section Start -->
+<div class="row">
+    <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
+        <div class="info">
+            <a href="/destinations/naknek-river-camp" title="Naknek River Camp">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/naknek-river-camp/steelie.jpg">
+                    <div class="caption">
+                        <p>Naknek River Camp</p>
+                        <p>Bristol Bay, AK</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/blackfish-lodge" title="Blackfish Lodge">
 
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/blackfish-lodge/763.c.jpg">
+                    <div class="caption">
+                        <p>Blackfish Lodge</p>
+                        <p>British Columbia, Canada</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
+        <div class="info">
+                <a href="/destinations/costa-de-cocos" title="Costa de Cocos">
+                    <div class="thumbnail">
+                        <img class="img-responsive" src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg">
+                        <div class="caption">
+                            <p>Costa de Cocos</p>
+                            <p>Xcalac, MX</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="/destinations/deep-creek-lodge" title="Deep Creek Lodge">
+                    <div class="thumbnail">
+                        <img class="img-responsive" src="/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
+                        <div class="caption">
+                            <p>Deep Creek Lodge</p>
+                            <p>North Coast, BC</p>
+                        </div>
+                    </div>
+                </a>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="1.6s" data-wow-delay="0.1s">
+        <div class="info">
+            <a href="/destinations/backcountry-river-guides" title="Backcountry River Guides">
+
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/backcountry-river-guides/slide1-178.jpg">
+                    <div class="caption">
+                        <p>Backcountry River Guides</p>
+                        <p>Idaho's Salmon River</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/two-boys-inn-andros" title="Two Boys Inn, Andros Island, Bahamas">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/two-boys-inn-andros/andros-bones.jpg">
+                    <div class="caption">
+                        <p>Two Boys Inn</p>
+                        <p>Andros Island, Bahamas</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-12 col-md-offset-0">
         <h2 class="text-center">We continue to add new destinations.</h2>
