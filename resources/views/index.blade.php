@@ -28,62 +28,12 @@ Have Rod Will Travel
 
 @section('content')
 
-<!-- Service Section Start-->
+<hr>
 <div class="row">
-    <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
-        <div class="box">
-            <div class="box-icon">
-                <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#3f844e"></i>
-            </div>
-            <div class="info">
-                <h3 class="success text-center">Self-Guided Adventures</h3>
-                <p>Find some quiet places, and some uneducated fish. If you love to challenge yourself, and expand your understanding of what this great sport has to offer,
-                    these trips are for you.
-                </p>
-                <p>Self-guided fly fishing has a significant learning curve, we can help you shorten it.
-                </p>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
-        <!-- Box Start -->
-        <div class="box">
-            <div class="box-icon box-icon1">
-                <i class="livicon icon1" data-name="paper-plane" data-size="55" data-c="#128BC6" data-hc="#128BC6"></i>
-            </div>
-            <div class="info">
-                <h3 class="primary text-center">Hybrid Trips</h3>
-                <p>
-                    After fishing with local guides to get your feet wet, spend a few days exploring the local fisheries with your buddies, and our help.
-                </p>
-                <p>
-                    Hybrid trips are a signature service of Hobo Fly Fishing, we expect them to sell fast, ask for more details.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="1.6s" data-wow-delay="0.1s">
-        <div class="box">
-            <div class="box-icon box-icon2">
-                <i class="livicon icon1" data-name="rocket" data-size="55" data-c="#f89a14" data-hc="#f89a14"></i>
-            </div>
-            <div class="info">
-                <h3 class="warning text-center">Full Service Expeditions</h3>
-                <p>When you want the finest angling vacation experience check out our carefully curated full-service
-                    lodges and resorts.</p>
-                <p> These are often fun family getaways, as they typically offer activities for the non-angling
-                    members of the group, in addition to the great fishing!</p>
-            </div>
-        </div>
+    <div class="col-md-12 col-md-offset-0">
+        <h2 class="text-center">Lodges and Destinations</h2>
     </div>
 </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-12 col-md-offset-0">
-            <h2 class="text-center">Lodges and Destinations</h2>
-        </div>
-    </div>
 <!-- Listings Section Start -->
 <div class="row">
     <div class="col-sm-4">
@@ -170,13 +120,73 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
+            <a href="/destinations/new-zealand/stonefly-lodge" title="Stonefly Lodge - South Island, New Zealand">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/stonefly-lodge/pool-cast-stonefly.jpg">
+                    <div class="caption">
+                        <p>Stonefly Lodge</p>
+                        <p>South Island, New Zealand</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<hr>
+<!-- Service Section Start-->
+<div class="row">
+    <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
+        <div class="box">
+            <div class="box-icon">
+                <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#3f844e"></i>
+            </div>
+            <div class="info">
+                <h3 class="success text-center">Self-Guided Adventures</h3>
+                <p>Find some quiet places, and some uneducated fish. If you love to challenge yourself, and expand your understanding of what this great sport has to offer,
+                    these trips are for you.
+                </p>
+                <p>Self-guided fly fishing has a significant learning curve, we can help you shorten it.
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
+        <!-- Box Start -->
+        <div class="box">
+            <div class="box-icon box-icon1">
+                <i class="livicon icon1" data-name="paper-plane" data-size="55" data-c="#128BC6" data-hc="#128BC6"></i>
+            </div>
+            <div class="info">
+                <h3 class="primary text-center">Hybrid Trips</h3>
+                <p>
+                    After fishing with local guides to get your feet wet, spend a few days exploring the local fisheries with your buddies, and our help.
+                </p>
+                <p>
+                    Hybrid trips are a signature service of Hobo Fly Fishing, we expect them to sell fast, ask for more details.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="1.6s" data-wow-delay="0.1s">
+        <div class="box">
+            <div class="box-icon box-icon2">
+                <i class="livicon icon1" data-name="rocket" data-size="55" data-c="#f89a14" data-hc="#f89a14"></i>
+            </div>
+            <div class="info">
+                <h3 class="warning text-center">Full Service Expeditions</h3>
+                <p>When you want the finest angling vacation experience check out our carefully curated full-service
+                    lodges and resorts.</p>
+                <p> These are often fun family getaways, as they typically offer activities for the non-angling
+                    members of the group, in addition to the great fishing!</p>
+            </div>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12 col-md-offset-0">
-        <h2 class="text-center">We continue to add new destinations.</h2>
-        <h3 class="text-center">More than 30 great fly fishing adventures are on the way!</h3>
+        <h2 class="text-center">We continue to add new adventures, daily.</h2>
+        <h3 class="text-center">More than 30 great fly fishing destinations are on board!</h3>
     </div>
 </div>
 @stop
