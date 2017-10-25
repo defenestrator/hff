@@ -33,7 +33,9 @@
                     <p>A trip to Stonefly Lodge borders on the surreal when you take it all in. Not only do you have
                         world-class flyfishing in streams that host up to 500 trout per kilometer (that's .6 miles if you’re
                         in the U.S.), but you can get whisked away to these rivers by helo.</p>
-
+                    <img src="{{ asset('images/stonefly-lodge/helicopter.jpg') }}"
+                         title="Heli yes, helicopter fishing!"
+                         alt="Heli yes, helicopter fishing!">
                     <p>It should come as no surprise the accommodations are first-class.
                         The lodge and hospitality alone are with the trip…. Wait, did we say that? Naw, it’s the fish,
                         but damn, the whole package at Stonefly  Lodge is mind boggling, and it’s easy to see why many anglers consider this the trip of a lifetime.</p>
