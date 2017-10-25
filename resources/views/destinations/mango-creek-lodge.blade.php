@@ -58,7 +58,7 @@
                     <p>And a bunch of these squirrelly kids.</p>
                     <img src="{{asset('images/mango-creek-lodge/tarpon.jpg')}}"
                          alt="Elementary School Tarpon" title="Elementary School Tarpon">
-                    <p>This lodge is listed under "Belize Area," because technically it's in Honduras. But the fish don't know that.</p>
+                    <p>This lodge is listed under "Belize Area," though technically it's in Honduras. But the fish don't know that.</p>
                     <p>The reef system they live in is the same one that makes Belize the Hollywood of flats fishing.</p>
                     <img src="{{asset('images/mango-creek-lodge/interior.jpg')}}"
                          alt="The inside is pretty chill, too." title="The inside is pretty chill, too.">
