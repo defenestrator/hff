@@ -20,7 +20,7 @@ Have Rod Will Travel
             <h3>
                 "Trip of a lifetime?"
             </h3>
-        <h3>"A lifetime of trips" sounds better.</h3>
+        <h3>"A lifetime of trips" sounds better.</h3><!-- Anagrams rule, bitches -->
         <h2>Make it real, with the weekly Hobo Special</h2>
 
     </div>
