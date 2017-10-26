@@ -17,10 +17,11 @@ Have Rod Will Travel
     </div>
     <a style="color:white" href="/features/weekly-special">
     <div class="weekly-special text-center">
-            <h3>Fish like a hobo, fish more often.</h3>
-            <h2>
-                Snag the Weekly Special!
-            </h2>
+            <h3>
+                "The trip of a lifetime?"
+            </h3>
+        <h3>"A Lifetime of Trips" sounds better.</h3>
+        <h2>Make it real, with the weekly Hobo Special</h2>
 
     </div>
     </a>

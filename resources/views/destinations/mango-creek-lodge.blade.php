@@ -46,8 +46,7 @@
                     <img style="width:50%;" class="logo" src="{{asset('images/mango-creek-lodge/mango-creek-lodge-logo.png')}}"
                          alt="Mango Creek Lodge" title="Mango Creek Lodge">
                     <h3>Find out more</h3>
-                    <h4>Drop us a line, we'll hook you up.</h4>
-                    <h5>( so to speak )</h5>
+                    <h4>Drop us a line, we'll change your mood in a hurry.</h4>
                     <sales-inquiry></sales-inquiry>
                     <p>You can even rollcast off the dock.</p>
                     <img src="{{asset('images/mango-creek-lodge/rollcast.jpg')}}"
