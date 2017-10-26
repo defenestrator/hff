@@ -18,9 +18,9 @@ Have Rod Will Travel
     <a style="color:white" href="/features/weekly-special">
     <div class="weekly-special text-center">
             <h3>
-                "The trip of a lifetime?"
+                "Trip of a lifetime?"
             </h3>
-        <h3>"A Lifetime of Trips" sounds better.</h3>
+        <h3>"A lifetime of trips" sounds better.</h3>
         <h2>Make it real, with the weekly Hobo Special</h2>
 
     </div>
