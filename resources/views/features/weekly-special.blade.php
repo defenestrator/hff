@@ -10,7 +10,7 @@
 
 @section('top')
     <div style="padding:2em 0;
-                background: #1a1a1a url('../images/costa-de-cocos/costa-de-cocos-permit.jpg') center center no-repeat;
+                background: #1a1a1a url('/images/costa-de-cocos/costa-de-cocos-permit.jpg') center center no-repeat;
                 background-size:cover;" >
         <h2 class="feature-tagline text-center wow pulse" data-wow-duration="1.5s">
             Flats Fishing Special

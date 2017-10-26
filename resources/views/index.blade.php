@@ -18,10 +18,10 @@ Have Rod Will Travel
     <a style="color:white" href="/features/weekly-special">
     <div class="weekly-special text-center">
             <h3>
-                "Trip of a lifetime?"
+                &ldquo;Trip of a lifetime?&rdquo;
             </h3>
-        <h3>"A lifetime of trips" sounds better.</h3><!-- Anagrams rule, bitches -->
-        <h2>Make it real, with the weekly Hobo Special</h2>
+        <h3>&ldquo;A lifetime of trips&rdquo; sounds better.</h3><!-- Anagrams rule, bitches -->
+        <h2>Do it, with the weekly Hobo Special</h2>
 
     </div>
     </a>
@@ -117,7 +117,7 @@ Have Rod Will Travel
                     <img class="img-responsive" src="/images/two-boys-inn-andros/andros-bones.jpg">
                     <div class="caption">
                         <p>Two Boys Inn</p>
-                        <p>Andros Island Bahamas</p>
+                        <p>Andros Island, Bahamas</p>
                     </div>
                 </div>
             </a>
@@ -186,8 +186,7 @@ Have Rod Will Travel
 </div>
 <div class="row">
     <div class="col-md-12 col-md-offset-0">
-        <h2 class="text-center">We continue to add new adventures, daily.</h2>
-        <h3 class="text-center">More than 30 great fly fishing destinations are on board!</h3>
+        <h2 class="text-center">We add new adventures daily.</h2>
     </div>
 </div>
 @stop

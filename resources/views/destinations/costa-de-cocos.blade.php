@@ -11,7 +11,7 @@
 
 @section('top')
     <img style="width:100%;"
-         src="../images/costa-de-cocos/costa-de-cocos-permit.jpg"
+         src="/images/costa-de-cocos/costa-de-cocos-permit.jpg"
          alt="Nice f***in' Permit, dude!"
          title="Nice fu**in' Permit, dude!">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
