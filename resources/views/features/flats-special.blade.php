@@ -36,8 +36,7 @@
                 our minds with each wrap we make. In an attempt to stay connected with these waters
                 we have have accumulated several hundred dozen area-specific flies over the years.
             </p>
-            <p>The Caribbean takes us back in time. Away from the hustle and bustle of
-                more inhabited areas, it can bring back glimmers of what those early pioneers might have felt,
+            <p>The Caribbean takes us back in time. It brings back glimmers of what those early pioneers might have seen,
                 when they first stepped ashore on the New World.
             </p>
             <p>

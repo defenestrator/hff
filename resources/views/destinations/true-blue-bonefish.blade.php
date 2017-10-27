@@ -23,7 +23,7 @@
         <div class="col-sm-8 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <p>A few places (OK, more than a few) make us sound like teen girls texting when describing them,
+                    <p>A few places (OK, more than a few) make us sound like teenagers texting when describing them,
                         and Exmouth, Australia is one of them.</p>
                     <p>Not only is it the fish-porn sized bonefish, it’s the too-weird-to-be-true fish like barramundi,
                         spangled emperors and blue bastards (seriously, that’s what they’re called. LOL!)</p>
