@@ -68,6 +68,15 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
+            <a href="/destinations/argentina/rio-manso-lodge" title="Rio Manso Lodge - Patagonia, Argentina">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/rio-manso-lodge/brookie-thumb.png">
+                    <div class="caption">
+                        <p>Rio Manso Lodge</p>
+                        <p>Patagonia, Argentina</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-sm-4">
@@ -99,6 +108,15 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
+            <a href="/destinations/australia/true-blue-bonefish" title="True Blue Bonefish">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/true-blue-bonefish/gt.jpg">
+                    <div class="caption">
+                        <p>True Blue Bonefish</p>
+                        <p>Exmouth, Australia</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-sm-4">
@@ -127,6 +145,15 @@ Have Rod Will Travel
                     <div class="caption">
                         <p>Stonefly Lodge</p>
                         <p>South Island, New Zealand</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/belize/the-blue-bonefish" title="The Blue Bonefish - Belize">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="/images/the-blue-bonefish/permit.jpg" alt="Head on Permit" title="Head on Permit">
+                    <div class="caption">
+                        <p>The Blue Bonefish</p>
+                        <p>Belize</p>
                     </div>
                 </div>
             </a>

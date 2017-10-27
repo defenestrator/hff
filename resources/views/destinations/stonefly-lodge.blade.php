@@ -38,7 +38,8 @@
                          alt="Heli yes, helicopter fishing!">
                     <p>It should come as no surprise the accommodations are first-class.
                         The lodge and hospitality alone are with the trip…. Wait, did we say that? Naw, it’s the fish,
-                        but damn, the whole package at Stonefly  Lodge is mind boggling, and it’s easy to see why many anglers consider this the trip of a lifetime.</p>
+                        but damn, the whole package at Stonefly Lodge is mind boggling, and it’s easy to see why many
+                        anglers consider this the peak of fly fishing travel.</p>
 
                 </article>
             </section>
