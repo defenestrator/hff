@@ -29,9 +29,13 @@
                     <p>Blue Bonefish heard our vow. It offers some of the most affordable trips in Belize for not just
                     the Grand Slam of flats fish (Bonefish, permit and tarpon), but much more. There’s also snook,
                     barracuda, jacks, ladyfish, snapper, cobia, triggerfish and mahi.</p>
-                    <img style="width:100%;"  src="/images/the-blue-bonefish/bone.jpg"
-                         alt="nice bones, lots of them" title="nice bones, lots of them">
-
+                    <img style="width:100%;"  src="/images/the-blue-bonefish/flc-bone.jpg"
+                         alt="happiness is a bone in your hand" title="happiness is a bone in your hand">
+                    <p>Accommodations include six private staterooms, each with a private bathroom, tile shower and
+                        personally controlled air conditioning along with a private deck and a 270-degree view of the water and 100 feet of ocean frontage.</p>
+                    <p>This is the place for your as-many-times-as-you-like in a lifetime fishing trip.</p>
+                    <img style="width:100%;"  src="/images/the-blue-bonefish/cropped-lodge.jpg"
+                         alt="A typical scene in Belize" title="A typical scene in Belize">
                 </article>
             </section>
 
@@ -49,11 +53,11 @@
                                 allowfullscreen>
                         </iframe>
                     </p>
-                    <h3 class="text-center">Ask us how to fish the holy waters of Belize on the cheap.</h3>
+                    <h3 class="text-center">Ask us how to fish the holy waters of Belize in style, without a second mortgage.</h3>
                     <sales-inquiry></sales-inquiry>
-                    <p>Accommodations include six private staterooms, each with a private bathroom, tile shower and
-                        personally controlled air conditioning along with a private deck and a 270-degree view of the water and 100 feet of ocean frontage.</p>
-                    <p>This is the place for your as-many-times-as-you-like in a lifetime fishing trip.</p>
+
+                    <img style="width:100%;"  src="/images/the-blue-bonefish/bone.jpg"
+                         alt="nice bones, lots of them" title="nice bones, lots of them">
                 </article>
             </section>
         </div>
