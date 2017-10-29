@@ -31,7 +31,6 @@ mix.webpackConfig({
     if(process.env.APP_ENV === "production"){
         mix.combine(['public/js/app.js','public/js/hoboscript.js'], 'public/js/script.js')
             .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css')
-            .version()
     } else {
         mix.combine(['public/js/app.js','public/js/hoboscript.js'], 'public/js/script.js')
         .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css')
