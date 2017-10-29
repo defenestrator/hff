@@ -6,6 +6,8 @@
                 </li>
                 <li class="small footer-link"><a href="{{ route('privacy') }}">Privacy</a>
                 </li>
+                <li class="small footer-link"><a href="{{ route('about') }}">About</a>
+                </li>
                 @if (Auth::check())
                     <li class="small footer-link"><a href="{{ route('logout') }}">Logout</a>
                     </li>
