@@ -1,12 +1,6 @@
 let mix = require('laravel-mix');
 var path = require('path');
-mix.less('resources/assets/less/app.less', 'public/css')
-    .styles([
-        './resources/assets/less/sweetalert2.min.css',
-        './resources/assets/less/animate.min.css',
-    ], 'public/css/libs.css')
-    .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css')
-    .webpackConfig({
+mix.webpackConfig({
         resolve: {
             modules: [
                 path.resolve(__dirname, 'vendor/laravel/spark/resources/assets/js'),
@@ -29,8 +23,21 @@ mix.less('resources/assets/less/app.less', 'public/css')
             './node_modules/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js',
         ],
         'public/js/hoboscript.js' )
-    .combine([
-        'public/js/app.js',
-        'public/js/hoboscript.js',
-    ], 'public/js/script.js')
-    .copy('resources/assets/images', 'public/images', false)
+    mix.less('resources/assets/less/app.less', 'public/css')
+        .styles([
+            './resources/assets/less/sweetalert2.min.css',
+            './resources/assets/less/animate.min.css',
+        ], 'public/css/libs.css')
+    mix.copy('resources/assets/images', 'public/images', false)
+    if (mix.inProduction){
+        mix.combine(['public/js/app.js','public/js/hoboscript.js'], 'public/js/script.js').version()
+        mix.combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css').version()
+
+    } else {
+        mix.combine(['public/js/app.js','public/js/hoboscript.js'], 'public/js/script.js')
+        mix.combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css')
+    }
+
+
+
+
