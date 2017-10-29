@@ -29,7 +29,7 @@ mix.webpackConfig({
             './resources/assets/less/animate.min.css',
         ], 'public/css/libs.css')
     mix.copy('resources/assets/images', 'public/images', false)
-    if(process.env.APP_ENV === "banana"){
+    if(process.env.APP_ENV === "production"){
         mix.combine(['public/js/app.js','public/js/hoboscript.js'], 'public/js/script.js').version()
         mix.combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css').version()
     } else {
