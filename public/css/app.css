@@ -8209,7 +8209,7 @@ a:hover .thumbnail,
 a:active .thumbnail,
 a:focus .thumbnail {
   border: 1px solid #128bc6;
-  box-shadow: none;
+  box-shadow: 0 2px 5px 0 transparent, 0 2px 10px 0 transparent;
   transition: all 0.3s;
 }
 .navbar-default .navbar-nav > .open > a,
