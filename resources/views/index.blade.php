@@ -16,11 +16,11 @@ Have Rod Will Travel
         </h1>
     </div>
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-sm-6 col-sm-offset-3">
             <a role="button" href="/features/weekly-special">
             <div class="weekly-special text-center text-capitalize">
                     <h3>
-                        &ldquo;Trip of a lifetime&rdquo; <br> or &ldquo;A lifetime of trips&rdquo; <br>which sounds better?
+                        Which sounds better<br> &ldquo;Trip of a lifetime,&rdquo; <br> or &ldquo;A lifetime of trips?&rdquo;
                     </h3>
             </div>
             </a>

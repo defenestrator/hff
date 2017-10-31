@@ -1,3 +1,3 @@
 <a class="navbar-brand" href="/">
-    <img src="{{ asset('images/hobo.png') }}" style="height: 38px;">
+    <img src="{{ asset('images/hobo.png') }}">
 </a>
