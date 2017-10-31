@@ -214,7 +214,7 @@ Have Rod Will Travel
 </div>
 <hr>
 <div class="row">
-    <div class="col-md-6 col-md-offset-0">
+    <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-0">
         <article>
             <section>
                 <h4>We provide personalized value for all destinations we list.</h4>
@@ -225,16 +225,17 @@ Have Rod Will Travel
                     <li>Logistical strategies for the real world, so you don't get stuck in a bad spot.</li>
                     <li>Custom offline maps. Find your way around with no network connection.</li>
                     <li>Specialized fly patterns designed by local wizards. </li>
+
+                    <li>Comprehensive packing checklists.
+                        <ul style="list-style-type:square">
+                            <li class="small">Not just angling gear, everything you will need to make your trip comfortable, predictable and awesome.</li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="https://hoboflyfishing.com/publications/posts/we-learned-the-hard-way-so-you-don-t-have-to"
                            title="We learned the hard way so you don't have to">
                             Learn from Our Mistakes</a>.&trade;
                         We've made a few, maybe.
-                    </li>
-                    <li>Comprehensive packing checklists.
-                        <ul style="list-style-type:square">
-                            <li class="small">Not just angling gear, everything you will need to make your trip comfortable, predictable and awesome.</li>
-                        </ul>
                     </li>
                     <li>Surprises, merchandise and promo items.</li>
                     <li>Slightly less bullshit than you may be used to.</li>
@@ -244,7 +245,7 @@ Have Rod Will Travel
             </section>
         </article>
     </div>
-    <div class="col-md-4 col-md-offset-2">
+    <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-0">
         <article class="article">
 
             <section>
