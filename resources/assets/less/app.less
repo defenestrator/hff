@@ -382,7 +382,7 @@ blockquote {
   padding:1em;
   box-shadow: 0 2px 5px 0 rgba(15, 15, 15, 0.46), 0 2px 10px 0 rgba(15, 15, 15, 0.62);
   text-transform: uppercase;
-
+  transition: all 0.3s;
 }
 
 .weekly-special h2, .weekly-special h3{
@@ -391,6 +391,12 @@ blockquote {
   line-height:1.5em;
   margin: 0;
 }
+
+.weekly-special:hover, .weekly-special:active, .weekly-special:focus{
+  box-shadow: none;
+  transition: all 0.3s;
+}
+
 .showcase-header{
   text-transform : uppercase;
   text-shadow: 1px 2px 4px #787878;
@@ -689,11 +695,10 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
 .thumbnail{
   padding:1em;
   border:1px solid #3ab0f5;
-  background-color:aliceblue;
-  transition:all 0.5s;
   background-size: cover;
   background-position: center center;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition:all 0.3s;
  }
 
 
@@ -715,18 +720,12 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
     height: 312px;
   }
 }
-a:hover .thumbnail{
+a:hover .thumbnail, a:active .thumbnail, a:focus .thumbnail{
   border:1px solid rgb(18, 139, 198);
+  box-shadow: none;
   transition:all 0.3s;
 }
-a .thumbnail .img-responsive {
-  border-radius:0.3em;
-  transition:all 0.2s;
-}
-a:hover .thumbnail .img-responsive{
-  border-radius:0.5em;
-  transition:all 0.3s;
-}
+
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
   background-color: #3ab0f5;
   color:white;
