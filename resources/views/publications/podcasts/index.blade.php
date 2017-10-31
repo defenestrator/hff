@@ -16,9 +16,10 @@
     <div class="row">
         <div class="content">
             <div class="col-md-12">
-                <h2>Podcasts Coming, October 2017.</h2>
+                <h2>We are recording episode 1 today, October 31st, 2017.</h2>
                 <h3 style="margin-bottom:3em;">We are humbled to speak with our first guest, he's the real deal.</h3>
-
+                <h2>Happy Halloween, you monsters!</h2>
+                <br>
                 @foreach($podcasts as $podcast)
                     <div class="podcast">
                         <div class="featured-text relative-left">
