@@ -265,7 +265,7 @@ Have Rod Will Travel
 
 <div class="row">
     <div class="col-md-12 col-md-offset-0">
-        <h2 class="text-center">We currently add new adventures daily.</h2>
+        &nbsp;
     </div>
 </div>
 @stop
@@ -276,6 +276,11 @@ Have Rod Will Travel
         <p class="text-center"><span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">(on your dime)</span></p>
         <h4 class="text-center"><span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="2.0s">It's that simple.</span></h4>
     </footer>
+    <div class="row">
+        <div class="col-md-12 col-md-offset-0">
+            &nbsp;
+        </div>
+    </div>
     <carousel :autoplay="true"
               :autoplay-timeout="2000"
               :per-page="2"
