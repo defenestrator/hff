@@ -8236,11 +8236,18 @@ a:focus .thumbnail {
   }
 }
 .thumbnail .caption {
-  text-shadow: 1px 2px 4px #000, 0px 0px 3px #bf542a;
+  text-shadow: 1px 2px 4px #000, 0px 0px 3px #3ab0f5;
   padding: 1em 0;
   color: #fafaff;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.2em;
   margin: 15% 15%;
+  transition: all 0.3s;
+}
+a:hover .thumbnail .caption,
+a:active .thumbnail .caption,
+a:focus .thumbnail .caption {
+  text-shadow: 1px 2px 4px #bf542a, 0px 0px 3px #bf542a;
+  transition: all 0.3s;
 }
