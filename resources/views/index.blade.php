@@ -15,16 +15,17 @@ Have Rod Will Travel
             Elite Destinations, Local Flavor
         </h1>
     </div>
-    <a style="color:white" href="/features/weekly-special">
-    <div class="weekly-special text-center">
-            <h3>
-                &ldquo;Trip of a lifetime?&rdquo;
-            </h3>
-        <h3>&ldquo;A lifetime of trips&rdquo; sounds better.</h3><!-- Anagrams rule, bitches -->
-        <h2>Do it, with the weekly Hobo Special</h2>
-
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <a role="button" href="/features/weekly-special">
+            <div class="weekly-special text-center text-capitalize">
+                    <h3>
+                        &ldquo;Trip of a lifetime&rdquo; <br> or &ldquo;A lifetime of trips&rdquo; <br>which sounds better?
+                    </h3>
+            </div>
+            </a>
+        </div>
     </div>
-    </a>
 @stop
 
 @section('content')
@@ -211,13 +212,70 @@ Have Rod Will Travel
         </div>
     </div>
 </div>
+<hr>
+<div class="row">
+    <div class="col-md-6 col-md-offset-0">
+        <article>
+            <section>
+                <h4>We provide personalized value for all destinations we list.</h4>
+                <p>
+                <ul style="list-style-type:circle">
+                    <li>Solid support after the sale</li>
+                    <li>Timely angling intelligence </li>
+                    <li>Logistical strategies for the real world, so you don't get stuck in a bad spot.</li>
+                    <li>Custom offline maps. Find your way around with no network connection.</li>
+                    <li>Specialized fly patterns designed by local wizards. </li>
+                    <li>
+                        <a href="https://hoboflyfishing.com/publications/posts/we-learned-the-hard-way-so-you-don-t-have-to"
+                           title="We learned the hard way so you don't have to">
+                            Learn from Our Mistakes</a>.&trade;
+                        We've made a few, maybe.
+                    </li>
+                    <li>Comprehensive packing checklists.
+                        <ul style="list-style-type:square">
+                            <li class="small">Not just angling gear, everything you will need to make your trip comfortable, predictable and awesome.</li>
+                        </ul>
+                    </li>
+                    <li>Surprises, merchandise and promo items.</li>
+                    <li>Slightly less bullshit than you may be used to.</li>
+                </ul>
+                </p>
+
+            </section>
+        </article>
+    </div>
+    <div class="col-md-4 col-md-offset-2">
+        <article class="article">
+
+            <section>
+                <p>We will never have a hundred names on our "Pro Staff." We don't want them.
+                </p>
+                <p>
+                    90% are meaningless headshots next to the name of some random clown they met at the bar.
+                </p>
+                <img src="{{ asset('images/the-dude-1.jpg') }}" style="border-radius:1em;"
+                     alt="Yeah, well, that's just, like, your opinion, man."
+                     title="Yeah, well, that's just, like, your opinion, man."
+                >
+            </section>
+
+        </article>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-md-12 col-md-offset-0">
-        <h2 class="text-center">We add new adventures daily.</h2>
+        <h2 class="text-center">We currently add new adventures daily.</h2>
     </div>
 </div>
 @stop
 @section('bottom')
+    <footer style="background-color:#20303f; color:white; padding:1em; margin-top:2em;">
+        <h2 class="text-center">Don't be fooled by <span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">'<strong>free advice</strong>'</span></h2>
+        <h3 class="text-center">We don't send <span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s"><strong>The 5th Dude</strong></span> along for the trip</h3>
+        <p class="text-center"><span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">(on your dime)</span></p>
+        <h4 class="text-center"><span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="2.0s">It's that simple.</span></h4>
+    </footer>
     <carousel :autoplay="true"
               :autoplay-timeout="2000"
               :per-page="2"
