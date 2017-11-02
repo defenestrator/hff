@@ -10,7 +10,7 @@
 @stop
 
 @section('top')
-    <img src="/images/boardwalk-lodge/beast.jpg"
+    <img style="width:100%;" src="/images/boardwalk-lodge/beast.jpg"
          alt="Thick steelhead in hand" title="Thick steelhead in hand">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Boardwalk Lodge Alaska
