@@ -52,7 +52,7 @@
                          alt="Big cock, err umm Rooster." title="Big cock, err umm Rooster.">
                     <h3 class="text-center">Gnarly, dude</h3>
                     <sales-inquiry></sales-inquiry>
-                    <p>Surf sight-casting for Roosterfish is just about the most wicked-thrilling thing you can do, bruh</p>
+                    <p>Surf sight-casting for Roosterfish is just about the most wicked-thrilling thing you can do.</p>
                     <img class="footer logo" src="/images/pursuit-anglers/the-beach.jpg"
                          alt="Does life get more beautiful than this?" title="Does life get more beautiful than this?">
                     <p>Does life get more glorious than this?</p>
