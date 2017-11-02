@@ -52,12 +52,12 @@
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <p class="text-center">This is one of the most exciting and unique opportunities we have. </p>
+                    <p class="text-center">This is one of the most unique opportunities we have. </p>
                     <h3 class="text-center">Inquire for further detail</h3>
                     <sales-inquiry></sales-inquiry>
                     <img style="width:100%;"  src="{{asset('images/salmon-hole-lodge/dude.jpg')}}"
                          alt="Proper salmon, they said" title="Proper salmon, they said">
-                    <p>We are excited to offer this chance to enjoy one of the few remaining North American Atlantic
+                    <p>Enjoy one of the few remaining North American Atlantic
                         Salmon sport fisheries</p>
                     <img style="width:100%;"  src="{{asset('images/salmon-hole-lodge/release.jpg')}}"
                          alt="Keep them wet and let them go" title="Keep them wet and let them go">
