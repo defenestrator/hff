@@ -27,7 +27,9 @@
                         steelhead trips in North America. It’s like a wilderness elk hunt, but with steelhead replacing
                         elk as your quarry. You’re fishing on the Salmon River in the heart of the Frank Church/River of
                         No Return Wilderness, which is the largest wilderness in the Lower 48.</p>
-                    <img src="{{ asset('images/backcountry-river-guides/slide2-2767.jpg') }}" alt="More Steelhead." title="More Steelhead.">
+                    <img src="{{ asset('images/backcountry-river-guides/slide2-2767.jpg') }}"
+                         alt="More Steelhead."
+                         title="More Steelhead.">
 
                     <p>You’ll take a thrilling jet boat ride upstream through Class III and IV whitewater (which means hold
                         onto your ass), fish pristine steelhead runs, camp in heated canvas wall tents on broad, sandy
@@ -53,14 +55,15 @@
                     <hr>
                     <h4 class="text-center">Nope.</h4>
                     <p class="text-center"><strong>4 anglers, 4 days. Fully outfitted.</strong></p>
-                    <h3 class="text-center"><strong> $4000 </strong></h3>
-                    <p class="text-center">(only $1000 per angler!)</p>
+                    <h3 class="text-center"><strong> only $1000!</strong></h3>
+                    <p class="text-center">(per person)</p>
                     <sales-inquiry></sales-inquiry>
-                    <img class="logo" src="{{ asset('images/backcountry-river-guides/intrudershadow1.png') }}" alt="Intruder Alert!" title="Intruder Alert!">
+                    <img class="logo" src="{{ asset('images/backcountry-river-guides/intrudershadow1.png') }}"
+                         alt="Intruder Alert!" title="Intruder Alert!">
                     <p>Backcountry River Guides' trips are part of our "Full Service" lineup and we highly
                         recommend them to any steelheaders chasing a world-class trip on a budget.</p>
-
-                    <img src="{{ asset('images/backcountry-river-guides/boat.jpg') }}" alt="BRG - Brent Sawyer - The Boat" title="BRG - Brent Sawyer - The Boat">
+                    <img src="{{ asset('images/backcountry-river-guides/boat.jpg') }}"
+                         alt="BRG - Brent Sawyer - The Boat" title="BRG - Brent Sawyer - The Boat">
                    <p> We are confident this is the best steelhead expedition, at this price, in the lower 48.</p>
                 </article>
             </section>
