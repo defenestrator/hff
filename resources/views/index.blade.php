@@ -30,7 +30,9 @@ Have Rod Will Travel
     <div class="col-sm-4">
         <div class="info">
             <a href="/features/weekly-special" title="Get the weekly Hobo Fly Fishing special">
-                <div class="thumbnail" style="background-image: url('/images/naknek-river-camp/choppers.jpeg');">
+                <div class="thumbnail"
+                     style="background-image: url('/images/naknek-river-camp/choppers.jpeg');
+                            background-position: center bottom;">
                     <div class="caption" style="margin:5%;">
                         <h2 style="font-size:1.5em; font-weight:600;">The Hobo Special!</h2>
                         <p>don't miss out!</p>
@@ -56,7 +58,9 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/idaho/backcountry-river-guides" title="Backcountry River Guides">
-                <div class="thumbnail" style="background-image: url('/images/backcountry-river-guides/slide1-178.jpg');">
+                <div class="thumbnail"
+                     style="background-image: url('/images/backcountry-river-guides/slide1-178.jpg');
+                            background-position: right center;">
                     <div class="caption">
                         <p>Backcountry River Guides</p>
                         <p>Idaho</p>
@@ -64,7 +68,9 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/argentina/rio-manso-lodge" title="Rio Manso Lodge - Patagonia, Argentina">
-                <div class="thumbnail" style="background-image: url('/images/rio-manso-lodge/brookie-thumb.png');">
+                <div class="thumbnail"
+                     style="background-image: url('/images/rio-manso-lodge/brookie-thumb.png');
+                            background-position: right center;">
                     <div class="caption">
                         <p>Rio Manso Lodge</p>
                         <p>Argentina</p>
@@ -92,7 +98,9 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/british-columbia/deep-creek-lodge" title="Deep Creek Lodge">
-                <div class="thumbnail" style="background-image: url('/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg');">
+                <div class="thumbnail"
+                     style="background-image: url('/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg');
+                            background-position: left center;">
                     <div class="caption">
                         <p>Deep Creek Lodge</p>
                         <p>British Columbia</p>
@@ -100,7 +108,9 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/labrador/salmon-hole-lodge" title="Salmon Hole Lodge">
-                <div class="thumbnail" style="background-image: url('/images/salmon-hole-lodge/canada-tattoo.jpg');">
+                <div class="thumbnail"
+                     style="background-image: url('/images/salmon-hole-lodge/salmo-salar.jpg');
+                            background-position: left top;">
                     <div class="caption">
                         <p>Salmon Hole Lodge</p>
                         <p>Labrador</p>
@@ -108,7 +118,9 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/australia/true-blue-bonefish" title="True Blue Bonefish">
-                <div class="thumbnail" style="background-image: url('/images/true-blue-bonefish/gt.jpg');">
+                <div class="thumbnail"
+                     style="background-image: url('/images/true-blue-bonefish/gt.jpg');
+                            background-position: right center;">
                     <div class="caption">
                         <p>True Blue Bonefish</p>
                         <p>Australia</p>
@@ -124,7 +136,9 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/australia/wilderness-island" title="">
-                <div class="thumbnail" style="background-image: url('/images/wilderness-island/underwater-trevally.jpg');">
+                <div class="thumbnail"
+                     style="background-image: url('/images/wilderness-island/underwater-trevally.jpg');
+                     background-position: center bottom;">
                     <div class="caption">
                         <p>Wilderness Island</p>
                         <p>Australia</p>
@@ -144,7 +158,9 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/bahamas/two-boys-inn-andros" title="Two Boys Inn, Andros Island, Bahamas">
-                <div class="thumbnail" style="background-image: url('/images/two-boys-inn-andros/andros-bones.jpg');">
+                <div class="thumbnail"
+                     style="background-image: url('/images/two-boys-inn-andros/andros-bones.jpg');
+                            background-position: left center;">
                     <div class="caption">
                         <p>Two Boys Inn</p>
                         <p>Bahamas</p>
@@ -152,7 +168,9 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/new-zealand/stonefly-lodge" title="Stonefly Lodge - South Island, New Zealand">
-                <div class="thumbnail" style="background-image: url('/images/stonefly-lodge/pool-cast-stonefly.jpg');">
+                <div class="thumbnail"
+                     style="background-image: url('/images/stonefly-lodge/pool-cast-stonefly.jpg');
+                     background-position: right center;">
                     <div class="caption">
                         <p>Stonefly Lodge</p>
                         <p>New Zealand</p>
