@@ -19,11 +19,11 @@
                     <a class="dropdown-toggle" data-toggle="dropdown">Places<span class="caret"></span></a>
                     <ul class="scrollable-menu dropdown-menu" role="menu">
                         <li role="presentation" class="dropdown-header">Alaska</li>
-                        {{--<li>--}}
-                            {{--<a href="/destinations/alaska/boardwalk-lodge">--}}
-                                {{--Boardwalk Lodge--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href="/destinations/alaska/boardwalk-lodge">
+                                Boardwalk Lodge
+                            </a>
+                        </li>
                         {{--<li>--}}
                             {{--<a href="/destinations/alaska/bristol-bay-sportfishing">--}}
                                 {{--Bristol Bay Sportfishing--}}
