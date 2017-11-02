@@ -11,7 +11,7 @@ Have Rod Will Travel
 @section('top')
 
     <div class="tagline text-center">
-        <h1 class="bg-border wow pulse" data-wow-duration="1.5s">
+        <h1 class="bg-border wow pulse" data-wow-duration="1.0s">
             Elite Destinations, Local Flavor
         </h1>
     </div>
@@ -33,7 +33,7 @@ Have Rod Will Travel
                 <div class="thumbnail"
                      style="background-image: url('/images/naknek-river-camp/choppers.jpeg');
                             background-position: center bottom;">
-                    <div class="caption" style="margin:5%;">
+                    <div class="caption wow pulse" data-wow-duration="0.3s" data-wow-delay="1.5s" style="margin:5%;">
                         <h2 style="font-size:1.5em; font-weight:600;">The Hobo Special!</h2>
                         <p>don't miss out!</p>
                     </div>
