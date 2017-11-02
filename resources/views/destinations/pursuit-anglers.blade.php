@@ -33,7 +33,7 @@
                          alt="Rolling Mahi Mahi on a fly rod" title="Rolling Mahi Mahi on a fly rod">
                     <p>Hobo Fly Fishing can arrange a variety of packages to suit all budgets, including combination
                         DIY and guided trips, and don’t overlook offshore opportunities for dorado, billfish and tuna.
-                        Whether it’s your first saltwater destination or a return trip, a trip Baja is a classic.</p>
+                        Whether it’s your first saltwater destination or a return trip, a trip to Baja is a classic.</p>
 
                     <p class="text-center">
                         <iframe src="https://player.vimeo.com/video/104133376"
