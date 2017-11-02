@@ -25,6 +25,7 @@
         "league/flysystem": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "league/flysystem-cached-adapter": "^1.0",
+        "league/glide-laravel": "^1.0",
         "mtdowling/cron-expression": "^1.2",
         "php-ffmpeg/extras": "^0.3.1",
         "php-ffmpeg/php-ffmpeg": "^0.9.5",
