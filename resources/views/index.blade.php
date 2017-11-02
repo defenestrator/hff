@@ -15,41 +15,45 @@ Have Rod Will Travel
             Elite Destinations, Local Flavor
         </h1>
     </div>
-            <a href="/features/weekly-special" title="Get the weekly Hobo Fly Fishing special">
-            <div class="weekly-special text-center">
+            <a style="width:100%;" href="/features/weekly-special" title="Get the weekly Hobo Fly Fishing special">
+            <div class="text-center">
                     <h3>
                         Which sounds better<br> &ldquo;Trip of a lifetime,&rdquo; <br> or &ldquo;A lifetime of trips?&rdquo;
                     </h3>
             </div>
             </a>
+    <hr>
 @stop
 
 @section('content')
 
-<hr>
-<div class="row">
-    <div class="col-md-12 col-md-offset-0">
-        <h2 class="text-center">Lodges and Destinations</h2>
-    </div>
-</div>
 <!-- Listings Section Start -->
 <div class="row">
     <div class="col-sm-4">
         <div class="info">
-            <a href="/destinations/alaska/naknek-river-camp" title="Naknek River Camp">
-                <div class="thumbnail" style="background-image: url('/images/naknek-river-camp/steelie.jpg');">
+            <a href="/features/weekly-special" title="Get the weekly Hobo Fly Fishing special">
+                <div class="thumbnail" style="background-image: url('/images/naknek-river-camp/choppers.jpeg');">
                     <div class="caption">
-                        <p>Naknek River Camp</p>
-                        <p>Alaska</p>
+                        <h2 style="font-weight:600;">The Hobo Special!</h2>
+                        <p>don't miss out!</p>
                     </div>
                 </div>
             </a>
+
             <a href="/destinations/british-columbia/blackfish-lodge" title="Blackfish Lodge">
 
                 <div class="thumbnail" style="background-image: url('/images/blackfish-lodge/088-1.jpg');">
                     <div class="caption">
                         <p>Blackfish Lodge</p>
                         <p>British Columbia</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/alaska/naknek-river-camp" title="Naknek River Camp">
+                <div class="thumbnail" style="background-image: url('/images/naknek-river-camp/steelie.jpg');">
+                    <div class="caption">
+                        <p>Naknek River Camp</p>
+                        <p>Alaska</p>
                     </div>
                 </div>
             </a>
