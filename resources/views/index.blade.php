@@ -11,7 +11,7 @@ Have Rod Will Travel
 @section('top')
 
     <div class="tagline text-center">
-        <h1 class="bg-border wow pulse" data-wow-duration="1.0s">
+        <h1 class="bg-border wow pulse" data-wow-duration="0.7s">
             Elite Destinations, Local Flavor
         </h1>
     </div>
