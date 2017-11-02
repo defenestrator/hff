@@ -11,8 +11,8 @@
 
 @section('top')
     <img style="width:100%;" src="/images/pursuit-anglers/surfing-rooster.jpg"
-         alt="Surf sight-casting for Roosterfish is just about the most wicked-thrilling thing you can do, bruh"
-         title="Surf sight-casting for Roosterfish is just about the most wicked-thrilling thing you can do, bruh">
+         alt="Surf sight-casting for Roosterfish is just about the most wicked-thrilling thing you can do."
+         title="Surf sight-casting for Roosterfish is just about the most wicked-thrilling thing you can do.">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Pursuit Anglers
     </h1>
