@@ -37,7 +37,7 @@
                         sea-run fish can migrate hundreds of miles from the Pacific into Idaho’s mountains and still fight like a welter-weight title contender.</p>
                     <p>If that’s not enough, you’re in spectacular canyon country where bighorn sheep, deer, elk,
                         black bears and wolves roam free and wild.</p>
-                    <img src="{{ asset('images/backcountry-river-guides/steelie-hell.jpg') }}" alt="Even More Steelhead" title="Even More Steelhead">
+                    <img src="{{ asset('images/backcountry-river-guides/Slide3-2808.jpg') }}" alt="Even More Steelhead" title="Even More Steelhead">
 
                     <p>Yeah, we may be biased, but with all that at an affordable price, it’s easy to understand why.</p>
                 </article>
