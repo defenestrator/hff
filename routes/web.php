@@ -41,7 +41,7 @@ Route::group(['prefix' => 'destinations'], function () {
     Route::view('/bahamas/two-boys-inn-andros', 'destinations.two-boys-inn-andros')->name('two-boys-inn-andros');
 
     // Baja
-    Route::view('/baja/pursuit-anglers-baja', 'destinations.pursuit-anglers-baja')->name('pursuit-anglers-baja');
+    Route::view('/baja/pursuit-anglers', 'destinations.pursuit-anglers')->name('pursuit-anglers');
 
     // Belize
     Route::view('/belize/el-pescador', 'destinations.el-pescador')->name('el-pescador');

@@ -85,13 +85,13 @@
                                 Two Boys Inn
                             </a>
                         </li>
-                        {{--<li class="divider"></li>--}}
-                        {{--<li role="presentation" class="dropdown-header">Baja</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="/destinations/baja/pursuit-anglers-baja">--}}
-                                {{--Pursuit Anglers--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li class="divider"></li>
+                        <li role="presentation" class="dropdown-header">Baja</li>
+                        <li>
+                            <a href="/destinations/baja/pursuit-anglers">
+                                Pursuit Anglers
+                            </a>
+                        </li>
                         <li class="divider"></li>
                         <li role="presentation" class="dropdown-header">Belize Area</li>
                         {{--<li>--}}

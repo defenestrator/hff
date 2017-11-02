@@ -157,6 +157,14 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
+            <a href="/destinations/baja/pursuit-anglers" title="Pursuit Anglers - Baja">
+                <div class="thumbnail" style="background-image: url('/images/pursuit-anglers/surfing-rooster.jpg');">
+                    <div class="caption">
+                        <p>Pursuit Anglers</p>
+                        <p>Baja</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 </div>
