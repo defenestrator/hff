@@ -14,7 +14,7 @@
          alt="Letting go of your rooster is almost as much fun as getting a hold of it"
          title="Letting go of your rooster is almost as much fun as getting a hold of it">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
-        Bahia Rica - Costa Rica, Pacific side.
+        Bahia Rica - Costa Rica
     </h1>
 @stop
 
