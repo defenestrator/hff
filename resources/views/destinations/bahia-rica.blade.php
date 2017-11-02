@@ -53,7 +53,6 @@
                          alt="Rooster crashing the surface." title="Rooster crashing the surface.">
                     <h3 class="text-center">Get on top of this one.</h3>
                     <sales-inquiry></sales-inquiry>
-                    <p class="text-center">We at Hobo Fly Fishing are mega-stoked about this trip.</p>
                     <img src="/images/bahia-rica/mahi-mahi.jpg"
                          alt="Mahi mahi, dorado, dolphin, whatever; Awesome." title="Mahi mahi, dorado, dolphin, whatever; Awesome.">
                     <p class="text-center">Let's rap about it!</p>
