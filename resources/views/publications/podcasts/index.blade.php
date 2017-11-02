@@ -22,8 +22,13 @@
                 <p>…before the .com fly fishing business:</p>
                 <p>There was a man in blue jeans and a fiberglass rod, discovering a new world.</p>
                 <p>The new world of fly fishing the saltwater flats.</p>
-                <h1><a id="Winston_Moore__A_Permits_Tale_11"></a>Winston Moore - A Permit’s Tale.</h1>
+                <h1><a id="Winston_Moore_A_Permits_Tale"></a>Winston Moore - A Permit’s Tale.</h1>
                 <p>Friday, October 3rd, 2017, currently in post-production.</p>
+                <img src="/images/podcast/season-1/episode-1/winston-blue-jeans.jpg"
+                alt="Blue Jeans Flats Fishing, Winston H. Moore"
+                title="Blue Jeans Flats Fishing, Winston H. Moore"
+                style="width:70%;"
+                >
                 <br>
                 @foreach($podcasts as $podcast)
                     <div class="podcast">
