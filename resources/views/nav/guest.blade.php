@@ -63,6 +63,11 @@
                                 True Blue Bonefish
                             </a>
                         </li>
+                        <li>
+                            <a href="/destinations/australia/wilderness-island">
+                                Wilderness Island
+                            </a>
+                        </li>
                         <li class="divider"></li>
                         <li role="presentation" class="dropdown-header">Bahamas</li>
                         {{--<li>--}}
@@ -142,19 +147,19 @@
                                 Bahia Rica
                             </a>
                         </li>
-                        {{--<li>--}}
-                            {{--<a href="/destinations/costa-rica/silver-king-lodge">--}}
-                                {{--Silver King Lodge--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="divider"></li>--}}
+                        <li>
+                            <a href="/destinations/costa-rica/silver-king-lodge">
+                                Silver King Lodge
+                            </a>
+                        </li>
+                        <li class="divider"></li>
                         {{--<li role="presentation" class="dropdown-header">Florida</li>--}}
                         {{--<li>--}}
                             {{--<a href="/destinations/florida/bahia-honda-sporting-club">--}}
                                 {{--Bahia Honda Sporting Club--}}
                             {{--</a>--}}
                         {{--</li>--}}
-                        <li class="divider"></li>
+                        {{--<li class="divider"></li>--}}
                         <li role="presentation" class="dropdown-header">Idaho</li>
                         <li>
                             <a href="/destinations/idaho/backcountry-river-guides">

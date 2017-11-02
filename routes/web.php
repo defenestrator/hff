@@ -33,7 +33,7 @@ Route::group(['prefix' => 'destinations'], function () {
 
     // Australia
     Route::view('/australia/true-blue-bonefish', 'destinations.true-blue-bonefish')->name('true-blue-bonefish');
-
+    Route::view('/australia/wilderness-island', 'destinations.wilderness-island')->name('wilderness-island');
     // Bahamas
     Route::view('/bahamas/big-charlie-andros', 'destinations.big-charlie-andros')->name('big-charlie-andros');
     Route::view('/bahamas/swains-cay-lodge-andros', 'destinations.swains-cay-lodge-andros')->name('swains-cay-lodge-andros');

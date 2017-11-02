@@ -15,13 +15,11 @@ Have Rod Will Travel
             Elite Destinations, Local Flavor
         </h1>
     </div>
-            <a style="width:100%;" href="/features/weekly-special" title="Get the weekly Hobo Fly Fishing special">
-            <div class="text-center">
-                    <h3>
-                        Which sounds better<br> &ldquo;Trip of a lifetime,&rdquo; <br> or &ldquo;A lifetime of trips?&rdquo;
-                    </h3>
-            </div>
-            </a>
+        <div class="text-center">
+            <h3>
+                A lifetime of fly fishing trips.
+            </h3>
+        </div>
     <hr>
 @stop
 
@@ -33,8 +31,8 @@ Have Rod Will Travel
         <div class="info">
             <a href="/features/weekly-special" title="Get the weekly Hobo Fly Fishing special">
                 <div class="thumbnail" style="background-image: url('/images/naknek-river-camp/choppers.jpeg');">
-                    <div class="caption">
-                        <h2 style="font-weight:600;">The Hobo Special!</h2>
+                    <div class="caption" style="margin:5%;">
+                        <h2 style="font-size:1.5em; font-weight:600;">The Hobo Special!</h2>
                         <p>don't miss out!</p>
                     </div>
                 </div>
@@ -125,6 +123,14 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
+            <a href="/destinations/australia/wilderness-island" title="">
+                <div class="thumbnail" style="background-image: url('/images/wilderness-island/underwater-trevally.jpg');">
+                    <div class="caption">
+                        <p>Wilderness Island</p>
+                        <p>Australia</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-sm-4">
@@ -166,6 +172,14 @@ Have Rod Will Travel
                     <div class="caption">
                         <p>Pursuit Anglers</p>
                         <p>Baja</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/costa-rica/silver-king-lodge" title="Silver King Lodge - Costa Rica">
+                <div class="thumbnail" style="background-image: url('/images/silver-king-lodge/jumping.jpg');">
+                    <div class="caption">
+                        <p>Silver King Lodge </p>
+                        <p>Costa Rica</p>
                     </div>
                 </div>
             </a>
