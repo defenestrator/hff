@@ -69,6 +69,14 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
+            <a href="/destinations/costa-rica/bahia-rica" title="Bahia Rica - Costa Rica">
+                <div class="thumbnail" style="background-image: url('/images/bahia-rica/rooster-breach.jpg');">
+                    <div class="caption">
+                        <p>Bahia Rica</p>
+                        <p>Costa Rica</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-sm-4">
@@ -102,6 +110,14 @@ Have Rod Will Travel
                     <div class="caption">
                         <p>True Blue Bonefish</p>
                         <p>Australia</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/alaska/boardwalk-lodge" title="Boardwalk Lodge, Alaska">
+                <div class="thumbnail" style="background-image: url('/images/boardwalk-lodge/beast.jpg');">
+                    <div class="caption">
+                        <p>Boardwalk Lodge</p>
+                        <p>Alaska</p>
                     </div>
                 </div>
             </a>
@@ -263,24 +279,24 @@ Have Rod Will Travel
     <div class="col-md-12 col-md-offset-0">
         &nbsp;
     </div>
-    <carousel :autoplay="true"
-              :autoplay-timeout="2000"
-              :per-page="2"
-              :pagination-enabled="false"
-              :loop="true"
-              style="cursor: pointer;">
-        <slide><img src="{{ asset('images/carousels/home/grouper-websize.jpg') }}" alt="Big Grouper" title="Big Grouper">
-        </slide>
-        <slide><img src="{{ asset('images/carousels/home/bully.jpg') }}" alt="Bull Trout, keep 'em wet." title="Bull Trout must be kept in the water.">
-        </slide>
-        <slide><img src="{{ asset('images/carousels/home/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Eel Grass" title="Bonefish landed next to Fly Rod on Eel Grass">
-        </slide>
-        <slide><img src="{{ asset('images/carousels/home/flats.jpg') }}" alt="Remote Saltwater Flats"
-                    title="Remote Saltwater Flats">
-        </slide>
-        <slide><img src="{{ asset('images/carousels/home/tarpon.jpg') }}" alt="Hungry Islamorada Tarpon"
-                    title="Hungry Ismadorada Tarpon"></slide>
-    </carousel>
+    {{--<carousel :autoplay="true"--}}
+              {{--:autoplay-timeout="2000"--}}
+              {{--:per-page="2"--}}
+              {{--:pagination-enabled="false"--}}
+              {{--:loop="true"--}}
+              {{--style="cursor: pointer;">--}}
+        {{--<slide><img src="{{ asset('images/carousels/home/grouper-websize.jpg') }}" alt="Big Grouper" title="Big Grouper">--}}
+        {{--</slide>--}}
+        {{--<slide><img src="{{ asset('images/carousels/home/bully.jpg') }}" alt="Bull Trout, keep 'em wet." title="Bull Trout must be kept in the water.">--}}
+        {{--</slide>--}}
+        {{--<slide><img src="{{ asset('images/carousels/home/bonefish.jpg') }}" alt="Bonefish landed next to Fly Rod on Eel Grass" title="Bonefish landed next to Fly Rod on Eel Grass">--}}
+        {{--</slide>--}}
+        {{--<slide><img src="{{ asset('images/carousels/home/flats.jpg') }}" alt="Remote Saltwater Flats"--}}
+                    {{--title="Remote Saltwater Flats">--}}
+        {{--</slide>--}}
+        {{--<slide><img src="{{ asset('images/carousels/home/tarpon.jpg') }}" alt="Hungry Islamorada Tarpon"--}}
+                    {{--title="Hungry Ismadorada Tarpon"></slide>--}}
+    {{--</carousel>--}}
 <br>
 @stop
 {{-- footer scripts --}}

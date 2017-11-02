@@ -135,13 +135,13 @@
                                 {{--Ikari House--}}
                             {{--</a>--}}
                         {{--</li>--}}
-                        {{--<li class="divider"></li>--}}
-                        {{--<li role="presentation" class="dropdown-header">Costa Rica</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="/destinations/costa-rica/bahia-rica">--}}
-                                {{--Bahia Rica--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li class="divider"></li>
+                        <li role="presentation" class="dropdown-header">Costa Rica</li>
+                        <li>
+                            <a href="/destinations/costa-rica/bahia-rica">
+                                Bahia Rica
+                            </a>
+                        </li>
                         {{--<li>--}}
                             {{--<a href="/destinations/costa-rica/silver-king-lodge">--}}
                                 {{--Silver King Lodge--}}
