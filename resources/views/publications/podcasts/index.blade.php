@@ -16,9 +16,14 @@
     <div class="row">
         <div class="content">
             <div class="col-md-12">
-                <h2>Season 1 Episode 1 is in post-production now.</h2>
-                <h3 style="margin-bottom:3em;">We had a great time chatting with our first guest:</h3>
-                <h2>Winston Moore, a living legend.</h2>
+                <h2><a id="Before_the_internet_0"></a>Before the internet…</h2>
+                <p>…before buffs, $300 polarized fashion glasses, cell phones, blogs, pro staffers,<br>
+                    millions of look-at-me videos, flats boots, shirts, pants and hats…</p>
+                <p>…before the .com fly fishing business:</p>
+                <p>There was a man in blue jeans and a fiberglass rod, discovering a new world.</p>
+                <p>The new world of fly fishing the saltwater flats.</p>
+                <h1><a id="Winston_Moore__A_Permits_Tale_11"></a>Winston Moore - A Permit’s Tale.</h1>
+                <p>Friday, October 3rd, 2017, currently in post-production.</p>
                 <br>
                 @foreach($podcasts as $podcast)
                     <div class="podcast">
