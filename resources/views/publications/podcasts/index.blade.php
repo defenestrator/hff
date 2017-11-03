@@ -28,7 +28,7 @@
                 <p> The Hobo Fly Fishing team was speechless as he shared his experiences of casting a fly in the new world.</p>
                 <p>We aren't exaggerating, the title of his official biography is "Winston: The Legend" </p>
                 <p>We were fortunate enough to have a chat with him about his pioneering efforts flyfishing on the
-                    saltwater flats, and elsewhere, starting in the late 1950's!
+                    saltwater flats, and elsewhere, starting in the late nineteen-fifties!
                 <h1><a id="Winston_Moore_A_Permits_Tale"></a>Winston Moore - A Permit’s Tale.</h1>
                 <hr>
                 <img src="/images/podcast/season-1/episode-1/winston-blue-jeans.jpg"
@@ -43,6 +43,11 @@
                         Thanks to <a href="https://www.facebook.com/esteban.anastasio">Esteban Anastasio</a>
                         for the instantaneously improvised original music.
                     </p>
+                <img src="/images/podcast/season-1/episode-1/koppels.jpg"
+                     alt="Koppels Browzeville, Boise, in the '80s"
+                     title="Koppels Browzeville, Boise, in the '80s"
+                     style="width:100%;"
+                >
 
                 </ul>
                 <br>
