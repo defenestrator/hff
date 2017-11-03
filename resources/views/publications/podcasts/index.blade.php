@@ -15,17 +15,34 @@
 @section('content')
     <div class="row">
         <div class="content">
-            <div class="col-md-12">
+            <div class="col-md-8 col-md-offset-2">
 
                 <h2><a id="Before_the_internet_0"></a>Before the internet…</h2>
+                <p>Before the internet and its legions of wannabe fly fishing legends, before $1,200 graphite rods, $700 reels,
+                    $100 lines and $15 leaders, before $300 polarized fashion sunglasses, before cell phones, before blogs,
+                    Go Pros, fly fishing videos, pro staffers and the fly fishing industry's official uniform of technical wear,
+                    there was a man in blue jeans and a work shirt with a fiberglass fly rod discovering a new world
+                    ...the new world of fly fishing the saltwater flats. </p>
                 <iframe width="560" height="80" scrolling="no" frameborder="no" src="https://fireside.fm/s/MKBxL_oF+TsC6Xc3U/iframe"></iframe>
-                <p>…before buffs, $300 polarized fashion glasses, cell phones, blogs, pro staffers,<br>
-                    millions of look-at-me videos, flats boots, shirts, pants and hats…</p>
-                <p>…before the .com fly fishing business:</p>
-                <p>There was a man in blue jeans and a fiberglass rod, discovering a new world.</p>
-                <p>The new world of fly fishing the saltwater flats.</p>
-                <h1><a id="Winston_Moore_A_Permits_Tale"></a>Winston Moore - A Permit’s Tale.</h1>
 
+                <p> The Hobo Fly Fishing team was speechless as he shared his experiences of casting a fly in the new world.</p>
+
+                <h1><a id="Winston_Moore_A_Permits_Tale"></a>Winston Moore - A Permit’s Tale.</h1>
+                <hr>
+                <img src="/images/podcast/season-1/episode-1/winston-blue-jeans.jpg"
+                alt="Blue Jeans Flats Fishing, Winston H. Moore"
+                title="Blue Jeans Flats Fishing, Winston H. Moore"
+                style="width:70%;"
+                >
+                <br>
+                <hr>
+                <p>The audio quality is not where we want it, yet, we promise to bring the good mic next time.</p>
+                    <p>
+                        Thanks to <a href="https://www.facebook.com/esteban.anastasio">Esteban Anastasio</a>
+                        for the instantaneously improvised original music. We will make tighter recordings soon.
+                    </p>
+
+                </ul>
                 <br>
                 @foreach($podcasts as $podcast)
                     <div class="podcast">
