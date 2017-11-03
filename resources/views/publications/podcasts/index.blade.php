@@ -38,7 +38,7 @@
                 >
                 <br>
                 <hr>
-                <p>The audio quality is not where we want it, yet, we promise to bring the good mic next time.</p>
+                <p>The audio quality is not where we want it yet, we promise to bring the good mic next time.</p>
                     <p>
                         Thanks to <a href="https://www.facebook.com/esteban.anastasio">Esteban Anastasio</a>
                         for the instantaneously improvised original music.
