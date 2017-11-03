@@ -26,7 +26,7 @@
                 <iframe width="560" height="80" scrolling="no" frameborder="no" src="https://fireside.fm/s/MKBxL_oF+TsC6Xc3U/iframe"></iframe>
                 <p>One of fly fishing's living legends, Winston Moore.</p>
                 <p> The Hobo Fly Fishing team was speechless as he shared his experiences of casting a fly in the new world.</p>
-                <p>We aren't exaggerating, the title of his official biography is "Winston: The Legend!" </p>
+                <p>We aren't exaggerating, the title of his official biography is "Winston: The Legend" </p>
                 <p>We were fortunate enough to have a chat with him about his pioneering efforts flyfishing on the
                     saltwater flats, and elsewhere, starting in the late 1950's!
                 <h1><a id="Winston_Moore_A_Permits_Tale"></a>Winston Moore - A Permit’s Tale.</h1>
