@@ -16,6 +16,8 @@
     <div class="row">
         <div class="content">
             <div class="col-md-12">
+                <iframe width="560" height="80" scrolling="no" frameborder="no" src="https://fireside.fm/s/MKBxL_oF+TsC6Xc3U/iframe"></iframe>
+
                 <h2><a id="Before_the_internet_0"></a>Before the internet…</h2>
                 <p>…before buffs, $300 polarized fashion glasses, cell phones, blogs, pro staffers,<br>
                     millions of look-at-me videos, flats boots, shirts, pants and hats…</p>
