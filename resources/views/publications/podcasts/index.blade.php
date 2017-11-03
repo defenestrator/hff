@@ -17,16 +17,18 @@
         <div class="content">
             <div class="col-md-8 col-md-offset-2">
 
-                <h2><a id="Before_the_internet_0"></a>Before the internet…</h2>
-                <p>Before the internet and its legions of wannabe fly fishing legends, before $1,200 graphite rods, $700 reels,
+                <h2><a id="Before_the_internet"></a>Before the internet</h2>
+                <p>and its legions of wannabe fly fishing legends, before $1,200 graphite rods, $700 reels,
                     $100 lines and $15 leaders, before $300 polarized fashion sunglasses, before cell phones, before blogs,
                     Go Pros, fly fishing videos, pro staffers and the fly fishing industry's official uniform of technical wear,
                     there was a man in blue jeans and a work shirt with a fiberglass fly rod discovering a new world
                     ...the new world of fly fishing the saltwater flats. </p>
                 <iframe width="560" height="80" scrolling="no" frameborder="no" src="https://fireside.fm/s/MKBxL_oF+TsC6Xc3U/iframe"></iframe>
-
+                <p>One of fly fishing's living legends, Winston Moore.</p>
                 <p> The Hobo Fly Fishing team was speechless as he shared his experiences of casting a fly in the new world.</p>
-
+                <p>We aren't exaggerating, the title of his official biography is "Winston: The Legend" - we were fortunate
+                    to have a chat with him about his pioneering efforts flyfishing on the saltwater flats, and elsewhere,
+                    starting in the late 1950's!
                 <h1><a id="Winston_Moore_A_Permits_Tale"></a>Winston Moore - A Permit’s Tale.</h1>
                 <hr>
                 <img src="/images/podcast/season-1/episode-1/winston-blue-jeans.jpg"
