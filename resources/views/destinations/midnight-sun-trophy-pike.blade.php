@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Midnight Sun Trophy Pike Adventures
+    Midnight Sun Trophy Pike Adventures - Yukon, Alaska.
     @parent
 @stop
 
@@ -10,14 +10,14 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="" alt="" title="">
+    <img style="width:100%;"  src="/images/midnight-sun/scott-guide-pic-1.jpg" alt="Giant effing Northern Pike" title="Giant effing Northern Pike">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Midnight Sun Trophy Pike Adventures
     </h1>
 @stop
 
 @section('content')
-    <h2 class="text-center">Trust us when we tell you Alaska has more to offer then Salmon, Steelhead and Giant trout.</h2>
+    <h2 class="text-center">Trust us when we tell you Alaska has more to offer then Salmon, Steelhead and giant Trout.</h2>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-0">
             <section>
@@ -37,6 +37,8 @@
                     <p>On this trek, anglers have opportunities to land trophy pike well over 44 inches. Not only that,
                         you may have a shot at the "Tarpon of the North," the Sheefish, well-known for their fierce takes
                         and epic battles.</p>
+                    <img src="/images/midnight-sun/sheefish1.jpg" alt="Pissed off Sheefish" title="Pissed off Sheefish">
+
                     <p>Midnight Sun Trophy Pike Adventures provides a fully guided trip in Western Alaska on one of the
                         Yukon’s largest tributaries.
                         <p>Your entire expedition takes place aboard a beautiful 67 x 16 foot houseboat called the ‘Midnight
@@ -51,9 +53,12 @@
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <p class="text-center">Book soon as this is a very popular destination…</p>
+                    <p class="text-center">Book now, this is a very popular destination.</p>
                     <sales-inquiry></sales-inquiry>
                     <p>Ferocious takes, giant Northern Pike, angry Sheefish, Alaska. Smashing fun.</p>
+                    <img src="/images/midnight-sun/alaska-fishing-boat.jpg"
+                         alt="Home sweet houseboat" title="Home sweet houseboat">
+
                 </article>
             </section>
         </div>

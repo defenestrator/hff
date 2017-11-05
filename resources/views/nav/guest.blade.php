@@ -39,11 +39,11 @@
                                 {{--Kvichak Lodge--}}
                             {{--</a>--}}
                         {{--</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="/destinations/alaska/midnight-sun-trophy-pike">--}}
-                                {{--Midnight Sun Trophy Pike--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href="/destinations/alaska/midnight-sun-trophy-pike">
+                                Midnight Sun Trophy Pike
+                            </a>
+                        </li>
                         <li>
                             <a href="/destinations/alaska/naknek-river-camp">
                                 Naknek River Camp
@@ -80,11 +80,11 @@
                                 {{--Swains Cay Lodge--}}
                             {{--</a>--}}
                         {{--</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="/destinations/bahamas/tranquility-lodge-andros">--}}
-                                {{--Tranquility Lodge--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href="/destinations/bahamas/tranquility-lodge-andros">
+                                Tranquility Lodge
+                            </a>
+                        </li>
                         <li>
                             <a href="/destinations/bahamas/two-boys-inn-andros">
                                 Two Boys Inn
@@ -153,13 +153,13 @@
                             </a>
                         </li>
                         <li class="divider"></li>
-                        {{--<li role="presentation" class="dropdown-header">Florida</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="/destinations/florida/bahia-honda-sporting-club">--}}
-                                {{--Bahia Honda Sporting Club--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
-                        {{--<li class="divider"></li>--}}
+                        <li role="presentation" class="dropdown-header">Florida</li>
+                        <li>
+                            <a href="/destinations/florida/bahia-honda-sporting-club">
+                                Bahia Honda Sporting Club
+                            </a>
+                        </li>
+                        <li class="divider"></li>
                         <li role="presentation" class="dropdown-header">Idaho</li>
                         <li>
                             <a href="/destinations/idaho/backcountry-river-guides">

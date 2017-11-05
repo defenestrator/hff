@@ -40,12 +40,11 @@ Have Rod Will Travel
                 </div>
             </a>
 
-            <a href="/destinations/british-columbia/blackfish-lodge" title="Blackfish Lodge">
-
-                <div class="thumbnail" style="background-image: url('/images/blackfish-lodge/088-1.jpg');">
+            <a href="/destinations/british-columbia/midnight-sun-trophy-pike" title="Midnight Sun Trophy Pike Adventures">
+                <div class="thumbnail" style="background-image: url('/images/midnight-sun/scott-guide-pic-1.jpg');">
                     <div class="caption">
-                        <p>Blackfish Lodge</p>
-                        <p>British Columbia</p>
+                        <p>Midnight Sun Trophy Pike</p>
+                        <p>Alaska</p>
                     </div>
                 </div>
             </a>
@@ -85,15 +84,23 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
+            <a href="/destinations/british-columbia/blackfish-lodge" title="Blackfish Lodge">
+                <div class="thumbnail" style="background-image: url('/images/blackfish-lodge/088-1.jpg');">
+                    <div class="caption">
+                        <p>Blackfish Lodge</p>
+                        <p>British Columbia</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="info">
-            <a href="/destinations/yucatan/costa-de-cocos" title="Costa de Cocos">
-                <div class="thumbnail" style="background-image: url('/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg');">
+            <a href="/destinations/florida/bahia-honda-sporting-club" title="Bahia Honda Sporting Club">
+                <div class="thumbnail" style="background-image: url('/images/bahia-honda/fishing-05.jpg');">
                     <div class="caption">
-                        <p>Costa de Cocos</p>
-                        <p>Yucatan</p>
+                        <p>Bahia Honda Sporting Club</p>
+                        <p>Florida</p>
                     </div>
                 </div>
             </a>
@@ -145,15 +152,23 @@ Have Rod Will Travel
                     </div>
                 </div>
             </a>
+            <a href="/destinations/yucatan/costa-de-cocos" title="Costa de Cocos">
+                <div class="thumbnail" style="background-image: url('/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg');">
+                    <div class="caption">
+                        <p>Costa de Cocos</p>
+                        <p>Yucatan</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="info">
-            <a href="/destinations/belize/mango-creek-lodge" title="Mango Creek Lodge">
-                <div class="thumbnail" style="background-image: url('/images/mango-creek-lodge/baby-tarpon.jpg');">
+            <a href="/destinations/bahamas/tranquility-lodge-andros" title="Tranquility Hill Lodge - Andros, Bahamas">
+                <div class="thumbnail" style="background-image: url('/images/tranquility/tarpon.jpg');">
                     <div class="caption">
-                        <p>Mango Creek Lodge</p>
-                        <p>Honduras</p>
+                        <p>Tranquility Hill Lodge</p>
+                        <p>Bahamas</p>
                     </div>
                 </div>
             </a>
@@ -198,6 +213,14 @@ Have Rod Will Travel
                     <div class="caption">
                         <p>Silver King Lodge </p>
                         <p>Costa Rica</p>
+                    </div>
+                </div>
+            </a>
+            <a href="/destinations/belize/mango-creek-lodge" title="Mango Creek Lodge">
+                <div class="thumbnail" style="background-image: url('/images/mango-creek-lodge/baby-tarpon.jpg');">
+                    <div class="caption">
+                        <p>Mango Creek Lodge</p>
+                        <p>Honduras</p>
                     </div>
                 </div>
             </a>
