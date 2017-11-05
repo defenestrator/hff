@@ -40,7 +40,7 @@ Have Rod Will Travel
                 </div>
             </a>
 
-            <a href="/destinations/british-columbia/midnight-sun-trophy-pike" title="Midnight Sun Trophy Pike Adventures">
+            <a href="/destinations/alaska/midnight-sun-trophy-pike" title="Midnight Sun Trophy Pike Adventures">
                 <div class="thumbnail" style="background-image: url('/images/midnight-sun/scott-guide-pic-1.jpg');">
                     <div class="caption">
                         <p>Midnight Sun Trophy Pike</p>
