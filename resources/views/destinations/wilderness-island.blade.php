@@ -24,7 +24,7 @@
             <section>
                 <article class="article">
                     <p>If you said "deserted islands," you win the prize.</p>
-                    <p>So what does that have to with Wilderness Island? You won’t be a castaway, and you won’t be stranded,
+                    <p>So what does that have to do with Wilderness Island? You won’t be a castaway, and you won’t be stranded,
                         but you will have an entire island to yourself 24 miles from Exmouth, Australia.</p>
                     <img src="/images/wilderness-island/sunset.jpg"
                          alt="Crikey!" title="Crikey!">

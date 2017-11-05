@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Tranquility Lodge, Andros, Bahamas
+    Tranquility Hill Lodge, Andros, Bahamas
     @parent
 @stop
 
@@ -12,18 +12,31 @@
 @section('top')
     <img style="width:100%;"  src="" alt="" title="">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
-        Tranquility Lodge - Andros, Bahamas
+        Tranquility Hill Lodge - Andros, Bahamas
     </h1>
 @stop
 
 @section('content')
-    <h2>Coming soon...</h2>
+    <h2 class="text-align">Tranquility Hill Lodge is one of those great bonefish spots you’ve surely read about.</h2>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-0">
             <section>
                 <article class="article">
+                    <p> The area is well-known for good numbers of massive bonefish. But maybe bonefish aren’t your thing
+                        right now, maybe you want to test your mettle by sight casting to adult migratory Tarpon? At
+                        Tranquility Hill Lodge you will have a lot of opportunity for that, too. We recommend it highly,
+                        as a tarpon fishery, as they are now offering tarpon-specific packages for the first time.</p>
 
-                    <p>...really soon.</p>
+                    <p>In fact, we’re betting that Tranquility Hill will blow your mind with it’s great sight-fishing for
+                        the king of the flats. Whether you’re poling around in a panga or wading and stalking fish across
+                        the expansive flats, the crystal clear waters around Andros provide some smashing chances to
+                        sight-fish to hungry poons, and the digs are nice to boot. Chef Kora makes sure guests always have
+                        great food, including dessert. The lodge’s friendly atmosphere, free Wi-Fi, laundry service, and
+                        other amenities make staying at Tranquility Hill downright comfy. It sure is nice to let someone
+                        else take care of the day-to-day chores like cooking and laundry when there’s so much fishing to do!</p>
+                    <p>Hobo Fly Fishing is proud to offer Tranquility Hill Lodge’s new Tarpon program. These trips will
+                        sell out well in advance, so book now to get your foot in the door!</p>
+
                 </article>
             </section>
 
@@ -31,8 +44,11 @@
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
+                    <h3 class="text-center">We can’t get enough of this spot, so we love talking about it.</h3>
+                    <p class="text-center">Don’t hesitate to get in contact with us, we get as excited as you do about
+                        spots like Tranquility Hill Lodge.</p>
                     <sales-inquiry></sales-inquiry>
-                    <p></p>
+                    <p class="text-center">Book now for 2018 and 2019!</p>
                 </article>
             </section>
         </div>
