@@ -7843,7 +7843,7 @@ blockquote {
   width: 100%;
 }
 .tagline {
-  background: #262626 url(/images/cutty.jpg?1e2a3c8f700260ea1af6f0f9e0e94d3c) center center no-repeat;
+  background: #262626 url('https://nyc3.digitaloceanspaces.com/hobo/images/cutty.jpg') center center no-repeat;
   background-size: cover;
   padding: 4em 0;
   margin-bottom: 20px;
