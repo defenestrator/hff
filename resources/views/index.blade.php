@@ -320,7 +320,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                 <p>
                     90% are meaningless headshots next to the name of some random clown they met at the bar.
                 </p>
-                <img src="{{ asset('images/the-dude-1.jpg') }}" style="border-radius:1em;"
+                <img src="{{config('filesystems.disks.DO.endpoint')}}/images/the-dude-1.jpg" style="border-radius:1em;"
                      alt="Yeah, well, that's just, like, your opinion, man."
                      title="Yeah, well, that's just, like, your opinion, man."
                 >
