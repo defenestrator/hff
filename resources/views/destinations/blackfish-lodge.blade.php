@@ -30,14 +30,14 @@
                     <p>Think of Blackfish Lodge as a
                         floating B&amp;B (all meals included) in British Columbia backcountry with spectacular wilderness
                         scenery, abundant wildlife and, naturally, great fishing. </p>
-                    {{--<img src="/images/blackfish-lodge/Blackfish-Lodge-Underwater-077-2-w800_h533-600x400.jpg">--}}
+                    {{--<img src="{{config('filesystems.disks.DO.endpoint')}}/images/blackfish-lodge/Blackfish-Lodge-Underwater-077-2-w800_h533-600x400.jpg">--}}
                     <p>You will fly in by seaplane to catch the salmon and sea-run cutthroats, and your group can have
                         the whole thing to yourselves if there’s at least six of you and a maximum of eight.
                         Fishing includes salmon or trout fishing in a secluded Canadian river, lake or stream, and fishing
                         for trophy salmon in the protected waters of the surrounding islands. </p>
                     <p>And this is not the place to be a flyfishing snob. Put aside the feathers,
                         grab a spinning rig, bait up and hoist a halibut, because we have one bit of bad news: they won’t take dry flies.</p>
-                    <img src="/images/blackfish-lodge/slide_1.jpg">
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/blackfish-lodge/slide_1.jpg">
                 </article>
             </section>
 
@@ -50,7 +50,7 @@
                             shout. We offer a compelling package for this unique lodge.</p>
                     <h3><strong>Paradise, PNW style.</strong></h3>
                     <sales-inquiry></sales-inquiry>
-                    <p> <img src="/images/blackfish-lodge/088-1.jpg"></p>
+                    <p> <img src="{{config('filesystems.disks.DO.endpoint')}}/images/blackfish-lodge/088-1.jpg"></p>
 
                 </article>
             </section>
@@ -60,7 +60,7 @@
         <div class="col-md-12 col-md-offset-0">
             <section>
             <article>
-                <img class="logo" src="/images/blackfish-lodge/slid1bkgrnd.jpg">
+                <img class="logo" src="{{config('filesystems.disks.DO.endpoint')}}/images/blackfish-lodge/slid1bkgrnd.jpg">
             </article>
 </section>
         </div>

@@ -10,7 +10,7 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="/images/midnight-sun/scott-guide-pic-1.jpg" alt="Giant effing Northern Pike" title="Giant effing Northern Pike">
+    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/midnight-sun/scott-guide-pic-1.jpg" alt="Giant effing Northern Pike" title="Giant effing Northern Pike">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Midnight Sun Trophy Pike Adventures
     </h1>
@@ -37,7 +37,7 @@
                     <p>On this trek, anglers have opportunities to land trophy pike well over 44 inches. Not only that,
                         you may have a shot at the "Tarpon of the North," the Sheefish, well-known for their fierce takes
                         and epic battles.</p>
-                    <img src="/images/midnight-sun/sheefish1.jpg" alt="Pissed off Sheefish" title="Pissed off Sheefish">
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/midnight-sun/sheefish1.jpg" alt="Pissed off Sheefish" title="Pissed off Sheefish">
 
                     <p>Midnight Sun Trophy Pike Adventures provides a fully guided trip in Western Alaska on one of the
                         Yukon’s largest tributaries.
@@ -56,7 +56,7 @@
                     <p class="text-center">Book now, this is a very popular destination.</p>
                     <sales-inquiry></sales-inquiry>
                     <p>Ferocious takes, giant Northern Pike, angry Sheefish, Alaska. Smashing fun.</p>
-                    <img src="/images/midnight-sun/alaska-fishing-boat.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/midnight-sun/alaska-fishing-boat.jpg"
                          alt="Home sweet houseboat" title="Home sweet houseboat">
 
                 </article>

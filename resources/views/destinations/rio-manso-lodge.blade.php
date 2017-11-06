@@ -10,7 +10,7 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="/images/rio-manso-lodge/waterfall.jpg" alt="Pristine Patagonian water." title="Pristine Patagonian water.">
+    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/rio-manso-lodge/waterfall.jpg" alt="Pristine Patagonian water." title="Pristine Patagonian water.">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Rio Manso Lodge - Patagonia, Argentina
     </h1>
@@ -27,13 +27,13 @@
                     <p>It wasn’t just the trophy rainbows, browns and brook trout, nor the spring creeks with snow-capped
                         Patagonian peaks in the background. It was also the fishing season, which in Argentina runs from
                         the beginning of November until the end of April, opposite of North American trout destinations.</p>
-                    <img src="/images/rio-manso-lodge/brownie.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/rio-manso-lodge/brownie.jpg"
                          alt="Brown Trout love meat." title="Brown Trout love meat.">
                     <p>In fact, if you want summer fishing, it’s January through March in Argentina.
                         (Yeah, it hurts wrapping our heads around that, too)</p>
                     <p>This is a full-blown, trout-fishing lodge experience with the big meals and fine spirits for which
                         Argentina is famous, which you will need after a day of fishing with this crew.</p>
-                    <img src="/images/rio-manso-lodge/lodge.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/rio-manso-lodge/lodge.jpg"
                          alt="Rio Manso? More like Rio Mansion, right?" title="Rio Manso? More like Rio Mansion, right?">
                     <p>They boast nine to 10-hour days on the water pursuing fish, so there’s no confusion where
                         their priorities lie. Whether you’re casting a speck-sized dry fly or a bird-sized streamer,
@@ -47,12 +47,12 @@
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <img src="/images/rio-manso-lodge/patagonian-brookie.jpg" alt="Patagonia has big Brookies!" title="Patagonia has big Brookies!">                                    <h3 class="text-center">Winter is coming</h3>
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/rio-manso-lodge/patagonian-brookie.jpg" alt="Patagonia has big Brookies!" title="Patagonia has big Brookies!">                                    <h3 class="text-center">Winter is coming</h3>
                     <h4 class="text-center">Book this trip and keep on fishing.</h4>
                     <sales-inquiry></sales-inquiry>
-                    <img src="/images/rio-manso-lodge/release.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/rio-manso-lodge/release.jpg"
                          alt="Happy rainbow getting released" title="Happy rainbow getting released">
-                    <img src="/images/rio-manso-lodge/emerald-water.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/rio-manso-lodge/emerald-water.jpg"
                          alt="Emerald waters" title="Emerald waters">
                 </article>
             </section>

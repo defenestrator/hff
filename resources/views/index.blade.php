@@ -31,7 +31,7 @@ Have Rod Will Travel
         <div class="info">
             <a href="/features/weekly-special" title="Get the weekly Hobo Fly Fishing special">
                 <div class="thumbnail"
-                     style="background-image: url('/images/naknek-river-camp/choppers.jpeg');
+                     style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/naknek-river-camp/choppers.jpeg');
                             background-position: center bottom;">
                     <div class="caption wow pulse" data-wow-duration="0.3s" data-wow-delay="1.2s" style="margin:5%;">
                         <h2 style="font-size:1.5em; font-weight:600;">The Hobo Special</h2>
@@ -41,7 +41,7 @@ Have Rod Will Travel
             </a>
 
             <a href="/destinations/alaska/midnight-sun-trophy-pike" title="Midnight Sun Trophy Pike Adventures">
-                <div class="thumbnail" style="background-image: url('/images/midnight-sun/scott-guide-pic-1.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/midnight-sun/scott-guide-pic-1.jpg');">
                     <div class="caption">
                         <p>Midnight Sun Trophy Pike</p>
                         <p>Alaska</p>
@@ -49,7 +49,7 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/alaska/naknek-river-camp" title="Naknek River Camp">
-                <div class="thumbnail" style="background-image: url('/images/naknek-river-camp/steelie.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/naknek-river-camp/steelie.jpg');">
                     <div class="caption">
                         <p>Naknek River Camp</p>
                         <p>Alaska</p>
@@ -58,7 +58,7 @@ Have Rod Will Travel
             </a>
             <a href="/destinations/idaho/backcountry-river-guides" title="Backcountry River Guides">
                 <div class="thumbnail"
-                     style="background-image: url('/images/backcountry-river-guides/slide1-178.jpg');
+                     style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/backcountry-river-guides/slide1-178.jpg');
                             background-position: right center;">
                     <div class="caption">
                         <p>Backcountry River Guides</p>
@@ -68,7 +68,7 @@ Have Rod Will Travel
             </a>
             <a href="/destinations/argentina/rio-manso-lodge" title="Rio Manso Lodge - Patagonia, Argentina">
                 <div class="thumbnail"
-                     style="background-image: url('/images/rio-manso-lodge/brookie-thumb.png');
+                     style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/rio-manso-lodge/brookie-thumb.png');
                             background-position: right center;">
                     <div class="caption">
                         <p>Rio Manso Lodge</p>
@@ -77,7 +77,7 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/costa-rica/bahia-rica" title="Bahia Rica - Costa Rica">
-                <div class="thumbnail" style="background-image: url('/images/bahia-rica/rooster-breach.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/bahia-rica/rooster-breach.jpg');">
                     <div class="caption">
                         <p>Bahia Rica</p>
                         <p>Costa Rica</p>
@@ -85,7 +85,7 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/british-columbia/blackfish-lodge" title="Blackfish Lodge">
-                <div class="thumbnail" style="background-image: url('/images/blackfish-lodge/088-1.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/blackfish-lodge/088-1.jpg');">
                     <div class="caption">
                         <p>Blackfish Lodge</p>
                         <p>British Columbia</p>
@@ -97,7 +97,7 @@ Have Rod Will Travel
     <div class="col-sm-4">
         <div class="info">
             <a href="/destinations/florida/bahia-honda-sporting-club" title="Bahia Honda Sporting Club">
-                <div class="thumbnail" style="background-image: url('/images/bahia-honda/fishing-05.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/bahia-honda/fishing-05.jpg');">
                     <div class="caption">
                         <p>Bahia Honda Sporting Club</p>
                         <p>Florida</p>
@@ -106,7 +106,7 @@ Have Rod Will Travel
             </a>
             <a href="/destinations/british-columbia/deep-creek-lodge" title="Deep Creek Lodge">
                 <div class="thumbnail"
-                     style="background-image: url('/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg');
+                     style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg');
                             background-position: left center;">
                     <div class="caption">
                         <p>Deep Creek Lodge</p>
@@ -116,7 +116,7 @@ Have Rod Will Travel
             </a>
             <a href="/destinations/labrador/salmon-hole-lodge" title="Salmon Hole Lodge">
                 <div class="thumbnail"
-                     style="background-image: url('/images/salmon-hole-lodge/salmo-salar.jpg');
+                     style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/salmon-hole-lodge/salmo-salar.jpg');
                             background-position: left top;">
                     <div class="caption">
                         <p>Salmon Hole Lodge</p>
@@ -126,7 +126,7 @@ Have Rod Will Travel
             </a>
             <a href="/destinations/australia/true-blue-bonefish" title="True Blue Bonefish">
                 <div class="thumbnail"
-                     style="background-image: url('/images/true-blue-bonefish/gt.jpg');
+                     style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/true-blue-bonefish/gt.jpg');
                             background-position: right center;">
                     <div class="caption">
                         <p>True Blue Bonefish</p>
@@ -135,7 +135,7 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/alaska/boardwalk-lodge" title="Boardwalk Lodge, Alaska">
-                <div class="thumbnail" style="background-image: url('/images/boardwalk-lodge/beast.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/boardwalk-lodge/beast.jpg');">
                     <div class="caption">
                         <p>Boardwalk Lodge</p>
                         <p>Alaska</p>
@@ -144,7 +144,7 @@ Have Rod Will Travel
             </a>
             <a href="/destinations/australia/wilderness-island" title="">
                 <div class="thumbnail"
-                     style="background-image: url('/images/wilderness-island/underwater-trevally.jpg');
+                     style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/underwater-trevally.jpg');
                      background-position: center bottom;">
                     <div class="caption">
                         <p>Wilderness Island</p>
@@ -153,7 +153,7 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/yucatan/costa-de-cocos" title="Costa de Cocos">
-                <div class="thumbnail" style="background-image: url('/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg');">
                     <div class="caption">
                         <p>Costa de Cocos</p>
                         <p>Yucatan</p>
@@ -165,7 +165,7 @@ Have Rod Will Travel
     <div class="col-sm-4">
         <div class="info">
             <a href="/destinations/bahamas/tranquility-lodge-andros" title="Tranquility Hill Lodge - Andros, Bahamas">
-                <div class="thumbnail" style="background-image: url('/images/tranquility/tarpon.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/tarpon.jpg');">
                     <div class="caption">
                         <p>Tranquility Hill Lodge</p>
                         <p>Bahamas</p>
@@ -174,7 +174,7 @@ Have Rod Will Travel
             </a>
             <a href="/destinations/bahamas/two-boys-inn-andros" title="Two Boys Inn, Andros Island, Bahamas">
                 <div class="thumbnail"
-                     style="background-image: url('/images/two-boys-inn-andros/andros-bones.jpg');
+                     style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/two-boys-inn-andros/andros-bones.jpg');
                             background-position: left center;">
                     <div class="caption">
                         <p>Two Boys Inn</p>
@@ -184,7 +184,7 @@ Have Rod Will Travel
             </a>
             <a href="/destinations/new-zealand/stonefly-lodge" title="Stonefly Lodge - South Island, New Zealand">
                 <div class="thumbnail"
-                     style="background-image: url('/images/stonefly-lodge/pool-cast-stonefly.jpg');
+                     style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/stonefly-lodge/pool-cast-stonefly.jpg');
                      background-position: right center;">
                     <div class="caption">
                         <p>Stonefly Lodge</p>
@@ -193,7 +193,7 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/belize/the-blue-bonefish" title="The Blue Bonefish - Belize">
-                <div class="thumbnail" style="background-image: url('/images/the-blue-bonefish/permit.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/the-blue-bonefish/permit.jpg');">
                     <div class="caption">
                         <p>The Blue Bonefish</p>
                         <p>Belize</p>
@@ -201,7 +201,7 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/baja/pursuit-anglers" title="Pursuit Anglers - Baja">
-                <div class="thumbnail" style="background-image: url('/images/pursuit-anglers/surfing-rooster.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/pursuit-anglers/surfing-rooster.jpg');">
                     <div class="caption">
                         <p>Pursuit Anglers</p>
                         <p>Baja</p>
@@ -209,7 +209,7 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/costa-rica/silver-king-lodge" title="Silver King Lodge - Costa Rica">
-                <div class="thumbnail" style="background-image: url('/images/silver-king-lodge/jumping.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/silver-king-lodge/jumping.jpg');">
                     <div class="caption">
                         <p>Silver King Lodge </p>
                         <p>Costa Rica</p>
@@ -217,7 +217,7 @@ Have Rod Will Travel
                 </div>
             </a>
             <a href="/destinations/belize/mango-creek-lodge" title="Mango Creek Lodge">
-                <div class="thumbnail" style="background-image: url('/images/mango-creek-lodge/baby-tarpon.jpg');">
+                <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.endpoint')}}/images/mango-creek-lodge/baby-tarpon.jpg');">
                     <div class="caption">
                         <p>Mango Creek Lodge</p>
                         <p>Honduras</p>

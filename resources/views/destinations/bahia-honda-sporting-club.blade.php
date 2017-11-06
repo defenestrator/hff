@@ -10,7 +10,7 @@ Bahia Honda Sporting Club
 @stop
 
 @section('top')
-    <img style="width:100%;" src="/images/bahia-honda/composite.jpg"
+    <img style="width:100%;" src="{{config('filesystems.disks.DO.endpoint')}}/images/bahia-honda/composite.jpg"
          alt="The serious Keys fishing destination." title="The serious Keys fishing destination.">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Bahia Honda Sporting Club
@@ -30,7 +30,7 @@ Bahia Honda Sporting Club
                         Idaho and Utah that show up in the keys each year with a captain’s licence and a skiff, for just
                         a few short months, to become famous and take advantage of the tarpon and angler population
                         boom? Wouldn't you rather have a guide who lives and breathes the salt air of the Keys?</p>
-                    <img src="/images/bahia-honda/davesunset.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/bahia-honda/davesunset.jpg"
                          alt="Sunset doesn't get any better than this." title="Sunset doesn't get any better than this.">                    <p>Tarpon fly fishing can be taxing to the mind and body. If you are brand new to the tarpon game
                         you will show up full of piss and vinegar, after everything you have read and seen on the internet
                         prior to your trip. Regardless of your amped-up tarpon lust, finding a quality Keys captain,
@@ -49,7 +49,7 @@ Bahia Honda Sporting Club
                     <sales-inquiry></sales-inquiry>
                     <p class="text-center">Book with us early as this
                         fishery has a short window of only 11 weeks each year.</p>
-                    <img src="/images/bahia-honda/lodge-04.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/bahia-honda/lodge-04.jpg"
                          alt="The lodge itself is really nice, the fishing is even better" title="The lodge itself is really nice, the fishing is even better">
                     <p>The only Keys lodge offering this full service package is Bahia Honda Sporting Club. They have a
                         great reputation in fulfilling that tarpon dream and everything else besides the fishing. Their

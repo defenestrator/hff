@@ -10,7 +10,7 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="/images/tranquility/stalking.jpg"
+    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/stalking.jpg"
          alt="Stalking the saltwater flats is half the fun!" title="Stalking the saltwater flats is half the fun!">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Tranquility Hill Lodge - Andros, Bahamas
@@ -27,7 +27,7 @@
                         right now, maybe you want to test your mettle by sight casting to adult migratory Tarpon? At
                         Tranquility Hill Lodge you will have a lot of opportunity for that, too. We recommend it highly,
                         as a tarpon fishery, as they are now offering tarpon-specific packages for the first time.</p>
-                    <img style="width:100%;"  src="/images/tranquility/boat.jpg"
+                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/boat.jpg"
                          alt="Poling the saltwater flats is the other!" title="Poling the saltwater flats is the other!">
                     <p>In fact, we’re betting that Tranquility Hill will blow your mind with it’s great sight-fishing for
                         the king of the flats. Whether you’re poling around in a panga or wading and stalking fish across
@@ -38,7 +38,7 @@
                         else take care of the day-to-day chores like cooking and laundry when there’s so much fishing to do!</p>
                     <p>Hobo Fly Fishing is proud to offer Tranquility Hill Lodge’s new Tarpon program. These trips will
                         sell out well in advance, so book now to get your foot in the door!</p>
-                    <img style="width:100%;"  src="/images/tranquility/freedom.jpg"
+                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/freedom.jpg"
                          alt="Taste the freedom of the sea" title="Taste the freedom of the sea">
                 </article>
             </section>
@@ -52,11 +52,11 @@
                         spots like Tranquility Hill Lodge.</p>
                     <sales-inquiry></sales-inquiry>
                     <p class="text-center">Book now for 2018 and 2019!</p>
-                    <img src="/images/tranquility/tarpon.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/tarpon.jpg"
                          alt="It's all about the poons, baby!" title="It's all about the poons, baby!">
-                    <img src="/images/tranquility/sporty.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/sporty.jpg"
                          alt="Don't forget your shades, bro." title="Don't forget your shades, bro">
-                    <img src="/images/tranquility/island.jpg"
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/island.jpg"
                          alt="The future is bright!" title="The future is bright!">
                 </article>
             </section>
