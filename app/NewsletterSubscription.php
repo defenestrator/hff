@@ -16,6 +16,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsletterSubscription whereEmailAddress($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsletterSubscription whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsletterSubscription whereUpdatedAt($value)
+ * @property string|null $token
+ * @property int $confirmed
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsletterSubscription whereConfirmed($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\NewsletterSubscription whereToken($value)
  */
 class NewsletterSubscription extends Model
 {

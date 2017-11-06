@@ -18,12 +18,12 @@ Bahia Honda Sporting Club
 @stop
 
 @section('content')
-    <h2>Coming soon...</h2>
+    <h2 class="text-center">So you want to bow to the great Silver King in the Florida Keys?</h2>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <p>So you want to bow to the great Silver King in the Florida Keys ?</p>
+                    <p></p>
                     <p>Do you know a fly fishing savvy captain that lives and fishes the tarpon-rich waters surrounding
                         the Florida Keys that is not booked out years in advance?</p>
                     <p>Do you want to pay for one of the dozens and dozens of trout fishing guides from Montana,
