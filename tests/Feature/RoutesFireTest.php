@@ -5,12 +5,11 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ExampleTest extends TestCase
+class RoutesFireTest extends TestCase
 {
+
     /**
-     * A basic test example.
-     *
-     * @return void
+     * Test the Damn Thing works at all
      */
     public function test_domain_root_response_http_ok()
     {
@@ -18,6 +17,9 @@ class ExampleTest extends TestCase
         $response->assertStatus(200);
     }
 
+    /**
+     * Test the Damn Thing spits HTML
+     */
     function test_domain_root_returns_html()
     {
         $response = $this->get('/');

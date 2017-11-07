@@ -70,8 +70,8 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'endpoint' => env('AWS_URL'),
-            'bucket' => env('AWS_BUCKET')
-
+            'bucket' => env('AWS_BUCKET'),
+            'fullpath' => env('AWS_FULLPATH'),
         ],
     ],
 

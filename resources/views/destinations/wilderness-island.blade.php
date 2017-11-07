@@ -10,7 +10,7 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/underwater-trevally.jpg"
+    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/underwater-trevally.jpg"
          alt="Get away from the mainland, see some real outback!" title="Get away from the mainland, see some real outback!">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Wilderness Island - Western Australia
@@ -26,7 +26,7 @@
                     <p>If you said "deserted islands," you win the prize.</p>
                     <p>So what does that have to do with Wilderness Island? You won’t be a castaway, and you won’t be stranded,
                         but you will have an entire island to yourself 24 miles from Exmouth, Australia.</p>
-                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/sunset.jpg"
+                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/sunset.jpg"
                          alt="Crikey!" title="Crikey!">
                     <p>Spoiler Alert! There are also a lot of freakin’ fish in the waters surrounding Wilderness Island,
                         probably more than you than even the most optimistic angler would estimate.</p>
@@ -35,7 +35,7 @@
                         queenfish, longtail tuna, snapper, cod, bluebone and coral trout are some of the 100 odd species
                         of fish you will be waiting for your fly. And since fishing is strictly catch and release, they
                         will remain plentiful.</p>
-                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/brassy-trevally.jpg"
+                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/brassy-trevally.jpg"
                          alt="Australia is ready, when you are ready to level-up your fly fishing game."
                          title="Australia is ready, when you are ready to level-up your fly fishing game.">
                     <p>The camp is barely above the high-tide line and what you’d expect from a remote fishing outpost.
@@ -53,17 +53,17 @@
                     <p class="text-center">after all, it's Oz.</p>
                     <sales-inquiry></sales-inquiry>
                     <p>All one need do is ask...</p>
-                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/mangrovejack.jpg"
+                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/mangrovejack.jpg"
                          alt="Australia rules, mate!" title="Australia rules, mate!">
                     <p>Wilderness Island is an expedition to beat the band.</p>
-                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/giant-herring.jpg"
+                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/giant-herring.jpg"
                          alt="Giant herring!" title="Giant herring!">
-                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/golden-trevally.jpg"
+                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/golden-trevally.jpg"
                          alt="Golden trevally!" title="Golden trevally!">
                     <p>Arguably the best flats fishing on the planet.</p>
-                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/queenie.jpg"
+                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/queenie.jpg"
                          alt="Australia rules, mate!" title="Australia rules, mate!">
-                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/barramundi.jpg"
+                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/barramundi.jpg"
                          alt="barramundi-o!" title="barramundi-o!">
                 </article>
             </section>

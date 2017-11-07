@@ -28,13 +28,13 @@
                 <article class="article">
                     <p>What do fish from B.C.’s world-renowned Bulkley, Babine and Morice rivers have in
                         common? They have to swim up the Skeena River and past Terrace, B.C. to get there.</p>
-                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
+                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg">
                     <p>Deep Creek Lodge in Terrace gives you a shot at those steelhead and salmon when they are fresh
                         from saltwater and full of piss and vinegar. While it’s common for lodges upstream
                         to charge $8K to $10K a week to fish those famous rivers, you can go for a fraction of
                         that price and catch the same fish.
                     </p>
-                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/deep-creek-lodge/stacks-image-34f32a5-1200x582.jpg">
+                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/deep-creek-lodge/stacks-image-34f32a5-1200x582.jpg">
                     <p>Deep Creek Lodge offers fishing for steelhead, five species of salmon (Chinook, coho, sockeye,
                         chum and humpback) on the Skeena, Copper, Kalum and the Kitimat rivers, as well as trout fishing
                         for cutthroat and Dolly Varden char.
@@ -59,7 +59,7 @@
                     <h3 class="text-center"><strong>Ask us for details</strong></h3>
                     <sales-inquiry></sales-inquiry>
                     <p class="text-center"><iframe width="310" height="240" src="https://www.youtube.com/embed/iHd88IChX6U" frameborder="0" allowfullscreen></iframe></p>
-                    <img class="logo" src="{{config('filesystems.disks.DO.endpoint')}}/images/deep-creek-lodge/DCL_logo_Site.png">
+                    <img class="logo" src="{{config('filesystems.disks.DO.fullpath')}}/images/deep-creek-lodge/DCL_logo_Site.png">
                 </article>
             </section>
         </div>

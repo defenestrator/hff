@@ -11,7 +11,7 @@
 
 @section('top')
     <img style="width:100%;"
-         src="{{config('filesystems.disks.DO.endpoint')}}/images/costa-de-cocos/costa-de-cocos-permit.jpg"
+         src="{{config('filesystems.disks.DO.fullpath')}}/images/costa-de-cocos/costa-de-cocos-permit.jpg"
          alt="Nice f***in' Permit, dude!"
          title="Nice fu**in' Permit, dude!">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
@@ -47,7 +47,7 @@
                         Our hybrid trip includes both guided and self-guided days in this amazing location. Our angler
                         support package will save you time, prevent logistical headaches, and reduce the pain of learning a new fishery.
                     </p>
-                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/costa-de-cocos/scuba-with-tarpon.jpg" />
+                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/costa-de-cocos/scuba-with-tarpon.jpg" />
                     <p>The fish don't know if they are in Belize or Mexico, it's all the same water.</p>
                     <p>If you have specific needs or desires, let us know, and we'll build a trip just for you.</p>
                 </article>
@@ -76,7 +76,7 @@
                     <p class="text-center">(Four anglers, $1000/each)</p>
                     <sales-inquiry></sales-inquiry>
 
-                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg"
+                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg"
                          alt="Otto and Alberto with a nice Permit"
                          title="Otto and Alberto with a nice Permit">
                     <p class="small">Additional costs, including travel to and from Xcalac, not included.</p>

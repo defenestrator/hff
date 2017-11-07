@@ -11,7 +11,7 @@
 
 @section('top')
     <img style="width:100%;"
-         src="{{config('filesystems.disks.DO.endpoint')}}/images/naknek-river-camp/decent-bow.jpg"
+         src="{{config('filesystems.disks.DO.fullpath')}}/images/naknek-river-camp/decent-bow.jpg"
          alt="Decent Rainbow, eh?"
          title="Decent Rainbow, eh?">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
@@ -39,7 +39,7 @@
                         This is self-guided trip that includes transportation from the airport, food, lodging and use of a jetboat for a week (fuel included) for $2,495. Bring your own bottle of wine, or better yet, don’t.
                         We prefer Jim Beam or tequila, but that’s just us.
                     </p>
-                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/naknek-river-camp/grinnin.jpg" />
+                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/naknek-river-camp/grinnin.jpg" />
                 </article>
             </section>
         </div>
@@ -47,11 +47,11 @@
             <section>
                 <article class="article">
                     <p class="text-center">
-                        <img src="{{config('filesystems.disks.DO.endpoint')}}/images/naknek-river-camp/steelie.jpg" /></p>
+                        <img src="{{config('filesystems.disks.DO.fullpath')}}/images/naknek-river-camp/steelie.jpg" /></p>
                     <p class="text-center"><strong>Less costly than you imagine.</strong></p>
                     <h3 class="text-center">We know you're curious.</h3>
                     <sales-inquiry></sales-inquiry>
-                    <img class="logo" src="{{config('filesystems.disks.DO.endpoint')}}/images/naknek-river-camp/naknek-rivercamp-logo.png" />
+                    <img class="logo" src="{{config('filesystems.disks.DO.fullpath')}}/images/naknek-river-camp/naknek-rivercamp-logo.png" />
                 </article>
             </section>
         </div>
