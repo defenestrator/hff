@@ -23,17 +23,10 @@ class SalesInquiryController extends Controller
             'email' => 'bail|required|email|min:6|max:255',
             'message' => 'required|min:8|max:640',
         ]);
-        if (Contact::where('address', '=', $request->email)->pluck('address')->first() == $request->email) {
-            $contact = Contact::where('address', '=', $request->email)->first();
-            return $this->mail->to('support@mg.hoboflyfishing.com')
-                ->send(new SalesInquiryContact($contact));
-        } else {
-            $contact = Contact::create([
-                'address' => $request->email,
-                'message' =>  $request->message
-            ]);
-            return $this->mail->to('support@mg.hoboflyfishing.com')->send(new SalesInquiryContact($contact));
-        }
-       return;
+        $contact = Contact::create([
+            'address' => $request->email,
+            'message' =>  $request->message
+        ]);
+        return $this->mail->to('support@mg.hoboflyfishing.com')->send(new SalesInquiryContact($contact));
     }
 }
