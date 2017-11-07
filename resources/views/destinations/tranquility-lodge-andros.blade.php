@@ -48,8 +48,7 @@
             <section>
                 <article class="article">
                     <h3 class="text-center">We can’t get enough of this spot, we love talking about it.</h3>
-                    <p class="text-center">Don’t hesitate to get in contact with us, we get as excited as you do about
-                        spots like Tranquility Hill Lodge.</p>
+                    <p class="text-center">Don’t hesitate to get in contact with us, we get just as excited as you do.</p>
                     <sales-inquiry></sales-inquiry>
                     <p class="text-center">Book now for 2018 and 2019!</p>
                     <img src="{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/tarpon.jpg"
