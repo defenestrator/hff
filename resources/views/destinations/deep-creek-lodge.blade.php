@@ -16,7 +16,7 @@
             <a id="deep-creek-lodge" title="Deep Creek Lodge, Terrace B.C."></a>Deep Creek Lodge
         </h1>
 
-        <h3 class="feature-tagline text-center">Steelhead, Salmon and Trout</h3>
+        <h3 class="feature-tagline text-center">steelhead, salmon and trout</h3>
         <h3 class="feature-tagline text-center">Skeena River at Terrace, British Columbia</h3>
     </div>
 @stop

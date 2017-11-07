@@ -10,7 +10,8 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/os/tarpon.jpg" alt="The Silver King stares into you." title="The Silver King stares into you.">
+    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/os/tarpon.jpg"
+         alt="The Silver King stares into you." title="The Silver King stares into you.">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Silver King Lodge - Costa Rica
     </h1>
@@ -48,16 +49,16 @@
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <h3 class="text-center">Take a shot at the biggest Tarpon on Earth.</h3>
+                    <h3 class="text-center">Take a shot at the biggest tarpon on Earth.</h3>
                     <sales-inquiry></sales-inquiry>
                     <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/silver-king-lodge/thrashing.jpg"
                          alt="Take your shot" title="Take your shot">
-                    <p>The have some nice Trevally, too.</p>
+                    <p>The have some nice trevally, too.</p>
                     <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/silver-king-lodge/trevally.jpg"
-                         alt="They have some nice Trevally, too." title="They have some nice Trevally, too.">
+                         alt="They have some nice trevally, too." title="They have some nice trevally, too.">
                     <p>But we know you prefer these.</p>
                     <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/silver-king-lodge/megalops.jpg"
-                         alt="They have some nice Trevally, too." title="They have some nice Trevally, too.">
+                         alt="Megalops atlanticus." title="Megalops atlanticus.">
                 </article>
             </section>
         </div>

@@ -28,7 +28,7 @@
                         Patagonian peaks in the background. It was also the fishing season, which in Argentina runs from
                         the beginning of November until the end of April, opposite of North American trout destinations.</p>
                     <img src="{{config('filesystems.disks.DO.endpoint')}}/images/rio-manso-lodge/brownie.jpg"
-                         alt="Brown Trout love meat." title="Brown Trout love meat.">
+                         alt="Brown trout love meat." title="Brown trout love meat.">
                     <p>In fact, if you want summer fishing, it’s January through March in Argentina.
                         (Yeah, it hurts wrapping our heads around that, too)</p>
                     <p>This is a full-blown, trout-fishing lodge experience with the big meals and fine spirits for which

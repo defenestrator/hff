@@ -31,8 +31,8 @@
                     <p>Spoiler Alert! There are also a lot of freakin’ fish in the waters surrounding Wilderness Island,
                         probably more than you than even the most optimistic angler would estimate.</p>
 
-                    <p>Golden Trevally, Giant Trevally, giant Herring, Mangrove Jack, Permit, Barramundi, Spanish Mackerel,
-                        Queenfish, Longtail tuna, Snapper, Cod, Bluebone and Coral Trout are some of the 100 odd species
+                    <p>Golden trevally, giant trevally, giant herring, mangrove jack, permit, barramundi, spanish mackerel,
+                        queenfish, longtail tuna, snapper, cod, bluebone and coral trout are some of the 100 odd species
                         of fish you will be waiting for your fly. And since fishing is strictly catch and release, they
                         will remain plentiful.</p>
                     <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/brassy-trevally.jpg"
@@ -62,9 +62,9 @@
                          alt="Golden trevally!" title="Golden trevally!">
                     <p>Arguably the best flats fishing on the planet.</p>
                     <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/queenie.jpg"
-                         alt="Australia rules, mate!" title="Australiab rules queenie!">
+                         alt="Australia rules, mate!" title="Australia rules, mate!">
                     <img src="{{config('filesystems.disks.DO.endpoint')}}/images/wilderness-island/barramundi.jpg"
-                         alt="Barramundi-o!" title="Barramundi-o!">
+                         alt="barramundi-o!" title="barramundi-o!">
                 </article>
             </section>
         </div>

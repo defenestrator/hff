@@ -36,7 +36,7 @@
                     <p>Chef Kora ensures guests always have great food, including dessert. The lodge’s friendly atmosphere,
                         free Wi-Fi, laundry service, and other amenities make your down time convenient and comfortable. Let
                         someone else take care of the day-to-day chores so you can focus on the flats.</p>
-                    <p>Hobo Fly Fishing is proud to offer Tranquility Hill Lodge’s new Tarpon program. These trips will
+                    <p>Hobo Fly Fishing is proud to offer Tranquility Hill Lodge’s new tarpon program. These trips will
                         sell out well in advance, so book now to get your foot in the door!</p>
                     <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/freedom.jpg"
                          alt="Taste the freedom of the sea" title="Taste the freedom of the sea">

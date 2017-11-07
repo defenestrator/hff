@@ -27,7 +27,7 @@
                     We took a once-in-a-lifetime flyfishing trip to this beautiful, tropical paradise, hooked a bonefish,
                     tarpon or permit in one of its many flats and said “once in a lifetime my ass, I’m coming back.”</p>
                     <p>Blue Bonefish heard our vow. It offers some of the most affordable trips in Belize for not just
-                    the Grand Slam of flats fish (Bonefish, permit and tarpon), but much more. There’s also snook,
+                    the Grand Slam of flats fish (bonefish, permit and tarpon), but much more. There’s also snook,
                     barracuda, jacks, ladyfish, snapper, cobia, triggerfish and mahi.</p>
                     <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/the-blue-bonefish/flc-bone.jpg"
                          alt="happiness is a bone in your hand" title="happiness is a bone in your hand">
