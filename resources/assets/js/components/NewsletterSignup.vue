@@ -8,7 +8,6 @@
                        v-validate="'required|email'" v-model="email" name="email"
                        type="email"
                        :class="{'form-control': true, 'is-danger': errors.has('email') }"
-                       value=""
                        aria-describedby="basic-addon2"
                        required>
                     <span class="input-group-btn">
@@ -36,7 +35,7 @@ export default {
     validator: null,
     data() {
         return {
-            newsletterEmail: ''
+            email: ''
         }
     },
     mounted() {

@@ -36417,7 +36417,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
@@ -36426,7 +36425,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
     validator: null,
     data: function data() {
         return {
-            newsletterEmail: ''
+            email: ''
         };
     },
     mounted: function mounted() {
@@ -53510,7 +53509,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "your email",
       "name": "email",
       "type": "email",
-      "value": "",
       "aria-describedby": "basic-addon2",
       "required": ""
     },
