@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', config('app.name'))</title>
-    {{--<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>--}}
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href="{{ mix('/css/styles.css') }}" rel="stylesheet">
     {{--<!-- Global site tag (gtag.js) - Google Analytics -->--}}
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107298455-1"></script>

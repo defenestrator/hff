@@ -40,11 +40,10 @@
                                 </div>
                             </td>
 
-                            <!-- Edit Button -->
                             <td>
                                 <a :href="'/settings/{{str_plural(Spark::teamString())}}/'+team.id">
                                     <button class="btn btn-primary">
-                                        <i class="fa fa-cog"></i>
+                                        <div class="livicon" data-name="gear" data-loop="true" data-c="#ffffff" data-hc="#cdf"></div>
                                     </button>
                                 </a>
                             </td>
@@ -52,17 +51,17 @@
                             <!-- Leave Button -->
                             <td>
                                 <button class="btn btn-warning" @click="approveLeavingTeam(team)"
-                                    data-toggle="tooltip" title="Leave Team"
-                                    v-if="user.id !== team.owner_id">
-                                    <i class="fa fa-sign-out"></i>
+                                data-toggle="tooltip" title="Leave Team"
+                                v-if="user.id !== team.owner_id">
+                                <div class="livicon" data-name="gears" data-loop="true" data-c="#f00" data-hc="#ff0"></div>
                                 </button>
                             </td>
 
                             @if (Spark::createsAdditionalTeams())
                                 <!-- Delete Button -->
                                 <td>
-                                    <button class="btn btn-danger-outline" @click="approveTeamDelete(team)" v-if="user.id === team.owner_id">
-                                        <i class="fa fa-times"></i>
+                                    <button class="btn btn-danger" @click="approveTeamDelete(team)" v-if="user.id === team.owner_id">
+                                    <div class="livicon" data-name="remove" data-loop="true" data-c="#fff" data-hc="#fdc"></div>
                                     </button>
                                 </td>
                             @endif
