@@ -18,7 +18,7 @@
 @stop
 
 @section('content')
-    <h2 class="text-center">Trust us when we tell you Alaska has more to offer then Salmon, Steelhead and giant Trout.</h2>
+    <h2 class="text-center">Trust us when we tell you Alaska has more to offer then salmon, steelhead and giant trout.</h2>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-0">
             <section>
