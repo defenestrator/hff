@@ -1,9 +1,22 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
-@section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-@endsection
+@section('title')
+    Administrative Access Only
+    @parent
+@stop
+
+@section('page_styles')
+@stop
+
+@section('top')
+
+    <div class="text-center">
+        <h3>
+            Site Administration
+        </h3>
+    </div>
+@stop
+
 
 @section('content')
 <spark-kiosk :user="user" inline-template>
@@ -66,5 +79,9 @@
             </div>
         </div>
     </div>
+    @section('scripts')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    @endsection
 </spark-kiosk>
 @endsection

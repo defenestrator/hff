@@ -29,11 +29,11 @@
                                 {{--Bristol Bay Sportfishing--}}
                             {{--</a>--}}
                         {{--</li>--}}
-                        {{--<li>--}}
-                            {{--<a href="/destinations/alaska/hidden-basin">--}}
-                                {{--Hidden Basin--}}
-                            {{--</a>--}}
-                        {{--</li>--}}
+                        <li>
+                            <a href="/destinations/alaska/hidden-basin">
+                                Hidden Basin
+                            </a>
+                        </li>
                         {{--<li>--}}
                             {{--<a href="/destinations/alaska/kvichak-lodge">--}}
                                 {{--Kvichak Lodge--}}

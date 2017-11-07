@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('title')
     Hobo Fly Fishing Alaskan adventure  - 6 days - $2500/angler

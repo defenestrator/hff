@@ -1,5 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.master')
+@section('title')
+    Your team is missing
+    @parent
+@stop
 
+@section('page_styles')
+@stop
+
+@section('top')
+
+    <div class="text-center">
+        <h3>
+            Missing Team
+        </h3>
+    </div>
+@stop
 @section('content')
 <div class="container">
     <div class="row">

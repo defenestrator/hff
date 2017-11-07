@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('title')
     Rio Manso Lodge - Patagonia, Argentina

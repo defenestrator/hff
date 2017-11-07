@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('title')
     True Blue Bonefish - Exmouth, Western Australia

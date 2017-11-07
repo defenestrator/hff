@@ -1,4 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@section('title')
+    Generate API token
+    @parent
+@stop
+
+@section('page_styles')
+@stop
+
+@section('top')
 
 @section('content')
 <div class="container">

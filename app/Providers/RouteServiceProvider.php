@@ -36,20 +36,38 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
+        $this->mapSparkRoutes($router);
+
         $this->mapWebRedirectRoutes($router);
 
         $this->mapWebRoutes($router);
 
         $this->mapApiRoutes($router);
-
-        //
     }
+
+    /**
+     * @param Router $router
+     * @return void
+     */
     protected function mapWebRedirectRoutes(Router $router)
     {
         $router->group([
             'namespace' => $this->namespace, 'middleware' => ['web'],
         ], function ($router) {
             require base_path('routes/redirects.php');
+        });
+    }
+
+    /**
+     * @param Router $router
+     * @return void
+     */
+    protected function mapSparkRoutes(Router $router)
+    {
+        $router->group([
+            'namespace' => $this->namespace
+        ], function ($router) {
+            require base_path('routes/spark.php');
         });
     }
 

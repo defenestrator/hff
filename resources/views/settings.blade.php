@@ -1,5 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.master')
+@section('title')
+    Your Settings
+    @parent
+@stop
 
+@section('page_styles')
+@stop
+
+@section('top')
+
+    <div class="text-center">
+        <h3>
+            Settings
+        </h3>
+    </div>
+@stop
 @section('scripts')
     @if (Spark::billsUsingStripe())
         <script src="https://js.stripe.com/v2/"></script>

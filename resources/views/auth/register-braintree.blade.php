@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('scripts')
     <script src="https://js.braintreegateway.com/v2/braintree.js"></script>

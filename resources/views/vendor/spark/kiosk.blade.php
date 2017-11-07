@@ -1,4 +1,4 @@
-@extends('spark::layouts.app')
+@extends('layouts.master')
 
 @section('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>

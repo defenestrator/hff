@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('title')
     Blackfish Lodge - British Columbia backcountry salmon and trout

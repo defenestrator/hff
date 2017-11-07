@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('title')
     Midnight Sun Trophy Pike Adventures - Yukon, Alaska.
@@ -10,7 +10,8 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/midnight-sun/scott-guide-pic-1.jpg" alt="Giant effing Northern Pike" title="Giant effing Northern Pike">
+    <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/midnight-sun/scott-guide-pic-1.jpg"
+         alt="Giant effing Northern Pike" title="Giant effing Northern Pike">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Midnight Sun Trophy Pike Adventures
     </h1>
@@ -22,30 +23,30 @@
         <div class="col-sm-8 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <p>Close your eyes and picture a scene on a remote section of a slow moving river, in the majestic
-                        Alaskan backcountry, a bald eagle screeches high overhead. In the river, adjacent
-                        to a beautiful subarctic meadow a mother duck paddles along with a string of 10 newly hatched ducklings.
-                        A sow black bear and her cub are strolling along the row of willows at the edge of the meadow. The
-                        midnight sun of Alaska illuminates it all with a warm soft glow.</p>
+                    <p>Close your eyes and picture a remote, placid river in the majestic Alaskan backcountry.</p>
+                    <p>A bald eagle screeches high overhead, a sow black bear and her cub stroll along a row of willows
+                        in a sub-arctic meadow. A mother duck leads a string of 10 ducklings across the river, and the
+                        midnight sun bathes the whole scene in a warm, soft glow.</p>
                     <h4>Wham!</h4>
-                    <p>An explosion in the water disrupts the placid beauty. The hen frantically gathers her ducklings,
-                        only to find that her brood of ten is now only five.</p>
-                    <p>For those fly casting anglers looking for the thrill that only a meat eating trophy pike can provide
-                        Midnight Sun Trophy Pike Adventures is a must-do destination for your bucket list. This unique
-                        trip is perfect for those of you that love casting giant flies to meat eating fish. Hell, you can
-                        probably catch one on a baby duck fly, if you want.</p>
-                    <p>On this trek, anglers have opportunities to land trophy pike well over 44 inches. Not only that,
-                        you may have a shot at the "Tarpon of the North," the Sheefish, well-known for their fierce takes
-                        and epic battles.</p>
-                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/midnight-sun/sheefish1.jpg" alt="Pissed off Sheefish" title="Pissed off Sheefish">
+                    <p>An explosion in the water disrupts the placid beauty, and the hen frantically gathers her ducklings,
+                        only to find that her brood is now five.</p>
+                    <p>For fly anglers looking for the thrill that only a meat-eating trophy fish can provide, Midnight
+                        Sun Trophy Pike Adventures is a must-do destination for your bucket list.</p>
+                    <p>This unique trip is for those who love casting giant flies to meat eaters, or those who want to
+                        try it. Hell, you can probably catch one on a baby duck fly if you want.</p>
+                    <p>On this trek, anglers can land pike well over 44 inches. On top of that, you have a shot at the
+                        “tarpon of the North,” the Sheefish, which is well-known for their fierce strikes and epic battles.</p>
+
+                    <img src="{{config('filesystems.disks.DO.endpoint')}}/images/midnight-sun/sheefish1.jpg"
+                         alt="Pissed off Sheefish" title="Pissed off Sheefish">
 
                     <p>Midnight Sun Trophy Pike Adventures provides a fully guided trip in Western Alaska on one of the
-                        Yukon’s largest tributaries.
-                        <p>Your entire expedition takes place aboard a beautiful 67 x 16 foot houseboat called the ‘Midnight
-                        Sun’. Providing a new twist to sport fishing in Alaska; this boat is designed with all of the creature
-                        comforts and modern amenities for up to six guests per week. The boat has three staterooms, each
-                        sleeping two guests.</p>
+                        Yukon’s largest tributaries.</p>
+                    <p>Your expedition is housed aboard the Midnight Sun, a beautiful, 67-foot houseboat that puts a
+                        different twist to sport fishing in Alaska. It’s a luxury craft designed with all of the creature
+                        comforts and modern amenities for up to six guests per week in three staterooms, each sleeping two guests.</p>
                     <p>Book soon as this is a very popular destination…email or call Hobo Fly Fishing for details.</p>
+
                 </article>
             </section>
 
@@ -53,7 +54,7 @@
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <p class="text-center">Book now, this is a very popular destination.</p>
+                    <p class="text-center">Book now for 2018!</p>
                     <sales-inquiry></sales-inquiry>
                     <p>Ferocious takes, giant Northern Pike, angry Sheefish, Alaska. Smashing fun.</p>
                     <img src="{{config('filesystems.disks.DO.endpoint')}}/images/midnight-sun/alaska-fishing-boat.jpg"

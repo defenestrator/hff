@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('title')
     Big-Ass Bonefish at Two Boys Inn, Andros Island

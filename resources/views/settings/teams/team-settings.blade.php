@@ -1,4 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@section('title')
+    Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
+    @parent
+@stop
+
+@section('page_styles')
+@stop
+
+@section('top')
 
 @section('scripts')
     @if (Spark::billsUsingStripe())

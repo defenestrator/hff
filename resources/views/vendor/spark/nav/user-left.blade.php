@@ -1,4 +1,4 @@
-<ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav">
 <li {!! (Request::is('publications/posts') ? 'class="active"' : '') !!}><a href="{{  route('publications.posts.index') }}"> Blog</a>
 </li>
 <li {!! (Request::is('publications/podcasts') ? 'class="active"' : '') !!}><a href="{{  route('publications.podcasts.index') }}"> Podcast</a>
