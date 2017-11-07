@@ -26,10 +26,10 @@
                     <p>Those two words evoke great bonefishing, and Tranquility Hill Lodge is one of those great spots
                         you’ve heard about it, but there’s more.</p>
                     <p>Maybe you want to test your mettle by sight casting to adult migratory tarpon. Tranquility Hill Lodge
-                        you will give you a shot, and they are now offering tarpon-specific packages for the first time.</p>
+                        will give you a shot, and they are now offering tarpon-specific packages for the first time.</p>
                     <img style="width:100%;"  src="{{config('filesystems.disks.DO.endpoint')}}/images/tranquility/boat.jpg"
                          alt="Poling the saltwater flats is the other!" title="Poling the saltwater flats is the other!">
-                    <p>In fact, we’re betting that Tranquility Hill will blow your mind with it’s great sight-fishing for
+                    <p>In fact, we’re betting that Tranquility Hill will blow your mind with its great sight-fishing for
                         the king of the flats, whether you’re poling in a panga or wading and stalking across the expansive
                         flats and crystal-clear waters. Andros provides some smashing chances to sight-fish to hungry poons,
                         and the digs match the quality of the fishing.</p>
