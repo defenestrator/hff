@@ -1,7 +1,7 @@
 # Hobo Fly Fishing CI and CD brought to you by CircleCI, Slack, Envoyer.io and my personal lack of awesomeness.
 version: 2
 jobs:
-  build-job:
+  build:
     docker:
       # specify the version you desire here
       - image: circleci/php:7.1.8-browsers
@@ -56,13 +56,12 @@ jobs:
   deploy-job:
     - run:  curl https://envoyer.io/deploy/l4BO7bIv4NbB4rcBsNZSlSV0oK4hU8QAH7DhDSRs
 workflows:
-  version: 2
   build-deploy:
     jobs:
-      - build-job
+      - build
       - deploy-job:
           requires:
-            - build-job
+            - build
           filters:
             branches:
               only: master
