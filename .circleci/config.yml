@@ -53,7 +53,5 @@ jobs:
          name: Run Laravel Dusk Tests
          command: php artisan dusk
       - run: php artisan dusk
-  deploy-job:
-    - run:  curl https://envoyer.io/deploy/l4BO7bIv4NbB4rcBsNZSlSV0oK4hU8QAH7DhDSRs
 
 
