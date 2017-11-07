@@ -8256,3 +8256,12 @@ a:focus .thumbnail .caption {
   width: 46px;
   box-shadow: 0px 0px 2px #000;
 }
+.notification {
+  font-size: 14px;
+}
+#modal-notifications .fa-stack {
+  font-size: 20px;
+}
+#modal-notifications .notification-content {
+  padding-left: 50px;
+}
