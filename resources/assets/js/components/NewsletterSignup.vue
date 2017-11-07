@@ -44,11 +44,11 @@ export default {
     methods: {
         signup() {
             this.validator.validateAll({
-                  email: this.newsletterEmail
+                  email: this.email
               })
                 .then(result => {
                         axios.post(`/api/newsletter-subscriptions`, {
-                        email: this.newsletterEmail
+                        email: this.email
                     })
                     .then(result => {
                         swal({
@@ -91,7 +91,7 @@ export default {
         }
     },
     watch: {
-        newsletterEmail(value) {
+        email(value) {
             this.validator.validate('email', value);
         }
     },

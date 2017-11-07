@@ -36437,10 +36437,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             var _this = this;
 
             this.validator.validateAll({
-                email: this.newsletterEmail
+                email: this.email
             }).then(function (result) {
                 axios.post('/api/newsletter-subscriptions', {
-                    email: _this.newsletterEmail
+                    email: _this.email
                 }).then(function (result) {
                     swal({
                         title: 'Thanks for signing up!',
@@ -36481,7 +36481,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
     },
 
     watch: {
-        newsletterEmail: function newsletterEmail(value) {
+        email: function email(value) {
             this.validator.validate('email', value);
         }
     }
