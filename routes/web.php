@@ -94,7 +94,7 @@ Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 
 // LOADER.IO AUTHENTICATION
 Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
-Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
+Route::any('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
 // AUTH ROUTES
 Route::group(['middleware' => ['auth:web']], function () {
     Route::view('/dashboard', 'dashboard')->name('dashboard');
