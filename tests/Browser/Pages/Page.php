@@ -18,22 +18,4 @@ abstract class Page extends BasePage
         ];
     }
 
-    /**
-     * @return string
-     */
-    public function currentUrl() {
-        switch (env('APP_ENV')){
-            case 'production':
-                die();
-                break;
-            case 'local':
-                return 'http://hff.dev';
-                break;
-            case 'dusk':
-                return '127.0.0.1';
-                break;
-            default:
-                return 'http://localhost';
-        }
-    }
 }

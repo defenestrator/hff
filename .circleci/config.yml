@@ -34,7 +34,7 @@ jobs:
       - run: composer install -n --ignore-platform-reqs
       - run: touch storage/testing.sqlite
       - run: php artisan key:generate
-      - run: php artisan migrate --env=dusk --force
+      - run: php artisan migrate --force
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
