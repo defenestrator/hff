@@ -33,18 +33,17 @@ jobs:
       - run: cp .env.example .env
       - run: composer install -n --ignore-platform-reqs
       - run: npm run production
-      - save_cache:
-        key: dependency-cache-{{ checksum "package.json" }}
-        paths:
-          - ./node_modules
-      - save_cache:
-        key: v1-dependencies-{{ checksum "composer.json" }}
-        paths:
-          - ./vendor
       - run: touch storage/testing.sqlite
       - run: php artisan key:generate
       - run: php artisan migrate --env=dusk --force
-
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - save_cache:
+          paths:
+            - ./vendor
+          key: v1-dependencies-{{ checksum "composer.json" }}
       # run tests!
       - run:
          name: Start Chrome Driver
