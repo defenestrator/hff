@@ -33,7 +33,7 @@
 
                     <p>Golden trevally, giant trevally, giant herring, mangrove jack, permit, barramundi, spanish mackerel,
                         queenfish, longtail tuna, snapper, cod, bluebone and coral trout are some of the 100 odd species
-                        of fish you will be waiting for your fly. And since fishing is strictly catch and release, they
+                        of fish will be waiting for your fly. And since fishing is strictly catch and release, they
                         will remain plentiful.</p>
                     <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/brassy-trevally.jpg"
                          alt="Australia is ready, when you are ready to level-up your fly fishing game."
