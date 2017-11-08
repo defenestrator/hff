@@ -5,7 +5,6 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/php:7.1.8-browsers
-      - image: circleci/node:4.8.2
     working_directory: ~/repo
     steps:
       - checkout
@@ -34,17 +33,18 @@ jobs:
       - run: cp .env.example .env
       - run: composer install -n --ignore-platform-reqs
       - run: npm run production
+      - save_cache:
+        key: dependency-cache-{{ checksum "package.json" }}
+        paths:
+          - ./node_modules
+      - save_cache:
+        key: v1-dependencies-{{ checksum "composer.json" }}
+        paths:
+          - ./vendor
       - run: touch storage/testing.sqlite
       - run: php artisan key:generate
-      - run: php artisan migrate
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-      - save_cache:
-          paths:
-            - ./vendor
-          key: v1-dependencies-{{ checksum "composer.json" }}
+      - run: php artisan migrate --env=dusk --force
+
       # run tests!
       - run:
          name: Start Chrome Driver
@@ -57,7 +57,6 @@ jobs:
       - run:
          name: Run Laravel Dusk Tests
          command: php artisan dusk
-      - run: php artisan dusk
 notify:
   webhooks:
     # A list of hook hashes, containing the URL field
