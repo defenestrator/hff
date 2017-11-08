@@ -17,7 +17,7 @@ class FireTest extends DuskTestCase
         $this->browse(function ($browser) {
             $browser->visit(new HomePage)
                 ->waitForText('Hobo')
-                ->assertTitleContains('Have Rod, Will Travel');
+                ->assertTitleContains('Hobo');
         });
     }
 
