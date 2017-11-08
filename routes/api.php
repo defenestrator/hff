@@ -13,7 +13,7 @@
 Route::group([
     'middleware' => 'api'
 ], function () {
-    Route::any('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
+    Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
     Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
     Route::post('/sales-inquiry', 'SalesInquiryController@create');
     Route::get('/posts', 'PostsController@index');
