@@ -55,6 +55,8 @@ jobs:
       - run:
          name: Run Laravel Dusk Tests
          command: php artisan dusk
+       - store_artifacts:
+         path: /tmp
 notify:
   webhooks:
     # A list of hook hashes, containing the URL field
