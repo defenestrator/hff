@@ -13,7 +13,7 @@ class LoginPage extends Page
      */
     public function url()
     {
-        $url = $this->currentUrl() . '/login';
+        $url = '/login';
         return $url;
     }
 
