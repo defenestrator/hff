@@ -30,7 +30,7 @@ abstract class Page extends BasePage
                 return 'http://hff.dev';
                 break;
             case 'dusk':
-                return 'http://localhost';
+                return '127.0.0.1';
                 break;
             default:
                 return 'http://localhost';
