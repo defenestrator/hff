@@ -3,9 +3,8 @@
 namespace Tests\Feature;
 
 use Tests\DuskTestCase;
-use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Tests\Browser\Pages\LoginPage;
+use Tests\Browser\Pages\HomePage;
 
 class FireTest extends DuskTestCase
 {
@@ -15,8 +14,11 @@ class FireTest extends DuskTestCase
      */
     public function test_domain_root_response_http_ok()
     {
-        $response = $this->get('/');
-        $response->assertStatus(200);
+        $this->browse(function ($browser) {
+            $browser->visit(new HomePage)
+                ->waitForText('Hobo')
+                ->assertTitleContains('Hobo');
+        });
     }
 
     /**
