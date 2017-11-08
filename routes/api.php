@@ -9,11 +9,10 @@
 | loaded automatically by this application's RouteServiceProvider.
 |
 */
-
+Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
 Route::group([
     'middleware' => 'auth:api'
 ], function () {
-    Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
     Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
     Route::post('/sales-inquiry', 'SalesInquiryController@create');
     Route::get('/posts', 'PostsController@index');
