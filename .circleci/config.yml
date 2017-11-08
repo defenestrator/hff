@@ -32,7 +32,6 @@ jobs:
           command: npm install
       - run: cp .env.dusk .env
       - run: composer install -n --ignore-platform-reqs
-      - run: npm run production
       - run: touch storage/testing.sqlite
       - run: php artisan key:generate
       - run: php artisan migrate --env=dusk --force
