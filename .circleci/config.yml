@@ -9,6 +9,12 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run:
+          name: Download NodeJS v6
+          command: curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+      - run:
+          name: Install Nodejs 6
+          command: sudo apt-get install -y nodejs
       - run: sudo apt install -y libsqlite3-dev
       - run: sudo apt-get install -y libpng-dev
       - run: sudo apt-get install -y libmagickwand-dev
@@ -22,8 +28,12 @@ jobs:
           - v1-dependencies-{{ checksum "composer.lock" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-{{ checksum "composer.json" }}
+      - run:
+          name: Install NodeJS Packages
+          command: npm install
       - run: cp .env.example .env
       - run: composer install -n --ignore-platform-reqs
+      - run: npm run production
       - run: touch storage/testing.sqlite
       - run: php artisan key:generate
       - run: php artisan migrate
@@ -35,7 +45,6 @@ jobs:
           paths:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
-
       # run tests!
       - run:
          name: Start Chrome Driver
