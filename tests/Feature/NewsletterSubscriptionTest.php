@@ -17,8 +17,7 @@ class NewsletterSubscriptionTest extends TestCase
     {
         $response = $this->withoutMiddleware()->post('/api/newsletter-subscriptions', ['email' => 'test@example.com']);
 
-        $response->assertSee('test@example.com')
-        ->assertStatus(200);
+        $response->assertJson(["email_address" => "test@example.com"]);
     }
 
     /**
