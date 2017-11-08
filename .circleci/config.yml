@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Install NodeJS Packages
           command: npm install
-      - run: cp .env.example .env
+      - run: cp .env.dusk .env
       - run: composer install -n --ignore-platform-reqs
       - run: npm run production
       - run: touch storage/testing.sqlite
@@ -51,7 +51,7 @@ jobs:
          background: true
       - run:
          name: Run Laravel Server
-         command: php artisan serve
+         command: php artisan serve --port=80
          background: true
       - run:
          name: Run Laravel Dusk Tests
