@@ -5,6 +5,8 @@ jobs:
     docker:
       # specify the version you desire here
       - image: circleci/php:7.1.8-browsers
+      - environment:
+        HOBO_API_KEY: $HOBO_API_KEY
     working_directory: ~/repo
     steps:
       - checkout
