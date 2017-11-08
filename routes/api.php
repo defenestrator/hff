@@ -11,7 +11,7 @@
 */
 
 Route::group([
-    'middleware' => 'api'
+    'middleware' => 'auth:api'
 ], function () {
     Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
     Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
