@@ -53507,7 +53507,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     },
     attrs: {
       "placeholder": "your email",
-      "name": "email",
+      "name": "newsletter-email",
       "type": "email",
       "aria-describedby": "basic-addon2",
       "required": ""

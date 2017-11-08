@@ -14,7 +14,26 @@ abstract class Page extends BasePage
     public static function siteElements()
     {
         return [
-            '@element' => '#selector',
+//            '@element' => '#selector',
         ];
+    }
+
+    /**
+     * @return string
+     */
+    public function currentUrl() {
+        switch (env('APP_ENV')){
+            case 'production':
+                die();
+                break;
+            case 'local':
+                return 'http://hff.dev';
+                break;
+            case 'dusk':
+                return 'http://localhost';
+                break;
+            default:
+                return 'http://localhost';
+        }
     }
 }

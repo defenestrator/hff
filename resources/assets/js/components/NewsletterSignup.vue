@@ -5,7 +5,7 @@
         <form>
             <div class="input-group">
                 <input class="form-control" placeholder="your email"
-                       v-validate="'required|email'" v-model="email" name="email"
+                       v-validate="'required|email'" v-model="email" name="newsletter-email"
                        type="email"
                        :class="{'form-control': true, 'is-danger': errors.has('email') }"
                        aria-describedby="basic-addon2"
