@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Deployment extends Model
 {
-    private $fillable = ['payload'];
+    protected $fillable = ['payload'];
 }
