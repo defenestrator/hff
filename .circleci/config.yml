@@ -27,8 +27,6 @@ jobs:
       - run: touch storage/testing.sqlite
       - run: php artisan key:generate
       - run: php artisan migrate
-      - run: npm install
-      - run: npm run production
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:

@@ -24,9 +24,9 @@ class DeploymentController extends Controller
      */
     public function create(Request $request)
     {
-        $request->validate([
-            $request => 'json|required'
-        ]);
+//        $request->validate([
+//            $request => 'json|required'
+//        ]);
         Deployment::create(['payload' => $request]);
         return response('OK', 200);
     }
