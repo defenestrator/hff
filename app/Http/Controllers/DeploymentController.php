@@ -23,20 +23,25 @@ class DeploymentController extends Controller
      */
     public function create(Request $request)
     {
+        dd($request->input('payload.outcome'));
         $request->validate([
             $request->input('payload') => 'json|required'
         ]);
         Deployment::create(['payload' => $request->input('payload')]);
-        // create a new cURL resource
-        $ch = curl_init();
-        // set URL and other appropriate options
-        curl_setopt($ch, CURLOPT_URL, config('app.deploy'));
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        // grab URL and pass it to the browser
-        curl_exec($ch);
-        // close cURL resource, and free up system resources
-        curl_close($ch);
-        return response('OK', 200);
+        if ($request->input('payload.outcome') == 'success') {
+            // create a new cURL resource
+            $ch = curl_init();
+            // set URL and other appropriate options
+            curl_setopt($ch, CURLOPT_URL, config('app.deploy'));
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            // grab URL and pass it to the browser
+            curl_exec($ch);
+            // close cURL resource, and free up system resources
+            curl_close($ch);
+            return response('Deploying to production', 201);
+        }
+        return response('CircleCI build failed, no deployment will occur', 201);
+
     }
 
     /**
