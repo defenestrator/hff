@@ -7,7 +7,7 @@ use App\Team;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Spark\Contracts\Repositories\CouponRepository;
 use Laravel\Spark\Contracts\Interactions\Settings\PaymentMethod\RedeemCoupon;
-
+use Mockery;
 class RedeemTeamCouponTest extends TestCase
 {
     use CreatesTeams, DatabaseMigrations;
@@ -28,9 +28,7 @@ class RedeemTeamCouponTest extends TestCase
         $this->actingAs($user)
                 ->json('POST', '/settings/teams/'.$team->id.'/payment-method/coupon', [
                     'coupon' => 'coupon-code',
-                ]);
-
-        $this->seeStatusCode(200);
+                ])->assertStatus(200);
     }
 
 
@@ -50,8 +48,6 @@ class RedeemTeamCouponTest extends TestCase
         $this->actingAs($user)
                 ->json('POST', '/settings/teams/'.$team->id.'/payment-method/coupon', [
                     'coupon' => 'coupon-code',
-                ]);
-
-        $this->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 }

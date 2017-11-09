@@ -109,6 +109,6 @@ Route::group(['middleware' => ['auth:web']], function () {
 });
 
 // Registrations are closed, hacker.
-Route::any('/register', 'RegisterController@no');
+Route::any('/register', 'Auth\RegisterController@no');
 
 

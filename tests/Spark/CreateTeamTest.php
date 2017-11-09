@@ -12,11 +12,12 @@ class CreateTeamTest extends TestCase
     public function test_teams_can_be_created()
     {
         $this->actingAs(factory(User::class)->create())
-                ->json('POST', '/settings/teams', [
+                ->json('POST', '/settings/outfitters', [
                     'name' => 'New Team',
-                ]);
+                    'slug' => 'new-team'
+                ])->assertStatus(200);
 
-        $this->seeInDatabase('teams', [
+        $this->assertDatabaseHas('teams', [
             'name' => 'New Team',
         ]);
     }
@@ -25,10 +26,9 @@ class CreateTeamTest extends TestCase
     public function test_name_is_required()
     {
         $this->actingAs(factory(User::class)->create())
-                ->json('POST', '/settings/teams', [
+                ->json('POST', '/settings/outfitters', [
                     'name' => '',
-                ]);
+                ])->assertStatus(422);
 
-        $this->seeStatusCode(422);
     }
 }

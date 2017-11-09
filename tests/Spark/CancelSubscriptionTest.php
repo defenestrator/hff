@@ -3,7 +3,7 @@
 namespace Tests\Spark;
 
 use Tests\TestCase;
-use App\User;
+use Illuminate\Foundation\Testing\TestResponse;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 /**
@@ -16,14 +16,11 @@ class CancelSubscriptionTest extends TestCase
     public function test_subscription_can_be_cancelled()
     {
         $user = $this->createSubscribedUser('spark-test-1');
-
         $this->assertTrue($user->subscribed());
         $this->assertFalse($user->subscription()->onGracePeriod());
 
-        $this->actingAs($user)
-                ->json('DELETE', '/settings/subscription');
-
-        $this->seeStatusCode(200);
+        $this->actingAs($user)->delete('/settings/subscription', ['Content-Type', 'application/json']);
+//        $this->assertStatus(200);
         $this->assertTrue($user->subscription()->onGracePeriod());
     }
 }

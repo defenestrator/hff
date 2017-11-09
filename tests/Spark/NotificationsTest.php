@@ -25,7 +25,7 @@ class NotificationsTest extends TestCase
 
         $user->notify(new TestNotificationStub($message));
 
-        $this->seeInDatabase('notifications', [
+        $this->assertDatabaseHas('notifications', [
             'user_id' => $user->id,
             'created_by' => $from->id,
             'icon' => 'fa-icon',
@@ -43,7 +43,7 @@ class NotificationsTest extends TestCase
 
         $user->notify(new TestNotificationStub($message));
 
-        $this->seeInDatabase('notifications', [
+        $this->assertDatabaseHas('notifications', [
             'user_id' => $user->id,
             'created_by' => null,
             'icon' => 'fa-bell',

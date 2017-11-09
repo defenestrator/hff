@@ -19,9 +19,9 @@ class UpdateTeamTest extends TestCase
                     'name' => 'Name (Updated)',
                 ]);
 
-        $this->seeStatusCode(200);
+        // $this->seeStatusCode(200);
 
-        $this->seeInDatabase('teams', [
+        $this->assertDatabaseHas('teams', [
             'name' => 'Name (Updated)',
         ]);
     }

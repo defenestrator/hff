@@ -1,6 +1,6 @@
 <?php
 namespace Tests\Spark;
-
+use Laravel\Spark\Spark;
 use Tests\TestCase;
 use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -16,7 +16,7 @@ class CreateApiTokenTest extends TestCase
                     'name' => 'New Token',
                 ]);
 
-        $this->seeInDatabase('api_tokens', [
+        $this->assertDatabaseHas('api_tokens', [
             'name' => 'New Token',
         ]);
     }
@@ -27,11 +27,9 @@ class CreateApiTokenTest extends TestCase
         $this->actingAs(factory(User::class)->create())
                 ->json('POST', '/settings/api/token', [
                     'name' => '',
-                ]);
+                ])->assertStatus(422);
 
-        $this->seeStatusCode(422);
     }
-
 
     public function test_tokens_can_be_created_with_abilities()
     {
@@ -64,6 +62,6 @@ class CreateApiTokenTest extends TestCase
                 ->json('POST', '/settings/api/token', [
                     'name' => 'New Token (Updated)',
                     'abilities' => ['delete-servers'],
-                ])->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 }

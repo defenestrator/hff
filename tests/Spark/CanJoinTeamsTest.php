@@ -1,6 +1,6 @@
 <?php
 namespace Tests\Spark;
-use Stripe\Token;
+use Stripe;
 use Tests\TestCase;
 use App\User;
 use App\Team;
@@ -78,22 +78,6 @@ class CanJoinTeamsTest extends TestCase
         $this->assertFalse($user->currentTeamOnTrial());
     }
 
-
-    /**
-     * @group braintree
-     */
-    public function test_current_team_on_trial_determines_if_current_team_is_on_trial_using_braintree()
-    {
-        $user = factory(User::class)->create();
-        $team = $this->createTeam($user, 'member');
-        $this->assertFalse($user->currentTeamOnTrial());
-
-        $team->newSubscription('default', 'spark-test-1')->trialDays(10)->create('fake-valid-nonce');
-
-        $this->assertFalse($user->currentTeamOnTrial());
-    }
-
-
     public function test_current_team_will_gracefully_reset_when_current_team_id_is_null()
     {
         $user = factory(User::class)->create();
@@ -102,7 +86,6 @@ class CanJoinTeamsTest extends TestCase
 
         $this->assertEquals($team->id, $user->current_team->id);
     }
-
 
     public function test_users_can_switch_to_another_active_team()
     {

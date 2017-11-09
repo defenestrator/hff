@@ -1,12 +1,15 @@
 <?php
 namespace Tests\Spark;
 
+use Ramsey\Uuid\Uuid;
 use App\User;
-use App\Team;
+use App\Team;;
 
 trait CreatesTeams
 {
-        /**
+
+
+    /**
          * Create a new team instance.
          *
          * @return \Laravel\Spark\Team
@@ -17,6 +20,7 @@ trait CreatesTeams
 
             $team = (new Team)->forceFill([
                 'name' => 'New Team',
+                'slug' => Uuid::Uuid4(),
                 'owner_id' => $user->id,
             ]);
 

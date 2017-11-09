@@ -19,20 +19,6 @@ trait InteractsWithPaymentProviders
     }
 
     /**
-     * Create a new subscribed user.
-     *
-     * @return mixed
-     */
-    public function createBraintreeSubscribedUser($plan)
-    {
-        $user = factory(User::class)->create();
-
-        $user->newSubscription('default', $plan)->create('fake-valid-nonce');
-
-        return $user;
-    }
-
-    /**
      * Get a test Stripe token.
      *
      * @return string

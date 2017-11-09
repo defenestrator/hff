@@ -30,9 +30,9 @@ class UpdateApiTokenTest extends TestCase
                     'abilities' => [],
                 ]);
 
-        $this->seeStatusCode(200);
+        // $this->seeStatusCode(200);
 
-        $this->seeInDatabase('api_tokens', [
+        $this->assertDatabaseHas('api_tokens', [
             'name' => 'New Token (Updated)',
         ]);
     }
@@ -79,7 +79,7 @@ class UpdateApiTokenTest extends TestCase
                     'abilities' => ['create-servers'],
                 ]);
 
-        $this->seeStatusCode(200);
+        // $this->seeStatusCode(200);
 
         $token = $user->fresh()->tokens->first();
 

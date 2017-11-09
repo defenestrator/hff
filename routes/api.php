@@ -33,7 +33,7 @@ Route::group([
 //    Route::get('podcasts/{id}/tags', 'PodcastTagsController@index');
 
     // Registrations are closed, hacker.
-    Route::any('/register', 'RegisterController@no');
+    Route::any('/register', 'Auth\RegisterController@no');
 
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');

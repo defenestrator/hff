@@ -29,9 +29,9 @@ class UpdateProfilePhotoTest extends TestCase
                     'photo' => $file,
                 ]);
 
-        $this->seeStatusCode(200);
+        // $this->seeStatusCode(200);
 
-        $this->seeInDatabase('users', [
+        $this->assertDatabaseHas('users', [
             'photo_url' => '/profile/photo',
         ]);
     }

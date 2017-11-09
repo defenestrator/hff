@@ -58,7 +58,72 @@ class SparkServiceProvider extends ServiceProvider
         Spark::freePlan('Free Angler Plan', 'free-angler-plan');
         Spark::afterLoginRedirectTo('dashboard');
         Spark::identifyTeamsByPath();
-    }
+        Spark::usesTeams();
+///////////////////////////////////////////////////
+/////////////// TEST PLANS ///////////////////////
+/////////////////////////////////////////////////
+            if (env('testing')) {
+
+                Spark::trialDays(10);
+                Spark::freePlan()
+                    ->features([
+                        'First',
+                        'Second',
+                        'Third'
+                    ]);
+                Spark::plan('Basic', 'spark-test-1')
+                    ->price(10)
+                    ->features([
+                        'First',
+                        'Second',
+                        'Third'
+                    ]);
+
+                Spark::plan('Basic', 'spark-test-2')
+                    ->price(20)
+                    ->features([
+                        'First',
+                        'Second',
+                        'Third'
+                    ]);
+
+                Spark::plan('Basic', 'spark-test-3')
+                    ->price(100)
+                    ->yearly()
+                    ->features([
+                        'First',
+                        'Second',
+                        'Third'
+                    ]);
+                Spark::teamPlan('Basic', 'spark-test-4')
+                    ->price(100)
+                    ->features([
+                        'First',
+                        'Second',
+                        'Third'
+                    ]);
+
+                Spark::teamPlan('Basic', 'spark-test-5')
+                    ->price(200)
+                    ->features([
+                        'First',
+                        'Second',
+                        'Third'
+                    ]);
+
+                Spark::teamPlan('Basic', 'spark-test-6')
+                    ->price(1000)
+                    ->yearly()
+                    ->features([
+                        'First',
+                        'Second',
+                        'Third'
+                    ]);
+            }
+        }
+/////////////////////////////////////////////////////
+/////////// END TEST PLANS /////////////////////////
+///////////////////////////////////////////////////
 
     public function register()
     {

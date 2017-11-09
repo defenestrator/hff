@@ -1,6 +1,6 @@
 <?php
 namespace Tests\Spark;
-
+use Laravel\Spark\Spark;
 use Tests\TestCase;
 use App\User;
 use Ramsey\Uuid\Uuid;
@@ -17,9 +17,8 @@ class MailedInvitationTest extends TestCase
         $this->actingAs($team->owner)
                 ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => 'test@spark.laravel.com',
-                ]);
+                ])->assertStatus(200);
 
-        $this->seeStatusCode(200);
         $this->assertEquals(1, count($team->invitations()->count()));
     }
 
@@ -31,9 +30,8 @@ class MailedInvitationTest extends TestCase
         $this->actingAs($team->owner)
                 ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => '',
-                ]);
+                ])->assertStatus(422);
 
-        $this->seeStatusCode(422);
     }
 
 
@@ -44,9 +42,7 @@ class MailedInvitationTest extends TestCase
         $this->actingAs($team->owner)
                 ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => $team->owner->email,
-                ]);
-
-        $this->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -63,9 +59,8 @@ class MailedInvitationTest extends TestCase
         $this->actingAs($team->owner)
                 ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => 'test@spark.laravel.com',
-                ]);
+                ])->assertStatus(422);
 
-        $this->seeStatusCode(422);
     }
 
 
@@ -83,9 +78,7 @@ class MailedInvitationTest extends TestCase
         $this->actingAs($team->owner)
                 ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => 'test@spark.laravel.com',
-                ]);
-
-        $this->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -105,9 +98,7 @@ class MailedInvitationTest extends TestCase
         $this->actingAs($team->owner)
                 ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => 'test@spark.laravel.com',
-                ]);
-
-        $this->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -122,9 +113,8 @@ class MailedInvitationTest extends TestCase
         ]);
 
         $this->actingAs($team->owner)
-                ->json('DELETE', '/settings/invitations/'.$invitation->id);
-
-        $this->seeStatusCode(200);
+            ->json('DELETE', '/settings/invitations/'.$invitation->id)
+            ->assertStatus(200);
     }
 
 
@@ -139,8 +129,7 @@ class MailedInvitationTest extends TestCase
         ]);
 
         $this->actingAs(factory(User::class)->create())
-                ->json('DELETE', '/settings/invitations/'.$invitation->id);
-
-        $this->seeStatusCode(404);
+            ->json('DELETE', '/settings/invitations/'.$invitation->id)
+            ->assertStatus(404);
     }
 }
