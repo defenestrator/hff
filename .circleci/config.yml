@@ -63,11 +63,11 @@ jobs:
          command: php artisan serve
          background: true
       - run:
-         name: Run Laravel Dusk Tests
-         command: |
+        name: Run Laravel Dusk Tests
+        command: |
            mkdir -p ~/phpunit
            php artisan dusk --log-junit ~/phpunit/junit.xml tests
-         when: always
+        when: always
       - store_test_results:
         path: ~/phpunit
       - store_artifacts:
