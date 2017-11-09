@@ -26,7 +26,7 @@ class DeploymentController extends Controller
         $request->validate([
             $request->input('payload') => 'json|required'
         ]);
-        Deployment::create(['payload' => $request->json('payload')]);
+        Deployment::create(['payload' => $request->input('payload')]);
         // create a new cURL resource
         $ch = curl_init();
         // set URL and other appropriate options

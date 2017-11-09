@@ -38,10 +38,12 @@ Contact
                 <form class="contact" id="contact" action="{{route('contact')}}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <div class="form-group">
-                        <input type="text" name="contact-name" class="form-control input-lg" placeholder="{{ old('contact-name') }}" required />
+                        <input type="text" name="contact-name" class="form-control input-lg" placeholder="name" required>
+                        {{ old('contact-name') }}
+                        </input>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="contact-email" class="form-control input-lg" placeholder="{{ old('contact-email') }}" required></input>
+                        <input type="email" name="contact-email" class="form-control input-lg" placeholder="email" required>{{ old('contact-email') }}</input>
                     </div>
                     <div class="form-group">
                         <textarea name="contact-msg"
