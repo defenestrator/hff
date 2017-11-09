@@ -175,6 +175,7 @@ return [
         Spatie\ResponseCache\ResponseCacheServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
+
         /*
          * Application Service Providers...
          */

@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Inspiring;
+use Spatie\Sitemap\SitemapGenerator;
 use Intervention\Image\Facades\Image;
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +13,11 @@ use Intervention\Image\Facades\Image;
 |
 */
 
-//Artisan::command('inspire', function () {
-//    $this->comment(Inspiring::quote());
-//})->describe('Display an inspiring quote');
+Artisan::command('sitemap', function () {
+    $this->comment('Generating Sitemap');
+        SitemapGenerator::create('https://hoboflyfishing.com')->writeToFile(public_path('sitemap.xml'));
+    $this->comment('Sitemap Generated!');
+})->describe('Generate an updated sitemap for teh googlebots pleasure, slave.');
 
 //Artisan::command('image-processing', function() {
 //    $this->comment('Resizing new images and pushing to DO spaces.');
