@@ -23,12 +23,14 @@ class DeploymentController extends Controller
      */
     public function create(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'payload.outcome' => 'required'
         ]);
+
         Deployment::create([
-            'payload' => $request
+            'payload' => $request->getContent('payload')
         ]);
+
         if ($request->input('payload.outcome') == 'success') {
             // create a new cURL resource
             $ch = curl_init();
