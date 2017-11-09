@@ -1,20 +1,21 @@
 <?php
-//namespace Tests\Spark;
-//
-//use Tests\TestCase;
-//use App\User;
-//use Ramsey\Uuid\Uuid;
-//use Illuminate\Foundation\Testing\DatabaseMigrations;
-//
-///**
-// * @group stripe
-// */
-//class RegistrationTest extends TestCase
-//{
-//    use CreatesTeams, DatabaseMigrations, InteractsWithPaymentProviders;
+namespace Tests\Spark;
 
-//    public function test_users_can_register()
-//    {
+use Tests\TestCase;
+use App\User;
+use Ramsey\Uuid\Uuid;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+
+/**
+ * @group stripe
+ */
+class RegistrationTest extends TestCase
+{
+    use CreatesTeams, DatabaseMigrations, InteractsWithPaymentProviders;
+
+    public function test_users_can_register()
+    {
+        $this->assertTrue(true);
 //        $this->json('POST', '/register', [
 //            'team' => 'Laravel',
 //            'slug' => 'laravel',
@@ -32,9 +33,9 @@
 //        $this->assertTrue(
 //            User::where('email', 'taylor@laravel.com')->first()->onGenericTrial()
 //        );
-//    }
-//
-//
+    }
+
+
 //    public function test_user_can_subscribe_to_plan()
 //    {
 //        $this->json('POST', '/register', [
@@ -68,7 +69,7 @@
 //            'email' => 'test@spark.laravel.com',
 //            'token' => str_random(40),
 //        ]);
-////        dd($invitation->token);
+//
 //        $this->json('POST', '/register', [
 //            'invitation' => $invitation->token,
 //            'team' => 'Laravel',
@@ -82,9 +83,8 @@
 //        ])->assertStatus(200);
 //
 //        $user = User::where('email', 'taylor@laravel.com')->first();
-////        dd($user);
-////        $this->assertEquals(1, $user->teams()->count());
+//        $this->assertEquals(1, $user->teams()->count());
 //        $this->assertEquals($team->name, $user->teams()->first()->name);
 //        $this->assertEquals('member', $user->roleOn($user->teams()->first()));
 //    }
-//}
+}
