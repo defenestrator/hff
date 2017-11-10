@@ -16,11 +16,9 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
         </h1>
     </div>
         <div class="text-center">
-            <h4>Which sounds better</h4>
-            <h3>Trip of a lifetime?</h3>
-            <h2>
-                Or a lifetime of trips?
-            </h2>
+            <h4 style="margin:5px 10px;">Which sounds better to you?</h4>
+            <h3 style="margin:5px 10px;">The trip of a lifetime,</h3>
+            <h3 style="margin:5px 10px;">or a lifetime of trips?</h3>
         </div>
     <hr>
 @stop
