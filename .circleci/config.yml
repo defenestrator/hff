@@ -46,6 +46,7 @@ jobs:
           key: v1-dependencies-{{ checksum "composer.json" }}
       # run tests!
       - run:
+         name: Run Spark Tests
          command: |
            mkdir -p ~/phpunit
            phpunit --log-junit ~/phpunit/phpunit.xml tests/Spark
@@ -59,11 +60,11 @@ jobs:
          command: ./vendor/laravel/dusk/bin/chromedriver-linux
          background: true
       - run:
-         name: Run Laravel Server
+         name: Run Http Server
          command: php artisan serve
          background: true
       - run:
-         name: Run Laravel Dusk Tests
+         name: Run Dusk Tests
          command: |
            mkdir -p ~/phpunit
            php artisan dusk --log-junit ~/phpunit/junit.xml tests/Browser
