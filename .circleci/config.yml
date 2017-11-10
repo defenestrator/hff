@@ -45,17 +45,17 @@ jobs:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
       # run tests!
-      - run:
-         name: Run Spark Tests
-         command: |
-           mkdir -p ~/phpunit
-           phpunit --log-junit ~/phpunit/phpunit.xml tests/Spark
-         when: always
-      - store_test_results:
-         path: ~/phpunit
-      - store_artifacts:
-         path: ~/phpunit
-      - run:
+#      - run:
+#         name: Run Spark Tests
+#         command: |
+#           mkdir -p ~/phpunit
+#           phpunit --log-junit ~/phpunit/phpunit.xml tests/Spark
+#         when: always
+#      - store_test_results:
+#         path: ~/phpunit
+#      - store_artifacts:
+#         path: ~/phpunit
+#      - run:
          name: Start Chrome Driver
          command: ./vendor/laravel/dusk/bin/chromedriver-linux
          background: true
@@ -67,7 +67,7 @@ jobs:
          name: Run Dusk Tests
          command: |
            mkdir -p ~/phpunit
-           php artisan dusk --log-junit ~/phpunit/junit.xml tests/Browser
+           php artisan dusk --log-junit ~/phpunit/duskunit.xml tests/Browser
          when: always
       - store_test_results:
          path: ~/phpunit
