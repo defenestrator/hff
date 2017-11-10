@@ -55,7 +55,7 @@ jobs:
 #         path: ~/phpunit
 #      - store_artifacts:
 #         path: ~/phpunit
-#      - run:
+      - run:
          name: Start Chrome Driver
          command: ./vendor/laravel/dusk/bin/chromedriver-linux
          background: true
