@@ -8,16 +8,6 @@ use Illuminate\Http\Request;
 class DeploymentController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * @param Request $request
      * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
      */
@@ -31,7 +21,7 @@ class DeploymentController extends Controller
             'payload' => $request->getContent('payload')
         ]);
 
-        if ($request->input('payload.outcome') == 'success') {
+        if ($request->input('payload.outcome') == 'success' && config('app.env') == 'production') {
             // create a new cURL resource
             $ch = curl_init();
             // set URL and other appropriate options
@@ -44,62 +34,5 @@ class DeploymentController extends Controller
             return response(201);
         }
         return response(201);
-
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Deployment  $deployment
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Deployment $deployment)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Deployment  $deployment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Deployment $deployment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Deployment  $deployment
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Deployment $deployment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Deployment  $deployment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Deployment $deployment)
-    {
-        //
     }
 }
