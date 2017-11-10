@@ -120,6 +120,7 @@ class SparkServiceProvider extends ServiceProvider
                     'Second',
                     'Third'
                 ]);
+            Spark::promotion('coupon-code');
             }
         }
         /////////////////////////////////////////////////////

@@ -4,6 +4,7 @@ namespace Tests\Spark;
 use Tests\TestCase;
 use App\User;
 use Laravel\Spark\Spark;
+use Mockery;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Laravel\Spark\Services\Stripe as StripeService;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -22,9 +23,7 @@ class UpdatePaymentMethodTest extends TestCase
         $this->actingAs($user)
                 ->json('PUT', '/settings/payment-method', [
                     'stripe_token' => $this->getStripeToken(),
-                ]);
-
-        // $this->seeStatusCode(200);
+                ])->assertStatus(200);
     }
 
 

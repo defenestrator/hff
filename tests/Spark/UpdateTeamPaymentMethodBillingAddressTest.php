@@ -25,16 +25,14 @@ class UpdateTeamPaymentMethodBillingAddressTest extends TestCase
         $team->newSubscription('default', 'spark-test-1')->create($this->getStripeToken());
 
         $this->actingAs($user)
-                ->json('PUT', '/settings/teams/'.$team->id.'/payment-method', [
+                ->json('PUT', '/settings/outfitters/'.$team->id.'/payment-method', [
                     'stripe_token' => $this->getStripeToken(),
                     'address' => 'Test',
                     'city' => 'Test',
                     'state' => 'AR',
                     'zip' => '71901',
                     'country' => 'US',
-                ]);
-
-        // $this->seeStatusCode(200);
+                ])->assertStatus(200);
 
         Spark::collectBillingAddress(false);
     }
@@ -50,16 +48,14 @@ class UpdateTeamPaymentMethodBillingAddressTest extends TestCase
         $team->newSubscription('default', 'spark-test-1')->create($this->getStripeToken());
 
         $this->actingAs($user)
-                ->json('PUT', '/settings/teams/'.$team->id.'/payment-method', [
+                ->json('PUT', '/settings/outfitters/'.$team->id.'/payment-method', [
                     'stripe_token' => $this->getStripeToken(),
                     'address' => 'Test',
                     'city' => 'Test',
                     'state' => 'AR',
                     'zip' => '71901',
                     'country' => 'TV',
-                ]);
-
-      //  $this->seeStatusCode(422);
+                ])->assertStatus(422);
 
         Spark::collectBillingAddress(false);
     }
@@ -74,16 +70,14 @@ class UpdateTeamPaymentMethodBillingAddressTest extends TestCase
         $team->newSubscription('default', 'spark-test-1')->create($this->getStripeToken());
 
         $this->actingAs($user)
-                ->json('PUT', '/settings/teams/'.$team->id.'/payment-method', [
+                ->json('PUT', '/settings/outfitters/'.$team->id.'/payment-method', [
                     'stripe_token' => $this->getStripeToken(),
                     'address' => 'Test',
                     'city' => 'Test',
                     'state' => 'TEST',
                     'zip' => '71901',
                     'country' => 'US',
-                ]);
-
-      //  $this->seeStatusCode(422);
+                ])->assertStatus(422);
 
         Spark::collectBillingAddress(false);
     }

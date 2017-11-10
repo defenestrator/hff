@@ -174,7 +174,7 @@ return [
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Spatie\ResponseCache\ResponseCacheServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-
+        Mpociot\VatCalculator\VatCalculatorServiceProvider::class,
         /*
          * Application Service Providers...
          */

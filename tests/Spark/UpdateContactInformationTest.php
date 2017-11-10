@@ -15,7 +15,7 @@ class UpdateContactInformationTest extends TestCase
                 ->json('PUT', '/settings/contact', [
                     'name' => 'Taylor Otwell (Updated)',
                     'email' => 'taylor+updated@laravel.com',
-                ]);
+                ])->assertStatus(200);
 
         $this->assertDatabaseHas('users', [
             'name' => 'Taylor Otwell (Updated)',
@@ -29,9 +29,7 @@ class UpdateContactInformationTest extends TestCase
         $this->actingAs(factory(User::class)->create())
                 ->json('PUT', '/settings/contact', [
                     'name' => '', 'email' => 'taylor@laravel.com',
-                ]);
-
-      //  $this->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -42,8 +40,6 @@ class UpdateContactInformationTest extends TestCase
         $this->actingAs($user)
                 ->json('PUT', '/settings/contact', [
                     'name' => 'Taylor Otwell', 'email' => '',
-                ]);
-
-      //  $this->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 }

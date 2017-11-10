@@ -19,11 +19,10 @@ class UpdateSubscriptionTest extends TestCase
         $this->actingAs($user)
                 ->json('PUT', '/settings/subscription', [
                     'plan' => 'spark-test-2',
-                ]);
+                ])->assertStatus(200);
 
         $user = $user->fresh();
 
-        // $this->seeStatusCode(200);
         $this->assertTrue($user->subscribed());
         $this->assertEquals('spark-test-2', $user->subscription()->stripe_plan);
     }
@@ -34,7 +33,7 @@ class UpdateSubscriptionTest extends TestCase
         $this->actingAs(factory(User::class)->create())
                 ->json('PUT', '/settings/subscription', [
                     'plan' => '',
-                ])->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -43,6 +42,6 @@ class UpdateSubscriptionTest extends TestCase
         $this->actingAs(factory(User::class)->create())
                 ->json('PUT', '/settings/subscription', [
                     'plan' => 'spark-test-10',
-                ])->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 }

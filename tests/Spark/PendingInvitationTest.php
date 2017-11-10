@@ -19,14 +19,13 @@ class PendingInvitationTest extends TestCase
         $invitation = $team->invitations()->create([
             'id' => Uuid::uuid4(),
             'user_id' => $user->id,
-            'email' => 'test@spark.laravel.com',
+            'email' => 'test@hoboflyfishing.com',
             'token' => str_random(40),
         ]);
 
         $this->actingAs($user)
-                ->json('POST', '/settings/invitations/'.$invitation->id.'/accept');
-
-        // $this->seeStatusCode(200);
+                ->json('POST', '/settings/invitations/'.$invitation->id.'/accept')
+                ->assertStatus(200);
 
         $this->assertEquals(1, $user->teams()->count());
     }
@@ -41,14 +40,13 @@ class PendingInvitationTest extends TestCase
         $invitation = $team->invitations()->create([
             'id' => Uuid::uuid4(),
             'user_id' => $user->id,
-            'email' => 'test@spark.laravel.com',
+            'email' => 'test@hoboflyfishing.com',
             'token' => str_random(40),
         ]);
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/invitations/'.$invitation->id.'/accept');
-
-      //  $this->seeStatusCode(404);
+                ->json('POST', '/settings/invitations/'.$invitation->id.'/accept')
+                ->assertStatus(404);
     }
 
 
@@ -61,14 +59,12 @@ class PendingInvitationTest extends TestCase
         $invitation = $team->invitations()->create([
             'id' => Uuid::uuid4(),
             'user_id' => $user->id,
-            'email' => 'test@spark.laravel.com',
+            'email' => 'test@hoboflyfishing.com',
             'token' => str_random(40),
         ]);
 
         $this->actingAs($user)
-                ->json('POST', '/settings/invitations/'.$invitation->id.'/reject');
-
-        // $this->seeStatusCode(200);
+                ->json('POST', '/settings/invitations/'.$invitation->id.'/reject')->assertStatus(200);
 
         $this->assertEquals(0, $user->teams()->count());
     }
@@ -83,13 +79,11 @@ class PendingInvitationTest extends TestCase
         $invitation = $team->invitations()->create([
             'id' => Uuid::uuid4(),
             'user_id' => $user->id,
-            'email' => 'test@spark.laravel.com',
+            'email' => 'test@hoboflyfishing.com',
             'token' => str_random(40),
         ]);
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/invitations/'.$invitation->id.'/reject');
-
-      //  $this->seeStatusCode(404);
+                ->json('POST', '/settings/invitations/'.$invitation->id.'/reject')->assertStatus(404);
     }
 }

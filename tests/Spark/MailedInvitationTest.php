@@ -5,6 +5,7 @@ use Tests\TestCase;
 use App\User;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 
 class MailedInvitationTest extends TestCase
 {
@@ -15,9 +16,9 @@ class MailedInvitationTest extends TestCase
         $team = $this->createTeam();
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
-                    'email' => 'test@spark.laravel.com',
-                ])->assertStatus(200);
+                ->json('POST', '/settings/outfitters/'. $team->id .'/invitations', [
+                    'email' => 'test@hoboflyfishing.com',
+                ]);
 
         $this->assertEquals(1, count($team->invitations()->count()));
     }
@@ -28,10 +29,9 @@ class MailedInvitationTest extends TestCase
         $team = $this->createTeam();
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
+                ->json('POST', '/settings/outfitters/'.$team->id .'/invitations', [
                     'email' => '',
                 ])->assertStatus(422);
-
     }
 
 
@@ -40,7 +40,7 @@ class MailedInvitationTest extends TestCase
         $team = $this->createTeam();
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
+                ->json('POST', '/settings/outfitters/'.$team->id.'/invitations', [
                     'email' => $team->owner->email,
                 ])->assertStatus(422);
     }
@@ -52,13 +52,13 @@ class MailedInvitationTest extends TestCase
 
         $team->invitations()->create([
             'id' => Uuid::uuid4(),
-            'email' => 'test@spark.laravel.com',
+            'email' => 'test@hoboflyfishing.com',
             'token' => str_random(40),
         ]);
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
-                    'email' => 'test@spark.laravel.com',
+                ->json('POST', '/settings/outfitters/'.$team->id.'/invitations', [
+                    'email' => 'test@hoboflyfishing.com',
                 ])->assertStatus(422);
 
     }
@@ -76,8 +76,8 @@ class MailedInvitationTest extends TestCase
         ]);
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
-                    'email' => 'test@spark.laravel.com',
+                ->json('POST', '/settings/outfitters/'.$team->id.'/invitations', [
+                    'email' => 'test@hoboflyfishing.com',
                 ])->assertStatus(422);
     }
 
@@ -96,8 +96,8 @@ class MailedInvitationTest extends TestCase
         ]);
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
-                    'email' => 'test@spark.laravel.com',
+                ->json('POST', '/settings/outfitters/'.$team->id.'/invitations', [
+                    'email' => 'test@hoboflyfishing.com',
                 ])->assertStatus(422);
     }
 
@@ -108,7 +108,7 @@ class MailedInvitationTest extends TestCase
 
         $invitation = $team->invitations()->create([
             'id' => Uuid::uuid4(),
-            'email' => 'test@spark.laravel.com',
+            'email' => 'test@hoboflyfishing.com',
             'token' => str_random(40),
         ]);
 
@@ -124,7 +124,7 @@ class MailedInvitationTest extends TestCase
 
         $invitation = $team->invitations()->create([
             'id' => Uuid::uuid4(),
-            'email' => 'test@spark.laravel.com',
+            'email' => 'test@hoboflyfishing.com',
             'token' => str_random(40),
         ]);
 

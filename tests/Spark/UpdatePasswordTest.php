@@ -4,6 +4,7 @@ namespace Tests\Spark;
 use Tests\TestCase;
 use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Hash;
 
 class UpdatePasswordTest extends TestCase
 {
@@ -18,9 +19,7 @@ class UpdatePasswordTest extends TestCase
                     'current_password' => 'secret',
                     'password' => 'secret-updated',
                     'password_confirmation' => 'secret-updated',
-                ]);
-
-        // $this->seeStatusCode(200);
+                ])->assertStatus(200);
 
         $user = $user->fresh();
 
@@ -37,9 +36,7 @@ class UpdatePasswordTest extends TestCase
                     'current_password' => '',
                     'password' => 'secret-updated',
                     'password_confirmation' => 'secret-updated',
-                ]);
-
-      //  $this->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -52,9 +49,7 @@ class UpdatePasswordTest extends TestCase
                     'current_password' => 'wrong-secret',
                     'password' => 'secret-updated',
                     'password_confirmation' => 'secret-updated',
-                ]);
-
-      //  $this->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -67,14 +62,14 @@ class UpdatePasswordTest extends TestCase
                     'current_password' => 'secret',
                     'password' => '',
                     'password_confirmation' => 'secret-updated',
-                ])->seeStatusCode(422);
+                ])->assertStatus(422);
 
         $this->actingAs($user)
                 ->json('PUT', '/settings/password', [
                     'current_password' => 'secret',
                     'password' => 'secret-updated',
                     'password_confirmation' => '',
-                ])->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -87,7 +82,7 @@ class UpdatePasswordTest extends TestCase
                     'current_password' => 'secret',
                     'password' => 'secret-updated',
                     'password_confirmation' => 'secret-updated-2',
-                ])->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -100,6 +95,6 @@ class UpdatePasswordTest extends TestCase
                     'current_password' => 'secret',
                     'password' => 'hello',
                     'password_confirmation' => 'hello',
-                ])->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 }

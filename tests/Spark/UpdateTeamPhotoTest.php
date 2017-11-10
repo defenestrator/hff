@@ -6,6 +6,8 @@ use App\User;
 use App\Team;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Mockery;
+use Storage;
 
 class UpdateTeamPhotoTest extends TestCase
 {
@@ -23,7 +25,7 @@ class UpdateTeamPhotoTest extends TestCase
         $user->teams()->save($team, ['role' => 'owner']);
 
         $file = new UploadedFile(
-            public_path('img/color-logo.png'), 'color-logo.png', 'image/png', null, null, true
+            public_path('images/hobo.png'), 'hobo.png', 'image/png', null, null, true
         );
 
         Storage::shouldReceive('disk')
@@ -35,11 +37,9 @@ class UpdateTeamPhotoTest extends TestCase
         $disk->shouldReceive('url')->once()->andReturn('/team/photo');
 
         $this->actingAs($user)
-                ->json('POST', '/settings/teams/'.$team->id.'/photo', [
+                ->json('POST', '/settings/outfitters/'.$team->id.'/photo', [
                     'photo' => $file,
-                ]);
-
-        // $this->seeStatusCode(200);
+                ])->assertStatus(200);
 
         $this->assertDatabaseHas('teams', [
             'photo_url' => '/team/photo',

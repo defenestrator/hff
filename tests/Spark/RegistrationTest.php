@@ -66,7 +66,7 @@ class RegistrationTest extends TestCase
 //
 //        $invitation = $team->invitations()->create([
 //            'id' => Uuid::uuid4(),
-//            'email' => 'test@spark.laravel.com',
+//            'email' => 'test@hoboflyfishing.com',
 //            'token' => str_random(40),
 //        ]);
 //

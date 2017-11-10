@@ -4,7 +4,8 @@ namespace Tests\Spark;
 use Tests\TestCase;
 use App\User;
 use App\Team;
-
+use Laravel\Spark\Spark;
+use Mpociot;
 class VatCalculationTest extends TestCase
 {
     public function test_vat_can_be_calculated()
@@ -50,7 +51,7 @@ class VatCalculationTest extends TestCase
     {
         Spark::collectEuropeanVat();
 
-        $validator = new Laravel\Spark\Validation\VatIdValidator;
+        $validator = new \Laravel\Spark\Validation\VatIdValidator;
 
         $this->assertTrue($validator->validate('vat_id', 'SE870822461601', []));
         $this->assertFalse($validator->validate('vat_id', 'SOMETHING', []));

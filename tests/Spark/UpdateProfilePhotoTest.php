@@ -5,7 +5,8 @@ use Tests\TestCase;
 use App\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-
+use Storage;
+use Mockery;
 class UpdateProfilePhotoTest extends TestCase
 {
     use DatabaseMigrations;
@@ -13,7 +14,7 @@ class UpdateProfilePhotoTest extends TestCase
     public function test_profile_photo_can_be_updated()
     {
         $file = new UploadedFile(
-            public_path('img/color-logo.png'), 'color-logo.png', 'image/png', null, null, true
+            public_path('images/hobo.png'), 'hobo.png', 'image/png', null, null, true
         );
 
         Storage::shouldReceive('disk')
@@ -27,9 +28,7 @@ class UpdateProfilePhotoTest extends TestCase
         $this->actingAs(factory(User::class)->create())
                 ->json('POST', '/settings/photo', [
                     'photo' => $file,
-                ]);
-
-        // $this->seeStatusCode(200);
+                ])->assertStatus(200);
 
         $this->assertDatabaseHas('users', [
             'photo_url' => '/profile/photo',
