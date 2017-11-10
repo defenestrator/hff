@@ -16,9 +16,11 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
         </h1>
     </div>
         <div class="text-center">
-            <h3>
-                A lifetime of fly fishing trips.
-            </h3>
+            <h4>Which sounds better</h4>
+            <h3>Trip of a lifetime?</h3>
+            <h2>
+                Or a lifetime of trips?
+            </h2>
         </div>
     <hr>
 @stop
@@ -34,8 +36,8 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/flats/Roger_Permit.jpg');
                             background-position: right center;">
                     <div class="caption wow pulse" data-wow-duration="0.3s" data-wow-delay="1.2s" style="margin:5%;">
-                        <h3>6 Days on the Flats</h3>
-                        <p>$1000/angler</p>
+                        <h3 style="font-weight:600;">6 Days on the Flats</h3>
+                        <p style="text-transform: lowercase">$1000/angler</p>
                         <p>Call for Details.</p>
                     </div>
                 </div>
