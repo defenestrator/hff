@@ -54,11 +54,13 @@ class SparkServiceProvider extends ServiceProvider
      */
     public function booted()
     {
+        Spark::usesTeams();
+        Spark::usesTwoFactorAuth();
         Spark::useStripe()->noCardUpFront();
-        Spark::freePlan('Free Angler Plan', 'free-angler-plan');
+//        Spark::freePlan('Free Angler Plan', 'free-angler-plan');
         Spark::afterLoginRedirectTo('dashboard');
         Spark::identifyTeamsByPath();
-        Spark::usesTeams();
+
         ///////////////////////////////////////////////////
         /////////////// TEST PLANS ///////////////////////
         /////////////////////////////////////////////////
@@ -94,7 +96,7 @@ class SparkServiceProvider extends ServiceProvider
                     'Second',
                     'Third'
                 ]);
-            Spark::teamPlan('Basic', 'spark-test-4')
+            Spark::teamPlan('Basic', 'spark-test-1')
                 ->price(100)
                 ->features([
                     'First',
@@ -102,7 +104,7 @@ class SparkServiceProvider extends ServiceProvider
                     'Third'
                 ]);
 
-            Spark::teamPlan('Basic', 'spark-test-5')
+            Spark::teamPlan('Basic', 'spark-test-2')
                 ->price(200)
                 ->features([
                     'First',
@@ -110,7 +112,7 @@ class SparkServiceProvider extends ServiceProvider
                     'Third'
                 ]);
 
-            Spark::teamPlan('Basic', 'spark-test-6')
+            Spark::teamPlan('Basic', 'spark-test-3')
                 ->price(1000)
                 ->yearly()
                 ->features([

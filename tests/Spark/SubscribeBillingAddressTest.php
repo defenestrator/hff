@@ -1,6 +1,7 @@
 <?php
 namespace Tests\Spark;
 
+use Laravel\Spark\Spark;
 use Tests\TestCase;
 use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -25,11 +26,11 @@ class SubscribeBillingAddressTest extends TestCase
                     'state' => 'AR',
                     'zip' => '71901',
                     'country' => 'US',
-                ]);
+                ])->AssertStatus(200);
 
         $user = $user->fresh();
 
-        // $this->seeStatusCode(200);
+
         $this->assertTrue($user->subscribed());
         $this->assertEquals('spark-test-1', $user->subscription()->stripe_plan);
 

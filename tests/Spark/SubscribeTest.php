@@ -22,7 +22,6 @@ class SubscribeTest extends TestCase
 
         $user = $user->fresh();
 
-        // $this->seeStatusCode(200);
         $this->assertTrue($user->subscribed());
         $this->assertEquals('spark-test-1', $user->subscription()->stripe_plan);
     }
@@ -34,7 +33,7 @@ class SubscribeTest extends TestCase
                 ->json('POST', '/settings/subscription', [
                     'stripe_token' => '',
                     'plan' => 'spark-test-1',
-                ])->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 
 
@@ -44,6 +43,6 @@ class SubscribeTest extends TestCase
                 ->json('POST', '/settings/subscription', [
                     'stripe_token' => $this->getStripeToken(),
                     'plan' => 'spark-test-10',
-                ])->seeStatusCode(422);
+                ])->assertStatus(422);
     }
 }

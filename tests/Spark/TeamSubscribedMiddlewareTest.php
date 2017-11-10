@@ -20,15 +20,14 @@ class TeamSubscribedMiddlewareTest extends TestCase
 
         $team->newSubscription('default', 'spark-test-1')->create($this->getStripeToken());
 
-        Route::get('/integration-test/subscribed', ['middleware' => 'teamSubscribed', function () {
+        \Route::get('/integration-test/subscribed', ['middleware' => 'teamSubscribed', function () {
             return response('SUBSCRIBED');
         }]);
 
         $this->actingAs($user)
-                ->json('GET', '/integration-test/subscribed');
-
-        // $this->seeStatusCode(200);
-        $this->assertEquals('SUBSCRIBED', (string) $this->response->getContent());
+                ->json('GET', '/integration-test/subscribed')
+                ->assertStatus(200)
+                ->assertSee('SUBSCRIBED');
     }
 
 
@@ -39,15 +38,14 @@ class TeamSubscribedMiddlewareTest extends TestCase
         $team->trial_ends_at = Carbon::now()->addDays(10);
         $team->save();
 
-        Route::get('/integration-test/subscribed', ['middleware' => 'teamSubscribed', function () {
+        \Route::get('/integration-test/subscribed', ['middleware' => 'teamSubscribed', function () {
             return response('SUBSCRIBED');
         }]);
 
         $this->actingAs($user)
-                ->json('GET', '/integration-test/subscribed');
-
-        // $this->seeStatusCode(200);
-        $this->assertEquals('SUBSCRIBED', (string) $this->response->getContent());
+                ->json('GET', '/integration-test/subscribed')
+                ->assertStatus(200)
+                ->assertSee('SUBSCRIBED');
     }
 
 
@@ -56,14 +54,13 @@ class TeamSubscribedMiddlewareTest extends TestCase
         $user = factory(User::class)->create();
         $team = $this->createTeam($user);
 
-        Route::get('/integration-test/subscribed', ['middleware' => 'teamSubscribed', function () {
+        \Route::get('/integration-test/subscribed', ['middleware' => 'teamSubscribed', function () {
             return response('SUBSCRIBED');
         }]);
 
         $this->actingAs($user)
-                ->json('GET', '/integration-test/subscribed');
+                ->json('GET', '/integration-test/subscribed')->assertStatus(402);
 
-      //  $this->seeStatusCode(402);
     }
 
     public function test_middleware_allows_requests_to_pass_for_subscribed_users_for_a_specific_plan()
@@ -75,15 +72,14 @@ class TeamSubscribedMiddlewareTest extends TestCase
         $subscription->stripe_plan = 'something';
         $subscription->save();
 
-        Route::get('/integration-test/subscribed', ['middleware' => 'teamSubscribed:default,something', function () {
+        \Route::get('/integration-test/subscribed', ['middleware' => 'teamSubscribed:default,something', function () {
             return response('SUBSCRIBED');
         }]);
 
         $this->actingAs($user->fresh())
-                ->json('GET', '/integration-test/subscribed');
-
-        // $this->seeStatusCode(200);
-        $this->assertEquals('SUBSCRIBED', (string) $this->response->getContent());
+                ->json('GET', '/integration-test/subscribed')
+                ->assertStatus(200)
+                ->assertSee('SUBSCRIBED');
     }
 
     public function test_middleware_allows_requests_to_fail_for_subscribed_users_for_a_missing_plan()
@@ -93,13 +89,11 @@ class TeamSubscribedMiddlewareTest extends TestCase
 
         $team->newSubscription('default', 'spark-test-1')->create($this->getStripeToken());
 
-        Route::get('/integration-test/subscribed', ['middleware' => 'subscribed:something', function () {
+        \Route::get('/integration-test/subscribed', ['middleware' => 'subscribed:something', function () {
             return response('SUBSCRIBED');
         }]);
 
         $this->actingAs($user)
-                ->json('GET', '/integration-test/subscribed');
-
-      //  $this->seeStatusCode(402);
+                ->json('GET', '/integration-test/subscribed')->assertStatus(402);
     }
 }

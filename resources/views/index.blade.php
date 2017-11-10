@@ -31,11 +31,12 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
         <div class="info">
             <a href="/features/weekly-special" title="Get the weekly Hobo Fly Fishing special">
                 <div class="thumbnail"
-                     style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/naknek-river-camp/choppers.jpeg');
-                            background-position: center bottom;">
+                     style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/flats/Roger_Permit.jpg');
+                            background-position: right center;">
                     <div class="caption wow pulse" data-wow-duration="0.3s" data-wow-delay="1.2s" style="margin:5%;">
-                        <h2 style="font-size:1.5em; font-weight:600;">The Hobo Special</h2>
-                        <p>don't miss out!</p>
+                        <h3>6 Days on the Flats</h3>
+                        <p>$1000/angler</p>
+                        <p>Call for Details.</p>
                     </div>
                 </div>
             </a>
@@ -43,7 +44,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/alaska/midnight-sun-trophy-pike" title="Midnight Sun Trophy Pike Adventures">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/midnight-sun/scott-guide-pic-1.jpg');">
                     <div class="caption">
-                        <p>Midnight Sun Trophy Pike</p>
+                        <p>Pike and Sheefish</p>
                         <p>Alaska</p>
                     </div>
                 </div>
@@ -51,7 +52,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/alaska/naknek-river-camp" title="Naknek River Camp">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/naknek-river-camp/steelie.jpg');">
                     <div class="caption">
-                        <p>Naknek River Camp</p>
+                        <p>Trout, Salmon, Steelhead</p>
                         <p>Alaska</p>
                     </div>
                 </div>
@@ -61,7 +62,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/backcountry-river-guides/slide1-178.jpg');
                             background-position: right center;">
                     <div class="caption">
-                        <p>Backcountry River Guides</p>
+                        <p>Steelhead</p>
                         <p>Idaho</p>
                     </div>
                 </div>
@@ -71,7 +72,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/rio-manso-lodge/brookie-thumb.png');
                             background-position: right center;">
                     <div class="caption">
-                        <p>Rio Manso Lodge</p>
+                        <p>Bows, Brookies and Browns</p>
                         <p>Argentina</p>
                     </div>
                 </div>
@@ -79,7 +80,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/costa-rica/bahia-rica" title="Bahia Rica - Costa Rica">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/bahia-rica/rooster-breach.jpg');">
                     <div class="caption">
-                        <p>Bahia Rica</p>
+                        <p>Roosters, Jacks, and Mahi Mahi</p>
                         <p>Costa Rica</p>
                     </div>
                 </div>
@@ -87,7 +88,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/british-columbia/blackfish-lodge" title="Blackfish Lodge">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/blackfish-lodge/088-1.jpg');">
                     <div class="caption">
-                        <p>Blackfish Lodge</p>
+                        <p>Salmon & Sea-Run Cutthroat </p>
                         <p>British Columbia</p>
                     </div>
                 </div>
@@ -99,7 +100,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/florida/bahia-honda-sporting-club" title="Bahia Honda Sporting Club">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/bahia-honda/fishing-05.jpg');">
                     <div class="caption">
-                        <p>Bahia Honda Sporting Club</p>
+                        <p>Tarpon, Permit, Bonefish</p>
                         <p>Florida</p>
                     </div>
                 </div>
@@ -109,7 +110,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg');
                             background-position: left center;">
                     <div class="caption">
-                        <p>Deep Creek Lodge</p>
+                        <p>Diverse Salmon & Steelhead</p>
                         <p>British Columbia</p>
                     </div>
                 </div>
@@ -119,7 +120,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/salmon-hole-lodge/salmo-salar.jpg');
                             background-position: left top;">
                     <div class="caption">
-                        <p>Salmon Hole Lodge</p>
+                        <p>Atlantic Salmon</p>
                         <p>Labrador</p>
                     </div>
                 </div>
@@ -129,7 +130,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/true-blue-bonefish/gt.jpg');
                             background-position: right center;">
                     <div class="caption">
-                        <p>True Blue Bonefish</p>
+                        <p>Bonefish, Trevally, many more</p>
                         <p>Australia</p>
                     </div>
                 </div>
@@ -137,7 +138,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/alaska/boardwalk-lodge" title="Boardwalk Lodge, Alaska">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/boardwalk-lodge/beast.jpg');">
                     <div class="caption">
-                        <p>Boardwalk Lodge</p>
+                        <p>Steelhead</p>
                         <p>Alaska</p>
                     </div>
                 </div>
@@ -147,7 +148,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/wilderness-island/underwater-trevally.jpg');
                      background-position: center bottom;">
                     <div class="caption">
-                        <p>Wilderness Island</p>
+                        <p>Flats Fishing Down Under!</p>
                         <p>Australia</p>
                     </div>
                 </div>
@@ -155,8 +156,8 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/yucatan/costa-de-cocos" title="Costa de Cocos">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg');">
                     <div class="caption">
-                        <p>Costa de Cocos</p>
-                        <p>Yucatan</p>
+                        <p>Permit, Bonefish, Tarpon</p>
+                        <p>Mexico/Belize</p>
                     </div>
                 </div>
             </a>
@@ -167,7 +168,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/bahamas/tranquility-lodge-andros" title="Tranquility Hill Lodge - Andros, Bahamas">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/tranquility/tarpon.jpg');">
                     <div class="caption">
-                        <p>Tranquility Hill Lodge</p>
+                        <p>Tarpon</p>
                         <p>Bahamas</p>
                     </div>
                 </div>
@@ -177,7 +178,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/two-boys-inn-andros/andros-bones.jpg');
                             background-position: left center;">
                     <div class="caption">
-                        <p>Two Boys Inn</p>
+                        <p>Big Dang Bonefish</p>
                         <p>Bahamas</p>
                     </div>
                 </div>
@@ -187,7 +188,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/stonefly-lodge/pool-cast-stonefly.jpg');
                      background-position: right center;">
                     <div class="caption">
-                        <p>Stonefly Lodge</p>
+                        <p>Big Browns</p>
                         <p>New Zealand</p>
                     </div>
                 </div>
@@ -195,7 +196,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/belize/the-blue-bonefish" title="The Blue Bonefish - Belize">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/the-blue-bonefish/permit.jpg');">
                     <div class="caption">
-                        <p>The Blue Bonefish</p>
+                        <p>Flats Fishing</p>
                         <p>Belize</p>
                     </div>
                 </div>
@@ -203,7 +204,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/baja/pursuit-anglers" title="Pursuit Anglers - Baja">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/pursuit-anglers/surfing-rooster.jpg');">
                     <div class="caption">
-                        <p>Pursuit Anglers</p>
+                        <p>Roostah!</p>
                         <p>Baja</p>
                     </div>
                 </div>
@@ -211,7 +212,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/costa-rica/silver-king-lodge" title="Silver King Lodge - Costa Rica">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/silver-king-lodge/jumping.jpg');">
                     <div class="caption">
-                        <p>Silver King Lodge </p>
+                        <p>Giant *%#!%^& Tarpon</p>
                         <p>Costa Rica</p>
                     </div>
                 </div>
@@ -219,7 +220,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             <a href="/destinations/belize/mango-creek-lodge" title="Mango Creek Lodge">
                 <div class="thumbnail" style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/mango-creek-lodge/baby-tarpon.jpg');">
                     <div class="caption">
-                        <p>Mango Creek Lodge</p>
+                        <p>Bonefish, Tarpon, Permit, More</p>
                         <p>Honduras</p>
                     </div>
                 </div>

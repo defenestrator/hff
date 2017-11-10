@@ -54,6 +54,7 @@ class Kernel extends HttpKernel
         'dev' => \Laravel\Spark\Http\Middleware\VerifyUserIsDeveloper::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'subscribed' => \Laravel\Spark\Http\Middleware\VerifyUserIsSubscribed::class,
         'teamSubscribed' => \Laravel\Spark\Http\Middleware\VerifyTeamIsSubscribed::class,
     ];
 }
