@@ -45,15 +45,15 @@ jobs:
             - ./vendor
           key: v1-dependencies-{{ checksum "composer.json" }}
       # run tests!
-#      - run:
-#        command: |
-#          mkdir -p ~/phpunit
-#          phpunit --log-junit ~/phpunit/junit.xml tests
-#        when: always
-#      - store_test_results:
-#          path: ~/phpunit
-#      - store_artifacts:
-#          path: ~/phpunit
+      - run:
+         command: |
+           mkdir -p ~/phpunit
+           phpunit --log-junit ~/phpunit/phpunit.xml tests
+         when: always
+      - store_test_results:
+         path: ~/phpunit
+      - store_artifacts:
+         path: ~/phpunit
       - run:
          name: Start Chrome Driver
          command: ./vendor/laravel/dusk/bin/chromedriver-linux
