@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <trumbowyg :config="trumbowygConfig" name="body" v-validate="'required|min:4'" v-model="newPost.body"></trumbowyg>
+                    <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:4'" v-model="newPost.body"></trumbowyg>
                     <span v-show="newPost.saveError" class="help is-danger">
                         Get your shit together. Write something worth reading, won't you please?.
                         </span>
@@ -139,6 +139,7 @@ export default {
                 slug: '',
                 body: '',
                 tags: [],
+                link: '',
                 postId: null,
                 saveDisabled: false,
                 saveBusy: false,
@@ -151,25 +152,34 @@ export default {
                 errors: null
             },
             trumbowygConfig: {
+                id: 'trumbowyg',
+                btnsDef: {
+                    // Customizables dropdowns
+                    image: {
+                        dropdown: ['insertImage', 'upload', 'base64', 'noembed'],
+                        ico: 'insertImage'
+                    }
+                },
                 btns: [
                     ['viewHTML'],
-                    ['undo', 'redo'], // Only supported in Blink browsers
                     ['formatting'],
-                    ['strong', 'em', 'del'],
-                    ['superscript', 'subscript'],
+                    ['strong', 'em', 'underline'],
                     ['link'],
-                    ['insertImage'],
+                    ['image'],
                     ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
                     ['unorderedList', 'orderedList'],
                     ['horizontalRule'],
-                    ['removeformat'],
-                    ['upload']
+                    ['removeformat']
                 ],
                 plugins: {
                     upload: {
-                        // Some upload plugin options, see details below
-                    }
-                }
+                        serverPath: '/api/posts/images',
+                        fileFieldName: 'image',
+                        urlPropertyName: 'file'
+                    },
+
+                },
+                value: ''
             }
         }
     },
@@ -329,7 +339,6 @@ export default {
                         title: this.newPost.title,
                         user_id: Spark.state.user.id,
                         author: Spark.state.user.name,
-                        slug:  this.newPost.slug,
                         body:  this.newPost.body,
                         tags: this.newPost.tags
                     })

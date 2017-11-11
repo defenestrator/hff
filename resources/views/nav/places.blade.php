@@ -1,4 +1,4 @@
-<li class="dropdown thumb-dropdown">
+<li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown">Places<span class="caret"></span></a>
     <ul class="scrollable-menu dropdown-menu" role="menu">
         <li role="presentation" class="dropdown-header">Alaska</li>

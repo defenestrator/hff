@@ -37202,6 +37202,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 slug: '',
                 body: '',
                 tags: [],
+                link: '',
                 postId: null,
                 saveDisabled: false,
                 saveBusy: false,
@@ -37214,13 +37215,24 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 errors: null
             },
             trumbowygConfig: {
-                btns: [['viewHTML'], ['undo', 'redo'], // Only supported in Blink browsers
-                ['formatting'], ['strong', 'em', 'del'], ['superscript', 'subscript'], ['link'], ['insertImage'], ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'], ['unorderedList', 'orderedList'], ['horizontalRule'], ['removeformat'], ['upload']],
+                id: 'trumbowyg',
+                btnsDef: {
+                    // Customizables dropdowns
+                    image: {
+                        dropdown: ['insertImage', 'upload', 'base64', 'noembed'],
+                        ico: 'insertImage'
+                    }
+                },
+                btns: [['viewHTML'], ['formatting'], ['strong', 'em', 'underline'], ['link'], ['image'], ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'], ['unorderedList', 'orderedList'], ['horizontalRule'], ['removeformat']],
                 plugins: {
                     upload: {
-                        // Some upload plugin options, see details below
+                        serverPath: '/api/posts/images',
+                        fileFieldName: 'image',
+                        urlPropertyName: 'file'
                     }
-                }
+
+                },
+                value: ''
             }
         };
     },
@@ -37373,7 +37385,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     title: _this6.newPost.title,
                     user_id: Spark.state.user.id,
                     author: Spark.state.user.name,
-                    slug: _this6.newPost.slug,
                     body: _this6.newPost.body,
                     tags: _this6.newPost.tags
                 }).then(function (result) {
@@ -53324,6 +53335,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "'required|min:4'"
     }],
     attrs: {
+      "id": "trumbowyg",
       "config": _vm.trumbowygConfig,
       "name": "body"
     },

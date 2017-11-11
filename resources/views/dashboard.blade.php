@@ -8,7 +8,6 @@
 {{-- content --}}
 @section('content')
     <div class="container">
-        @include('nav.cms')
         @yield('cms')
     </div>
 @stop
