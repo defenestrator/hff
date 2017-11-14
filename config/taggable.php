@@ -18,7 +18,7 @@ return [
      * Method used to "normalize" tag names.  Can either be a global function name,
      * a closure function, or a callable, e.g. ['Classname', 'method'].
      */
-    'normalizer'           => 'mb_strtolower',
+    'normalizer'           => ['App\Transformers\Slugger', 'sluggify'],
 
     /**
      * The database connection to use for the Tag model and associated tables.
@@ -54,7 +54,7 @@ return [
 
     'taggedModels' => [
         'posts' => \App\Post::class,
-//        'podcasts' => \App\Post::class,
-//        'reports' => \App\Post::class,
+//        'podcasts' => \App\Podcast::class,
+//        'reports' => \App\Report::class,
     ],
 ];

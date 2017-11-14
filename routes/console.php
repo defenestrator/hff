@@ -2,6 +2,7 @@
 
 use Spatie\Sitemap\SitemapGenerator;
 use Intervention\Image\Facades\Image;
+use GuzzleHttp\Client;
 /*
 |--------------------------------------------------------------------------
 | Console Routes
@@ -18,6 +19,18 @@ Artisan::command('sitemap', function () {
         SitemapGenerator::create('https://hoboflyfishing.com')->writeToFile(public_path('sitemap.xml'));
     $this->comment('Sitemap Generated!');
 })->describe('Generate an updated sitemap for teh googlebots pleasure, slave.');
+
+Artisan::command('podfeed', function () {
+    $this->comment('Fetching Podcast feed from fireside.fm');
+    $client = new Client();
+    $response = $client->request('GET','https://have-rod-will-travel.fireside.fm/json');
+    if ($response->getStatusCode() == 200 && $response !== null && $response->getHeader('Content-Length') > '0') {
+        $key = 'podcast_feed-'.date('Y-m-d');
+        Cache::put($key, json_decode($response->getBody(), true), 4320);
+        return $this->comment('Podcast Feed key "' . $key . '" was updated');
+    }
+    return $this->comment('Podcast Feed failed to update');
+})->describe('Update Podcast Feed, store to Redis.');
 
 //Artisan::command('image-processing', function() {
 //    $this->comment('Resizing new images and pushing to DO spaces.');

@@ -10,30 +10,28 @@
 |
 */
 
+
+Route::group([
+    'middleware' => 'auth:api'
+], function () {
+    Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
+});
+
 Route::group([
     'middleware' => 'api'
 ], function () {
-    Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
-
     Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
 
     Route::post('/sales-inquiry', 'SalesInquiryController@create');
 
-    Route::get('/posts', 'PostsController@index');
+    Route::get('/posts', 'Api\PostsController@index');
     Route::post('/posts', 'PostsController@create');
     Route::put('/posts/{id}', 'PostsController@update');
     Route::get('/posts/{id}', 'PostsController@edit');
     Route::delete('/posts/{id}', 'PostsController@destroy');
     Route::get('/posts/publications/{postId}', 'PostsController@show');
     Route::get('posts/{id}/tags', 'PostTagsController@index');
-    Route::post('posts/{id}/header-image/create');
-    Route::put('posts/{id}/header-image/update');
-    Route::post('posts/images', 'PostImagesController@create');
     Route::get('/podcasts', 'PodcastsController@index');
-    Route::post('/podcasts', 'PodcastsController@create');
-    Route::put('/podcasts/{id}', 'PodcastsController@update');
-    Route::get('/podcasts/{id}', 'PodcastsController@edit');
-    Route::delete('/podcasts/{id}', 'PodcastsController@destroy');
     Route::get('/podcasts/publications/{postId}', 'PodcastsController@show');
 //    Route::get('podcasts/{id}/tags', 'PodcastTagsController@index');
 

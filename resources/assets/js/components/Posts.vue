@@ -173,13 +173,15 @@ export default {
                 ],
                 plugins: {
                     upload: {
-                        serverPath: '/api/posts/images',
+                        serverPath: '/cms/posts/images',
                         fileFieldName: 'image',
-                        urlPropertyName: 'file'
+                        urlPropertyName: 'file',
+                        headers: {
+                            'X-CSRF-TOKEN': Spark.csrfToken
+                        },
+                        xhrFields: {}
                     },
-
-                },
-                value: ''
+                }
             }
         }
     },
@@ -213,6 +215,7 @@ export default {
         }
     },
     methods: {
+
         getIndex() {
             axios.get(`/api/posts`, {})
             .then(result  => {

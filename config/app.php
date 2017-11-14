@@ -127,6 +127,8 @@ return [
 
     'deploy' => env('DEPLOY_URL', ''),
 
+    'api_token' => env('HOBO_API_TOKEN', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

@@ -5,7 +5,7 @@ use Tests\TestCase;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-
+use Tests\InteractsWithPaymentProviders;
 
 /**
  * @group stripe

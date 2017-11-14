@@ -11,6 +11,7 @@
 
 require('./../spark-components/bootstrap')
 require('./home')
+require('./cms/posts/edit-post')
 Vue.component('posts', require('./Posts.vue'))
 Vue.component('podcasts', require('./Podcasts.vue'))
 Vue.component('input-tag', require('./InputTag.vue'))

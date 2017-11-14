@@ -87,7 +87,7 @@ Route::get('/publications/posts', 'PublishedPostsController@index')->name('publi
 Route::get('/publications/posts/{slug}', 'PublishedPostsController@show')->name('publications.posts.show');
 
 // Published podcasts
-Route::get('/publications/podcasts', 'PublishedPodcastsController@index')->name('publications.podcasts.index');
+Route::get('/publications/podcasts', 'PodcastsController@index')->name('publications.podcasts.index');
 Route::get('/publications/podcasts/{slug}', 'PublishedPodcastsController@show')->name('publications.podcasts.show');
 
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
@@ -97,14 +97,17 @@ Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
 
 // AUTH ROUTES
 Route::group(['middleware' => ['auth:web']], function () {
-    Route::view('/dashboard', 'dashboard')->name('dashboard');
     Route::get('/posts/{id}/edit', 'PostsController@edit');
     Route::get('/posts/{id}/tags', 'PostTagsController@edit');
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
         Route::get('/podcasts', 'PodcastsController@upload');
         Route::post('/podcasts','PodcastsController@store');
+        // Posts
         Route::view('/posts', 'cms.posts');
+        Route::get('/posts/index', 'PostsController@index');
+        Route::get('/posts/{id}/edit', 'PostsController@edit');
+        Route::any('/posts/images', 'PostImagesController@create');
     });
 });
 

@@ -8265,3 +8265,18 @@ a:focus .thumbnail .caption {
 #modal-notifications .notification-content {
   padding-left: 50px;
 }
+.audio-player {
+  margin: 0 auto;
+  padding: 1em 1em 0 1em;
+  width: 100%;
+  background-color: transparent;
+}
+.audio-container {
+  overflow-x: hidden;
+  margin: 1.5em auto 0.5em auto;
+  width: 100%;
+  padding: 0.5rem 0 0 0;
+  border: 1px solid #666;
+  border-radius: 0.5rem;
+  box-shadow: -1px 1px 4px #000;
+}

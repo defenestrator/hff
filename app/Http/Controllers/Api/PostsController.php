@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+
+namespace App\Http\Controllers\Api;
 
 use App\Post;
 use Illuminate\Http\Request;
 
-class PostsController extends ContentController
+class PostsController extends ApiController
 
 {
     /**
@@ -15,8 +16,7 @@ class PostsController extends ContentController
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(50, ['title', 'author', 'body', 'slug', 'created_at', 'id']);
-        return view('cms.posts.index', compact('posts'));
+        return Post::paginate(50, ['title', 'author', 'body', 'slug', 'created_at', 'id']);
     }
 
     /**
@@ -58,7 +58,7 @@ class PostsController extends ContentController
      */
     public function edit(Post $post, $id)
     {
-        return view('cms.posts.edit', ['post' => $post->where('id', '=', $id)->first()]);
+        return $post->where('id', '=', $id)->first();
     }
 
     /**
@@ -75,11 +75,20 @@ class PostsController extends ContentController
         ]);
         $content = $post->find($id);
 
+        $content->update([
+            'body'  => $request->body,
+            'title' => $request->title
+        ]);
         $content->tag($request->tags);
         $content->save();
         return $content;
     }
 
+    public function display()
+    {
+        $api_token = config('app.api_token');
+        return view('cms.posts', compact('api_token'));
+    }
     /**
      * @param Post $post
      * @param $id
