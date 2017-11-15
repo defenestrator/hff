@@ -1,19 +1,27 @@
 <template>
     <form class="text-center">
         <div class="input-group">
-            <input class="form-control" placeholder="your email"
+                <span class="input-group-btn">
+                        <a href="tel:2088599133">
+                            <button class="btn btn-danger" style="border-bottom-right-radius: 0; border-top-right-radius: 0;">
+                                <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
+                                   data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
+                            </button>
+                        </a>
+                </span>
+            <input class="form-control" placeholder="<-call or email->"
                    v-validate="'required|email'" v-model="email" name="email"
                    type="email"
                    :class="{'form-control': true, 'is-danger': errors.has('email') }"
-                   aria-describedby="basic-addon2"
-                   required>
+                   aria-describedby="basic-addon2">
                     <span class="input-group-btn">
                         <button :class="{'btn': true, 'btn-danger': true, 'is-danger': errors.has('email') }"
                                 @click.prevent="signup"
                                 type="submit"
                                 role="button"
                                 :disabled="errors.has('email')">
-                            Fish On!
+                            <i data-name="mail" data-size="20" data-loop="true" data-c="#fff"
+                               data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
                         </button>
                     </span>
 
@@ -59,7 +67,7 @@ export default {
                         this.error = true
                         swal({
                             title: 'Something\'s not right',
-                            text: 'Something went wrong.',
+                            text: 'Is that a valid email address?.',
                             type: 'danger',
                             timer: 2000
                         });
