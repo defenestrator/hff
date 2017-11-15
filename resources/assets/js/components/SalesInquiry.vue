@@ -2,14 +2,14 @@
     <form class="text-center">
         <div class="input-group">
                 <span class="input-group-btn">
-                        <a href="tel:2088599133">
-                            <button class="btn btn-danger" style="border-bottom-right-radius: 0; border-top-right-radius: 0;">
+                        <a @click.prevent="telephone" title="Give us a call, just click!">
+                            <button class="btn btn-danger" role="link" style="border-bottom-right-radius: 0; border-top-right-radius: 0;">
                                 <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
                                    data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
                             </button>
                         </a>
                 </span>
-            <input class="form-control" placeholder="<-call or email->"
+            <input class="form-control" placeholder="<-call or email ->"
                    v-validate="'required|email'" v-model="email" name="email"
                    type="email"
                    :class="{'form-control': true, 'is-danger': errors.has('email') }"
@@ -43,7 +43,9 @@ export default {
         }
     },
     methods: {
-
+        telephone() {
+            return window.location.href="tel:2088599133"
+        },
         signup() {
             const alertResponse = 'Thanks for your interest in ' + this.message
             this.validator.validateAll({

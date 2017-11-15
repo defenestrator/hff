@@ -37644,6 +37644,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
     },
 
     methods: {
+        telephone: function telephone() {
+            return window.location.href = "tel:2088599133";
+        },
         signup: function signup() {
             var _this = this;
 
@@ -52835,7 +52838,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "text-center"
   }, [_c('div', {
     staticClass: "input-group"
-  }, [_vm._m(0), _vm._v(" "), _c('input', {
+  }, [_c('span', {
+    staticClass: "input-group-btn"
+  }, [_c('a', {
+    attrs: {
+      "title": "Give us a call, just click!"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.telephone($event)
+      }
+    }
+  }, [_vm._m(0)])]), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -52852,7 +52867,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'form-control': true, 'is-danger': _vm.errors.has('email')
     },
     attrs: {
-      "placeholder": "<-call or email->",
+      "placeholder": "<-call or email ->",
       "name": "email",
       "type": "email",
       "aria-describedby": "basic-addon2"
@@ -52910,17 +52925,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "help is-danger"
   }, [_vm._v(_vm._s(_vm.errors.first('email')))])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
-    staticClass: "input-group-btn"
-  }, [_c('a', {
-    attrs: {
-      "href": "tel:2088599133"
-    }
-  }, [_c('button', {
+  return _c('button', {
     staticClass: "btn btn-danger",
     staticStyle: {
       "border-bottom-right-radius": "0",
       "border-top-right-radius": "0"
+    },
+    attrs: {
+      "role": "link"
     }
   }, [_c('i', {
     staticClass: "livicon icon4 icon3",
@@ -52935,7 +52947,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "data-c": "#fff",
       "data-hc": "#F0F8FF"
     }
-  })])])])
+  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {
