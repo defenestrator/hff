@@ -36,8 +36,15 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                     <div class="caption wow pulse" data-wow-duration="0.3s" data-wow-delay="1.2s" style="margin:5%;">
                         <h3 style="font-weight:600;">6 Days on the Flats</h3>
                         <p style="text-transform: lowercase">$1000/angler</p>
-                        <p>Call for Details.</p>
+
                     </div>
+                    <a href="tel:2088599133">
+                        <button role="button" style="width:100%; z-index:99;" class="btn btn-danger">
+                            <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
+                               data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
+                            for Details
+                        </button>
+                    </a>
                 </div>
             </a>
 
