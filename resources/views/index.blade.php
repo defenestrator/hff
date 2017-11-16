@@ -117,7 +117,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
                      style="background-image: url('{{config('filesystems.disks.DO.fullpath')}}/images/deep-creek-lodge/stacks-image-14435c9-1200x594.jpg');
                             background-position: left center;">
                     <div class="caption">
-                        <p>Diverse Salmon & Steelhead</p>
+                        <p>Salmon & Steelhead</p>
                         <p>British Columbia</p>
                     </div>
                 </div>
