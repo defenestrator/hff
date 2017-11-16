@@ -8269,3 +8269,6 @@ a:focus .thumbnail .caption {
   border-radius: 0.5rem;
   box-shadow: -1px 1px 4px #000;
 }
+.payment-icons li {
+  padding: 0;
+}
