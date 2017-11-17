@@ -22,7 +22,7 @@
             @foreach($episodes as $item)
 
             <div class="audio-container">
-                <p style="font-size:1.5em; margin:0 0.5em;">{{ $item['title']}}</p>
+                <p style="font-size:1.2em; margin:0 0.5em;">{{ $item['title']}}</p>
                 <audio src="{{$item['attachments'][0]['url']}}" class="text-center audio-player" controls="controls">Your browser does not support HTML5 Audio!</audio>
             </div>
                 <p>{{ $item['content_text']}}</p>
