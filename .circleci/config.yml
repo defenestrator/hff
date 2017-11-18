@@ -67,4 +67,4 @@ jobs:
 notify:
   webhooks:
     # A list of hook hashes, containing the URL field
-    - url: https://hoboflyfishing.com/api/deploy-HfDamFwqhXEUUsHg6t4L?api_key=oMBCM84qrZcdbYnTkWbjypICis8AAFmpSjz5u0gVB3guBeDngSozRdchrYFM
+    - url: https://hoboflyfishing.com/api/deploy-HfDamFwqhXEUUsHg6t4L?api_token=oMBCM84qrZcdbYnTkWbjypICis8AAFmpSjz5u0gVB3guBeDngSozRdchrYFM

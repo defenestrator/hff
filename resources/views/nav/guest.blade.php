@@ -19,7 +19,7 @@
                 @include('nav.places')
 
                 <li><a href="{{route('publications.posts.index')}}" class="navbar-link dropdown">Blog</a></li>
-                <li><a href="{{route('publications.podcasts.index')}}" class="navbar-link">Podcast</a></li>
+                <li><a href="http://podcast.hoboflyfishing.com" class="navbar-link">Podcast</a></li>
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">

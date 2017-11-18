@@ -28,6 +28,7 @@
         "league/glide-laravel": "^1.0",
         "mpociot/vat-calculator": "^2.2",
         "mtdowling/cron-expression": "^1.2",
+        "orchestra/parser": "^3.5",
         "php-ffmpeg/extras": "^0.3.1",
         "php-ffmpeg/php-ffmpeg": "^0.9.5",
         "predis/predis": "^1.1",
