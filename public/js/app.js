@@ -35389,7 +35389,7 @@ __webpack_require__(172);
 //Vue.config.silent = true
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_carousel___default.a);
-
+var api_token = __webpack_require__.i({"NODE_ENV":"development"}).HOBO_API_TOKEN;
 var app = new Vue({
     mixins: [__webpack_require__(279)],
     mounted: function mounted() {
@@ -36460,9 +36460,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             email: ''
         };
     },
-    mounted: function mounted() {
-        console.log('Newsletter Subscription Component mounted.');
-    },
+    mounted: function mounted() {},
 
     methods: {
         signup: function signup() {
@@ -36471,7 +36469,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             this.validator.validateAll({
                 email: this.email
             }).then(function (result) {
-                axios.post('/api/newsletter-subscriptions', {
+                axios.post('/newsletter-subscriptions', {
                     email: _this.email
                 }).then(function (result) {
                     swal({

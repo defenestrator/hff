@@ -10,7 +10,7 @@
 @stop
 
 @section('top')
-    <img style="width:100%;" src="{{config('filesystems.disks.DO.fullpath')}}/images/pursuit-anglers/surfing-rooster.jpg"
+    <img style="width:100%;" src="/images/pursuit-anglers/surfing-rooster.jpg"
          alt="Surf sight-casting for Roosterfish is just about the most wicked-thrilling thing you can do."
          title="Surf sight-casting for Roosterfish is just about the most wicked-thrilling thing you can do.">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
@@ -29,7 +29,7 @@
                         pompano, yellowtail, and the ultimate prize, roosterfish.</p>
                     <p>They can all be caught from a boat or directly from the beach, and the turquoise-blue waters of
                         Baja provide a unique fly-fishing environment you won’t find anywhere else.</p>
-                    <img class="footer logo" src="{{config('filesystems.disks.DO.fullpath')}}/images/pursuit-anglers/baja-mahi-mahi.jpg"
+                    <img class="footer logo" src="/images/pursuit-anglers/baja-mahi-mahi.jpg"
                          alt="Rolling Mahi Mahi on a fly rod" title="Rolling Mahi Mahi on a fly rod">
                     <p>Hobo Fly Fishing can arrange a variety of packages to suit all budgets, including combination
                         DIY and guided trips, and don’t overlook offshore opportunities for dorado, billfish and tuna.
@@ -48,16 +48,16 @@
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/pursuit-anglers/big-cock.jpg"
+                    <img src="/images/pursuit-anglers/big-cock.jpg"
                          alt="Big cock, err umm Rooster." title="Big cock, err umm Rooster.">
                     <h3 class="text-center">Gnarly, dude</h3>
                     <sales-inquiry></sales-inquiry>
                     <p>Surf sight-casting for Roosterfish is just about the most wicked-thrilling thing you can do.</p>
-                    <img class="footer logo" src="{{config('filesystems.disks.DO.fullpath')}}/images/pursuit-anglers/the-beach.jpg"
+                    <img class="footer logo" src="/images/pursuit-anglers/the-beach.jpg"
                          alt="Does life get more beautiful than this?" title="Does life get more beautiful than this?">
                     <p>Does life get more glorious than this?</p>
                     <p>Maybe a little, if you're dedicated, but we doubt it.</p>
-                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/pursuit-anglers/the-hunter.jpg"
+                    <img src="/images/pursuit-anglers/the-hunter.jpg"
                          alt="Be the hunter." title="Be the hunter.">
                 </article>
             </section>

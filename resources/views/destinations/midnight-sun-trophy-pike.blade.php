@@ -10,7 +10,7 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/midnight-sun/scott-guide-pic-1.jpg"
+    <img style="width:100%;"  src="/images/midnight-sun/scott-guide-pic-1.jpg"
          alt="Giant effing Northern Pike" title="Giant effing Northern Pike">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Midnight Sun Trophy Pike Adventures
@@ -37,7 +37,7 @@
                     <p>On this trek, anglers can land pike well over 44 inches. On top of that, you have a shot at the
                         “tarpon of the North,” the Sheefish, which is well-known for their fierce strikes and epic battles.</p>
 
-                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/midnight-sun/sheefish1.jpg"
+                    <img src="/images/midnight-sun/sheefish1.jpg"
                          alt="Pissed off Sheefish" title="Pissed off Sheefish">
 
                     <p>Midnight Sun Trophy Pike Adventures provides a fully guided trip in Western Alaska on one of the
@@ -57,7 +57,7 @@
                     <p class="text-center">Book now for 2018!</p>
                     <sales-inquiry></sales-inquiry>
                     <p>Ferocious takes, giant Northern Pike, angry Sheefish, Alaska. Smashing fun.</p>
-                    <img src="{{config('filesystems.disks.DO.fullpath')}}/images/midnight-sun/alaska-fishing-boat.jpg"
+                    <img src="/images/midnight-sun/alaska-fishing-boat.jpg"
                          alt="Home sweet houseboat" title="Home sweet houseboat">
 
                 </article>

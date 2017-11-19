@@ -10,7 +10,7 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/os/tarpon.jpg"
+    <img style="width:100%;"  src="/images/os/tarpon.jpg"
          alt="The Silver King stares into you." title="The Silver King stares into you.">
     <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
         Silver King Lodge - Costa Rica
@@ -33,7 +33,7 @@
                     <p>Let’s face it, those are the fish you’ve always dreamed about, and here’s your chance to get in
                         the ring with them. But be forewarned, you may be fighting above your weight class because some
                         weigh north of the double century mark.</p>
-                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/silver-king-lodge/jumping.jpg"
+                    <img style="width:100%;"  src="/images/silver-king-lodge/jumping.jpg"
                          alt="Do battle with the Silver King" title="Do battle with the Silver King">
                     <p>While tarpon fishing may be the main event, the undercards aren’t slackers. You can also catch
                         mackerel, jacks, snapper, pompano, snook and more, and if that’s still not enough, there’s
@@ -51,13 +51,13 @@
                 <article class="article">
                     <h3 class="text-center">Take a shot at the biggest tarpon on Earth.</h3>
                     <sales-inquiry></sales-inquiry>
-                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/silver-king-lodge/thrashing.jpg"
+                    <img style="width:100%;"  src="/images/silver-king-lodge/thrashing.jpg"
                          alt="Take your shot" title="Take your shot">
                     <p>The have some nice trevally, too.</p>
-                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/silver-king-lodge/trevally.jpg"
+                    <img style="width:100%;"  src="/images/silver-king-lodge/trevally.jpg"
                          alt="They have some nice trevally, too." title="They have some nice trevally, too.">
                     <p>But we know you prefer these.</p>
-                    <img style="width:100%;"  src="{{config('filesystems.disks.DO.fullpath')}}/images/silver-king-lodge/megalops.jpg"
+                    <img style="width:100%;"  src="/images/silver-king-lodge/megalops.jpg"
                          alt="Megalops atlanticus." title="Megalops atlanticus.">
                 </article>
             </section>

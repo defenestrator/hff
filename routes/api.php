@@ -18,9 +18,9 @@ Route::group([
 });
 
 Route::group([
-    'middleware' => 'api'
+    'middleware' => 'auth:api'
 ], function () {
-    Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
+
 
     Route::post('/sales-inquiry', 'SalesInquiryController@create');
 

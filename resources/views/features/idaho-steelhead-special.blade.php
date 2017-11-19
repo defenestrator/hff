@@ -10,7 +10,7 @@
 
 @section('top')
     <div style="padding:2em 0;
-                background: #1a1a1a url('{{config('filesystems.disks.DO.fullpath')}}/images/backcountry-river-guides/slide1-178.jpg') center center no-repeat;
+                background: #1a1a1a url('/images/backcountry-river-guides/slide1-178.jpg') center center no-repeat;
                 background-size:cover;" >
         <h2 class="feature-tagline text-center wow pulse" data-wow-duration="1.5s">
            Idaho's Wild Salmon River

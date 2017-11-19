@@ -39,7 +39,6 @@ export default {
         }
     },
     mounted() {
-        console.log('Newsletter Subscription Component mounted.')
     },
     methods: {
         signup() {
@@ -47,7 +46,7 @@ export default {
                   email: this.email
               })
                 .then(result => {
-                        axios.post(`/api/newsletter-subscriptions`, {
+                        axios.post(`/newsletter-subscriptions`, {
                         email: this.email
                     })
                     .then(result => {

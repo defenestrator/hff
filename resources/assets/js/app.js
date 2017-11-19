@@ -12,7 +12,7 @@ require('./components/bootstrap');
 //Vue.config.silent = true
 import VueCarousel from 'vue-carousel';
 Vue.use(VueCarousel);
-
+const api_token = process.env.HOBO_API_TOKEN
 var app = new Vue({
     mixins: [require('spark')],
     mounted() {
