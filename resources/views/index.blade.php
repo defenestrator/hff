@@ -27,7 +27,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
 
 <!-- Listings Section Start -->
 <div class="row">
-    <div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2 info">
+    <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 info">
         <div class="info">
             <a href="/features/weekly-special" title="Get the weekly Hobo Fly Fishing special">
                 <div class="thumbnail"
@@ -102,7 +102,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             </a>
         </div>
     </div>
-    <div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2 info">
+    <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 info">
         <div class="info">
             <a href="/destinations/florida/bahia-honda-sporting-club" title="Bahia Honda Sporting Club">
                 <div class="thumbnail" style="background-image: url('/images/bahia-honda/fishing-05.jpg');">
@@ -170,7 +170,7 @@ Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
             </a>
         </div>
     </div>
-    <div class="col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2 info">
+    <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 info">
         <div class="info">
             <a href="/destinations/bahamas/tranquility-lodge-andros" title="Tranquility Hill Lodge - Andros, Bahamas">
                 <div class="thumbnail" style="background-image: url('/images/tranquility/tarpon.jpg');">
