@@ -14,7 +14,7 @@ class ShowcasesController extends Controller
      */
     public function index()
     {
-        //
+        return view('cms.showcases.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class ShowcasesController extends Controller
      */
     public function create()
     {
-        //
+        return view('cms.showcases.create');
     }
 
     /**

@@ -7843,7 +7843,7 @@ blockquote {
   width: 100%;
 }
 .tagline {
-  background: #262626 url('https://nyc3.digitaloceanspaces.com/hobo/images/cutty.jpg') center center no-repeat;
+  background: #262626 url('/images/cutty.jpg') center center no-repeat;
   background-size: cover;
   padding: 4em 0;
   margin-bottom: 20px;
@@ -8271,4 +8271,12 @@ a:focus .thumbnail .caption {
 }
 .payment-icons li {
   padding: 0;
+}
+.header-photo-preview {
+  width: auto;
+  height: 30vh;
+  margin: 1em 1em 1em 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
 }

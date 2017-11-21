@@ -3,75 +3,72 @@
     <ul class="scrollable-menu dropdown-menu" role="menu">
         <li role="presentation" class="dropdown-header">Posts</li>
         <li>
-            <a href="/cms/posts/index">Index</a>
-        </li>
-        <li>
-            <a href="/cms/posts/create">New</a>
+            <a href="/cms/posts">Manage</a>
         </li>
         <li class="divider"></li>
         <li  role="presentation" class="dropdown-header">Destination Showcases</li>
         <li>
-            <a href="/cms/showcases/edit">Edit</a>
+            <a href="/cms/showcases">Index</a>
         </li>
         <li>
-            <a href="/cms/showcases/create">New</a>
+            <a href="/cms/showcases/new">New</a>
         </li>
         <li class="divider"></li>
         <li role="presentation" class="dropdown-header">Podcasts</li>
         <li>
-            <a href="/cms/podcasts">Edit</a>
+            <a href="/cms/podcasts">Index</a>
         </li>
         <li>
-            <a href="/cms/podcasts/create">New</a>
+            <a href="/cms/podcasts/new">New</a>
         </li>
         <li class="divider"></li>
         <li role="presentation" class="dropdown-header">Fish</li>
         <li>
-            <a href="/cms/fish">Edit</a>
+            <a href="/cms/fish">Index</a>
         </li>
         <li>
-            <a href="/cms/fish/create">New</a>
+            <a href="/cms/fish/new">New</a>
         </li>
         <li class="divider"></li>
         <li role="presentation" class="dropdown-header">Fisheries</li>
         <li>
-            <a href="/cms/fish">Edit</a>
+            <a href="/cms/fish">Index</a>
         </li>
         <li>
-            <a href="/cms/fish/create">New</a>
+            <a href="/cms/fish/new">New</a>
         </li>
         <li class="divider"></li>
         <li role="presentation" class="dropdown-header">Hatches</li>
         <li>
-            <a href="/cms/fish">Edit</a>
+            <a href="/cms/fish">Index</a>
         </li>
         <li>
-            <a href="/cms/fish/create">New</a>
+            <a href="/cms/fish/new">New</a>
         </li>
         <li class="divider"></li>
         <li  role="presentation" class="dropdown-header">Flies</li>
         <li>
-            <a href="/cms/fish">Edit</a>
+            <a href="/cms/fish">Index</a>
         </li>
         <li>
-            <a href="/cms/fish/create">New</a>
+            <a href="/cms/fish/new">New</a>
         </li>
         <li class="divider"></li>
         <li  role="presentation" class="dropdown-header">Fly Boxes</li>
         <li>
-            <a href="/cms/fish">Edit</a>
+            <a href="/cms/fish">Index</a>
         </li>
         <li>
-            <a href="/cms/fish/create">New</a>
+            <a href="/cms/fish/new">New</a>
         </li>
         <li class="divider"></li>
 
         <li  role="presentation" class="dropdown-header">Outfitters</li>
         <li>
-            <a href="/cms/fish">Edit</a>
+            <a href="/cms/fish">Index</a>
         </li>
         <li>
-            <a href="/cms/fish/create">New</a>
+            <a href="/cms/fish/new">New</a>
         </li>
         <li class="divider"></li>
     </ul>

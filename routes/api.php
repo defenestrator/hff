@@ -23,7 +23,8 @@ Route::group([
     Route::get('/posts/publications/{postId}', 'PostsController@show');
     Route::get('posts/{id}/tags', 'PostTagsController@index');
     Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
-
+    Route::post('/showcases', 'Api\ShowcasesApiController@create');
+    Route::post('showcases/photo', 'ShowcaseImagesController@create');
     // Registrations are closed, hacker.
     Route::any('/register', 'Auth\RegisterController@no');
 

@@ -11,9 +11,8 @@
 
 require('./../spark-components/bootstrap')
 require('./home')
-require('./cms/posts/edit-post')
+require('./cms/showcases/create-showcase')
 Vue.component('posts', require('./Posts.vue'))
-Vue.component('podcasts', require('./Podcasts.vue'))
 Vue.component('input-tag', require('./InputTag.vue'))
 Vue.component('public-footer', require('./PublicFooter.vue'))
 Vue.component('newsletter-signup-registration', require('./NewsletterSignupRegistration.vue'))

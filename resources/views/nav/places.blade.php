@@ -58,11 +58,11 @@
         {{--Big Charlie--}}
         {{--</a>--}}
         {{--</li>--}}
-        {{--<li>--}}
-        {{--<a href="/destinations/bahamas/swains-cay-lodge-andros">--}}
-        {{--Swains Cay Lodge--}}
-        {{--</a>--}}
-        {{--</li>--}}
+        <li>
+        <a href="/destinations/bahamas/swains-cay-lodge-andros">
+        Swains Cay Lodge
+        </a>
+        </li>
         <li>
             <a href="/destinations/bahamas/tranquility-lodge-andros">
                 Tranquility Lodge
@@ -82,11 +82,11 @@
         </li>
         <li class="divider"></li>
         <li role="presentation" class="dropdown-header">Belize Area</li>
-        {{--<li>--}}
-        {{--<a href="/destinations/belize/el-pescador">--}}
-        {{--El Pescador--}}
-        {{--</a>--}}
-        {{--</li>--}}
+        <li>
+        <a href="/destinations/belize/el-pescador">
+        El Pescador
+        </a>
+        </li>
         <li>
             <a href="/destinations/belize/mango-creek-lodge">
                 Mango Creek Lodge
@@ -116,13 +116,13 @@
                 Blackfish Lodge
             </a>
         </li>
-        {{--<li class="divider"></li>--}}
-        {{--<li role="presentation" class="dropdown-header">Christmas Island</li>--}}
-        {{--<li>--}}
-        {{--<a href="/destinations/christmas-island/ikari-house">--}}
-        {{--Ikari House--}}
-        {{--</a>--}}
-        {{--</li>--}}
+        <li class="divider"></li>
+        <li role="presentation" class="dropdown-header">Christmas Island</li>
+        <li>
+        <a href="/destinations/christmas-island/ikari-house">
+        Ikari House
+        </a>
+        </li>
         <li class="divider"></li>
         <li role="presentation" class="dropdown-header">Costa Rica</li>
         <li>
@@ -151,11 +151,11 @@
         </li>
         <li class="divider"></li>
         <li role="presentation" class="dropdown-header">Labrador/Newfoundland</li>
-        {{--<li>--}}
-        {{--<a href="/destinations/labrador/fly-fishing-labrador">--}}
-        {{--Fly Fishing Newfoundland--}}
-        {{--</a>--}}
-        {{--</li>--}}
+        <li>
+            <a href="/destinations/labrador/fly-fishing-labrador">
+                Eagle River Trout Lodge
+            </a>
+        </li>
         <li>
             <a href="/destinations/labrador/salmon-hole-lodge">
                 Salmon Hole Lodge

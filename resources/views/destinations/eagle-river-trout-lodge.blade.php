@@ -24,7 +24,7 @@
         <div class="col-sm-8 col-sm-offset-0">
             <section>
                 <article class="article">
-                    because we were a little skeptical too about traveling to Labrador to catch brook trout.
+                     because we were a little skeptical too about traveling to Labrador to catch brook trout.
                     Brook trout? Those little buggers that haunt mountain streams and lakes? Those?</p>
                     <p>Then we saw the photos. Holy shit! Look at those freakin’ (not our exact words) brook trout?
                         Those things are pigs. And they take dry flies!</p>

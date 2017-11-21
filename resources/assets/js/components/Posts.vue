@@ -1,6 +1,5 @@
 <template>
 <div class="row">
-    <div class="col-md-12">
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Write</span>
             <span v-if="! index">Index</span>
@@ -109,7 +108,6 @@
                 </div>
             </div>
         </form>
-        </div>
     </div>
 </template>
 
