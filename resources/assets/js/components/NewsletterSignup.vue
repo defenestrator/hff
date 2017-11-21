@@ -46,7 +46,7 @@ export default {
                   email: this.email
               })
                 .then(result => {
-                        axios.post(`/newsletter-subscriptions`, {
+                        axios.post(`/api/newsletter-subscriptions`, {
                         email: this.email
                     })
                     .then(result => {

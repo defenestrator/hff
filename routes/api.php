@@ -22,7 +22,7 @@ Route::group([
     Route::delete('/posts/{id}', 'Api\PostsController@destroy');
     Route::get('/posts/publications/{postId}', 'PostsController@show');
     Route::get('posts/{id}/tags', 'PostTagsController@index');
-
+    Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
 
     // Registrations are closed, hacker.
     Route::any('/register', 'Auth\RegisterController@no');

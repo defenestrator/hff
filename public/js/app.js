@@ -36469,7 +36469,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             this.validator.validateAll({
                 email: this.email
             }).then(function (result) {
-                axios.post('/newsletter-subscriptions', {
+                axios.post('/api/newsletter-subscriptions', {
                     email: _this.email
                 }).then(function (result) {
                     swal({

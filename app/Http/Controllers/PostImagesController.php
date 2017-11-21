@@ -12,9 +12,9 @@ class PostImagesController extends Controller
             $request->validate([
                 'image' => 'required|image'
             ]);
-            $path = Storage::disk('DO')->putFile('images', $request->file('image'), 'public');
+            $path = Storage::disk('public')->putFile('images', $request->file('image'));
 
-            return response()->json(['file' => Storage::disk('DO')->url($path), 'success' => true, ]);
+            return response()->json([ 'file' => Storage::disk('public')->url($path), 'success' => true, ]);
     }
 
 
