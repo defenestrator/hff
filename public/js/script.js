@@ -37746,23 +37746,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
 Vue.component('edit-post', {
+    props: ['post_id'],
     validator: null,
-    mounted: function mounted() {},
+    mounted: function mounted() {
+        this.edit(this.post_id);
+    },
 
     components: {
         trumbowyg: __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default.a
     },
     data: function data() {
         return {
-            index: true,
-            posts: [],
             editPost: {
                 title: '',
                 slug: '',
                 body: '',
                 tags: [],
                 link: '',
-                postId: null,
+                post: Number(this.post_id),
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
@@ -37827,105 +37828,54 @@ Vue.component('edit-post', {
         }
     },
     methods: {
-        getIndex: function getIndex() {
+        publish: function publish() {
             var _this = this;
 
-            axios.get('/api/posts', {}).then(function (result) {
-                _this.posts = result.data.data;
-                return _this.posts;
-            }).catch(function (error) {
-                return Promise.reject(error);
-            });
-        },
-        toggleIndex: function toggleIndex() {
-            this.index = this.index ? false : true;
-        },
-        save: function save() {
-            var _this2 = this;
-
-            this.editPost.saveError = false;
-            this.editPost.saveBusy = true;
-            this.validator.validateAll({
-                title: this.editPost.title,
-                body: this.editPost.body,
-                slug: this.editPost.slug
-            }).then(function (result) {
-                axios.post('/api/posts', {
-                    title: _this2.editPost.title,
-                    user_id: Spark.state.user.id,
-                    author: Spark.state.user.name,
-                    slug: _this2.editPost.slug,
-                    body: _this2.editPost.body,
-                    tags: _this2.editPost.tags
-                }).then(function (result) {
-                    _this2.editPost.saveDisabled = true;
-                    _this2.editPost.saveBusy = false;
-                    _this2.editPost.saved = true;
-                    _this2.editPost.postId = result.data.id;
-                    console.log(result);
-                    return result;
-                }).catch(function (error) {
-                    _this2.editPost.saveError = true;
-                    _this2.editPost.saveBusy = false;
-                    _this2.editPost.serverErrors = error.response.data.errors.slug[0];
-                    return Promise.reject(error);
-                });
-            }).catch(function (error) {
-                _this2.editPost.saveBusy = false;
-                _this2.editPost.saveError = true;
-                _this2.errors = Promise.reject(error);
-                return Promise.reject(error);
-            });
-        },
-        publish: function publish() {
-            var _this3 = this;
-
             this.editPost.publishBusy = true;
-            if (this.editPost.postId === null) {
+            if (this.editPost.post === null) {
                 this.editPost.publishBusy = false;
                 this.save();
                 return;
             }
-            axios.post('/api/publications', {
+            axios.post('/publications', {
                 type: 'post',
-                post_id: this.editPost.postId
+                post_id: this.editPost.post
             }).then(function (result) {
-                _this3.editPost.publishBusy = false;
-                _this3.editPost.publicationId = result.data.id;
+                _this.editPost.publishBusy = false;
+                _this.editPost.publicationId = result.data.id;
                 return result;
             }).catch(function (error) {
-                _this3.editPost.publishBusy = false;
+                _this.editPost.publishBusy = false;
                 return Promise.reject(error);
             });
             this.editPost.publishBusy = false;
             this.editPost.published = true;
         },
         unpublish: function unpublish() {
-            var _this4 = this;
+            var _this2 = this;
 
-            var postId = this.editPost.postId;
-            axios.delete('/api/publications/' + this.editPost.publicationId, {}).then(function (result) {
-                _this4.editPost.publicationId = null;
-                _this4.editPost.publishBusy = false;
-                _this4.editPost.published = null;
-                _this4.checkPublication(postId);
+            axios.delete('/publications/' + this.editPost.publicationId, {}).then(function (result) {
+                _this2.editPost.publicationId = null;
+                _this2.editPost.publishBusy = false;
+                _this2.editPost.published = null;
+                _this2.checkPublication(post);
                 return result;
             }).catch(function (error) {
-                _this4.editPost.publishBusy = false;
+                _this2.editPost.publishBusy = false;
                 return Promise.reject(error);
             });
         },
         checkPublication: function checkPublication(id) {
-            var _this5 = this;
+            var _this3 = this;
 
-            axios.get('/api/posts/publications/' + id, {}).then(function (result) {
-                _this5.editPost.publicationId = result.data.id;
-                if (_this5.editPost.publicationId === undefined) {
-                    _this5.editPost.publicationId = null;
-                    _this5.editPost.published = null;
+            axios.get('/posts/publications/' + id, {}).then(function (result) {
+                _this3.editPost.publicationId = result.data.id;
+                if (_this3.editPost.publicationId === undefined) {
+                    _this3.editPost.publicationId = null;
+                    _this3.editPost.published = null;
                 } else {
-                    _this5.editPost.published = true;
-                    _this5.editPost.publishBusy = false;
+                    _this3.editPost.published = true;
+                    _this3.editPost.publishBusy = false;
                 }
                 return result.data;
             }).catch(function (error) {
@@ -37933,7 +37883,7 @@ Vue.component('edit-post', {
             });
         },
         update: function update() {
-            var _this6 = this;
+            var _this4 = this;
 
             this.editPost.saveError = false;
             this.editPost.saveBusy = true;
@@ -37942,89 +37892,62 @@ Vue.component('edit-post', {
                 title: this.editPost.title,
                 body: this.editPost.body
             }).then(function (result) {
-                axios.put('/api/posts/' + _this6.editPost.postId, {
-                    title: _this6.editPost.title,
+                axios.put('/posts/' + _this4.editPost.post, {
+                    title: _this4.editPost.title,
                     user_id: Spark.state.user.id,
                     author: Spark.state.user.name,
-                    body: _this6.editPost.body,
-                    tags: _this6.editPost.tags
+                    body: _this4.editPost.body,
+                    tags: _this4.editPost.tags
                 }).then(function (result) {
-                    _this6.editPost.saveBusy = false;
-                    _this6.editPost.saved = true;
+                    _this4.editPost.saveBusy = false;
+                    _this4.editPost.saved = true;
                     return result;
                 }).catch(function (error) {
-                    _this6.editPost.saveError = true;
-                    _this6.editPost.saveBusy = false;
-                    _this6.editPost.serverErrors = error.response.data.errors.slug[0];
+                    _this4.editPost.saveError = true;
+                    _this4.editPost.saveBusy = false;
+                    _this4.editPost.serverErrors = error.response.data.errors.slug[0];
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
-                _this6.editPost.saveBusy = false;
-                _this6.editPost.saveError = true;
+                _this4.editPost.saveBusy = false;
+                _this4.editPost.saveError = true;
                 return Promise.reject(error);
             });
         },
         leeroyjenkins: function leeroyjenkins() {
-            var _this7 = this;
+            var _this5 = this;
 
             if (confirm("Permanently destroy this post?")) {
-                axios.delete('/api/posts/' + this.editPost.postId, {}).then(function (result) {
-                    _this7.clear();
+                axios.delete('/posts/' + this.editPost.post, {}).then(function (result) {
+                    _this5.clear();
                 }).catch(function (error) {
                     return Promise.reject(error);
                 });
             }
         },
-        createeditPost: function createeditPost() {
-            if (!this.editPost.postId) {
-                if (confirm('Abandon this post and start over?')) {
-                    this.clear();
-                }
-            } else {
-                this.clear();
-            }
-        },
-        clear: function clear() {
-            this.editPost.saved = false;
-            this.editPost.saveBusy = false;
-            this.editPost.saveDisabled = false;
-            this.editPost.publishBusy = false;
-            this.editPost.published = null;
-            this.editPost.publicationId = null;
-            this.editPost.postId = null;
-            this.editPost.title = '';
-            this.editPost.body = '';
-            this.editPost.slug = '';
-            this.editPost.tags = [];
-        },
         edit: function edit(id) {
-            var _this8 = this;
+            var _this6 = this;
 
-            this.editPost.saveDisabled = true;
-            this.saveBusy = true;
-            this.index = false;
-            this.editPost.postId = id;
-            this.getTags(this.editPost.postId);
             axios.get('/posts/' + id + '/edit', {}).then(function (result) {
-                _this8.editPost.title = result.data.title;
-                _this8.editPost.slug = result.data.slug;
-                _this8.editPost.body = result.data.body;
-                _this8.editPost.postId = result.data.id;
-                _this8.checkPublication(id);
-                _this8.saveBusy = false;
-                _this8.editPost.saved = true;
-                _this8.editPost.saveDisabled = true;
-
+                _this6.editPost.title = result.data.title;
+                _this6.editPost.slug = result.data.slug;
+                _this6.editPost.body = result.data.body;
+                _this6.editPost.post = result.data.id;
+                _this6.checkPublication(id);
+                _this6.saveBusy = false;
+                _this6.editPost.saved = true;
+                _this6.editPost.saveDisabled = true;
+                _this6.getTags(_this6.editPost.post);
                 return result.data;
             }).catch(function (error) {
                 return Promise.reject(error);
             });
         },
         getTags: function getTags(id) {
-            var _this9 = this;
+            var _this7 = this;
 
             axios.get('/posts/' + id + '/tags', {}).then(function (result) {
-                _this9.editPost.tags = result.data;
+                _this7.editPost.tags = result.data;
                 return result.data.tags;
             }).catch(function (error) {
                 return Promise.reject(error);

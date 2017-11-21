@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Edit you some posts, fancy prince!
+    Edit you some posts, fancy cowboy!
     @parent
 @stop
 
@@ -80,7 +80,7 @@
                     <div class="col-md-12">
                         <input v-validate="'required|min:2'" name="title" v-model="editPost.title"
                                :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
-                               type="text" placeholder="Post Title" style="width:100%" value="">
+                               type="text" placeholder="Post Title" style="width:100%" value="{{$post->title}}">
                         <span v-show="errors.has('title')" class="help is-danger">@{{ errors.first('title') }}</span>
                     </div>
                 </div>

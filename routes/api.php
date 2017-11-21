@@ -15,15 +15,6 @@ Route::group([
     'middleware' => 'auth:api'
 ], function () {
     Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
-});
-
-Route::group([
-    'middleware' => 'auth:api'
-], function () {
-
-
-    Route::post('/sales-inquiry', 'SalesInquiryController@create');
-
     Route::get('/posts', 'Api\PostsController@index');
     Route::post('/posts', 'PostsController@create');
     Route::put('/posts/{id}', 'PostsController@update');
@@ -31,13 +22,17 @@ Route::group([
     Route::delete('/posts/{id}', 'PostsController@destroy');
     Route::get('/posts/publications/{postId}', 'PostsController@show');
     Route::get('posts/{id}/tags', 'PostTagsController@index');
-    Route::get('/podcasts', 'PodcastsController@index');
-    Route::get('/podcasts/publications/{postId}', 'PodcastsController@show');
-//    Route::get('podcasts/{id}/tags', 'PodcastTagsController@index');
+
 
     // Registrations are closed, hacker.
     Route::any('/register', 'Auth\RegisterController@no');
 
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');
+});
+
+Route::group([
+    'middleware' => 'api'
+], function () {
+    Route::post('/sales-inquiry', 'SalesInquiryController@create');
 });

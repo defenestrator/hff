@@ -7,24 +7,23 @@ import 'trumbowyg/dist/ui/trumbowyg.css';
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 Vue.component('edit-post', {
+    props:['post_id'],
     validator: null,
     mounted() {
-
+        this.edit(this.post_id)
     },
     components: {
         trumbowyg
     },
     data() {
         return {
-            index: true,
-            posts: [],
             editPost: {
                 title: '',
                 slug: '',
                 body: '',
                 tags: [],
                 link: '',
-                postId: null,
+                post: Number(this.post_id),
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
@@ -99,70 +98,17 @@ Vue.component('edit-post', {
         }
     },
     methods: {
-        getIndex() {
-            axios.get(`/api/posts`, {})
-                .then(result  => {
-                    this.posts = result.data.data
-                    return this.posts
-                })
-                .catch(error => {
-                    return Promise.reject(error)
-                })
-        },
-
-        toggleIndex() {
-            this.index = this.index ? false : true
-        },
-
-        save() {
-            this.editPost.saveError = false
-            this.editPost.saveBusy = true
-            this.validator.validateAll({
-                title: this.editPost.title,
-                body: this.editPost.body,
-                slug: this.editPost.slug
-            }).then((result) => {
-                    axios.post(`/api/posts`, {
-                            title: this.editPost.title,
-                            user_id: Spark.state.user.id,
-                            author: Spark.state.user.name,
-                            slug:  this.editPost.slug,
-                            body:  this.editPost.body,
-                            tags: this.editPost.tags
-                        })
-                        .then(result  => {
-                            this.editPost.saveDisabled = true
-                            this.editPost.saveBusy = false
-                            this.editPost.saved= true
-                            this.editPost.postId = result.data.id
-                            console.log(result)
-                            return result
-                        })
-                        .catch(error => {
-                            this.editPost.saveError = true
-                            this.editPost.saveBusy = false
-                            this.editPost.serverErrors = error.response.data.errors.slug[0]
-                            return Promise.reject(error)
-                        })
-                })
-                .catch(error => {
-                    this.editPost.saveBusy = false
-                    this.editPost.saveError = true
-                    this.errors = Promise.reject(error)
-                    return Promise.reject(error)
-                })
-        },
 
         publish() {
             this.editPost.publishBusy = true
-            if (this.editPost.postId === null) {
+            if (this.editPost.post === null) {
                 this.editPost.publishBusy = false
                 this.save()
                 return
             }
-            axios.post(`/api/publications`, {
+            axios.post(`/publications`, {
                     type:    'post',
-                    post_id: this.editPost.postId
+                    post_id: this.editPost.post
                 })
                 .then(result  => {
                     this.editPost.publishBusy = false
@@ -179,14 +125,13 @@ Vue.component('edit-post', {
         },
 
         unpublish() {
-            const postId = this.editPost.postId
-            axios.delete(`/api/publications/`
+            axios.delete(`/publications/`
                     + this.editPost.publicationId, {})
                 .then(result  => {
                     this.editPost.publicationId = null
                     this.editPost.publishBusy = false
                     this.editPost.published = null
-                    this.checkPublication(postId)
+                    this.checkPublication(post)
                     return result
                 })
                 .catch(error => {
@@ -196,7 +141,7 @@ Vue.component('edit-post', {
         },
 
         checkPublication(id){
-            axios.get(`/api/posts/publications/` + id, {})
+            axios.get(`/posts/publications/` + id, {})
                 .then(result  => {
                     this.editPost.publicationId = result.data.id
                     if (this.editPost.publicationId === undefined) {
@@ -221,7 +166,7 @@ Vue.component('edit-post', {
                 title: this.editPost.title,
                 body: this.editPost.body
             }).then((result) => {
-                    axios.put(`/api/posts/` + this.editPost.postId, {
+                    axios.put(`/posts/` + this.editPost.post, {
                             title: this.editPost.title,
                             user_id: Spark.state.user.id,
                             author: Spark.state.user.name,
@@ -249,7 +194,7 @@ Vue.component('edit-post', {
 
         leeroyjenkins() {
             if(confirm("Permanently destroy this post?")) {
-                axios.delete(`/api/posts/` + this.editPost.postId, {})
+                axios.delete(`/posts/` + this.editPost.post, {})
                     .then(result  => {
                         this.clear()
                     })
@@ -259,45 +204,18 @@ Vue.component('edit-post', {
             }
         },
 
-        createeditPost() {
-            if (!this.editPost.postId) {
-                if (confirm('Abandon this post and start over?')) {
-                    this.clear()
-                }
-            } else {
-                this.clear()
-            }
-        },
-        clear() {
-            this.editPost.saved = false
-            this.editPost.saveBusy = false
-            this.editPost.saveDisabled = false
-            this.editPost.publishBusy = false
-            this.editPost.published = null
-            this.editPost.publicationId = null
-            this.editPost.postId = null
-            this.editPost.title = ''
-            this.editPost.body = ''
-            this.editPost.slug = ''
-            this.editPost.tags = []
-        },
         edit(id){
-            this.editPost.saveDisabled = true
-            this.saveBusy = true
-            this.index = false
-            this.editPost.postId = id
-            this.getTags(this.editPost.postId)
             axios.get(`/posts/`+ id + '/edit', {})
                 .then(result => {
                     this.editPost.title = result.data.title;
                     this.editPost.slug = result.data.slug;
                     this.editPost.body = result.data.body;
-                    this.editPost.postId = result.data.id;
+                    this.editPost.post = result.data.id;
                     this.checkPublication(id)
                     this.saveBusy = false
                     this.editPost.saved = true
                     this.editPost.saveDisabled = true
-
+                    this.getTags(this.editPost.post)
                     return result.data
                 })
                 .catch(error => {

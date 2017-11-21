@@ -28,6 +28,7 @@ class PostTagsController extends ContentController
 
     public function edit(Post $post, $id)
     {
-        return $post->where('id', '=', $id)->first()->tag_array;
+        $response = $post->where('id', '=', $id)->first()->tag_array;
+        return response()->json($response);
     }
 }

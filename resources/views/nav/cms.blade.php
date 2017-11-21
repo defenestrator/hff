@@ -1,9 +1,9 @@
 <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown">Content<span class="caret"></span></a>
+    <a class="dropdown-toggle" data-toggle="dropdown">CMS<span class="caret"></span></a>
     <ul class="scrollable-menu dropdown-menu" role="menu">
         <li role="presentation" class="dropdown-header">Posts</li>
         <li>
-            <a href="/cms/posts/edit">Edit</a>
+            <a href="/cms/posts/index">Index</a>
         </li>
         <li>
             <a href="/cms/posts/create">New</a>

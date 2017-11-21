@@ -20,11 +20,7 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
-
-                <!-- Branding Image -->
-                @include('nav.brand')
             </div>
-
             <div class="collapse navbar-collapse" id="spark-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">

@@ -9,6 +9,7 @@ Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact','ContactFormController@create')->name('contact');
 Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
 // Features and Specials
+Route::post('/sales-inquiry', 'SalesInquiryController@create');
 
 Route::group(['prefix' => 'features'], function () {
     Route::view('/weekly-special', 'features.weekly-special')->name('weekly-special');
@@ -95,6 +96,19 @@ Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
 Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/posts/{id}/edit', 'PostsController@edit');
     Route::get('/posts/{id}/tags', 'PostTagsController@edit');
+    Route::get('/posts', 'Api\PostsController@index');
+    Route::post('/posts', 'PostsController@create');
+    Route::put('/posts/{id}', 'PostsController@update');
+    Route::get('/posts/{id}', 'PostsController@edit');
+    Route::delete('/posts/{id}', 'PostsController@destroy');
+    Route::get('/posts/publications/{postId}', 'PostsController@show');
+    Route::get('posts/{id}/tags', 'PostTagsController@index');
+
+// Registrations are closed, hacker.
+    Route::any('/register', 'Auth\RegisterController@no');
+
+    Route::post('/publications', 'PublicationsController@create');
+    Route::delete('/publications/{id}', 'PublicationsController@destroy');
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
         // Posts
