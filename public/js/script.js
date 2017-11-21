@@ -37476,7 +37476,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.index = false;
             this.newPost.postId = id;
             this.getTags(this.newPost.postId);
-            axios.get('/posts/' + id + '/edit', {}).then(function (result) {
+            axios.get('/api/posts/' + id, {}).then(function (result) {
                 _this8.newPost.title = result.data.title;
                 _this8.newPost.slug = result.data.slug;
                 _this8.newPost.body = result.data.body;

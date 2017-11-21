@@ -12,14 +12,14 @@
 
 
 Route::group([
-    'middleware' => 'auth:api'
+    'middleware' => 'api'
 ], function () {
     Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
     Route::get('/posts', 'Api\PostsController@index');
-    Route::post('/posts', 'PostsController@create');
-    Route::put('/posts/{id}', 'PostsController@update');
-    Route::get('/posts/{id}', 'PostsController@edit');
-    Route::delete('/posts/{id}', 'PostsController@destroy');
+    Route::post('/posts', 'Api\PostsController@create');
+    Route::put('/posts/{id}', 'Api\PostsController@update');
+    Route::get('/posts/{id}', 'Api\PostsController@edit');
+    Route::delete('/posts/{id}', 'Api\PostsController@destroy');
     Route::get('/posts/publications/{postId}', 'PostsController@show');
     Route::get('posts/{id}/tags', 'PostTagsController@index');
 

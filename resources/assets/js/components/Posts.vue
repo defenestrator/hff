@@ -404,7 +404,7 @@ export default {
             this.index = false
             this.newPost.postId = id
             this.getTags(this.newPost.postId)
-            axios.get(`/posts/`+ id + '/edit', {})
+            axios.get(`/api/posts/`+ id , {})
             .then(result => {
                 this.newPost.title = result.data.title;
                 this.newPost.slug = result.data.slug;
