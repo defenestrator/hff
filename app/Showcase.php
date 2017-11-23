@@ -13,7 +13,7 @@ class Showcase extends Model
         'outfitter_name',
         'body',
         'sidebar_bottom',
-        'sidebar-top',
+        'sidebar_top',
         'tagline',
         'fishery_type',
         'region',

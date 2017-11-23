@@ -6,15 +6,14 @@
             <a href="/cms/posts">Manage</a>
         </li>
         <li class="divider"></li>
-        <li  role="presentation" class="dropdown-header">Destination Showcases</li>
-        <li>
-            <a href="/cms/showcases">Index</a>
-        </li>
+        <li  role="presentation" class="dropdown-header">Almost fucking ready <br>Destination Showcases Builder<br> link thingy below</li>
+        {{--<li>--}}
+            {{--<a href="/cms/showcases">Index</a>--}}
+        {{--</li>--}}
         <li>
             <a href="/cms/showcases/new">New</a>
         </li>
         <li class="divider"></li>
-        {{--<li role="presentation" class="dropdown-header">Podcasts</li>--}}
         {{--<li>--}}
             {{--<a href="/cms/podcasts">Index</a>--}}
         {{--</li>--}}
