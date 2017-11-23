@@ -100,22 +100,22 @@ Elite Destination, Local Flavor - Hobo Fly Fishing
                     </div>
                 </div>
             </a>
-            <a href="/destinations/belize/el-pescador" title="El Pescador, Belize">
-                <div class="thumbnail" style="background-image: url('/images/');">
-                    <div class="caption">
-                        <p>Saltwater flats</p>
-                        <p>Belize</p>
-                    </div>
-                </div>
-            </a>
-            <a href="/destinations/labrador/fly-fishing-labrador" title="Eagle River Trout Lodge - Labrador">
-                <div class="thumbnail" style="background-image: url('/images/');">
-                    <div class="caption">
-                        <p>Native Brookies!</p>
-                        <p>Labrador</p>
-                    </div>
-                </div>
-            </a>
+            {{--<a href="/destinations/belize/el-pescador" title="El Pescador, Belize">--}}
+                {{--<div class="thumbnail" style="background-image: url('/images/');">--}}
+                    {{--<div class="caption">--}}
+                        {{--<p>Saltwater flats</p>--}}
+                        {{--<p>Belize</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="/destinations/labrador/fly-fishing-labrador" title="Eagle River Trout Lodge - Labrador">--}}
+                {{--<div class="thumbnail" style="background-image: url('/images/');">--}}
+                    {{--<div class="caption">--}}
+                        {{--<p>Native Brookies!</p>--}}
+                        {{--<p>Labrador</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
         </div>
     </div>
     <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 info">
@@ -184,14 +184,14 @@ Elite Destination, Local Flavor - Hobo Fly Fishing
                     </div>
                 </div>
             </a>
-            <a href="/destinations/belize/swains-cay-lodge-andros" title="Swain's Cay Lodge">
-                <div class="thumbnail" style="background-image: url('/images/');">
-                    <div class="caption">
-                        <p>Bones and Friends!</p>
-                        <p>Belize</p>
-                    </div>
-                </div>
-            </a>
+            {{--<a href="/destinations/belize/swains-cay-lodge-andros" title="Swain's Cay Lodge">--}}
+                {{--<div class="thumbnail" style="background-image: url('/images/');">--}}
+                    {{--<div class="caption">--}}
+                        {{--<p>Bones and Friends!</p>--}}
+                        {{--<p>Belize</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
         </div>
     </div>
     <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 info">
@@ -256,22 +256,22 @@ Elite Destination, Local Flavor - Hobo Fly Fishing
                     </div>
                 </div>
             </a>
-            <a href="/destinations/christmas-island/ikari-house" title="Ikari House - Christmas Island">
-                <div class="thumbnail" style="background-image: url('/images/');">
-                    <div class="caption">
-                        <p>Remote salt flats</p>
-                        <p>Christmas Island</p>
-                    </div>
-                </div>
-            </a>
-            <a href="/destinations/alaska/hidden-basin" title="Hidden Basin - Kodiak AK">
-                <div class="thumbnail" style="background-image: url('/images/');">
-                    <div class="caption">
-                        <p>Salmon, Steelhead, More</p>
-                        <p>Kodiak, Alaska</p>
-                    </div>
-                </div>
-            </a>
+            {{--<a href="/destinations/christmas-island/ikari-house" title="Ikari House - Christmas Island">--}}
+                {{--<div class="thumbnail" style="background-image: url('/images/');">--}}
+                    {{--<div class="caption">--}}
+                        {{--<p>Remote salt flats</p>--}}
+                        {{--<p>Christmas Island</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<a href="/destinations/alaska/hidden-basin" title="Hidden Basin - Kodiak AK">--}}
+                {{--<div class="thumbnail" style="background-image: url('/images/');">--}}
+                    {{--<div class="caption">--}}
+                        {{--<p>Salmon, Steelhead, More</p>--}}
+                        {{--<p>Kodiak, Alaska</p>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
         </div>
     </div>
 </div>
