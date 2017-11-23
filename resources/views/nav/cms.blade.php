@@ -14,62 +14,62 @@
             <a href="/cms/showcases/new">New</a>
         </li>
         <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Podcasts</li>
-        <li>
-            <a href="/cms/podcasts">Index</a>
-        </li>
-        <li>
-            <a href="/cms/podcasts/new">New</a>
-        </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Fish</li>
-        <li>
-            <a href="/cms/fish">Index</a>
-        </li>
-        <li>
-            <a href="/cms/fish/new">New</a>
-        </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Fisheries</li>
-        <li>
-            <a href="/cms/fish">Index</a>
-        </li>
-        <li>
-            <a href="/cms/fish/new">New</a>
-        </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Hatches</li>
-        <li>
-            <a href="/cms/fish">Index</a>
-        </li>
-        <li>
-            <a href="/cms/fish/new">New</a>
-        </li>
-        <li class="divider"></li>
-        <li  role="presentation" class="dropdown-header">Flies</li>
-        <li>
-            <a href="/cms/fish">Index</a>
-        </li>
-        <li>
-            <a href="/cms/fish/new">New</a>
-        </li>
-        <li class="divider"></li>
-        <li  role="presentation" class="dropdown-header">Fly Boxes</li>
-        <li>
-            <a href="/cms/fish">Index</a>
-        </li>
-        <li>
-            <a href="/cms/fish/new">New</a>
-        </li>
-        <li class="divider"></li>
+        {{--<li role="presentation" class="dropdown-header">Podcasts</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/podcasts">Index</a>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/podcasts/new">New</a>--}}
+        {{--</li>--}}
+        {{--<li class="divider"></li>--}}
+        {{--<li role="presentation" class="dropdown-header">Fish</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish">Index</a>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish/new">New</a>--}}
+        {{--</li>--}}
+        {{--<li class="divider"></li>--}}
+        {{--<li role="presentation" class="dropdown-header">Fisheries</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish">Index</a>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish/new">New</a>--}}
+        {{--</li>--}}
+        {{--<li class="divider"></li>--}}
+        {{--<li role="presentation" class="dropdown-header">Hatches</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish">Index</a>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish/new">New</a>--}}
+        {{--</li>--}}
+        {{--<li class="divider"></li>--}}
+        {{--<li  role="presentation" class="dropdown-header">Flies</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish">Index</a>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish/new">New</a>--}}
+        {{--</li>--}}
+        {{--<li class="divider"></li>--}}
+        {{--<li  role="presentation" class="dropdown-header">Fly Boxes</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish">Index</a>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish/new">New</a>--}}
+        {{--</li>--}}
+        {{--<li class="divider"></li>--}}
 
-        <li  role="presentation" class="dropdown-header">Outfitters</li>
-        <li>
-            <a href="/cms/fish">Index</a>
-        </li>
-        <li>
-            <a href="/cms/fish/new">New</a>
-        </li>
-        <li class="divider"></li>
+        {{--<li  role="presentation" class="dropdown-header">Outfitters</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish">Index</a>--}}
+        {{--</li>--}}
+        {{--<li>--}}
+            {{--<a href="/cms/fish/new">New</a>--}}
+        {{--</li>--}}
+        {{--<li class="divider"></li>--}}
     </ul>
 </li>
