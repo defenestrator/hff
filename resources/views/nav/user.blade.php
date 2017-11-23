@@ -20,6 +20,7 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
+                @include('nav.authenticated-brand')
             </div>
             <div class="collapse navbar-collapse" id="spark-navbar-collapse">
                 <!-- Left Side Of Navbar -->
