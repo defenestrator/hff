@@ -37288,7 +37288,8 @@ Vue.component('create-showcase', {
                 slug: "",
                 body: "",
                 tagline: "",
-                sidebar: "",
+                sidebar_top: "",
+                sidebar_bottom: "",
                 fishery_type: "",
                 region: "",
                 header_photo: "",
@@ -37372,11 +37373,13 @@ Vue.component('create-showcase', {
                 body: this.form.body,
                 tagline: this.form.tagline,
                 region: this.form.region,
-                sidebar: this.form.sidebar,
+                sidebar_top: this.form.sidebar_top,
+                sidebar_bottom: this.form.sidebar_bottom,
                 fishery_type: this.form.fishery_type,
-                header_photo: this.form.header_photo
+                header_photo: this.form.header_photo,
+                thumbnail: this.form.thumbnail
             }).then(function (result) {
-                console.log(result);
+                console.log(result.data);
                 self.form.finishProcessing();
                 return result;
             }).catch(function (error) {
@@ -37406,6 +37409,7 @@ Vue.component('create-showcase', {
             // uploads of the profile photos. We will update the user after this action.
             axios.post(this.urlForUpdate, this.gatherFormData()).then(function (result) {
                 _this.form.header_photo = result.data.header_photo;
+                _this.form.thumbnail = result.data.thumbnail;
                 self.form.finishProcessing();
             }, function (error) {
                 self.form.setErrors(error.response.data.errors);

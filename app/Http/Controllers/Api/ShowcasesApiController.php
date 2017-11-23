@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Showcase;
 use Illuminate\Http\Request;
-
+use Storage;
 class ShowcasesApiController extends ApiController
-
 {
+
     /**
      * @return mixed
      */
@@ -24,6 +24,7 @@ class ShowcasesApiController extends ApiController
      */
     public function create(Request $request, Showcase $showcase)
     {
+
         $request->validate([
             'body' => 'required|min:8',
             'slug' => 'required|alpha_dash|unique:posts,slug',
@@ -34,10 +35,21 @@ class ShowcasesApiController extends ApiController
             'fishery_type' => 'required|min:3',
             'sidebar_top' => 'required|min:4',
             'sidebar_bottom' => 'required|min:4',
-
         ]);
 
-        return $showcase->create($request->all());
+
+        return $showcase->create([
+            'body' => $request->body ,
+            'slug' => $request->slug ,
+            'title' => $request->title ,
+            'tagline' => $request->tagline ,
+            'header_photo' => $request->header_photo ,
+            'thumbnail' => $request->thumbnail,
+            'region' => $request->region ,
+            'fishery_type' => $request->fishery_type ,
+            'sidebar_top' => $request->sidebar_top ,
+            'sidebar_bottom' => $request->sidebar_bottom ,
+        ]);
     }
 
     /**

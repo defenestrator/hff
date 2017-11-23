@@ -48,8 +48,8 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <h4 role="presentation">Tagline: @{{ form.tagline }}</h4>
-                    <input class="form-control input" name="tagline" v-model="form.tagline" placeholder="Tagline" />
+                    <h4 role="presentation">Sub-header: @{{ form.tagline }}</h4>
+                    <input class="form-control input" name="tagline" v-model="form.tagline" placeholder="Make it a zinger" />
 
                 </div>
             </div>

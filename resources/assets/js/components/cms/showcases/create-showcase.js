@@ -18,7 +18,8 @@ Vue.component('create-showcase', {
                 slug: "",
                 body: "",
                 tagline: "",
-                sidebar: "",
+                sidebar_top: "",
+                sidebar_bottom: "",
                 fishery_type: "",
                 region: "",
                 header_photo:"",
@@ -131,12 +132,14 @@ Vue.component('create-showcase', {
                     body:  this.form.body,
                     tagline: this.form.tagline,
                     region: this.form.region,
-                    sidebar: this.form.sidebar,
+                    sidebar_top: this.form.sidebar_top,
+                    sidebar_bottom: this.form.sidebar_bottom,
                     fishery_type: this.form.fishery_type,
-                    header_photo: this.form.header_photo
+                    header_photo: this.form.header_photo,
+                    thumbnail: this.form.thumbnail
                 })
                 .then(result  => {
-                    console.log(result)
+                    console.log(result.data)
                     self.form.finishProcessing();
                     return result
                 })
@@ -165,6 +168,7 @@ Vue.component('create-showcase', {
             axios.post(this.urlForUpdate, this.gatherFormData())
                 .then(result  => {
                         this.form.header_photo = result.data.header_photo
+                        this.form.thumbnail = result.data.thumbnail
                         self.form.finishProcessing();
                     },
                     (error) => {
