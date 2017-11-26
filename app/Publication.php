@@ -30,20 +30,23 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Publication whereReportId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Publication whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Publication whereUpdatedAt($value)
+ * @property int|null $showcase_id
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Showcase[] $showcase
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Publication whereShowcaseId($value)
  */
 class Publication extends Model
 {
     protected $table = 'publications';
-    protected $fillable = ['type', 'post_id', 'report_id', 'podcast_id', 'newsletter_id'];
+    protected $fillable = ['type', 'post_id', 'report_id', 'showcase_id', 'newsletter_id'];
 
     public function post()
     {
         return $this->hasMany(Post::class);
     }
 
-    public function podcast()
+    public function showcase()
     {
-        return $this->hasMany(Podcast::class);
+        return $this->hasMany(Showcase::class);
     }
 
     public function report()

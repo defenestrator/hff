@@ -1,21 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Showcase;
+use App\Publication;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    protected $showcase;
+    protected $publication;
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * HomeController constructor.
      */
-    public function __construct()
+    public function __construct(Showcase $showcase, Publication $publication)
     {
-        $this->middleware('auth');
-
-        // $this->middleware('subscribed');
+        $this->publication = $publication;
+        $this->showcase = $showcase;
     }
 
     /**
@@ -23,8 +23,10 @@ class HomeController extends Controller
      *
      * @return Response
      */
-    public function show()
+    public function index()
     {
-        return view('home');
+        $published = $this->publication->all('showcase_id');
+        $showcases = $this->showcase->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(27);
+        return view('home', compact('showcases'));
     }
 }

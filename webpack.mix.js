@@ -17,9 +17,8 @@ mix.webpackConfig({
             './resources/assets/js/raphael-min.js',
             './resources/assets/js/livicons-1.4.min.js',
             './resources/assets/js/wow.min.js',
-            './node_modules/trumbowyg/dist/plugins/cleanpaste/trumbowyg.cleanpaste.min.js',
             './node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js',
-            './node_modules/trumbowyg/dist/plugins/pasteimage/trumbowyg.pasteimage.min.js',
+
         ],
         'public/js/hoboscript.js' )
     mix.less('resources/assets/less/app.less', 'public/css')

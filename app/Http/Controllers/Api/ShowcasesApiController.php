@@ -14,7 +14,7 @@ class ShowcasesApiController extends ApiController
      */
     public function index()
     {
-        return Showcase::paginate(50, ['title', 'author', 'body', 'slug', 'created_at', 'id']);
+        return Showcase::orderBy('created_at', 'desc')->paginate(50, ['title', 'id']);
     }
 
     /**

@@ -23,18 +23,17 @@
 @stop
 @section('content')
     <!-- Listings Section Start -->
-    @foreach(array_chunk($showcases->all(), 3) as $showcaseRow))
+    @foreach(array_chunk($showcases->all(), 3) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)
                 <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1 info">
-                    <a href="{{ $showcase->link}}" title="Get the weekly Hobo Fly Fishing special">
+                    <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                         <div class="thumbnail"
-                             style="background-image: url('{{config("filesystems.disks.DO.fullpath")}}/images/{{$showcase->imgDir}}/{{$showcase->thumbnail}}');
-                                     background-position: right center;">
+                             style="background-image: url('{{$showcase->thumbnail}}');
+                                     background-position: center center;">
                             <div class="caption wow pulse" data-wow-duration="0.3s" data-wow-delay="1.2s" style="margin:5%;">
                                 <h3 style="font-weight:600;">{{$showcase->region}}</h3>
-                                <p>{{$showcase->species}}</p>
-                                <p>{{$showcase->tagline}}</p>
+                                <h3 style="font-weight:600;">{{$showcase->fishery_type}}</h3>
                             </div>
                         </div>
                     </a>

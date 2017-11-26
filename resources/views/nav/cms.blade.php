@@ -1,17 +1,15 @@
+<li>
+<a href="/home">Test</a>
+</li>
 <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown">CMS<span class="caret"></span></a>
     <ul class="scrollable-menu dropdown-menu" role="menu">
-        <li role="presentation" class="dropdown-header">Posts</li>
+        <li role="presentation" class="dropdown-header">Manage</li>
         <li>
-            <a href="/cms/posts">Manage</a>
+            <a href="/cms/posts">Posts</a>
         </li>
-        <li class="divider"></li>
-        <li  role="presentation" class="dropdown-header">Almost fucking ready <br>Destination Showcases Builder<br> link thingy below</li>
-        {{--<li>--}}
-            {{--<a href="/cms/showcases">Index</a>--}}
-        {{--</li>--}}
         <li>
-            <a href="/cms/showcases/new">New</a>
+            <a href="/cms/showcases">Showcases</a>
         </li>
         <li class="divider"></li>
         {{--<li>--}}

@@ -16,10 +16,10 @@
     <title>@yield('title', config('app.name'))</title>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href="{{ mix('/css/styles.css') }}" rel="stylesheet">
-
+    <!-- Page level Styles -->
+    @yield('page_styles', '')
     <!-- Page level Scripts -->
     @yield('scripts', '')
-
     <!-- Global Spark Object -->
     <script>
         window.Spark = <?php echo json_encode(array_merge(

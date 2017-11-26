@@ -43,7 +43,8 @@ Vue.component('create-showcase', {
                     ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
                     ['unorderedList', 'orderedList'],
                     ['horizontalRule'],
-                    ['removeformat']
+                    ['removeformat'],
+                    ['preformatted'],
                 ],
                 plugins: {
                     upload: {
@@ -55,6 +56,7 @@ Vue.component('create-showcase', {
                         },
                         xhrFields: {}
                     },
+
                 }
             },
             trumbowygSidebarTop: {

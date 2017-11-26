@@ -41,10 +41,9 @@ class PostsController extends ContentController
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
+     * @param Post $post
+     * @param $id
+     * @return \App\Publication|mixed
      */
     public function show(Post $post, $id)
     {

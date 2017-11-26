@@ -20,10 +20,10 @@ class ShowcaseImagesController extends Controller
                 $constraint->aspectRatio();
             })->encode('jpg');
         $hash = md5($resize->__toString());
-        $thumbpath = storage_path('app/public/images/showcases/thumbnail' . "{$hash}.jpg");
+        $thumbpath = storage_path('app/public/images/showcases/' . "{$hash}.jpg");
         $resize->save($thumbpath);
         return response()->json([
-            'thumbnail' => url($thumbpath),
+            'thumbnail' => url('storage/images/showcases/'. "{$hash}.jpg"),
             'header_photo' => Storage::disk('public')->url($image),
             'success' => true,
         ]);

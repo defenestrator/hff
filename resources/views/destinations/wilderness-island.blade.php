@@ -44,15 +44,14 @@
                         you might wish you could be.</p>
                 </article>
             </section>
-
         </div>
         <div class="col-sm-4 col-sm-offset-0">
             <section>
                 <article class="article">
                     <p class="text-center">Australia left <em>'amazing'</em> behind in a wake of blue water,</p>
                     <p class="text-center">after all, it's Oz.</p>
-                    <sales-inquiry></sales-inquiry>
-                    <p>All one need do is ask...</p>
+                    <p class="text-center"> <sales-inquiry></sales-inquiry></p>
+                    <p class="text-center">All one need do is ask...</p>
                     <img style="width:100%;"  src="/images/wilderness-island/mangrovejack.jpg"
                          alt="Australia rules, mate!" title="Australia rules, mate!">
                     <p>Wilderness Island is an expedition to beat the band.</p>

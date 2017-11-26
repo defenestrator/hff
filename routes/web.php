@@ -2,6 +2,7 @@
 
 // PUBLIC GUEST VIEW ROUTES
 Route::view('/', 'index')->name('home');
+
 Route::view('/about', 'about')->name('about');
 Route::view('/terms', 'terms')->name('terms');
 Route::view('/privacy','privacy')->name('privacy');
@@ -16,7 +17,10 @@ Route::group(['prefix' => 'features'], function () {
     Route::view('/alaska-special', 'features.alaska-special')->name('alaska-special');
     Route::view('/idaho-steelhead-special', 'features.idaho-steelhead-special')->name('idaho-steelhead-special');
 });
-
+// Showcases
+Route::group(['prefix' => 'showcases'], function () {
+    Route::get('{slug}', 'PublishedShowcasesController@show');
+});
 // Destinations
 Route::group(['prefix' => 'destinations'], function () {
     // Alaska
@@ -87,7 +91,7 @@ Route::get('/publications/posts', 'PublishedPostsController@index')->name('publi
 Route::get('/publications/posts/{slug}', 'PublishedPostsController@show')->name('publications.posts.show');
 
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
-
+Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index');
 // LOADER.IO AUTHENTICATION
 Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
 
@@ -95,14 +99,17 @@ Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
 Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/posts/{id}/edit', 'PostsController@edit');
     Route::get('/posts/{id}/tags', 'PostTagsController@edit');
+    Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
+    Route::get('/home', 'HomeController@index');
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
+
         // Posts
         Route::view('/posts', 'cms.posts');
         Route::get('/posts/index', 'PostsController@index');
         Route::get('/posts/{id}/edit', 'PostsController@edit');
         Route::post('/posts/images', 'PostImagesController@create');
-        Route::get('/showcases/new', 'ShowcasesController@create');
+        Route::get('/showcases', 'ShowcasesController@create');
     });
 });
 

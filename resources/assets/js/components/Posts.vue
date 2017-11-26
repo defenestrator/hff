@@ -154,7 +154,7 @@ export default {
                 btnsDef: {
                     // Customizables dropdowns
                     image: {
-                        dropdown: ['insertImage', 'upload', 'base64', 'noembed'],
+                        dropdown: ['insertImage', 'upload'],
                         ico: 'insertImage'
                     }
                 },

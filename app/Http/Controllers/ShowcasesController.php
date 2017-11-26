@@ -24,7 +24,7 @@ class ShowcasesController extends Controller
      */
     public function create()
     {
-        return view('cms.showcases.create');
+        return view('cms.showcases');
     }
 
     /**
@@ -44,9 +44,9 @@ class ShowcasesController extends Controller
      * @param  \App\Showcase  $showcase
      * @return \Illuminate\Http\Response
      */
-    public function show(Showcase $showcase)
+    public function show(Showcase $showcase, $id)
     {
-        //
+        return $showcase->where('id', $id)->first()->publication;
     }
 
     /**
