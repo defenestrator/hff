@@ -59,6 +59,7 @@ class SparkServiceProvider extends ServiceProvider
         Spark::useStripe()->noCardUpFront();
 //        Spark::freePlan('Free Angler Plan', 'free-angler-plan');
         Spark::afterLoginRedirectTo('cms.posts');
+        Spark::identifyTeamsByPath();
 
         ///////////////////////////////////////////////////
         /////////////// TEST PLANS ///////////////////////
@@ -128,6 +129,7 @@ class SparkServiceProvider extends ServiceProvider
 
     public function register()
     {
+        Spark::referToTeamAs('outfitter');
     }
 }
 

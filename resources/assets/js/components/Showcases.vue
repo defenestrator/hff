@@ -507,7 +507,7 @@ export default {
             this.newShowcase.sidebar_top = ''
             this.newShowcase.region =''
             this.newShowcase.fishery_type = ''
-            this.newShowcase.tagline
+            this.newShowcase.tagline = ''
             this.newShowcase.tags = []
         },
         edit(id){

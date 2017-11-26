@@ -37734,7 +37734,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.newShowcase.sidebar_top = '';
             this.newShowcase.region = '';
             this.newShowcase.fishery_type = '';
-            this.newShowcase.tagline;
+            this.newShowcase.tagline = '';
             this.newShowcase.tags = [];
         },
         edit: function edit(id) {
