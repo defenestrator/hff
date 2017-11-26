@@ -27,7 +27,7 @@ class ShowcasesApiController extends ApiController
 
         $request->validate([
             'body' => 'required|min:8',
-            'slug' => 'required|alpha_dash|unique:posts,slug',
+            'slug' => 'required|alpha_dash|unique:showcases,slug',
             'title' => 'required|min:8',
             'tagline' => 'required|min:8',
             'header_photo' => 'required|string',
@@ -82,13 +82,28 @@ class ShowcasesApiController extends ApiController
     {
         $request->validate([
             'body' => 'required|min:8',
-            'title' => 'required|min:2'
+            'title' => 'required|min:8',
+            'tagline' => 'required|min:8',
+            'header_photo' => 'required|string',
+            'region' => 'required|min:3',
+            'slug' => 'required|alpha_dash|unique:showcases,slug',
+            'fishery_type' => 'required|min:3',
+            'sidebar_top' => 'required|min:4',
+            'sidebar_bottom' => 'required|min:4',
         ]);
         $content = $showcase->find($id);
 
         $content->update([
-            'body'  => $request->body,
-            'title' => $request->title
+            'body' => $request->body ,
+            'slug' => $request->slug ,
+            'title' => $request->title ,
+            'tagline' => $request->tagline ,
+            'header_photo' => $request->header_photo ,
+            'thumbnail' => $request->thumbnail,
+            'region' => $request->region ,
+            'fishery_type' => $request->fishery_type ,
+            'sidebar_top' => $request->sidebar_top ,
+            'sidebar_bottom' => $request->sidebar_bottom ,
         ]);
         $content->tag($request->tags);
         $content->save();

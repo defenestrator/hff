@@ -37400,15 +37400,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 // Import this component
 
@@ -37535,8 +37526,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.newShowcase.saveBusy = true;
             this.validator.validateAll({
                 title: this.newShowcase.title,
-                body: this.newShowcase.body,
-                slug: this.newShowcase.slug
+                body: this.newShowcase.body
             }).then(function (result) {
                 axios.post('/api/showcases', {
                     title: _this2.newShowcase.title,
@@ -52966,23 +52956,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('title')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('title')))])])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "col-md-12"
-  }, [_c('div', {
-    attrs: {
-      "name": "slug"
-    }
-  }, [_vm._v("slug: " + _vm._s(_vm.newShowcase.slug) + " ")]), _vm._v(" "), _c('span', {
+  }, [_vm._v(_vm._s(_vm.errors.first('title')))]), _vm._v(" "), _c('span', {
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (_vm.newShowcase.serverErrors),
-      expression: "newShowcase.serverErrors"
+      value: (_vm.newShowcase.saveError),
+      expression: "newShowcase.saveError"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.newShowcase.serverErrors))])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                    The slug for this post may not be unique, please try changing the title if nothing else seems screwy.\n                    ")])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
@@ -53017,7 +52999,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.newShowcase.fishery_type = $event.target.value
       }
     }
-  })]), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('fishery_type')),
+      expression: "errors.has('fishery_type')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('fishery_type')))])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
   }, [_c('h4', {
     attrs: {
@@ -53049,7 +53039,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.newShowcase.region = $event.target.value
       }
     }
-  })])]), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('region')),
+      expression: "errors.has('region')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('region')))])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -53083,7 +53081,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.newShowcase.tagline = $event.target.value
       }
     }
-  })])]), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('tagline')),
+      expression: "errors.has('tagline')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('tagline')))])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -53110,15 +53116,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "newShowcase.body"
     }
-  }), _vm._v(" "), _c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.newShowcase.saveError),
-      expression: "newShowcase.saveError"
-    }],
-    staticClass: "help is-danger"
-  }, [_vm._v("\n                        Get your shit together. Write something worth reading, won't you please?.\n                        ")])], 1)]), _vm._v(" "), _c('div', [_c('div', {
+  })], 1)]), _vm._v(" "), _c('div', [_c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
@@ -53145,15 +53143,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "newShowcase.sidebar_top"
     }
-  }), _vm._v(" "), _c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.newShowcase.saveError),
-      expression: "newShowcase.saveError"
-    }],
-    staticClass: "help is-danger"
-  }, [_vm._v("\n                        Get your shit together. Write something worth reading, won't you please?.\n                        ")])], 1), _vm._v(" "), _c('div', {
+  })], 1), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
   }, [_c('h4', {
     attrs: {
@@ -53178,15 +53168,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "newShowcase.sidebar_bottom"
     }
-  }), _vm._v(" "), _c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.newShowcase.saveError),
-      expression: "newShowcase.saveError"
-    }],
-    staticClass: "help is-danger"
-  }, [_vm._v("\n                        Get your shit together. Write something worth reading, won't you please?.\n                        ")])], 1)])]), _vm._v(" "), _c('div', {
+  })], 1)])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"

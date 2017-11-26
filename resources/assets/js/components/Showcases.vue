@@ -44,38 +44,34 @@
                     <input v-validate="'required|min:8'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
                            type="text" placeholder="Showcase Title" style="width:100%">
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <div name="slug">slug: {{newShowcase.slug}} </div>
-                    <span v-show="newShowcase.serverErrors" class="help is-danger">{{ newShowcase.serverErrors }}</span>
+                    <span v-show="newShowcase.saveError" class="help is-danger">
+                    The slug for this post may not be unique, please try changing the title if nothing else seems screwy.
+                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-6">
                     <h4 role="presentation">Fishery Type: {{ newShowcase.fishery_type }}</h4>
                     <input v-validate="'required|min:3'" id="fishery_type" class="form-control input" name="fishery_type" v-model="newShowcase.fishery_type" placeholder="Fishery Type" />
+                    <span v-show="errors.has('fishery_type')" class="help is-danger">{{ errors.first('fishery_type') }}</span>
                 </div>
                 <div class="col-md-6">
                     <h4 role="presentation">Region: {{ newShowcase.region }}</h4>
                     <input v-validate="'required|min:3'" class="form-control input" name="region" v-model="newShowcase.region" placeholder="Region" />
+                    <span v-show="errors.has('region')" class="help is-danger">{{ errors.first('region') }}</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
                     <h4 role="presentation">Sub-header: {{ newShowcase.tagline }}</h4>
                     <input v-validate="'required|min:4'" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
-
+                    <span v-show="errors.has('tagline')" class="help is-danger">{{ errors.first('tagline') }}</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
                     <h4 role="presentation">Showcase Body:</h4>
                     <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:20'" v-model="newShowcase.body"></trumbowyg>
-                    <span v-show="newShowcase.saveError" class="help is-danger">
-                        Get your shit together. Write something worth reading, won't you please?.
-                        </span>
                 </div>
             </div>
 
@@ -84,16 +80,11 @@
                     <div class="col-md-6">
                         <h4 role="presentation">Sidebar Top:</h4>
                         <trumbowyg id="sidebarTopTrumbowyg" :config="trumbowygConfig" name="sidebar_top" v-validate="'required|min:4'" v-model="newShowcase.sidebar_top"></trumbowyg>
-                    <span v-show="newShowcase.saveError" class="help is-danger">
-                        Get your shit together. Write something worth reading, won't you please?.
-                        </span>
                     </div>
                     <div class="col-md-6">
                         <h4 role="presentation">Sidebar Bottom:</h4>
                         <trumbowyg id="sidebarBottomTrumbowyg" :config="trumbowygConfig" name="sidebar_bottom" v-validate="'required|min:4'" v-model="newShowcase.sidebar_bottom"></trumbowyg>
-                    <span v-show="newShowcase.saveError" class="help is-danger">
-                        Get your shit together. Write something worth reading, won't you please?.
-                        </span>
+
                     </div>
                 </div>
             </div>
@@ -298,8 +289,7 @@ export default {
             this.newShowcase.saveBusy = true
             this.validator.validateAll({
                 title: this.newShowcase.title,
-                body: this.newShowcase.body,
-                slug: this.newShowcase.slug
+                body: this.newShowcase.body
                 }).then((result) => {
                     axios.post(`/api/showcases`, {
                                 title: this.newShowcase.title,
