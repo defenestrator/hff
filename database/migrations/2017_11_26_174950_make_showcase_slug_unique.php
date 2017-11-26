@@ -25,6 +25,8 @@ class MakeShowcaseSlugUnique extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('showcases', function (Blueprint $table) {
+            $table->string('slug')->change();
+        });
     }
 }
