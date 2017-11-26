@@ -86,7 +86,6 @@ class ShowcasesApiController extends ApiController
             'tagline' => 'required|min:8',
             'header_photo' => 'required|string',
             'region' => 'required|min:3',
-            'slug' => 'required|alpha_dash|unique:showcases,slug',
             'fishery_type' => 'required|min:3',
             'sidebar_top' => 'required|min:4',
             'sidebar_bottom' => 'required|min:4',
@@ -95,7 +94,6 @@ class ShowcasesApiController extends ApiController
 
         $content->update([
             'body' => $request->body ,
-            'slug' => $request->slug ,
             'title' => $request->title ,
             'tagline' => $request->tagline ,
             'header_photo' => $request->header_photo ,

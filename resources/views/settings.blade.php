@@ -8,12 +8,16 @@
 @stop
 
 @section('top')
-
-    <div class="text-center">
-        <h3>
-            Settings
-        </h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    Settings
+                </h3>
+            </div>
+        </div>
     </div>
+
 @stop
 @section('scripts')
     @if (Spark::billsUsingStripe())

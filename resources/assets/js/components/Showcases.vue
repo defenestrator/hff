@@ -257,12 +257,34 @@ export default {
             }
             this.newShowcase.saved = false
         },
+        'newShowcase.header_photo': function (val, oldVal) {
+            this.newShowcase.saved = false
+        },
+        'newShowcase.title': function (val, oldVal) {
+            this.newShowcase.saved = false
+        },
+        'newShowcase.fishery_type': function (val, oldVal) {
+            this.newShowcase.saved = false
+        },
+        'newShowcase.region': function (val, oldVal) {
+            this.newShowcase.saved = false
+        },
+        'newShowcase.tagline': function (val, oldVal) {
+            this.newShowcase.saved = false
+        },
         'newShowcase.body': function (val, oldVal) {
             this.newShowcase.saved = false
         },
+        'newShowcase.sidebar_top': function (val, oldVal) {
+            this.newShowcase.saved = false
+        },
+        'newShowcase.sidebar_bottom': function (val, oldVal) {
+            this.newShowcase.saved = false
+        },
         'newShowcase.tags': function (val, oldVal) {
-                this.newShowcase.saved = false
+            this.newShowcase.saved = false
         }
+
     },
     methods: {
         getIndex() {
@@ -395,7 +417,6 @@ export default {
                 }).then((result) => {
                     axios.put(`/api/showcases/` + this.newShowcase.showcaseId, {
                         title: this.newShowcase.title,
-                        slug:  this.newShowcase.slug,
                         body:  this.newShowcase.body,
                         tagline: this.newShowcase.tagline ,
                         sidebar_bottom: this.newShowcase.sidebar_bottom ,
@@ -408,6 +429,7 @@ export default {
                     })
                     .then(result  => {
                         this.newShowcase.saveBusy = false
+                        this.newShowcase.slug = result.data.slug
                         this.newShowcase.saved = true
                         return result
                     })
@@ -492,7 +514,7 @@ export default {
             this.newShowcase.body = ''
             this.newShowcase.slug = ''
             this.newShowcase.header_photo = ''
-            this.newShowcase.thumbnail =''
+            this.newShowcase.thumbnail = ''
             this.newShowcase.sidebar_bottom = ''
             this.newShowcase.sidebar_top = ''
             this.newShowcase.region =''
@@ -559,7 +581,6 @@ export default {
         this.validator = new VeeValidate.Validator({
             title: 'required|min:2',
             body: 'required|min:40',
-            slug: 'required',
             header_photo: 'required',
             region: 'required',
             fishery_type: 'required',

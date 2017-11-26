@@ -39,7 +39,6 @@ $router->group(['middleware' => 'web'], function ($router) {
         // General Settings...
         $router->get('/settings/'.$pluralTeamString.'/roles', 'Settings\Teams\TeamMemberRoleController@all');
         $router->get('/settings/'.$pluralTeamString.'/{team}', 'Settings\Teams\DashboardController@show')->name('settings.team');
-
         $router->get('/'.$pluralTeamString.'', 'TeamController@all');
         $router->get('/'.$pluralTeamString.'/current', 'TeamController@current');
         $router->get('/'.$pluralTeamString.'/{team_id}', 'TeamController@show');
