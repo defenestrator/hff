@@ -36735,6 +36735,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 // Import this component
 
@@ -37247,6 +37251,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(5);
+//
+//
 //
 //
 //
@@ -52894,7 +52900,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("Edit")])])])
-  }))]), _vm._v(" "), (!_vm.index) ? _c('form', {
+  }))])]), _vm._v(" "), _c('div', {
+    staticClass: "container"
+  }, [(!_vm.index) ? _c('form', {
     staticClass: "form-horizontal new-post",
     attrs: {
       "enctype": "multipart/form-data",
@@ -52903,7 +52911,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "form-group"
   }, [_c('div', {
-    staticClass: "col-md-12"
+    staticClass: "col-sm-12"
   }, [_c('label', {
     staticClass: "btn btn-primary btn-upload",
     attrs: {
@@ -53797,6 +53805,8 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"
+  }, [_c('div', {
+    staticClass: "container"
   }, [_c('button', {
     staticClass: "btn btn-create",
     attrs: {
@@ -53851,7 +53861,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("Edit")])])])
-  }))]), _vm._v(" "), (!_vm.index) ? _c('form', {
+  }))])]), _vm._v(" "), _c('div', {
+    staticClass: "container"
+  }, [(!_vm.index) ? _c('form', {
     staticClass: "form-horizontal new-post",
     attrs: {
       "role": "form"
@@ -54073,7 +54085,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.leeroyjenkins($event)
       }
     }
-  }, [_vm._v("\n                        Delete\n                    ")])])])]) : _vm._e()])
+  }, [_vm._v("\n                        Delete\n                    ")])])])]) : _vm._e()])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"

@@ -24,10 +24,12 @@
             </tr>
             </tbody>
         </table>
+    </div>
+    <div class="container">
         <form  enctype="multipart/form-data" class="form-horizontal new-post" v-if="! index" role="form">
             <!-- Update Button -->
             <div class="form-group">
-                <div class="col-md-12">
+                <div class="col-sm-12">
                     <label type="button" class="btn btn-primary btn-upload" :disabled="newShowcase.busy">
                         <span>Select Header Photo</span>
                         <input v-validate="'required|mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
