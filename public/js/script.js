@@ -36735,8 +36735,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 // Import this component
 
@@ -37249,6 +37247,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(5);
+//
+//
 //
 //
 //
@@ -52841,6 +52841,8 @@ module.exports = Component.exports
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"
+  }, [_c('div', {
+    staticClass: "container"
   }, [_c('button', {
     staticClass: "btn btn-create",
     attrs: {
@@ -53339,7 +53341,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.leeroyjenkins($event)
       }
     }
-  }, [_vm._v("\n                        Delete\n                    ")])])])]) : _vm._e()])
+  }, [_vm._v("\n                        Delete\n                    ")])])])]) : _vm._e()])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"
@@ -53837,7 +53839,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.posts), function(post) {
     return _c('tr', {
       staticClass: "table-hover"
-    }, [_c('td', [_c('strong', [_vm._v(_vm._s(post.title))])]), _vm._v(" "), _c('td', [_vm._v(_vm._s(post.author))]), _vm._v(" "), _c('td', [_c('button', {
+    }, [_c('td', [_c('strong', [_vm._v(_vm._s(post.title))])]), _vm._v(" "), _c('td', [_c('button', {
       staticClass: "btn btn-warning",
       attrs: {
         "role": "button"
@@ -54075,7 +54077,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"
-  }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Author")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+  }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

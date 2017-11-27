@@ -13,14 +13,12 @@
             <thead  class="thead-inverse">
             <tr>
                 <th>Title</th>
-                <th>Author</th>
                 <th>Edit</th>
             </tr>
             </thead>
             <tbody class="resource-list">
             <tr v-for="post in posts" class="table-hover">
-                    <td><strong>{{ post.title }}</strong></td>
-                <td>{{ post.author }}</td>
+                <td><strong>{{ post.title }}</strong></td>
                 <td><button @click.prevent="(edit(post.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>
             </tbody>

@@ -1,5 +1,6 @@
 <template>
 <div class="row">
+    <div class="container">
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Build Showcase</span>
             <span v-if="! index">List Showcases</span>
@@ -10,7 +11,7 @@
             </button>
         </div>
         <table v-show="index" class="table table-striped table-inverse">
-            <thead  class="thead-inverse">
+            <thead class="thead-inverse">
             <tr>
                 <th>Title</th>
                 <th>Edit</th>
@@ -18,7 +19,7 @@
             </thead>
             <tbody class="resource-list">
             <tr v-for="showcase in showcases" class="table-hover">
-                    <td><strong>{{ showcase.title }}</strong></td>
+                <td><strong>{{ showcase.title }}</strong></td>
                 <td><button @click.prevent="(edit(showcase.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>
             </tbody>
@@ -150,6 +151,7 @@
             </div>
         </form>
     </div>
+</div>
 </template>
 
 <script>

@@ -64,13 +64,6 @@
                 </li>
                 <li class="small footer-link"><a href="{{ route('privacy') }}">Privacy</a>
                 </li>
-                @if (Auth::check())
-                    <li class="small footer-link"><a href="{{ route('logout') }}">Logout</a>
-                    </li>
-                @else
-                    <li class="small footer-link"><a href="{{ route('login') }}">Login</a>
-                    </li>
-                @endif
             </ul>
         </div>
     </div>

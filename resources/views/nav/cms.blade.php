@@ -6,7 +6,7 @@
             <a href="/cms/posts">Blog Posts</a>
         </li>
         <li>
-            <a href="/cms/showcases">Lodge Showcases</a>
+            <a href="/cms/showcases">Showcases</a>
         </li>
         <li class="divider"></li>
         {{--<li>--}}
