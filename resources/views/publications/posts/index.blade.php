@@ -27,7 +27,7 @@
                     <div class="featured-text relative-left">
                         <h3 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h3>
                         <article>
-                            <a href="/publications/posts/{{$post->slug}}">
+                            <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
                                 {!! str_limit(strip_tags($post->body, '<img>'), 200, '...') !!}
                             </a>
                         </article>
