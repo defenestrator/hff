@@ -51,8 +51,9 @@
         @yield('bottom')
         @if(Auth::guest())
         @include('parts.footer')
-        @endif
         @include('parts.bottom')
+        @endif
+
         <!-- Application Level Modals -->
         @if (Auth::check())
             @include('modals.notifications')
