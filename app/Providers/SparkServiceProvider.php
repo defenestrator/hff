@@ -54,7 +54,6 @@ class SparkServiceProvider extends ServiceProvider
      */
     public function booted()
     {
-        Spark::usesTeams();
         Spark::usesTwoFactorAuth();
         Spark::useStripe()->noCardUpFront();
 //        Spark::freePlan('Free Angler Plan', 'free-angler-plan');
