@@ -1,6 +1,3 @@
-<li>
-<a href="/home">Test</a>
-</li>
 <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown">CMS<span class="caret"></span></a>
     <ul class="scrollable-menu dropdown-menu" role="menu">

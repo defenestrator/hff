@@ -16,7 +16,7 @@
             {{-- Left Side Of Navbar --}}
             <ul class="nav navbar-nav" style="z-index:100">
                 {{-- Places Menu --}}
-                @include('nav.places')
+                {{--@include('nav.places')--}}
 
                 <li><a href="{{route('publications.posts.index')}}" class="navbar-link dropdown">Blog</a></li>
                 <li><a href="https://have-rod-will-travel.fireside.fm" class="navbar-link">Podcast</a></li>

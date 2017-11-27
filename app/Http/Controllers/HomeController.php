@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $published = $this->publication->all('showcase_id');
-        $showcases = $this->showcase->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(27);
+        $showcases = $this->showcase->whereIn('id', $published)->orderBy('updated_at', 'desc')->paginate(27);
         return view('home', compact('showcases'));
     }
 }
