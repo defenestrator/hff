@@ -11,7 +11,7 @@
 @section('top')
     <div style="padding:2em 0;
                 background: #1a1a1a url('{{$showcase->header_photo}}') center center no-repeat;
-                background-size:cover; height:80vh;" >
+                background-size:cover; height:50vh;" >
         <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center wow pulse" data-wow-duration="0.5s">
             <a id="Blackfish_Lodge"></a>
             {{$showcase->title}}
