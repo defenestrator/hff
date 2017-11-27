@@ -1,7 +1,7 @@
 <?php
 
 // PUBLIC GUEST VIEW ROUTES
-Route::view('/', 'index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::view('/about', 'about')->name('about');
 Route::view('/terms', 'terms')->name('terms');
@@ -100,7 +100,7 @@ Route::group(['middleware' => ['auth:web']], function () {
     Route::get('/posts/{id}/edit', 'PostsController@edit');
     Route::get('/posts/{id}/tags', 'PostTagsController@edit');
     Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
-    Route::get('/home', 'HomeController@index');
+
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
 

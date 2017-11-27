@@ -160,6 +160,7 @@
     <div class="col-md-12 col-md-offset-0">
         &nbsp;
     </div>
+    <br>
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
