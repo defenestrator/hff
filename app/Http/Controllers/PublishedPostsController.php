@@ -17,9 +17,8 @@ class PublishedPostsController extends ContentController
     {
         $published = $publication->all('post_id');
         $posts = $post->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(5);
-        $smartass = $this->smartass;
         $pagetitle = $post->whereIn('id', $published)->orderBy('created_at', 'desc')->pluck('title')->first();
-        return view('publications.posts.index', compact('posts', 'smartass', 'pagetitle'));
+        return view('publications.posts.index', compact('posts', 'pagetitle'));
     }
 
     /**

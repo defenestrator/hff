@@ -1,7 +1,4 @@
-<li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown">Places<span class="caret"></span></a>
-    <ul class="scrollable-menu dropdown-menu" role="menu">
-        <li role="presentation" class="dropdown-header">Alaska</li>
+
         <li>
             <a href="/destinations/alaska/boardwalk-lodge">
                 Boardwalk Lodge
@@ -32,15 +29,12 @@
                 Naknek River Camp
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Argentina</li>
+
         <li>
             <a href="/destinations/argentina/rio-manso-lodge">
                 Rio Manso Lodge
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Australia</li>
         <li>
             <a href="/destinations/australia/true-blue-bonefish">
                 True Blue Bonefish
@@ -51,8 +45,6 @@
                 Wilderness Island
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Bahamas</li>
         {{--<li>--}}
         {{--<a href="/destinations/bahamas/big-charlie-andros">--}}
         {{--Big Charlie--}}
@@ -73,15 +65,11 @@
                 Two Boys Inn
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Baja</li>
         <li>
             <a href="/destinations/baja/pursuit-anglers">
                 Pursuit Anglers
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Belize Area</li>
         <li>
         <a href="/destinations/belize/el-pescador">
         El Pescador
@@ -97,15 +85,13 @@
                 The Blue Bonefish
             </a>
         </li>
-        <li class="divider"></li>
-        {{--<li role="presentation" class="dropdown-header">Bolivia</li>--}}
+
+        {{--<li role="presentation">Bolivia</li>--}}
         {{--<li>--}}
         {{--<a href="/destinations/bolivia/pluma-lodge-untamed-angling">--}}
         {{--Pluma Lodge--}}
         {{--</a>--}}
         {{--</li>--}}
-        {{--<li class="divider"></li>--}}
-        <li role="presentation" class="dropdown-header">British Columbia</li>
         <li>
             <a href="/destinations/british-columbia/deep-creek-lodge">
                 Deep Creek Lodge
@@ -116,15 +102,12 @@
                 Blackfish Lodge
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Christmas Island</li>
+
         <li>
         <a href="/destinations/christmas-island/ikari-house">
         Ikari House
         </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Costa Rica</li>
         <li>
             <a href="/destinations/costa-rica/bahia-rica">
                 Bahia Rica
@@ -135,22 +118,18 @@
                 Silver King Lodge
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Florida</li>
+
         <li>
             <a href="/destinations/florida/bahia-honda-sporting-club">
                 Bahia Honda Sporting Club
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Idaho</li>
         <li>
             <a href="/destinations/idaho/backcountry-river-guides">
                 Backcountry River Guides
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Labrador/Newfoundland</li>
+
         <li>
             <a href="/destinations/labrador/fly-fishing-labrador">
                 Eagle River Trout Lodge
@@ -166,27 +145,22 @@
         {{--Silver Bullet Lodge--}}
         {{--</a>--}}
         {{--</li>--}}
-        {{--<li class="divider"></li>--}}
-        {{--<li role="presentation" class="dropdown-header">Louisiana</li>--}}
+        {{--<li role="presentation">Louisiana</li>--}}
         {{--<li>--}}
         {{--<a href="/destinations/louisiana/drum-house">--}}
         {{--Drum House--}}
         {{--</a>--}}
         {{--</li>--}}
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">New Zealand</li>
         <li>
             <a href="/destinations/new-zealand/stonefly-lodge">
                 Stonefly Lodge
             </a>
         </li>
-        <li class="divider"></li>
-        <li role="presentation" class="dropdown-header">Yucatan</li>
         <li>
             <a href="/destinations/yucatan/costa-de-cocos">
                 Costa de Cocos
             </a>
         </li>
-        <li class="divider"></li>
+
     </ul>
 </li>

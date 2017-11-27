@@ -10,18 +10,24 @@
 @stop
 
 @section('top')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-0">
+                <h1>Hobo Fly Fishing Blog</h1>
+            </div>
+        </div>
+    </div>
 @stop
 
 @section('content')
 <div class="row">
-    <div class="content">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-0">
             @foreach($posts as $post)
                 <div class="post">
                     <div class="featured-text relative-left">
                         <h3 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h3>
                         <article>
-                            {!! $post->body !!}
+                                {!! str_limit(strip_tags($post->body), 140, '...') !!}
                         </article>
                         <p>
                             <span class="taglinks"><strong>Tags: </strong>
@@ -44,16 +50,22 @@
                         </p>
                         <hr>
                         <p class="text-right">
-                            <a href="/publications/posts/{{ $post->slug }}#disqus_thread"> <button class="btn btn-primary">{{$smartass}}</button></a>
+                            <a href="/publications/posts/{{ $post->slug }}"> <button class="btn btn-primary">Read More</button></a>
                         </p>
                     </div>
                 </div>
             @endforeach
         </div>
-        </div>
+    <div class="col-md-4 col-md-offset-0">
+            <h3 class="text-center">Destinations</h3>
+        <nav class="navbar navbar-default">
+            <ul class="nav navbar-nav side-menu">
+                @include('nav.places')
+            </ul>
+        </nav>
+
     </div>
-</div>
-    
+    </div>
 @stop
 
 @section('page_scripts')
