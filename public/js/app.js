@@ -52911,7 +52911,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "form-group"
   }, [_c('div', {
-    staticClass: "col-sm-12"
+    staticClass: "container"
   }, [_c('label', {
     staticClass: "btn btn-primary btn-upload",
     attrs: {
