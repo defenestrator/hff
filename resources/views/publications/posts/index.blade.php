@@ -27,7 +27,9 @@
                     <div class="featured-text relative-left">
                         <h3 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h3>
                         <article>
-                                {!! str_limit(strip_tags($post->body), 140, '...') !!}
+                            <a href="/publications/posts/{{$post->slug}}">
+                                {!! str_limit(strip_tags($post->body, '<img>'), 200, '...') !!}
+                            </a>
                         </article>
                         <p>
                             <span class="taglinks"><strong>Tags: </strong>
