@@ -27,32 +27,26 @@
                     <div class="featured-text relative-left">
                         <h3 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h3>
                         <article>
-                            <a href="/publications/posts/{{$post->slug}}">
+                            <a style="color:#535965;"href="/publications/posts/{{$post->slug}}">
                                 {!! str_limit(strip_tags($post->body, '<img>'), 200, '...') !!}
-                            </a>
+                            </a><hr>
                         </article>
                         <p>
-                            <span class="taglinks"><strong>Tags: </strong>
-                            @forelse($post->tags as $tag)
-                                <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
-                            @empty
-                                No Tags
-                            @endforelse
-                            </span>
-                        </p>
-                        <p class="additional-post-wrap">
                             <span class="additional-post">
-                                by {{ $post->author }}
+                                by {{ $post->author }},
                             </span>
                             <span class="additional-post">{{$post->created_at->diffForHumans()}}
                             </span>
-                        <p class="text-right">
-                            <a href="/publications/posts/{{ $post->slug }}"> <button class="btn btn-primary">Read More</button></a>
                         </p>
+                        <p class="additional-post-wrap">
+<span class="taglinks">Tags:
+    @forelse($post->tags as $tag)
+        <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
+    @empty
+        No Tags
+    @endforelse
+                            </span>
                         </p>
-
-                        <hr>
-
                     </div>
                 </div>
             @endforeach

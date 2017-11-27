@@ -20,10 +20,10 @@
                     <div class="the-box no-border blog-detail-content">
                         <p class="additional-post-wrap">
                             <span class="additional-post">
-                                by <a href="#"> {{ $post->author }}</a> about
+                                by {{ $post->author }}, about
                                 </span>
                             <span class="additional-post">
-                                    <a href="#">{{$post->created_at->diffForHumans()}} </a>
+                                   {{$post->created_at->diffForHumans()}}
                                 </span>
                         </p>
                         <p class="text-justify">
