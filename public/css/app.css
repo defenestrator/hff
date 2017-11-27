@@ -8280,4 +8280,6 @@ a:focus .thumbnail .caption {
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 1em;
+  border: 1px solid #666;
+  background-color: #ccc;
 }

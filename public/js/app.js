@@ -37734,14 +37734,14 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             return data;
         },
         createnewShowcase: function createnewShowcase() {
-            if (confirm('Abandon this showcase and start over?')) {
+            if (confirm('Clear this form and create a new showcase?')) {
                 this.clear();
             } else {
                 return;
             }
         },
         clear: function clear() {
-            this.newShowcase.saved = false;
+            this.newShowcase.saved = true;
             this.newShowcase.saveBusy = false;
             this.newShowcase.publishBusy = false;
             this.newShowcase.published = null;

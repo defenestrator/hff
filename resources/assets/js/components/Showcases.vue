@@ -502,14 +502,14 @@ export default {
             return data;
         },
         createnewShowcase() {
-            if (confirm('Abandon this showcase and start over?')) {
+            if (confirm('Clear this form and create a new showcase?')) {
                 this.clear()
             } else {
                 return
             }
         },
         clear() {
-            this.newShowcase.saved = false
+            this.newShowcase.saved = true
             this.newShowcase.saveBusy = false
             this.newShowcase.publishBusy = false
             this.newShowcase.published = null

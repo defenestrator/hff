@@ -42,6 +42,13 @@
 @stop
 
 @section('bottom')
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12 col-md-offset-0">
+            <h2> </h2>
+        </div>
+    </div>
+        </div>
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
