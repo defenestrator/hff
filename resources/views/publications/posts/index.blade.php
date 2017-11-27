@@ -27,16 +27,21 @@
                     <div class="featured-text relative-left">
                         <h3 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h3>
                         <article>
-                            <a style="color:#535965;"href="/publications/posts/{{$post->slug}}">
+                            <a href="/publications/posts/{{$post->slug}}">
                                 {!! str_limit(strip_tags($post->body, '<img>'), 200, '...') !!}
-                            </a><hr>
+                            </a>
                         </article>
+                        <br>
                         <p>
                             <span class="additional-post">
-                                by {{ $post->author }},
+                                by {{ $post->author }}
                             </span>
                             <span class="additional-post">{{$post->created_at->diffForHumans()}}
                             </span>
+                            &nbsp;&nbsp;
+                        <span class="text-right">
+                            <a href="/publications/posts/{{ $post->slug }}"> <button class="btn btn-primary">Read More</button></a>
+                        </span>&nbsp;&nbsp;
                         </p>
                         <p class="additional-post-wrap">
 <span class="taglinks">Tags:

@@ -3,10 +3,10 @@
     <ul class="scrollable-menu dropdown-menu" role="menu">
         <li role="presentation" class="dropdown-header">Manage</li>
         <li>
-            <a href="/cms/posts">Posts</a>
+            <a href="/cms/posts">Blog Posts</a>
         </li>
         <li>
-            <a href="/cms/showcases">Showcases</a>
+            <a href="/cms/showcases">Lodge Showcases</a>
         </li>
         <li class="divider"></li>
         {{--<li>--}}
