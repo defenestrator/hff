@@ -40,18 +40,17 @@
                         </p>
                         <p class="additional-post-wrap">
                             <span class="additional-post">
-                                <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i>
                                 by {{ $post->author }}
                             </span>
-                            <span class="additional-post">
-                                <i class="livicon" data-name="clock" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i>
-                                {{$post->created_at->diffForHumans()}}
+                            <span class="additional-post">{{$post->created_at->diffForHumans()}}
                             </span>
-                        </p>
-                        <hr>
                         <p class="text-right">
                             <a href="/publications/posts/{{ $post->slug }}"> <button class="btn btn-primary">Read More</button></a>
                         </p>
+                        </p>
+
+                        <hr>
+
                     </div>
                 </div>
             @endforeach

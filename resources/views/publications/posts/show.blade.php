@@ -20,10 +20,10 @@
                     <div class="the-box no-border blog-detail-content">
                         <p class="additional-post-wrap">
                             <span class="additional-post">
-                                    <i class="livicon" data-name="user" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i> by&nbsp;<a href="#">{{ $post->author }}</a>
+                                by <a href="#"> {{ $post->author }}</a> about
                                 </span>
                             <span class="additional-post">
-                                    <i class="livicon" data-name="clock" data-size="13" data-loop="true" data-c="#5bc0de" data-hc="#5bc0de"></i><a href="#">{{$post->created_at}} </a>
+                                    <a href="#">{{$post->created_at->diffForHumans()}} </a>
                                 </span>
                         </p>
                         <p class="text-justify">
