@@ -9,15 +9,18 @@
 @stop
 
 @section('top')
-    <img style="width:100%;"  src="{{$showcase->header_photo}}"
-         alt="Get away from the mainland, see some real outback!" title="Get away from the mainland, see some real outback!">
-    <h1 style="padding:0 0.5em;" class="showcase-header text-center wow pulse" data-wow-duration="0.5s">
-        {{$showcase->title}}
-    </h1>
+    <div style="padding:2em 0;
+                background: #1a1a1a url('{{$showcase->header_photo}}') left center no-repeat;
+                background-size:cover; height:80vh;" >
+        <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center wow pulse" data-wow-duration="0.5s">
+            <a id="Blackfish_Lodge"></a>
+            {{$showcase->title}}
+        </h1>
+        <h2 class="feature-tagline text-center">{{$showcase->tagline}} </h2>
+    </div>
     <hr>
 @stop
 @section('content')
-    <h2 class="text-center">{{$showcase->tagline}}</h2>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-0">
             <section>

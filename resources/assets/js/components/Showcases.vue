@@ -46,13 +46,7 @@
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <p role="presentation" name="title"><strong>Slug: </strong></p>
-                    <input name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :value="newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
-                    <span v-show="newShowcase.serverErrors" class="help is-danger">{{ newShowcase.serverErrors }}</span>
-                </div>
-            </div>
+            <input style="display:none;" name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :value="'https://hoboflyfishing.com/showcases/'+newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
             <div class="form-group">
                 <div class="col-md-6">
                     <p role="presentation"><strong>Fishery Type: </strong>{{ newShowcase.fishery_type }}</p>

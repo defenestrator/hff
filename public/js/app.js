@@ -37403,12 +37403,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 // Import this component
 
@@ -52993,11 +52987,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('title')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('title')))])])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "col-md-12"
-  }, [_vm._m(1), _vm._v(" "), _c('input', {
+  }, [_vm._v(_vm._s(_vm.errors.first('title')))])])]), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -53012,12 +53002,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: {
       'form-control': true, 'input': true, 'is-danger': _vm.errors.has('slug')
     },
+    staticStyle: {
+      "display": "none"
+    },
     attrs: {
       "name": "slug",
       "disabled": ""
     },
     domProps: {
-      "value": _vm.newShowcase.slug,
+      "value": 'https://hoboflyfishing.com/showcases/' + _vm.newShowcase.slug,
       "value": (_vm.newShowcase.slug)
     },
     on: {
@@ -53026,15 +53019,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.newShowcase.slug = $event.target.value
       }
     }
-  }), _vm._v(" "), _c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.newShowcase.serverErrors),
-      expression: "newShowcase.serverErrors"
-    }],
-    staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.newShowcase.serverErrors))])])]), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
@@ -53165,7 +53150,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_vm._m(2), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(1), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -53188,7 +53173,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(3), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(2), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -53209,7 +53194,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(4), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(3), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -53359,13 +53344,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('thead', {
     staticClass: "thead-inverse"
   }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', {
-    attrs: {
-      "role": "presentation",
-      "name": "title"
-    }
-  }, [_c('strong', [_vm._v("Slug: ")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h4', {
     attrs: {
