@@ -58,7 +58,7 @@ class SparkServiceProvider extends ServiceProvider
         Spark::usesTwoFactorAuth();
         Spark::useStripe()->noCardUpFront();
 //        Spark::freePlan('Free Angler Plan', 'free-angler-plan');
-        Spark::afterLoginRedirectTo('cms.posts');
+        Spark::afterLoginRedirectTo('/cms/posts');
         Spark::identifyTeamsByPath();
 
         ///////////////////////////////////////////////////
