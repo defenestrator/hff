@@ -47,6 +47,13 @@
                 </div>
             </div>
             <div class="form-group">
+                <div class="col-md-12">
+                    <p role="presentation" name="title"><strong>Slug: </strong></p>
+                    <input name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :value="newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
+                    <span v-show="newShowcase.serverErrors" class="help is-danger">{{ newShowcase.serverErrors }}</span>
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="col-md-6">
                     <p role="presentation"><strong>Fishery Type: </strong>{{ newShowcase.fishery_type }}</p>
                     <input v-validate="'required|min:3|max:40'" id="fishery_type" class="form-control input" name="fishery_type" v-model="newShowcase.fishery_type" placeholder="Fishery Type" />
@@ -265,9 +272,6 @@ export default {
             this.newShowcase.saved = false
         },
         'newShowcase.header_photo': function (val, oldVal) {
-            this.newShowcase.saved = false
-        },
-        'newShowcase.title': function (val, oldVal) {
             this.newShowcase.saved = false
         },
         'newShowcase.fishery_type': function (val, oldVal) {
