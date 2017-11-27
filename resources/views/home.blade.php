@@ -29,8 +29,7 @@
                 <div class="col-lg-4 col-lg-offset-0 col-md-12 col-md-offset-0 info">
                     <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                         <div class="thumbnail"
-                             style="background-image: url('{{$showcase->thumbnail}}');
-                                     background-position: center center;">
+                             style="background-image: url('{{$showcase->thumbnail}}');">
                             <div class="caption wow pulse" data-wow-duration="0.3s" data-wow-delay="1.2s" style="margin:5%;">
                                 <h3 style="font-weight:600;">{{$showcase->fishery_type}}</h3>
                                 <h3 style="font-weight:600;">{{$showcase->region}}</h3>
