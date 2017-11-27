@@ -53032,12 +53032,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
-    staticClass: "col-md-6"
+    staticClass: "col-md-5"
   }, [_c('p', {
     attrs: {
       "role": "presentation"
     }
-  }, [_c('strong', [_vm._v("Fishery Type: ")]), _vm._v(_vm._s(_vm.newShowcase.fishery_type))]), _vm._v(" "), _c('input', {
+  }, [_c('strong', [_vm._v("Home top: ")]), _vm._v(_vm._s(_vm.newShowcase.fishery_type))]), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -53073,12 +53073,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "help is-danger"
   }, [_vm._v(_vm._s(_vm.errors.first('fishery_type')))])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('h4', {
+    staticClass: "col-md-5 col-md-offset-1"
+  }, [_c('p', {
     attrs: {
       "role": "presentation"
     }
-  }, [_c('strong', [_vm._v("Region: ")]), _vm._v(_vm._s(_vm.newShowcase.region))]), _vm._v(" "), _c('input', {
+  }, [_c('strong', [_vm._v("Home bottom: ")]), _vm._v(_vm._s(_vm.newShowcase.region))]), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",

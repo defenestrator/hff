@@ -51,13 +51,13 @@
             </div>
             <input style="display:none;" name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :value="'https://hoboflyfishing.com/showcases/'+newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
             <div class="form-group">
-                <div class="col-md-6">
-                    <p role="presentation"><strong>Fishery Type: </strong>{{ newShowcase.fishery_type }}</p>
+                <div class="col-md-5">
+                    <p role="presentation"><strong>Home top: </strong>{{ newShowcase.fishery_type }}</p>
                     <input v-validate="'required|min:3|max:40'" id="fishery_type" class="form-control input" name="fishery_type" v-model="newShowcase.fishery_type" placeholder="Fishery Type" />
                     <span v-show="errors.has('fishery_type')" class="help is-danger">{{ errors.first('fishery_type') }}</span>
                 </div>
-                <div class="col-md-6">
-                    <h4 role="presentation"><strong>Region: </strong>{{ newShowcase.region }}</h4>
+                <div class="col-md-5 col-md-offset-1">
+                    <p role="presentation"><strong>Home bottom: </strong>{{ newShowcase.region }}</p>
                     <input v-validate="'required|min:3|max:40'" class="form-control input" id="region" name="region" v-model="newShowcase.region" placeholder="Region" />
                     <span v-show="errors.has('region')" class="help is-danger">{{ errors.first('region') }}</span>
                 </div>
