@@ -8167,12 +8167,12 @@ a:active.btn-primary {
   transition: all 0.25s;
 }
 .thumbnail {
-  padding: 1em;
   border: 1px solid #3ab0f5;
   background-size: cover;
   background-position: center center;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition: all 0.3s;
+  overflow-x: hidden;
 }
 @media (min-width: 768px) {
   .thumbnail {
@@ -8275,9 +8275,9 @@ a:focus .thumbnail .caption {
 }
 .header-photo-preview {
   width: auto;
-  height: 100vh;
+  height: 50vh;
   margin: 1em 1em 1em 0;
   background-size: cover;
-  background-position: center center;
   background-repeat: no-repeat;
+  border-radius: 1em;
 }

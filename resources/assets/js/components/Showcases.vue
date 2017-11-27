@@ -40,37 +40,34 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <p role="presentation" name="title">Title: {{newShowcase.title}} </p>
+                    <p role="presentation" name="title"><strong>Title: </strong>{{newShowcase.title}}</p>
                     <input v-validate="'required|min:8'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
                            type="text" placeholder="Showcase Title" style="width:100%">
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
-                    <span v-show="newShowcase.saveError" class="help is-danger">
-                    The slug for this post may not be unique, please try changing the title if nothing else seems screwy.
-                    </span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-6">
-                    <h4 role="presentation">Fishery Type: {{ newShowcase.fishery_type }}</h4>
-                    <input v-validate="'required|min:3'" id="fishery_type" class="form-control input" name="fishery_type" v-model="newShowcase.fishery_type" placeholder="Fishery Type" />
+                    <p role="presentation"><strong>Fishery Type: </strong>{{ newShowcase.fishery_type }}</p>
+                    <input v-validate="'required|min:3|max:40'" id="fishery_type" class="form-control input" name="fishery_type" v-model="newShowcase.fishery_type" placeholder="Fishery Type" />
                     <span v-show="errors.has('fishery_type')" class="help is-danger">{{ errors.first('fishery_type') }}</span>
                 </div>
                 <div class="col-md-6">
-                    <h4 role="presentation">Region: {{ newShowcase.region }}</h4>
-                    <input v-validate="'required|min:3'" class="form-control input" name="region" v-model="newShowcase.region" placeholder="Region" />
+                    <h4 role="presentation"><strong>Region: </strong>{{ newShowcase.region }}</h4>
+                    <input v-validate="'required|min:3|max:40'" class="form-control input" id="region" name="region" v-model="newShowcase.region" placeholder="Region" />
                     <span v-show="errors.has('region')" class="help is-danger">{{ errors.first('region') }}</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <h4 role="presentation">Sub-header: {{ newShowcase.tagline }}</h4>
-                    <input v-validate="'required|min:4'" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
+                    <h4 role="presentation"><strong>Sub-header: </strong>{{ newShowcase.tagline }}</h4>
+                    <input v-validate="'required|min:4'" id="tagline" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
                     <span v-show="errors.has('tagline')" class="help is-danger">{{ errors.first('tagline') }}</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <h4 role="presentation">Showcase Body:</h4>
+                    <h4 role="presentation"><strong>Showcase Body:</strong></h4>
                     <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:20'" v-model="newShowcase.body"></trumbowyg>
                 </div>
             </div>
@@ -78,12 +75,12 @@
             <div>
                 <div class="form-group">
                     <div class="col-md-6">
-                        <h4 role="presentation">Sidebar Top:</h4>
-                        <trumbowyg id="sidebarTopTrumbowyg" :config="trumbowygConfig" name="sidebar_top" v-validate="'required|min:4'" v-model="newShowcase.sidebar_top"></trumbowyg>
+                        <h4 role="presentation"><strong>Sidebar Top:</strong></h4>
+                        <trumbowyg id="sidebarTopTrumbowyg" :config="trumbowygConfig" name="sidebar_top" v-validate="'min:4'" v-model="newShowcase.sidebar_top"></trumbowyg>
                     </div>
                     <div class="col-md-6">
-                        <h4 role="presentation">Sidebar Bottom:</h4>
-                        <trumbowyg id="sidebarBottomTrumbowyg" :config="trumbowygConfig" name="sidebar_bottom" v-validate="'required|min:4'" v-model="newShowcase.sidebar_bottom"></trumbowyg>
+                        <h4 role="presentation"><strong>Sidebar Bottom:</strong></h4>
+                        <trumbowyg id="sidebarBottomTrumbowyg" :config="trumbowygConfig" name="sidebar_bottom" v-validate="'min:4'" v-model="newShowcase.sidebar_bottom"></trumbowyg>
 
                     </div>
                 </div>
@@ -200,6 +197,7 @@ export default {
             }),
             trumbowygConfig: {
                 id: 'trumbowyg',
+                autogrowOnEnter: true,
                 btnsDef: {
                     // Customizables dropdowns
                     image: {
@@ -244,6 +242,15 @@ export default {
         },
         region(value) {
             this.validator.validate('region', value);
+        },
+        sidebar_top(value) {
+            this.validator.validate('sidebar_top', value);
+        },
+        sidebar_bottom(value) {
+            this.validator.validate('sidebar_bottom', value);
+        },
+        tagline(value) {
+            this.validator.validate('tagline', value);
         },
         /**
             * Watch the title and create slug.

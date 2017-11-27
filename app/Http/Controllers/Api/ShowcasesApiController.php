@@ -26,15 +26,15 @@ class ShowcasesApiController extends ApiController
     {
 
         $request->validate([
-            'body' => 'required|min:8',
             'slug' => 'required|alpha_dash|unique:showcases,slug',
+            'body' => 'required|min:20',
             'title' => 'required|min:8',
             'tagline' => 'required|min:8',
             'header_photo' => 'required|string',
-            'region' => 'required|min:3',
-            'fishery_type' => 'required|min:3',
-            'sidebar_top' => 'required|min:4',
-            'sidebar_bottom' => 'required|min:4',
+            'region' => 'min:3|max:40',
+            'fishery_type' => 'min:3|max:40',
+            'sidebar_top' => 'min:4',
+            'sidebar_bottom' => 'min:4',
         ]);
 
 
@@ -81,14 +81,14 @@ class ShowcasesApiController extends ApiController
     public function update(Request $request, Showcase $showcase, $id)
     {
         $request->validate([
-            'body' => 'required|min:8',
+            'body' => 'required|min:20',
             'title' => 'required|min:8',
             'tagline' => 'required|min:8',
             'header_photo' => 'required|string',
-            'region' => 'required|min:3',
-            'fishery_type' => 'required|min:3',
-            'sidebar_top' => 'required|min:4',
-            'sidebar_bottom' => 'required|min:4',
+            'region' => 'min:3|max:40',
+            'fishery_type' => 'min:3|max:40',
+            'sidebar_top' => 'min:4',
+            'sidebar_bottom' => 'min:4',
         ]);
         $content = $showcase->find($id);
 

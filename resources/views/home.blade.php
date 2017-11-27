@@ -32,8 +32,8 @@
                              style="background-image: url('{{$showcase->thumbnail}}');
                                      background-position: center center;">
                             <div class="caption wow pulse" data-wow-duration="0.3s" data-wow-delay="1.2s" style="margin:5%;">
-                                <h3 style="font-weight:600;">{{$showcase->region}}</h3>
                                 <h3 style="font-weight:600;">{{$showcase->fishery_type}}</h3>
+                                <h3 style="font-weight:600;">{{$showcase->region}}</h3>
                             </div>
                         </div>
                     </a>

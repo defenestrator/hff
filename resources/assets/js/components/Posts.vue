@@ -151,6 +151,7 @@ export default {
             },
             trumbowygConfig: {
                 id: 'trumbowyg',
+                autogrowOnEnter: true,
                 btnsDef: {
                     // Customizables dropdowns
                     image: {
@@ -226,7 +227,11 @@ export default {
         },
 
         toggleIndex() {
-            this.index = this.index ? false : true
+            if(this.index == true) {
+                return this.index = false
+            }
+            this.getIndex()
+            return this.index = true
         },
 
         save() {
