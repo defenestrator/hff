@@ -72,8 +72,8 @@
                         <li>Lodging only</li>
                         <li>Self-guided adventure time!</li>
                     </ul>
-                    <h3 class="text-center">Only $4000!</h3>
-                    <p class="text-center">(Four anglers, $1000/each)</p>
+                    <h3 class="text-center">Only $1000!</h3>
+                    <p class="text-center">(per angler)</p>
                     <sales-inquiry></sales-inquiry>
 
                     <img src="/images/costa-de-cocos/OttoMannandAlberto_640x419.jpg"
