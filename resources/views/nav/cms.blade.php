@@ -1,5 +1,5 @@
 <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown">CMS<span class="caret"></span></a>
+    <a class="dropdown-toggle" data-toggle="dropdown">Content<span class="caret"></span></a>
     <ul class="scrollable-menu dropdown-menu" role="menu">
         <li role="presentation" class="dropdown-header">Manage</li>
         <li>
