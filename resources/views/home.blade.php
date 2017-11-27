@@ -23,10 +23,10 @@
 @stop
 @section('content')
     <!-- Listings Section Start -->
-    @foreach(array_chunk($showcases->all(), 3) as $showcaseRow)
+    @foreach(array_chunk($showcases->all(), 2) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)
-                <div class="col-lg-4 col-lg-offset-0 col-md-4 col-md-offset-0 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 info">
+                <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
                     <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                         <div class="thumbnail"
                              style="background-image: url('{{$showcase->thumbnail}}');
