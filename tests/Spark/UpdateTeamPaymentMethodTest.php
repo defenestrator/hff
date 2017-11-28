@@ -23,7 +23,7 @@ class UpdateTeamPaymentMethodTest extends TestCase
         $team->newSubscription('default', 'spark-test-1')->create($this->getStripeToken());
 
         $this->actingAs($user)
-                ->json('PUT', '/settings/outfitters/'.$team->id.'/payment-method', [
+                ->json('PUT', '/settings/teams/'.$team->id.'/payment-method', [
                     'stripe_token' => $this->getStripeToken(),
                 ])->assertStatus(200);
     }
@@ -35,7 +35,7 @@ class UpdateTeamPaymentMethodTest extends TestCase
         $team = $this->createTeam($user);
 
         $this->actingAs($user)
-                ->json('PUT', '/settings/outfitters/'.$team->id.'/payment-method', [
+                ->json('PUT', '/settings/teams/'.$team->id.'/payment-method', [
                     'stripe_token' => '',
                 ])->assertStatus(422);
     }

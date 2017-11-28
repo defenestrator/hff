@@ -25,7 +25,7 @@ class UpdateTeamPaymentMethodBillingAddressTest extends TestCase
         $team->newSubscription('default', 'spark-test-1')->create($this->getStripeToken());
 
         $this->actingAs($user)
-                ->json('PUT', '/settings/outfitters/'.$team->id.'/payment-method', [
+                ->json('PUT', '/settings/teams/'.$team->id.'/payment-method', [
                     'stripe_token' => $this->getStripeToken(),
                     'address' => 'Test',
                     'city' => 'Test',
@@ -48,7 +48,7 @@ class UpdateTeamPaymentMethodBillingAddressTest extends TestCase
         $team->newSubscription('default', 'spark-test-1')->create($this->getStripeToken());
 
         $this->actingAs($user)
-                ->json('PUT', '/settings/outfitters/'.$team->id.'/payment-method', [
+                ->json('PUT', '/settings/teams/'.$team->id.'/payment-method', [
                     'stripe_token' => $this->getStripeToken(),
                     'address' => 'Test',
                     'city' => 'Test',
@@ -70,7 +70,7 @@ class UpdateTeamPaymentMethodBillingAddressTest extends TestCase
         $team->newSubscription('default', 'spark-test-1')->create($this->getStripeToken());
 
         $this->actingAs($user)
-                ->json('PUT', '/settings/outfitters/'.$team->id.'/payment-method', [
+                ->json('PUT', '/settings/teams/'.$team->id.'/payment-method', [
                     'stripe_token' => $this->getStripeToken(),
                     'address' => 'Test',
                     'city' => 'Test',

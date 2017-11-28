@@ -3,6 +3,7 @@
 namespace App;
 
 use Laravel\Spark\User as SparkUser;
+use Laravel\Spark\CanJoinTeams;
 
 /**
  * App\User
@@ -77,6 +78,7 @@ use Laravel\Spark\User as SparkUser;
  */
 class User extends SparkUser
 {
+    use CanJoinTeams;
     /**
      * The attributes that are mass assignable.
      *

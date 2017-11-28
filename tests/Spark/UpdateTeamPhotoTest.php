@@ -37,7 +37,7 @@ class UpdateTeamPhotoTest extends TestCase
         $disk->shouldReceive('url')->once()->andReturn('/team/photo');
 
         $this->actingAs($user)
-                ->json('POST', '/settings/outfitters/'.$team->id.'/photo', [
+                ->json('POST', '/settings/teams/'.$team->id.'/photo', [
                     'photo' => $file,
                 ])->assertStatus(200);
 

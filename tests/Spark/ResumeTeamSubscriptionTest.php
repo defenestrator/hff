@@ -26,7 +26,7 @@ class ResumeTeamSubscriptionTest extends TestCase
         $this->assertTrue($team->subscription()->onGracePeriod());
 
         $this->actingAs($user)
-                ->json('PUT', '/settings/outfitters/'.$team->id.'/subscription', [
+                ->json('PUT', '/settings/teams/'.$team->id.'/subscription', [
                     'plan' => 'spark-test-1',
                 ])->assertStatus(200);
 

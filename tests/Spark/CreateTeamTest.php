@@ -12,7 +12,7 @@ class CreateTeamTest extends TestCase
     public function test_teams_can_be_created()
     {
         $this->actingAs(factory(User::class)->create())
-                ->json('POST', '/settings/outfitters', [
+                ->json('POST', '/settings/teams', [
                     'name' => 'New Team',
                     'slug' => 'new-team'
                 ])->assertStatus(200);
@@ -26,7 +26,7 @@ class CreateTeamTest extends TestCase
     public function test_name_is_required()
     {
         $this->actingAs(factory(User::class)->create())
-                ->json('POST', '/settings/outfitters', [
+                ->json('POST', '/settings/teams', [
                     'name' => '',
                 ])->assertStatus(422);
 

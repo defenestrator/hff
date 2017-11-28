@@ -26,7 +26,7 @@ class RedeemTeamCouponTest extends TestCase
         $this->app->instance(RedeemCoupon::class, $interaction);
 
         $this->actingAs($user)
-                ->json('POST', '/settings/outfitter/'.$team->id.'/payment-method/coupon', [
+                ->json('POST', '/settings/team/'.$team->id.'/payment-method/coupon', [
                     'coupon' => 'coupon-code',
                 ]);
     }
@@ -46,7 +46,7 @@ class RedeemTeamCouponTest extends TestCase
         $this->app->instance(RedeemCoupon::class, $interaction);
 
         $this->actingAs($user)
-                ->json('POST', '/settings/outfitter/'.$team->id.'/payment-method/coupon', [
+                ->json('POST', '/settings/team/'.$team->id.'/payment-method/coupon', [
                     'coupon' => 'coupon-code',
                 ]);
     }

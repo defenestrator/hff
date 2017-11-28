@@ -16,7 +16,7 @@ class MailedInvitationTest extends TestCase
         $team = $this->createTeam();
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/outfitters/'. $team->id .'/invitations', [
+                ->json('POST', '/settings/teams/'. $team->id .'/invitations', [
                     'email' => 'test@hoboflyfishing.com',
                 ]);
 
@@ -29,7 +29,7 @@ class MailedInvitationTest extends TestCase
         $team = $this->createTeam();
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/outfitters/'.$team->id .'/invitations', [
+                ->json('POST', '/settings/teams/'.$team->id .'/invitations', [
                     'email' => '',
                 ])->assertStatus(422);
     }
@@ -40,7 +40,7 @@ class MailedInvitationTest extends TestCase
         $team = $this->createTeam();
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/outfitters/'.$team->id.'/invitations', [
+                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => $team->owner->email,
                 ])->assertStatus(422);
     }
@@ -57,7 +57,7 @@ class MailedInvitationTest extends TestCase
         ]);
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/outfitters/'.$team->id.'/invitations', [
+                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => 'test@hoboflyfishing.com',
                 ])->assertStatus(422);
 
@@ -76,7 +76,7 @@ class MailedInvitationTest extends TestCase
         ]);
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/outfitters/'.$team->id.'/invitations', [
+                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => 'test@hoboflyfishing.com',
                 ])->assertStatus(422);
     }
@@ -96,7 +96,7 @@ class MailedInvitationTest extends TestCase
         ]);
 
         $this->actingAs($team->owner)
-                ->json('POST', '/settings/outfitters/'.$team->id.'/invitations', [
+                ->json('POST', '/settings/teams/'.$team->id.'/invitations', [
                     'email' => 'test@hoboflyfishing.com',
                 ])->assertStatus(422);
     }
