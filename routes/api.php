@@ -25,7 +25,6 @@ Route::group([
     Route::get('/posts/publications/{postId}', 'Api\PostsController@show');
     Route::get('posts/{id}/tags', 'PostTagsController@index');
 
-    Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
 
     // Showcases
     Route::get('/showcases', 'Api\ShowcasesApiController@index');
@@ -38,8 +37,7 @@ Route::group([
     Route::post('showcases/photo', 'ShowcaseImagesController@create');
     Route::get('showcases/{id}/tags', 'PostTagsController@index');
 
-    // Registrations are closed, hacker.
-    Route::any('/register', 'Auth\RegisterController@no');
+
 
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');
@@ -48,5 +46,9 @@ Route::group([
 Route::group([
     'middleware' => 'api'
 ], function () {
+    Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
     Route::post('/sales-inquiry', 'SalesInquiryController@create');
+
+    // Registrations are closed, hacker.
+    Route::any('/register', 'Auth\RegisterController@no');
 });
