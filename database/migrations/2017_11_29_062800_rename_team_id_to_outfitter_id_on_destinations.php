@@ -15,7 +15,7 @@ class RenameTeamIdToOutfitterIdOnDestinations extends Migration
     {
         Schema::table('destinations', function(Blueprint $table)
         {
-            $table->rename('team_id', 'outfitter_id');
+            $table->renameColumn('team_id', 'outfitter_id');
         });
     }
 
@@ -28,7 +28,7 @@ class RenameTeamIdToOutfitterIdOnDestinations extends Migration
     {
         Schema::table('destinations', function(Blueprint $table)
         {
-            $table->rename('outfitter_id', 'team_id');
+            $table->renameColumn('outfitter_id', 'team_id');
         });
     }
 }
