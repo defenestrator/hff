@@ -115,6 +115,6 @@ Route::view('/dashboard', 'dashboard');
 // Confirm Newsletter Subscription
 Route::get('/newsletter-subscription/{token}', 'NewsletterSubscriptionsController@confirm');
 // Registrations are closed, hacker.
-//Route::any('/register', 'Auth\RegisterController@no');
+Route::any('/register', 'Auth\RegisterController@no');
 
 

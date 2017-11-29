@@ -5,6 +5,16 @@
     Dashboard
 @parent
 @stop
+@section('page_styles')
+    <style>
+        .dashboard-links {
+            padding: 1em;
+        }
+        .btn-dashboard {
+            width:100%;
+        }
+    </style>
+@stop
 @section('top')
     @stop
 {{-- content --}}
@@ -15,21 +25,19 @@
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-6 container">
-                            <a class="btn btn-default" href="/cms/showcases">Showcases</a>
+                        <div class="col-sm-6 dashboard-links">
+                            <a class="btn btn-default btn-dashboard" href="/cms/showcases">Showcases</a>
                         </div>
-                        <div class="col-md-6 container">
-                            <a class="btn btn-default" href="cms/posts">Blog Posts</a>
+                        <div class="col-sm-6 dashboard-links">
+                            <a class="btn btn-default btn-dashboard" href="cms/posts">Blog Posts</a>
                         </div>
                     </div>
-                </div>
-                <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-6 container">
-                            <a class="btn btn-default" href="/settings">Your Settings</a>
+                        <div class="col-sm-6 dashboard-links">
+                            <a class="btn btn-default btn-dashboard" href="/settings">Your Settings</a>
                         </div>
-                        <div class="col-md-6 container">
-                            <a class="btn btn-default" href="/spark/kiosk">Site Admin</a>
+                        <div class="col-sm-6 dashboard-links">
+                            <a class="btn btn-default btn-dashboard" href="/spark/kiosk">Site Admin</a>
                         </div>
                     </div>
 
