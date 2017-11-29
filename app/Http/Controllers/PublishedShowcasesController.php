@@ -16,7 +16,7 @@ class PublishedShowcasesController extends ContentController
     public function index(Showcase $showcase, Publication $publication)
     {
         $published = $publication->all('post_id');
-        $showcases = $showcase->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(27);
+        $showcases = $showcase->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(50);
         return view('publications.showcases.index', compact('showcases'));
     }
 

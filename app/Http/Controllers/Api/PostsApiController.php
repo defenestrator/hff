@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Api;
 use App\Post;
 use Illuminate\Http\Request;
 
-class PostsController extends ApiController
+class PostsApiController extends ApiController
 
 {
     /**

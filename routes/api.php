@@ -17,12 +17,12 @@ Route::group([
     Route::post('/deploy-HfDamFwqhXEUUsHg6t4L', 'DeploymentController@create');
 
     // Posts
-    Route::get('/posts', 'Api\PostsController@index');
-    Route::post('/posts', 'Api\PostsController@create');
-    Route::put('/posts/{id}', 'Api\PostsController@update');
-    Route::get('/posts/{id}', 'Api\PostsController@edit');
-    Route::delete('/posts/{id}', 'Api\PostsController@destroy');
-    Route::get('/posts/publications/{postId}', 'Api\PostsController@show');
+    Route::get('/posts', 'Api\PostsApiController@index');
+    Route::post('/posts', 'Api\PostsApiController@create');
+    Route::put('/posts/{id}', 'Api\PostsApiController@update');
+    Route::get('/posts/{id}', 'Api\PostsApiController@edit');
+    Route::delete('/posts/{id}', 'Api\PostsApiController@destroy');
+    Route::get('/posts/publications/{postId}', 'Api\PostsApiController@show');
     Route::get('posts/{id}/tags', 'PostTagsController@index');
 
 
