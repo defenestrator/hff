@@ -111,7 +111,7 @@ Route::group(['middleware' => ['auth:web', 'dev']], function () {
         Route::get('/showcases', 'ShowcasesController@create');
     });
 });
-
+Route::view('/dashboard', 'dashboard');
 // Confirm Newsletter Subscription
 Route::get('/newsletter-subscription/{token}', 'NewsletterSubscriptionsController@confirm');
 // Registrations are closed, hacker.

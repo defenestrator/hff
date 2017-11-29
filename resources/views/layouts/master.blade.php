@@ -43,8 +43,8 @@
                 @include('nav.guest')
             @endif
         </header>
-
         @yield('top')
+        <div class="container">&nbsp;</div>
         <!-- Main Content -->
         <div class="container">
             @yield('content')
