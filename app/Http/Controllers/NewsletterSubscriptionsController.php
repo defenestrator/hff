@@ -26,14 +26,23 @@ class NewsletterSubscriptionsController extends Controller
             'email' => 'required|email'
         ]);
 
-        $sub = NewsletterSubscription::findOrNew([
-            'email_address' => $request->email,
+        if( NewsletterSubscription::where('email_address', '=', $request->email)->count() > 0 ) {
+            $resend = NewsletterSubscription::where('email_address', '=', $request->email)->first();
+            $this->mail->to($request->email)->send(new NewsletterSubscriptionConfirmation($resend));
+            return response([
+                    'message' => 'Subscription already exists for ' . $request->email . '. Please confirm your email address',
+                    'success' => true
+                ]
+            );
+        };
+        $sub = NewsletterSubscription::create([
+            'email_address'=> $request->email,
             'token' => Uuid::uuid1()
         ]);
 
         $this->mail->to($request->email)->send(new NewsletterSubscriptionConfirmation($sub));
         return response([
-            'message'=>'Created subscription for '. $request->email . '. Please confirm your email address',
+            'message' => 'Created subscription for '. $request->email . '. Please confirm your email address',
             'success' => true
         ]);
     }
