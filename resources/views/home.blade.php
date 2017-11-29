@@ -102,10 +102,9 @@
                     <ul style="list-style-type:circle">
                         <li>Solid support after the sale</li>
                         <li>Timely angling intelligence </li>
-                        <li>Logistical strategies for the real world, so you don't get stuck in a bad spot.</li>
+                        <li>Travel strategies for the real world, so you don't get stuck in a bad spot.</li>
                         <li>Custom offline maps. Find your way around with no network connection.</li>
                         <li>Specialized fly patterns designed by local wizards. </li>
-
                         <li>Comprehensive packing checklists.
                             <ul style="list-style-type:square">
                                 <li class="small">Not just angling gear, everything you will need to make your trip comfortable, predictable and awesome.</li>
@@ -151,12 +150,6 @@
     </div>
 @stop
 @section('bottom')
-    <footer style="background-color:#20303f; color:white; padding:1em; margin-top:2em;">
-        <h2 class="text-center">Don't be fooled by <span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s">'<strong>free advice</strong>'</span></h2>
-        <h3 class="text-center">We don't send <span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="0.5s"><strong>The 5th Dude</strong></span> along for the trip</h3>
-        <p class="text-center"><span class="wow fadeIn" data-wow-duration="1.5s" data-wow-delay="1.5s">(on your dime)</span></p>
-        <h4 class="text-center"><span class="wow fadeIn" data-wow-duration="1.0s" data-wow-delay="1.8s">It's that simple.</span></h4>
-    </footer>
     <div class="col-md-12 col-md-offset-0">
         &nbsp;
     </div>
