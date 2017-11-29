@@ -14,7 +14,7 @@ class ShowcasesApiController extends ApiController
      */
     public function index()
     {
-        return Showcase::orderBy('updated_at', 'desc')->paginate(50, ['title', 'id']);
+        return Showcase::orderBy('updated_at', 'desc')->paginate(50, ['title', 'special', 'id']);
     }
 
     /**
@@ -40,6 +40,7 @@ class ShowcasesApiController extends ApiController
 
         return $showcase->create([
             'body' => $request->body ,
+            'special'=> $request->special,
             'slug' => $request->slug ,
             'title' => $request->title ,
             'tagline' => $request->tagline ,
@@ -80,6 +81,7 @@ class ShowcasesApiController extends ApiController
      */
     public function update(Request $request, Showcase $showcase, $id)
     {
+
         $request->validate([
             'body' => 'required|min:20',
             'title' => 'required|min:8',
@@ -102,9 +104,9 @@ class ShowcasesApiController extends ApiController
             'fishery_type' => $request->fishery_type ,
             'sidebar_top' => $request->sidebar_top ,
             'sidebar_bottom' => $request->sidebar_bottom ,
+            'special'=> $request->special,
         ]);
         $content->tag($request->tags);
-        $content->save();
         return $content;
     }
 

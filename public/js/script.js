@@ -37167,6 +37167,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
@@ -37176,13 +37181,17 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
     data: function data() {
         return {
             email: '',
-            message: document.title
+            message: document.title,
+            untouched: true
         };
     },
 
     methods: {
         telephone: function telephone() {
             return window.location.href = "tel:2088599133";
+        },
+        touched: function touched() {
+            return this.untouched = false;
         },
         signup: function signup() {
             var _this = this;
@@ -37205,8 +37214,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                 }).catch(function (error) {
                     _this.error = true;
                     swal({
-                        title: 'Something\'s not right',
-                        text: 'Is that a valid email address?.',
+                        title: 'Something went wrong',
+                        text: 'Is that a valid email address?',
                         type: 'danger',
                         timer: 2000
                     });
@@ -37214,8 +37223,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                 }).catch(function (error) {
                     _this.error = true;
                     swal({
-                        title: 'Something\'s not right',
-                        text: 'Something went wrong.',
+                        title: 'Invalid email address',
+                        text: 'Please enter a valid email address',
                         type: 'danger',
                         timer: 2000
                     });
@@ -37235,6 +37244,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 
     watch: {
         newsletterEmail: function newsletterEmail(value) {
+            this.untouched(false);
             this.validator.validate('email', value);
         }
     }
@@ -37251,6 +37261,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(5);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -37440,6 +37476,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 sidebar_bottom: "",
                 fishery_type: "",
                 region: "",
+                special: false,
                 header_photo: "",
                 thumbnail: "",
                 tags: [],
@@ -37577,6 +37614,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     region: _this2.newShowcase.region,
                     header_photo: _this2.newShowcase.header_photo,
                     thumbnail: _this2.newShowcase.thumbnail,
+                    special: _this2.newShowcase.special,
                     tags: _this2.newShowcase.tags
                 }).then(function (result) {
                     _this2.newShowcase.saveBusy = false;
@@ -37671,6 +37709,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     region: _this6.newShowcase.region,
                     header_photo: _this6.newShowcase.header_photo,
                     thumbnail: _this6.newShowcase.thumbnail,
+                    special: _this6.newShowcase.special,
                     tags: _this6.newShowcase.tags
                 }).then(function (result) {
                     _this6.newShowcase.saveBusy = false;
@@ -52888,7 +52927,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.showcases), function(showcase) {
     return _c('tr', {
       staticClass: "table-hover"
-    }, [_c('td', [_c('strong', [_vm._v(_vm._s(showcase.title))])]), _vm._v(" "), _c('td', [_c('button', {
+    }, [_c('td', [_c('strong', [_vm._v(_vm._s(showcase.title))])]), _vm._v(" "), _c('td', [(showcase.special) ? _c('i', {
+      staticClass: "fa fa-icon fa-check"
+    }) : _vm._e()]), _vm._v(" "), _c('td', [_c('button', {
       staticClass: "btn btn-warning",
       attrs: {
         "role": "button"
@@ -52909,6 +52950,50 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "role": "form"
     }
   }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('div', {
+    staticClass: "checkbox"
+  }, [_c('label', {
+    staticClass: "checkbox checkbox-inline",
+    attrs: {
+      "for": "special"
+    }
+  }, [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newShowcase.special),
+      expression: "newShowcase.special"
+    }],
+    attrs: {
+      "id": "special",
+      "name": "special",
+      "type": "checkbox"
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.newShowcase.special) ? _vm._i(_vm.newShowcase.special, null) > -1 : (_vm.newShowcase.special)
+    },
+    on: {
+      "__c": function($event) {
+        var $$a = _vm.newShowcase.special,
+          $$el = $event.target,
+          $$c = $$el.checked ? (true) : (false);
+        if (Array.isArray($$a)) {
+          var $$v = null,
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && (_vm.newShowcase.special = $$a.concat([$$v]))
+          } else {
+            $$i > -1 && (_vm.newShowcase.special = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+          }
+        } else {
+          _vm.newShowcase.special = $$c
+        }
+      }
+    }
+  }), _vm._v("\n                            Is this is a special?\n                        ")])])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "container"
@@ -52949,6 +53034,55 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "role": "img"
     }
   })])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('p', {
+    attrs: {
+      "role": "presentation",
+      "name": "title"
+    }
+  }, [_c('strong', [_vm._v("Title: ")]), _vm._v(_vm._s(_vm.newShowcase.title))]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|min:8'),
+      expression: "'required|min:8'"
+    }, {
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newShowcase.title),
+      expression: "newShowcase.title"
+    }],
+    class: {
+      'form-control': true, 'input': true, 'is-danger': _vm.errors.has('title')
+    },
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "name": "title",
+      "type": "text",
+      "placeholder": "Showcase Title"
+    },
+    domProps: {
+      "value": (_vm.newShowcase.title)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.newShowcase.title = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('title')),
+      expression: "errors.has('title')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('title')))])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -53117,7 +53251,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_c('h4', {
+  }, [_c('p', {
     attrs: {
       "role": "presentation"
     }
@@ -53353,7 +53487,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"
-  }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+  }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Special?")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h4', {
     attrs: {
@@ -53386,9 +53520,11 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('form', {
+  return _c('div', [_c('form', {
     staticClass: "text-center"
   }, [_c('div', {
+    staticClass: "text-center"
+  }, [_vm._v("Enter your email or simply click call")]), _vm._v(" "), _c('div', {
     staticClass: "input-group"
   }, [_c('span', {
     staticClass: "input-group-btn"
@@ -53421,6 +53557,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "placeholder": "<-call or email ->",
       "name": "email",
+      "id": "newsletter-email",
       "type": "email",
       "aria-describedby": "basic-addon2"
     },
@@ -53428,6 +53565,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "value": (_vm.email)
     },
     on: {
+      "click": _vm.touched,
       "input": function($event) {
         if ($event.target.composing) { return; }
         _vm.email = $event.target.value
@@ -53442,7 +53580,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "submit",
       "role": "button",
-      "disabled": _vm.errors.has('email')
+      "disabled": _vm.errors.has('email') || _vm.untouched
     },
     on: {
       "click": function($event) {
@@ -53475,7 +53613,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('email')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('email')))])])])
+  }, [_vm._v(_vm._s(_vm.errors.first('email')))])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('button', {
     staticClass: "btn btn-danger",

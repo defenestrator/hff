@@ -66,7 +66,8 @@ class Showcase extends Model
         'fishery_type',
         'region',
         'thumbnail',
-        'header_photo'
+        'header_photo',
+        'special'
     ];
 
     /**

@@ -14,20 +14,37 @@
             <thead class="thead-inverse">
             <tr>
                 <th>Title</th>
+                <th>Special?</th>
                 <th>Edit</th>
+
             </tr>
             </thead>
             <tbody class="resource-list">
             <tr v-for="showcase in showcases" class="table-hover">
                 <td><strong>{{ showcase.title }}</strong></td>
+
+                <td>
+                    <i v-if="showcase.special" class="fa fa-icon fa-check"></i>
+                </td>
                 <td><button @click.prevent="(edit(showcase.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="container">
-        <form  enctype="multipart/form-data" class="form-horizontal new-post" v-if="! index" role="form">
-            <!-- Update Button -->
+        <form enctype="multipart/form-data" class="form-horizontal new-post" v-if="! index" role="form">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div class="checkbox">
+                        <label for="special" class="checkbox checkbox-inline">
+                            <input id="special" name="special" v-model="newShowcase.special"
+                                   type="checkbox">
+                            Is this is a special?
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Header Photo Button -->
             <div class="form-group">
                 <div class="container">
                     <label type="button" class="btn btn-primary btn-upload" :disabled="newShowcase.busy">
@@ -39,6 +56,14 @@
                          :style="previewStyle">
 
                     </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <p role="presentation" name="title"><strong>Title: </strong>{{newShowcase.title}}</p>
+                    <input v-validate="'required|min:8'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
+                           type="text" placeholder="Showcase Title" style="width:100%">
+                    <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>
             <div class="form-group">
@@ -64,11 +89,12 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <h4 role="presentation"><strong>Sub-header: </strong>{{ newShowcase.tagline }}</h4>
+                    <p role="presentation"><strong>Sub-header: </strong>{{ newShowcase.tagline }}</p>
                     <input v-validate="'required|min:4'" id="tagline" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
                     <span v-show="errors.has('tagline')" class="help is-danger">{{ errors.first('tagline') }}</span>
                 </div>
             </div>
+
             <div class="form-group">
                 <div class="col-md-12">
                     <h4 role="presentation"><strong>Showcase Body:</strong></h4>
@@ -186,6 +212,7 @@ export default {
                 sidebar_bottom: "",
                 fishery_type: "",
                 region: "",
+                special: false,
                 header_photo:"",
                 thumbnail: "",
                 tags: [],
@@ -332,7 +359,8 @@ export default {
                                 fishery_type: this.newShowcase.fishery_type,
                                 region: this.newShowcase.region,
                                 header_photo:this.newShowcase.header_photo,
-                                thumbnail: this.newShowcase.thumbnail ,
+                                thumbnail: this.newShowcase.thumbnail,
+                                special: this.newShowcase.special,
                                 tags: this.newShowcase.tags
                             })
                             .then(result  => {
@@ -434,6 +462,7 @@ export default {
                         region: this.newShowcase.region,
                         header_photo:this.newShowcase.header_photo,
                         thumbnail: this.newShowcase.thumbnail ,
+                        special: this.newShowcase.special,
                         tags: this.newShowcase.tags
                     })
                     .then(result  => {

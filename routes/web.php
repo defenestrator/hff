@@ -117,4 +117,3 @@ Route::get('/newsletter-subscription/{token}', 'NewsletterSubscriptionsControlle
 // Registrations are closed, hacker.
 Route::any('/register', 'Auth\RegisterController@no');
 
-

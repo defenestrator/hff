@@ -35,6 +35,15 @@
                                 <h3 style="font-weight:600;">{{$showcase->fishery_type}}</h3>
                                 <h3 style="font-weight:600;">{{$showcase->region}}</h3>
                             </div>
+                            @if($showcase->special)
+                            <a href="tel:2088599133">
+                                <button role="button" style=" margin:0 15%; width:70%; z-index:99;" class="btn btn-danger">
+                                    <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
+                                       data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
+                                    call now!
+                                </button>
+                            </a>
+                                @endif
                         </div>
                     </a>
                 </div>
