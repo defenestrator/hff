@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class NewsletterSubscription extends Model
 {
-    protected $fillable = ['email_address', 'confirmed'];
+    protected $fillable = ['email_address', 'token', 'confirmed'];
 
     protected $table = 'newsletter_subscriptions';
 }

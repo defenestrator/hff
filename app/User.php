@@ -87,6 +87,7 @@ class User extends SparkUser
     protected $fillable = [
         'name',
         'email',
+        'uuid'
     ];
 
     /**

@@ -27,5 +27,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Destination extends Model
 {
-    //
+    public function packages()
+    {
+        return $this->hasMany(Package::class);
+    }
+
+    public function map()
+    {
+        return $this->hasOne(Map::class);
+    }
 }

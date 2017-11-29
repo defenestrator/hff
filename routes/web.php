@@ -96,11 +96,10 @@ Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index');
 Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
 
 // AUTH ROUTES
-Route::group(['middleware' => ['auth:web']], function () {
+Route::group(['middleware' => ['auth:web', 'dev']], function () {
     Route::get('/posts/{id}/edit', 'PostsController@edit');
     Route::get('/posts/{id}/tags', 'PostTagsController@edit');
     Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
-
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
 
@@ -113,7 +112,9 @@ Route::group(['middleware' => ['auth:web']], function () {
     });
 });
 
+// Confirm Newsletter Subscription
+Route::get('/newsletter-subscription/{token}', 'NewsletterSubscriptionsController@confirm');
 // Registrations are closed, hacker.
-Route::any('/register', 'Auth\RegisterController@no');
+//Route::any('/register', 'Auth\RegisterController@no');
 
 

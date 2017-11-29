@@ -39,5 +39,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Package extends Model
 {
-    //
+    public function expeditions()
+    {
+        return $this->hasMany(Expedition::class);
+    }
 }
