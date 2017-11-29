@@ -37197,6 +37197,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             var _this = this;
 
             var alertResponse = 'Thanks for your interest in ' + this.message;
+            if (this.untouched == true) {
+                return window.location.href = '/contact';
+            }
             this.validator.validateAll({
                 email: this.email
             }).then(function (result) {
@@ -53524,7 +53527,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "text-center"
   }, [_c('div', {
     staticClass: "text-center"
-  }, [_vm._v("Enter your email or simply click call")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Click the call button or enter your email")]), _vm._v(" "), _c('div', {
     staticClass: "input-group"
   }, [_c('span', {
     staticClass: "input-group-btn"
@@ -53580,7 +53583,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "submit",
       "role": "button",
-      "disabled": _vm.errors.has('email') || _vm.untouched
+      "disabled": _vm.errors.has('email')
     },
     on: {
       "click": function($event) {

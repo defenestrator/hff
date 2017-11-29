@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ContactFormMessage;
 use Illuminate\Support\Facades\Lang;
+use App\Mail\ContactFormNotification;
+use Illuminate\Contracts\Mail\Mailer;
 
 class ContactFormController extends Controller
 {
+    private $mail;
+
+    public function __construct(Mailer $mail)
+    {
+        return $this->mail = $mail;
+    }
     public function create(Request $request)
     {
         // Data to be used on the email view
@@ -22,17 +30,17 @@ class ContactFormController extends Controller
                 'g-recaptcha-response' => 'required|recaptcha'
             ]);
         }
+
         // Save the message to DB
-        ContactFormMessage::create([
+        $data = ContactFormMessage::create([
             'name' => $request
                 ->get('contact-name'),
             'email_address' => $request->get('contact-email'),
             'message' => $request->get('contact-msg'),
         ]);
 
-        if (response('error')) {
-            return redirect('contact')->withInput()->with('errors', $this->error);
-        }
-        return view('index')->with('success', 'We will get back to you as quick as we can!');
+
+        $this->mail->to('support@mg.hoboflyfishing.com')->send(new ContactFormNotification($data));
+        return view('thanks')->with('message', 'We will get back to you as quick as we can!');
     }
 }

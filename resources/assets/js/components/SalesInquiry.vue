@@ -1,7 +1,7 @@
 <template>
     <div>
         <form class="text-center">
-            <div class="text-center">Enter your email or simply click call</div>
+            <div class="text-center">Click the call button or enter your email</div>
             <div class="input-group">
                 <span class="input-group-btn">
                         <a @click.prevent="telephone" title="Give us a call, just click!">
@@ -21,7 +21,7 @@
                                 @click.prevent="signup"
                                 type="submit"
                                 role="button"
-                                :disabled="errors.has('email') || untouched ">
+                                :disabled="errors.has('email')">
                             <i data-name="mail" data-size="20" data-loop="true" data-c="#fff"
                                data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
                         </button>
@@ -57,6 +57,9 @@ export default {
         },
         signup() {
             const alertResponse = 'Thanks for your interest in ' + this.message
+            if (this.untouched == true) {
+                return window.location.href =  '/contact'
+            }
             this.validator.validateAll({
                   email: this.email
               })
