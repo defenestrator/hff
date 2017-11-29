@@ -37826,6 +37826,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 _this9.newShowcase.sidebar_bottom = result.data.sidebar_bottom;
                 _this9.newShowcase.fishery_type = result.data.fishery_type;
                 _this9.newShowcase.region = result.data.region;
+                _this9.newShowcase.special = result.data.special;
                 _this9.checkPublication(id);
                 _this9.saveBusy = false;
                 _this9.newShowcase.saved = true;

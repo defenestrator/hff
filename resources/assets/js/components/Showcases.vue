@@ -578,6 +578,7 @@ export default {
                 this.newShowcase.sidebar_bottom = result.data.sidebar_bottom
                 this.newShowcase.fishery_type = result.data.fishery_type
                 this.newShowcase.region = result.data.region
+                this.newShowcase.special = result.data.special
                 this.checkPublication(id)
                 this.saveBusy = false
                 this.newShowcase.saved = true
