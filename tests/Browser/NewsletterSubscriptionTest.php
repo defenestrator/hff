@@ -17,7 +17,10 @@ class NewsletterSubscriptionTest extends DuskTestCase
     {
         $response = $this->withoutMiddleware()->post('/api/newsletter-subscriptions', ['email' => 'test@example.com']);
 
-        $response->assertJson(["email_address" => "test@example.com"]);
+        $response->assertExactJson([
+            "message" => "Created subscription for test@example.com. Please confirm your email address",
+            "success" => true
+        ]);
     }
 
     /**

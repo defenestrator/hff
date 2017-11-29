@@ -35,7 +35,7 @@ class AddFieldsToShowcasesAndPosts extends Migration
         {
             $table->dropColumn('header_photo');
         });
-        Schema::table('posts', function(Blueprint $table)
+        Schema::table('showcases', function(Blueprint $table)
         {
             $table->dropColumn('lodge_logo');
         });
