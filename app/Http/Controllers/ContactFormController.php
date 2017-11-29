@@ -25,7 +25,7 @@ class ContactFormController extends Controller
             'contact-msg' => 'required|min:7'
         ]);
 
-        if (env(! 'testing')) {
+        if (config('app.env') !== 'testing') {
             $request->validate([
                 'g-recaptcha-response' => 'required|recaptcha'
             ]);
@@ -38,7 +38,6 @@ class ContactFormController extends Controller
             'email_address' => $request->get('contact-email'),
             'message' => $request->get('contact-msg'),
         ]);
-
 
         $this->mail->to('support@mg.hoboflyfishing.com')->send(new ContactFormNotification($data));
         return view('thanks')->with('message', 'We will get back to you as quick as we can!');
