@@ -605,7 +605,7 @@ export default {
          * Get the URL for updating the team photo.
          */
         urlForUpdate() {
-            return `/api/showcases/photo`;
+            return `/api/photo`;
         },
 
 

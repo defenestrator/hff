@@ -36822,6 +36822,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
     watch: {
         'newPost.header_photo': function newPostHeader_photo(val, oldVal) {
             this.newPost.saved = false;
+            this.newPost.saveDisabled = false;
         },
         title: function title(value) {
             this.validator.validate('title', value);
@@ -37116,9 +37117,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
          * Get the URL for updating the team photo.
          */
         urlForUpdate: function urlForUpdate() {
-            return '/api/showcases/photo';
+            return '/api/photo';
         },
-
 
         /**
          * Calculate the style attribute for the photo preview.
@@ -37929,7 +37929,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
          * Get the URL for updating the team photo.
          */
         urlForUpdate: function urlForUpdate() {
-            return '/api/showcases/photo';
+            return '/api/photo';
         },
 
 

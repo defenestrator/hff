@@ -34,10 +34,11 @@ Route::group([
     Route::delete('/showcases/{id}', 'Api\ShowcasesApiController@destroy');
     Route::get('/showcases', 'Api\ShowcasesApiController@index');
     Route::get('/showcases/publications/{showcaseId}', 'Api\ShowcasesApiController@show');
-    Route::post('showcases/photo', 'ShowcaseImagesController@create');
+
     Route::get('showcases/{id}/tags', 'PostTagsController@index');
 
-
+    //Images
+    Route::post('/photo', 'ImagesController@create');
 
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');

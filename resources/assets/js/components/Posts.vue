@@ -6,7 +6,7 @@
             <span v-if="! index">Index</span>
         </button>
         <div v-show="! index">
-            <button @click.prevent="createNewPost" class="btn btn-primary":disabled="! newPost.title">
+            <button @click.prevent="createNewPost" class="btn btn-primary" :disabled="! newPost.title">
                 New
             </button>
         </div>
@@ -204,6 +204,7 @@ export default {
     watch: {
         'newPost.header_photo': function (val, oldVal) {
             this.newPost.saved = false
+            this.newPost.saveDisabled = false
         },
         title(value) {
             this.validator.validate('title', value);
@@ -436,7 +437,8 @@ export default {
             data.append('header_photo', this.$refs.header_photo.files[0]);
 
             return data;
-        },        createNewPost() {
+        },
+        createNewPost() {
             if (!this.newPost.postId) {
                 if (confirm('Abandon this post and start over?')) {
                     this.clear()
@@ -508,10 +510,8 @@ export default {
          * Get the URL for updating the team photo.
          */
         urlForUpdate() {
-            return `/api/showcases/photo`;
+            return `/api/photo`;
         },
-
-
         /**
          * Calculate the style attribute for the photo preview.
          */
