@@ -25,7 +25,9 @@
             @foreach($posts as $post)
                 <div class="post">
                     <div class="featured-text relative-left">
-                        <h3 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h3>
+                        <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
+                        <img src="{{$post->header_photo}}" alt="{{$post->title}}" title="{{$post->title}}">
+                        <hr>
                         <article>
                             <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
                                 {!! str_limit(strip_tags($post->body, '<img>'), 200, '...') !!}

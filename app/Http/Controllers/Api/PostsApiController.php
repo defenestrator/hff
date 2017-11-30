@@ -29,11 +29,13 @@ class PostsApiController extends ApiController
         $request->validate([
             'body' => 'required|min:8',
             'slug' => 'required|alpha_dash|unique:posts,slug',
-            'title' => 'required|min:2'
+            'title' => 'required|min:2',
+            'header_photo' => 'required'
         ]);
         return $post->create([
             'user_id'  => $request->user_id,
             'author' => $request->author,
+            'header_photo' => $request->header_photo,
             'body'  => $request->body,
             'title' => $request->title,
             'slug' => $request->slug
@@ -71,24 +73,21 @@ class PostsApiController extends ApiController
     {
         $request->validate([
             'body' => 'required|min:8',
-            'title' => 'required|min:2'
+            'title' => 'required|min:2',
+            'header_photo' => 'required'
         ]);
         $content = $post->find($id);
 
         $content->update([
             'body'  => $request->body,
-            'title' => $request->title
+            'title' => $request->title,
+            'header_photo' => $request->header_photo,
         ]);
         $content->tag($request->tags);
         $content->save();
         return $content;
     }
 
-    public function display()
-    {
-        $api_token = config('app.api_token');
-        return view('cms.posts', compact('api_token'));
-    }
     /**
      * @param Post $post
      * @param $id

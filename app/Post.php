@@ -43,7 +43,7 @@ class Post extends Model
 {
     use Taggable;
 
-    protected $fillable = [ 'title', 'slug', 'user_id', 'body', 'author'];
+    protected $fillable = [ 'title', 'slug', 'user_id', 'body', 'author', 'header_photo'];
     protected $publication = null;
 
     /**

@@ -27,6 +27,20 @@
     </div>
     <div class="container">
         <form class="form-horizontal new-post" v-if="! index" role="form">
+            <!-- Header Photo Button -->
+            <div class="form-group">
+                <div class="container">
+                    <label type="button" class="btn btn-primary btn-upload" :disabled="newPost.busy">
+                        <span>Select Header Photo</span>
+                        <input v-validate="'required|mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
+                    </label>
+                    <span v-show="errors.has('header_photo')" class="help is-danger">{{ errors.first('header_photo') }}</span>
+                    <div role="img" class="header-photo-preview"
+                         :style="previewStyle">
+
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <div class="col-md-12">
                     <input v-validate="'required|min:2'" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
@@ -134,7 +148,8 @@ export default {
         return {
             index: true,
             posts: [],
-            newPost: {
+            newPost: new SparkForm ({
+                header_photo:'',
                 title: '',
                 slug: '',
                 body: '',
@@ -150,7 +165,7 @@ export default {
                 published: null,
                 publicationId: null,
                 errors: null
-            },
+            }),
             trumbowygConfig: {
                 id: 'trumbowyg',
                 autogrowOnEnter: true,
@@ -187,6 +202,9 @@ export default {
         }
     },
     watch: {
+        'newPost.header_photo': function (val, oldVal) {
+            this.newPost.saved = false
+        },
         title(value) {
             this.validator.validate('title', value);
         },
@@ -248,6 +266,7 @@ export default {
                                 title: this.newPost.title,
                                 user_id: Spark.state.user.id,
                                 author: Spark.state.user.name,
+                                header_photo: this.newPost.header_photo,
                                 slug:  this.newPost.slug,
                                 body:  this.newPost.body,
                                 tags: this.newPost.tags
@@ -257,7 +276,6 @@ export default {
                                 this.newPost.saveBusy = false
                                 this.newPost.saved= true
                                 this.newPost.postId = result.data.id
-                                console.log(result)
                              return result
                             })
                             .catch(error => {
@@ -345,6 +363,7 @@ export default {
                 }).then((result) => {
                     axios.put(`/api/posts/` + this.newPost.postId, {
                         title: this.newPost.title,
+                        header_photo: this.newPost.header_photo,
                         user_id: Spark.state.user.id,
                         author: Spark.state.user.name,
                         body:  this.newPost.body,
@@ -380,8 +399,44 @@ export default {
                 });
             }
         },
+        /**
+         * Update the showcase photo.
+         */
+        update_header(e) {
+            e.preventDefault();
 
-        createNewPost() {
+            if ( ! this.$refs.header_photo.files.length) {
+                return;
+            }
+
+            var self = this;
+
+            this.newPost.startProcessing();
+
+            // We need to gather a fresh FormData instance with the profile photo appended to
+            // the data so we can POST it up to the server. This will allow us to do async
+            // uploads of the profile photos. We will update the user after this action.
+            axios.post(this.urlForUpdate, this.gatherFormData())
+                    .then(result  => {
+                this.newPost.header_photo = result.data.header_photo
+            this.newPost.thumbnail = result.data.thumbnail
+            self.newPost.finishProcessing();
+        },
+            (error) => {
+                self.newPost.setErrors(error.response.data.errors);
+            }
+        );
+        },
+        /**
+         * Gather the form data for the photo upload.
+         */
+        gatherFormData() {
+            const data = new FormData();
+
+            data.append('header_photo', this.$refs.header_photo.files[0]);
+
+            return data;
+        },        createNewPost() {
             if (!this.newPost.postId) {
                 if (confirm('Abandon this post and start over?')) {
                     this.clear()
@@ -398,6 +453,7 @@ export default {
             this.newPost.published = null
             this.newPost.publicationId = null
             this.newPost.postId = null
+            this.newPost.header_photo = ''
             this.newPost.title = ''
             this.newPost.body = ''
             this.newPost.slug = ''
@@ -412,6 +468,7 @@ export default {
             axios.get(`/api/posts/`+ id , {})
             .then(result => {
                 this.newPost.title = result.data.title;
+                this.newPost.header_photo = result.data.header_photo
                 this.newPost.slug = result.data.slug;
                 this.newPost.body = result.data.body;
                 this.newPost.postId = result.data.id;
@@ -445,7 +502,23 @@ export default {
             slug: 'required'
         });
         this.$set(this, 'errors', this.validator.errors);
-    }
+    },
+    computed: {
+        /**
+         * Get the URL for updating the team photo.
+         */
+        urlForUpdate() {
+            return `/api/showcases/photo`;
+        },
+
+
+        /**
+         * Calculate the style attribute for the photo preview.
+         */
+        previewStyle() {
+            return `background-image: url(${this.newPost.header_photo})`;
+        }
+    },
 }
 </script>
 <style>
