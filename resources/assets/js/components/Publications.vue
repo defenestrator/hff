@@ -2,7 +2,7 @@
     <div class="col-md-12 col-md-offset-0" id="publications">
         <div class="row">
             <div class="col-md-6">
-                <h3>Unpublished Posts</h3>
+                <h3 v-if="unpublishedPosts.length > 0">Unpublished Posts</h3>
                 <div class="col-md-12 publication" v-for="unpublishedPost in unpublishedPosts">
                     <div class="col-md-8">
                         {{ unpublishedPost.title }}
@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h3>Unpublished Showcases</h3>
+                <h3 v-if="unpublishedShowcases.length > 0">Unpublished Showcases</h3>
                 <div class="col-md-12 publication" v-for="unpublishedShowcase in unpublishedShowcases">
                     <div class="col-md-8">
                         {{ unpublishedShowcase.title }}
@@ -30,7 +30,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h3>Published Posts</h3>
+                <h3 v-if="posts.length > 0">Published Posts</h3>
                 <div class="col-md-12 publication" v-for="post in posts">
                     <div class="col-md-8">
                     {{ post.title }}
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h3>Published Showcases</h3>
+                <h3 v-if="showcases.length > 0">Published Showcases</h3>
                 <div class="col-md-12 publication" v-for="showcase in showcases">
                     <div class="col-md-8">
                         {{ showcase.title }}

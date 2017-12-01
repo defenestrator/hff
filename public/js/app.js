@@ -55924,7 +55924,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_c('h3', [_vm._v("Unpublished Posts")]), _vm._v(" "), _vm._l((_vm.unpublishedPosts), function(unpublishedPost) {
+  }, [(_vm.unpublishedPosts.length > 0) ? _c('h3', [_vm._v("Unpublished Posts")]) : _vm._e(), _vm._v(" "), _vm._l((_vm.unpublishedPosts), function(unpublishedPost) {
     return _c('div', {
       staticClass: "col-md-12 publication"
     }, [_c('div', {
@@ -55942,7 +55942,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v("\n                        Publish\n                    ")])])])
   })], 2), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
-  }, [_c('h3', [_vm._v("Unpublished Showcases")]), _vm._v(" "), _vm._l((_vm.unpublishedShowcases), function(unpublishedShowcase) {
+  }, [(_vm.unpublishedShowcases.length > 0) ? _c('h3', [_vm._v("Unpublished Showcases")]) : _vm._e(), _vm._v(" "), _vm._l((_vm.unpublishedShowcases), function(unpublishedShowcase) {
     return _c('div', {
       staticClass: "col-md-12 publication"
     }, [_c('div', {
@@ -55962,7 +55962,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_c('h3', [_vm._v("Published Posts")]), _vm._v(" "), _vm._l((_vm.posts), function(post) {
+  }, [(_vm.posts.length > 0) ? _c('h3', [_vm._v("Published Posts")]) : _vm._e(), _vm._v(" "), _vm._l((_vm.posts), function(post) {
     return _c('div', {
       staticClass: "col-md-12 publication"
     }, [_c('div', {
@@ -55980,7 +55980,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v("\n                        Unpublish\n                    ")])])])
   })], 2), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
-  }, [_c('h3', [_vm._v("Published Showcases")]), _vm._v(" "), _vm._l((_vm.showcases), function(showcase) {
+  }, [(_vm.showcases.length > 0) ? _c('h3', [_vm._v("Published Showcases")]) : _vm._e(), _vm._v(" "), _vm._l((_vm.showcases), function(showcase) {
     return _c('div', {
       staticClass: "col-md-12 publication"
     }, [_c('div', {

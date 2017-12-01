@@ -8,6 +8,7 @@ Route::view('/terms', 'terms')->name('terms');
 Route::view('/privacy','privacy')->name('privacy');
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact','ContactFormController@create')->name('contact');
+Route::get('/tag/{tag}', 'TagsController@index');
 
 // Features and Specials
 

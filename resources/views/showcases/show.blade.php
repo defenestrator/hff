@@ -26,7 +26,7 @@
             <section>
                 <article class="article">
                     {!! $showcase->body !!}
-                    <div id="disqus_thread"></div>
+
                 </article>
             </section>
         </div>
@@ -36,14 +36,17 @@
                     {!! $showcase->sidebar_top !!}
                     <sales-inquiry></sales-inquiry>
                     {!! $showcase->sidebar_bottom !!}
-                    <p>
-                        <strong>Tags: </strong>
-                        @forelse($showcase->tags as $tag)
-                            <a href="{{ URL::to('showcases/' . ($tag->normalized) . '/tag') }}">{{ $tag->name }}</a>,
-                        @empty
-                            No Tags
-                        @endforelse
-                    </p>
+                    <div>
+                        <p>
+                            <strong>Tags: </strong>
+                            @forelse($showcase->tags as $tag)
+                                <a href="{{ URL::to('showcases/' . ($tag->normalized) . '/tag') }}">{{ $tag->name }}</a>,
+                            @empty
+                                No Tags
+                            @endforelse
+                        </p>
+                        <div id="disqus_thread"></div>
+                    </div>
                 </article>
             </section>
         </div>
@@ -57,7 +60,7 @@
             <p>
             </p>
             <p>
-
+                &nbsp;
             </p>
         </div>
     </div>
