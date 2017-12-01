@@ -11,8 +11,12 @@ class HomeController extends Controller
     protected $showcase;
     protected $publication;
     protected $post;
+
     /**
      * HomeController constructor.
+     * @param Showcase $showcase
+     * @param Publication $publication
+     * @param Post $post
      */
     public function __construct(Showcase $showcase, Publication $publication, Post $post)
     {
@@ -22,9 +26,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
