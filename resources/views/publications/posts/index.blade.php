@@ -69,7 +69,7 @@
         {{--</nav>--}}
 
     </div>
-    </div>
+</div>
 @stop
 @section('bottom')
     <div class="col-md-12 col-md-offset-0">
