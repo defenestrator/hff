@@ -14,6 +14,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-0">
                 <h1>Showcases for tag "{{$tag}}"</h1>
+                <h2><a href="/tag/{{$tag}}">See all content for this tag</a></h2>
             </div>
         </div>
     </div>
