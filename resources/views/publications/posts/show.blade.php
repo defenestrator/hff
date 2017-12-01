@@ -61,7 +61,7 @@
                                  style="background-image: url('{{$showcase->thumbnail}}');
                                          background-position: center center;">
                                 <div class="caption">
-                                    <h3 style="font-weight:600;">{{$showcase->fishery_type}}</h3>
+
                                     <h3 style="font-weight:600;">{{$showcase->region}}</h3>
                                 </div>
                                 @if($showcase->special)
