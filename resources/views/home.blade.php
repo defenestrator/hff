@@ -141,6 +141,7 @@
         @endforeach
     </div>
     <div class="row">
+        <hr>
         <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-0">
             <article>
                 <section>
