@@ -13,7 +13,7 @@
                 background: #1a1a1a url('{{$showcase->header_photo}}') center center no-repeat;
                 background-size:cover; height:50vh;" >
         <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center wow pulse" data-wow-duration="0.5s">
-            <a id="Blackfish_Lodge"></a>
+            <a id="{{$showcase->title}}"></a>
             {{$showcase->title}}
         </h1>
         <h2 class="feature-tagline text-center">{{$showcase->tagline}} </h2>
@@ -45,7 +45,17 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12 col-md-offset-0">
-            <h2> </h2>
+            <p>
+                <strong>Tags: </strong>
+                @forelse($showcase->tags as $tag)
+                    <a href="{{ URL::to('showcases/' . ($tag->normalized) . '/tag') }}">{{ $tag->name }}</a>,
+                @empty
+                    No Tags
+                @endforelse
+            </p>
+            <p>
+            <div id="disqus_thread"></div>
+            </p>
         </div>
     </div>
         </div>

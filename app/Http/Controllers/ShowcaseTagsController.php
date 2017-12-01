@@ -14,11 +14,10 @@ class ShowcaseTagsController extends ContentController
      */
     public function index(Showcase $showcase, $normalized)
     {
-
+        $tag = $normalized;
         $showcases = $showcase->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get();
         $pagetitle = $showcase->withAnyTags([$normalized])->orderBy('created_at', 'desc')->pluck('title')->first();
-        $smartass = $this->smartass;
-        return view('publications.showcases.index', compact('showcases' , 'smartass', 'pagetitle'));
+        return view('showcases.index', compact('showcases' , 'pagetitle', 'tag'));
     }
 
     public function show(Showcase $showcase, $id)
