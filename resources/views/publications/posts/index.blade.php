@@ -61,15 +61,21 @@
             @endforeach
         </div>
     <div class="col-md-4 col-md-offset-0">
-            <h3 class="text-center">Destinations</h3>
-        <nav class="navbar navbar-default">
-            <ul class="nav navbar-nav side-menu">
-                @include('nav.places')
-            </ul>
-        </nav>
+        <h3 class="text-center">&nbsp;</h3>
+        {{--<nav class="navbar navbar-default">--}}
+            {{--<ul class="nav navbar-nav side-menu">--}}
+                {{--@include('nav.places')--}}
+            {{--</ul>--}}
+        {{--</nav>--}}
 
     </div>
     </div>
+@stop
+@section('bottom')
+    <div class="col-md-12 col-md-offset-0">
+        &nbsp;
+    </div>
+    <br>
 @stop
 
 @section('page_scripts')

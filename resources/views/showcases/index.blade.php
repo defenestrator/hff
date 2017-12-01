@@ -56,9 +56,15 @@
                 {{--@include('nav.places')--}}
             {{--</ul>--}}
         {{--</nav>--}}
+        <h2>&nbsp;</h2>
+    </div>
+    </div>
+@stop
+@section('bottom')
+    <div class="col-md-12 col-md-offset-0">
         &nbsp;
     </div>
-    </div>
+    <br>
 @stop
 
 @section('page_scripts')
