@@ -7,6 +7,7 @@ Route::redirect('/publications/posts/steelhead-on-the-salmon-river-with-backcoun
 
 // Redirected Static Trip Pages, 301
     // features
+    Route::redirect('/publications/podcasts', 'https://have-rod-will-travel.fireside.fm/')->name('podredirect');
     Route::redirect('/flats-special', '/features/flats-special');
     Route::redirect('/showcases/weekly-special', '/showcases/costa-rica-roosterfish');
     // trips changed to destinations
