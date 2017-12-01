@@ -22,7 +22,6 @@
         <h4 style="margin:5px 10px;">We think that's an easy question</h4>
         <h2 style="margin:5px 10px;">Book with us and make it happen.</h2>
     </div>
-    <hr>
 @stop
 @section('content')
     <div class="text-center">
