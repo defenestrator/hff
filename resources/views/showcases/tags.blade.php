@@ -34,21 +34,24 @@
                         <a href="/showcases/{{$showcase->slug}}">
                             <img style="width:100%;" src="{{$showcase->header_photo}}" alt="{{$showcase->title}}" title="{{$showcase->title}}">
                         </a>
-                        <hr>
                         <article>
                             <a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}">
-                                {!! str_limit(strip_tags($showcase->body), 200, '...') !!}
+                                <p>{!! str_limit(strip_tags($showcase->body), 200, '...') !!}</p>
                             </a>
                         </article>
-                        <br>
                         <p class="additional-showcase-wrap">
-                        <span class="taglinks">Tags:
-                            @forelse($showcase->tags as $tag)
-                                <a href="{{ URL::to('showcases/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
-                            @empty
-                                No Tags
-                            @endforelse
-                        </span>
+                            <span class="text-right">
+                                <a href="/publications/showcases/{{ $showcase->slug }}"> <button class="btn btn-primary">Read More</button></a>
+                            </span>
+                        </p>
+                        <p>
+                            <span class="taglinks">Tags:
+                                @forelse($showcase->tags as $tag)
+                                    <a href="{{ URL::to('showcases/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
+                                @empty
+                                    No Tags
+                                @endforelse
+                            </span>
                         </p>
                     </div>
                 </div>

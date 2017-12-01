@@ -33,23 +33,15 @@
                         <a href="/publications/posts/{{$post->slug}}">
                             <img src="{{$post->header_photo}}" alt="{{$post->title}}" title="{{$post->title}}">
                         </a>
-                        <hr>
                         <article>
                             <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
-                                {!! str_limit(strip_tags($post->body), 200, '...') !!}
+                                <p>{!! str_limit(strip_tags($post->body), 200, '...') !!}</p>
                             </a>
                         </article>
-                        <br>
                         <p>
-                            <span class="additional-post">
-                                by {{ $post->author }}
+                            <span class="text-right">
+                                <a href="/publications/posts/{{ $post->slug }}"> <button class="btn btn-primary">Read More</button></a>
                             </span>
-                            <span class="additional-post">{{$post->created_at->diffForHumans()}}
-                            </span>
-                            &nbsp;&nbsp;
-                        <span class="text-right">
-                            <a href="/publications/posts/{{ $post->slug }}"> <button class="btn btn-primary">Read More</button></a>
-                        </span>&nbsp;&nbsp;
                         </p>
                         <p class="additional-post-wrap">
                             <span class="taglinks">Tags:
