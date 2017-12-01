@@ -11,17 +11,23 @@
 @section('top')
     <div class="tagline text-center">
         <h1 class="bg-border wow pulse" data-wow-duration="0.7s">
-            Elite Destinations, Local Flavor
+            Fly Fishing Adventure Travel
         </h1>
+        <h2>
+            Elite Destinations, Local Flavor
+        </h2>
     </div>
     <div class="text-center">
-        <h4 style="margin:5px 10px;">Which sounds better to you?</h4>
-        <h3 style="margin:5px 10px;">The trip of a lifetime,</h3>
-        <h3 style="margin:5px 10px;">or a lifetime of trips?</h3>
+        <h4 style="margin:5px 10px;">The trip of a lifetime, or a lifetime of trips?</h4>
+        <h4 style="margin:5px 10px;">We think that's an easy question</h4>
+        <h2 style="margin:5px 10px;">Book with us and make it happen.</h2>
     </div>
     <hr>
 @stop
 @section('content')
+    <div class="text-center">
+
+        </div>
     <!-- Listings Section Start -->
     @foreach(array_chunk($showcases->all(), 2) as $showcaseRow)
         <div class="row">
