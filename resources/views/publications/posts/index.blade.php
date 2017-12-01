@@ -26,7 +26,9 @@
                 <div class="post">
                     <div class="featured-text relative-left">
                         <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
-                        <img src="{{$post->header_photo}}" alt="{{$post->title}}" title="{{$post->title}}">
+                        <a href="/publications/posts/{{$post->slug}}">
+                            <img src="{{$post->header_photo}}" alt="{{$post->title}}" title="{{$post->title}}">
+                        </a>
                         <hr>
                         <article>
                             <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">

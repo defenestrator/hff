@@ -53,7 +53,7 @@
     <hr>
     <!-- Service Section Start-->
     <div class="row">
-        <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="1s">
+        <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="0.5s">
             <div class="box">
                 <div class="box-icon">
                     <i class="livicon diy-icon" data-name="anchor" data-size="55" data-c="#3f844e" data-hc="#3f844e"></i>
@@ -69,7 +69,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="1s" data-wow-delay="0.1s">
+        <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="0.5s" data-wow-delay="0.1s">
             <!-- Box Start -->
             <div class="box">
                 <div class="box-icon box-icon1">
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="1.6s" data-wow-delay="0.1s">
+        <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="0.5s" data-wow-delay="0.2s">
             <div class="box">
                 <div class="box-icon box-icon2">
                     <i class="livicon icon1" data-name="rocket" data-size="55" data-c="#f89a14" data-hc="#f89a14"></i>
@@ -111,7 +111,7 @@
                 <div style="height: 550px;overflow:hidden;">
                     <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
                     <a href="/publications/posts/{{$post->slug}}">
-                    <div style="overflow:hidden; min-height: 200px; background-image:url('{{$post->header_photo}}'); background-size:cover; background-repeat:no-repeat">
+                    <div style="overflow:hidden; min-height: 250px; background-image:url('{{$post->header_photo}}'); background-size:contain; background-repeat:no-repeat">
                     </div>
                     </a>
                     <br>
