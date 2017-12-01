@@ -8,7 +8,7 @@ Route::redirect('/publications/posts/steelhead-on-the-salmon-river-with-backcoun
 // Redirected Static Trip Pages, 301
     // features
     Route::redirect('/flats-special', '/features/flats-special');
-
+    Route::redirect('/showcases/weekly-special', '/showcases/costa-rica-roosterfish');
     // trips changed to destinations
     Route::redirect('/trips/backcountry-river-guides', '/destinations/idaho/backcountry-river-guides');
     Route::redirect('/trips/costa-de-cocos', '/destinations/yucatan/costa-de-cocos');
