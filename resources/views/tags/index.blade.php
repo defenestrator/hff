@@ -37,12 +37,6 @@
                         </article>
                         <br>
                         <p>
-                            <span class="additional-post">
-                                by {{ $content->author }}
-                            </span>
-                            <span class="additional-post">{{$content->created_at->diffForHumans()}}
-                            </span>
-                            &nbsp;&nbsp;
                         <span class="text-right">
                             <a href="/publications/{{$content->type}}/{{ $content->slug }}"> <button class="btn btn-primary">Read More</button></a>
                         </span>&nbsp;&nbsp;
