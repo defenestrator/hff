@@ -108,10 +108,10 @@
         @foreach($posts as $post)
             <div class="col-md-4">
             <div class="post">
-                <div style="height: 550px;overflow:hidden;">
+                <div style="height: 600px;overflow:hidden;">
                     <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
                     <a href="/publications/posts/{{$post->slug}}">
-                    <div style="overflow:hidden; min-height: 250px; background-image:url('{{$post->header_photo}}'); background-size:contain; background-repeat:no-repeat">
+                    <div style="overflow:hidden; min-height: 200px; background-image:url('{{$post->header_photo}}'); background-size:contain; background-repeat:no-repeat">
                     </div>
                     </a>
                     <br>
