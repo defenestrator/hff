@@ -10,10 +10,10 @@
 
 @section('top')
     <div class="tagline text-center">
-        <h1 class="bg-border wow pulse" data-wow-duration="0.7s">
+        <h1 style="font-weight:600;" class="bg-border wow pulse" data-wow-duration="0.7s">
             Fly Fishing Adventure Travel
         </h1>
-        <h2>
+        <h2 style="font-weight:600;">
             Elite Destinations, Local Flavor
         </h2>
     </div>
