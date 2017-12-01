@@ -24,9 +24,6 @@
     </div>
 @stop
 @section('content')
-    <div class="text-center">
-
-        </div>
     <!-- Listings Section Start -->
     @foreach(array_chunk($showcases->all(), 2) as $showcaseRow)
         <div class="row">
