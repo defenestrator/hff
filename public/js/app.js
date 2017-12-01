@@ -38477,12 +38477,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return Promise.reject(error);
             });
         },
-        publish: function publish(id, type) {
+        pubShowcase: function pubShowcase(id, type) {
             var _this2 = this;
 
             axios.post("/api/publications", {
                 type: type,
-                post_id: id
+                showcase_id: id
             }).then(function (result) {
                 _this2.getIndex();
                 return result;
@@ -38491,21 +38491,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 return Promise.reject(error);
             });
         },
-        unpubShowcase: function unpubShowcase(id) {
+        pubPost: function pubPost(id, type) {
             var _this3 = this;
 
-            axios.delete("/api/publications/showcase/" + id, {}).then(function (result) {
+            axios.post("/api/publications", {
+                type: type,
+                post_id: id
+            }).then(function (result) {
                 _this3.getIndex();
+                return result;
+            }).catch(function (error) {
+                _this3.newPost.publishBusy = false;
+                return Promise.reject(error);
+            });
+        },
+        unpubShowcase: function unpubShowcase(id) {
+            var _this4 = this;
+
+            axios.delete("/api/publications/showcase/" + id, {}).then(function (result) {
+                _this4.getIndex();
                 return result;
             }).catch(function (error) {
                 return Promise.reject(error);
             });
         },
         unpubPost: function unpubPost(id) {
-            var _this4 = this;
+            var _this5 = this;
 
             axios.delete("/api/publications/post/" + id, {}).then(function (result) {
-                _this4.getIndex();
+                _this5.getIndex();
                 return result;
             }).catch(function (error) {
                 return Promise.reject(error);
@@ -55922,7 +55936,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       on: {
         "click": function($event) {
           $event.preventDefault();
-          _vm.publish(unpublishedPost.id, 'post')
+          _vm.pubPost(unpublishedPost.id, 'post')
         }
       }
     }, [_vm._v("\n                        Publish\n                    ")])])])
@@ -55940,7 +55954,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       on: {
         "click": function($event) {
           $event.preventDefault();
-          _vm.publish(unpublishedShowcase.id, 'showcase')
+          _vm.pubShowcase(unpublishedShowcase.id, 'showcase')
         }
       }
     }, [_vm._v("\n                        Publish\n                    ")])])])

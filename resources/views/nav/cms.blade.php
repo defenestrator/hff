@@ -11,7 +11,6 @@
         <li>
             <a href="/cms/publications">Publications</a>
         </li>
-        <li class="divider"></li>
         {{--<li>--}}
             {{--<a href="/cms/podcasts">Index</a>--}}
         {{--</li>--}}

@@ -8,7 +8,7 @@
                         {{ unpublishedPost.title }}
                     </div>
                     <div class="col-md-4">
-                        <button class="btn btn-warning"  @click.prevent="publish(unpublishedPost.id, 'post')">
+                        <button class="btn btn-warning"  @click.prevent="pubPost(unpublishedPost.id, 'post')">
                             Publish
                         </button>
                     </div>
@@ -21,7 +21,7 @@
                         {{ unpublishedShowcase.title }}
                     </div>
                     <div class="col-md-4">
-                        <button class="btn btn-warning"  @click.prevent="publish(unpublishedShowcase.id, 'showcase')">
+                        <button class="btn btn-warning"  @click.prevent="pubShowcase(unpublishedShowcase.id, 'showcase')">
                             Publish
                         </button>
                     </div>
@@ -93,10 +93,10 @@ export default {
                 return Promise.reject(error)
             })
         },
-        publish(id, type) {
+        pubShowcase(id, type) {
              axios.post(`/api/publications`, {
                     type:    type,
-                    post_id: id
+                    showcase_id: id
                  })
                  .then(result  => {
                     this.getIndex()
@@ -106,6 +106,21 @@ export default {
                      this.newPost.publishBusy = false
                      return Promise.reject(error)
                  });
+
+        },
+        pubPost(id, type) {
+            axios.post(`/api/publications`, {
+                        type:    type,
+                        post_id: id
+                    })
+                    .then(result  => {
+                this.getIndex()
+            return result
+        })
+        .catch(error => {
+                this.newPost.publishBusy = false
+            return Promise.reject(error)
+        });
 
         },
         unpubShowcase(id) {
