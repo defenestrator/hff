@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Have Rod Will Travel | Hobo Fly Fishing | Elite Destination, Local Flavor
+    Have Rod Will Travel | Hobo Fly Fishing | Elite Destinations, Local Flavor
     @parent
 @stop
 
