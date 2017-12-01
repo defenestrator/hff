@@ -10,15 +10,15 @@
                 <div class="modal-content">
                     <div class="modal-header text-center">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:12px; width: 10%;">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" style="font-size:10px; width: 10%;">
                                 <i class="fa fa-window-close" aria-hidden="true"></i>
                             </button>
 
-                            <button class="btn btn-default" :class="{'active': showingNotifications}" style="font-size:12px; width: 45%;" @click="showNotifications">
+                            <button class="btn btn-default" :class="{'active': showingNotifications}" style="font-size:10px; width: 45%;" @click="showNotifications">
                                 Notifications
                             </button>
 
-                            <button class="btn btn-default" :class="{'active': showingAnnouncements}" style="font-size:12px; width: 45%;" @click="showAnnouncements">
+                            <button class="btn btn-default" :class="{'active': showingAnnouncements}" style="font-size:10px; width: 45%;" @click="showAnnouncements">
                                 Announcements <i class="fa fa-circle text-danger p-l-xs" v-if="hasUnreadAnnouncements"></i>
                             </button>
                         </div>
