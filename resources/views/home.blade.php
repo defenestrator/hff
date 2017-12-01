@@ -51,6 +51,44 @@
         </div>
     @endforeach
     <hr>
+    <div class="row">
+        <div class="container"><h2>Latest Blog Posts</h2></div>
+        <hr>
+        @foreach($posts as $post)
+            <div class="col-md-4">
+            <div class="post">
+                <div style="height:550px;overflow:hidden;">
+                    <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
+                    <a href="/publications/posts/{{$post->slug}}">
+                    <div style="overflow:hidden; height: 150px; background-image:url('{{$post->header_photo}}'); background-size:contain; background-repeat:no-repeat">
+                    </div>
+                    </a>
+                    <br>
+                    <article>
+                        <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
+                            {!! str_limit(strip_tags($post->body), 200, '...') !!}
+                        </a>
+                    </article>
+                    <br>
+                    <p>
+                        <span class="text-right">
+                            <a href="/publications/posts/{{ $post->slug }}"> <button class="btn btn-primary">Read More</button></a>
+                        </span>&nbsp;&nbsp;
+                    </p>
+                    <p class="additional-post-wrap">
+                            <span class="taglinks">Tags:
+                                @forelse($post->tags as $tag)
+                                    <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
+                                @empty
+                                    No Tags
+                                @endforelse
+                            </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
     <!-- Service Section Start-->
     <div class="row">
         <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="0.5s">
@@ -100,45 +138,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="container"><h2>Latest Blog Posts</h2></div>
-        <hr>
-        @foreach($posts as $post)
-            <div class="col-md-4">
-            <div class="post">
-                <div style="height:550px;overflow:hidden;">
-                    <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
-                    <a href="/publications/posts/{{$post->slug}}">
-                    <div style="overflow:hidden; height: 150px; background-image:url('{{$post->header_photo}}'); background-size:contain; background-repeat:no-repeat">
-                    </div>
-                    </a>
-                    <br>
-                    <article>
-                        <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
-                            {!! str_limit(strip_tags($post->body), 200, '...') !!}
-                        </a>
-                    </article>
-                    <br>
-                    <p>
-                        <span class="text-right">
-                            <a href="/publications/posts/{{ $post->slug }}"> <button class="btn btn-primary">Read More</button></a>
-                        </span>&nbsp;&nbsp;
-                    </p>
-                    <p class="additional-post-wrap">
-                            <span class="taglinks">Tags:
-                                @forelse($post->tags as $tag)
-                                    <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
-                                @empty
-                                    No Tags
-                                @endforelse
-                            </span>
-                    </p>
-                </div>
-            </div>
-        </div>
-        @endforeach
     </div>
     <div class="row">
         <hr>
