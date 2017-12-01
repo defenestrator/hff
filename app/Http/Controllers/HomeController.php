@@ -33,6 +33,7 @@ class HomeController extends Controller
 
         $puShowcases = $this->publication->all('showcase_id');
         $showcases = $this->showcase->whereIn('id', $puShowcases)->orderBy('updated_at', 'desc')->paginate(27);
+
         return view('home', compact('showcases', 'posts'));
     }
 }
