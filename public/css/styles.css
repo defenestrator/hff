@@ -7199,6 +7199,8 @@ fieldset[disabled] .btn-danger-outline.active {
   height: 40px;
   padding: 2px;
   width: 40px;
+  height: 48px;
+  width: 48px;
   height: 75px;
   width: 75px;
 }
@@ -7208,6 +7210,8 @@ fieldset[disabled] .btn-danger-outline.active {
   height: 40px;
   padding: 2px;
   width: 40px;
+  height: 48px;
+  width: 48px;
   height: 125px;
   width: 125px;
 }
@@ -7217,6 +7221,8 @@ fieldset[disabled] .btn-danger-outline.active {
   height: 40px;
   padding: 2px;
   width: 40px;
+  height: 48px;
+  width: 48px;
   height: 50px;
   width: 50px;
 }
@@ -7226,6 +7232,8 @@ fieldset[disabled] .btn-danger-outline.active {
   height: 40px;
   padding: 2px;
   width: 40px;
+  height: 48px;
+  width: 48px;
 }
 .spark-team-photo-xs {
   border-radius: 50%;
@@ -7421,8 +7429,8 @@ fieldset[disabled] .btn-danger-outline.active {
   margin-bottom: 15px;
 }
 #modal-notifications .spark-profile-photo {
-  height: 52px;
-  width: 52px;
+  height: 48px;
+  width: 48px;
 }
 #modal-notifications .fa-stack {
   color: #d3e0e9;
@@ -8245,6 +8253,10 @@ a:focus .thumbnail .caption {
   padding: 2px;
   width: 46px;
   box-shadow: 0px 0px 2px #000;
+}
+.spark-profile-photo {
+  height: 48px;
+  width: 48px;
 }
 .notification {
   font-size: 14px;

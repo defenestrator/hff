@@ -66,7 +66,7 @@
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>
-            <input style="display:none;" name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :value="'https://hoboflyfishing.com/showcases/'+newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
+            <input style="display:none;" name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
             <div class="form-group">
                 <div class="col-md-5">
                     <p role="presentation"><strong>Home top: </strong>{{ newShowcase.fishery_type }}</p>
