@@ -53,7 +53,6 @@
     <hr>
     <div class="row">
         <div class="container"><h2>Latest Blog Posts</h2></div>
-        <hr>
         @foreach($posts as $post)
             <div class="col-md-4">
             <div class="post">
