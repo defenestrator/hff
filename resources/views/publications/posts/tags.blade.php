@@ -23,9 +23,9 @@
 @section('content')
 <div class="row">
         <div class="col-md-8 col-md-offset-0">
-            @isset($posts)
-            <h2>Sorry, there no posts with the '{{$tag}}' tag</h2>
-            @endisset
+            @if(count($posts) == 0)
+                <h2>Sorry, there are no posts with the '{{$tag}}' tag</h2>
+            @endif
             @foreach($posts as $post)
                 <div class="post">
                     <div class="featured-text relative-left">

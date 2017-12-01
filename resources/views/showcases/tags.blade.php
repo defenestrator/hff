@@ -24,9 +24,9 @@
 @section('content')
 <div class="row">
         <div class="col-md-8 col-md-offset-0">
-            @isset($showcases)
-                <h2>Sorry, there no showcases with the '{{$tag}}' tag</h2>
-            @endisset
+            @if(count($showcases) == 0)
+                <h2>Sorry, there are no showcases with the '{{$tag}}' tag</h2>
+            @endif
                 @foreach($showcases as $showcase)
                     <div class="showcase">
                         <div class="featured-text relative-left">
