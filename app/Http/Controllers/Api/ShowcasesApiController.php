@@ -106,7 +106,7 @@ class ShowcasesApiController extends ApiController
             'sidebar_bottom' => $request->sidebar_bottom ,
             'special'=> $request->special,
         ]);
-        $content->tag($request->tags);
+        $content->retag($request->tags);
         return $content;
     }
 

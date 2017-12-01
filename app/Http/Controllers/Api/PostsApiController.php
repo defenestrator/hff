@@ -83,7 +83,7 @@ class PostsApiController extends ApiController
             'title' => $request->title,
             'header_photo' => $request->header_photo,
         ]);
-        $content->tag($request->tags);
+        $content->retag($request->tags);
         $content->save();
         return $content;
     }
