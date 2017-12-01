@@ -14,6 +14,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon-57.png" sizes="57x57">
+    <link rel="icon" href="/favicon-100.png" sizes="100x100">
+    <link rel="icon" href="/favicon-32.png" sizes="32x32">
     <title>@yield('title', config('app.name'))</title>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
     <link href="{{ mix('/css/styles.css') }}" rel="stylesheet">
