@@ -55,7 +55,7 @@
                             <span class="caret"></span>
                         </a>
 
-                        <ul class="dropdown-menu" role="menu">
+                        <ul class="dropdown-menu scrollable-menu" role="menu">
                             <!-- Impersonation -->
                             @if (session('spark:impersonator'))
                                 <li class="dropdown-header">Impersonation</li>
@@ -87,19 +87,7 @@
                                     <i class="fa fa-fw fa-btn fa-cog"></i>Your Settings
                                 </a>
                             </li>
-
                             <li class="divider"></li>
-
-                            @if (Spark::usesTeams() && (Spark::createsAdditionalTeams() || Spark::showsTeamSwitcher()))
-                                <!-- Team Settings -->
-                                @include('nav.teams')
-                            @endif
-
-                            @if (Spark::hasSupportAddress())
-                                <!-- Support -->
-                                @include('nav.support')
-                            @endif
-
                             <!-- Logout -->
                             <li>
                                 <a href="/logout">
