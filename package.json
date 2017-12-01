@@ -12,19 +12,17 @@
     "cross-env": "^3.2.3",
     "jquery": "^2.1.4",
     "jquery-circliful": "^0.1.1",
-    "js-cookie": "^2.1.0",
+    "js-cookie": "^2.2.0",
     "laravel-mix": "0.*",
-    "moment": "^2.10.6",
+    "moment": "^2.19.3",
     "promise": "^7.1.1",
     "underscore": "^1.8.3",
     "urijs": "^1.17.0",
-    "vee-validate": "^2.0.0-rc.14",
-    "vue": "2.*",
+    "vee-validate": "^2.0.0-rc.25",
+    "vue": "^2.5.9",
     "vue-carousel": "^0.6.5",
     "vue-input-tag": "^0.0.16",
-    "vue-trumbowyg": "^1.0.3",
-    "vue-upload-component": "^2.5.1-beta.2",
-    "vue-wysiwyg": "^1.2.5",
-    "vue2-editor": "^2.0.26"
+    "vue-trumbowyg": "^3.1.1",
+    "vue-upload-component": "^2.7.2"
   }
 }
