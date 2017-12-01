@@ -30,7 +30,7 @@
                         <hr>
                         <article>
                             <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
-                                {!! str_limit(strip_tags($post->body, '<img>'), 200, '...') !!}
+                                {!! str_limit(strip_tags($post->body), 200, '...') !!}
                             </a>
                         </article>
                         <br>
@@ -46,12 +46,12 @@
                         </span>&nbsp;&nbsp;
                         </p>
                         <p class="additional-post-wrap">
-<span class="taglinks">Tags:
-    @forelse($post->tags as $tag)
-        <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
-    @empty
-        No Tags
-    @endforelse
+                            <span class="taglinks">Tags:
+                                @forelse($post->tags as $tag)
+                                    <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
+                                @empty
+                                    No Tags
+                                @endforelse
                             </span>
                         </p>
                     </div>

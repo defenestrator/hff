@@ -92,26 +92,33 @@ Route::get('/publications/posts/{slug}', 'PublishedPostsController@show')->name(
 
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index');
+
 // LOADER.IO AUTHENTICATION
 Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
 
 // AUTH ROUTES
 Route::group(['middleware' => ['auth:web', 'dev']], function () {
-    Route::get('/posts/{id}/edit', 'PostsController@edit');
+
+    // Tags Controllers
     Route::get('/posts/{id}/tags', 'PostTagsController@edit');
     Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
+
+    // Dashboard
+    Route::view('/dashboard', 'dashboard');
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
+        //Publications
+        Route::get('/publications', 'PublicationsController@index');
 
         // Posts
         Route::view('/posts', 'cms.posts');
-        Route::get('/posts/index', 'PostsController@index');
-        Route::get('/posts/{id}/edit', 'PostsController@edit');
+
         Route::post('/posts/images', 'PostImagesController@create');
+
         Route::get('/showcases', 'ShowcasesController@create');
     });
 });
-Route::view('/dashboard', 'dashboard');
+
 // Confirm Newsletter Subscription
 Route::get('/newsletter-subscription/{token}', 'NewsletterSubscriptionsController@confirm');
 // Registrations are closed, hacker.

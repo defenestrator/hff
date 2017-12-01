@@ -37,9 +37,13 @@ Route::group([
 
     Route::get('showcases/{id}/tags', 'PostTagsController@index');
 
-    //Images
+    // Images
     Route::post('/photo', 'ImagesController@create');
 
+    // Publications
+    Route::get('/publications', 'PublicationsController@get');
+    Route::delete('/publications/showcase/{id}', 'PublicationsController@destroyByShowcaseId');
+    Route::delete('/publications/post/{id}', 'PublicationsController@destroyByPostId');
     Route::post('/publications', 'PublicationsController@create');
     Route::delete('/publications/{id}', 'PublicationsController@destroy');
 });

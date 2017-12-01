@@ -25,11 +25,14 @@
                 <div class="panel-heading">Dashboard</div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-sm-6 dashboard-links">
+                        <div class="col-sm-4 dashboard-links">
                             <a class="btn btn-default btn-dashboard" href="/cms/showcases">Showcases</a>
                         </div>
-                        <div class="col-sm-6 dashboard-links">
+                        <div class="col-sm-4 dashboard-links">
                             <a class="btn btn-default btn-dashboard" href="cms/posts">Blog Posts</a>
+                        </div>
+                        <div class="col-sm-4 dashboard-links">
+                            <a class="btn btn-default btn-dashboard" href="/cms/publications">Publications</a>
                         </div>
                     </div>
                     <div class="row">

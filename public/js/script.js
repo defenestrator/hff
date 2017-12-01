@@ -37965,6 +37965,7 @@ __webpack_require__(177);
 __webpack_require__(174);
 __webpack_require__(173);
 Vue.component('posts', __webpack_require__(317));
+Vue.component('publications', __webpack_require__(430));
 Vue.component('showcases', __webpack_require__(320));
 Vue.component('input-tag', __webpack_require__(314));
 Vue.component('public-footer', __webpack_require__(318));
@@ -64772,6 +64773,416 @@ return Vue$3;
 __webpack_require__(144);
 module.exports = __webpack_require__(145);
 
+
+/***/ }),
+/* 334 */,
+/* 335 */,
+/* 336 */,
+/* 337 */,
+/* 338 */,
+/* 339 */,
+/* 340 */,
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    validator: null,
+    mounted: function mounted() {
+        this.getIndex();
+    },
+
+    components: {},
+    data: function data() {
+        return {
+            index: true,
+            posts: [],
+            unpublishedPosts: [],
+            showcases: [],
+            unpublishedShowcases: []
+        };
+    },
+
+    methods: {
+        getIndex: function getIndex() {
+            var _this = this;
+
+            axios.get("/api/publications", {}).then(function (result) {
+                _this.posts = result.data.posts;
+                _this.showcases = result.data.showcases;
+                _this.unpublishedPosts = result.data.unpublished_posts;
+                _this.unpublishedShowcases = result.data.unpublished_showcases;
+                return result.data;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        },
+        publish: function publish(id, type) {
+            var _this2 = this;
+
+            axios.post("/api/publications", {
+                type: type,
+                post_id: id
+            }).then(function (result) {
+                _this2.getIndex();
+                return result;
+            }).catch(function (error) {
+                _this2.newPost.publishBusy = false;
+                return Promise.reject(error);
+            });
+        },
+        unpubShowcase: function unpubShowcase(id) {
+            var _this3 = this;
+
+            axios.delete("/api/publications/showcase/" + id, {}).then(function (result) {
+                _this3.getIndex();
+                return result;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        },
+        unpubPost: function unpubPost(id) {
+            var _this4 = this;
+
+            axios.delete("/api/publications/post/" + id, {}).then(function (result) {
+                _this4.getIndex();
+                return result;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        }
+    },
+    created: function created() {},
+
+    computed: {
+        /**
+         * Get the URL for updating the team photo.
+         */
+        urlForUpdate: function urlForUpdate() {
+            return "/api/photo";
+        }
+    }
+});
+
+/***/ }),
+/* 429 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)();
+exports.push([module.i, "\n.publication{margin:1em; border-bottom:1px solid #666; min-height:60px;\n}\n", ""]);
+
+/***/ }),
+/* 430 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(432)
+
+var Component = __webpack_require__(3)(
+  /* script */
+  __webpack_require__(428),
+  /* template */
+  __webpack_require__(431),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/jeremy/Code/hff/resources/assets/js/components/Publications.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Publications.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e989bfd2", Component.options)
+  } else {
+    hotAPI.reload("data-v-e989bfd2", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 431 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "col-md-12 col-md-offset-0",
+    attrs: {
+      "id": "publications"
+    }
+  }, [_c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h3', [_vm._v("Unpublished Posts")]), _vm._v(" "), _vm._l((_vm.unpublishedPosts), function(unpublishedPost) {
+    return _c('div', {
+      staticClass: "col-md-12 publication"
+    }, [_c('div', {
+      staticClass: "col-md-8"
+    }, [_vm._v("\n                    " + _vm._s(unpublishedPost.title) + "\n                ")]), _vm._v(" "), _c('div', {
+      staticClass: "col-md-4"
+    }, [_c('button', {
+      staticClass: "btn btn-warning",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          _vm.publish(unpublishedPost.id, 'post')
+        }
+      }
+    }, [_vm._v("\n                        Publish\n                    ")])])])
+  })], 2), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h3', [_vm._v("Unpublished Showcases")]), _vm._v(" "), _vm._l((_vm.unpublishedShowcases), function(unpublishedShowcase) {
+    return _c('div', {
+      staticClass: "col-md-12 publication"
+    }, [_c('div', {
+      staticClass: "col-md-8"
+    }, [_vm._v("\n                    " + _vm._s(unpublishedShowcase.title) + "\n                ")]), _vm._v(" "), _c('div', {
+      staticClass: "col-md-4"
+    }, [_c('button', {
+      staticClass: "btn btn-warning",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          _vm.publish(unpublishedShowcase.id, 'showcase')
+        }
+      }
+    }, [_vm._v("\n                        Publish\n                    ")])])])
+  })], 2)]), _vm._v(" "), _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h3', [_vm._v("Published Posts")]), _vm._v(" "), _vm._l((_vm.posts), function(post) {
+    return _c('div', {
+      staticClass: "col-md-12 publication"
+    }, [_c('div', {
+      staticClass: "col-md-8"
+    }, [_vm._v("\n                " + _vm._s(post.title) + "\n                ")]), _vm._v(" "), _c('div', {
+      staticClass: "col-md-4"
+    }, [_c('button', {
+      staticClass: "btn btn-danger",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          _vm.unpubPost(post.id)
+        }
+      }
+    }, [_vm._v("\n                        Unpublish\n                    ")])])])
+  })], 2), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('h3', [_vm._v("Published Showcases")]), _vm._v(" "), _vm._l((_vm.showcases), function(showcase) {
+    return _c('div', {
+      staticClass: "col-md-12 publication"
+    }, [_c('div', {
+      staticClass: "col-md-8"
+    }, [_vm._v("\n                    " + _vm._s(showcase.title) + "\n                ")]), _vm._v(" "), _c('div', {
+      staticClass: "col-md-4"
+    }, [_c('button', {
+      staticClass: "btn btn-danger",
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          _vm.unpubShowcase(showcase.id)
+        }
+      }
+    }, [_vm._v("\n                        Unpublish\n                    ")])])])
+  })], 2)])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-e989bfd2", module.exports)
+  }
+}
+
+/***/ }),
+/* 432 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(429);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(13)("caefac28", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-e989bfd2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Publications.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-e989bfd2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Publications.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

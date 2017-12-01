@@ -81,9 +81,17 @@ class Showcase extends Model
     /**
      * @return mixed
      */
-    public function publishedPosts()
+    public function published()
     {
-        $published = Publication::all('post_id');
-        return $this->whereIn('id', $published)->paginate(15);
+        $published = Publication::where('showcase_id', '!=', null)->get();
+        return $this->whereIn('id', $published->pluck('showcase_id'))->get();
+    }
+    /**
+     * @return mixed
+     */
+    public function unPublished()
+    {
+        $published = Publication::where('showcase_id', '!=', null)->get();
+        return $this->whereNotIn('id', $published->pluck('showcase_id'))->get();
     }
 }
