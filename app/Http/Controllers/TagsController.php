@@ -18,10 +18,19 @@ class TagsController extends Controller
      */
     public function index(Post $post, Showcase $showcase, $normalized)
     {
+        $showtype = collect(['type' => 'showcase']);
+        $postype = collect(['type' => 'post']);
 
-        $posts = $post->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get(['created_at', 'header_photo', 'title', 'body']);
-        $showcases = $showcase->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get(['created_at', 'header_photo', 'title', 'body']);
+        $posts = $post->withAnyTags([$normalized])->get()->map(function($post){
+            $post['type'] = 'posts';
+            return $post;
+        });
+        $showcases = $showcase->withAnyTags([$normalized])->get()->map(function($showcase){
+            $showcase['type'] = 'showcases';
+            return $showcase;
+        });
         $contents = $showcases->merge($posts)->sortByDesc('created_at');
+
         $pagetitle = 'All content for '."'$normalized'" . ' tag';
         return view('tags.index', compact('contents', 'pagetitle'));
     }

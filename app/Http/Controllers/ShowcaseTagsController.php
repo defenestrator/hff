@@ -16,8 +16,8 @@ class ShowcaseTagsController extends ContentController
     {
         $tag = $normalized;
         $showcases = $showcase->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get();
-        $pagetitle = $showcase->withAnyTags([$normalized])->orderBy('created_at', 'desc')->pluck('title')->first();
-        return view('showcases.index', compact('showcases' , 'pagetitle', 'tag'));
+        $pagetitle = 'Showcases tagged ' . "'$normalized'";
+        return view('showcases.tags', compact('showcases' , 'pagetitle', 'tag'));
     }
 
     public function show(Showcase $showcase, $id)

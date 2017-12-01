@@ -21,6 +21,7 @@ Route::group(['prefix' => 'features'], function () {
 // Showcases
 Route::group(['prefix' => 'showcases'], function () {
     Route::get('{slug}', 'PublishedShowcasesController@show');
+
 });
 // Destinations
 Route::group(['prefix' => 'destinations'], function () {
@@ -90,9 +91,11 @@ Route::group(['prefix' => 'destinations'], function () {
 // Published posts
 Route::get('/publications/posts', 'PublishedPostsController@index')->name('publications.posts.index');
 Route::get('/publications/posts/{slug}', 'PublishedPostsController@show')->name('publications.posts.show');
-
+Route::get('/publications/showcases', 'ShowcasesController@list');
+Route::get('/publications/showcases/{slug}', 'PublishedShowcasesController@show');
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index');
+
 
 // LOADER.IO AUTHENTICATION
 Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');

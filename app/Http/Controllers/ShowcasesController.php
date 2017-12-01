@@ -17,6 +17,12 @@ class ShowcasesController extends Controller
         return view('cms.showcases.index');
     }
 
+    public function list(Showcase $showcase) {
+
+        $showcases = $showcase->orderBy('created_at', 'desc')->get();
+        $pagetitle = 'Destination Showcases';
+        return view('showcases.index', compact('pagetitle', 'showcases'));
+    }
     /**
      * Show the form for creating a new resource.
      *

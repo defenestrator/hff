@@ -36,6 +36,7 @@
                     {!! $showcase->sidebar_top !!}
                     <sales-inquiry></sales-inquiry>
                     {!! $showcase->sidebar_bottom !!}
+                    <hr>
                     <div>
                         <p>
                             <strong>Tags: </strong>
