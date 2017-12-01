@@ -29,10 +29,9 @@
                         <a href="/publications/{{$content->type}}/{{$content->slug}}">
                             <img src="{{$content->header_photo}}" alt="{{$content->title}}" title="{{$content->title}}">
                         </a>
-                        <hr>
                         <article>
                             <a style="color:rgb(83, 89, 101);" href="/publications/{{$content->type}}/{{$content->slug}}">
-                                {!! str_limit(strip_tags($content->body), 200, '...') !!}
+                                <p>{!! str_limit(strip_tags($content->body), 200, '...') !!}</p>
                             </a>
                         </article>
                         <br>
