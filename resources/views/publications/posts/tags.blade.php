@@ -14,6 +14,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-0">
                 <h1>{{$pagetitle}}</h1>
+                <h4><a href="/tag/{{$tag}}">Show all results for '{{$tag}}' tag</a></h4>
             </div>
         </div>
     </div>
@@ -22,6 +23,9 @@
 @section('content')
 <div class="row">
         <div class="col-md-8 col-md-offset-0">
+            @isset($posts)
+            <h2>Sorry, there no posts with the '{{$tag}}' tag</h2>
+            @endisset
             @foreach($posts as $post)
                 <div class="post">
                     <div class="featured-text relative-left">
