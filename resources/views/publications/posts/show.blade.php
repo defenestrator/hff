@@ -29,7 +29,6 @@
                 </div>
             </div>
             <div class="col-md-4 col-md-offset-0">
-                <h3 class="text-center">&nbsp;</h3>
                 <div>
                     <p class="additional-post-wrap">
                         <span class="additional-post">
@@ -54,12 +53,30 @@
                     <div id="disqus_thread"></div>
                     </p>
                 </div>
-                {{--<nav class="navbar navbar-default">--}}
-                {{--<ul class="nav navbar-nav side-menu">--}}
-                {{--@include('nav.places')--}}
-                {{--</ul>--}}
-                {{--</nav>--}}
-
+                <h3 class="text-center">Destinations</h3>
+                @foreach($showcases as $showcase)
+                    <div class="col-md-12 info">
+                        <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
+                            <div class="thumbnail"
+                                 style="background-image: url('{{$showcase->thumbnail}}');
+                                         background-position: center center;">
+                                <div class="caption">
+                                    <h3 style="font-weight:600;">{{$showcase->fishery_type}}</h3>
+                                    <h3 style="font-weight:600;">{{$showcase->region}}</h3>
+                                </div>
+                                @if($showcase->special)
+                                    <a href="tel:2088599133">
+                                        <button role="button" style=" margin:0 15%; width:70%; z-index:99;" class="btn btn-danger">
+                                            <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
+                                               data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
+                                            call now!
+                                        </button>
+                                    </a>
+                                @endif
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
 @stop
