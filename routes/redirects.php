@@ -15,7 +15,7 @@ Route::redirect('/publications/posts/steelhead-on-the-salmon-river-with-backcoun
     Route::redirect('/trips/costa-de-cocos', '/destinations/yucatan/costa-de-cocos');
     Route::redirect('/trips/deep-creek-lodge', '/destinations/british-columbia/deep-creek-lodge');
     Route::redirect('/trips/naknek-river-camp', '/destinations/alaska/naknek-river-camp');
-
+    Route::redirect('/features/weekly-special', '/');
     // 'destinations/lodge' changed to to 'destinations/region/lodge'
     Route::redirect('/destinations/backcountry-river-guides', '/destinations/idaho/backcountry-river-guides');
     Route::redirect('/destinations/costa-de-cocos', '/destinations/yucatan/costa-de-cocos');
