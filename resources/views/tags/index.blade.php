@@ -50,7 +50,7 @@
                         <p class="additional-post-wrap">
                             <span class="taglinks">Tags:
                                 @forelse($content->tags as $tag)
-                                    <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
+                                    <a href="{{ URL::to('tag/'. $tag->normalized) }}">{{ $tag->name }}</a>,
                                 @empty
                                     No Tags
                                 @endforelse
