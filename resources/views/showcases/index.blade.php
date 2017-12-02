@@ -24,16 +24,14 @@
             @foreach($showcases as $showcase)
                 <div class="showcase">
                     <h2 class="primary"><a href="/showcases/{{$showcase->slug}}">{{$showcase->title}}</a></h2>
-                    <a href="/showcases/{{$showcase->slug}}">
+                    <p><a href="/showcases/{{$showcase->slug}}">
                         <img style="width:100%;" src="{{$showcase->header_photo}}" alt="{{$showcase->title}}" title="{{$showcase->title}}">
-                    </a>
-                    <hr>
+                    </a></p>
                     <article>
-                        <a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}">
+                        <p><a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}">
                             {!! str_limit(strip_tags($showcase->body), 200, '...') !!}
-                        </a>
+                        </a></p>
                     </article>
-                    <br>
                     <p class="additional-showcase-wrap">
                         <span class="taglinks">Tags:
                             @forelse($showcase->tags as $tag)

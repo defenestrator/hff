@@ -25,7 +25,6 @@
             <section>
                 <article class="article">
                     {!! $showcase->body !!}
-
                 </article>
             </section>
         </div>

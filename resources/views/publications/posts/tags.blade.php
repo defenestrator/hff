@@ -34,9 +34,9 @@
                             <img src="{{$post->header_photo}}" alt="{{$post->title}}" title="{{$post->title}}">
                         </a>
                         <article>
-                            <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
-                                <p>{!! str_limit(strip_tags($post->body), 200, '...') !!}</p>
-                            </a>
+                            <p> <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
+                                {!! str_limit(strip_tags($post->body), 200, '...') !!}
+                            </a></p>
                         </article>
                         <p>
                             <span class="text-right">
