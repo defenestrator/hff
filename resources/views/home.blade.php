@@ -18,9 +18,9 @@
         </h2>
     </div>
     <div class="text-center">
-        <h4 style="margin:5px 10px;">The trip of a lifetime, or a lifetime of trips?</h4>
-        <h4 style="margin:5px 10px;">We think that's an easy question</h4>
-        <h2 style="margin:5px 10px;">Book with us and make it happen.</h2>
+        <h3 style="margin:5px 10px;">Once in a lifetime trip, or a lifetime of trips?</h3>
+        <h2 style="margin:5px 10px;">We have the answer; </h2>
+        <h3 style="margin:5px 10px;">We will find trips to match your budget​</h3>
     </div>
 @stop
 @section('content')
@@ -39,7 +39,7 @@
                             </div>
                             @if($showcase->special)
                             <a href="tel:2088599133">
-                                <button role="button" style=" margin:0 15%; width:70%; z-index:99;" class="btn btn-danger">
+                                <button role="button" style=" margin:0 15%; width:70%; z-index:99;" class="btn btn-primary">
                                     <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
                                        data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
                                     call now!
@@ -52,7 +52,6 @@
             @endforeach
         </div>
     @endforeach
-    <hr>
     <div class="row">
         <div class="container"><h2>Latest Blog Posts</h2></div>
         @foreach($posts as $post)
@@ -141,7 +140,6 @@
         </div>
     </div>
     <div class="row">
-        <hr>
         <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-0">
             <article>
                 <section>

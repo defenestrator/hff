@@ -7852,9 +7852,9 @@ blockquote {
   width: 100%;
 }
 .tagline {
-  background: #262626 url('/images/cutty.jpg') center center no-repeat;
+  background: #262626;
   background-size: cover;
-  padding: 4em 0;
+  padding: 1em 0;
   margin-bottom: 20px;
   color: white;
   text-shadow: 0px 0px 4px #3ab0f5, 0px 0px 6px #000, 0px 0px 4px #000;
