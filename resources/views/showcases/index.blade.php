@@ -22,7 +22,7 @@
 <div class="row">
         <div class="col-md-8 col-md-offset-0">
             @foreach($showcases as $showcase)
-                <div class="showcase">
+                <div class="article showcase">
                     <h2 class="primary"><a href="/showcases/{{$showcase->slug}}">{{$showcase->title}}</a></h2>
                     <p><a href="/showcases/{{$showcase->slug}}">
                         <img style="width:100%;" src="{{$showcase->header_photo}}" alt="{{$showcase->title}}" title="{{$showcase->title}}">
