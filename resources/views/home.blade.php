@@ -20,7 +20,7 @@
     <div class="text-center">
         <h3 style="margin:5px 10px;">Once in a lifetime trip, or a lifetime of trips?</h3>
         <h2 style="margin:5px 10px;">We have the answer; </h2>
-        <h3 style="margin:5px 10px;">We will find trips to match your budget​</h3>
+        <h3 style="margin:5px 10px;">We will find trips to match your budget​.</h3>
     </div>
 @stop
 @section('content')
