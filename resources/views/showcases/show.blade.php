@@ -18,6 +18,7 @@
         </h1>
         <h2 class="feature-tagline text-center">{{$showcase->tagline}} </h2>
     </div>
+    <br>
 @stop
 @section('content')
     <div class="row">

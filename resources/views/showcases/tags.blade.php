@@ -28,7 +28,7 @@
                 <h2>Sorry, there are no showcases with the '{{$tag}}' tag</h2>
             @endif
             @foreach($showcases as $showcase)
-                <div class="showcase">
+                <div class="article showcase">
                     <div class="featured-text relative-left">
                         <h2 class="primary"><a href="/showcases/{{$showcase->slug}}">{{$showcase->title}}</a></h2>
                         <a href="/showcases/{{$showcase->slug}}">

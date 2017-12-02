@@ -27,7 +27,7 @@
                 <h2>Sorry, there are no posts with the '{{$tag}}' tag</h2>
             @endif
             @foreach($posts as $post)
-                <div class="post">
+                <div class="article post">
                     <div class="featured-text relative-left">
                         <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
                         <a href="/publications/posts/{{$post->slug}}">

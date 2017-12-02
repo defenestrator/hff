@@ -21,9 +21,8 @@
 @section('content')
         <div class="row">
             <div class="col-md-8 col-md-offset-0">
-                <div class=" post">
+                <div class="article post">
                     <img src="{{$post->header_photo}}" alt="{{$post->title}}" title="{{$post->title}}">
-                    <hr>
                     {!! $post->body !!}
 
                 </div>
