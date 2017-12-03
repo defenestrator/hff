@@ -47,7 +47,7 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <p role="presentation" name="title"><strong>Title: </strong>{{newShowcase.title}}</p>
-                    <input v-validate="'required|min:8'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
+                    <input v-validate="'required|min:8|max:140'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
                            type="text" placeholder="Showcase Title" style="width:100%">
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
@@ -55,17 +55,19 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <p role="presentation"><strong>Sub-title: </strong>{{ newShowcase.tagline }}</p>
-                    <input v-validate="'required|min:4'" id="tagline" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
+                    <input v-validate="'required|min:4|max:140'" id="tagline" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
                     <span v-show="errors.has('tagline')" class="help is-danger">{{ errors.first('tagline') }}</span>
                 </div>
             </div>
             <!-- Header Photo Button -->
             <div class="form-group">
                 <div class="container">
+
                     <label type="button" class="btn btn-primary btn-upload" :disabled="newShowcase.busy">
                         <span>Select Header Photo</span>
                         <input v-validate="'required|mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
                     </label>
+                    <p role="presentation"><strong>Showcase page header preview:</strong></p>
                     <span v-show="errors.has('header_photo')" class="help is-danger">{{ errors.first('header_photo') }}</span>
                     <div role="img" class="header-photo-preview"
                          :style="previewStyle">
@@ -81,14 +83,35 @@
             <input style="display:none;" name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
             <div class="form-group">
                 <div class="col-md-5">
-                    <p role="presentation"><strong>Home top: </strong>{{ newShowcase.fishery_type }}</p>
+                    <p role="presentation"><strong>Fishery Type (homepage tile top line): </strong>{{ newShowcase.fishery_type }}</p>
                     <input v-validate="'required|min:3|max:40'" id="fishery_type" class="form-control input" name="fishery_type" v-model="newShowcase.fishery_type" placeholder="Fishery Type" />
                     <span v-show="errors.has('fishery_type')" class="help is-danger">{{ errors.first('fishery_type') }}</span>
                 </div>
                 <div class="col-md-5 col-md-offset-1">
-                    <p role="presentation"><strong>Home bottom: </strong>{{ newShowcase.region }}</p>
+                    <p role="presentation"><strong>Region (homepage tile bottom line): </strong>{{ newShowcase.region }}</p>
                     <input v-validate="'required|min:3|max:40'" class="form-control input" id="region" name="region" v-model="newShowcase.region" placeholder="Region" />
                     <span v-show="errors.has('region')" class="help is-danger">{{ errors.first('region') }}</span>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
+                <p role="presentation"><strong>Homepage tile preview</strong>{{ newShowcase.region }}</p>
+                <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
+                    <a href="#" :title="newShowcase.title">
+                        <div class="thumbnail"
+                             :style="tileStyle">
+                            <div class="caption">
+                                <h3 style="font-weight:600;">{{newShowcase.fishery_type}}</h3>
+                                <h3 style="font-weight:600;">{{newShowcase.region}}</h3>
+                            </div>
+                            <a v-if="newShowcase.special"href="tel:2088599133">
+                                <button role="button" style=" margin:0 15%; width:70%; z-index:99;" class="btn btn-primary">
+                                    <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
+                                       data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
+                                    call now!
+                                </button>
+                            </a>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="form-group">
@@ -610,7 +633,11 @@ export default {
          */
         previewStyle() {
             return `padding:2em 0; background-image: url(${this.newShowcase.header_photo});`;
+        },
+        tileStyle() {
+            return `background-position: center center;background-image: url(${this.newShowcase.header_photo});`;
         }
+
     },
     created() {
         this.validator = new VeeValidate.Validator({

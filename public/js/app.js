@@ -38854,6 +38854,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // Import this component
 
@@ -39267,6 +39290,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
          */
         previewStyle: function previewStyle() {
             return 'padding:2em 0; background-image: url(' + this.newShowcase.header_photo + ');';
+        },
+        tileStyle: function tileStyle() {
+            return 'background-position: center center;background-image: url(' + this.newShowcase.header_photo + ');';
         }
     },
     created: function created() {
@@ -54606,8 +54632,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "validate",
       rawName: "v-validate",
-      value: ('required|min:8'),
-      expression: "'required|min:8'"
+      value: ('required|min:8|max:140'),
+      expression: "'required|min:8|max:140'"
     }, {
       name: "model",
       rawName: "v-model",
@@ -54654,8 +54680,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "validate",
       rawName: "v-validate",
-      value: ('required|min:4'),
-      expression: "'required|min:4'"
+      value: ('required|min:4|max:140'),
+      expression: "'required|min:4|max:140'"
     }, {
       name: "model",
       rawName: "v-model",
@@ -54711,7 +54737,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "change": _vm.update_header
     }
-  })]), _vm._v(" "), _c('span', {
+  })]), _vm._v(" "), _vm._m(1, false, false), _vm._v(" "), _c('span', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -54778,7 +54804,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "role": "presentation"
     }
-  }, [_c('strong', [_vm._v("Home top: ")]), _vm._v(_vm._s(_vm.newShowcase.fishery_type))]), _vm._v(" "), _c('input', {
+  }, [_c('strong', [_vm._v("Fishery Type (homepage tile top line): ")]), _vm._v(_vm._s(_vm.newShowcase.fishery_type))]), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54819,7 +54845,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "role": "presentation"
     }
-  }, [_c('strong', [_vm._v("Home bottom: ")]), _vm._v(_vm._s(_vm.newShowcase.region))]), _vm._v(" "), _c('input', {
+  }, [_c('strong', [_vm._v("Region (homepage tile bottom line): ")]), _vm._v(_vm._s(_vm.newShowcase.region))]), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54855,10 +54881,40 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "help is-danger"
   }, [_vm._v(_vm._s(_vm.errors.first('region')))])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"
+  }, [_c('p', {
+    attrs: {
+      "role": "presentation"
+    }
+  }, [_c('strong', [_vm._v("Homepage tile preview")]), _vm._v(_vm._s(_vm.newShowcase.region))]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info"
+  }, [_c('a', {
+    attrs: {
+      "href": "#",
+      "title": _vm.newShowcase.title
+    }
+  }, [_c('div', {
+    staticClass: "thumbnail",
+    style: (_vm.tileStyle)
+  }, [_c('div', {
+    staticClass: "caption"
+  }, [_c('h3', {
+    staticStyle: {
+      "font-weight": "600"
+    }
+  }, [_vm._v(_vm._s(_vm.newShowcase.fishery_type))]), _vm._v(" "), _c('h3', {
+    staticStyle: {
+      "font-weight": "600"
+    }
+  }, [_vm._v(_vm._s(_vm.newShowcase.region))])]), _vm._v(" "), (_vm.newShowcase.special) ? _c('a', {
+    attrs: {
+      "href": "tel:2088599133"
+    }
+  }, [_vm._m(2, false, false)]) : _vm._e()])])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_vm._m(1, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(3, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54881,7 +54937,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(2, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(4, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54902,7 +54958,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(3, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(5, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -55052,6 +55108,37 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('thead', {
     staticClass: "thead-inverse"
   }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Special?")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    attrs: {
+      "role": "presentation"
+    }
+  }, [_c('strong', [_vm._v("Showcase page header preview:")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('button', {
+    staticClass: "btn btn-primary",
+    staticStyle: {
+      "margin": "0 15%",
+      "width": "70%",
+      "z-index": "99"
+    },
+    attrs: {
+      "role": "button"
+    }
+  }, [_c('i', {
+    staticClass: "livicon icon4 icon3",
+    staticStyle: {
+      "width": "20px",
+      "height": "20px"
+    },
+    attrs: {
+      "data-name": "phone",
+      "data-size": "20",
+      "data-loop": "true",
+      "data-c": "#fff",
+      "data-hc": "#F0F8FF"
+    }
+  }), _vm._v("\n                                    call now!\n                                ")])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h4', {
     attrs: {
