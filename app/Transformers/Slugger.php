@@ -31,4 +31,8 @@ Class Slugger {
 
         return $text;
     }
+    public static function titleify($slug)
+    {
+        return ucfirst(preg_replace('~-~', ' ', $slug));
+    }
 }

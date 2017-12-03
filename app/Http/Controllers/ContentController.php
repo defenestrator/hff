@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Transformers\Slugger;
 class ContentController extends Controller
 {
+    protected $slugger;
     public $smartass = '';
-    public function __construct()
+    public function __construct(Slugger $slugger)
     {
+        $this->slugger = $slugger;
         $buttonDialogs = [
             'Yeah, but here\'s the thing&hellip;',
             'Have your say',

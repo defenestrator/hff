@@ -7,8 +7,10 @@ use App\Publication;
 use App\Showcase;
 use Illuminate\Http\Request;
 
+
 class PublishedPostsController extends ContentController
 {
+
     /**
      * @param Post $post
      * @param Showcase $showcase
@@ -35,8 +37,17 @@ class PublishedPostsController extends ContentController
     {
         $showcases = $showcase->published()->sortByDesc('updated_at')->slice(0, 5);
 //        $showcases = $showcase->published();
-        $data = $post->where('slug', '=', $slug)->first();
-
+        $data = new $post([
+            'user_id'  => 0,
+            'author' => 'Nobody Nullington',
+            'header_photo' => '/images/tangle.jpg',
+            'body'  => 'There is nothing here, sorry.',
+            'title' => "There is no post called: ". "'".$this->slugger->titleify($slug)."'",
+            'slug' => $slug
+        ]);
+        if ($post->where('slug', '=', $slug)->count() > 0){
+            $data = $post->where('slug', '=', $slug)->first();
+        }
         return view('publications.posts.show',['showcases'=>$showcases, 'post' => $data]);
     }
 

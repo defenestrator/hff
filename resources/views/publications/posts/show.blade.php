@@ -1,5 +1,22 @@
 @extends('layouts.master')
+@unless($post)
+    @section('title')
+        Ain't shit here!
+    @stop
+    @section('page_styles')
 
+    @stop
+
+    @section('top')
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-0">
+                    <h1>motherfucker</h1>
+                </div>
+            </div>
+        </div>
+    @stop
+@endunless
 @section('title')
     {{ $post->title }}
 @stop
@@ -31,15 +48,20 @@
                 <div>
                     <p class="additional-post-wrap">
                         <span class="additional-post">
-                            by {{ $post->author }}, about
+                            by {{ $post->author }}
                             </span>
                         <span class="additional-post">
-                               {{$post->created_at->diffForHumans()}}
-                            </span>
+                            @if($post->created_at)
+                                - {{$post->created_at->diffForHumans()}}
+                            @else
+                                - Never happened.
+                            @endif
+                        </span>
                     </p>
                     <p class="text-justify">
                         {!! $post->content !!}
                     </p>
+                    @if($post->created_at)
                     <p>
                         <strong>Tags: </strong>
                         @forelse($post->tags as $tag)
@@ -51,6 +73,7 @@
                     <p>
                     <div id="disqus_thread"></div>
                     </p>
+                    @endif
                 </div>
                 <h3 class="text-center">Destinations</h3>
                 @foreach($showcases as $showcase)
