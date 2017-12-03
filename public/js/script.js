@@ -38875,8 +38875,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 // Import this component
 
@@ -54799,7 +54797,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
-    staticClass: "col-md-5"
+    staticClass: "col-md-6"
   }, [_c('p', {
     attrs: {
       "role": "presentation"
@@ -54840,7 +54838,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "help is-danger"
   }, [_vm._v(_vm._s(_vm.errors.first('fishery_type')))])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-5 col-md-offset-1"
+    staticClass: "col-md-6"
   }, [_c('p', {
     attrs: {
       "role": "presentation"
@@ -54880,9 +54878,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('region')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('region')))])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"
-  }, [_c('p', {
+  }, [_vm._v(_vm._s(_vm.errors.first('region')))])])]), _vm._v(" "), _c('p', {
     attrs: {
       "role": "presentation"
     }
@@ -54910,7 +54906,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "tel:2088599133"
     }
-  }, [_vm._m(2, false, false)]) : _vm._e()])])])]), _vm._v(" "), _c('div', {
+  }, [_vm._m(2, false, false)]) : _vm._e()])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -55138,7 +55134,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "data-c": "#fff",
       "data-hc": "#F0F8FF"
     }
-  }), _vm._v("\n                                    call now!\n                                ")])
+  }), _vm._v("\n                                call now!\n                            ")])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h4', {
     attrs: {

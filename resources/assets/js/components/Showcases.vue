@@ -82,37 +82,35 @@
 
             <input style="display:none;" name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
             <div class="form-group">
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <p role="presentation"><strong>Fishery Type (homepage tile top line): </strong>{{ newShowcase.fishery_type }}</p>
                     <input v-validate="'required|min:3|max:40'" id="fishery_type" class="form-control input" name="fishery_type" v-model="newShowcase.fishery_type" placeholder="Fishery Type" />
                     <span v-show="errors.has('fishery_type')" class="help is-danger">{{ errors.first('fishery_type') }}</span>
                 </div>
-                <div class="col-md-5 col-md-offset-1">
+                <div class="col-md-6">
                     <p role="presentation"><strong>Region (homepage tile bottom line): </strong>{{ newShowcase.region }}</p>
                     <input v-validate="'required|min:3|max:40'" class="form-control input" id="region" name="region" v-model="newShowcase.region" placeholder="Region" />
                     <span v-show="errors.has('region')" class="help is-danger">{{ errors.first('region') }}</span>
                 </div>
             </div>
-            <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
-                <p role="presentation"><strong>Homepage tile preview</strong>{{ newShowcase.region }}</p>
-                <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
-                    <a href="#" :title="newShowcase.title">
-                        <div class="thumbnail"
-                             :style="tileStyle">
-                            <div class="caption">
-                                <h3 style="font-weight:600;">{{newShowcase.fishery_type}}</h3>
-                                <h3 style="font-weight:600;">{{newShowcase.region}}</h3>
-                            </div>
-                            <a v-if="newShowcase.special"href="tel:2088599133">
-                                <button role="button" style=" margin:0 15%; width:70%; z-index:99;" class="btn btn-primary">
-                                    <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
-                                       data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
-                                    call now!
-                                </button>
-                            </a>
+            <p role="presentation"><strong>Homepage tile preview</strong>{{ newShowcase.region }}</p>
+            <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
+                <a href="#" :title="newShowcase.title">
+                    <div class="thumbnail"
+                         :style="tileStyle">
+                        <div class="caption">
+                            <h3 style="font-weight:600;">{{newShowcase.fishery_type}}</h3>
+                            <h3 style="font-weight:600;">{{newShowcase.region}}</h3>
                         </div>
-                    </a>
-                </div>
+                        <a v-if="newShowcase.special"href="tel:2088599133">
+                            <button role="button" style=" margin:0 15%; width:70%; z-index:99;" class="btn btn-primary">
+                                <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
+                                   data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
+                                call now!
+                            </button>
+                        </a>
+                    </div>
+                </a>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
