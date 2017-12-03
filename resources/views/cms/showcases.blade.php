@@ -26,3 +26,6 @@
     </div>
 </div>
 @stop
+@section('page_scripts')
+
+@endsection

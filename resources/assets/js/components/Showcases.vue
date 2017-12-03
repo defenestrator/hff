@@ -35,17 +35,6 @@
         <form enctype="multipart/form-data" class="form-horizontal new-post" v-if="! index" role="form">
             <div class="form-group">
                 <div class="col-md-12">
-                    <div class="checkbox">
-                        <label for="special" class="checkbox checkbox-inline">
-                            <input id="special" name="special" v-model="newShowcase.special"
-                                   type="checkbox">
-                            Is this is a special?
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
                     <p role="presentation" name="title"><strong>Title: </strong>{{newShowcase.title}}</p>
                     <input v-validate="'required|min:8|max:140'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
                            type="text" placeholder="Showcase Title" style="width:100%">
@@ -93,24 +82,36 @@
                     <span v-show="errors.has('region')" class="help is-danger">{{ errors.first('region') }}</span>
                 </div>
             </div>
-            <p role="presentation"><strong>Homepage tile preview</strong></p>
-            <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
-                <a href="#" :title="newShowcase.title">
-                    <div class="thumbnail"
-                         :style="tileStyle">
-                        <div class="caption">
-                            <h3 style="font-weight:600;">{{newShowcase.fishery_type}}</h3>
-                            <h3 style="font-weight:600;">{{newShowcase.region}}</h3>
-                        </div>
-                        <a v-if="newShowcase.special"href="tel:2088599133">
-                            <button role="button" style=" margin:0 15%; width:70%; z-index:99;" class="btn btn-primary">
-                                <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
-                                   data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
-                                call now!
-                            </button>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <p role="presentation"><strong>Homepage tile preview</strong></p>
+                    <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
+                        <a href="#" :title="newShowcase.title">
+                            <div class="thumbnail"
+                                 :style="tileStyle">
+                                <div class="caption">
+                                    <h3 style="font-weight:600;">{{newShowcase.fishery_type}}</h3>
+                                    <h3 style="font-weight:600;">{{newShowcase.region}}</h3>
+                                </div>
+                                <a v-if="newShowcase.special"href="tel:2088599133">
+                                    <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%; z-index:99;" class="btn btn-primary">
+                                        call now!
+                                    </button>
+                                </a>
+                            </div>
                         </a>
                     </div>
-                </a>
+                    <p role="presentation"><strong>Make it special:</strong></p>
+                    <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0">
+                        <div style="padding:1em; border:1px solid #ccc;" class="checkbox">
+                            <label for="special" class="checkbox checkbox-inline">
+                                <h3><input id="special" name="special" v-model="newShowcase.special"
+                                       type="checkbox">
+                                Is this is a special?</h3>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
@@ -650,6 +651,7 @@ export default {
         this.$set(this, 'errors', this.validator.errors);
     }
 }
+
 </script>
 <style>
     .help.is-danger {

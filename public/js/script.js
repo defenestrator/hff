@@ -38875,6 +38875,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 // Import this component
 
@@ -54577,50 +54578,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_c('div', {
-    staticClass: "checkbox"
-  }, [_c('label', {
-    staticClass: "checkbox checkbox-inline",
-    attrs: {
-      "for": "special"
-    }
-  }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.newShowcase.special),
-      expression: "newShowcase.special"
-    }],
-    attrs: {
-      "id": "special",
-      "name": "special",
-      "type": "checkbox"
-    },
-    domProps: {
-      "checked": Array.isArray(_vm.newShowcase.special) ? _vm._i(_vm.newShowcase.special, null) > -1 : (_vm.newShowcase.special)
-    },
-    on: {
-      "change": function($event) {
-        var $$a = _vm.newShowcase.special,
-          $$el = $event.target,
-          $$c = $$el.checked ? (true) : (false);
-        if (Array.isArray($$a)) {
-          var $$v = null,
-            $$i = _vm._i($$a, $$v);
-          if ($$el.checked) {
-            $$i < 0 && (_vm.newShowcase.special = $$a.concat([$$v]))
-          } else {
-            $$i > -1 && (_vm.newShowcase.special = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-          }
-        } else {
-          _vm.$set(_vm.newShowcase, "special", $$c)
-        }
-      }
-    }
-  }), _vm._v("\n                            Is this is a special?\n                        ")])])])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "col-md-12"
   }, [_c('p', {
     attrs: {
       "role": "presentation",
@@ -54878,11 +54835,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('region')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('region')))])])]), _vm._v(" "), _c('p', {
-    attrs: {
-      "role": "presentation"
-    }
-  }, [_c('strong', [_vm._v("Homepage tile preview")]), _vm._v(_vm._s(_vm.newShowcase.region))]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.errors.first('region')))])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_vm._m(2, false, false), _vm._v(" "), _c('div', {
     staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info"
   }, [_c('a', {
     attrs: {
@@ -54906,11 +54863,68 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "tel:2088599133"
     }
-  }, [_vm._m(2, false, false)]) : _vm._e()])])]), _vm._v(" "), _c('div', {
+  }, [_c('button', {
+    staticClass: "btn btn-primary",
+    staticStyle: {
+      "box-shadow": "2px 2px 2px #000",
+      "margin": "0 15%",
+      "width": "70%",
+      "z-index": "99"
+    },
+    attrs: {
+      "role": "button"
+    }
+  }, [_vm._v("\n                                        call now!\n                                    ")])]) : _vm._e()])])]), _vm._v(" "), _vm._m(3, false, false), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"
+  }, [_c('div', {
+    staticClass: "checkbox",
+    staticStyle: {
+      "padding": "1em",
+      "border": "1px solid #ccc"
+    }
+  }, [_c('label', {
+    staticClass: "checkbox checkbox-inline",
+    attrs: {
+      "for": "special"
+    }
+  }, [_c('h3', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newShowcase.special),
+      expression: "newShowcase.special"
+    }],
+    attrs: {
+      "id": "special",
+      "name": "special",
+      "type": "checkbox"
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.newShowcase.special) ? _vm._i(_vm.newShowcase.special, null) > -1 : (_vm.newShowcase.special)
+    },
+    on: {
+      "change": function($event) {
+        var $$a = _vm.newShowcase.special,
+          $$el = $event.target,
+          $$c = $$el.checked ? (true) : (false);
+        if (Array.isArray($$a)) {
+          var $$v = null,
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && (_vm.newShowcase.special = $$a.concat([$$v]))
+          } else {
+            $$i > -1 && (_vm.newShowcase.special = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+          }
+        } else {
+          _vm.$set(_vm.newShowcase, "special", $$c)
+        }
+      }
+    }
+  }), _vm._v("\n                                Is this is a special?")])])])])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_vm._m(3, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(4, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54933,7 +54947,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(4, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(5, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54954,7 +54968,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(5, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(6, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -55111,30 +55125,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('strong', [_vm._v("Showcase page header preview:")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('button', {
-    staticClass: "btn btn-primary",
-    staticStyle: {
-      "margin": "0 15%",
-      "width": "70%",
-      "z-index": "99"
-    },
+  return _c('p', {
     attrs: {
-      "role": "button"
+      "role": "presentation"
     }
-  }, [_c('i', {
-    staticClass: "livicon icon4 icon3",
-    staticStyle: {
-      "width": "20px",
-      "height": "20px"
-    },
+  }, [_c('strong', [_vm._v("Homepage tile preview")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
     attrs: {
-      "data-name": "phone",
-      "data-size": "20",
-      "data-loop": "true",
-      "data-c": "#fff",
-      "data-hc": "#F0F8FF"
+      "role": "presentation"
     }
-  }), _vm._v("\n                                call now!\n                            ")])
+  }, [_c('strong', [_vm._v("Make it special:")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h4', {
     attrs: {
