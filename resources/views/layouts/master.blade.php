@@ -44,6 +44,7 @@
             @endif
         </header>
         @yield('top')
+
         <!-- Main Content -->
         <div class="container">
             @yield('content')
