@@ -47,6 +47,7 @@
 
         <!-- Main Content -->
         <div class="container">
+            @yield('message')
             @yield('content')
         </div>
         @yield('bottom')
