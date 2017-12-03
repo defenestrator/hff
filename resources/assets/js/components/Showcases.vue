@@ -44,6 +44,21 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <p role="presentation" name="title"><strong>Title: </strong>{{newShowcase.title}}</p>
+                    <input v-validate="'required|min:8'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
+                           type="text" placeholder="Showcase Title" style="width:100%">
+                    <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <p role="presentation"><strong>Sub-title: </strong>{{ newShowcase.tagline }}</p>
+                    <input v-validate="'required|min:4'" id="tagline" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
+                    <span v-show="errors.has('tagline')" class="help is-danger">{{ errors.first('tagline') }}</span>
+                </div>
+            </div>
             <!-- Header Photo Button -->
             <div class="form-group">
                 <div class="container">
@@ -54,18 +69,15 @@
                     <span v-show="errors.has('header_photo')" class="help is-danger">{{ errors.first('header_photo') }}</span>
                     <div role="img" class="header-photo-preview"
                          :style="previewStyle">
-
+                        <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center wow pulse" data-wow-duration="0.5s">
+                            <a :title="newShowcase.title"></a>
+                            {{newShowcase.title}}
+                        </h1>
+                        <h2 class="feature-tagline text-center">{{newShowcase.tagline}} </h2>
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <p role="presentation" name="title"><strong>Title: </strong>{{newShowcase.title}}</p>
-                    <input v-validate="'required|min:8'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
-                           type="text" placeholder="Showcase Title" style="width:100%">
-                    <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
-                </div>
-            </div>
+
             <input style="display:none;" name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
             <div class="form-group">
                 <div class="col-md-5">
@@ -79,14 +91,6 @@
                     <span v-show="errors.has('region')" class="help is-danger">{{ errors.first('region') }}</span>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <p role="presentation"><strong>Sub-header: </strong>{{ newShowcase.tagline }}</p>
-                    <input v-validate="'required|min:4'" id="tagline" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
-                    <span v-show="errors.has('tagline')" class="help is-danger">{{ errors.first('tagline') }}</span>
-                </div>
-            </div>
-
             <div class="form-group">
                 <div class="col-md-12">
                     <h4 role="presentation"><strong>Showcase Body:</strong></h4>
@@ -605,7 +609,7 @@ export default {
          * Calculate the style attribute for the photo preview.
          */
         previewStyle() {
-            return `background-image: url(${this.newShowcase.header_photo})`;
+            return `padding:2em 0; background-image: url(${this.newShowcase.header_photo});`;
         }
     },
     created() {

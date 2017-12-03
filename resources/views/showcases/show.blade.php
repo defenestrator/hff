@@ -13,7 +13,7 @@
                 background: #1a1a1a url('{{$showcase->header_photo}}') center center no-repeat;
                 background-size:cover; height:50vh;" >
         <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center wow pulse" data-wow-duration="0.5s">
-            <a id="{{$showcase->title}}"></a>
+            <a title="{{$showcase->title}}"></a>
             {{$showcase->title}}
         </h1>
         <h2 class="feature-tagline text-center">{{$showcase->tagline}} </h2>

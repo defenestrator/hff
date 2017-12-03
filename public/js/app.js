@@ -38850,6 +38850,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 // Import this component
 
@@ -39262,7 +39266,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
          * Calculate the style attribute for the photo preview.
          */
         previewStyle: function previewStyle() {
-            return 'background-image: url(' + this.newShowcase.header_photo + ')';
+            return 'padding:2em 0; background-image: url(' + this.newShowcase.header_photo + ');';
         }
     },
     created: function created() {
@@ -54592,46 +54596,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v("\n                            Is this is a special?\n                        ")])])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
-    staticClass: "container"
-  }, [_c('label', {
-    staticClass: "btn btn-primary btn-upload",
-    attrs: {
-      "type": "button",
-      "disabled": _vm.newShowcase.busy
-    }
-  }, [_c('span', [_vm._v("Select Header Photo")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "validate",
-      rawName: "v-validate",
-      value: ('required|mimes:jpg,jpeg,png,gif'),
-      expression: "'required|mimes:jpg,jpeg,png,gif'"
-    }],
-    ref: "header_photo",
-    staticClass: "form-control",
-    attrs: {
-      "type": "file",
-      "name": "header_photo"
-    },
-    on: {
-      "change": _vm.update_header
-    }
-  })]), _vm._v(" "), _c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.errors.has('header_photo')),
-      expression: "errors.has('header_photo')"
-    }],
-    staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('header_photo')))]), _vm._v(" "), _c('div', {
-    staticClass: "header-photo-preview",
-    style: (_vm.previewStyle),
-    attrs: {
-      "role": "img"
-    }
-  })])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
     staticClass: "col-md-12"
   }, [_c('p', {
     attrs: {
@@ -54678,7 +54642,104 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('title')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('title')))])])]), _vm._v(" "), _c('input', {
+  }, [_vm._v(_vm._s(_vm.errors.first('title')))])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('p', {
+    attrs: {
+      "role": "presentation"
+    }
+  }, [_c('strong', [_vm._v("Sub-title: ")]), _vm._v(_vm._s(_vm.newShowcase.tagline))]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|min:4'),
+      expression: "'required|min:4'"
+    }, {
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newShowcase.tagline),
+      expression: "newShowcase.tagline"
+    }],
+    staticClass: "form-control input",
+    attrs: {
+      "id": "tagline",
+      "name": "tagline",
+      "placeholder": "Make it a zinger"
+    },
+    domProps: {
+      "value": (_vm.newShowcase.tagline)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.newShowcase, "tagline", $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('tagline')),
+      expression: "errors.has('tagline')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('tagline')))])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('label', {
+    staticClass: "btn btn-primary btn-upload",
+    attrs: {
+      "type": "button",
+      "disabled": _vm.newShowcase.busy
+    }
+  }, [_c('span', [_vm._v("Select Header Photo")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|mimes:jpg,jpeg,png,gif'),
+      expression: "'required|mimes:jpg,jpeg,png,gif'"
+    }],
+    ref: "header_photo",
+    staticClass: "form-control",
+    attrs: {
+      "type": "file",
+      "name": "header_photo"
+    },
+    on: {
+      "change": _vm.update_header
+    }
+  })]), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('header_photo')),
+      expression: "errors.has('header_photo')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('header_photo')))]), _vm._v(" "), _c('div', {
+    staticClass: "header-photo-preview",
+    style: (_vm.previewStyle),
+    attrs: {
+      "role": "img"
+    }
+  }, [_c('h1', {
+    staticClass: "showcase-header feature-tagline text-center wow pulse",
+    staticStyle: {
+      "padding": "0 0.5em"
+    },
+    attrs: {
+      "data-wow-duration": "0.5s"
+    }
+  }, [_c('a', {
+    attrs: {
+      "title": _vm.newShowcase.title
+    }
+  }), _vm._v("\n                            " + _vm._s(_vm.newShowcase.title) + "\n                        ")]), _vm._v(" "), _c('h2', {
+    staticClass: "feature-tagline text-center"
+  }, [_vm._v(_vm._s(_vm.newShowcase.tagline) + " ")])])])]), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54794,49 +54855,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "help is-danger"
   }, [_vm._v(_vm._s(_vm.errors.first('region')))])])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "col-md-12"
-  }, [_c('p', {
-    attrs: {
-      "role": "presentation"
-    }
-  }, [_c('strong', [_vm._v("Sub-header: ")]), _vm._v(_vm._s(_vm.newShowcase.tagline))]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "validate",
-      rawName: "v-validate",
-      value: ('required|min:4'),
-      expression: "'required|min:4'"
-    }, {
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.newShowcase.tagline),
-      expression: "newShowcase.tagline"
-    }],
-    staticClass: "form-control input",
-    attrs: {
-      "id": "tagline",
-      "name": "tagline",
-      "placeholder": "Make it a zinger"
-    },
-    domProps: {
-      "value": (_vm.newShowcase.tagline)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.$set(_vm.newShowcase, "tagline", $event.target.value)
-      }
-    }
-  }), _vm._v(" "), _c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.errors.has('tagline')),
-      expression: "errors.has('tagline')"
-    }],
-    staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('tagline')))])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
