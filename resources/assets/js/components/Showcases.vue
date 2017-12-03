@@ -93,7 +93,7 @@
                     <span v-show="errors.has('region')" class="help is-danger">{{ errors.first('region') }}</span>
                 </div>
             </div>
-            <p role="presentation"><strong>Homepage tile preview</strong>{{ newShowcase.region }}</p>
+            <p role="presentation"><strong>Homepage tile preview</strong></p>
             <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
                 <a href="#" :title="newShowcase.title">
                     <div class="thumbnail"
