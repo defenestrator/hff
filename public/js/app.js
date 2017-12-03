@@ -38875,7 +38875,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 // Import this component
 
@@ -54578,12 +54577,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_c('p', {
-    attrs: {
-      "role": "presentation",
-      "name": "title"
-    }
-  }, [_c('strong', [_vm._v("Title: ")]), _vm._v(_vm._s(_vm.newShowcase.title))]), _vm._v(" "), _c('input', {
+  }, [_vm._m(1, false, false), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54627,11 +54621,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_c('p', {
-    attrs: {
-      "role": "presentation"
-    }
-  }, [_c('strong', [_vm._v("Sub-title: ")]), _vm._v(_vm._s(_vm.newShowcase.tagline))]), _vm._v(" "), _c('input', {
+  }, [_vm._m(2, false, false), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54692,7 +54682,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "change": _vm.update_header
     }
-  })]), _vm._v(" "), _vm._m(1, false, false), _vm._v(" "), _c('span', {
+  })]), _vm._v(" "), _vm._m(3, false, false), _vm._v(" "), _c('span', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -54839,7 +54829,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_vm._m(2, false, false), _vm._v(" "), _c('div', {
+  }, [_vm._m(4, false, false), _vm._v(" "), _c('div', {
     staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info"
   }, [_c('a', {
     attrs: {
@@ -54874,7 +54864,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "role": "button"
     }
-  }, [_vm._v("\n                                        call now!\n                                    ")])]) : _vm._e()])])]), _vm._v(" "), _vm._m(3, false, false), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                                        call now!\n                                    ")])]) : _vm._e()])])]), _vm._v(" "), _vm._m(5, false, false), _vm._v(" "), _c('div', {
     staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"
   }, [_c('div', {
     staticClass: "checkbox",
@@ -54924,7 +54914,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_vm._m(4, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(6, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54947,7 +54937,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(5, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(7, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54968,7 +54958,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(6, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(8, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -55118,6 +55108,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('thead', {
     staticClass: "thead-inverse"
   }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Special?")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    attrs: {
+      "role": "presentation",
+      "name": "title"
+    }
+  }, [_c('strong', [_vm._v("Title: ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    attrs: {
+      "role": "presentation"
+    }
+  }, [_c('strong', [_vm._v("Sub-title: ")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('p', {
     attrs: {

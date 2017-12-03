@@ -35,7 +35,7 @@
         <form enctype="multipart/form-data" class="form-horizontal new-post" v-if="! index" role="form">
             <div class="form-group">
                 <div class="col-md-12">
-                    <p role="presentation" name="title"><strong>Title: </strong>{{newShowcase.title}}</p>
+                    <p role="presentation" name="title"><strong>Title: </strong></p>
                     <input v-validate="'required|min:8|max:140'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
                            type="text" placeholder="Showcase Title" style="width:100%">
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
@@ -43,7 +43,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <p role="presentation"><strong>Sub-title: </strong>{{ newShowcase.tagline }}</p>
+                    <p role="presentation"><strong>Sub-title: </strong></p>
                     <input v-validate="'required|min:4|max:140'" id="tagline" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
                     <span v-show="errors.has('tagline')" class="help is-danger">{{ errors.first('tagline') }}</span>
                 </div>
@@ -51,7 +51,6 @@
             <!-- Header Photo Button -->
             <div class="form-group">
                 <div class="container">
-
                     <label type="button" class="btn btn-primary btn-upload" :disabled="newShowcase.busy">
                         <span>Select Header Photo</span>
                         <input v-validate="'required|mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
