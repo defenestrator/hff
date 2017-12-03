@@ -93,7 +93,7 @@
                                     <h3 style="font-weight:600;">{{newShowcase.region}}</h3>
                                 </div>
                                 <a v-if="newShowcase.special"href="tel:2088599133">
-                                    <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%; z-index:99;" class="btn btn-primary">
+                                    <button role="button" style="padding:6px 12px; box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%; z-index:99;" class="btn btn-primary">
                                         call now!
                                     </button>
                                 </a>
@@ -692,9 +692,6 @@ export default {
     @media (max-width: 991px) {
         .new-post .btn
         {
-            width:100%;
-            padding:1.34em;
-            margin: 0.66em 0;
         }
     }
     .post-index {
