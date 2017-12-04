@@ -6,6 +6,13 @@
 @stop
 
 @section('page_styles')
+    <style>
+        .g-recaptcha {
+            width: 304px;
+            margin: 0 auto;
+        }
+    </style>
+
 @stop
 
 @section('top')
@@ -33,7 +40,7 @@
             <section>
                 <article class="article">
                     {!! $showcase->sidebar_top !!}
-                    <sales-inquiry></sales-inquiry>
+                    @include('sales-inquiry')
                     {!! $showcase->sidebar_bottom !!}
                     <hr>
                     <div>

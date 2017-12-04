@@ -1,6 +1,5 @@
 <template>
     <div>
-        <form class="text-center">
             <div class="text-center">Click the call button or enter your email</div>
             <div class="input-group">
                 <span class="input-group-btn">
@@ -28,9 +27,8 @@
                     </span>
 
             </div>
-            <div style="min-height:24px;"><span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span></div>
+            <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
 
-        </form>
     </div>
 
 </template>

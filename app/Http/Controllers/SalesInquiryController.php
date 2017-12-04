@@ -23,6 +23,13 @@ class SalesInquiryController extends Controller
             'email' => 'bail|required|email|min:6|max:255',
             'message' => 'required|min:8|max:640',
         ]);
+
+//        if (config('app.env') !== 'testing') {
+//            $this->validate($request, [
+//                'g-recaptcha-response' => 'required|recaptcha'
+//            ]);
+//        }
+
         $contact = Contact::create([
             'address' => $request->email,
             'message' =>  $request->message
