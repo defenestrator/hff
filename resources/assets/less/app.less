@@ -664,15 +664,21 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
 }
 .thumbnail{
   border:1px solid #3ab0f5;
+
   background-size: cover;
   background-position: center center;
   transition:all 0.3s;
   overflow: hidden;
  }
+@media (min-width: 500px) {
+  .thumbnail {
+    height: 366px;
+  }
+}
 
 @media (min-width: 768px){
   .thumbnail {
-    height: 244px;
+    height: 350px;
   }
   .thumbnail p {
     text-align: left;
@@ -717,7 +723,7 @@ a:hover .thumbnail, a:active .thumbnail, a:focus .thumbnail{
   }
 }
 .thumbnail .caption {
-  text-shadow: 1px 2px 4px #000, 0px 0px 3px #3ab0f5;
+  text-shadow: 1px 2px 4px #031020;
   padding:1em 0;
   color:#fafaff;
   text-transform : uppercase;
@@ -778,7 +784,6 @@ a:hover .thumbnail .caption, a:active .thumbnail .caption, a:focus .thumbnail .c
 .side-menu li a{
   text-align: left
 }
-
 
 .latest-posts-image {
   height:200px;
