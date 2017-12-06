@@ -73,13 +73,13 @@
                 <div style="height:550px;overflow:hidden;">
                     <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
                     <a href="/publications/posts/{{$post->slug}}">
-                    <div style="overflow:hidden; height: 150px; background-image:url('{{$post->header_photo}}'); background-size:contain; background-repeat:no-repeat">
+                    <div style="overflow:hidden; height: 150px; background-image:url('{{$post->header_photo}}'); background-size:cover; background-repeat:no-repeat">
                     </div>
                     </a>
                     <br>
                     <article>
                         <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
-                            {!! str_limit(strip_tags($post->body), 200, '...') !!}
+                            <bold>{!! str_limit(strip_tags($post->body), 200, '...') !!}</bold>
                         </a>
                     </article>
                     <br>
