@@ -7,9 +7,6 @@
 
 @section('page_styles')
     <style>
-        .map-container {
-            margin:1em 0;
-        }
     </style>
 @stop
 
@@ -24,20 +21,12 @@
     </div>
     <div style="margin:22px;" class="text-center">
         <h3 style="color:#262626; margin:10px; font-weight: 600;">Once in a lifetime trip, or a lifetime of trips?</h3>
-        <h2 style="color:#262626; font-weight: 600; font-size:36px; margin:10px;"> <span style="margin-right:-7px;">H</span><img style=" margin:0; padding-bottom:8px;" src="/images/authenticated_hobo.png" title="Hobo fly fishing has the answer"><span style="margin-left:-5px;">bo Fly Fishing has the answer</span></h2>
+        <h2 style="color:#262626; line-height:0.5em; font-weight: 600; font-size:36px; margin:10px 10px 20px 10px; "> <span style="margin-right:-7px;">H</span><img style=" margin:0; padding-bottom:8px;" src="/images/authenticated_hobo.png" title="Hobo fly fishing has the answer"><span style="margin-left:-5px;">bo Fly Fishing has the answer</span></h2>
         <h3 style="color:#262626; margin:10px; font-weight: 600;">We will find trips to match your budget​.</h3>
     </div>
 
 @stop
 @section('content')
-    <!-- Listings Section Start -->
-    <div class="row">
-        <div class="col-md-12">
-            {{--<div class="map-container">--}}
-                {{--<div id="map" style="width:100%; height:45vh;"></div>--}}
-            {{--</div>--}}
-        </div>
-    </div>
     @foreach(array_chunk($showcases->all(), 2) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)
@@ -214,47 +203,6 @@
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
-    {{--<script>--}}
-        {{--var map;--}}
-        {{--function initMap() {--}}
-            {{--map = new google.maps.Map(document.getElementById('map'), {--}}
-                {{--el: '#map',--}}
-                {{--center: {--}}
-                    {{--lat: 29.8006,--}}
-                    {{--lng: -155.3964,--}}
-                {{--},--}}
-                {{--zoom: 1--}}
-            {{--})--}}
-            {{--var myLatLng ={lat:43.6939533, lng:-116.4674612}--}}
-            {{--var marker = new google.maps.Marker({--}}
-                {{--position: myLatLng,--}}
-                {{--map: map,--}}
-                {{--title: 'Hobo Fly Fishing, LLC',--}}
-                {{--label: {text: 'Hobo Fly Fishing, LLC'},--}}
-                {{--animation: google.maps.Animation.DROP,--}}
-            {{--});--}}
-            {{--// Loop through the results array and place a marker for each--}}
-            {{--// set of coordinates.--}}
-            {{--window.eqfeed_callback = function(results) {--}}
-                {{--for (var i = 0; i < results.features.length; i++) {--}}
-                    {{--var coords = results.features[i].geometry.coordinates;--}}
-                    {{--var latLng = new google.maps.LatLng(coords[1],coords[0]);--}}
-                    {{--var marker = new google.maps.Marker({--}}
-                        {{--position: latLng,--}}
-                        {{--map: map--}}
-                    {{--});--}}
-                {{--}--}}
-            {{--}--}}
-            {{--// Create a <script> tag and set the USGS URL as the source.--}}
-            {{--var script = document.createElement('script');--}}
-            {{--// This example uses a local copy of the GeoJSON stored at--}}
-            {{--// http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp--}}
-            {{--script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';--}}
-            {{--document.getElementsByTagName('head')[0].appendChild(script);--}}
-        {{--}--}}
-    {{--</script>--}}
-    {{--<script src="https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU&callback=initMap" async defer>--}}
-    {{--</script>--}}
     <script>
         new WOW().init();
     </script>

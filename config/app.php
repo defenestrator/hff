@@ -129,6 +129,8 @@ return [
 
     'api_token' => env('HOBO_API_TOKEN', ''),
 
+    'gmaps_key' => env('GOOGLE_MAPS_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
