@@ -7,6 +7,10 @@
 
 @section('page_styles')
     <style>
+        .map-container {
+            width: 500px;
+            height: 300px;
+        }
     </style>
 @stop
 
