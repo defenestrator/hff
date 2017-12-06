@@ -7776,10 +7776,11 @@ blockquote {
 .box {
   border-radius: 3px;
   padding: 10px 15px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   text-align: right;
   display: block;
-  margin-top: 60px;
-  margin-bottom: 15px;
+  margin-top: 80px;
+  margin-bottom: 30px;
 }
 /* ---------- //Our services Box  Style Css End ---------- */
 /* ------------- Our Services Box Icon Css ---------- */
