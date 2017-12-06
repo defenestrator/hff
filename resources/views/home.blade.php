@@ -24,7 +24,7 @@
     </div>
     <div style="margin:22px;" class="text-center">
         <h3 style="color:#262626; margin:10px; font-weight: 600;">Once in a lifetime trip, or a lifetime of trips?</h3>
-        <h2 style="color:#262626; font-weight: 600; margin:10px; line-height:2em; "> <span style="margin-right:-5px;">H</span><img style=" margin:0; width:37px; height:37px; padding-bottom:5px;" src="/images/authenticated_hobo.png" title="Hobo fly fishing has the answer"><span style="margin-left:-3px;">bo Fly Fishing has the answer;</span></h2>
+        <h2 style="color:#262626; font-weight: 600; margin:10px;"> <span style="margin-right:-5px;">H</span><img style=" margin:0; width:37px; height:37px; padding-bottom:5px;" src="/images/authenticated_hobo.png" title="Hobo fly fishing has the answer"><span style="margin-left:-3px;">bo Fly Fishing has the answer;</span></h2>
         <h3 style="color:#262626; margin:10px; font-weight: 600;">We will find trips to match your budget​.</h3>
     </div>
 
