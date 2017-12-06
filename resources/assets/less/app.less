@@ -35,7 +35,6 @@ h2, .h2 {
 
 .jumbotron {
   background-color:white;
-  box-shadow: #333333 0px 0px 8px;
 }
 
 .article img, .jumbotron img{
@@ -45,7 +44,6 @@ h2, .h2 {
 .article img {
   margin-bottom:1em;
   border-radius:6px;
-  box-shadow: #333333 0px 0px 8px;
 }
 .article img.logo {
   box-shadow:none;
@@ -273,7 +271,6 @@ blockquote {
 
 .box {
   border-radius : 3px;
-  box-shadow    : 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   padding       : 10px 15px;
   text-align    : right;
   display       : block;
@@ -378,7 +375,6 @@ blockquote {
   border:1px solid #3ab0f5;
   background-size: cover;
   background-position: center center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition:all 0.3s;
 }
 .weekly-special {
@@ -401,7 +397,6 @@ blockquote {
 .purchase-styl {
   background-color : #3f844e;
   border           : none;
-  box-shadow       : -1px 2px 0 #6f743f;
   color            : #fff;
   margin-top       : 10px;
   transition:all 0.3s;
@@ -411,7 +406,6 @@ blockquote {
 .purchase-styl:focus {
   transition:all 0.3s;
   background-color : #7cb26f;
-  box-shadow       : 0 2px 0 #3F844E;
 }
 /* ---------- //Purchase Section Css Ebd ---------- */
 /* ---------- Our Team Divide Section Css ---------- */
@@ -440,26 +434,6 @@ blockquote {
 .article img {
   margin-bottom:1em;
 }
-/* ---------- News Section Css----------*/
-
-.news {
-  margin-top : 2%;
-}
-.news .form-group {
-  width : 80%;
-}
-.news .form-control {
-  background-color : #444343;
-  border           : 1px solid #5E5E5E;
-  color            : #f3f3f3;
-}
-.news > .form-control:focus {
-  border-color       : #5E5E5E;
-  outline            : 0;
-  -webkit-box-shadow : rgba(0, 0, 0, 0);
-  box-shadow         : rgba(0, 0, 0, 0);
-}
-/* ---------- //News Section Css End ---------- */
 
 .panel-default > .panel-heading {
   color            : #333;
@@ -534,7 +508,6 @@ footer img {
 
 .VueCarousel-dot-inner {
   background-color: transparent;
-  box-shadow: 1px 1px 1px #000;
 }
 #bar {
   width      : 0;
@@ -679,7 +652,6 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
   left: 0;
   z-index: 300;
   background-color: #fafaff;
-  box-shadow: 0 1px 2px -2px #000;
 }
 .dropdown-menu {
 }
@@ -692,7 +664,6 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
   border:1px solid #3ab0f5;
   background-size: cover;
   background-position: center center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   transition:all 0.3s;
   overflow: hidden;
  }
@@ -717,7 +688,6 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
 }
 a:hover .thumbnail, a:active .thumbnail, a:focus .thumbnail{
   border:1px solid rgb(18, 139, 198);
-  box-shadow: 0 2px 5px 0 transparent, 0 2px 10px 0 transparent;
   transition:all 0.3s;
 }
 
@@ -729,8 +699,11 @@ a:hover .thumbnail, a:active .thumbnail, a:focus .thumbnail{
   margin-bottom:0;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
-  background-color:#fafaff;
   color:#3ab0f5;
+  transition: all 0.25s;
+}
+.navbar-default .navbar-nav > li > a {
+  color:#262626;
   transition: all 0.25s;
 }
 @media (max-width: 767px) {
@@ -760,7 +733,6 @@ a:hover .thumbnail .caption, a:active .thumbnail .caption, a:focus .thumbnail .c
   height: 46px;
   padding: 2px;
   width: 46px;
-  box-shadow: 0px 0px 2px #000;
 }
 .spark-profile-photo {
   height: 48px;
@@ -781,15 +753,7 @@ a:hover .thumbnail .caption, a:active .thumbnail .caption, a:focus .thumbnail .c
   width:100%;
   background-color:transparent;
 }
-.audio-container{
-  overflow-x:hidden;
-  margin: 1.5em auto 0.5em auto;
-  width:100%;
-  padding:0.5rem 0 0.5rem 0;
-  border:1px solid #666;
-  border-radius:0.5rem;
-  box-shadow:-1px 1px 4px #000;
-}
+
 .payment-icons li{
   padding:0;
 }
