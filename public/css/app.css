@@ -8183,7 +8183,7 @@ a:active.btn-primary {
 a:hover .thumbnail,
 a:active .thumbnail,
 a:focus .thumbnail {
-  border: 1px solid #128bc6;
+  border: 1px solid transparent;
   transition: all 0.3s;
 }
 .navbar-default .navbar-nav > .open > a,
