@@ -54851,7 +54851,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v(_vm._s(_vm.newShowcase.region))])]), _vm._v(" "), (_vm.newShowcase.special) ? _c('a', {
     attrs: {
-      "href": "tel:2088599133"
+      "href": "#"
     }
   }, [_c('button', {
     staticClass: "btn btn-warning",
@@ -54859,13 +54859,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "padding": "6px 12px",
       "box-shadow": "2px 2px 2px #000",
       "margin": "0 15%",
-      "width": "70%",
-      "z-index": "99"
+      "width": "70%"
     },
     attrs: {
       "role": "button"
     }
-  }, [_vm._v("\n                                        call now!\n                                    ")])]) : _vm._e()])])]), _vm._v(" "), _vm._m(5, false, false), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                                        learn more\n                                    ")])]) : _vm._e()])])]), _vm._v(" "), _vm._m(5, false, false), _vm._v(" "), _c('div', {
     staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"
   }, [_c('div', {
     staticClass: "checkbox",

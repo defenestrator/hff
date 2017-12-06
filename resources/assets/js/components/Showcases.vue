@@ -92,11 +92,11 @@
                                     <h3 style="font-weight:600;">{{newShowcase.fishery_type}}</h3>
                                     <h3 style="font-weight:600;">{{newShowcase.region}}</h3>
                                 </div>
-                                <a v-if="newShowcase.special"href="tel:2088599133">
+                                <a v-if="newShowcase.special" href="#">
                                     <button role="button"
                                             style="padding:6px 12px; box-shadow: 2px 2px 2px #000; margin:0 15%;
-                                            width:70%; z-index:99;" class="btn btn-warning">
-                                        call now!
+                                            width:70%;" class="btn btn-warning">
+                                        learn more
                                     </button>
                                 </a>
                             </div>
