@@ -8054,6 +8054,7 @@ a.btn-primary {
 .post {
   border: none;
   border-bottom: 2px solid #ddd;
+  padding-bottom: 1em;
   background: transparent;
 }
 .post img {

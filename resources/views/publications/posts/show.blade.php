@@ -65,7 +65,7 @@
                     <p>
                         <strong>Tags: </strong>
                         @forelse($post->tags as $tag)
-                            <a href="{{ URL::to('posts/' . ($tag->normalized) . '/tag') }}">{{ $tag->name }}</a>,
+                            <strong><a href="{{ URL::to('posts/' . ($tag->normalized) . '/tag') }}">{{ $tag->name }}</a></strong>,
                         @empty
                             No Tags
                         @endforelse
@@ -87,13 +87,11 @@
                                     <h3 style="font-weight:600;">{{$showcase->region}}</h3>
                                 </div>
                                 @if($showcase->special)
-                                    <a href="tel:2088599133">
-                                        <button role="button" style=" margin:0 15%; width:70%; z-index:99;" class="btn btn-danger">
-                                            <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
-                                               data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
-                                            call now!
-                                        </button>
-                                    </a>
+                                    <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="btn btn-warning">
+                                        <i data-name="question" data-size="16" data-loop="true" data-c="#fff"
+                                           data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 16px; height: 16px;"></i>
+                                        <span>Learn More</span>
+                                    </button>
                                 @endif
                             </div>
                         </a>
