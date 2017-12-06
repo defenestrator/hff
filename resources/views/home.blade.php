@@ -22,10 +22,10 @@
             Elite Destinations, Local Flavor
         </h2>
     </div>
-    <div class="text-center">
-        <h3 style="margin:5px 10px;">Once in a lifetime trip, or a lifetime of trips?</h3>
-        <h2 style="margin:5px 10px;">We have the answer; </h2>
-        <h3 style="margin:5px 10px;">We will find trips to match your budget​.</h3>
+    <div style="margin:22px;" class="text-center">
+        <h3 style="margin:10px;">Once in a lifetime trip, or a lifetime of trips?</h3>
+        <h2 style="margin:10px;">We have the answer; </h2>
+        <h3 style="margin:10px;">We will find trips to match your budget​.</h3>
     </div>
 
 @stop
@@ -68,18 +68,19 @@
     <div class="row">
         <div class="container"><h2>Latest Blog Posts</h2></div>
         @foreach($posts as $post)
-            <div class="col-md-4">
+            <div class="col-sm-4">
             <div class="post">
-                <div style="height:550px;overflow:hidden;">
+                <div class="latest-posts">
                     <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
                     <a href="/publications/posts/{{$post->slug}}">
-                    <div style="overflow:hidden; height: 150px; background-image:url('{{$post->header_photo}}'); background-size:cover; background-repeat:no-repeat">
+                    <div class="latest-posts-image"
+                         style="background:url('{{$post->header_photo}}') no-repeat; background-size:cover;">
                     </div>
                     </a>
                     <br>
                     <article>
                         <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
-                            <bold>{!! str_limit(strip_tags($post->body), 200, '...') !!}</bold>
+                            <strong>{!! $post->sentence !!}</strong>
                         </a>
                     </article>
                     <br>

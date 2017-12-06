@@ -18,9 +18,6 @@ class TagsController extends Controller
      */
     public function index(Post $post, Showcase $showcase, $normalized)
     {
-        $showtype = collect(['type' => 'showcase']);
-        $postype = collect(['type' => 'post']);
-
         $posts = $post->withAnyTags([$normalized])->get()->map(function($post){
             $post['type'] = 'posts';
             return $post;

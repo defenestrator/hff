@@ -31,7 +31,15 @@ class HomeController extends Controller
     public function index()
     {
         $puBlogs = $this->publication->all('post_id');
-        $posts = $this->post->whereIn('id', $puBlogs)->orderBy('created_at', 'desc')->take(3)->get();
+        $posts = $this->post
+                    ->whereIn('id', $puBlogs)
+                    ->orderBy('created_at', 'desc')
+                    ->take(3)->get()
+                    ->map( function ($post) {
+                        $post['sentence'] = str_limit(strip_tags($post->body), 200, '...');
+                        // can also surround that with this, maybe break on sentence? preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', )
+                        return $post;
+                    });
 
         $puShowcases = $this->publication->all('showcase_id');
         $showcases = $this->showcase->whereIn('id', $puShowcases)->orderBy('updated_at', 'desc')->paginate(27);

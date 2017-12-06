@@ -168,10 +168,10 @@ p label {
   color: #3f844e;
 }
 .footer-link {
-  color: #CCCCCC;
+  color: #cccfd1;
 }
 .footer-link a:visited, .footer-link a:link {
-  color: #CCCCCC;
+  color: #cccfd1;
   transition: all 0.5s;
 }
 .footer-link a:hover, .footer-link a:active, .footer-link a:focus {
@@ -477,7 +477,7 @@ footer h4 {
   color : #fff;
 }
 .footer-text {
-  color   : #ababab;
+  color   : #cccfd1;
   padding : 30px 0;
 }
 footer img {
@@ -523,6 +523,7 @@ footer img {
 
 .copyright {
   background-color : #1a1a1a;
+  color: #cccfd1;
 }
 .copyright p {
   color   : #fff;
@@ -686,6 +687,7 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
   .thumbnail {
     height: 312px;
   }
+
 }
 a:hover .thumbnail, a:active .thumbnail, a:focus .thumbnail{
   border:1px solid rgb(18, 139, 198);
@@ -777,3 +779,34 @@ a:hover .thumbnail .caption, a:active .thumbnail .caption, a:focus .thumbnail .c
   text-align: left
 }
 
+
+.latest-posts-image {
+  height:225px;
+}
+@media (min-width: 768px){
+  .latest-posts {
+    height:700px;
+    overflow:hidden;
+  }
+  .latest-posts-image {
+    height:150px;
+  }
+}
+@media (min-width: 992px){
+  .latest-posts {
+    height:650px;
+    overflow:hidden;
+  }
+  .latest-posts-image {
+    height:150px;
+  }
+}
+@media (min-width: 1200px) {
+  .latest-posts {
+    height: 650px;
+    overflow: hidden;
+  }
+  .latest-posts-image {
+    height:250px;
+  }
+}
