@@ -177,28 +177,22 @@
                 </section>
             </article>
         </div>
-        <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-0">
-            <article class="article">
 
+
+        <div class="col-md-5 col-md-offset-1 col-sm-4 col-sm-offset-0">
+            <article class="article">
                 <section>
-                    <p>We will never have a hundred names on our "Pro Staff." We don't want them.
-                    </p>
+                    <h4>We will never have a hundred names on our "Pro Staff." We don't want them.
+                    </h4>
                     <p>
                         90% are meaningless headshots next to the name of some random clown they met at the bar.
                     </p>
-                    <img src="/images/the-dude-1.jpg" style="border-radius:1em;"
+
+                    <img src="/images/bully.jpg" style="border-radius:6px; margin-top:10px;;"
                          alt="Yeah, well, that's just, like, your opinion, man."
-                         title="Yeah, well, that's just, like, your opinion, man."
-                    >
+                         title="Yeah, well, that's just, like, your opinion, man.">
                 </section>
-
             </article>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12 col-md-offset-0">
-            &nbsp;
         </div>
     </div>
 @stop
