@@ -79,7 +79,7 @@
                 @foreach($showcases as $showcase)
                     <div class="col-md-12 info">
                         <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
-                            <div class="thumbnail"
+                            <div class="sidebar-thumbnail"
                                  style="background-image: url('{{$showcase->thumbnail}}');
                                          background-position: center center;">
                                 <div class="caption">
