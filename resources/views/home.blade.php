@@ -98,7 +98,7 @@
         <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="0.5s">
             <div class="box">
                 <div class="box-icon">
-                    <img src="/images/go.png"/>
+                    <img src="/images/go.png" title="go"/>
                 </div>
                 <div class="info">
                     <h3 class="text-center">Self-Guided Adventures</h3>
@@ -115,7 +115,7 @@
         <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="0.5s" data-wow-delay="0.1s">
             <div class="box">
                 <div class="box-icon box-icon2">
-                    <img src="/images/very-good.png"/>
+                    <img src="/images/very-good.png" title="very good"/>
                 </div>
                 <div class="info">
                     <h3 class="text-center">Full Service Expeditions</h3>
@@ -129,7 +129,7 @@
         <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="0.5s" data-wow-delay="0.2s">
             <div class="box">
                 <div class="box-icon">
-                    <img src="/images/safe-camp.png"/>
+                    <img src="/images/safe-camp.png" title="safe camp"/>
                 </div>
                 <div class="info">
                     <h3 class="text-center">Hybrid Fly Fishing Trips</h3>
