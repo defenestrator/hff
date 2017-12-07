@@ -30,7 +30,7 @@ class FireTest extends DuskTestCase
         $response->assertViewIs('home');
         $response->assertSeeText('info@hoboflyfishing.com');
         $response->assertSee('Self-Guided Adventures');
-        $response->assertSee('Hybrid Trips');
+        $response->assertSee('Hybrid Fly Fishing Trips');
         $response->assertSee('Full Service Expeditions');
         $response->assertSee('<html');
         $response->assertSee('</html>');
