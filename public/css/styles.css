@@ -7616,7 +7616,7 @@ p label {
 .primary > a:visited,
 .primary > a:hover,
 .primary > a:active {
-  color: #128BC6;
+  color: #3097D1;
   text-decoration: none;
 }
 .bg-default {
@@ -7786,7 +7786,8 @@ blockquote {
 /* ------------- Our Services Box Icon Css ---------- */
 .box-icon {
   background-color: #ffffff;
-  border: 1px solid #3f844e;
+  border: 1px solid #c5c7ca;
+  overflow: hidden;
   border-radius: 50%;
   display: table;
   height: 80px;
@@ -7801,15 +7802,6 @@ blockquote {
   vertical-align: middle;
 }
 /* ---------- Our Services Icon Border css ---------- */
-.box-icon1 {
-  border: 1px solid #128BC6;
-}
-.box-icon2 {
-  border: 1px solid #f89a14;
-}
-.box-icon3 {
-  border: 1px solid #FFD43C;
-}
 .info > p {
   color: #787878;
   font-size: 14px;
