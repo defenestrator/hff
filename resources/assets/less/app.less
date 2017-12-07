@@ -12,7 +12,7 @@ html {
 
 body {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
-  background-color: #fafaff;
+  background-color: #ffffff;
   font-family     : 'Raleway', sans-serif;
   font-weight     : 300;
   letter-spacing  :  0.07em;
@@ -27,7 +27,7 @@ h2, .h2 {
 
 .navbar-default {
   border:none;
-  background:#fafaff;
+  background:#fff;
 }
 
 .navbar-toggle {
@@ -270,9 +270,9 @@ blockquote {
 /* ---------- Our services Box  Style Css ---------- */
 
 .box {
-  border-radius : 3px;
+  border-radius : 40px;
+  border:1px solid #c5c7ca;
   padding       : 10px 15px;
-  box-shadow    : 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   text-align    : right;
   display       : block;
   margin-top    : 80px;
@@ -282,14 +282,13 @@ blockquote {
 /* ------------- Our Services Box Icon Css ---------- */
 
 .box-icon {
-  background-color : transparent;
+  background-color : #ffffff;
   border           : 1px solid #3f844e;
   border-radius    : 50%;
   display          : table;
   height           : 80px;
-  margin           : 0 auto;
+  margin           : -61px auto 0 auto;
   width            : 80px;
-  margin-top       : -61px;
 }
 /* ------------- //Our Services Box Icon Css End ---------- */
 
@@ -366,7 +365,7 @@ blockquote {
 .feature-tagline {
   text-shadow: 1px 2px 4px #bf542a, 0px 0px 3px #bf542a;
   padding:1em 0;
-  color:#fafaff;
+  color:#ffffff;
   text-transform : uppercase;
   font-weight: 600;
   margin:0 1em;
@@ -671,9 +670,23 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
   transition:all 0.3s;
   overflow: hidden;
  }
+.sidebar-thumbnail{
+  border:1px solid #3ab0f5;
+  border-radius:6px;
+  background-size: cover;
+  transition:all 0.3s;
+  overflow: hidden;
+  display: block;
+  padding: 4px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
 @media (min-width: 500px) {
   .thumbnail {
     height: 366px;
+  }
+  .sidebar-thumbnail{
+    height:300px;
   }
 }
 
@@ -684,10 +697,15 @@ a:link.btn-primary, a:visited.btn-primary, a:hover.btn-primary, a:active.btn-pri
   .thumbnail p {
     text-align: left;
   }
+
+
 }
 @media (min-width: 992px){
   .thumbnail {
     height: 285px;
+  }
+  .sidebar-thumbnail{
+    height:150px;
   }
 }
 @media (min-width: 1200px){
@@ -718,15 +736,15 @@ a:hover .thumbnail, a:active .thumbnail, a:focus .thumbnail{
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    background-color:#fafaff;
+    background-color:#ffffff;
     color:#3ab0f5;
     transition: all 0.25s;
   }
 }
-.thumbnail .caption {
+.thumbnail .caption, .sidebar-thumbnail .caption {
   text-shadow: 1px 2px 4px #031020;
   padding:1em 0;
-  color:#fafaff;
+  color:#ffffff;
   text-transform : uppercase;
   font-weight: 600;
   font-size:1.2em;
