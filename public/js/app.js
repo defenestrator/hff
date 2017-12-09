@@ -38050,6 +38050,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     user_id: Spark.state.user.id,
                     author: Spark.state.user.name,
                     header_photo: _this2.newPost.header_photo,
+                    image_id: _this2.newPost.image_id,
                     slug: _this2.newPost.slug,
                     body: _this2.newPost.body,
                     tags: _this2.newPost.tags
@@ -38142,6 +38143,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     header_photo: _this6.newPost.header_photo,
                     user_id: Spark.state.user.id,
                     author: Spark.state.user.name,
+                    image_id: _this6.newPost.image_id,
                     body: _this6.newPost.body,
                     tags: _this6.newPost.tags
                 }).then(function (result) {
@@ -38194,6 +38196,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             axios.post(this.urlForUpdate, this.gatherFormData()).then(function (result) {
                 _this8.newPost.header_photo = result.data.large;
                 _this8.newPost.thumbnail = result.data.thumbnail;
+                _this8.newPost.image_id = result.data.image_id;
                 self.newPost.finishProcessing();
             }, function (error) {
                 self.newPost.setErrors(error.response.data.errors);
@@ -38275,7 +38278,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             body: 'required|min:40',
             slug: 'required'
         });
-        this.$set(this, 'errors', this.validator.errors);
     },
 
     computed: {
@@ -38904,6 +38906,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 region: "",
                 special: false,
                 header_photo: "",
+                image_id: null,
                 thumbnail: "",
                 tags: [],
                 link: '',
@@ -39039,6 +39042,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     fishery_type: _this2.newShowcase.fishery_type,
                     region: _this2.newShowcase.region,
                     header_photo: _this2.newShowcase.header_photo,
+                    image_id: _this2.newShowcase.image_id,
                     thumbnail: _this2.newShowcase.thumbnail,
                     special: _this2.newShowcase.special,
                     tags: _this2.newShowcase.tags
@@ -39134,6 +39138,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     fishery_type: _this6.newShowcase.fishery_type,
                     region: _this6.newShowcase.region,
                     header_photo: _this6.newShowcase.header_photo,
+                    image_id: _this6.newShowcase.image_id,
                     thumbnail: _this6.newShowcase.thumbnail,
                     special: _this6.newShowcase.special,
                     tags: _this6.newShowcase.tags
@@ -39188,6 +39193,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             axios.post(this.urlForUpdate, this.gatherFormData()).then(function (result) {
                 _this8.newShowcase.header_photo = result.data.large;
                 _this8.newShowcase.thumbnail = result.data.thumbnail;
+                _this8.newShowcase.image_id = result.data.image_id;
                 self.newShowcase.finishProcessing();
             }, function (error) {
                 self.newShowcase.setErrors(error.response.data.errors);
@@ -39299,7 +39305,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             sidebar_top: 'required',
             sidebar_bottom: 'required'
         });
-        this.$set(this, 'errors', this.validator.errors);
     }
 });
 

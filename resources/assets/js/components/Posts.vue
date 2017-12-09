@@ -268,6 +268,7 @@ export default {
                                 user_id: Spark.state.user.id,
                                 author: Spark.state.user.name,
                                 header_photo: this.newPost.header_photo,
+                                image_id: this.newPost.image_id,
                                 slug:  this.newPost.slug,
                                 body:  this.newPost.body,
                                 tags: this.newPost.tags
@@ -367,6 +368,7 @@ export default {
                         header_photo: this.newPost.header_photo,
                         user_id: Spark.state.user.id,
                         author: Spark.state.user.name,
+                        image_id: this.newPost.image_id,
                         body:  this.newPost.body,
                         tags: this.newPost.tags
                     })
@@ -418,14 +420,15 @@ export default {
             // the data so we can POST it up to the server. This will allow us to do async
             // uploads of the profile photos. We will update the user after this action.
             axios.post(this.urlForUpdate, this.gatherFormData())
-                    .then(result  => {
-                this.newPost.header_photo = result.data.large
-            this.newPost.thumbnail = result.data.thumbnail
-            self.newPost.finishProcessing();
-        },
-            (error) => {
-                self.newPost.setErrors(error.response.data.errors);
-            }
+                .then(result  => {
+                    this.newPost.header_photo = result.data.large
+                    this.newPost.thumbnail = result.data.thumbnail
+                    this.newPost.image_id = result.data.image_id
+                    self.newPost.finishProcessing();
+                },
+                (error) => {
+                    self.newPost.setErrors(error.response.data.errors);
+                }
         );
         },
         /**
@@ -503,7 +506,6 @@ export default {
             body: 'required|min:40',
             slug: 'required'
         });
-        this.$set(this, 'errors', this.validator.errors);
     },
     computed: {
         /**

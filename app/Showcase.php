@@ -67,6 +67,7 @@ class Showcase extends Model
         'region',
         'thumbnail',
         'header_photo',
+        'image_id',
         'special'
     ];
 

@@ -233,6 +233,7 @@ export default {
                 region: "",
                 special: false,
                 header_photo:"",
+                image_id: null,
                 thumbnail: "",
                 tags: [],
                 link: '',
@@ -378,6 +379,7 @@ export default {
                                 fishery_type: this.newShowcase.fishery_type,
                                 region: this.newShowcase.region,
                                 header_photo:this.newShowcase.header_photo,
+                                image_id: this.newShowcase.image_id,
                                 thumbnail: this.newShowcase.thumbnail,
                                 special: this.newShowcase.special,
                                 tags: this.newShowcase.tags
@@ -480,6 +482,7 @@ export default {
                         fishery_type: this.newShowcase.fishery_type,
                         region: this.newShowcase.region,
                         header_photo:this.newShowcase.header_photo,
+                        image_id: this.newShowcase.image_id,
                         thumbnail: this.newShowcase.thumbnail ,
                         special: this.newShowcase.special,
                         tags: this.newShowcase.tags
@@ -536,6 +539,7 @@ export default {
                     .then(result  => {
                 this.newShowcase.header_photo = result.data.large
                 this.newShowcase.thumbnail = result.data.thumbnail
+                this.newShowcase.image_id = result.data.image_id
             self.newShowcase.finishProcessing();
         },
             (error) => {
@@ -649,7 +653,6 @@ export default {
             sidebar_top: 'required',
             sidebar_bottom: 'required'
         });
-        this.$set(this, 'errors', this.validator.errors);
     }
 }
 

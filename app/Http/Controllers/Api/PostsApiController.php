@@ -30,12 +30,14 @@ class PostsApiController extends ApiController
             'body' => 'required|min:8',
             'slug' => 'required|alpha_dash|unique:posts,slug',
             'title' => 'required|min:2',
+            'image_id' => 'required|integer',
             'header_photo' => 'required'
         ]);
         return $post->create([
             'user_id'  => $request->user_id,
             'author' => $request->author,
             'header_photo' => $request->header_photo,
+            'image_id' => $request->image_id,
             'body'  => $request->body,
             'title' => $request->title,
             'slug' => $request->slug
@@ -74,6 +76,7 @@ class PostsApiController extends ApiController
         $request->validate([
             'body' => 'required|min:8',
             'title' => 'required|min:2',
+            'image_id' => 'required|integer',
             'header_photo' => 'required'
         ]);
         $content = $post->find($id);
@@ -81,6 +84,7 @@ class PostsApiController extends ApiController
         $content->update([
             'body'  => $request->body,
             'title' => $request->title,
+            'image_id' => $request->image_id,
             'header_photo' => $request->header_photo,
         ]);
         $content->retag($request->tags);
