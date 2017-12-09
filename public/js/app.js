@@ -39333,7 +39333,7 @@ Vue.component('posts', __webpack_require__(324));
 Vue.component('publications', __webpack_require__(325));
 Vue.component('showcases', __webpack_require__(326));
 Vue.component('input-tag', __webpack_require__(319));
-
+Vue.component('destinations', __webpack_require__(438));
 // Public "guest" components
 Vue.component('public-footer', __webpack_require__(322));
 Vue.component('newsletter-signup-registration', __webpack_require__(321));
@@ -66764,6 +66764,826 @@ return Vue$3;
 __webpack_require__(148);
 module.exports = __webpack_require__(149);
 
+
+/***/ }),
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */,
+/* 434 */,
+/* 435 */,
+/* 436 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(7);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+// Import this component
+
+
+// Import editor css
+
+
+
+Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
+/* harmony default export */ __webpack_exports__["default"] = ({
+    validator: null,
+    mounted: function mounted() {
+        this.getIndex();
+    },
+
+    components: {
+        trumbowyg: __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default.a
+    },
+    data: function data() {
+        return {
+            index: true,
+            destinations: [],
+            newDestination: new SparkForm({
+                name: '',
+                description: '',
+                lat: null,
+                lng: null,
+                destinationId: null,
+                saveBusy: false,
+                saveError: false,
+                saved: false
+            }),
+            trumbowygConfig: {
+                id: 'trumbowyg',
+                autogrowOnEnter: true,
+                btnsDef: {
+                    // Customizables dropdowns
+                    image: {
+                        dropdown: ['insertImage', 'upload'],
+                        ico: 'insertImage'
+                    }
+                },
+                btns: [['viewHTML'], ['formatting'], ['strong', 'em', 'underline'], ['link'], ['image'], ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'], ['unorderedList', 'orderedList'], ['horizontalRule'], ['removeformat']],
+                plugins: {
+                    upload: {
+                        serverPath: '/cms/destinations/images',
+                        fileFieldName: 'image',
+                        urlPropertyName: 'large',
+                        headers: {
+                            'X-CSRF-TOKEN': Spark.csrfToken
+                        },
+                        xhrFields: {}
+                    }
+                }
+            }
+        };
+    },
+
+    watch: {
+        'newDestination.header_photo': function newDestinationHeader_photo(val, oldVal) {
+            this.newDestination.saved = false;
+        },
+        name: function name(value) {
+            this.validator.validate('name', value);
+        },
+        lat: function lat(value) {
+            this.validator.validate('lat', value);
+        },
+        lng: function lng(value) {
+            this.validator.validate('lng', value);
+        },
+
+        'newDestination.name': function newDestinationName(val, oldVal) {
+            this.newDestination.saved = false;
+        },
+        'newDestination.lat': function newDestinationLat(val, oldVal) {
+            this.newDestination.saved = false;
+        },
+        'newDestination.lng': function newDestinationLng(val, oldVal) {
+            this.newDestination.saved = false;
+        }
+    },
+    methods: {
+        getIndex: function getIndex() {
+            var _this = this;
+
+            axios.get('/api/destinations', {}).then(function (result) {
+                _this.destinations = result.data.data;
+                return _this.destinations;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        },
+        toggleIndex: function toggleIndex() {
+            if (this.index == true) {
+                return this.index = false;
+            }
+            this.getIndex();
+            return this.index = true;
+        },
+        save: function save() {
+            var _this2 = this;
+
+            this.newDestination.saveError = false;
+            this.newDestination.saveBusy = true;
+            this.validator.validateAll({
+                name: this.newDestination.name,
+                lat: this.newDestination.lat,
+                lng: this.newDestination.lng
+            }).then(function (result) {
+                axios.destination('/api/destinations', {
+                    name: _this2.newDestination.name,
+                    lat: _this2.newDestination.lat,
+                    lng: _this2.newDestination.lng,
+                    description: _this2.newDestination.description
+                }).then(function (result) {
+                    _this2.newDestination.saveBusy = false;
+                    _this2.newDestination.saved = true;
+                    _this2.newDestination.destinationId = result.data.id;
+                    return result;
+                }).catch(function (error) {
+                    _this2.newDestination.saveError = true;
+                    _this2.newDestination.saveBusy = false;
+                    _this2.newDestination.serverErrors = error.response.data.errors.slug[0];
+                    return Promise.reject(error);
+                });
+            }).catch(function (error) {
+                _this2.newDestination.saveBusy = false;
+                _this2.newDestination.saveError = true;
+                _this2.errors = Promise.reject(error);
+                return Promise.reject(error);
+            });
+        },
+        update: function update() {
+            var _this3 = this;
+
+            this.newDestination.saveError = false;
+            this.newDestination.saveBusy = true;
+            this.validator.validateAll({
+                name: this.newDestination.name,
+                lat: this.newDestination.lat,
+                lng: this.newDestination.lng
+            }).then(function (result) {
+                axios.put('/api/destinations/' + _this3.newDestination.destinationId, {
+                    name: _this3.newDestination.name,
+                    description: _this3.newDestination.description,
+                    lat: _this3.newDestination.lat,
+                    lng: _this3.newDestination.lng
+                }).then(function (result) {
+                    _this3.newDestination.saveBusy = false;
+                    _this3.newDestination.saved = true;
+                    return result;
+                }).catch(function (error) {
+                    _this3.newDestination.saveError = true;
+                    _this3.newDestination.saveBusy = false;
+                    return Promise.reject(error);
+                });
+            }).catch(function (error) {
+                _this3.newDestination.saveBusy = false;
+                _this3.newDestination.saveError = true;
+                return Promise.reject(error);
+            });
+        },
+        leeroyjenkins: function leeroyjenkins() {
+            var _this4 = this;
+
+            if (confirm("Permanently destroy this destination?")) {
+                axios.delete('/api/destinations/' + this.newDestination.destinationId, {}).then(function (result) {
+                    _this4.clear();
+                }).catch(function (error) {
+                    return Promise.reject(error);
+                });
+            }
+        },
+        createNewPost: function createNewPost() {
+            if (!this.newDestination.destinationId) {
+                if (confirm('Abandon this destination and start over?')) {
+                    this.clear();
+                }
+            } else {
+                this.clear();
+            }
+        },
+        clear: function clear() {
+            this.newDestination.saved = false;
+            this.newDestination.saveBusy = false;
+            this.newDestination.destinationId = null;
+            this.newDestination.name = '';
+            this.newDestination.description = '';
+            this.newDestination.lat = null;
+            this.newDestination.lng = null;
+        },
+        edit: function edit(id) {
+            var _this5 = this;
+
+            this.saveBusy = true;
+            this.index = false;
+            this.newDestination.destinationId = id;
+            this.getTags(this.newDestination.destinationId);
+            axios.get('/api/destinations/' + id, {}).then(function (result) {
+                _this5.newDestination.name = result.data.name;
+                _this5.newDestination.description = result.data.description;
+                _this5.newDestination.lat = result.data.lat;
+                _this5.newDestination.lng = result.data.lng;
+                _this5.saveBusy = false;
+                _this5.newDestination.saved = true;
+                return result.data;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        }
+    },
+
+    created: function created() {
+        this.validator = new __WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */].Validator({
+            name: 'required|min:8',
+            lat: 'required|numeric|min:4',
+            lng: 'required|numeric|min:4'
+        });
+    },
+
+    computed: {}
+});
+
+/***/ }),
+/* 437 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(6)();
+exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn .btn-warning .is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus, .btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\nbackground-color:transparent;\nborder:none;\noutline: 0;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 991px) {\n.new-destination .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n.destination-index {\n    position:relative;\n    display:block\n}\n\n", ""]);
+
+/***/ }),
+/* 438 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(440)
+
+var Component = __webpack_require__(2)(
+  /* script */
+  __webpack_require__(436),
+  /* template */
+  __webpack_require__(439),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/jeremy/Code/hff/resources/assets/js/components/cms/Destinations.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Destinations.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4d90290a", Component.options)
+  } else {
+    hotAPI.reload("data-v-4d90290a", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 439 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('button', {
+    staticClass: "btn btn-create",
+    attrs: {
+      "id": "create"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.toggleIndex($event)
+      }
+    }
+  }, [(_vm.index) ? _c('span', [_vm._v("Create")]) : _vm._e(), _vm._v(" "), (!_vm.index) ? _c('span', [_vm._v("Index")]) : _vm._e()]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.index),
+      expression: "! index"
+    }]
+  }, [_c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "disabled": !_vm.newDestination.name
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.createNewDestination($event)
+      }
+    }
+  }, [_vm._v("\n                New\n            ")])]), _vm._v(" "), _c('table', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.index),
+      expression: "index"
+    }],
+    staticClass: "table table-striped table-inverse"
+  }, [_vm._m(0, false, false), _vm._v(" "), _c('tbody', {
+    staticClass: "resource-list"
+  }, _vm._l((_vm.destinations), function(destination) {
+    return _c('tr', {
+      staticClass: "table-hover"
+    }, [_c('td', [_c('strong', [_vm._v(_vm._s(destination.name))])]), _vm._v(" "), _c('td', [_c('button', {
+      staticClass: "btn btn-warning",
+      attrs: {
+        "role": "button"
+      },
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          (_vm.edit(destination.id))
+        }
+      }
+    }, [_vm._v("Edit")])])])
+  }))])]), _vm._v(" "), _c('div', {
+    staticClass: "container"
+  }, [(!_vm.index) ? _c('form', {
+    staticClass: "form-horizontal new-destination",
+    attrs: {
+      "role": "form"
+    }
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('label', {
+    attrs: {
+      "for": "name"
+    }
+  }, [_vm._v("Name:")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|min:8'),
+      expression: "'required|min:8'"
+    }, {
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newDestination.name),
+      expression: "newDestination.name"
+    }],
+    class: {
+      'form-control': true, 'input': true, 'is-danger': _vm.errors.has('name')
+    },
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "id": "name",
+      "name": "name",
+      "type": "text",
+      "placeholder": "Destination Name"
+    },
+    domProps: {
+      "value": (_vm.newDestination.name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.newDestination, "name", $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('name')),
+      expression: "errors.has('name')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('name')))])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('label', {
+    attrs: {
+      "for": "lat"
+    }
+  }, [_vm._v("Latitude:")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|min:5|between:-90.0000000,90.0000000'),
+      expression: "'required|min:5|between:-90.0000000,90.0000000'"
+    }, {
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newDestination.lat),
+      expression: "newDestination.lat"
+    }],
+    class: {
+      'form-control': true, 'input': true, 'is-danger': _vm.errors.has('lat')
+    },
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "id": "lat",
+      "name": "lat",
+      "type": "text",
+      "placeholder": "Latitude"
+    },
+    domProps: {
+      "value": (_vm.newDestination.lat)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.newDestination, "lat", $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('lat')),
+      expression: "errors.has('lat')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('lat')))])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('label', {
+    attrs: {
+      "for": "lng"
+    }
+  }, [_vm._v("Longitude:")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|min:5|between:-180.0000000,180.0000000'),
+      expression: "'required|min:5|between:-180.0000000,180.0000000'"
+    }, {
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newDestination.lng),
+      expression: "newDestination.lng"
+    }],
+    class: {
+      'form-control': true, 'input': true, 'is-danger': _vm.errors.has('lng')
+    },
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "id": "lng",
+      "name": "lng",
+      "type": "text",
+      "placeholder": "Longitude"
+    },
+    domProps: {
+      "value": (_vm.newDestination.lng)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.newDestination, "lng", $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('lng')),
+      expression: "errors.has('lng')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('lng')))])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('trumbowyg', {
+    attrs: {
+      "id": "trumbowyg",
+      "config": _vm.trumbowygConfig,
+      "name": "description"
+    },
+    model: {
+      value: (_vm.newDestination.description),
+      callback: function($$v) {
+        _vm.$set(_vm.newDestination, "description", $$v)
+      },
+      expression: "newDestination.description"
+    }
+  })], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.newDestination.destinationId),
+      expression: "newDestination.destinationId"
+    }],
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newDestination.saveError
+    },
+    attrs: {
+      "disabled": _vm.newDestination.saved
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.update($event)
+      }
+    }
+  }, [(_vm.newDestination.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Updating\n                             ")]) : (_vm.newDestination.saved) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : (_vm.newDestination.saved == false) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Update\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Updated\n                            ")])])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.newDestination.destinationId),
+      expression: "! newDestination.destinationId"
+    }],
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newDestination.saveError
+    },
+    attrs: {
+      "disabled": _vm.newDestination.saved
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.save($event)
+      }
+    }
+  }, [(_vm.newDestination.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Saving\n                             ")]) : (_vm.newDestination.destinationId !== null) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-danger': true, 'hidden': !_vm.newDestination.saved
+    },
+    attrs: {
+      "disabled": !_vm.newDestination.destinationId
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.leeroyjenkins($event)
+      }
+    }
+  }, [_vm._v("\n                        Delete\n                    ")])])])]) : _vm._e()])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
+    staticClass: "thead-inverse"
+  }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-4d90290a", module.exports)
+  }
+}
+
+/***/ }),
+/* 440 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(437);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(8)("5dff2607", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4d90290a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Destinations.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-4d90290a\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Destinations.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

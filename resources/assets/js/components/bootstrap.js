@@ -19,7 +19,7 @@ Vue.component('posts', require('./cms/Posts.vue'))
 Vue.component('publications', require('./cms/Publications.vue'))
 Vue.component('showcases', require('./cms/Showcases.vue'))
 Vue.component('input-tag', require('./InputTag.vue'))
-
+Vue.component('destinations', require('./cms/Destinations.vue'))
 // Public "guest" components
 Vue.component('public-footer', require('./PublicFooter.vue'))
 Vue.component('newsletter-signup-registration', require('./NewsletterSignupRegistration.vue'))

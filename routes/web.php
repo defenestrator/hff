@@ -120,6 +120,8 @@ Route::group(['middleware' => ['auth:web', 'dev']], function () {
         Route::post('/posts/images', 'ImagesController@wysiwyg');
 
         Route::get('/showcases', 'ShowcasesController@create');
+
+        Route::view('/destinations', 'cms.destinations');
     });
 });
 
