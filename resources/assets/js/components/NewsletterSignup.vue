@@ -7,22 +7,22 @@
                 <input class="form-control" placeholder="your email"
                        v-validate="'required|email'" v-model="email" name="newsletter-email"
                        type="email"
-                       :class="{'form-control': true, 'is-danger': errors.has('email') }"
+                       :class="{'form-control': true, 'is-danger': errors.has('newsletter-email') }"
                        aria-describedby="basic-addon2"
                        required>
                     <span class="input-group-btn">
-                        <button :class="{'btn': true, 'btn-danger': true, 'is-danger': errors.has('email') }"
+                        <button :class="{'btn': true, 'btn-danger': true, 'is-danger': errors.has('newsletter-email') }"
                                 @click.prevent="signup"
                                 type="submit"
                                 style="font-size:18px;"
                                 role="button"
-                                :disabled="errors.has('email')">
+                                :disabled="email == '' || errors.has('newsletter-email')">
                             Go!
                         </button>
                     </span>
 
             </div>
-            <div style="min-height:24px;"><span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span></div>
+            <div style="min-height:24px;"><span v-show="errors.has('newsletter-email')" class="help is-danger">{{ errors.first('newsletter-email') }}</span></div>
         </form>
     </div>
 </template>
@@ -32,7 +32,6 @@ import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 export default {
     name: 'newsletter-signup',
-    validator: null,
     data() {
         return {
             email: ''
@@ -85,14 +84,12 @@ export default {
         this.validator = new VeeValidate.Validator({
             email: 'required|email'
         });
-        if (this.validator.errors) {
-            this.$set(this, 'errors', this.validator.errors)
-        }
+        this.$set(this, 'errors', this.validator.errors)
     },
     watch: {
         email(value) {
             this.validator.validate('email', value);
         }
-    },
+    }
 }
 </script>

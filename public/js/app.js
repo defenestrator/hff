@@ -37624,7 +37624,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'newsletter-signup',
-    validator: null,
     data: function data() {
         return {
             email: ''
@@ -37675,9 +37674,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
         this.validator = new __WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */].Validator({
             email: 'required|email'
         });
-        if (this.validator.errors) {
-            this.$set(this, 'errors', this.validator.errors);
-        }
+        this.$set(this, 'errors', this.validator.errors);
     },
 
     watch: {
@@ -55943,7 +55940,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "form-control",
     class: {
-      'form-control': true, 'is-danger': _vm.errors.has('email')
+      'form-control': true, 'is-danger': _vm.errors.has('newsletter-email')
     },
     attrs: {
       "placeholder": "your email",
@@ -55965,7 +55962,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "input-group-btn"
   }, [_c('button', {
     class: {
-      'btn': true, 'btn-danger': true, 'is-danger': _vm.errors.has('email')
+      'btn': true, 'btn-danger': true, 'is-danger': _vm.errors.has('newsletter-email')
     },
     staticStyle: {
       "font-size": "18px"
@@ -55973,7 +55970,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "submit",
       "role": "button",
-      "disabled": _vm.errors.has('email')
+      "disabled": _vm.email == '' || _vm.errors.has('newsletter-email')
     },
     on: {
       "click": function($event) {
@@ -55989,11 +55986,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (_vm.errors.has('email')),
-      expression: "errors.has('email')"
+      value: (_vm.errors.has('newsletter-email')),
+      expression: "errors.has('newsletter-email')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('email')))])])])])
+  }, [_vm._v(_vm._s(_vm.errors.first('newsletter-email')))])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('a', {
     attrs: {
