@@ -84,7 +84,6 @@ export default {
         this.validator = new VeeValidate.Validator({
             email: 'required|email'
         });
-        this.$set(this, 'errors', this.validator.errors)
     },
     watch: {
         email(value) {

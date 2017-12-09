@@ -37674,7 +37674,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
         this.validator = new __WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */].Validator({
             email: 'required|email'
         });
-        this.$set(this, 'errors', this.validator.errors);
     },
 
     watch: {
