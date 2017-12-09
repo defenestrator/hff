@@ -9,14 +9,18 @@
  | your components that you write while building your applications.
  */
 
+//require('./home') keep this around to test when things go awry?
+
+// Laravel Spark
 require('./../spark-components/bootstrap')
-require('./home')
-require('./cms/showcases/create-showcase')
-Vue.component('posts', require('./Posts.vue'))
-Vue.component('publications', require('./Publications.vue'))
-Vue.component('showcases', require('./Showcases.vue'))
+
+// Internal CMS - Routes/Controllers should have Developer access only!
+Vue.component('posts', require('./cms/Posts.vue'))
+Vue.component('publications', require('./cms/Publications.vue'))
+Vue.component('showcases', require('./cms/Showcases.vue'))
 Vue.component('input-tag', require('./InputTag.vue'))
+
+// Public "guest" components
 Vue.component('public-footer', require('./PublicFooter.vue'))
 Vue.component('newsletter-signup-registration', require('./NewsletterSignupRegistration.vue'))
 Vue.component('sales-inquiry', require('./SalesInquiry.vue'))
-

@@ -31,9 +31,9 @@ class AddFieldsToVariousTables extends Migration
             $table->longText('description')->nullable();
             $table->integer('price_per_angler')->nullable();
             $table->integer('percent_deposit_per_angler')->nullable();
-            $table->longText('terms')->nullable(); //store as json object for configurability.
-            $table->longText('misc_fees')->nullable(); //store as json object for configurability.
-            $table->longText('dates_available')->nullable(); //store as json object for configurability.
+            $table->longText('terms')->nullable(); //store as json object
+            $table->longText('misc_fees')->nullable(); //store as json object
+            $table->longText('dates_available')->nullable(); //store as json object
         });
 
         Schema::table('expeditions', function(Blueprint $table){

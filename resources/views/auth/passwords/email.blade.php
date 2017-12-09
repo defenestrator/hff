@@ -1,5 +1,10 @@
 @extends('layouts.master')
+@section('page_styles')
+@stop
 
+@section('top')
+    &nbsp;
+@stop
 <!-- Main Content -->
 @section('content')
 <div class="container">

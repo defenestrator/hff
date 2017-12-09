@@ -35,7 +35,7 @@ class EmergencyLoginController extends Controller
     public function showLoginForm(Request $request)
     {
         return $request->session()->has('spark:auth:id')
-            ? view('spark::auth.login-via-emergency-token')
+            ? view('auth.login-via-emergency-token')
             : redirect('login');
     }
 

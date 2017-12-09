@@ -1,5 +1,10 @@
 @extends('layouts.master')
+@section('page_styles')
+@stop
 
+@section('top')
+    &nbsp;
+@stop
 @section('content')
 <div class="container">
     <div class="row">

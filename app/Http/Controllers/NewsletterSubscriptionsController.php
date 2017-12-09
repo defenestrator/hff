@@ -27,7 +27,13 @@ class NewsletterSubscriptionsController extends Controller
         ]);
 
         if( NewsletterSubscription::where('email_address', '=', $request->email)->count() > 0 ) {
+
             $resend = NewsletterSubscription::where('email_address', '=', $request->email)->first();
+
+            if($resend->token == '' || null){
+                $resend->update(['token' => Uuid::uuid4()]);
+            }
+
             $this->mail->to($request->email)->send(new NewsletterSubscriptionConfirmation($resend));
             return response([
                     'message' => 'Subscription already exists for ' . $request->email . '. Please confirm your email address',
@@ -37,7 +43,7 @@ class NewsletterSubscriptionsController extends Controller
         };
         $sub = NewsletterSubscription::create([
             'email_address'=> $request->email,
-            'token' => Uuid::uuid1()
+            'token' => Uuid::uuid4()
         ]);
 
         $this->mail->to($request->email)->send(new NewsletterSubscriptionConfirmation($sub));

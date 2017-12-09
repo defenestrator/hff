@@ -8,10 +8,7 @@ Contact
 @stop
 
 @section('top')
-        <!-- Map Section Start -->
-<div class="">
-    <div id="map" style="width:100%; height:50vh;"></div>
-</div>
+&nbsp;
 @stop
 
 @section('content')

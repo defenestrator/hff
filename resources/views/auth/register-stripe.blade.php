@@ -3,7 +3,12 @@
 @section('scripts')
     <script src="https://js.stripe.com/v2/"></script>
 @endsection
+@section('page_styles')
+@stop
 
+@section('top')
+&nbsp;
+@stop
 @section('content')
 <spark-register-stripe inline-template>
     <div>

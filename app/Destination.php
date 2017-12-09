@@ -27,11 +27,27 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Destination extends Model
 {
+
+    protected $fillable= [
+        'name', 'description', 'lat', 'lng', 'outfitter_id'
+    ];
+
+    public function outfitter()
+    {
+        return $this->belongsTo(Outfitter::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function packages()
     {
         return $this->hasMany(Package::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function map()
     {
         return $this->hasOne(Map::class);

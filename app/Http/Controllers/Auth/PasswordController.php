@@ -35,7 +35,7 @@ class PasswordController extends Controller
      */
     public function showLinkRequestForm()
     {
-        return view('spark::auth.passwords.email');
+        return view('auth.passwords.email');
     }
 
     /**
@@ -53,7 +53,7 @@ class PasswordController extends Controller
             return $this->showLinkRequestForm();
         }
 
-        return view('spark::auth.passwords.reset')
+        return view('auth.passwords.reset')
             ->with(['token' => $token, 'email' => $request->email]);
     }
 }

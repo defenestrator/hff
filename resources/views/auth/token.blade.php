@@ -9,6 +9,8 @@
 @stop
 
 @section('top')
+    &nbsp;
+@stop
 
 @section('content')
 <div class="container">

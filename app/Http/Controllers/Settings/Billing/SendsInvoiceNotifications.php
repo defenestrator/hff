@@ -12,7 +12,7 @@ trait SendsInvoiceNotifications
      *
      * @var string
      */
-    protected $emailView = 'spark::settings.invoices.emails.invoice';
+    protected $emailView = 'settings.invoices.emails.invoice';
 
     /**
      * Send an invoice notification e-mail.
