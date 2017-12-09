@@ -8,17 +8,31 @@ use Intervention\Image\Facades\Image;
 
 class ImagesController extends Controller
 {
-    public function create(Request $request)
+    public function wysiwyg(Request $request)
     {
         $request->validate([
-            'header_photo' => 'required|mimes:jpg,jpeg,png'
+            'image' => 'required|image'
         ]);
+        $builder = $this->build($request->image);
 
-        $thumbnail = $this->thumbnail($request->file('header_photo'));
+        return $builder;
+    }
 
-        $stamp = $this->stamp($request->file('header_photo'));
+    public function header(Request $request)
+    {
+        $request->validate([
+            'header_photo' => 'required|image|mimes:jpg,jpeg,png'
+        ]);
+        return $this->build($request->file('header_photo') );
+    }
 
-        $resize = Image::make($request->file('header_photo'))
+    public function build($image)
+    {
+        $thumbnail = $this->thumbnail($image);
+
+        $stamp = $this->stamp($image);
+
+        $resize = Image::make($image)
             ->resize(1280, 1280, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
@@ -26,16 +40,17 @@ class ImagesController extends Controller
         $hash = md5($resize->__toString());
         $path = storage_path('app/public/images/' . "{$hash}.jpg");
         $resize->save($path);
-        $header_photo = url('storage/images/' . "{$hash}.jpg");
-        ImageModel::create([
+        $large = url('storage/images/' . "{$hash}.jpg");
+        $record = ImageModel::create([
             'thumbnail' => $thumbnail,
             'stamp' => $stamp,
-            'large' => $header_photo
+            'large' => $large
         ]);
         return response()->json([
+            'image_id' => $record->id,
             'thumbnail' => $thumbnail,
             'stamp' => $stamp,
-            'header_photo' => url('storage/images/' . "{$hash}.jpg"),
+            'large' => $large,
             'success' => true,
         ]);
     }

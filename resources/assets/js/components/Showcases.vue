@@ -271,7 +271,7 @@ export default {
                     upload: {
                         serverPath: '/cms/posts/images',
                         fileFieldName: 'image',
-                        urlPropertyName: 'file',
+                        urlPropertyName: 'large',
                         headers: {
                             'X-CSRF-TOKEN': Spark.csrfToken
                         },
@@ -534,8 +534,8 @@ export default {
             // uploads of the profile photos. We will update the user after this action.
             axios.post(this.urlForUpdate, this.gatherFormData())
                     .then(result  => {
-                this.newShowcase.header_photo = result.data.header_photo
-            this.newShowcase.thumbnail = result.data.thumbnail
+                this.newShowcase.header_photo = result.data.large
+                this.newShowcase.thumbnail = result.data.thumbnail
             self.newShowcase.finishProcessing();
         },
             (error) => {

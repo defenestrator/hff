@@ -38,7 +38,7 @@ Route::group([
     Route::get('showcases/{id}/tags', 'PostTagsController@index');
 
     // Images
-    Route::post('/photo', 'ImagesController@create');
+    Route::post('/photo', 'ImagesController@header');
 
     // Publications
     Route::get('/publications', 'PublicationsController@get');

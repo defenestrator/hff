@@ -37974,7 +37974,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     upload: {
                         serverPath: '/cms/posts/images',
                         fileFieldName: 'image',
-                        urlPropertyName: 'file',
+                        urlPropertyName: 'large',
                         headers: {
                             'X-CSRF-TOKEN': Spark.csrfToken
                         },
@@ -38192,7 +38192,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             // the data so we can POST it up to the server. This will allow us to do async
             // uploads of the profile photos. We will update the user after this action.
             axios.post(this.urlForUpdate, this.gatherFormData()).then(function (result) {
-                _this8.newPost.header_photo = result.data.header_photo;
+                _this8.newPost.header_photo = result.data.large;
                 _this8.newPost.thumbnail = result.data.thumbnail;
                 self.newPost.finishProcessing();
             }, function (error) {
@@ -38932,7 +38932,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     upload: {
                         serverPath: '/cms/posts/images',
                         fileFieldName: 'image',
-                        urlPropertyName: 'file',
+                        urlPropertyName: 'large',
                         headers: {
                             'X-CSRF-TOKEN': Spark.csrfToken
                         },
@@ -39186,7 +39186,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             // the data so we can POST it up to the server. This will allow us to do async
             // uploads of the profile photos. We will update the user after this action.
             axios.post(this.urlForUpdate, this.gatherFormData()).then(function (result) {
-                _this8.newShowcase.header_photo = result.data.header_photo;
+                _this8.newShowcase.header_photo = result.data.large;
                 _this8.newShowcase.thumbnail = result.data.thumbnail;
                 self.newShowcase.finishProcessing();
             }, function (error) {
