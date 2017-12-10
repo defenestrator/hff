@@ -22,5 +22,4 @@ Vue.component('input-tag', require('./InputTag.vue'))
 Vue.component('destinations', require('./cms/Destinations.vue'))
 // Public "guest" components
 Vue.component('public-footer', require('./PublicFooter.vue'))
-Vue.component('newsletter-signup-registration', require('./NewsletterSignupRegistration.vue'))
 Vue.component('sales-inquiry', require('./SalesInquiry.vue'))

@@ -37684,102 +37684,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 });
 
 /***/ }),
-/* 171 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(6);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
-/* harmony default export */ __webpack_exports__["default"] = ({
-    validator: null,
-    data: function data() {
-        return {
-            newsletterEmail: ''
-        };
-    },
-    mounted: function mounted() {
-        console.log('Newsletter Subscription Component mounted.');
-    },
-
-    methods: {
-        signup: function signup() {
-            var _this = this;
-
-            this.validator.validateAll({
-                email: this.newsletterEmail
-            }).then(function (result) {
-                axios.post('/api/newsletter-subscriptions', {
-                    email: _this.newsletterEmail
-                }).then(function (result) {
-                    swal({
-                        title: 'Thanks for signing up!',
-                        type: 'warning',
-                        text: 'We promise not to spam you.',
-                        timer: 2000
-                    });
-                    return result;
-                }).catch(function (error) {
-                    _this.error = true;
-                    swal({
-                        title: 'Something\'s broken',
-                        text: 'Something went wrong.',
-                        type: 'danger',
-                        timer: 2000
-                    });
-                    return Promise.reject(error);
-                }).catch(function (error) {
-                    _this.error = true;
-                    swal({
-                        title: 'Something\'s breaky',
-                        text: 'Something went wrong.',
-                        type: 'danger',
-                        timer: 2000
-                    });
-                    return Promise.reject(error);
-                });
-            });
-        }
-    },
-    created: function created() {
-        this.validator = new __WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */].Validator({
-            email: 'required|email'
-        });
-        if (this.validator.errors) {
-            this.$set(this, 'errors', this.validator.errors);
-        }
-    },
-
-    watch: {
-        newsletterEmail: function newsletterEmail(value) {
-            this.validator.validate('email', value);
-        }
-    }
-});
-
-/***/ }),
+/* 171 */,
 /* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39672,7 +39577,6 @@ Vue.component('input-tag', __webpack_require__(321));
 Vue.component('destinations', __webpack_require__(326));
 // Public "guest" components
 Vue.component('public-footer', __webpack_require__(324));
-Vue.component('newsletter-signup-registration', __webpack_require__(323));
 Vue.component('sales-inquiry', __webpack_require__(325));
 
 /***/ }),
@@ -54478,40 +54382,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 323 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Component = __webpack_require__(2)(
-  /* script */
-  __webpack_require__(171),
-  /* template */
-  __webpack_require__(331),
-  /* scopeId */
-  null,
-  /* cssModules */
-  null
-)
-Component.options.__file = "/Users/jeremy/Code/hff/resources/assets/js/components/NewsletterSignupRegistration.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] NewsletterSignupRegistration.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-19b7215a", Component.options)
-  } else {
-    hotAPI.reload("data-v-19b7215a", Component.options)
-  }
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 323 */,
 /* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -54858,82 +54729,7 @@ if (false) {
 }
 
 /***/ }),
-/* 331 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('p', [_vm._v("We send about one email per month.")]), _vm._v(" "), _c('form', {
-    staticClass: "form-inline newsletter"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('input', {
-    directives: [{
-      name: "validate",
-      rawName: "v-validate",
-      value: ('required|email'),
-      expression: "'required|email'"
-    }, {
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.newsletterEmail),
-      expression: "newsletterEmail"
-    }],
-    class: {
-      'form-control': true, 'is-danger': _vm.errors.has('email')
-    },
-    attrs: {
-      "name": "newsletterEmail",
-      "type": "email",
-      "placeholder": "your email",
-      "value": "",
-      "aria-describedby": "basic-addon2",
-      "required": ""
-    },
-    domProps: {
-      "value": (_vm.newsletterEmail)
-    },
-    on: {
-      "input": function($event) {
-        if ($event.target.composing) { return; }
-        _vm.newsletterEmail = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('button', {
-    staticClass: "btn btn-primary btn-sm",
-    attrs: {
-      "type": "submit",
-      "role": "button",
-      "disabled": _vm.errors.has('email')
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.signup($event)
-      }
-    }
-  }, [_vm._v("Go")]), _vm._v(" "), _c('div', {
-    staticStyle: {
-      "padding": "1em"
-    }
-  }, [_c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.errors.has('email')),
-      expression: "errors.has('email')"
-    }],
-    staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('email')))])])])])])
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-19b7215a", module.exports)
-  }
-}
-
-/***/ }),
+/* 331 */,
 /* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 

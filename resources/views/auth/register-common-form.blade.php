@@ -1,5 +1,3 @@
-<h3>Get notified of updates by signing up for the newsletter!</h3>
-<newsletter-signup-registration></newsletter-signup-registration>
 <form class="form-horizontal" role="form">
     <div class="form-group">
         <label class="col-md-4 control-label">Register as an:</label>
