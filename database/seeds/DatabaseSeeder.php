@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
 
         $this->user->create([
             'email'                 => 'jeremyblc@gmail.com',
-            'password'              => bcrypt(env('JEREMY_PASSWORD')) ,
+            'password'              => bcrypt(env('JEREMY_PASSWORD', 'SuperSecret!')) ,
             'uuid'                  => \Ramsey\Uuid\Uuid::uuid1(),
             'name'                  => 'Jeremy Anderson',
             'current_billing_plan'  => 'secret-gold-admin'

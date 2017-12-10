@@ -1,38 +1,36 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Browser;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\DuskTestCase;
-use App\User;
 use Tests\Browser\Pages\LoginPage;
+use App\User;
 
-class LoginTest extends DuskTestCase
+class AdministratorTest extends DuskTestCase
 {
     use DatabaseMigrations;
-
     /**
-     * Test Authentication and User Creation.
+     * A Dusk test example.
      *
      * @return void
      */
-    public function test_authentication_of_valid_user()
+    public function test_administrator_user_can_see_admin_dashboard()
     {
         $user = factory(User::class)->create([
-            'email' => 'test@example.com',
+            'email' => 'jeremyblc@gmail.com',
             'name'  => 'Little Bobby Tables'
         ]);
 
         $this->browse(function ($browser) use ($user) {
             $browser->visit(new LoginPage)
                 ->waitForText('Login')
-                ->type('email', $user->email)
+                ->type('email', 'jeremyblc@gmail.com')
                 ->type('password', 'secret')
                 ->press('@login-button')
-                ->waitForText('User Dashboard')
-                ->assertTitleContains('Dashboard')
-                ->assertDontSee('Administration Dashboard');
+                ->waitForText('Dashboard')
+                ->assertSee('Administration Dashboard');
         });
     }
 }
