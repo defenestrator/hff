@@ -76,7 +76,6 @@ class PostsApiController extends ApiController
         $request->validate([
             'body' => 'required|min:8',
             'title' => 'required|min:2',
-            'image_id' => 'required|integer',
             'header_photo' => 'required'
         ]);
         $content = $post->find($id);

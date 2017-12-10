@@ -99,34 +99,30 @@ Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index');
 
 // LOADER.IO AUTHENTICATION
 Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
-
-// AUTH ROUTES
+Route::group(['middleware' => ['auth:web']], function () {
+    Route::view('/dashboard', 'dashboard');
+});
+// DEVELOPER LEVEL AUTH ROUTES
 Route::group(['middleware' => ['auth:web', 'dev']], function () {
-
-    // Tags Controllers
+    // Tags
     Route::get('/posts/{id}/tags', 'PostTagsController@edit');
     Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
-
     // Dashboard
-    Route::view('/dashboard', 'dashboard');
+
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
         //Publications
         Route::get('/publications', 'PublicationsController@index');
-
         // Posts
         Route::view('/posts', 'cms.posts');
-
         Route::post('/posts/images', 'ImagesController@wysiwyg');
-
+        // Showcases
         Route::get('/showcases', 'ShowcasesController@create');
-
+        // Destinations
         Route::view('/destinations', 'cms.destinations');
     });
 });
 
 // Confirm Newsletter Subscription
 Route::get('/newsletter-subscription/{token}', 'NewsletterSubscriptionsController@confirm');
-// Registrations are closed, hacker.
-Route::any('/register', 'Auth\RegisterController@no');
 

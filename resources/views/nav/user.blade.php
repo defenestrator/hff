@@ -31,6 +31,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     @includeIf('nav.user-right')
+                    @if (Spark::developer(Auth::user()->email))
                     <li>
                         <a href="/dashboard" class="has-activity-indicator">
                         <div class="navbar-icon">
@@ -47,11 +48,11 @@
                         </div>
                         </a>
                     </li>
-
+                     @endif
                     <li class="dropdown">
                         <!-- User Photo / Name -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img :src="user.photo_url" class="spark-nav-profile-photo ">
+                            <img :src="user.photo_url" class="spark-nav-profile-photo">
                             <span class="caret"></span>
                         </a>
 

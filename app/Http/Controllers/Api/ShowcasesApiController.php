@@ -91,7 +91,6 @@ class ShowcasesApiController extends ApiController
             'header_photo' => 'required|string',
             'region' => 'min:3|max:40',
             'fishery_type' => 'min:3|max:40',
-            'image_id' => 'required|integer',
             'sidebar_top' => 'min:4',
             'sidebar_bottom' => 'min:4',
         ]);
