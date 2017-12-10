@@ -60,7 +60,7 @@ class SparkServiceProvider extends ServiceProvider
         Spark::usesTwoFactorAuth();
         Spark::useStripe();
         Spark::freePlan('Free Angler Plan', 'free-angler-plan');
-        Spark::afterLoginRedirectTo('/cms/posts');
+        Spark::afterLoginRedirectTo('/dashboard');
         Spark::identifyTeamsByPath();
         Spark::createUsersWith(function ($request) {
             $user = Spark::user();

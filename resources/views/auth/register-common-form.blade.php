@@ -1,48 +1,4 @@
 <form class="form-horizontal" role="form">
-    <div class="form-group">
-        <label class="col-md-4 control-label">Register as an:</label>
-        <div class="col-md-6">
-            <div class="btn-group-lg pull right">
-                <button class="btn btn-register" v-on:click="showAnglerRegistration" type="button" :class="{'active': angler_registration}">Angler</button>
-                <button class="btn btn-register" v-on:click="showOutfitterRegistration" type="button" :class="{'active': ! angler_registration}">Outfitter</button>
-            </div>
-        </div>
-    </div>
-    <div v-if="! angler_registration">
-        @if (Spark::usesTeams())
-                <!-- Team Name -->
-        <div class="form-group" :class="{'has-error': registerForm.errors.has('team')}" v-if=" ! invitation">
-            <label class="col-md-4 control-label">{{ ucfirst(Spark::teamString()) }} Name</label>
-
-            <div class="col-md-6">
-                <input type="text" class="form-control" name="team" v-model="registerForm.team" autofocus>
-
-                    <span class="help-block" v-show="registerForm.errors.has('team')">
-                        @{{ registerForm.errors.get('team') }}
-                    </span>
-            </div>
-        </div>
-
-        @if (Spark::teamsIdentifiedByPath())
-                <!-- Team Slug (Only Shown When Using Paths For Teams) -->
-        <div class="form-group" :class="{'has-error': registerForm.errors.has('team_slug')}" v-if=" ! invitation">
-            <label class="col-md-4 control-label">{{ ucfirst(Spark::teamString()) }} Slug</label>
-
-            <div class="col-md-6">
-                <input type="text" class="form-control" name="team_slug" v-model="registerForm.team_slug" autofocus>
-
-                <p class="help-block" v-show=" ! registerForm.errors.has('team_slug')">
-                    This slug is used to identify your {{ Spark::teamString() }} in URLs.
-                </p>
-
-                        <span class="help-block" v-show="registerForm.errors.has('team_slug')">
-                            @{{ registerForm.errors.get('team_slug') }}
-                        </span>
-            </div>
-        </div>
-        @endif
-    </div>
-    @endif
     <!-- Name -->
     <div class="form-group" :class="{'has-error': registerForm.errors.has('name')}">
         <label class="col-md-4 control-label">Name</label>
@@ -51,11 +7,10 @@
             <input type="text" class="form-control" name="name" v-model="registerForm.name" autofocus>
 
             <span class="help-block" v-show="registerForm.errors.has('name')">
-                @{{ registerForm.errors.get('name') }}
+                {{ registerForm.errors.get('name') }}
             </span>
         </div>
     </div>
-
     <!-- E-Mail Address -->
     <div class="form-group" :class="{'has-error': registerForm.errors.has('email')}">
         <label class="col-md-4 control-label">E-Mail Address</label>
