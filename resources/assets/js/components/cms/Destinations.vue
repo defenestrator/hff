@@ -13,7 +13,7 @@
         <table v-show="index" class="table table-striped table-inverse">
             <thead  class="thead-inverse">
             <tr>
-                <th>Title</th>
+                <th>Name</th>
                 <th>Edit</th>
             </tr>
             </thead>
@@ -38,14 +38,14 @@
             <div class="form-group">
                 <div class="col-md-6">
                     <label for="lat">Latitude:</label>
-                    <input v-validate="'required|min:5|between:-90.0000000,90.0000000'" id="lat" name="lat" v-model="newDestination.lat"
+                    <input v-validate="'required|min:5|max:11|between:-90.0000000,90.0000000'" id="lat" name="lat" v-model="newDestination.lat"
                            :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lat') }"
                            type="text" placeholder="Latitude" style="width:100%">
                     <span v-show="errors.has('lat')" class="help is-danger">{{ errors.first('lat') }}</span>
                 </div>
                 <div class="col-md-6">
                     <label for="lng">Longitude:</label>
-                    <input v-validate="'required|min:5|between:-180.0000000,180.0000000'" id="lng" name="lng" v-model="newDestination.lng"
+                    <input v-validate="'required|min:5|max:12|between:-180.0000000,180.0000000'" id="lng" name="lng" v-model="newDestination.lng"
                            :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lng') }"
                            type="text" placeholder="Longitude" style="width:100%">
                     <span v-show="errors.has('lng')" class="help is-danger">{{ errors.first('lng') }}</span>
@@ -153,7 +153,7 @@ export default {
                 ],
                 plugins: {
                     upload: {
-                        serverPath: '/cms/destinations/images',
+                        serverPath: '/cms/images',
                         fileFieldName: 'image',
                         urlPropertyName: 'large',
                         headers: {
@@ -217,7 +217,7 @@ export default {
                 lat: this.newDestination.lat,
                 lng: this.newDestination.lng
                 }).then((result) => {
-                    axios.destination(`/api/destinations`, {
+                    axios.post(`/api/destinations`, {
                                 name: this.newDestination.name,
                                 lat:  this.newDestination.lat,
                                 lng:  this.newDestination.lng,
@@ -285,7 +285,7 @@ export default {
                 });
             }
         },
-        createNewPost() {
+        createNewDestination() {
             if (!this.newDestination.destinationId) {
                 if (confirm('Abandon this destination and start over?')) {
                     this.clear()

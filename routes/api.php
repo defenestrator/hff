@@ -37,6 +37,13 @@ Route::group([
     Route::get('showcases/{id}/tags', 'ShowcaseTagsController@index');
     Route::get('posts/{id}/tags', 'PostTagsController@index');
 
+    //Destinations
+    Route::get('/destinations', 'Api\DestinationsApiController@index');
+    Route::post('/destinations', 'Api\DestinationsApiController@create');
+    Route::get('/showcases/{id}', 'Api\ShowcasesApiController@edit');
+    Route::put('/destinations/{id}', 'Api\DestinationsApiController@update');
+    Route::delete('/destinations/{id}', 'Api\DestinationsApiController@destroy');
+
     // Images
     Route::post('/photo', 'ImagesController@header');
 

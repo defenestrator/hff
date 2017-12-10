@@ -38135,7 +38135,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 btns: [['viewHTML'], ['formatting'], ['strong', 'em', 'underline'], ['link'], ['image'], ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'], ['unorderedList', 'orderedList'], ['horizontalRule'], ['removeformat']],
                 plugins: {
                     upload: {
-                        serverPath: '/cms/destinations/images',
+                        serverPath: '/cms/images',
                         fileFieldName: 'image',
                         urlPropertyName: 'large',
                         headers: {
@@ -38200,7 +38200,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 lat: this.newDestination.lat,
                 lng: this.newDestination.lng
             }).then(function (result) {
-                axios.destination('/api/destinations', {
+                axios.post('/api/destinations', {
                     name: _this2.newDestination.name,
                     lat: _this2.newDestination.lat,
                     lng: _this2.newDestination.lng,
@@ -38264,7 +38264,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 });
             }
         },
-        createNewPost: function createNewPost() {
+        createNewDestination: function createNewDestination() {
             if (!this.newDestination.destinationId) {
                 if (confirm('Abandon this destination and start over?')) {
                     this.clear();
@@ -55303,8 +55303,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "validate",
       rawName: "v-validate",
-      value: ('required|min:5|between:-90.0000000,90.0000000'),
-      expression: "'required|min:5|between:-90.0000000,90.0000000'"
+      value: ('required|min:5|max:11|between:-90.0000000,90.0000000'),
+      expression: "'required|min:5|max:11|between:-90.0000000,90.0000000'"
     }, {
       name: "model",
       rawName: "v-model",
@@ -55350,8 +55350,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "validate",
       rawName: "v-validate",
-      value: ('required|min:5|between:-180.0000000,180.0000000'),
-      expression: "'required|min:5|between:-180.0000000,180.0000000'"
+      value: ('required|min:5|max:12|between:-180.0000000,180.0000000'),
+      expression: "'required|min:5|max:12|between:-180.0000000,180.0000000'"
     }, {
       name: "model",
       rawName: "v-model",
@@ -55481,7 +55481,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"
-  }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+  }, [_c('tr', [_c('th', [_vm._v("Name")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

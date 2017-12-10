@@ -116,6 +116,7 @@ Route::group(['middleware' => ['auth:web', 'dev']], function () {
         // Posts
         Route::view('/posts', 'cms.posts');
         Route::post('/posts/images', 'ImagesController@wysiwyg');
+        Route::post('/images', 'ImagesController@wysiwyg');
         // Showcases
         Route::get('/showcases', 'ShowcasesController@create');
         // Destinations
