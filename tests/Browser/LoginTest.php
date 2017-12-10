@@ -28,9 +28,10 @@ class LoginTest extends DuskTestCase
                 ->waitForText('Login')
                 ->type('email', $user->email)
                 ->type('password', 'secret')
-                ->press('@login-button');
+                ->press('@login-button')
+                ->waitForText('User Dashboard')
+                ->assertTitleContains('Dashboard')
+                ->assertDontSee('Administration Dashboard');
         });
-        $this->assertSee('dashboard');
-        $this->assertViewIs('dashboard');
     }
 }
