@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Manage Destinations
+WARNING NOT YET FUNCTIONAL - Manage Destinations
 @parent
 @stop
 

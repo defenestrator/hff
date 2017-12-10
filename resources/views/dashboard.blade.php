@@ -45,7 +45,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-4 dashboard-links">
-                            <a class="btn btn-default btn-dashboard" href="/dashboard">Your Settings</a>
+                            <a class="btn btn-default btn-dashboard" href="/cms/destinations">Destinations</a>
                         </div>
                         <div class="col-sm-4 dashboard-links">
                             <a class="btn btn-default btn-dashboard" href="/settings">Your Settings</a>

@@ -30,6 +30,7 @@ class LoginTest extends DuskTestCase
                 ->type('password', 'secret')
                 ->press('@login-button');
         });
-        $this->assertTrue(true);
+        $this->assertSee('dashboard');
+        $this->assertViewIs('dashboard');
     }
 }

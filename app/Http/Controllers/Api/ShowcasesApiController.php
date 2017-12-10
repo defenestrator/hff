@@ -32,8 +32,8 @@ class ShowcasesApiController extends ApiController
             'tagline' => 'required|min:8',
             'header_photo' => 'required|string',
             'image_id' => 'required|integer',
-            'region' => 'min:3|max:40',
-            'fishery_type' => 'min:3|max:40',
+            'region' => 'required|min:3|max:40',
+            'fishery_type' => 'required|min:3|max:40',
             'sidebar_top' => 'min:4',
             'sidebar_bottom' => 'min:4',
         ]);
@@ -89,8 +89,8 @@ class ShowcasesApiController extends ApiController
             'title' => 'required|min:8',
             'tagline' => 'required|min:8',
             'header_photo' => 'required|string',
-            'region' => 'min:3|max:40',
-            'fishery_type' => 'min:3|max:40',
+            'region' => 'required|min:3|max:40',
+            'fishery_type' => 'required|min:3|max:40',
             'sidebar_top' => 'min:4',
             'sidebar_bottom' => 'min:4',
         ]);
