@@ -37805,6 +37805,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
@@ -54687,7 +54689,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "data-c": "#fff",
       "data-hc": "#F0F8FF"
     }
-  })])])]), _vm._v(" "), _vm._m(0, false, false), _vm._v(" "), _c('span', {
+  })])])]), _vm._v(" "), _c('span', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -54695,14 +54697,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('email')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('email')))]), _vm._v(" "), _c('hr')])
+  }, [_vm._v(_vm._s(_vm.errors.first('email')))]), _vm._v(" "), _vm._m(0, false, false), _vm._v(" "), _c('hr')])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "text-center",
     staticStyle: {
       "font-weight": "600"
     }
-  }, [_vm._v("Simply enter your email or call "), _c('a', {
+  }, [_vm._v("Simply enter your email\n            "), _c('br'), _vm._v(" or call "), _c('a', {
     attrs: {
       "href": "tel:12088599133"
     }
