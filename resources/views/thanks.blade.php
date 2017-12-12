@@ -10,7 +10,7 @@
 
 @section('top')
     <div class="tagline text-center" style="background-image: none;">
-        <h1 class="bg-border wow pulse" data-wow-duration="0.7s">
+        <h1 class="wow pulse" data-wow-duration="0.7s">
             {{$message}}
         </h1>
     </div>

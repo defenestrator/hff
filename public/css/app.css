@@ -7563,7 +7563,7 @@ h2,
   box-shadow: none;
 }
 .icon-section {
-  background-color: #3ab0f5;
+  background-color: #3097D1;
   line-height: 0px;
   padding-top: 7px;
   border-bottom-left-radius: 2em;
@@ -7825,23 +7825,8 @@ blockquote {
 .feature-main1 {
   padding: 50px 0;
 }
-.layout-styl {
-  padding: 80px 0;
-}
-.layout-styl li {
-  margin-bottom: 20px;
-  font-size: 21px;
-  font-weight: 300 !important;
-  color: #515763;
-  text-align: left;
-}
-.bg-border {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 100%;
-}
 .tagline {
-  background: #262626;
+  background: #19526b;
   background-size: cover;
   padding: 1em 0;
   margin-bottom: 20px;
@@ -7932,19 +7917,6 @@ blockquote {
   border-top-right-radius: 0.8em;
   margin-bottom: 15px;
   padding: 5px 15px;
-}
-.tab img {
-  width: 100%;
-}
-.tab {
-  padding-left: 0;
-}
-.tab_list > li {
-  padding: 5px;
-}
-.tab_list {
-  margin-top: 15px;
-  padding-left: 0;
 }
 .profile img {
   width: 100%;
@@ -8144,12 +8116,12 @@ a:active.btn-primary {
 .dropdown-menu > li > a:focus,
 .navbar .dropdown-menu > li > a:focus i,
 .navbar .dropdown-menu > li > a:hover i {
-  color: #3ab0f5;
+  color: #3097D1;
   background-color: inherit;
   transition: all 0.25s;
 }
 .thumbnail {
-  border: 1px solid #3ab0f5;
+  border: 1px solid #3097D1;
   background-size: cover;
   background-position: center center;
   transition: all 0.3s;
@@ -8204,7 +8176,7 @@ a:focus .thumbnail {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #3ab0f5;
+  background-color: #3097D1;
   color: white;
 }
 .navbar .dropdown-header {
@@ -8212,7 +8184,7 @@ a:focus .thumbnail {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #3ab0f5;
+  color: #3097D1;
   transition: all 0.25s;
 }
 .navbar-default .navbar-nav > li > a {
@@ -8223,13 +8195,13 @@ a:focus .thumbnail {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     background-color: #ffffff;
-    color: #3ab0f5;
+    color: #3097D1;
     transition: all 0.25s;
   }
 }
 .thumbnail .caption,
 .sidebar-thumbnail .caption {
-  text-shadow: 1px 2px 4px #031020;
+  text-shadow: 2px 2px 4px #000000;
   padding: 1em 0;
   color: #ffffff;
   text-transform: uppercase;
@@ -8241,7 +8213,7 @@ a:focus .thumbnail {
 a:hover .thumbnail .caption,
 a:active .thumbnail .caption,
 a:focus .thumbnail .caption {
-  text-shadow: 1px 2px 4px #bf542a, 0px 0px 3px #bf542a;
+  text-shadow: 2px 2px 4px #bf542a, 2px 2px 3px #000;
   transition: all 0.3s;
 }
 .spark-nav-profile-photo {

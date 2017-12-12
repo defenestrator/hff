@@ -8,11 +8,11 @@
 
 @section('top')
     <div class="tagline text-center"
-         style="background: url('/images/tangle.jpg') top center no-repeat; background-size:cover;">
-        <h1 style="font-weight:600;" class="bg-border wow pulse" data-wow-duration="0.7s">
+         style="background: linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0, 0.4)), url('/images/tangle.jpg') top center no-repeat; background-size:cover; ">
+        <h1 style="font-weight:600; text-shadow:4px 4px 3px #000000;" class="wow pulse" data-wow-duration="0.7s">
             404
         </h1>
-        <h2 style="font-weight:600;">
+        <h2 style="font-weight:600; text-shadow:4px 4px 3px #000000;">
             Fly fishing Not found
         </h2>
         <h2 style="visibility:hidden;">
@@ -63,7 +63,7 @@
 
 @section('bottom')
     <div class="tagline text-center"
-         style="margin-bottom:0; background: url('/images/tangle.jpg') bottom center no-repeat; background-size:cover;">
+         style="margin-bottom:0; background:linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0, 0.4)), url('/images/tangle.jpg') bottom center no-repeat; background-size:cover;">
         <h2 style="visibility:hidden;">
             404
         </h2>

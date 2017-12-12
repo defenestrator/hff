@@ -11,7 +11,7 @@
 @section('top')
 
     <div class="tagline text-center">
-        <h1 style="padding-left:1em; padding-right:1em;" class="bg-border wow pulse" data-wow-duration="0.5s">
+        <h1 style="padding-left:1em; padding-right:1em;" data-wow-duration="0.5s">
             More than 30 fly fishing lodges worldwide
         </h1>
         <h2 class="text-center">Trust us to represent them.</h2>
@@ -21,9 +21,9 @@
 
 @section('content')
 
-    <h3 class="text-center">The best fly-fishing-specific trips on the planet.</h3>
+    <h3 class="text-center">The best fly fishing specific travel packages on the planet.</h3>
     <div class="col-md-6 col-md-offset-3">
-    <h4>Our customers get</h4>
+    <h4>All customers get</h4>
         <ul>
             <li>angling intelligence </li>
             <li>logistical assistance </li>
