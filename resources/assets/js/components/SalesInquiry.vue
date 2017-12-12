@@ -25,7 +25,7 @@
                                 role="button"
                                 :disabled="errors.has('email')">
                             <i data-name="mail" data-size="20" data-loop="true" data-c="#fff"
-                               data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
+                               data-hc="#F0F8FF" class="livicon" style="width: 20px; height: 20px;"></i>
                         </button>
                     </span>
 

@@ -54677,7 +54677,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_c('i', {
-    staticClass: "livicon icon4 icon3",
+    staticClass: "livicon",
     staticStyle: {
       "width": "20px",
       "height": "20px"
