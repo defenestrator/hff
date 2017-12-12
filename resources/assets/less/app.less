@@ -1,9 +1,6 @@
 @import "./../../../node_modules/bootstrap/less/bootstrap";
 @import "./../../../vendor/laravel/spark/resources/assets/less/spark";
-@import "./tabbular.css";
 @import "./animate.min.css";
-@import "./contact.css";
-
 html body {
 }
 html {
@@ -30,17 +27,9 @@ h2, .h2 {
   background:#fff;
 }
 
-.navbar-toggle {
-}
-
-.jumbotron {
-  background-color:white;
-}
-
-.article img, .jumbotron img{
+.article img {
   width:100%;
 }
-
 .article img {
   margin-bottom:1em;
   border-radius:6px;
@@ -55,7 +44,6 @@ h2, .h2 {
   border-bottom-left-radius:2em;
   font-weight:600;
 }
-
 .icon-section a:link,
 .icon-section a:visited {
   color:white;
@@ -100,7 +88,6 @@ p label {
 .btn-primary {
   color:white;
 }
-
 .primary,
 .primary > a,
 .primary > a:visited,
@@ -110,39 +97,8 @@ p label {
   text-decoration : none;
 }
 
-.bg-default {
-  background-color : #f5f5f5;
-}
-.bg-primary {
-  background-color : #337ab7;
-  color            : #fff;
-}
-.bg-success {
-  background-color : #464b17;
-  color            : #fff;
-}
-.bg-danger {
-  background-color : #ef6f6c;
-  color            : #fff;
-}
-.bg-warning {
-  background-color : #f89a14;
-  color            : #fff;
-}
-/* ---------- //Text-Bg color Code Css End ---------- */
-/* ---------- Why choose us Section css ---------- */
-
-#accordion {
-  margin-top : 2%;
-}
-.text_bg {
-  background-color : #f2eded !important;
-}
-/* ---------- //Why choose us Section End ---------- */
-/* ---------- Text-Bg Border color Code Css ---------- */
-
 .border-primary {
-  border-bottom  : 2px solid #418bca;
+  border-bottom  : 2px solid #3097D1;
   padding-bottom : 5px;
 }
 .border-warning {
@@ -150,7 +106,7 @@ p label {
   padding-bottom : 5px;
 }
 .border-success {
-  border-bottom  : 2px solid #464b17;
+  border-bottom  : 2px solid #3f844e;
   padding-bottom : 5px;
 }
 .border-danger {
@@ -160,10 +116,6 @@ p label {
 /* ---------- //Text-Bg Border color Code Css End---------- */
 /* ---------- Text-Success Css---------- */
 
-.text-success {
-  color            : #464b17;
-  background-color : inherit;
-}
 .success {
   color: #3f844e;
 }
@@ -184,9 +136,7 @@ p label {
 .warning {
   color:#f89a14;
 }
-.yellow {
-  color: #FFD43C;
-}
+
 .icon-position label {
   padding-left : 0;
   margin-left  : 0;
@@ -197,16 +147,6 @@ p label {
   font-weight    : 300;
 }
 
-
-.icon3 {
-  position : relative;
-  top      : 5px;
-  left     : 0;
-}
-.icon4 {
-  left : -1px;
-  top  : 3px;
-}
 .navbar-default .navbar-toggle {
   border: 1px solid #418bca;
   opacity: 0.6;
@@ -234,6 +174,7 @@ p label {
   width  : 13px;
   height : 13px;
 }
+
 .carousel-caption {
   font-size : 30px;
 }
@@ -242,33 +183,7 @@ blockquote {
   border-left : 2px solid #ef6f6c;
 }
 
-.features i {
-  line-height : 2px;
-  float       : left;
-  margin      : 1px 5px;
-}
-/* ---------- //Feature Section Css End ---------- */
-/* ---------- Menu Section Css ---------- */
-
-.menu > li {
-  border  : 1px solid #f89a14;
-  padding : 10px 13px;
-  margin  : 0 10px;
-}
-.menu {
-  margin-top : 20px;
-}
-.menu > li:hover,
-.menu li .active {
-  background-color : #464b17;
-}
-/* ---------- //Menu Section Css End ---------- */
-
-.tabbable-panel ul {
-  list-style-type : none;
-}
 /* ---------- Our services Box  Style Css ---------- */
-
 .box {
   border-radius : 40px;
   border        : 1px solid #c5c7ca;
@@ -300,22 +215,11 @@ blockquote {
   vertical-align : middle;
 }
 /* ---------- Our Services Icon Border css ---------- */
-
 .info > p {
   color       : #787878;
   font-size   : 14px;
   padding-top : 10px;
   text-align  : justify;
-}
-.diy-icon {
-  position : relative;
-  right    : 11px;
-  top      : 11px;
-}
-.icon1 {
-  position : relative;
-  right    : 11px;
-  top      : 11px;
 }
 
 .tagline {
@@ -430,6 +334,7 @@ footer img {
     content : none;
   }
 }
+
 @media (max-width : 950px) {
   .profile {
     display      : block;
@@ -438,23 +343,15 @@ footer img {
   }
 }
 
-/* Terms of Service */
-.full-width {
-  display : block;
-  width   : 100%;
-  overflow: hidden;
-}
-.full-width img {
-  display : block;
-  width   : 100%;
-}
 .inline {
   padding-left: 0;
 }
+
 .inline li{
   display:inline-block;
   padding:1em;
 }
+
 .legal {
   float:left;
 }
@@ -495,6 +392,7 @@ a.btn-primary {
   background-color: #3097d1;
   opacity: 1;
 }
+
 .scrollable-menu {
   height: auto;
   max-height: 223px;
@@ -506,7 +404,6 @@ a.btn-primary {
 .newsletter input[type="email"], .form-inline  .btn {
   margin-bottom: 10px;
 }
-
 .navbar-icon {
   font-size:21px;
 }
@@ -735,4 +632,7 @@ a:hover .thumbnail .caption, a:active .thumbnail .caption, a:focus .thumbnail .c
     height:250px;
     overflow: hidden;
   }
+}
+input.form-control {
+  height:40px;
 }

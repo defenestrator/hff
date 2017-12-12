@@ -10,10 +10,9 @@
 
 @stop
 @section('top')
-    <div class="full-width">
-        <img src="{{ asset('/images/gourley/rod-rack.jpg') }}" >
-    </div>
+    <img style="width:100%;" src="{{ asset('/images/gourley/rod-rack.jpg') }}" >
 @stop
+
 @section('content')
     <div class="container col-md-6 col-md-offset-3">
     <h1>TERMS OF SERVICE</h1>

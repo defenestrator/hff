@@ -9,10 +9,9 @@ Privacy Policy
 @stop
 
 @section('top')
-    <div class="full-width">
-        <img src="{{ asset('/images/gourley/rod-rack.jpg') }}" >
-    </div>
+    <img style="width:100%;" src="{{ asset('/images/gourley/rod-rack.jpg') }}" >
 @stop
+
 @section('content')
     <div class="container col-md-6 col-md-offset-3">
         <h2>Privacy Policy</h2> <p> Hobo Fly Fishing, LLC  built the hoboflyfishing.com  app as a Commercial app. This SERVICE is provided by Hobo Fly Fishing, LLC   and is intended for use as is.

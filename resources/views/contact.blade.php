@@ -5,11 +5,66 @@ Contact
 @parent
 @stop
 @section('page_styles')
+<style>
+    .form-control {
+    background-color: #fff;
+    border: 1px solid #D6D4D4;
+    width: 100%;
+    }
+
+    .contact .input-group {
+    display: block;
+    }
+
+    form {
+    padding: 15px 15px 15px 0;
+    }
+    input[type="text"], input[type="email"] {
+    display: block;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 100%;
+    }
+    .input-group{ margin-bottom: 15px;}
+
+    .media-right{
+    padding-top: 7%;
+
+    }
+    .address1>li{margin-bottom: 30px;}
+    .media-top .box-icon {
+    background-color: #464b17;
+    border: 1px solid #464b17;
+    border-radius: 50%;
+    display: table;
+    height: 40px;
+    width: 40px;
+    margin:0px;
+    }
+    .media-top .box-icon>i{position: relative;
+    left: 8px;
+    top:7px;
+    }
+    .padleft10{
+    padding-left: 10px;
+    }
+    .padbtm2{
+    padding-bottom: 5%;
+    }
+
+    #address_margt{
+    margin-top: 40px;
+    }
+    .resize_vertical{
+    resize: vertical;
+    }
+</style>
 @stop
 
 @section('top')
-&nbsp;
+    <img style="width:100%;" src="{{ asset('/images/gourley/rod-rack.jpg') }}" >
 @stop
+
 
 @section('content')
 
