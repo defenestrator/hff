@@ -25,7 +25,14 @@
         </h1>
         <h2 class="feature-tagline text-center">{{$showcase->tagline}} </h2>
     </div>
-    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                @include('sales-inquiry')
+            </div>
+        </div>
+    </div>
+
 @stop
 @section('content')
     <div class="row">
@@ -40,7 +47,7 @@
             <section>
                 <article class="article">
                     {!! $showcase->sidebar_top !!}
-                    @include('sales-inquiry')
+                    <hr>
                     {!! $showcase->sidebar_bottom !!}
                     <hr>
                     <div>

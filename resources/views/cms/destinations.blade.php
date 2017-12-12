@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-WARNING NOT YET FUNCTIONAL - Manage Destinations
+Manage Destinations
 @parent
 @stop
 
@@ -11,7 +11,14 @@ WARNING NOT YET FUNCTIONAL - Manage Destinations
 @stop
 
 @section('top')
-    <h1>Manage Destinations</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Manage Destinations</h1>
+            </div>
+        </div>
+    </div>
+
 @stop
 
 @section('content')
