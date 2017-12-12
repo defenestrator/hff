@@ -2,21 +2,24 @@
     <div>
             <h3 class="text-center" style="font-weight:600;">Contact us for details and available dates</h3>
             <div class="input-group">
-                <span class="input-group-btn">
-                        <a @click.prevent="telephone" title="Give us a call, just click!">
-                            <button class="btn btn-warning" role="link" style="border:1px solid #535965; border-right:none; border-bottom-right-radius: 0; border-top-right-radius: 0;">
-                                <i data-name="phone" data-size="20" data-loop="true" data-c="#fff"
-                                   data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>
-                            </button>
-                        </a>
-                </span>
-                <input style="height:41px; border:1px solid #535965;" @click="touched" class="form-control" placeholder="<-call or email ->"
-                       v-validate="'required|email'" v-model="email" name="email" id="newsletter-email"
+                <!--<span class="input-group-btn">-->
+                        <!--<a @click.prevent="telephone" title="Give us a call, just click!">-->
+                            <!--<button class="btn btn-warning" role="link" style="border:1px solid #535965; border-right:none; border-bottom-right-radius: 0; border-top-right-radius: 0;">-->
+                                <!--<i data-name="phone" data-size="20" data-loop="true" data-c="#fff"-->
+                                   <!--data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>-->
+                            <!--</button>-->
+                        <!--</a>-->
+                <!--</span>-->
+                <input style="height:41px; border:1px solid #535965;"
+                       @click="touched" class="form-control" placeholder="your email address"
+                       v-validate="'required|email'"
+                       v-model="email" name="email" id="newsletter-email"
                        type="email"
                        :class="{'form-control': true, 'is-danger': errors.has('email') }"
                        aria-describedby="basic-addon2">
                     <span class="input-group-btn">
-                        <button style="border:1px solid #535965;" :class="{'btn': true, 'btn-warning': true, 'is-danger': errors.has('email') }"
+                        <button style="border:1px solid #535965; border-left:none;"
+                                :class="{'btn': true, 'btn-warning': true, 'is-danger': errors.has('email') }"
                                 @click.prevent="signup"
                                 type="submit"
                                 role="button"
@@ -27,7 +30,7 @@
                     </span>
 
             </div>
-            <div style="font-weight:600;" class="text-center">Click the call button or enter your email</div>
+            <div style="font-weight:600;" class="text-center">Simply enter your email or call <a href="tel:12088599133">1-208-859-9133</a></div>
             <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
         <hr>
     </div>

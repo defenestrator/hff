@@ -8,7 +8,7 @@
     inline-template
 >
 
-    <nav class="navbar navbar-inverse site-navbar">
+    <nav class="navbar navbar-default site-navbar">
         <div class="container" v-if="user">
             <div class="navbar-header">
                 <!-- Collapsed Hamburger -->

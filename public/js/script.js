@@ -37802,6 +37802,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
@@ -54613,19 +54616,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_vm._v("Contact us for details and available dates")]), _vm._v(" "), _c('div', {
     staticClass: "input-group"
-  }, [_c('span', {
-    staticClass: "input-group-btn"
-  }, [_c('a', {
-    attrs: {
-      "title": "Give us a call, just click!"
-    },
-    on: {
-      "click": function($event) {
-        $event.preventDefault();
-        _vm.telephone($event)
-      }
-    }
-  }, [_vm._m(0, false, false)])]), _vm._v(" "), _c('input', {
+  }, [_c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -54646,7 +54637,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "border": "1px solid #535965"
     },
     attrs: {
-      "placeholder": "<-call or email ->",
+      "placeholder": "your email address",
       "name": "email",
       "id": "newsletter-email",
       "type": "email",
@@ -54669,7 +54660,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'btn': true, 'btn-warning': true, 'is-danger': _vm.errors.has('email')
     },
     staticStyle: {
-      "border": "1px solid #535965"
+      "border": "1px solid #535965",
+      "border-left": "none"
     },
     attrs: {
       "type": "submit",
@@ -54695,12 +54687,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "data-c": "#fff",
       "data-hc": "#F0F8FF"
     }
-  })])])]), _vm._v(" "), _c('div', {
-    staticClass: "text-center",
-    staticStyle: {
-      "font-weight": "600"
-    }
-  }, [_vm._v("Click the call button or enter your email")]), _vm._v(" "), _c('span', {
+  })])])]), _vm._v(" "), _vm._m(0, false, false), _vm._v(" "), _c('span', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -54710,31 +54697,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "help is-danger"
   }, [_vm._v(_vm._s(_vm.errors.first('email')))]), _vm._v(" "), _c('hr')])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('button', {
-    staticClass: "btn btn-warning",
+  return _c('div', {
+    staticClass: "text-center",
     staticStyle: {
-      "border": "1px solid #535965",
-      "border-right": "none",
-      "border-bottom-right-radius": "0",
-      "border-top-right-radius": "0"
-    },
-    attrs: {
-      "role": "link"
+      "font-weight": "600"
     }
-  }, [_c('i', {
-    staticClass: "livicon icon4 icon3",
-    staticStyle: {
-      "width": "20px",
-      "height": "20px"
-    },
+  }, [_vm._v("Simply enter your email or call "), _c('a', {
     attrs: {
-      "data-name": "phone",
-      "data-size": "20",
-      "data-loop": "true",
-      "data-c": "#fff",
-      "data-hc": "#F0F8FF"
+      "href": "tel:12088599133"
     }
-  })])
+  }, [_vm._v("1-208-859-9133")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
