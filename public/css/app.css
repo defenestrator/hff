@@ -7818,13 +7818,6 @@ blockquote {
   right: 11px;
   top: 11px;
 }
-.feature-main {
-  padding: 50px 0;
-  background-color: #f2eded;
-}
-.feature-main1 {
-  padding: 50px 0;
-}
 .tagline {
   background: #19526b;
   background-size: cover;
@@ -7847,35 +7840,9 @@ blockquote {
   font-weight: 600;
   margin: 0 1em;
 }
-.weekly-thumb {
-  padding: 1em;
-  border: 1px solid #3ab0f5;
-  background-size: cover;
-  background-position: center center;
-  transition: all 0.3s;
-}
-.weekly-special:hover,
-.weekly-special:active,
-.weekly-special:focus {
-  box-shadow: none;
-  transition: all 0.3s;
-}
 .showcase-header {
   text-transform: uppercase;
   text-shadow: 1px 2px 4px #031020;
-}
-.purchase-styl {
-  background-color: #3f844e;
-  border: none;
-  color: #fff;
-  margin-top: 10px;
-  transition: all 0.3s;
-}
-.purchase-styl:hover,
-.purchase-styl:active,
-.purchase-styl:focus {
-  transition: all 0.3s;
-  background-color: #7cb26f;
 }
 /* ---------- //Purchase Section Css Ebd ---------- */
 /* ---------- Our Team Divide Section Css ---------- */
@@ -7886,12 +7853,8 @@ blockquote {
   display: inline-block;
   padding: 16px 5px 0 5px;
 }
-/* ---------- //Our Team Divide Section Css End ---------- */
 .pull-right a {
   color: #128bc6;
-}
-.input-group-addon {
-  color: #fff;
 }
 .team img {
   width: 100%;
@@ -7908,15 +7871,6 @@ blockquote {
 }
 .panel-default {
   border-color: #c5c7ca;
-}
-/* ---------- Headings Border Css ---------- */
-.heading_border {
-  color: #fff;
-  font-weight: 100;
-  border-top-left-radius: 0.8em;
-  border-top-right-radius: 0.8em;
-  margin-bottom: 15px;
-  padding: 5px 15px;
 }
 .profile img {
   width: 100%;
@@ -7947,25 +7901,8 @@ footer img {
     width: 50%;
   }
 }
-#owl-demo .item img {
-  display: block;
-  width: 100%;
-}
-#owl-demo {
-  margin: 0;
-}
 .VueCarousel-dot-inner {
   background-color: transparent;
-}
-#bar {
-  width: 0;
-  max-width: 100%;
-  height: 0px;
-  background: #464b17;
-}
-#progressBar {
-  width: 0%;
-  background: #EDEDED;
 }
 .copyright {
   background-color: #1a1a1a;

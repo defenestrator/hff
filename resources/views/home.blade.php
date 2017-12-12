@@ -45,7 +45,7 @@
                             @if($showcase->special)
                                 <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="btn btn-warning">
                                     <i data-name="question" data-size="16" data-loop="true" data-c="#fff"
-                                       data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 16px; height: 16px;"></i>
+                                       data-hc="#F0F8FF" class="livicon" style="width: 16px; height: 16px;"></i>
                                     <span>Learn More</span>
                                 </button>
                             @endif
@@ -114,7 +114,7 @@
         </div>
         <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="0.5s" data-wow-delay="0.1s">
             <div class="box">
-                <div class="box-icon box-icon2">
+                <div class="box-icon">
                     <img src="/images/very-good.png" title="very good"/>
                 </div>
                 <div class="info">
