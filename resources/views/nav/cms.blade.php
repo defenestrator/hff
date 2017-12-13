@@ -11,12 +11,9 @@
         <li>
             <a href="/cms/publications">Publications</a>
         </li>
-        {{--<li>--}}
-            {{--<a href="/cms/podcasts">Index</a>--}}
-        {{--</li>--}}
-        {{--<li>--}}
-            {{--<a href="/cms/podcasts/new">New</a>--}}
-        {{--</li>--}}
+        <li>
+            <a href="/cms/destinations">Destinations</a>
+        </li>
         {{--<li class="divider"></li>--}}
         {{--<li role="presentation" class="dropdown-header">Fish</li>--}}
         {{--<li>--}}

@@ -24,6 +24,7 @@
                 @else
                     <li><a href="#" class="navbar-link">Podcast</a></li>
                 @endif
+                @include('nav.places')
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">

@@ -40,7 +40,7 @@ Route::group([
     //Destinations
     Route::get('/destinations', 'Api\DestinationsApiController@index');
     Route::post('/destinations', 'Api\DestinationsApiController@create');
-    Route::get('/showcases/{id}', 'Api\ShowcasesApiController@edit');
+    Route::get('/destinations/{id}', 'Api\DestinationsApiController@edit');
     Route::put('/destinations/{id}', 'Api\DestinationsApiController@update');
     Route::delete('/destinations/{id}', 'Api\DestinationsApiController@destroy');
 

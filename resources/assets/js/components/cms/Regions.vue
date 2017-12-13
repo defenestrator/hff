@@ -1,7 +1,6 @@
 <template>
-<div class="row">
-    <div class="col-md-6" style="border-right:1px solid #262626;">
-        <h2>Destinations</h2>
+    <div class="col-md-6">
+        <h2>Regions</h2>
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Create</span>
             <span v-if="! index">Index</span>
@@ -19,46 +18,46 @@
             </tr>
             </thead>
             <tbody class="resource-list">
-            <tr v-for="destination in destinations" class="table-hover">
-                <td><strong>{{ destination.name }}</strong></td>
-                <td><button @click.prevent="(edit(destination.id))"role="button" class="btn btn-warning">Edit</button></td>
+            <tr v-for="region in regions" class="table-hover">
+                <td><strong>{{ region.name }}</strong></td>
+                <td><button @click.prevent="(edit(region.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>
             </tbody>
         </table>
 
-            <form class="form-horizontal new-destination" v-if="! index" role="form">
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <label for="name">Name:</label>
-                        <input v-validate="'required|min:8'" id="name" name="name" v-model="newDestination.name"
-                               :class="{'form-control': true, 'input': true, 'is-danger': errors.has('name') }" type="text" placeholder="Destination Name" style="width:100%">
-                        <span v-show="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
-                    </div>
+        <form class="form-horizontal new-region" v-if="! index" role="form">
+            <div class="form-group">
+                <div class="col-md-12">
+                    <label for="name">Name:</label>
+                    <input v-validate="'required|min:3'" id="name" name="name" v-model="newDestination.name"
+                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('name') }" type="text" placeholder="Destination Name" style="width:100%">
+                    <span v-show="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <label for="lat">Latitude:</label>
-                        <input v-validate="'required|min:5|max:11|between:-90.0000000,90.0000000'" id="lat" name="lat" v-model="newDestination.lat"
-                               :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lat') }"
-                               type="text" placeholder="Latitude" style="width:100%">
-                        <span v-show="errors.has('lat')" class="help is-danger">{{ errors.first('lat') }}</span>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="lng">Longitude:</label>
-                        <input v-validate="'required|min:5|max:12|between:-180.0000000,180.0000000'" id="lng" name="lng" v-model="newDestination.lng"
-                               :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lng') }"
-                               type="text" placeholder="Longitude" style="width:100%">
-                        <span v-show="errors.has('lng')" class="help is-danger">{{ errors.first('lng') }}</span>
-                    </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <label for="lat">Latitude:</label>
+                    <input v-validate="'min:5|max:11|between:-90.0000000,90.0000000'" id="lat" name="lat" v-model="newDestination.lat"
+                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lat') }"
+                           type="text" placeholder="Latitude" style="width:100%">
+                    <span v-show="errors.has('lat')" class="help is-danger">{{ errors.first('lat') }}</span>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="description" v-model="newDestination.description"></trumbowyg>
-                    </div>
+                <div class="col-md-6">
+                    <label for="lng">Longitude:</label>
+                    <input v-validate="'min:5|max:12|between:-180.0000000,180.0000000'" id="lng" name="lng" v-model="newDestination.lng"
+                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lng') }"
+                           type="text" placeholder="Longitude" style="width:100%">
+                    <span v-show="errors.has('lng')" class="help is-danger">{{ errors.first('lng') }}</span>
                 </div>
-                <div class="form-group">
-                    <div v-show="newDestination.destinationId" class="col-md-2 col-sm-12">
-                        <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newDestination.saveError }" @click.prevent="update" :disabled="newDestination.saved">
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <textarea rows="5" columns="30" id="geojson" name="geojson" v-model="newDestination.geojson"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div v-show="newDestination.regionId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newDestination.saveError }" @click.prevent="update" :disabled="newDestination.saved">
                                 <span v-if="newDestination.saveBusy">
                                     <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
                                  </span>
@@ -72,41 +71,33 @@
                                     <i class="fa fa-btn fa-check-circle"></i>Updated
                                 </span>
 
-                        </button>
-                    </div>
-                    <div v-show="! newDestination.destinationId" class="col-md-2 col-sm-12">
-                        <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newDestination.saveError }" @click.prevent="save" :disabled="newDestination.saved">
+                    </button>
+                </div>
+                <div v-show="! newDestination.regionId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newDestination.saveError }" @click.prevent="save" :disabled="newDestination.saved">
                                 <span v-if="newDestination.saveBusy">
                                     <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                                  </span>
-                                <span v-else-if="newDestination.destinationId !== null">
+                                <span v-else-if="newDestination.regionId !== null">
                                     <i class="fa fa-btn fa-check-circle"></i>Saved!
                                  </span>
                                 <span v-else>
                                     <i class="fa fa-btn fa-check-circle"></i>Save
                                 </span>
-                        </button>
-                    </div>
-
-                    <div class="col-md-2 col-sm-12">
-                        <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': ! newDestination.saved }" :disabled="! newDestination.destinationId">
-                            Delete
-                        </button>
-                    </div>
+                    </button>
                 </div>
-            </form>
-        </div>
-    <regions />
+
+                <div class="col-md-2 col-sm-12">
+                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': ! newDestination.saved }" :disabled="! newDestination.regionId">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </form>
     </div>
-</div>
 </template>
 
 <script>
-// Import this component
-import trumbowyg from 'vue-trumbowyg';
-
-// Import editor css
-import 'trumbowyg/dist/ui/trumbowyg.css';
 
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
@@ -116,61 +107,20 @@ export default {
         this.getIndex()
     },
     components: {
-        trumbowyg
     },
     data() {
         return {
             index: true,
-            destinations: [],
+            regions: [],
             newDestination: new SparkForm ({
                 name: '',
-                description: '',
+                geojson: '',
                 lat: null,
-                lng: null,
-                destinationId: null,
-                saveBusy: false,
-                saveError: false,
-                saved: false
-            }),
-            trumbowygConfig: {
-                id: 'trumbowyg',
-                autogrowOnEnter: true,
-                btnsDef: {
-                    // Customizables dropdowns
-                    image: {
-                        dropdown: ['insertImage', 'upload'],
-                        ico: 'insertImage'
-                    }
-                },
-                btns: [
-                    ['viewHTML'],
-                    ['formatting'],
-                    ['strong', 'em', 'underline'],
-                    ['link'],
-                    ['image'],
-                    ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
-                    ['unorderedList', 'orderedList'],
-                    ['horizontalRule'],
-                    ['removeformat']
-                ],
-                plugins: {
-                    upload: {
-                        serverPath: '/cms/images',
-                        fileFieldName: 'image',
-                        urlPropertyName: 'large',
-                        headers: {
-                            'X-CSRF-TOKEN': Spark.csrfToken
-                        },
-                        xhrFields: {}
-                    },
-                }
-            }
+                lng: null
+            })
         }
     },
     watch: {
-        'newDestination.header_photo': function (val, oldVal) {
-            this.newDestination.saved = false
-        },
         name(value) {
             this.validator.validate('name', value);
         },
@@ -193,10 +143,10 @@ export default {
     methods: {
 
         getIndex() {
-            axios.get(`/api/destinations`, {})
+            axios.get(`/api/regions`, {})
             .then(result  => {
-                this.destinations = result.data.data
-                return this.destinations
+                this.regions = result.data.data
+                return this.regions
             })
             .catch(error => {
                 return Promise.reject(error)
@@ -219,16 +169,16 @@ export default {
                 lat: this.newDestination.lat,
                 lng: this.newDestination.lng
                 }).then((result) => {
-                    axios.post(`/api/destinations`, {
+                    axios.post(`/api/regions`, {
                                 name: this.newDestination.name,
                                 lat:  this.newDestination.lat,
                                 lng:  this.newDestination.lng,
-                                description: this.newDestination.description
+                                geojson: this.newDestination.geojson
                             })
                             .then(result  => {
                                 this.newDestination.saveBusy = false
                                 this.newDestination.saved= true
-                                this.newDestination.destinationId = result.data.id
+                                this.newDestination.regionId = result.data.id
                              return result
                             })
                             .catch(error => {
@@ -253,9 +203,9 @@ export default {
                 lat: this.newDestination.lat,
                 lng: this.newDestination.lng
                 }).then((result) => {
-                    axios.put(`/api/destinations/` + this.newDestination.destinationId, {
+                    axios.put(`/api/regions/` + this.newDestination.regionId, {
                         name: this.newDestination.name,
-                        description: this.newDestination.description,
+                        geojson: this.newDestination.geojson,
                         lat: this.newDestination.lat,
                         lng: this.newDestination.lng
                     })
@@ -277,8 +227,8 @@ export default {
             })
         },
         leeroyjenkins() {
-            if(confirm("Permanently destroy this destination?")) {
-                axios.delete(`/api/destinations/` + this.newDestination.destinationId, {})
+            if(confirm("Permanently destroy this region?")) {
+                axios.delete(`/api/regions/` + this.newDestination.regionId, {})
                 .then(result  => {
                     this.clear()
                 })
@@ -288,8 +238,8 @@ export default {
             }
         },
         createNewDestination() {
-            if (!this.newDestination.destinationId) {
-                if (confirm('Abandon this destination and start over?')) {
+            if (!this.newDestination.regionId) {
+                if (confirm('Abandon this region and start over?')) {
                     this.clear()
                 }
             } else {
@@ -299,20 +249,21 @@ export default {
         clear() {
             this.newDestination.saved = false
             this.newDestination.saveBusy = false
-            this.newDestination.destinationId = null
+            this.newDestination.regionId = null
             this.newDestination.name = ''
-            this.newDestination.description = ''
+            this.newDestination.geojson = ''
             this.newDestination.lat = null
             this.newDestination.lng = null
         },
         edit(id){
             this.saveBusy = true
             this.index = false
-            this.newDestination.destinationId = id
-            axios.get(`/api/destinations/`+ id , {})
+            this.newDestination.regionId = id
+            this.getTags(this.newDestination.regionId)
+            axios.get(`/api/regions/`+ id , {})
             .then(result => {
                 this.newDestination.name = result.data.name;
-                this.newDestination.description = result.data.description
+                this.newDestination.geojson = result.data.geojson
                 this.newDestination.lat = result.data.lat;
                 this.newDestination.lng = result.data.lng;
                 this.saveBusy = false
@@ -381,7 +332,7 @@ export default {
     }
 
     @media (max-width: 991px) {
-        .new-destination .btn
+        .new-region .btn
         {
             width:100%;
             padding:1.34em;
@@ -389,7 +340,7 @@ export default {
         }
     }
 
-    .destination-index {
+    .region-index {
         position:relative;
         display:block
     }

@@ -17,8 +17,8 @@ class CreateRegionsTable extends Migration
             $table->increments('id');
             $table->text('name');
             $table->longText('geojson')->default('');
-            $table->decimal('lat', 10, 7);
-            $table->decimal('lng', 10, 7);
+            $table->decimal('lat', 10, 7)->nullable();
+            $table->decimal('lng', 10, 7)->nullable();
             $table->timestamps();
         });
     }

@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
         'hatch_reports',
         'hatch_types',
         'maps',
-        'podcasts',
         'prey',
         'reports',
         'water_data',
@@ -97,23 +96,6 @@ class DatabaseSeeder extends Seeder
             'post_id' => 2
         ]);
         $this->command->info('Posts published!');
-
-        Podcast::create([
-            'title' => 'Winston Moore',
-            'slug' => 'winston-moore',
-            'episode' => 1,
-            'season' => 1,
-            'file' => 'storage/public/uploads/podcasts/d8462883-a353-354a-b67b-afe333b7ea7d.mp3',
-            'notes' => 'Episode one of the Hobo Fly Fishing Podcast features and interview with global fly fishing legend Winston Moore',
-            'cover_image' => 'https://lorempixel.com/640/480/animals/fish/',
-        ]);
-        $this->command->info('Podcast Created!');
-
-        Publication::create([
-            'type' => 'podcast',
-            'podcast_id' => 1
-        ]);
-        $this->command->info('Podcast Published!');
 
         $this->call(PrivacyTableSeeder::class);
         $this->command->info('Privacy table seeded!');
