@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-6">
+    <div class="col-md-6" style="border-right:1px solid #262626;">
         <h2>Regions</h2>
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Create</span>
@@ -259,7 +259,6 @@ export default {
             this.saveBusy = true
             this.index = false
             this.newDestination.regionId = id
-            this.getTags(this.newDestination.regionId)
             axios.get(`/api/regions/`+ id , {})
             .then(result => {
                 this.newDestination.name = result.data.name;

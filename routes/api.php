@@ -44,6 +44,13 @@ Route::group([
     Route::put('/destinations/{id}', 'Api\DestinationsApiController@update');
     Route::delete('/destinations/{id}', 'Api\DestinationsApiController@destroy');
 
+    //Regions
+    Route::get('/regions', 'Api\RegionsApiController@index');
+    Route::post('/regions', 'Api\RegionsApiController@create');
+    Route::get('/regions/{id}', 'Api\RegionsApiController@edit');
+    Route::put('/regions/{id}', 'Api\RegionsApiController@update');
+    Route::delete('/regions/{id}', 'Api\RegionsApiController@destroy');
+
     // Images
     Route::post('/photo', 'ImagesController@header');
 

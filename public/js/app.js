@@ -54966,7 +54966,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"
-  }, [_c('div', {
+  }, [_c('regions'), _vm._v(" "), _c('div', {
     staticClass: "col-md-6",
     staticStyle: {
       "border-right": "1px solid #262626"
@@ -55265,7 +55265,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.leeroyjenkins($event)
       }
     }
-  }, [_vm._v("\n                            Delete\n                        ")])])])]) : _vm._e()]), _vm._v(" "), _c('regions')], 1)
+  }, [_vm._v("\n                            Delete\n                        ")])])])]) : _vm._e()])], 1)
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"
@@ -67687,7 +67687,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             this.saveBusy = true;
             this.index = false;
             this.newDestination.regionId = id;
-            this.getTags(this.newDestination.regionId);
             axios.get('/api/regions/' + id, {}).then(function (result) {
                 _this5.newDestination.name = result.data.name;
                 _this5.newDestination.geojson = result.data.geojson;
@@ -67764,7 +67763,10 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-6"
+    staticClass: "col-md-6",
+    staticStyle: {
+      "border-right": "1px solid #262626"
+    }
   }, [_c('h2', [_vm._v("Regions")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-create",
     attrs: {

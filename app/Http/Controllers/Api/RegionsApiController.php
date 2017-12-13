@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Region;
+use Illuminate\Http\Request;
 
 class RegionsApiController extends ApiController
 {
@@ -43,7 +44,9 @@ class RegionsApiController extends ApiController
      */
     public function update(Request $request, Region $region, $id)
     {
-        return $region->findOrNew($id)->update($request->all('name','lat', 'lng', 'description'));
+        $content = $region->find($id);
+        $content->update($request->all());
+        return $content;
     }
 
     /**

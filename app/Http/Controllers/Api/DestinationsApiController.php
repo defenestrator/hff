@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+
 use App\Destination;
 use Illuminate\Http\Request;
 
@@ -43,7 +44,9 @@ class DestinationsApiController extends ApiController
      */
     public function update(Request $request, Destination $destination, $id)
     {
-        return $destination->findOrNew($id)->update($request->all('name','lat', 'lng', 'description'));
+        $content = $destination->find($id);
+        $content->update($request->all());
+        return $content;
     }
 
     /**

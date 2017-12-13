@@ -1,5 +1,6 @@
 <template>
 <div class="row">
+    <regions />
     <div class="col-md-6" style="border-right:1px solid #262626;">
         <h2>Destinations</h2>
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
@@ -96,7 +97,6 @@
                 </div>
             </form>
         </div>
-    <regions />
     </div>
 </div>
 </template>
