@@ -54967,9 +54967,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "row"
   }, [_c('regions'), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6",
+    staticClass: "col-sm-6",
     staticStyle: {
-      "border-right": "1px solid #262626"
+      "border-right": "1px solid #262626",
+      "border-bottom": "1px solid #262626"
     }
   }, [_c('h2', [_vm._v("Destinations")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-create",
@@ -55201,7 +55202,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.newDestination.destinationId),
       expression: "newDestination.destinationId"
     }],
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-3 col-sm-12"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-primary': true, 'is-danger': _vm.newDestination.saveError
@@ -55230,7 +55231,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (!_vm.newDestination.destinationId),
       expression: "! newDestination.destinationId"
     }],
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-3 col-sm-12"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-primary': true, 'is-danger': _vm.newDestination.saveError
@@ -55251,7 +55252,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v("Saved!\n                                 ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Save\n                                ")])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-3 col-sm-12"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-danger': true, 'hidden': !_vm.newDestination.saved
@@ -67526,6 +67527,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -67541,11 +67543,15 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
         return {
             index: true,
             regions: [],
-            newDestination: new SparkForm({
+            newRegion: new SparkForm({
                 name: '',
                 geojson: '',
                 lat: null,
-                lng: null
+                lng: null,
+                regionId: null,
+                saveBusy: false,
+                saveError: false,
+                saved: false
             })
         };
     },
@@ -67561,14 +67567,14 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             this.validator.validate('lng', value);
         },
 
-        'newDestination.name': function newDestinationName(val, oldVal) {
-            this.newDestination.saved = false;
+        'newRegion.name': function newRegionName(val, oldVal) {
+            this.newRegion.saved = false;
         },
-        'newDestination.lat': function newDestinationLat(val, oldVal) {
-            this.newDestination.saved = false;
+        'newRegion.lat': function newRegionLat(val, oldVal) {
+            this.newRegion.saved = false;
         },
-        'newDestination.lng': function newDestinationLng(val, oldVal) {
-            this.newDestination.saved = false;
+        'newRegion.lng': function newRegionLng(val, oldVal) {
+            this.newRegion.saved = false;
         }
     },
     methods: {
@@ -67592,32 +67598,32 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
         save: function save() {
             var _this2 = this;
 
-            this.newDestination.saveError = false;
-            this.newDestination.saveBusy = true;
+            this.newRegion.saveError = false;
+            this.newRegion.saveBusy = true;
             this.validator.validateAll({
-                name: this.newDestination.name,
-                lat: this.newDestination.lat,
-                lng: this.newDestination.lng
+                name: this.newRegion.name,
+                lat: this.newRegion.lat,
+                lng: this.newRegion.lng
             }).then(function (result) {
                 axios.post('/api/regions', {
-                    name: _this2.newDestination.name,
-                    lat: _this2.newDestination.lat,
-                    lng: _this2.newDestination.lng,
-                    geojson: _this2.newDestination.geojson
+                    name: _this2.newRegion.name,
+                    lat: _this2.newRegion.lat,
+                    lng: _this2.newRegion.lng,
+                    geojson: _this2.newRegion.geojson
                 }).then(function (result) {
-                    _this2.newDestination.saveBusy = false;
-                    _this2.newDestination.saved = true;
-                    _this2.newDestination.regionId = result.data.id;
+                    _this2.newRegion.saveBusy = false;
+                    _this2.newRegion.saved = true;
+                    _this2.newRegion.regionId = result.data.id;
                     return result;
                 }).catch(function (error) {
-                    _this2.newDestination.saveError = true;
-                    _this2.newDestination.saveBusy = false;
-                    _this2.newDestination.serverErrors = error.response.data.errors.slug[0];
+                    _this2.newRegion.saveError = true;
+                    _this2.newRegion.saveBusy = false;
+                    _this2.newRegion.serverErrors = error.response.data.errors.slug[0];
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
-                _this2.newDestination.saveBusy = false;
-                _this2.newDestination.saveError = true;
+                _this2.newRegion.saveBusy = false;
+                _this2.newRegion.saveError = true;
                 _this2.errors = Promise.reject(error);
                 return Promise.reject(error);
             });
@@ -67625,30 +67631,30 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
         update: function update() {
             var _this3 = this;
 
-            this.newDestination.saveError = false;
-            this.newDestination.saveBusy = true;
+            this.newRegion.saveError = false;
+            this.newRegion.saveBusy = true;
             this.validator.validateAll({
-                name: this.newDestination.name,
-                lat: this.newDestination.lat,
-                lng: this.newDestination.lng
+                name: this.newRegion.name,
+                lat: this.newRegion.lat,
+                lng: this.newRegion.lng
             }).then(function (result) {
-                axios.put('/api/regions/' + _this3.newDestination.regionId, {
-                    name: _this3.newDestination.name,
-                    geojson: _this3.newDestination.geojson,
-                    lat: _this3.newDestination.lat,
-                    lng: _this3.newDestination.lng
+                axios.put('/api/regions/' + _this3.newRegion.regionId, {
+                    name: _this3.newRegion.name,
+                    geojson: _this3.newRegion.geojson,
+                    lat: _this3.newRegion.lat,
+                    lng: _this3.newRegion.lng
                 }).then(function (result) {
-                    _this3.newDestination.saveBusy = false;
-                    _this3.newDestination.saved = true;
+                    _this3.newRegion.saveBusy = false;
+                    _this3.newRegion.saved = true;
                     return result;
                 }).catch(function (error) {
-                    _this3.newDestination.saveError = true;
-                    _this3.newDestination.saveBusy = false;
+                    _this3.newRegion.saveError = true;
+                    _this3.newRegion.saveBusy = false;
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
-                _this3.newDestination.saveBusy = false;
-                _this3.newDestination.saveError = true;
+                _this3.newRegion.saveBusy = false;
+                _this3.newRegion.saveError = true;
                 return Promise.reject(error);
             });
         },
@@ -67656,7 +67662,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             var _this4 = this;
 
             if (confirm("Permanently destroy this region?")) {
-                axios.delete('/api/regions/' + this.newDestination.regionId, {}).then(function (result) {
+                axios.delete('/api/regions/' + this.newRegion.regionId, {}).then(function (result) {
                     _this4.clear();
                 }).catch(function (error) {
                     return Promise.reject(error);
@@ -67664,7 +67670,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             }
         },
         createNewDestination: function createNewDestination() {
-            if (!this.newDestination.regionId) {
+            if (!this.newRegion.regionId) {
                 if (confirm('Abandon this region and start over?')) {
                     this.clear();
                 }
@@ -67673,27 +67679,27 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             }
         },
         clear: function clear() {
-            this.newDestination.saved = false;
-            this.newDestination.saveBusy = false;
-            this.newDestination.regionId = null;
-            this.newDestination.name = '';
-            this.newDestination.geojson = '';
-            this.newDestination.lat = null;
-            this.newDestination.lng = null;
+            this.newRegion.saved = false;
+            this.newRegion.saveBusy = false;
+            this.newRegion.regionId = null;
+            this.newRegion.name = '';
+            this.newRegion.geojson = '';
+            this.newRegion.lat = null;
+            this.newRegion.lng = null;
         },
         edit: function edit(id) {
             var _this5 = this;
 
             this.saveBusy = true;
             this.index = false;
-            this.newDestination.regionId = id;
+            this.newRegion.regionId = id;
             axios.get('/api/regions/' + id, {}).then(function (result) {
-                _this5.newDestination.name = result.data.name;
-                _this5.newDestination.geojson = result.data.geojson;
-                _this5.newDestination.lat = result.data.lat;
-                _this5.newDestination.lng = result.data.lng;
+                _this5.newRegion.name = result.data.name;
+                _this5.newRegion.geojson = result.data.geojson;
+                _this5.newRegion.lat = result.data.lat;
+                _this5.newRegion.lng = result.data.lng;
                 _this5.saveBusy = false;
-                _this5.newDestination.saved = true;
+                _this5.newRegion.saved = true;
                 return result.data;
             }).catch(function (error) {
                 return Promise.reject(error);
@@ -67763,9 +67769,10 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-md-6",
+    staticClass: "col-sm-6",
     staticStyle: {
-      "border-right": "1px solid #262626"
+      "border-right": "1px solid #262626",
+      "border-bottom": "1px solid #262626"
     }
   }, [_c('h2', [_vm._v("Regions")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-create",
@@ -67788,7 +67795,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('button', {
     staticClass: "btn btn-primary",
     attrs: {
-      "disabled": !_vm.newDestination.name
+      "disabled": !_vm.newRegion.name
     },
     on: {
       "click": function($event) {
@@ -67843,8 +67850,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, {
       name: "model",
       rawName: "v-model",
-      value: (_vm.newDestination.name),
-      expression: "newDestination.name"
+      value: (_vm.newRegion.name),
+      expression: "newRegion.name"
     }],
     class: {
       'form-control': true, 'input': true, 'is-danger': _vm.errors.has('name')
@@ -67859,12 +67866,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Destination Name"
     },
     domProps: {
-      "value": (_vm.newDestination.name)
+      "value": (_vm.newRegion.name)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.$set(_vm.newDestination, "name", $event.target.value)
+        _vm.$set(_vm.newRegion, "name", $event.target.value)
       }
     }
   }), _vm._v(" "), _c('span', {
@@ -67892,8 +67899,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, {
       name: "model",
       rawName: "v-model",
-      value: (_vm.newDestination.lat),
-      expression: "newDestination.lat"
+      value: (_vm.newRegion.lat),
+      expression: "newRegion.lat"
     }],
     class: {
       'form-control': true, 'input': true, 'is-danger': _vm.errors.has('lat')
@@ -67908,12 +67915,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Latitude"
     },
     domProps: {
-      "value": (_vm.newDestination.lat)
+      "value": (_vm.newRegion.lat)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.$set(_vm.newDestination, "lat", $event.target.value)
+        _vm.$set(_vm.newRegion, "lat", $event.target.value)
       }
     }
   }), _vm._v(" "), _c('span', {
@@ -67939,8 +67946,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, {
       name: "model",
       rawName: "v-model",
-      value: (_vm.newDestination.lng),
-      expression: "newDestination.lng"
+      value: (_vm.newRegion.lng),
+      expression: "newRegion.lng"
     }],
     class: {
       'form-control': true, 'input': true, 'is-danger': _vm.errors.has('lng')
@@ -67955,12 +67962,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Longitude"
     },
     domProps: {
-      "value": (_vm.newDestination.lng)
+      "value": (_vm.newRegion.lng)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.$set(_vm.newDestination, "lng", $event.target.value)
+        _vm.$set(_vm.newRegion, "lng", $event.target.value)
       }
     }
   }), _vm._v(" "), _c('span', {
@@ -67975,12 +67982,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_c('textarea', {
+  }, [_c('p', {
+    attrs: {
+      "for": "geojson"
+    }
+  }, [_vm._v("Paste geojson here:")]), _vm._v(" "), _c('textarea', {
     directives: [{
       name: "model",
       rawName: "v-model",
-      value: (_vm.newDestination.geojson),
-      expression: "newDestination.geojson"
+      value: (_vm.newRegion.geojson),
+      expression: "newRegion.geojson"
     }],
     attrs: {
       "rows": "5",
@@ -67989,12 +68000,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "geojson"
     },
     domProps: {
-      "value": (_vm.newDestination.geojson)
+      "value": (_vm.newRegion.geojson)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.$set(_vm.newDestination, "geojson", $event.target.value)
+        _vm.$set(_vm.newRegion, "geojson", $event.target.value)
       }
     }
   })])]), _vm._v(" "), _c('div', {
@@ -68003,16 +68014,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (_vm.newDestination.regionId),
-      expression: "newDestination.regionId"
+      value: (_vm.newRegion.regionId),
+      expression: "newRegion.regionId"
     }],
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-3 col-sm-12"
   }, [_c('button', {
     class: {
-      'btn': true, 'btn-primary': true, 'is-danger': _vm.newDestination.saveError
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newRegion.saveError
     },
     attrs: {
-      "disabled": _vm.newDestination.saved
+      "disabled": _vm.newRegion.saved
     },
     on: {
       "click": function($event) {
@@ -68020,11 +68031,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.update($event)
       }
     }
-  }, [(_vm.newDestination.saveBusy) ? _c('span', [_c('i', {
+  }, [(_vm.newRegion.saveBusy) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-spinner fa-spin"
-  }), _vm._v("Updating\n                             ")]) : (_vm.newDestination.saved) ? _c('span', [_c('i', {
+  }), _vm._v("Updating\n                             ")]) : (_vm.newRegion.saved) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
-  }), _vm._v("Saved!\n                             ")]) : (_vm.newDestination.saved == false) ? _c('span', [_c('i', {
+  }), _vm._v("Saved!\n                             ")]) : (_vm.newRegion.saved == false) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Update\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
@@ -68032,16 +68043,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (!_vm.newDestination.regionId),
-      expression: "! newDestination.regionId"
+      value: (!_vm.newRegion.regionId),
+      expression: "! newRegion.regionId"
     }],
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-3 col-sm-12"
   }, [_c('button', {
     class: {
-      'btn': true, 'btn-primary': true, 'is-danger': _vm.newDestination.saveError
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newRegion.saveError
     },
     attrs: {
-      "disabled": _vm.newDestination.saved
+      "disabled": _vm.newRegion.saved
     },
     on: {
       "click": function($event) {
@@ -68049,20 +68060,20 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.save($event)
       }
     }
-  }, [(_vm.newDestination.saveBusy) ? _c('span', [_c('i', {
+  }, [(_vm.newRegion.saveBusy) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-spinner fa-spin"
-  }), _vm._v("Saving\n                             ")]) : (_vm.newDestination.regionId !== null) ? _c('span', [_c('i', {
+  }), _vm._v("Saving\n                             ")]) : (_vm.newRegion.regionId !== null) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Save\n                            ")])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-3 col-sm-12"
   }, [_c('button', {
     class: {
-      'btn': true, 'btn-danger': true, 'hidden': !_vm.newDestination.saved
+      'btn': true, 'btn-danger': true, 'hidden': !_vm.newRegion.saved
     },
     attrs: {
-      "disabled": !_vm.newDestination.regionId
+      "disabled": !_vm.newRegion.regionId
     },
     on: {
       "click": function($event) {

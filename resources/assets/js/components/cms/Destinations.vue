@@ -1,7 +1,7 @@
 <template>
 <div class="row">
     <regions />
-    <div class="col-md-6" style="border-right:1px solid #262626;">
+    <div class="col-sm-6" style="border-right:1px solid #262626; border-bottom:1px solid #262626;">
         <h2>Destinations</h2>
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Create</span>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div v-show="newDestination.destinationId" class="col-md-2 col-sm-12">
+                    <div v-show="newDestination.destinationId" class="col-md-3 col-sm-12">
                         <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newDestination.saveError }" @click.prevent="update" :disabled="newDestination.saved">
                                 <span v-if="newDestination.saveBusy">
                                     <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
@@ -75,7 +75,7 @@
 
                         </button>
                     </div>
-                    <div v-show="! newDestination.destinationId" class="col-md-2 col-sm-12">
+                    <div v-show="! newDestination.destinationId" class="col-md-3 col-sm-12">
                         <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newDestination.saveError }" @click.prevent="save" :disabled="newDestination.saved">
                                 <span v-if="newDestination.saveBusy">
                                     <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
@@ -89,8 +89,8 @@
                         </button>
                     </div>
 
-                    <div class="col-md-2 col-sm-12">
-                        <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': ! newDestination.saved }" :disabled="! newDestination.destinationId">
+                    <div class="col-md-3 col-sm-12">
+                        <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': ! newDestination.saved  }" :disabled="! newDestination.destinationId">
                             Delete
                         </button>
                     </div>
