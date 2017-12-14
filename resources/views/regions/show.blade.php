@@ -37,9 +37,11 @@
         <div class="col-sm-8 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <h3>Places we book in {{$region->name}}</h3>
+                    <h2>Places we book in {{$region->name}}</h2>
                     @foreach($region->showcases as $showcase)
-                    <a href="/showcases/{{ $showcase->slug }}">{{$showcase->title}}</a>
+                    <ul class="list-unstyled">
+                        <li><a href="/showcases/{{ $showcase->slug }}"><h3>{{$showcase->title}}</h3><img src="{{$showcase->thumbnail}}"/></a></li>
+                    </ul>
                     @endforeach
                 </article>
             </section>
