@@ -39648,7 +39648,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         },
         toggleIndex: function toggleIndex() {
             if (this.index == true) {
-                this.clear();
                 return this.index = false;
             }
             this.getIndex();
