@@ -36,6 +36,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Package whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Package whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Expedition[] $expeditions
  */
 class Package extends Model
 {

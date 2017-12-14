@@ -38075,9 +38075,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
     watch: {
         name: function name(value) {
             this.validator.validate('name', value);
-            if (this.newDestination.slug == '' || this.newDestination.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')) {
-                this.newDestination.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
-            }
         },
         lat: function lat(value) {
             this.validator.validate('lat', value);
@@ -38125,6 +38122,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         },
         toggleIndex: function toggleIndex() {
             if (this.index == true) {
+                this.clear();
                 return this.index = false;
             }
             this.getIndex();
@@ -38142,7 +38140,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             }).then(function (result) {
                 axios.post('/api/destinations', {
                     name: _this3.newDestination.name,
-                    slug: _this3.newDestination.slug,
                     lat: _this3.newDestination.lat,
                     lng: _this3.newDestination.lng,
                     region_id: _this3.newDestination.regionId,
@@ -38222,6 +38219,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.newDestination.destinationId = null;
             this.newDestination.name = '';
             this.newDestination.description = '';
+            this.newDestination.regionId = null;
+            this.newDestination;
             this.newDestination.lat = null;
             this.newDestination.lng = null;
         },
@@ -39062,6 +39061,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             newRegion: new SparkForm({
                 name: '',
                 geojson: '',
+                slug: '',
                 lat: null,
                 lng: null,
                 regionId: null,
@@ -39075,6 +39075,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
     watch: {
         name: function name(value) {
             this.validator.validate('name', value);
+            if (this.newRegion.slug == '' || this.newRegion.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')) {
+                this.newRegion.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
+            }
         },
         lat: function lat(value) {
             this.validator.validate('lat', value);
@@ -39128,7 +39131,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                     name: _this2.newRegion.name,
                     lat: _this2.newRegion.lat,
                     lng: _this2.newRegion.lng,
-                    geojson: _this2.newRegion.geojson
+                    geojson: _this2.newRegion.geojson,
+                    slug: _this2.newRegion.slug
                 }).then(function (result) {
                     _this2.newRegion.saveBusy = false;
                     _this2.newRegion.saved = true;
@@ -39451,6 +39455,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // Import this component
 
@@ -39464,6 +39483,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
     validator: null,
     mounted: function mounted() {
         this.getIndex();
+        this.getRegions();
+        this.getDestinations();
     },
 
     components: {
@@ -39473,6 +39494,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         return {
             index: true,
             showcases: [],
+            regions: [],
+            destinations: [],
             newShowcase: new SparkForm({
                 title: '',
                 slug: '',
@@ -39480,8 +39503,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 tagline: "",
                 sidebar_top: "",
                 sidebar_bottom: "",
-                fishery_type: "",
-                region: "",
+                homepage_top: "",
+                homepage_bottom: "",
+                destinationId: null,
+                regionId: null,
                 special: false,
                 header_photo: "",
                 image_id: null,
@@ -39531,11 +39556,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         body: function body(value) {
             this.validator.validate('body', value);
         },
-        fishery_type: function fishery_type(value) {
-            this.validator.validate('fishery_type', value);
+        homepage_top: function homepage_top(value) {
+            this.validator.validate('homepage_top', value);
         },
-        region: function region(value) {
-            this.validator.validate('region', value);
+        homepage_bottom: function homepage_bottom(value) {
+            this.validator.validate('homepage_bottom', value);
         },
         sidebar_top: function sidebar_top(value) {
             this.validator.validate('sidebar_top', value);
@@ -39560,10 +39585,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         'newShowcase.header_photo': function newShowcaseHeader_photo(val, oldVal) {
             this.newShowcase.saved = false;
         },
-        'newShowcase.fishery_type': function newShowcaseFishery_type(val, oldVal) {
+        'newShowcase.homepage_top': function newShowcaseHomepage_top(val, oldVal) {
             this.newShowcase.saved = false;
         },
-        'newShowcase.region': function newShowcaseRegion(val, oldVal) {
+        'newShowcase.homepage_bottom': function newShowcaseHomepage_bottom(val, oldVal) {
             this.newShowcase.saved = false;
         },
         'newShowcase.tagline': function newShowcaseTagline(val, oldVal) {
@@ -39594,6 +39619,26 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 return Promise.reject(error);
             });
         },
+        getRegions: function getRegions() {
+            var _this2 = this;
+
+            axios.get('/api/regions', {}).then(function (result) {
+                _this2.regions = result.data.data;
+                return _this2.regions;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        },
+        getDestinations: function getDestinations() {
+            var _this3 = this;
+
+            axios.get('/api/destinations', {}).then(function (result) {
+                _this3.destinations = result.data.data;
+                return _this3.destinations;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        },
         toggleIndex: function toggleIndex() {
             if (this.index == true) {
                 return this.index = false;
@@ -39602,7 +39647,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             return this.index = true;
         },
         save: function save() {
-            var _this2 = this;
+            var _this4 = this;
 
             this.newShowcase.saveError = false;
             this.newShowcase.saveBusy = true;
@@ -39611,40 +39656,42 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 body: this.newShowcase.body
             }).then(function (result) {
                 axios.post('/api/showcases', {
-                    title: _this2.newShowcase.title,
-                    slug: _this2.newShowcase.slug,
-                    body: _this2.newShowcase.body,
-                    tagline: _this2.newShowcase.tagline,
-                    sidebar_bottom: _this2.newShowcase.sidebar_bottom,
-                    sidebar_top: _this2.newShowcase.sidebar_top,
-                    fishery_type: _this2.newShowcase.fishery_type,
-                    region: _this2.newShowcase.region,
-                    header_photo: _this2.newShowcase.header_photo,
-                    image_id: _this2.newShowcase.image_id,
-                    thumbnail: _this2.newShowcase.thumbnail,
-                    special: _this2.newShowcase.special,
-                    tags: _this2.newShowcase.tags
+                    title: _this4.newShowcase.title,
+                    slug: _this4.newShowcase.slug,
+                    body: _this4.newShowcase.body,
+                    tagline: _this4.newShowcase.tagline,
+                    sidebar_bottom: _this4.newShowcase.sidebar_bottom,
+                    sidebar_top: _this4.newShowcase.sidebar_top,
+                    homepage_top: _this4.newShowcase.homepage_top,
+                    homepage_bottom: _this4.newShowcase.homepage_bottom,
+                    destination_id: _this4.newShowcase.destinationId,
+                    region_id: _this4.newShowcase.regionId,
+                    header_photo: _this4.newShowcase.header_photo,
+                    image_id: _this4.newShowcase.image_id,
+                    thumbnail: _this4.newShowcase.thumbnail,
+                    special: _this4.newShowcase.special,
+                    tags: _this4.newShowcase.tags
                 }).then(function (result) {
-                    _this2.newShowcase.saveBusy = false;
-                    _this2.newShowcase.saved = true;
-                    _this2.newShowcase.showcaseId = result.data.id;
+                    _this4.newShowcase.saveBusy = false;
+                    _this4.newShowcase.saved = true;
+                    _this4.newShowcase.showcaseId = result.data.id;
                     console.log(result);
                     return result;
                 }).catch(function (error) {
-                    _this2.newShowcase.saveError = true;
-                    _this2.newShowcase.saveBusy = false;
-                    _this2.newShowcase.serverErrors = error.response.data.errors.slug[0];
+                    _this4.newShowcase.saveError = true;
+                    _this4.newShowcase.saveBusy = false;
+                    _this4.newShowcase.serverErrors = error.response.data.errors.slug[0];
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
-                _this2.newShowcase.saveBusy = false;
-                _this2.newShowcase.saveError = true;
-                _this2.errors = Promise.reject(error);
+                _this4.newShowcase.saveBusy = false;
+                _this4.newShowcase.saveError = true;
+                _this4.errors = Promise.reject(error);
                 return Promise.reject(error);
             });
         },
         publish: function publish() {
-            var _this3 = this;
+            var _this5 = this;
 
             this.newShowcase.publishBusy = true;
             if (this.newShowcase.showcaseId === null) {
@@ -39656,42 +39703,42 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 type: 'showcase',
                 showcase_id: this.newShowcase.showcaseId
             }).then(function (result) {
-                _this3.newShowcase.publishBusy = false;
-                _this3.newShowcase.publicationId = result.data.id;
+                _this5.newShowcase.publishBusy = false;
+                _this5.newShowcase.publicationId = result.data.id;
                 return result;
             }).catch(function (error) {
-                _this3.newShowcase.publishBusy = false;
+                _this5.newShowcase.publishBusy = false;
                 return Promise.reject(error);
             });
             this.newShowcase.publishBusy = false;
             this.newShowcase.published = true;
         },
         unpublish: function unpublish() {
-            var _this4 = this;
+            var _this6 = this;
 
             var showcaseId = this.newShowcase.showcaseId;
             axios.delete('/api/publications/' + this.newShowcase.publicationId, {}).then(function (result) {
-                _this4.newShowcase.publicationId = null;
-                _this4.newShowcase.publishBusy = false;
-                _this4.newShowcase.published = null;
-                _this4.checkPublication(showcaseId);
+                _this6.newShowcase.publicationId = null;
+                _this6.newShowcase.publishBusy = false;
+                _this6.newShowcase.published = null;
+                _this6.checkPublication(showcaseId);
                 return result;
             }).catch(function (error) {
-                _this4.newShowcase.publishBusy = false;
+                _this6.newShowcase.publishBusy = false;
                 return Promise.reject(error);
             });
         },
         checkPublication: function checkPublication(id) {
-            var _this5 = this;
+            var _this7 = this;
 
             axios.get('/api/showcases/publications/' + id, {}).then(function (result) {
-                _this5.newShowcase.publicationId = result.data.id;
-                if (_this5.newShowcase.publicationId === undefined) {
-                    _this5.newShowcase.publicationId = null;
-                    _this5.newShowcase.published = null;
+                _this7.newShowcase.publicationId = result.data.id;
+                if (_this7.newShowcase.publicationId === undefined) {
+                    _this7.newShowcase.publicationId = null;
+                    _this7.newShowcase.published = null;
                 } else {
-                    _this5.newShowcase.published = true;
-                    _this5.newShowcase.publishBusy = false;
+                    _this7.newShowcase.published = true;
+                    _this7.newShowcase.publishBusy = false;
                 }
                 return result.data;
             }).catch(function (error) {
@@ -39699,7 +39746,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             });
         },
         update: function update() {
-            var _this6 = this;
+            var _this8 = this;
 
             this.newShowcase.saveError = false;
             this.newShowcase.saveBusy = true;
@@ -39707,42 +39754,44 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 title: this.newShowcase.title,
                 body: this.newShowcase.body
             }).then(function (result) {
-                axios.put('/api/showcases/' + _this6.newShowcase.showcaseId, {
-                    title: _this6.newShowcase.title,
-                    body: _this6.newShowcase.body,
-                    tagline: _this6.newShowcase.tagline,
-                    sidebar_bottom: _this6.newShowcase.sidebar_bottom,
-                    sidebar_top: _this6.newShowcase.sidebar_top,
-                    fishery_type: _this6.newShowcase.fishery_type,
-                    region: _this6.newShowcase.region,
-                    header_photo: _this6.newShowcase.header_photo,
-                    image_id: _this6.newShowcase.image_id,
-                    thumbnail: _this6.newShowcase.thumbnail,
-                    special: _this6.newShowcase.special,
-                    tags: _this6.newShowcase.tags
+                axios.put('/api/showcases/' + _this8.newShowcase.showcaseId, {
+                    title: _this8.newShowcase.title,
+                    body: _this8.newShowcase.body,
+                    tagline: _this8.newShowcase.tagline,
+                    sidebar_bottom: _this8.newShowcase.sidebar_bottom,
+                    sidebar_top: _this8.newShowcase.sidebar_top,
+                    homepage_top: _this8.newShowcase.homepage_top,
+                    homepage_bottom: _this8.newShowcase.homepage_bottom,
+                    destination_id: _this8.newShowcase.destinationId,
+                    region_id: _this8.newShowcase.regionId,
+                    header_photo: _this8.newShowcase.header_photo,
+                    image_id: _this8.newShowcase.image_id,
+                    thumbnail: _this8.newShowcase.thumbnail,
+                    special: _this8.newShowcase.special,
+                    tags: _this8.newShowcase.tags
                 }).then(function (result) {
-                    _this6.newShowcase.saveBusy = false;
-                    _this6.newShowcase.slug = result.data.slug;
-                    _this6.newShowcase.saved = true;
+                    _this8.newShowcase.saveBusy = false;
+                    _this8.newShowcase.slug = result.data.slug;
+                    _this8.newShowcase.saved = true;
                     return result;
                 }).catch(function (error) {
-                    _this6.newShowcase.saveError = true;
-                    _this6.newShowcase.saveBusy = false;
-                    _this6.newShowcase.serverErrors = error.response.data.errors.slug[0];
+                    _this8.newShowcase.saveError = true;
+                    _this8.newShowcase.saveBusy = false;
+                    _this8.newShowcase.serverErrors = error.response.data.errors.slug[0];
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
-                _this6.newShowcase.saveBusy = false;
-                _this6.newShowcase.saveError = true;
+                _this8.newShowcase.saveBusy = false;
+                _this8.newShowcase.saveError = true;
                 return Promise.reject(error);
             });
         },
         leeroyjenkins: function leeroyjenkins() {
-            var _this7 = this;
+            var _this9 = this;
 
             if (confirm("Permanently destroy this showcase?")) {
                 axios.delete('/api/showcases/' + this.newShowcase.showcaseId, {}).then(function (result) {
-                    _this7.clear();
+                    _this9.clear();
                 }).catch(function (error) {
                     return Promise.reject(error);
                 });
@@ -39753,7 +39802,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
          * Update the showcase photo.
          */
         update_header: function update_header(e) {
-            var _this8 = this;
+            var _this10 = this;
 
             e.preventDefault();
 
@@ -39769,9 +39818,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             // the data so we can POST it up to the server. This will allow us to do async
             // uploads of the profile photos. We will update the user after this action.
             axios.post(this.urlForUpdate, this.gatherFormData()).then(function (result) {
-                _this8.newShowcase.header_photo = result.data.large;
-                _this8.newShowcase.thumbnail = result.data.thumbnail;
-                _this8.newShowcase.image_id = result.data.image_id;
+                _this10.newShowcase.header_photo = result.data.large;
+                _this10.newShowcase.thumbnail = result.data.thumbnail;
+                _this10.newShowcase.image_id = result.data.image_id;
                 self.newShowcase.finishProcessing();
             }, function (error) {
                 self.newShowcase.setErrors(error.response.data.errors);
@@ -39807,36 +39856,40 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.newShowcase.slug = '';
             this.newShowcase.header_photo = '';
             this.newShowcase.thumbnail = '';
+            this.newShowcase.destinationId = null;
+            this.newShowcase.regionId = null;
             this.newShowcase.sidebar_bottom = '';
             this.newShowcase.sidebar_top = '';
-            this.newShowcase.region = '';
-            this.newShowcase.fishery_type = '';
+            this.newShowcase.homepage_bottom = '';
+            this.newShowcase.homepage_top = '';
             this.newShowcase.tagline = '';
             this.newShowcase.tags = [];
         },
         edit: function edit(id) {
-            var _this9 = this;
+            var _this11 = this;
 
             this.saveBusy = true;
             this.index = false;
             this.newShowcase.showcaseId = id;
             this.getTags(this.newShowcase.showcaseId);
             axios.get('/api/showcases/' + id, {}).then(function (result) {
-                _this9.newShowcase.title = result.data.title;
-                _this9.newShowcase.slug = result.data.slug;
-                _this9.newShowcase.body = result.data.body;
-                _this9.newShowcase.showcaseId = result.data.id;
-                _this9.newShowcase.thumbnail = result.data.thumbnail;
-                _this9.newShowcase.header_photo = result.data.header_photo;
-                _this9.newShowcase.tagline = result.data.tagline;
-                _this9.newShowcase.sidebar_top = result.data.sidebar_top;
-                _this9.newShowcase.sidebar_bottom = result.data.sidebar_bottom;
-                _this9.newShowcase.fishery_type = result.data.fishery_type;
-                _this9.newShowcase.region = result.data.region;
-                _this9.newShowcase.special = result.data.special;
-                _this9.checkPublication(id);
-                _this9.saveBusy = false;
-                _this9.newShowcase.saved = true;
+                _this11.newShowcase.title = result.data.title;
+                _this11.newShowcase.slug = result.data.slug;
+                _this11.newShowcase.body = result.data.body;
+                _this11.newShowcase.showcaseId = result.data.id;
+                _this11.newShowcase.thumbnail = result.data.thumbnail;
+                _this11.newShowcase.header_photo = result.data.header_photo;
+                _this11.newShowcase.tagline = result.data.tagline;
+                _this11.newShowcase.sidebar_top = result.data.sidebar_top;
+                _this11.newShowcase.sidebar_bottom = result.data.sidebar_bottom;
+                _this11.newShowcase.homepage_top = result.data.homepage_top;
+                _this11.newShowcase.homepage_bottom = result.data.homepage_bottom;
+                _this11.newShowcase.special = result.data.special;
+                _this11.newShowcase.destinationId = result.data.destination_id;
+                _this11.newShowcase.regionId = result.data.region_id;
+                _this11.checkPublication(id);
+                _this11.saveBusy = false;
+                _this11.newShowcase.saved = true;
 
                 return result.data;
             }).catch(function (error) {
@@ -39844,10 +39897,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             });
         },
         getTags: function getTags(id) {
-            var _this10 = this;
+            var _this12 = this;
 
             axios.get('/showcases/' + id + '/tags', {}).then(function (result) {
-                _this10.newShowcase.tags = result.data;
+                _this12.newShowcase.tags = result.data;
                 return result.data.tags;
             }).catch(function (error) {
                 return Promise.reject(error);
@@ -39878,8 +39931,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             title: 'required|min:2',
             body: 'required|min:40',
             header_photo: 'required',
-            region: 'required',
-            fishery_type: 'required',
+            homepage_bottom: 'required',
+            homepage_top: 'required',
             sidebar_top: 'required',
             sidebar_bottom: 'required'
         });
@@ -56335,11 +56388,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_c('p', {
-    attrs: {
-      "role": "presentation"
-    }
-  }, [_c('strong', [_vm._v("Fishery Type (homepage tile top line): ")]), _vm._v(_vm._s(_vm.newShowcase.fishery_type))]), _vm._v(" "), _c('input', {
+  }, [_vm._m(4, false, false), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -56348,39 +56397,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, {
       name: "model",
       rawName: "v-model",
-      value: (_vm.newShowcase.fishery_type),
-      expression: "newShowcase.fishery_type"
+      value: (_vm.newShowcase.homepage_top),
+      expression: "newShowcase.homepage_top"
     }],
     staticClass: "form-control input",
     attrs: {
-      "id": "fishery_type",
-      "name": "fishery_type",
-      "placeholder": "Fishery Type"
+      "id": "homepage_top",
+      "name": "homepage_top",
+      "placeholder": "Homepage top line"
     },
     domProps: {
-      "value": (_vm.newShowcase.fishery_type)
+      "value": (_vm.newShowcase.homepage_top)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.$set(_vm.newShowcase, "fishery_type", $event.target.value)
+        _vm.$set(_vm.newShowcase, "homepage_top", $event.target.value)
       }
     }
   }), _vm._v(" "), _c('span', {
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (_vm.errors.has('fishery_type')),
-      expression: "errors.has('fishery_type')"
+      value: (_vm.errors.has('homepage_top')),
+      expression: "errors.has('homepage_top')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('fishery_type')))])]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.errors.first('homepage_top')))])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
-  }, [_c('p', {
-    attrs: {
-      "role": "presentation"
-    }
-  }, [_c('strong', [_vm._v("Region (homepage tile bottom line): ")]), _vm._v(_vm._s(_vm.newShowcase.region))]), _vm._v(" "), _c('input', {
+  }, [_vm._m(5, false, false), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -56389,37 +56434,37 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, {
       name: "model",
       rawName: "v-model",
-      value: (_vm.newShowcase.region),
-      expression: "newShowcase.region"
+      value: (_vm.newShowcase.homepage_bottom),
+      expression: "newShowcase.homepage_bottom"
     }],
     staticClass: "form-control input",
     attrs: {
-      "id": "region",
-      "name": "region",
-      "placeholder": "Region"
+      "id": "homepage_bottom",
+      "name": "homepage_bottom",
+      "placeholder": "Homepage bottom line"
     },
     domProps: {
-      "value": (_vm.newShowcase.region)
+      "value": (_vm.newShowcase.homepage_bottom)
     },
     on: {
       "input": function($event) {
         if ($event.target.composing) { return; }
-        _vm.$set(_vm.newShowcase, "region", $event.target.value)
+        _vm.$set(_vm.newShowcase, "homepage_bottom", $event.target.value)
       }
     }
   }), _vm._v(" "), _c('span', {
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (_vm.errors.has('region')),
-      expression: "errors.has('region')"
+      value: (_vm.errors.has('homepage_bottom')),
+      expression: "errors.has('homepage_bottom')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('region')))])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.errors.first('homepage_bottom')))])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_vm._m(4, false, false), _vm._v(" "), _c('div', {
+  }, [_vm._m(6, false, false), _vm._v(" "), _c('div', {
     staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info"
   }, [_c('a', {
     attrs: {
@@ -56435,11 +56480,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "font-weight": "600"
     }
-  }, [_vm._v(_vm._s(_vm.newShowcase.fishery_type))]), _vm._v(" "), _c('h3', {
+  }, [_vm._v(_vm._s(_vm.newShowcase.homepage_top))]), _vm._v(" "), _c('h3', {
     staticStyle: {
       "font-weight": "600"
     }
-  }, [_vm._v(_vm._s(_vm.newShowcase.region))])]), _vm._v(" "), (_vm.newShowcase.special) ? _c('a', {
+  }, [_vm._v(_vm._s(_vm.newShowcase.homepage_bottom))])]), _vm._v(" "), (_vm.newShowcase.special) ? _c('a', {
     attrs: {
       "href": "#"
     }
@@ -56454,7 +56499,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "role": "button"
     }
-  }, [_vm._v("\n                                        learn more\n                                    ")])]) : _vm._e()])])]), _vm._v(" "), _vm._m(5, false, false), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                                        learn more\n                                    ")])]) : _vm._e()])])]), _vm._v(" "), _vm._m(7, false, false), _vm._v(" "), _c('div', {
     staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"
   }, [_c('div', {
     staticClass: "checkbox",
@@ -56504,7 +56549,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_vm._m(6, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(8, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -56527,7 +56572,75 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(7, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_c('label', {
+    attrs: {
+      "for": "selected-region"
+    }
+  }, [_vm._v("Select Region:")]), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newShowcase.regionId),
+      expression: "newShowcase.regionId"
+    }],
+    attrs: {
+      "id": "selected-region"
+    },
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.$set(_vm.newShowcase, "regionId", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+      }
+    }
+  }, _vm._l((_vm.regions), function(region) {
+    return _c('option', {
+      domProps: {
+        "value": region.id
+      }
+    }, [_vm._v(_vm._s(region.name))])
+  }))]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('label', {
+    attrs: {
+      "for": "selected-destination"
+    }
+  }, [_vm._v("Select Destination:")]), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newShowcase.destinationId),
+      expression: "newShowcase.destinationId"
+    }],
+    attrs: {
+      "id": "selected-destination"
+    },
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.$set(_vm.newShowcase, "destinationId", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+      }
+    }
+  }, _vm._l((_vm.destinations), function(destination) {
+    return _c('option', {
+      domProps: {
+        "value": destination.id
+      }
+    }, [_vm._v(_vm._s(destination.name))])
+  }))])])]), _vm._v(" "), _c('div', [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_vm._m(9, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -56548,7 +56661,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(8, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(10, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -56717,6 +56830,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "role": "presentation"
     }
   }, [_c('strong', [_vm._v("Showcase page header preview:")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    attrs: {
+      "role": "presentation"
+    }
+  }, [_c('strong', [_vm._v("Homepage top line: ")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    attrs: {
+      "role": "presentation"
+    }
+  }, [_c('strong', [_vm._v("Homepage bottom line: ")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('p', {
     attrs: {

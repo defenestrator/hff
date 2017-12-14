@@ -32,27 +32,14 @@ class ShowcasesApiController extends ApiController
             'tagline' => 'required|min:8',
             'header_photo' => 'required|string',
             'image_id' => 'required|integer',
-            'region' => 'required|min:3|max:40',
-            'fishery_type' => 'required|min:3|max:40',
+            'homepage_top' => 'required|min:3|max:40',
+            'homepage_bottom' => 'required|min:3|max:40',
             'sidebar_top' => 'min:4',
             'sidebar_bottom' => 'min:4',
         ]);
 
 
-        return $showcase->create([
-            'body' => $request->body ,
-            'special'=> $request->special,
-            'slug' => $request->slug ,
-            'title' => $request->title ,
-            'tagline' => $request->tagline ,
-            'header_photo' => $request->header_photo ,
-            'thumbnail' => $request->thumbnail,
-            'region' => $request->region ,
-            'image_id' => $request->image_id,
-            'fishery_type' => $request->fishery_type ,
-            'sidebar_top' => $request->sidebar_top ,
-            'sidebar_bottom' => $request->sidebar_bottom ,
-        ]);
+        return $showcase->create($request->all());
     }
 
     /**
@@ -89,26 +76,14 @@ class ShowcasesApiController extends ApiController
             'title' => 'required|min:8',
             'tagline' => 'required|min:8',
             'header_photo' => 'required|string',
-            'region' => 'required|min:3|max:40',
-            'fishery_type' => 'required|min:3|max:40',
+            'homepage_top' => 'required|min:3|max:40',
+            'homepage_bottom' => 'required|min:3|max:40',
             'sidebar_top' => 'min:4',
             'sidebar_bottom' => 'min:4',
         ]);
         $content = $showcase->find($id);
 
-        $content->update([
-            'body' => $request->body ,
-            'title' => $request->title ,
-            'tagline' => $request->tagline ,
-            'header_photo' => $request->header_photo ,
-            'image_id' => $request->image_id,
-            'thumbnail' => $request->thumbnail,
-            'region' => $request->region ,
-            'fishery_type' => $request->fishery_type ,
-            'sidebar_top' => $request->sidebar_top ,
-            'sidebar_bottom' => $request->sidebar_bottom ,
-            'special'=> $request->special,
-        ]);
+        $content->update($request->all());
         $content->retag($request->tags);
         return $content;
     }

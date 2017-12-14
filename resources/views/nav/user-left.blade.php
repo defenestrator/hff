@@ -6,3 +6,4 @@
 @else
     <li><a href="#" class="navbar-link">Podcast</a></li>
 @endif
+@include('nav.places')

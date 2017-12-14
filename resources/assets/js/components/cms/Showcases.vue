@@ -71,14 +71,14 @@
             <input style="display:none;" name="slug" v-validate="'required|min:8'" v-model="newShowcase.slug" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('slug') }" disabled />
             <div class="form-group">
                 <div class="col-md-6">
-                    <p role="presentation"><strong>Fishery Type (homepage tile top line): </strong>{{ newShowcase.fishery_type }}</p>
-                    <input v-validate="'required|min:3|max:40'" id="fishery_type" class="form-control input" name="fishery_type" v-model="newShowcase.fishery_type" placeholder="Fishery Type" />
-                    <span v-show="errors.has('fishery_type')" class="help is-danger">{{ errors.first('fishery_type') }}</span>
+                    <p role="presentation"><strong>Homepage top line: </strong></p>
+                    <input v-validate="'required|min:3|max:40'" id="homepage_top" class="form-control input" name="homepage_top" v-model="newShowcase.homepage_top" placeholder="Homepage top line" />
+                    <span v-show="errors.has('homepage_top')" class="help is-danger">{{ errors.first('homepage_top') }}</span>
                 </div>
                 <div class="col-md-6">
-                    <p role="presentation"><strong>Region (homepage tile bottom line): </strong>{{ newShowcase.region }}</p>
-                    <input v-validate="'required|min:3|max:40'" class="form-control input" id="region" name="region" v-model="newShowcase.region" placeholder="Region" />
-                    <span v-show="errors.has('region')" class="help is-danger">{{ errors.first('region') }}</span>
+                    <p role="presentation"><strong>Homepage bottom line: </strong></p>
+                    <input v-validate="'required|min:3|max:40'" class="form-control input" id="homepage_bottom" name="homepage_bottom" v-model="newShowcase.homepage_bottom" placeholder="Homepage bottom line" />
+                    <span v-show="errors.has('homepage_bottom')" class="help is-danger">{{ errors.first('homepage_bottom') }}</span>
                 </div>
             </div>
             <div class="form-group">
@@ -89,8 +89,8 @@
                             <div class="thumbnail"
                                  :style="tileStyle">
                                 <div class="caption">
-                                    <h3 style="font-weight:600;">{{newShowcase.fishery_type}}</h3>
-                                    <h3 style="font-weight:600;">{{newShowcase.region}}</h3>
+                                    <h3 style="font-weight:600;">{{newShowcase.homepage_top}}</h3>
+                                    <h3 style="font-weight:600;">{{newShowcase.homepage_bottom}}</h3>
                                 </div>
                                 <a v-if="newShowcase.special" href="#">
                                     <button role="button"
@@ -120,7 +120,22 @@
                     <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:20'" v-model="newShowcase.body"></trumbowyg>
                 </div>
             </div>
-
+            <div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label for="selected-region">Select Region:</label>
+                        <select v-model="newShowcase.regionId" id="selected-region">
+                            <option v-for="region in regions" v-bind:value="region.id">{{region.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="selected-destination">Select Destination:</label>
+                        <select v-model="newShowcase.destinationId" id="selected-destination">
+                            <option v-for="destination in destinations" v-bind:value="destination.id">{{destination.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div>
                 <div class="form-group">
                     <div class="col-md-6">
@@ -214,6 +229,8 @@ export default {
     validator: null,
     mounted() {
         this.getIndex()
+        this.getRegions()
+        this.getDestinations()
     },
     components: {
         trumbowyg
@@ -222,6 +239,8 @@ export default {
         return {
             index: true,
             showcases: [],
+            regions: [],
+            destinations: [],
             newShowcase: new SparkForm({
                 title: '',
                 slug: '',
@@ -229,8 +248,10 @@ export default {
                 tagline: "",
                 sidebar_top: "",
                 sidebar_bottom: "",
-                fishery_type: "",
-                region: "",
+                homepage_top: "",
+                homepage_bottom: "",
+                destinationId:null,
+                regionId:null,
                 special: false,
                 header_photo:"",
                 image_id: null,
@@ -289,11 +310,11 @@ export default {
         body(value) {
             this.validator.validate('body', value);
         },
-        fishery_type(value) {
-            this.validator.validate('fishery_type', value);
+        homepage_top(value) {
+            this.validator.validate('homepage_top', value);
         },
-        region(value) {
-            this.validator.validate('region', value);
+        homepage_bottom(value) {
+            this.validator.validate('homepage_bottom', value);
         },
         sidebar_top(value) {
             this.validator.validate('sidebar_top', value);
@@ -319,10 +340,10 @@ export default {
         'newShowcase.header_photo': function (val, oldVal) {
             this.newShowcase.saved = false
         },
-        'newShowcase.fishery_type': function (val, oldVal) {
+        'newShowcase.homepage_top': function (val, oldVal) {
             this.newShowcase.saved = false
         },
-        'newShowcase.region': function (val, oldVal) {
+        'newShowcase.homepage_bottom': function (val, oldVal) {
             this.newShowcase.saved = false
         },
         'newShowcase.tagline': function (val, oldVal) {
@@ -353,7 +374,25 @@ export default {
                 return Promise.reject(error)
             })
         },
-
+        getRegions() {
+            axios.get(`/api/regions`, {})
+                .then(result  => {
+                this.regions = result.data.data
+                return this.regions
+            })
+            .catch(error => {
+                return Promise.reject(error)
+        })},
+        getDestinations() {
+            axios.get(`/api/destinations`, {})
+                .then(result  => {
+                this.destinations = result.data.data
+                return this.destinations
+            })
+            .catch(error => {
+                return Promise.reject(error)
+        })}
+            ,
         toggleIndex() {
             if(this.index == true) {
                return this.index = false
@@ -376,8 +415,10 @@ export default {
                                 tagline: this.newShowcase.tagline ,
                                 sidebar_bottom: this.newShowcase.sidebar_bottom ,
                                 sidebar_top: this.newShowcase.sidebar_top ,
-                                fishery_type: this.newShowcase.fishery_type,
-                                region: this.newShowcase.region,
+                                homepage_top: this.newShowcase.homepage_top,
+                                homepage_bottom: this.newShowcase.homepage_bottom,
+                                destination_id: this.newShowcase.destinationId,
+                                region_id: this.newShowcase.regionId,
                                 header_photo:this.newShowcase.header_photo,
                                 image_id: this.newShowcase.image_id,
                                 thumbnail: this.newShowcase.thumbnail,
@@ -479,8 +520,10 @@ export default {
                         tagline: this.newShowcase.tagline ,
                         sidebar_bottom: this.newShowcase.sidebar_bottom ,
                         sidebar_top: this.newShowcase.sidebar_top ,
-                        fishery_type: this.newShowcase.fishery_type,
-                        region: this.newShowcase.region,
+                        homepage_top: this.newShowcase.homepage_top,
+                        homepage_bottom: this.newShowcase.homepage_bottom,
+                        destination_id: this.newShowcase.destinationId,
+                        region_id: this.newShowcase.regionId,
                         header_photo:this.newShowcase.header_photo,
                         image_id: this.newShowcase.image_id,
                         thumbnail: this.newShowcase.thumbnail ,
@@ -576,10 +619,12 @@ export default {
             this.newShowcase.slug = ''
             this.newShowcase.header_photo = ''
             this.newShowcase.thumbnail = ''
+            this.newShowcase.destinationId = null
+            this.newShowcase.regionId = null
             this.newShowcase.sidebar_bottom = ''
             this.newShowcase.sidebar_top = ''
-            this.newShowcase.region =''
-            this.newShowcase.fishery_type = ''
+            this.newShowcase.homepage_bottom =''
+            this.newShowcase.homepage_top = ''
             this.newShowcase.tagline = ''
             this.newShowcase.tags = []
         },
@@ -599,9 +644,11 @@ export default {
                 this.newShowcase.tagline = result.data.tagline
                 this.newShowcase.sidebar_top = result.data.sidebar_top
                 this.newShowcase.sidebar_bottom = result.data.sidebar_bottom
-                this.newShowcase.fishery_type = result.data.fishery_type
-                this.newShowcase.region = result.data.region
+                this.newShowcase.homepage_top = result.data.homepage_top
+                this.newShowcase.homepage_bottom = result.data.homepage_bottom
                 this.newShowcase.special = result.data.special
+            this.newShowcase.destinationId = result.data.destination_id
+            this.newShowcase.regionId = result.data.region_id
                 this.checkPublication(id)
                 this.saveBusy = false
                 this.newShowcase.saved = true
@@ -648,8 +695,8 @@ export default {
             title: 'required|min:2',
             body: 'required|min:40',
             header_photo: 'required',
-            region: 'required',
-            fishery_type: 'required',
+            homepage_bottom: 'required',
+            homepage_top: 'required',
             sidebar_top: 'required',
             sidebar_bottom: 'required'
         });

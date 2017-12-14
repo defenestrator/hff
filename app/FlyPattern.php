@@ -28,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Query\Builder|\FlyPattern whereUpdatedAt($value)
  * @property-read \Illuminate\Database\Eloquent\Collection|\$related[] $morphedByMany
  * @mixin \Eloquent
+ * @property int $image_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\FlyPattern whereImageId($value)
  */
 class FlyPattern extends Model
 {

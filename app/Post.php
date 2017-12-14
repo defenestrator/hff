@@ -38,6 +38,10 @@ use Cviebrock\EloquentTaggable\Taggable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post isTagged()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post withoutAllTags($tags, $includeUntagged = false)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Post withoutAnyTags($tags, $includeUntagged = false)
+ * @property string $header_photo
+ * @property int $image_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereHeaderPhoto($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Post whereImageId($value)
  */
 class Post extends Model
 {

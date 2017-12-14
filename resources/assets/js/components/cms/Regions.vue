@@ -116,6 +116,7 @@ export default {
             newRegion: new SparkForm ({
                 name: '',
                 geojson: '',
+                slug: '',
                 lat: null,
                 lng: null,
                 regionId: null,
@@ -128,6 +129,11 @@ export default {
     watch: {
         name(value) {
             this.validator.validate('name', value);
+            if (this.newRegion.slug == '' ||
+                    this.newRegion.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
+            ) {
+                this.newRegion.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
+            }
         },
         lat(value) {
             this.validator.validate('lat', value);
@@ -181,7 +187,8 @@ export default {
                                 name: this.newRegion.name,
                                 lat:  this.newRegion.lat,
                                 lng:  this.newRegion.lng,
-                                geojson: this.newRegion.geojson
+                                geojson: this.newRegion.geojson,
+                                slug: this.newRegion.slug,
                             })
                             .then(result  => {
                                 this.newRegion.saveBusy = false

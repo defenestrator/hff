@@ -24,6 +24,12 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Destination whereTeamId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Destination whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int|null $outfitter_id
+ * @property int $region_id
+ * @property-read \App\Map $map
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Package[] $packages
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Destination whereOutfitterId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Destination whereRegionId($value)
  */
 class Destination extends Model
 {
@@ -45,6 +51,13 @@ class Destination extends Model
         return $this->hasMany(Package::class);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function showcases()
+    {
+        return $this->hasMany(Showcase::class);
+    }
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

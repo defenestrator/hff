@@ -182,11 +182,6 @@ export default {
     watch: {
         name(value) {
             this.validator.validate('name', value);
-            if (this.newDestination.slug == '' ||
-                    this.newDestination.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
-            ) {
-                this.newDestination.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
-            }
         },
         lat(value) {
             this.validator.validate('lat', value);
@@ -234,6 +229,7 @@ export default {
         },
         toggleIndex() {
             if(this.index == true) {
+                this.clear()
                 return this.index = false
             }
             this.getIndex()
@@ -250,7 +246,6 @@ export default {
                 }).then((result) => {
                     axios.post(`/api/destinations`, {
                                 name: this.newDestination.name,
-                                slug: this.newDestination.slug,
                                 lat:  this.newDestination.lat,
                                 lng:  this.newDestination.lng,
                                 region_id:  this.newDestination.regionId,
@@ -334,6 +329,8 @@ export default {
             this.newDestination.destinationId = null
             this.newDestination.name = ''
             this.newDestination.description = ''
+            this.newDestination.regionId = null
+            this.newDestination
             this.newDestination.lat = null
             this.newDestination.lng = null
         },

@@ -50,6 +50,12 @@ use Cviebrock\EloquentTaggable\Taggable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase withoutAllTags($tags, $includeUntagged = false)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase withoutAnyTags($tags, $includeUntagged = false)
  * @mixin \Eloquent
+ * @property string $lodge_logo
+ * @property int $image_id
+ * @property int $special
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereImageId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereLodgeLogo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereSpecial($value)
  */
 class Showcase extends Model
 {
@@ -57,6 +63,7 @@ class Showcase extends Model
     protected $fillable = [
         'title',
         'slug',
+        'destination_id',
         'outfitter_id',
         'outfitter_name',
         'body',
@@ -64,12 +71,18 @@ class Showcase extends Model
         'sidebar_top',
         'tagline',
         'fishery_type',
-        'region',
+        'region_id',
         'thumbnail',
         'header_photo',
         'image_id',
         'special'
     ];
+
+    public function destination()
+    {
+        return $this->hasOne(Destination::class);
+    }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
