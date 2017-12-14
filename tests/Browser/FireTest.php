@@ -10,18 +10,6 @@ class FireTest extends DuskTestCase
 {
     use DatabaseMigrations;
     /**
-     * Test the Damn Thing works at all
-     */
-    public function test_domain_root_response_http_ok()
-    {
-        $this->browse(function ($browser) {
-            $browser->visit(new HomePage)
-                ->waitForText('Hobo')
-                ->assertTitleContains('Hobo');
-        });
-    }
-
-    /**
      * Test the Damn Thing spits HTML
      */
     function test_domain_root_returns_html()

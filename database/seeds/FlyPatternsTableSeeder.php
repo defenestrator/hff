@@ -11,7 +11,6 @@ class FlyPatternsTableSeeder extends DatabaseSeeder
     public function run()
     {
         $faker = Faker::create();
-        $privacyIds = Privacy::pluck('id')->all();
         $userIds = User::pluck('id')->all();
 
         foreach (range(1, 30) as $index) {
@@ -20,7 +19,7 @@ class FlyPatternsTableSeeder extends DatabaseSeeder
                 'name' => $faker->name,
                 'recipe' => $faker->paragraph(),
                 'instructions' => $faker->paragraph(),
-                'privacy_id' => $faker->randomElement($privacyIds)
+                'image_id' => $faker->numberBetween(1, 30)
             ]);
         }
     }

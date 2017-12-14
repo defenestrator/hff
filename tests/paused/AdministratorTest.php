@@ -25,7 +25,6 @@ class AdministratorTest extends DuskTestCase
 
         $this->browse(function ($browser) use ($user) {
             $browser->visit(new LoginPage)
-                ->waitForText('Login')
                 ->type('email', 'jeremyblc@gmail.com')
                 ->type('password', 'secret')
                 ->press('@login-button')
