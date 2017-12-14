@@ -9,6 +9,10 @@
     <style>
         .dashboard-links {
             padding: 1em;
+
+        }
+        a.btn-dashboard {
+            overflow:hidden;
         }
         .btn-dashboard {
             width:100%;
@@ -34,21 +38,22 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-4 dashboard-links">
-                            <a class="btn btn-default btn-dashboard" href="/cms/showcases">Showcases</a>
+                            <a class="btn btn-default btn-dashboard" href="cms/posts">Posts</a>
                         </div>
                         <div class="col-sm-4 dashboard-links">
-                            <a class="btn btn-default btn-dashboard" href="cms/posts">Blog Posts</a>
+                            <a class="btn btn-default btn-dashboard" href="/cms/showcases">Showcases</a>
                         </div>
                         <div class="col-sm-4 dashboard-links">
                             <a class="btn btn-default btn-dashboard" href="/cms/publications">Publications</a>
                         </div>
+
                     </div>
                     <div class="row">
                         <div class="col-sm-4 dashboard-links">
                             <a class="btn btn-default btn-dashboard" href="/cms/destinations">Destinations</a>
                         </div>
                         <div class="col-sm-4 dashboard-links">
-                            <a class="btn btn-default btn-dashboard" href="/settings">Your Settings</a>
+                            <a class="btn btn-default btn-dashboard" href="/cms/regions">Regions</a>
                         </div>
                         <div class="col-sm-4 dashboard-links">
                             <a class="btn btn-default btn-dashboard" href="/spark/kiosk">Site Admin</a>
@@ -67,7 +72,11 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <p>Nothing here yet</p>
+                            <div class="row">
+                                <div class="col-sm-4 dashboard-links">
+                                    <a class="btn btn-default btn-dashboard" href="/settings">Your Settings</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

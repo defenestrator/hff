@@ -16,12 +16,12 @@
 @stop
 
 @section('top')
-    <div class="tagline" style="height:25vh;" >
+    <div class="tagline">
         <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center wow pulse" data-wow-duration="0.5s">
             <a title="{{$region->name}}"></a>
             {{$region->name}}
         </h1>
-        <h2 class="feature-tagline text-center">Yeah, we fish there too.</h2>
+        <h2 class="showcase-header text-center">Yeah, we fish there too.</h2>
     </div>
     <div class="container">
         <div class="row">

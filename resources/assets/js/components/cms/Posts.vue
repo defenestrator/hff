@@ -11,7 +11,7 @@
             </button>
         </div>
         <table v-show="index" class="table table-striped table-inverse">
-            <thead  class="thead-inverse">
+            <thead class="thead-inverse">
             <tr>
                 <th>Title</th>
                 <th>Edit</th>

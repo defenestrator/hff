@@ -1,100 +1,102 @@
 <template>
-    <div class="col-sm-6" style="border-right:1px solid #262626; border-bottom:1px solid #262626;">
-        <h2>Regions</h2>
-        <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
-            <span v-if="index">Create</span>
-            <span v-if="! index">Index</span>
-        </button>
-        <div v-show="! index">
-            <button @click.prevent="createNewDestination" class="btn btn-primary" :disabled="! newRegion.name">
-                New
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h2>Regions</h2>
+            <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
+                <span v-if="index">Create</span>
+                <span v-if="! index">Index</span>
             </button>
+            <div v-show="! index">
+                <button @click.prevent="createNewDestination" class="btn btn-primary" :disabled="! newRegion.name">
+                    New
+                </button>
+            </div>
+            <table v-show="index" class="table table-striped table-inverse">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>Name</th>
+                    <th>Edit</th>
+                </tr>
+                </thead>
+                <tbody class="resource-list">
+                <tr v-for="region in regions" class="table-hover">
+                    <td><strong>{{ region.name }}</strong></td>
+                    <td><button @click.prevent="(edit(region.id))"role="button" class="btn btn-warning">Edit</button></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <form class="form-horizontal new-region" v-if="! index" role="form">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="name">Name:</label>
+                        <input v-validate="'required|min:3'" id="name" name="name" v-model="newRegion.name"
+                               :class="{'form-control': true, 'input': true, 'is-danger': errors.has('name') }" type="text" placeholder="Destination Name" style="width:100%">
+                        <span v-show="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label for="lat">Latitude:</label>
+                        <input v-validate="'min:5|max:11|between:-90.0000000,90.0000000'" id="lat" name="lat" v-model="newRegion.lat"
+                               :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lat') }"
+                               type="text" placeholder="Latitude" style="width:100%">
+                        <span v-show="errors.has('lat')" class="help is-danger">{{ errors.first('lat') }}</span>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="lng">Longitude:</label>
+                        <input v-validate="'min:5|max:12|between:-180.0000000,180.0000000'" id="lng" name="lng" v-model="newRegion.lng"
+                               :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lng') }"
+                               type="text" placeholder="Longitude" style="width:100%">
+                        <span v-show="errors.has('lng')" class="help is-danger">{{ errors.first('lng') }}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <p for="geojson">Paste geojson here:</p>
+                        <textarea rows="5" columns="30" id="geojson" name="geojson" v-model="newRegion.geojson"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div v-show="newRegion.regionId" class="col-md-3 col-sm-12">
+                        <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newRegion.saveError }" @click.prevent="update" :disabled="newRegion.saved">
+                                    <span v-if="newRegion.saveBusy">
+                                        <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
+                                     </span>
+                                    <span v-else-if="newRegion.saved">
+                                        <i class="fa fa-btn fa-check-circle"></i>Saved!
+                                     </span>
+                                <span v-else-if="newRegion.saved == false">
+                                        <i class="fa fa-btn fa-check-circle"></i>Update
+                                     </span>
+                                    <span v-else>
+                                        <i class="fa fa-btn fa-check-circle"></i>Updated
+                                    </span>
+
+                        </button>
+                    </div>
+                    <div v-show="! newRegion.regionId" class="col-md-3 col-sm-12">
+                        <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newRegion.saveError }" @click.prevent="save" :disabled="newRegion.saved">
+                                    <span v-if="newRegion.saveBusy">
+                                        <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
+                                     </span>
+                                    <span v-else-if="newRegion.regionId !== null">
+                                        <i class="fa fa-btn fa-check-circle"></i>Saved!
+                                     </span>
+                                    <span v-else>
+                                        <i class="fa fa-btn fa-check-circle"></i>Save
+                                    </span>
+                        </button>
+                    </div>
+
+                    <div class="col-md-3 col-sm-12">
+                        <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': ! newRegion.saved }" :disabled="! newRegion.regionId">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <table v-show="index" class="table table-striped table-inverse">
-            <thead  class="thead-inverse">
-            <tr>
-                <th>Name</th>
-                <th>Edit</th>
-            </tr>
-            </thead>
-            <tbody class="resource-list">
-            <tr v-for="region in regions" class="table-hover">
-                <td><strong>{{ region.name }}</strong></td>
-                <td><button @click.prevent="(edit(region.id))"role="button" class="btn btn-warning">Edit</button></td>
-            </tr>
-            </tbody>
-        </table>
-
-        <form class="form-horizontal new-region" v-if="! index" role="form">
-            <div class="form-group">
-                <div class="col-md-12">
-                    <label for="name">Name:</label>
-                    <input v-validate="'required|min:3'" id="name" name="name" v-model="newRegion.name"
-                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('name') }" type="text" placeholder="Destination Name" style="width:100%">
-                    <span v-show="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-6">
-                    <label for="lat">Latitude:</label>
-                    <input v-validate="'min:5|max:11|between:-90.0000000,90.0000000'" id="lat" name="lat" v-model="newRegion.lat"
-                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lat') }"
-                           type="text" placeholder="Latitude" style="width:100%">
-                    <span v-show="errors.has('lat')" class="help is-danger">{{ errors.first('lat') }}</span>
-                </div>
-                <div class="col-md-6">
-                    <label for="lng">Longitude:</label>
-                    <input v-validate="'min:5|max:12|between:-180.0000000,180.0000000'" id="lng" name="lng" v-model="newRegion.lng"
-                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lng') }"
-                           type="text" placeholder="Longitude" style="width:100%">
-                    <span v-show="errors.has('lng')" class="help is-danger">{{ errors.first('lng') }}</span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
-                    <p for="geojson">Paste geojson here:</p>
-                    <textarea rows="5" columns="30" id="geojson" name="geojson" v-model="newRegion.geojson"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <div v-show="newRegion.regionId" class="col-md-3 col-sm-12">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newRegion.saveError }" @click.prevent="update" :disabled="newRegion.saved">
-                                <span v-if="newRegion.saveBusy">
-                                    <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
-                                 </span>
-                                <span v-else-if="newRegion.saved">
-                                    <i class="fa fa-btn fa-check-circle"></i>Saved!
-                                 </span>
-                            <span v-else-if="newRegion.saved == false">
-                                    <i class="fa fa-btn fa-check-circle"></i>Update
-                                 </span>
-                                <span v-else>
-                                    <i class="fa fa-btn fa-check-circle"></i>Updated
-                                </span>
-
-                    </button>
-                </div>
-                <div v-show="! newRegion.regionId" class="col-md-3 col-sm-12">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newRegion.saveError }" @click.prevent="save" :disabled="newRegion.saved">
-                                <span v-if="newRegion.saveBusy">
-                                    <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
-                                 </span>
-                                <span v-else-if="newRegion.regionId !== null">
-                                    <i class="fa fa-btn fa-check-circle"></i>Saved!
-                                 </span>
-                                <span v-else>
-                                    <i class="fa fa-btn fa-check-circle"></i>Save
-                                </span>
-                    </button>
-                </div>
-
-                <div class="col-md-3 col-sm-12">
-                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': ! newRegion.saved }" :disabled="! newRegion.regionId">
-                        Delete
-                    </button>
-                </div>
-            </div>
-        </form>
     </div>
 </template>
 

@@ -38009,7 +38009,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 // Import this component
 
@@ -38943,6 +38942,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(6);
+//
+//
 //
 //
 //
@@ -55162,11 +55163,9 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "col-sm-6",
-    staticStyle: {
-      "border-right": "1px solid #262626",
-      "border-bottom": "1px solid #262626"
-    }
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-sm-6 col-sm-offset-3"
   }, [_c('h2', [_vm._v("Regions")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-create",
     attrs: {
@@ -55196,7 +55195,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.createNewDestination($event)
       }
     }
-  }, [_vm._v("\n            New\n        ")])]), _vm._v(" "), _c('table', {
+  }, [_vm._v("\n                New\n            ")])]), _vm._v(" "), _c('table', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -55426,13 +55425,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [(_vm.newRegion.saveBusy) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-spinner fa-spin"
-  }), _vm._v("Updating\n                             ")]) : (_vm.newRegion.saved) ? _c('span', [_c('i', {
+  }), _vm._v("Updating\n                                 ")]) : (_vm.newRegion.saved) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
-  }), _vm._v("Saved!\n                             ")]) : (_vm.newRegion.saved == false) ? _c('span', [_c('i', {
+  }), _vm._v("Saved!\n                                 ")]) : (_vm.newRegion.saved == false) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
-  }), _vm._v("Update\n                             ")]) : _c('span', [_c('i', {
+  }), _vm._v("Update\n                                 ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
-  }), _vm._v("Updated\n                            ")])])]), _vm._v(" "), _c('div', {
+  }), _vm._v("Updated\n                                ")])])]), _vm._v(" "), _c('div', {
     directives: [{
       name: "show",
       rawName: "v-show",
@@ -55455,11 +55454,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [(_vm.newRegion.saveBusy) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-spinner fa-spin"
-  }), _vm._v("Saving\n                             ")]) : (_vm.newRegion.regionId !== null) ? _c('span', [_c('i', {
+  }), _vm._v("Saving\n                                 ")]) : (_vm.newRegion.regionId !== null) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
-  }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
+  }), _vm._v("Saved!\n                                 ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
-  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), _c('div', {
+  }), _vm._v("Save\n                                ")])])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-3 col-sm-12"
   }, [_c('button', {
     class: {
@@ -55474,7 +55473,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.leeroyjenkins($event)
       }
     }
-  }, [_vm._v("\n                    Delete\n                ")])])])]) : _vm._e()])
+  }, [_vm._v("\n                        Delete\n                    ")])])])]) : _vm._e()])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"
@@ -55734,12 +55733,8 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"
-  }, [_c('regions'), _vm._v(" "), _c('div', {
-    staticClass: "col-sm-6",
-    staticStyle: {
-      "border-right": "1px solid #262626",
-      "border-bottom": "1px solid #262626"
-    }
+  }, [_c('div', {
+    staticClass: "col-sm-6 col-sm-offset-3"
   }, [_c('h2', [_vm._v("Destinations")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-create",
     attrs: {
@@ -56069,7 +56064,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.leeroyjenkins($event)
       }
     }
-  }, [_vm._v("\n                            Delete\n                        ")])])])]) : _vm._e()])], 1)
+  }, [_vm._v("\n                            Delete\n                        ")])])])]) : _vm._e()])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"

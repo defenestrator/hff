@@ -1,7 +1,6 @@
 <template>
 <div class="row">
-    <regions />
-    <div class="col-sm-6" style="border-right:1px solid #262626; border-bottom:1px solid #262626;">
+    <div class="col-sm-6 col-sm-offset-3">
         <h2>Destinations</h2>
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Create</span>
@@ -13,7 +12,7 @@
             </button>
         </div>
         <table v-show="index" class="table table-striped table-inverse">
-            <thead  class="thead-inverse">
+            <thead class="thead-inverse">
             <tr>
                 <th>Name</th>
                 <th>Edit</th>

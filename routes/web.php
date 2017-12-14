@@ -121,6 +121,7 @@ Route::group(['middleware' => ['auth:web', 'dev']], function () {
         Route::get('/showcases', 'ShowcasesController@create');
         // Destinations
         Route::view('/destinations', 'cms.destinations');
+        Route::view('/regions', 'cms.regions');
     });
 });
 

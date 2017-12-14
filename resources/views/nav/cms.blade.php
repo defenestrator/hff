@@ -1,9 +1,9 @@
 <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown">Content<span class="caret"></span></a>
+    <a class="dropdown-toggle" data-toggle="dropdown">CMS<span class="caret"></span></a>
     <ul class="scrollable-menu dropdown-menu" role="menu">
-        <li role="presentation" class="dropdown-header">Manage</li>
+        <li role="presentation" class="dropdown-header">Content</li>
         <li>
-            <a href="/cms/posts">Blog Posts</a>
+            <a href="/cms/posts">Blog</a>
         </li>
         <li>
             <a href="/cms/showcases">Showcases</a>
@@ -11,10 +11,14 @@
         <li>
             <a href="/cms/publications">Publications</a>
         </li>
+        <li class="divider"></li>
+        <li role="presentation" class="dropdown-header">Data</li>
         <li>
             <a href="/cms/destinations">Destinations</a>
         </li>
-        {{--<li class="divider"></li>--}}
+        <li>
+            <a href="/cms/regions">Regions</a>
+        </li>
         {{--<li role="presentation" class="dropdown-header">Fish</li>--}}
         {{--<li>--}}
             {{--<a href="/cms/fish">Index</a>--}}
