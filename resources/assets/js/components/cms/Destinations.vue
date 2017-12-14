@@ -54,6 +54,14 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-12">
+                        <label for="selected-region">Select Region:</label>
+                        <select v-model="newDestination.regionId" id="selected-region">
+                            <option v-for="region in regions" v-bind:value="region.id">{{region.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
                         <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="description" v-model="newDestination.description"></trumbowyg>
                     </div>
                 </div>
@@ -114,6 +122,7 @@ export default {
     validator: null,
     mounted() {
         this.getIndex()
+        this.getRegions()
     },
     components: {
         trumbowyg
@@ -122,11 +131,13 @@ export default {
         return {
             index: true,
             destinations: [],
+            regions: [],
             newDestination: new SparkForm ({
                 name: '',
                 description: '',
                 lat: null,
                 lng: null,
+                regionId: null,
                 destinationId: null,
                 saveBusy: false,
                 saveError: false,
@@ -188,6 +199,12 @@ export default {
         },
         'newDestination.lng': function (val, oldVal) {
                 this.newDestination.saved = false
+        },
+        'newDestination.description': function (val, oldVal) {
+            this.newDestination.saved = false
+        },
+        'newDestination.regionId': function (val, oldVal) {
+            this.newDestination.saved = false
         }
     },
     methods: {
@@ -202,7 +219,16 @@ export default {
                 return Promise.reject(error)
             })
         },
-
+        getRegions() {
+            axios.get(`/api/regions`, {})
+                    .then(result  => {
+                this.regions = result.data.data
+            return this.regions
+        })
+        .catch(error => {
+                return Promise.reject(error)
+            })
+        },
         toggleIndex() {
             if(this.index == true) {
                 return this.index = false
@@ -223,6 +249,7 @@ export default {
                                 name: this.newDestination.name,
                                 lat:  this.newDestination.lat,
                                 lng:  this.newDestination.lng,
+                                region_id:  this.newDestination.regionId,
                                 description: this.newDestination.description
                             })
                             .then(result  => {
@@ -257,7 +284,8 @@ export default {
                         name: this.newDestination.name,
                         description: this.newDestination.description,
                         lat: this.newDestination.lat,
-                        lng: this.newDestination.lng
+                        lng: this.newDestination.lng,
+                        region_id:  this.newDestination.regionId,
                     })
                     .then(result  => {
                         this.newDestination.saveBusy = false

@@ -29,13 +29,13 @@ class Destination extends Model
 {
 
     protected $fillable= [
-        'name', 'description', 'lat', 'lng', 'outfitter_id'
+        'name',
+        'description',
+        'lat',
+        'lng',
+        'outfitter_id',
+        'region_id'
     ];
-
-    public function outfitter()
-    {
-        return $this->belongsTo(Outfitter::class);
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

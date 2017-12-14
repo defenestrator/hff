@@ -143,6 +143,9 @@ export default {
         },
         'newRegion.lng': function (val, oldVal) {
                 this.newRegion.saved = false
+        },
+        'newRegion.geojson': function (val, oldVal) {
+            this.newRegion.saved = false
         }
     },
     methods: {
