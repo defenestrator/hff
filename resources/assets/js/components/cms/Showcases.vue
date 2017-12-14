@@ -360,7 +360,13 @@ export default {
         },
         'newShowcase.tags': function (val, oldVal) {
             this.newShowcase.saved = false
-        }
+        },
+        'newShowcase.regionId': function (val, oldVal) {
+            this.newShowcase.saved = false
+        },
+        'newShowcase.destinationId': function (val, oldVal) {
+            this.newShowcase.saved = false
+        },
 
     },
     methods: {
@@ -395,10 +401,11 @@ export default {
             ,
         toggleIndex() {
             if(this.index == true) {
-               return this.index = false
+                this.clear()
+                return this.index = false
             }
-            this.getIndex()
-            return this.index = true
+                this.getIndex()
+                return this.index = true
         },
 
         save() {

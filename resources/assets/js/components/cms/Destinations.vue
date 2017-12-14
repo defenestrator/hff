@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="lng">Longitude:</label>
-                        <input v-validate="'required|min:5|max:12|between:-180.0000000,180.0000000'" id="lng" name="lng" v-model="newDestination.lng"
+                        <input v-validate="'required|min:5|max:13|between:-180.00000000,180.00000000'" id="lng" name="lng" v-model="newDestination.lng"
                                :class="{'form-control': true, 'input': true, 'is-danger': errors.has('lng') }"
                                type="text" placeholder="Longitude" style="width:100%">
                         <span v-show="errors.has('lng')" class="help is-danger">{{ errors.first('lng') }}</span>
@@ -357,8 +357,8 @@ export default {
     created() {
         this.validator = new VeeValidate.Validator({
             name: 'required|min:8',
-            lat: 'required|numeric|min:4',
-            lng: 'required|numeric|min:4',
+            lat:  'required|min:5|max:11|between:-90.0000000,90.0000000',
+            lng:  'required|min:5|max:13|between:-180.00000000,180.00000000',
         });
     },
     computed: {

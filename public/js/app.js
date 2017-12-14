@@ -38247,8 +38247,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
     created: function created() {
         this.validator = new __WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */].Validator({
             name: 'required|min:8',
-            lat: 'required|numeric|min:4',
-            lng: 'required|numeric|min:4'
+            lat: 'required|min:5|max:11|between:-90.0000000,90.0000000',
+            lng: 'required|min:5|max:13|between:-180.00000000,180.00000000'
         });
     },
 
@@ -39112,6 +39112,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
         },
         toggleIndex: function toggleIndex() {
             if (this.index == true) {
+                this.clear();
                 return this.index = false;
             }
             this.getIndex();
@@ -39605,6 +39606,12 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         },
         'newShowcase.tags': function newShowcaseTags(val, oldVal) {
             this.newShowcase.saved = false;
+        },
+        'newShowcase.regionId': function newShowcaseRegionId(val, oldVal) {
+            this.newShowcase.saved = false;
+        },
+        'newShowcase.destinationId': function newShowcaseDestinationId(val, oldVal) {
+            this.newShowcase.saved = false;
         }
 
     },
@@ -39641,6 +39648,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         },
         toggleIndex: function toggleIndex() {
             if (this.index == true) {
+                this.clear();
                 return this.index = false;
             }
             this.getIndex();
@@ -55900,8 +55908,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "validate",
       rawName: "v-validate",
-      value: ('required|min:5|max:12|between:-180.0000000,180.0000000'),
-      expression: "'required|min:5|max:12|between:-180.0000000,180.0000000'"
+      value: ('required|min:5|max:13|between:-180.00000000,180.00000000'),
+      expression: "'required|min:5|max:13|between:-180.00000000,180.00000000'"
     }, {
       name: "model",
       rawName: "v-model",
