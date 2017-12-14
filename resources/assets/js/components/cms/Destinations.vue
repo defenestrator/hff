@@ -134,6 +134,7 @@ export default {
             regions: [],
             newDestination: new SparkForm ({
                 name: '',
+                slug: '',
                 description: '',
                 lat: null,
                 lng: null,
@@ -179,11 +180,13 @@ export default {
         }
     },
     watch: {
-        'newDestination.header_photo': function (val, oldVal) {
-            this.newDestination.saved = false
-        },
         name(value) {
             this.validator.validate('name', value);
+            if (this.newDestination.slug == '' ||
+                    this.newDestination.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
+            ) {
+                this.newDestination.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
+            }
         },
         lat(value) {
             this.validator.validate('lat', value);
@@ -247,6 +250,7 @@ export default {
                 }).then((result) => {
                     axios.post(`/api/destinations`, {
                                 name: this.newDestination.name,
+                                slug: this.newDestination.slug,
                                 lat:  this.newDestination.lat,
                                 lng:  this.newDestination.lng,
                                 region_id:  this.newDestination.regionId,

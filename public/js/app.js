@@ -38036,6 +38036,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             regions: [],
             newDestination: new SparkForm({
                 name: '',
+                slug: '',
                 description: '',
                 lat: null,
                 lng: null,
@@ -38072,11 +38073,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
     },
 
     watch: {
-        'newDestination.header_photo': function newDestinationHeader_photo(val, oldVal) {
-            this.newDestination.saved = false;
-        },
         name: function name(value) {
             this.validator.validate('name', value);
+            if (this.newDestination.slug == '' || this.newDestination.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')) {
+                this.newDestination.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
+            }
         },
         lat: function lat(value) {
             this.validator.validate('lat', value);
@@ -38141,6 +38142,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             }).then(function (result) {
                 axios.post('/api/destinations', {
                     name: _this3.newDestination.name,
+                    slug: _this3.newDestination.slug,
                     lat: _this3.newDestination.lat,
                     lng: _this3.newDestination.lng,
                     region_id: _this3.newDestination.regionId,
