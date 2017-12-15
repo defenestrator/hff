@@ -22,8 +22,8 @@ class PublishedPostsController extends ContentController
         $publishedShowcases = $showcase->published();
         $showcases = $publishedShowcases->sortByDesc('updated_at')->slice(0, 12);
         $published = $publication->all('post_id');
-        $posts = $post->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(10);
-        $pagetitle = $post->whereIn('id', $published)->orderBy('created_at', 'desc')->pluck('title')->first();
+        $posts = $post->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(4);
+        $pagetitle = ", latest post: " . $post->whereIn('id', $published)->orderBy('created_at', 'desc')->pluck('title')->first();
         return view('publications.posts.index', compact('posts', 'showcases', 'pagetitle'));
     }
 

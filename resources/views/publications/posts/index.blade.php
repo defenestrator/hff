@@ -2,7 +2,7 @@
 
 {{-- Page title --}}
 @section('title')
-      Blog - {{$pagetitle}}
+      Blog{{$pagetitle}}
 @parent
 @stop
 
@@ -21,6 +21,7 @@
 @section('content')
 <div class="row">
         <div class="col-md-8 col-md-offset-0">
+            {!! $posts!!}
             @foreach($posts as $post)
                 <div class="article post">
                     <div class="featured-text relative-left">
@@ -59,7 +60,7 @@
         </div>
     <div class="col-md-4 col-md-offset-0">
         <h3 class="text-center">Destinations</h3>
-        @foreach($showcases as $showcase)
+        @foreach($showcases->take(10) as $showcase)
             <div class="col-md-12 info">
                 <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                     <div class="sidebar-thumbnail"

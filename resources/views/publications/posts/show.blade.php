@@ -76,7 +76,7 @@
                     @endif
                 </div>
                 <h3 class="text-center">Destinations</h3>
-                @foreach($showcases as $showcase)
+                @foreach($showcases->take(10) as $showcase)
                     <div class="col-md-12 info">
                         <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                             <div class="sidebar-thumbnail"
