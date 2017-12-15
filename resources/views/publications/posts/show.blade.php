@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-0">
-                    <h1>motherfucker</h1>
+                    <h1>You so silly!</h1>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                     @endif
                 </div>
                 <h3 class="text-center">Destinations</h3>
-                @foreach($showcases->take(10) as $showcase)
+                @foreach($showcases->sortByDesc('updated_at')->take(5) as $showcase)
                     <div class="col-md-12 info">
                         <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                             <div class="sidebar-thumbnail"

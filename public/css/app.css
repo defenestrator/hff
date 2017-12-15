@@ -7920,6 +7920,9 @@ a:focus .thumbnail {
   margin: 5% 5% 10px 5%;
   transition: all 0.3s;
 }
+.sidebar-thumbnail .caption {
+  padding: 0;
+}
 a:hover .thumbnail .caption,
 a:active .thumbnail .caption,
 a:focus .thumbnail .caption {
@@ -8013,4 +8016,7 @@ a:focus .thumbnail .caption {
 }
 input.form-control {
   height: 40px;
+}
+.pagination {
+  margin: 22px 0 0 0 ;
 }
