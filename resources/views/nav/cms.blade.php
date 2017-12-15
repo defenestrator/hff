@@ -11,7 +11,7 @@
         <li>
             <a href="/cms/publications">Publications</a>
         </li>
-        <li class="divider"></li>
+        <li role="presentation" class="divider"></li>
         <li role="presentation" class="dropdown-header">Data</li>
         <li>
             <a href="/cms/destinations">Destinations</a>
@@ -19,6 +19,7 @@
         <li>
             <a href="/cms/regions">Regions</a>
         </li>
+        <li role="presentation" class="divider"></li>
         {{--<li role="presentation" class="dropdown-header">Fish</li>--}}
         {{--<li>--}}
             {{--<a href="/cms/fish">Index</a>--}}
