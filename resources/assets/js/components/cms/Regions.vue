@@ -171,7 +171,6 @@ export default {
 
         toggleIndex() {
             if(this.index == true) {
-                this.clear()
                 return this.index = false
             }
             this.getIndex()
