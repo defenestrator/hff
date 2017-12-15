@@ -19,9 +19,8 @@ class PublishedPostsController extends ContentController
      */
     public function index(Post $post, Showcase $showcase, Publication $publication)
     {
-        $publishedShowcases = $showcase->published();
         $published = $publication->all('post_id');
-        $posts = $post->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(2);
+        $posts = $post->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(5);
         $pagetitle = ", latest post: " . $post->whereIn('id', $published)->orderBy('created_at', 'desc')->pluck('title')->first();
         return view('publications.posts.index', compact('posts', 'pagetitle'));
     }

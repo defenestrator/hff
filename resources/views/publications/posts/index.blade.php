@@ -64,7 +64,7 @@
             </div>
         </div>
     <div class="col-md-4 col-md-offset-0">
-        <h3 class="text-center">Destinations</h3>
+        <h3 class="text-center">Top 10 Destinations</h3>
         @foreach($showcases->take(10) as $showcase)
             <div class="col-md-12 info">
                 <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
