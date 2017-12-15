@@ -21,7 +21,9 @@
 @section('content')
 <div class="row">
         <div class="col-md-8 col-md-offset-0">
-            {!! $posts!!}
+            <div class="text-center">
+                <span class="text-center">{{ $posts->links() }}</span>
+            </div>
             @foreach($posts as $post)
                 <div class="article post">
                     <div class="featured-text relative-left">
@@ -57,6 +59,9 @@
                     </div>
                 </div>
             @endforeach
+            <div class="text-center">
+                <span class="text-center">{{ $posts->links() }}</span>
+            </div>
         </div>
     <div class="col-md-4 col-md-offset-0">
         <h3 class="text-center">Destinations</h3>
@@ -80,7 +85,9 @@
                 </a>
             </div>
         @endforeach
+
     </div>
+
 </div>
 @stop
 @section('bottom')
