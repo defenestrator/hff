@@ -69,6 +69,8 @@ class Showcase extends Model
         'body',
         'sidebar_bottom',
         'sidebar_top',
+        'homepage_top',
+        'homepage_bottom',
         'tagline',
         'fishery_type',
         'region_id',
