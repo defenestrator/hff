@@ -30,6 +30,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-0">
                 <h1>{{ $post->title }}</h1>
+                <h4><a href="/publications/posts"><button class="btn btn-default"> <i data-name="arrow-left" class="livicon"></i>blog index</a></h4>
             </div>
         </div>
     </div>
