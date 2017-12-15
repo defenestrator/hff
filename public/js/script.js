@@ -38392,7 +38392,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 // Import this component
 
@@ -56973,6 +56972,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "show",
       rawName: "v-show",
+      value: (!_vm.newPost.header_photo),
+      expression: "! newPost.header_photo"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v("This is required")]), _c('br'), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
       value: (_vm.errors.has('header_photo')),
       expression: "errors.has('header_photo')"
     }],
@@ -56991,8 +56998,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "validate",
       rawName: "v-validate",
-      value: ('required|min:2'),
-      expression: "'required|min:2'"
+      value: ('required|min:3|max:140'),
+      expression: "'required|min:3|max:140'"
     }, {
       name: "model",
       rawName: "v-model",
@@ -57051,8 +57058,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "validate",
       rawName: "v-validate",
-      value: ('required|min:4'),
-      expression: "'required|min:4'"
+      value: ('required|min:16'),
+      expression: "'required|min:16'"
     }],
     attrs: {
       "id": "trumbowyg",
@@ -57070,11 +57077,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "show",
       rawName: "v-show",
-      value: (_vm.newPost.saveError),
-      expression: "newPost.saveError"
+      value: (_vm.errors.has('body')),
+      expression: "errors.has('body')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v("\n                        Get your shit together. Write something worth reading, won't you please?.\n                        ")])], 1)]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.errors.first('body')))])], 1)]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"

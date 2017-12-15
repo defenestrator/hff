@@ -34,6 +34,7 @@
                         <span>Select Header Photo</span>
                         <input v-validate="'required|mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
                     </label>
+                    <span v-show="! newPost.header_photo" class="help is-danger">This is required</span><br>
                     <span v-show="errors.has('header_photo')" class="help is-danger">{{ errors.first('header_photo') }}</span>
                     <div role="img" class="header-photo-preview"
                          :style="previewStyle">
@@ -43,7 +44,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <input v-validate="'required|min:2'" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
+                    <input v-validate="'required|min:3|max:140'" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>
@@ -55,10 +56,8 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:4'" v-model="newPost.body"></trumbowyg>
-                    <span v-show="newPost.saveError" class="help is-danger">
-                        Get your shit together. Write something worth reading, won't you please?.
-                        </span>
+                    <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:16'" v-model="newPost.body"></trumbowyg>
+                    <span v-show="errors.has('body')" class="help is-danger">{{ errors.first('body') }}</span>
                 </div>
             </div>
             <div class="form-group">
