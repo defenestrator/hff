@@ -38121,7 +38121,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         },
         toggleIndex: function toggleIndex() {
             if (this.index == true) {
-                this.clear();
                 return this.index = false;
             }
             this.getIndex();
@@ -39113,7 +39112,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
         },
         toggleIndex: function toggleIndex() {
             if (this.index == true) {
-                this.clear();
                 return this.index = false;
             }
             this.getIndex();
@@ -40008,7 +40006,6 @@ Vue.component('spark-register-stripe', {
 
             country: null,
             taxRate: 0,
-            angler_registration: true,
             registerForm: $.extend(true, new SparkForm({
                 stripe_token: '',
                 plan: '',
@@ -40040,14 +40037,7 @@ Vue.component('spark-register-stripe', {
         };
     },
 
-    methods: {
-        showAnglerRegistration: function showAnglerRegistration() {
-            this.angler_registration = true;
-        },
-        showOutfitterRegistration: function showOutfitterRegistration() {
-            this.angler_registration = false;
-        }
-    }
+    methods: {}
 });
 
 /***/ }),

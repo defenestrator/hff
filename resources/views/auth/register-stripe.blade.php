@@ -24,7 +24,7 @@
 
                         <div class="panel-body">
                             <!-- Generic 500 Level Error Message / Stripe Threw Exception -->
-                            <div class="alert alert-danger" v-if="registerForm.errors.has('form')">
+                            <div class="alert alert-danger" v-if="errors.has('form')">
                                 We had trouble validating your card. It's possible your card provider is preventing
                                 us from charging the card. Please contact your card provider or customer support.
                             </div>
