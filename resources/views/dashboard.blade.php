@@ -30,13 +30,14 @@
     </style>
 @stop
 @section('top')
-    <div id="embed-api-auth-container"></div>
-    <div id="chart-container"></div>
-    <div id="view-selector-container"></div>
+
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h1>Dashboard</h1>
+                <div id="embed-api-auth-container"></div>
+                <div id="chart-container"></div>
+                <div id="view-selector-container"></div>
             </div>
         </div>
     </div>
@@ -109,7 +110,7 @@
              */
             gapi.analytics.auth.authorize({
                 container: 'embed-api-auth-container',
-                clientid: 'UA-107298455-1'
+                clientid: '913186508922-2qk0mbskk18v7r196un04ekip5g4dtli.apps.googleusercontent.com'
             });
 
 
