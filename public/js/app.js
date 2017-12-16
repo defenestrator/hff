@@ -38008,7 +38008,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 // Import this component
 
@@ -38264,9 +38263,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(6);
-//
-//
-//
 //
 //
 //
@@ -39041,7 +39037,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -39251,6 +39246,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(6);
+//
 //
 //
 //
@@ -55155,7 +55151,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-sm-6 col-sm-offset-3"
-  }, [_c('h2', [_vm._v("Regions")]), _vm._v(" "), _c('button', {
+  }, [_c('button', {
     staticClass: "btn btn-create",
     attrs: {
       "id": "create"
@@ -55724,7 +55720,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-sm-6 col-sm-offset-3"
-  }, [_c('h2', [_vm._v("Destinations")]), _vm._v(" "), _c('button', {
+  }, [_c('button', {
     staticClass: "btn btn-create",
     attrs: {
       "id": "create"
@@ -56451,7 +56447,79 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('homepage_bottom')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('homepage_bottom')))])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.errors.first('homepage_bottom')))])])]), _vm._v(" "), _c('div', [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('label', {
+    attrs: {
+      "for": "selected-region"
+    }
+  }, [_vm._v("Select Region:")]), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newShowcase.regionId),
+      expression: "newShowcase.regionId"
+    }],
+    attrs: {
+      "id": "selected-region"
+    },
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.$set(_vm.newShowcase, "regionId", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "0"
+    }
+  }, [_vm._v("Worldwide or N/A")]), _vm._v(" "), _vm._l((_vm.regions), function(region) {
+    return _c('option', {
+      domProps: {
+        "value": region.id
+      }
+    }, [_vm._v(_vm._s(region.name))])
+  })], 2)]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('label', {
+    attrs: {
+      "for": "selected-destination"
+    }
+  }, [_vm._v("Select Destination:")]), _vm._v(" "), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newShowcase.destinationId),
+      expression: "newShowcase.destinationId"
+    }],
+    attrs: {
+      "id": "selected-destination"
+    },
+    on: {
+      "change": function($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
+          return o.selected
+        }).map(function(o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val
+        });
+        _vm.$set(_vm.newShowcase, "destinationId", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
+      }
+    }
+  }, _vm._l((_vm.destinations), function(destination) {
+    return _c('option', {
+      domProps: {
+        "value": destination.id
+      }
+    }, [_vm._v(_vm._s(destination.name))])
+  }))])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -56560,74 +56628,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "newShowcase.body"
     }
   })], 1)]), _vm._v(" "), _c('div', [_c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "col-md-6"
-  }, [_c('label', {
-    attrs: {
-      "for": "selected-region"
-    }
-  }, [_vm._v("Select Region:")]), _vm._v(" "), _c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.newShowcase.regionId),
-      expression: "newShowcase.regionId"
-    }],
-    attrs: {
-      "id": "selected-region"
-    },
-    on: {
-      "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.newShowcase, "regionId", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
-      }
-    }
-  }, _vm._l((_vm.regions), function(region) {
-    return _c('option', {
-      domProps: {
-        "value": region.id
-      }
-    }, [_vm._v(_vm._s(region.name))])
-  }))]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('label', {
-    attrs: {
-      "for": "selected-destination"
-    }
-  }, [_vm._v("Select Destination:")]), _vm._v(" "), _c('select', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.newShowcase.destinationId),
-      expression: "newShowcase.destinationId"
-    }],
-    attrs: {
-      "id": "selected-destination"
-    },
-    on: {
-      "change": function($event) {
-        var $$selectedVal = Array.prototype.filter.call($event.target.options, function(o) {
-          return o.selected
-        }).map(function(o) {
-          var val = "_value" in o ? o._value : o.value;
-          return val
-        });
-        _vm.$set(_vm.newShowcase, "destinationId", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
-      }
-    }
-  }, _vm._l((_vm.destinations), function(destination) {
-    return _c('option', {
-      domProps: {
-        "value": destination.id
-      }
-    }, [_vm._v(_vm._s(destination.name))])
-  }))])])]), _vm._v(" "), _c('div', [_c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
@@ -56838,7 +56838,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "role": "presentation"
     }
-  }, [_c('strong', [_vm._v("Homepage tile preview")])])
+  }, [_c('strong', [_vm._v("Homepage preview")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('p', {
     attrs: {
@@ -56935,7 +56935,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("Edit")])])])
-  }))])]), _vm._v(" "), _c('div', {
+  }))])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
     staticClass: "container"
   }, [(!_vm.index) ? _c('form', {
     staticClass: "form-horizontal new-post",
@@ -56994,7 +56994,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_c('input', {
+  }, [_vm._m(1, false, false), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -57013,6 +57013,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "width": "100%"
     },
     attrs: {
+      "id": "title",
       "name": "title",
       "type": "text",
       "placeholder": "Post Title"
@@ -57038,23 +57039,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_c('div', {
-    attrs: {
-      "name": "slug"
-    }
-  }, [_vm._v("slug: " + _vm._s(_vm.newPost.slug) + " ")]), _vm._v(" "), _c('span', {
-    directives: [{
-      name: "show",
-      rawName: "v-show",
-      value: (_vm.newPost.serverErrors),
-      expression: "newPost.serverErrors"
-    }],
-    staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.newPost.serverErrors))])])]), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('div', {
-    staticClass: "col-md-12"
-  }, [_c('trumbowyg', {
+  }, [_c('p', [_vm._v("Body:")]), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -57212,6 +57197,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('thead', {
     staticClass: "thead-inverse"
   }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('label', {
+    attrs: {
+      "for": "title"
+    }
+  }, [_c('p', [_vm._v("Title:")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {

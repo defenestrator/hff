@@ -81,9 +81,26 @@
                     <span v-show="errors.has('homepage_bottom')" class="help is-danger">{{ errors.first('homepage_bottom') }}</span>
                 </div>
             </div>
+            <div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label for="selected-region">Select Region:</label>
+                        <select v-model="newShowcase.regionId" id="selected-region">
+                            <option value="0">Worldwide or N/A</option>
+                            <option v-for="region in regions" v-bind:value="region.id">{{region.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="selected-destination">Select Destination:</label>
+                        <select v-model="newShowcase.destinationId" id="selected-destination">
+                            <option v-for="destination in destinations" v-bind:value="destination.id">{{destination.name}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <p role="presentation"><strong>Homepage tile preview</strong></p>
+                    <p role="presentation"><strong>Homepage preview</strong></p>
                     <div class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
                         <a href="#" :title="newShowcase.title">
                             <div class="thumbnail"
@@ -118,22 +135,6 @@
                 <div class="col-md-12">
                     <h4 role="presentation"><strong>Showcase Body:</strong></h4>
                     <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:20'" v-model="newShowcase.body"></trumbowyg>
-                </div>
-            </div>
-            <div>
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <label for="selected-region">Select Region:</label>
-                        <select v-model="newShowcase.regionId" id="selected-region">
-                            <option v-for="region in regions" v-bind:value="region.id">{{region.name}}</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="selected-destination">Select Destination:</label>
-                        <select v-model="newShowcase.destinationId" id="selected-destination">
-                            <option v-for="destination in destinations" v-bind:value="destination.id">{{destination.name}}</option>
-                        </select>
-                    </div>
                 </div>
             </div>
             <div>

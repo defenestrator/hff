@@ -1,7 +1,6 @@
 <template>
 <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-        <h2>Destinations</h2>
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Create</span>
             <span v-if="! index">Index</span>

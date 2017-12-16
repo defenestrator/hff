@@ -25,6 +25,7 @@
             </tbody>
         </table>
     </div>
+    <hr>
     <div class="container">
         <form class="form-horizontal new-post" v-if="! index" role="form">
             <!-- Header Photo Button -->
@@ -44,18 +45,14 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <input v-validate="'required|min:3|max:140'" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
+                    <label for="title"><p>Title:</p></label>
+                    <input v-validate="'required|min:3|max:140'" id="title" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%">
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <div name="slug">slug: {{newPost.slug}} </div>
-                    <span v-show="newPost.serverErrors" class="help is-danger">{{ newPost.serverErrors }}</span>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-12">
+                    <p>Body:</p>
                     <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:16'" v-model="newPost.body"></trumbowyg>
                     <span v-show="errors.has('body')" class="help is-danger">{{ errors.first('body') }}</span>
                 </div>
