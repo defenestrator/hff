@@ -30,22 +30,23 @@
     </style>
 @stop
 @section('top')
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <h1>Dashboard</h1>
-                <div id="embed-api-auth-container"></div>
-                <div id="chart-container"></div>
-                <div id="view-selector-container"></div>
-            </div>
-        </div>
-    </div>
-    @stop
+    <br>
+@stop
 {{-- content --}}
 @section('content')
     @if (Spark::developer(Auth::user()->email))
     <div class="container-fluid">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Primitive Analytics Dashboard</div>
+                <div class="panel-body">
+                    <h4>click the orange thingy and login with your @hoboflyfishing.com account</h4>
+                    <div id="embed-api-auth-container"></div>
+                    <div id="chart-container"></div>
+                    <div id="view-selector-container"></div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Administration Dashboard</div>
@@ -133,7 +134,7 @@
              */
             var dataChart = new gapi.analytics.googleCharts.DataChart({
                 query: {
-                    metrics: 'ga:sessions',
+                    metrics: ['ga:users'],
                     dimensions: 'ga:date',
                     'start-date': '30daysAgo',
                     'end-date': 'yesterday'
