@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Image as ImageModel;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ImagesController extends Controller
 {
@@ -36,11 +37,10 @@ class ImagesController extends Controller
             ->resize(1280, 1280, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
-            })->encode('jpg');
+            })->encode('jpg')->stream();
         $hash = md5($resize->__toString());
-        $path = storage_path('app/public/images/' . "{$hash}.jpg");
-        $resize->save($path);
-        $large = url('storage/images/' . "{$hash}.jpg");
+        Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
+        $large = Storage::disk('s3')->url('images/'.$hash.'.jpg');
         $record = ImageModel::create([
             'thumbnail' => $thumbnail,
             'stamp' => $stamp,
@@ -60,11 +60,10 @@ class ImagesController extends Controller
         $resize = Image::make($img)
             ->resize(575, 575, function ($constraint) {
                 $constraint->aspectRatio();
-            })->encode('jpg');
+            })->encode('jpg')->stream();
         $hash = md5($resize->__toString());
-        $thumbpath = storage_path('app/public/images/' . "{$hash}.jpg");
-        $resize->save($thumbpath);
-        return url('storage/images/' . "{$hash}.jpg");
+        Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
+        return Storage::disk('s3')->url('images/'.$hash.'.jpg');
     }
 
     public function stamp($img)
@@ -74,8 +73,7 @@ class ImagesController extends Controller
                 $constraint->aspectRatio();
             })->encode('jpg');
         $hash = md5($resize->__toString());
-        $thumbpath = storage_path('app/public/images/' . "{$hash}.jpg");
-        $resize->save($thumbpath);
-        return url('storage/images/' . "{$hash}.jpg");
+        Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
+        return Storage::disk('s3')->url('images/'.$hash.'.jpg');
     }
 }
