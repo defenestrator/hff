@@ -19,4 +19,3 @@ Artisan::command('sitemap', function () {
         SitemapGenerator::create('https://hoboflyfishing.com')->writeToFile(public_path('sitemap.xml'));
     $this->comment('Sitemap Generated!');
 })->describe('Generate an updated sitemap for teh googlebots pleasure, slave.');
-
