@@ -23,8 +23,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('podfeed')
-                  ->daily();
+//         $schedule->command('podfeed')
+//                  ->daily();
     }
 
     /**
