@@ -39069,9 +39069,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
     watch: {
         name: function name(value) {
             this.validator.validate('name', value);
-            if (this.newRegion.slug == '' || this.newRegion.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')) {
-                this.newRegion.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
-            }
         },
         lat: function lat(value) {
             this.validator.validate('lat', value);
@@ -39081,6 +39078,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
         },
 
         'newRegion.name': function newRegionName(val, oldVal) {
+            if (this.newRegion.slug == '' || this.newRegion.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')) {
+                this.newRegion.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
+            }
             this.newRegion.saved = false;
         },
         'newRegion.lat': function newRegionLat(val, oldVal) {

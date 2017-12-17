@@ -29,7 +29,7 @@ use Illuminate\Database\Eloquent\Model;
 class Region extends Model
 {
     protected $fillable = [
-        'geojson', 'lat','lng','name'
+        'geojson', 'lat','lng','name', 'slug'
     ];
 
     /**

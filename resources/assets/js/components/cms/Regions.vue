@@ -130,11 +130,6 @@ export default {
     watch: {
         name(value) {
             this.validator.validate('name', value);
-            if (this.newRegion.slug == '' ||
-                    this.newRegion.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
-            ) {
-                this.newRegion.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
-            }
         },
         lat(value) {
             this.validator.validate('lat', value);
@@ -143,6 +138,11 @@ export default {
             this.validator.validate('lng', value);
         },
         'newRegion.name': function (val, oldVal) {
+            if (this.newRegion.slug == '' ||
+                    this.newRegion.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
+            ) {
+                this.newRegion.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
+            }
             this.newRegion.saved = false
         },
         'newRegion.lat': function (val, oldVal) {
