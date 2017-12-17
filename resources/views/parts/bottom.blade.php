@@ -8,39 +8,39 @@
     <div class="container">
         <div class="payment-types"><ul class="inline payment-icons">
                 <li>
-                    <img src="/images/payment-types/american_express.png"
+                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/american_express.png"
                         alt="We accept American Express" title="We accept American Express">
                 </li>
                 <li>
-                    <img src="/images/payment-types/visa.png"
+                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/visa.png"
                          alt="We accept Visa" title="We accept Visa">
                 </li>
                 <li>
-                    <img src="/images/payment-types/mastercard.png"
+                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/mastercard.png"
                          alt="We accept Mastercard" title="We accept Mastercard">
                 </li>
                 <li>
-                    <img src="/images/payment-types/discover.png"
+                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/discover.png"
                          alt="We accept Discover" title="We accept Discover">
                 </li>
                 <li>
-                    <img src="/images/payment-types/diners_club.png"
+                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/diners_club.png"
                          alt="We accept Diners Club" title="We accept Diners Club">
                 </li>
                 <li>
-                    <img src="/images/payment-types/paypal.png"
+                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/paypal.png"
                          alt="We accept Paypal" title="We accept Paypal">
                 </li>
                 <li>
-                    <img src="/images/payment-types/ach-payment.png"
+                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/ach-payment.png"
                          alt="We accept ACH Payments" title="We accept ACH Payments">
                 </li>
                 <li>
-                    <img src="/images/payment-types/currency_bitcoin_sign.png"
+                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/currency_bitcoin_sign.png"
                          alt="We accept Bitcoin!" title="We accept Bitcoin!">
                 </li>
                 <li>
-                    <img src="/images/payment-types/currency_euro_sign.png"
+                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/currency_euro_sign.png"
                          alt="We accept Euros, and more than 130 other currencies!"
                          title="We accept Euros, and more than 130 other currencies!">
                 </li>

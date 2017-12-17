@@ -40,7 +40,7 @@
                     <h2>Places we book in {{$region->name}}</h2>
                     @foreach($region->showcases as $showcase)
                     <ul class="list-unstyled">
-                        <li><a href="/showcases/{{ $showcase->slug }}"><h3>{{$showcase->title}}</h3><img src="{{$showcase->thumbnail}}"/></a></li>
+                        <li><a href="/showcases/{{ $showcase->slug }}"><h3>{{$showcase->title}}</h3><img src="{{$showcase->header_photo}}"/></a></li>
                     </ul>
                     @endforeach
                 </article>

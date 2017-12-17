@@ -1,3 +1,3 @@
 <a class="navbar-brand" href="/">
-    <img src="/images/authenticated_hobo.png">
+    <img src="{{Storage::disk('s3')->url('images')}}/authenticated_hobo.png">
 </a>

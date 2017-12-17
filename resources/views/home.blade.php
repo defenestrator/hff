@@ -26,7 +26,7 @@
     <div style="margin:22px;" class="text-center">
         <h2 style="color:#262626; margin:10px; font-weight: 600;">Once in a lifetime trip, or a lifetime of trips?</h2>
         <h2 style="color:#262626; font-weight: 600; font-size:36px; margin:10px 10px 20px 10px; ">
-            <span style="margin-right:-7px;">H</span><img style=" margin:0; padding-bottom:8px;" src="/images/authenticated_hobo.png" title="Hobo fly fishing has the answer"><span style="margin-left:-5px;">bo Fly Fishing has the answer</span></h2>
+            <span style="margin-right:-7px;">H</span><img style=" margin:0; padding-bottom:8px;" src="{{Storage::disk('s3')->url('images')}}/authenticated_hobo.png" title="Hobo fly fishing has the answer"><span style="margin-left:-5px;">bo Fly Fishing has the answer</span></h2>
     </div>
 
 @stop
@@ -98,7 +98,7 @@
         <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="0.5s">
             <div class="box">
                 <div class="box-icon">
-                    <img src="/images/go.png" title="go"/>
+                    <img src="{{Storage::disk('s3')->url('images')}}/go.png" title="go"/>
                 </div>
                 <div class="info">
                     <h3 class="text-center">Self-Guided Adventures</h3>
@@ -115,7 +115,7 @@
         <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="0.5s" data-wow-delay="0.1s">
             <div class="box">
                 <div class="box-icon">
-                    <img src="/images/very-good.png" title="very good"/>
+                    <img src="{{Storage::disk('s3')->url('images')}}/very-good.png" title="very good"/>
                 </div>
                 <div class="info">
                     <h3 class="text-center">Full Service Expeditions</h3>
@@ -129,7 +129,7 @@
         <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="0.5s" data-wow-delay="0.2s">
             <div class="box">
                 <div class="box-icon">
-                    <img src="/images/safe-camp.png" title="safe camp"/>
+                    <img src="{{Storage::disk('s3')->url('images')}}/safe-camp.png" title="safe camp"/>
                 </div>
                 <div class="info">
                     <h3 class="text-center">Hybrid Fly Fishing Trips</h3>
@@ -188,7 +188,7 @@
                         90% are meaningless headshots next to the name of some random clown they met at the bar.
                     </p>
 
-                    <img src="/images/bully.jpg" style="border-radius:6px; margin-top:10px;;"
+                    <img src="{{Storage::disk('s3')->url('images')}}/bully.jpg" style="border-radius:6px; margin-top:10px;;"
                          alt="Yeah, well, that's just, like, your opinion, man."
                          title="Yeah, well, that's just, like, your opinion, man.">
                 </section>
