@@ -65,7 +65,7 @@
                                 </li>
 
                                 <!-- API Link -->
-                                @if (Spark::usesApi())
+                                @if (Spark::usesApi() && Spark::developer(Auth::user()->email))
                                     <li role="presentation">
                                         <a href="#api" aria-controls="api" role="tab" data-toggle="tab">
                                             <i class="fa fa-fw fa-btn fa-cubes"></i>API

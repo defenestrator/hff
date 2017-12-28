@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Settings\API;
 
 use Laravel\Spark\Token;
 use Laravel\Spark\Spark;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Laravel\Spark\Http\Controllers\Controller;
 use Laravel\Spark\Contracts\Repositories\TokenRepository;
@@ -51,6 +52,9 @@ class TokenController extends Controller
      */
     public function store(CreateTokenRequest $request)
     {
+        if(! Spark::developer(Auth::user()->email)) {
+            return 'fuck you';
+        }
         $data = count(Spark::tokensCan()) > 0 ? ['abilities' => $request->abilities] : [];
 
         return response()->json(['token' => $this->tokens->createToken(
@@ -67,6 +71,9 @@ class TokenController extends Controller
      */
     public function update(UpdateTokenRequest $request, $tokenId)
     {
+        if(! Spark::developer(Auth::user()->email)) {
+            return 'fuck you';
+        }
         $token = $request->user()->tokens()->where('id', $tokenId)->firstOrFail();
 
         if (class_exists('Laravel\Passport\Passport')) {
@@ -91,6 +98,10 @@ class TokenController extends Controller
      */
     public function destroy(Request $request, $tokenId)
     {
+        if(! Spark::developer(Auth::user()->email)) {
+            return 'fuck you';
+        }
+        $this->middleware('dev');
         $request->user()->tokens()->where('id', $tokenId)->firstOrFail()->delete();
     }
 }
