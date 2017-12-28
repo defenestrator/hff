@@ -9,8 +9,8 @@ Vue.component('spark-notifications', {
      */
     data() {
         return {
-            showingNotifications: false,
-            showingAnnouncements: true
+            showingNotifications: true,
+            showingAnnouncements: false
         }
     },
 
@@ -20,8 +20,9 @@ Vue.component('spark-notifications', {
          * Show the user notifications.
          */
         showNotifications() {
-            this.showingNotifications = true;
-            this.showingAnnouncements = false;
+            this.showingNotifications = false;
+            this.showingAnnouncements = true;
+            this.updateLastReadAnnouncementsTimestamp();
         },
 
 

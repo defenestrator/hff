@@ -40279,7 +40279,24 @@ Vue.component('spark-kiosk-users', {
 var base = __webpack_require__(243);
 
 Vue.component('spark-navbar', {
-    mixins: [base]
+    mixins: [base],
+    methods: {
+        /**
+         * Show the user's notifications.
+         */
+        showNotifications: function showNotifications() {
+            Bus.$emit('showNotifications');
+            this.has;
+        },
+
+
+        /**
+         * Show the customer support e-mail form.
+         */
+        showSupportForm: function showSupportForm() {
+            Bus.$emit('showSupportForm');
+        }
+    }
 });
 
 /***/ }),
@@ -40297,8 +40314,8 @@ Vue.component('spark-notifications', {
      */
     data: function data() {
         return {
-            showingNotifications: false,
-            showingAnnouncements: true
+            showingNotifications: true,
+            showingAnnouncements: false
         };
     },
 
@@ -40308,8 +40325,9 @@ Vue.component('spark-notifications', {
          * Show the user notifications.
          */
         showNotifications: function showNotifications() {
-            this.showingNotifications = true;
-            this.showingAnnouncements = false;
+            this.showingNotifications = false;
+            this.showingAnnouncements = true;
+            this.updateLastReadAnnouncementsTimestamp();
         },
 
 

@@ -78,7 +78,6 @@
 
                             <!-- Subscription Reminders -->
                             @include('nav.subscriptions')
-
                             <!-- Settings -->
                             <li class="dropdown-header">Settings</li>
 
@@ -89,11 +88,11 @@
                                 </a>
                             </li>
                             <li class="divider"></li>
-                            <li>
-                                <a href="/dashboard">
-                                    <i class="fa fa-fw fa-btn fa-tachometer"></i>Dashboard
-                                </a>
-                            </li>
+                                <li>
+                                    <a href="/dashboard">
+                                        <i class="fa fa-fw fa-btn fa-tachometer"></i>Dashboard
+                                    </a>
+                                </li>
                             <li class="divider"></li>
                             <!-- Logout -->
                             <li>
