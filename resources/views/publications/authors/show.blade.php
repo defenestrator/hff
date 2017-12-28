@@ -33,7 +33,7 @@
     @foreach($posts as $post)
         <div style="margin:16px 0;" class="row">
             <div class="col-md-6">
-                <img style="max-width:300px;" alt="{{$post->title}}" title="{{$post->title}}" src="{{$post->header_photo}}"/>
+                <a href="/publications/posts/{{$post->slug}}"><img style="max-width:300px;" alt="{{$post->title}}" title="{{$post->title}}" src="{{$post->header_photo}}"/></a>
             </div>
             <div class="col-md-6">
                 <a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a>
