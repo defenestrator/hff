@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Region whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Region whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Showcase[] $showcases
  */
 class Region extends Model
 {

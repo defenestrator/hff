@@ -75,6 +75,9 @@ use Laravel\Spark\CanJoinTeams;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUsesTwoFactorAuth($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUuid($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereVatId($value)
+ * @property string $bio
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Post[] $posts
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereBio($value)
  */
 class User extends SparkUser
 {
@@ -121,4 +124,9 @@ class User extends SparkUser
         'trial_ends_at' => 'datetime',
         'uses_two_factor_auth' => 'boolean',
     ];
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

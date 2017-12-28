@@ -49,11 +49,19 @@
                 <div>
                     <p class="additional-post-wrap">
                         <span class="additional-post">
-                            by {{ $post->author }}
+                            by
+
+                            <a href="/publications/authors/{{$author->uuid}}">{{ $post->author }}
+                            </a>
+
                             </span>
                         <span class="additional-post">
                             @if($post->created_at)
                                 - {{$post->created_at->diffForHumans()}}
+                                <br>
+                                <a href="/publications/authors/{{$author->uuid}}">
+                                    <img style="max-height:80px;max-width:80px; margin:8px;" alt="{{$author->name}}" title="{{$author->name}}" src="{{$author->photo_url}}"/>
+                                </a>
                             @else
                                 - Never happened.
                             @endif

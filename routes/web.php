@@ -97,8 +97,8 @@ Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index');
 Route::get('regions/{slug}', 'RegionController@show');
 
-// LOADER.IO AUTHENTICATION
-Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
+// Authors
+Route::get('/publications/authors/{uuid}', 'UserController@show');
 Route::group(['middleware' => ['auth:web']], function () {
 
     Route::view('/dashboard', 'dashboard');
@@ -134,3 +134,5 @@ Route::group(['middleware' => ['auth:web', 'dev']], function () {
 // Confirm Newsletter Subscription
 Route::get('/newsletter-subscription/{token}', 'NewsletterSubscriptionsController@confirm');
 
+// LOADER.IO TEST AUTHENTICATION
+Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');

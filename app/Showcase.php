@@ -56,6 +56,15 @@ use Cviebrock\EloquentTaggable\Taggable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereImageId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereLodgeLogo($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereSpecial($value)
+ * @property int $destination_id
+ * @property int $region_id
+ * @property string|null $homepage_top
+ * @property string|null $homepage_bottom
+ * @property-read \App\Destination $destination
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereDestinationId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereHomepageBottom($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereHomepageTop($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Showcase whereRegionId($value)
  */
 class Showcase extends Model
 {

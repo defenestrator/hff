@@ -27,13 +27,12 @@ class PublishedPostsController extends ContentController
 
     /**
      * @param Post $post
-     * @param Showcase $showcase
      * @param $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Post $post, Showcase $showcase, $slug)
+    public function show(Post $post, User $user, $slug)
     {
-        $data = new $post([
+        $item = new $post([
             'user_id'  => 0,
             'author' => 'Nobody Nullington',
             'header_photo' => '/images/tangle.jpg',
@@ -41,12 +40,15 @@ class PublishedPostsController extends ContentController
             'title' => "There is no post called: ". "'".$this->slugger->titleify($slug)."'",
             'slug' => $slug
         ]);
+        $author = new $user([
+                'name' =>'Nobody Nullington',
+                'uuid' => ''
+            ]);
         if ($post->where('slug', '=', $slug)->count() > 0){
-
-            $data = $post->where('slug', '=', $slug)->first();
-
+            $item = $post->where('slug', '=', $slug)->first();
+            $author = $user->where('id', '=', $item->user_id)->first();
         }
-        return view('publications.posts.show',['post' => $data]);
+        return view('publications.posts.show',['post' => $item, 'author' => $author]);
     }
 
 }

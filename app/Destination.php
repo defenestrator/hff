@@ -30,6 +30,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Package[] $packages
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Destination whereOutfitterId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Destination whereRegionId($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Showcase[] $showcases
  */
 class Destination extends Model
 {

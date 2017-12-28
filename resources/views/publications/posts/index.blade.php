@@ -28,11 +28,6 @@
                 <div class="article post">
                     <div class="featured-text relative-left">
                         <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
-                        <p>
-                        <span class="additional-post">
-                            by {{ $post->author }} {{$post->created_at->diffForHumans()}}
-                        </span>
-                        </p>
                         <a href="/publications/posts/{{$post->slug}}">
                             <img src="{{$post->header_photo}}" alt="{{$post->title}}" title="{{$post->title}}">
                         </a>
