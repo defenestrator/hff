@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-Contact
+Contact us using this handy web form! Welcome to the future!
 @parent
 @stop
 @section('page_styles')
