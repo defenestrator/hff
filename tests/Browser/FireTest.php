@@ -15,7 +15,6 @@ class FireTest extends DuskTestCase
     function test_domain_root_returns_html()
     {
         $response = $this->get('/');
-        $response->assertViewIs('home');
         $response->assertSeeText('info@hoboflyfishing.com');
         $response->assertSee('Self-Guided Adventures');
         $response->assertSee('Hybrid Fly Fishing Trips');
