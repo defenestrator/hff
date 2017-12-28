@@ -1,7 +1,6 @@
 <template>
     <div>
-        <a href="#newsletter"><h4>Riding the Reels</h4></a>
-        <p>Get special deals and exclusive trip packages! We only send about one newsletter per month.</p>
+        <p>Get timely updates and exclusive offers with our newsletter</p>
         <form>
             <div class="input-group">
                 <input class="form-control" placeholder="your email"
@@ -23,6 +22,7 @@
 
             </div>
             <div style="min-height:24px;"><span v-show="errors.has('newsletter-email')" class="help is-danger">{{ errors.first('newsletter-email') }}</span></div>
+            <p>We only send about one email per month.</p>
         </form>
     </div>
 </template>

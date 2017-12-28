@@ -17,7 +17,7 @@
 @section('top')
     <div class="tagline text-center">
         <h1 style="font-weight:600;" class="wow pulse" data-wow-duration="0.7s">
-            Fly Fishing Adventure Travel
+            Fly Fishing Adventure
         </h1>
         <h2 style="font-weight:600;">
             Elite Destinations, Local Flavor
@@ -27,10 +27,16 @@
         <h2 style="color:#262626; margin:10px; font-weight: 600;">Once in a lifetime trip, or a lifetime of trips?</h2>
         <h2 style="color:#262626; font-weight: 600; font-size:36px; margin:10px 10px 20px 10px; ">
             <span style="margin-right:-7px;">H</span><img style=" margin:0; padding-bottom:8px;" src="{{Storage::disk('s3')->url('images')}}/authenticated_hobo.png" title="Hobo fly fishing has the answer"><span style="margin-left:-5px;">bo Fly Fishing has the answer</span></h2>
+
     </div>
 
 @stop
 @section('content')
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+            <newsletter-signup></newsletter-signup>
+        </div>
+    </div>
     @foreach(array_chunk($showcases->all(), 2) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)

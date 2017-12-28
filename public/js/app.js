@@ -37756,6 +37756,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 //
 //
 //
+//
 
 Vue.component('newsletter-signup', __webpack_require__(323));
 
@@ -55587,11 +55588,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "container footer-text"
   }, [_vm._m(0, false, false), _vm._v(" "), _c('div', {
     staticClass: "col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"
-  }, [_c('newsletter-signup', {
+  }, [_vm._m(1, false, false), _vm._v(" "), _c('newsletter-signup', {
     attrs: {
       "id": "newsletter-signup"
     }
-  })], 1), _vm._v(" "), _vm._m(1, false, false)])])
+  })], 1), _vm._v(" "), _vm._m(2, false, false)])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"
@@ -55608,6 +55609,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "title": "if you must know, click here."
     }
   }, [_vm._v("about us.")])]), _vm._v(" "), _c('br')])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
+    attrs: {
+      "href": "#newsletter"
+    }
+  }, [_c('h4', [_vm._v("Riding the Reels")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"
@@ -57227,7 +57234,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_vm._m(0, false, false), _vm._v(" "), _c('p', [_vm._v("Get special deals and exclusive trip packages! We only send about one newsletter per month.")]), _vm._v(" "), _c('form', [_c('div', {
+  return _c('div', [_c('p', [_vm._v("Get timely updates and exclusive offers with our newsletter")]), _vm._v(" "), _c('form', [_c('div', {
     staticClass: "input-group"
   }, [_c('input', {
     directives: [{
@@ -57293,14 +57300,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('newsletter-email')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('newsletter-email')))])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('a', {
-    attrs: {
-      "href": "#newsletter"
-    }
-  }, [_c('h4', [_vm._v("Riding the Reels")])])
-}]}
+  }, [_vm._v(_vm._s(_vm.errors.first('newsletter-email')))])]), _vm._v(" "), _c('p', [_vm._v("We only send about one email per month.")])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

@@ -13,6 +13,7 @@
             <br>
         </div>
         <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+            <a href="#newsletter"><h4>Riding the Reels</h4></a>
             <newsletter-signup id="newsletter-signup"></newsletter-signup>
         </div>
         <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
