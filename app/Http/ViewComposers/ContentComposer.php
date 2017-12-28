@@ -27,7 +27,7 @@ class ContentComposer {
      */
     public function compose(View $view)
     {
-        $view->with('showcases', $this->showcases->all()->sortByDesc('updated_at'));
+        $view->with('showcases', $this->showcases->whereHas('publication')->orderBy('updated_at', 'desc')->get());
         $view->with('destinations', $this->destinations->all());
         $view->with('regions', $this->regions->all()->sortBy('name'));
     }
