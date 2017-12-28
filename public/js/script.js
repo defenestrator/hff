@@ -39970,7 +39970,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
 
 // Laravel Spark
 __webpack_require__(181);
-
+__webpack_require__(441);
 // Internal CMS - Routes/Controllers should have Developer access only!
 Vue.component('posts', __webpack_require__(327));
 Vue.component('publications', __webpack_require__(328));
@@ -68223,6 +68223,167 @@ return Vue$3;
 __webpack_require__(148);
 module.exports = __webpack_require__(149);
 
+
+/***/ }),
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */,
+/* 400 */,
+/* 401 */,
+/* 402 */,
+/* 403 */,
+/* 404 */,
+/* 405 */,
+/* 406 */,
+/* 407 */,
+/* 408 */,
+/* 409 */,
+/* 410 */,
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
+/* 416 */,
+/* 417 */,
+/* 418 */,
+/* 419 */,
+/* 420 */,
+/* 421 */,
+/* 422 */,
+/* 423 */,
+/* 424 */,
+/* 425 */,
+/* 426 */,
+/* 427 */,
+/* 428 */,
+/* 429 */,
+/* 430 */,
+/* 431 */,
+/* 432 */,
+/* 433 */,
+/* 434 */,
+/* 435 */,
+/* 436 */,
+/* 437 */,
+/* 438 */,
+/* 439 */,
+/* 440 */,
+/* 441 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(6);
+// Import this component
+
+
+// Import editor css
+
+
+
+Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
+
+Vue.component('update-profile-details', {
+    props: ['user'],
+    components: {
+        trumbowyg: __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default.a
+    },
+    data: function data() {
+        return {
+            form: new SparkForm({
+                bio: ''
+            }),
+            trumbowygConfig: {
+                id: 'trumbowyg',
+                autogrowOnEnter: true,
+                btnsDef: {
+                    // Customizables dropdowns
+                    image: {
+                        dropdown: ['insertImage', 'upload'],
+                        ico: 'insertImage'
+                    }
+                },
+                btns: [['viewHTML'], ['formatting'], ['strong', 'em', 'underline'], ['link'], ['image'], ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'], ['unorderedList', 'orderedList'], ['horizontalRule'], ['removeformat']],
+                plugins: {
+                    upload: {
+                        serverPath: '/cms/posts/images',
+                        fileFieldName: 'image',
+                        urlPropertyName: 'large',
+                        headers: {
+                            'X-CSRF-TOKEN': Spark.csrfToken
+                        },
+                        xhrFields: {}
+                    }
+                }
+            }
+        };
+    },
+    mounted: function mounted() {
+        this.form.bio = this.user.bio;
+    },
+
+
+    methods: {
+        update: function update() {
+            Spark.put('/settings/profile/details', this.form).then(function (response) {
+                Bus.$emit('updateUser');
+            });
+        }
+    }
+});
 
 /***/ })
 /******/ ]);

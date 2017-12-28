@@ -13,7 +13,7 @@
 
 // Laravel Spark
 require('./../spark-components/bootstrap')
-
+require('./profile/update-profile-details.js');
 // Internal CMS - Routes/Controllers should have Developer access only!
 Vue.component('posts', require('./cms/Posts.vue'))
 Vue.component('publications', require('./cms/Publications.vue'))

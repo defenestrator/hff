@@ -2,8 +2,11 @@
     <div>
         <!-- Update Profile Photo -->
         @include('settings.profile.update-profile-photo')
-
+        <!-- Update public Author Bio -->
+        @include('settings.profile.update-profile-details')
         <!-- Update Contact Information -->
         @include('settings.profile.update-contact-information')
+
+
     </div>
 </spark-profile>

@@ -100,7 +100,9 @@ Route::get('regions/{slug}', 'RegionController@show');
 // LOADER.IO AUTHENTICATION
 Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
 Route::group(['middleware' => ['auth:web']], function () {
+
     Route::view('/dashboard', 'dashboard');
+    Route::put('/settings/profile/details', 'ProfileDetailsController@update');
     // Posts
     Route::get('/cms/posts', 'PostsController@create');
     Route::post('/cms/posts/images', 'ImagesController@wysiwyg');
