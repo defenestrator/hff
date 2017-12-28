@@ -38389,7 +38389,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 // Import this component
+
 
 
 // Import editor css
@@ -38398,6 +38400,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['user', 'dev'],
     validator: null,
     mounted: function mounted() {
         this.getIndex();
@@ -56921,9 +56924,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._m(0, false, false), _vm._v(" "), _c('tbody', {
     staticClass: "resource-list"
   }, _vm._l((_vm.posts), function(post) {
-    return _c('tr', {
+    return (_vm.dev == 'yes' || _vm.user.id == post.user_id) ? _c('tr', {
       staticClass: "table-hover"
-    }, [_c('td', [_c('strong', [_vm._v(_vm._s(post.title))])]), _vm._v(" "), _c('td', [_c('button', {
+    }, [_c('td', [_c('strong', [_vm._v(_vm._s(post.title))])]), _vm._v(" "), _c('td', [(_vm.dev == 'yes' || _vm.user.id == post.user_id) ? _c('button', {
       staticClass: "btn btn-warning",
       attrs: {
         "role": "button"
@@ -56934,7 +56937,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
           (_vm.edit(post.id))
         }
       }
-    }, [_vm._v("Edit")])])])
+    }, [_vm._v("Edit")]) : _vm._e()])]) : _vm._e()
   }))])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
     staticClass: "container"
   }, [(!_vm.index) ? _c('form', {
@@ -57142,7 +57145,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
-  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), _c('div', {
+  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), (_vm.dev) ? _c('div', {
     staticClass: "col-md-2 col-sm-12"
   }, [_c('button', {
     class: {
@@ -57165,7 +57168,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "fa fa-btn btn-success fa-newspaper-o"
   }), _vm._v("Published!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-newspaper-o"
-  }), _vm._v("Publish\n                            ")])])]), _vm._v(" "), _c('div', {
+  }), _vm._v("Publish\n                            ")])])]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "col-md-2 col-sm-12"
   }, [_c('button', {
     class: {

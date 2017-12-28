@@ -5,20 +5,22 @@
         <li>
             <a href="/cms/posts">Blog</a>
         </li>
-        <li>
-            <a href="/cms/showcases">Showcases</a>
-        </li>
-        <li>
-            <a href="/cms/publications">Publications</a>
-        </li>
-        <li role="presentation" class="divider"></li>
-        <li role="presentation" class="dropdown-header">Data</li>
-        <li>
-            <a href="/cms/destinations">Destinations</a>
-        </li>
-        <li>
-            <a href="/cms/regions">Regions</a>
-        </li>
+        @if(Spark::developer(Auth::user()->email))
+            <li>
+                <a href="/cms/showcases">Showcases</a>
+            </li>
+            <li>
+                <a href="/cms/publications">Publications</a>
+            </li>
+            <li role="presentation" class="divider"></li>
+            <li role="presentation" class="dropdown-header">Data</li>
+            <li>
+                <a href="/cms/destinations">Destinations</a>
+            </li>
+            <li>
+                <a href="/cms/regions">Regions</a>
+            </li>
+        @endif
         <li role="presentation" class="divider"></li>
         {{--<li role="presentation" class="dropdown-header">Fish</li>--}}
         {{--<li>--}}

@@ -91,7 +91,7 @@ Route::group(['prefix' => 'destinations'], function () {
 // Published posts
 Route::get('/publications/posts', 'PublishedPostsController@index')->name('publications.posts.index');
 Route::get('/publications/posts/{slug}', 'PublishedPostsController@show')->name('publications.posts.show');
-Route::get('/publications/showcases', 'ShowcasesController@list');
+Route::get('/publications/showcases', 'ShowcasesController@index');
 Route::get('/publications/showcases/{slug}', 'PublishedShowcasesController@show');
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index');
@@ -101,24 +101,26 @@ Route::get('regions/{slug}', 'RegionController@show');
 Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
 Route::group(['middleware' => ['auth:web']], function () {
     Route::view('/dashboard', 'dashboard');
+    // Posts
+    Route::get('/cms/posts', 'PostsController@create');
+    Route::post('/cms/posts/images', 'ImagesController@wysiwyg');
+    Route::post('/cms/images', 'ImagesController@wysiwyg');
+    // Tags
+    Route::get('/cms/posts/{id}/tags', 'PostTagsController@edit');
 });
+
 // DEVELOPER LEVEL AUTH ROUTES
 Route::group(['middleware' => ['auth:web', 'dev']], function () {
     // Tags
-    Route::get('/posts/{id}/tags', 'PostTagsController@edit');
     Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
-    // Dashboard
 
-    // CMS ROUTES
+    // DEVELOPER CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
         // email template previews
         Route::get('/preview/newsletter/{id}', 'NewsletterPreviewController@show');
         //Publications
         Route::get('/publications', 'PublicationsController@index');
-        // Posts
-        Route::view('/posts', 'cms.posts');
-        Route::post('/posts/images', 'ImagesController@wysiwyg');
-        Route::post('/images', 'ImagesController@wysiwyg');
+
         // Showcases
         Route::get('/showcases', 'ShowcasesController@create');
         // Destinations

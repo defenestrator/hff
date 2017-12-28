@@ -15,9 +15,9 @@ class PostTagsController extends ContentController
     public function index(Post $post, $normalized)
     {
         $tag = $normalized;
-        $posts = $post->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get();
+        $tagPosts = $post->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get();
         $pagetitle = 'Posts tagged ' . "'$normalized'";
-        return view('publications.posts.tags', compact('posts' , 'pagetitle', 'tag'));
+        return view('publications.posts.tags', compact('tagPosts' , 'pagetitle', 'tag'));
     }
 
     public function show(Post $post, $id)

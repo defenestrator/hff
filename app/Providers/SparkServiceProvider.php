@@ -62,6 +62,7 @@ class SparkServiceProvider extends ServiceProvider
         Spark::freePlan('Free Angler Plan', 'free-angler-plan');
         Spark::afterLoginRedirectTo('/dashboard');
         Spark::identifyTeamsByPath();
+        Spark::noCardUpFront();
         Spark::createUsersWith(function ($request) {
             $user = Spark::user();
 

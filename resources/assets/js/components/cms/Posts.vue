@@ -18,9 +18,9 @@
             </tr>
             </thead>
             <tbody class="resource-list">
-            <tr v-for="post in posts" class="table-hover">
+            <tr v-for="post in posts" v-if="dev == 'yes' || user.id == post.user_id" class="table-hover">
                 <td><strong>{{ post.title }}</strong></td>
-                <td><button @click.prevent="(edit(post.id))"role="button" class="btn btn-warning">Edit</button></td>
+                <td><button v-if="dev == 'yes' || user.id == post.user_id" @click.prevent="(edit(post.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>
             </tbody>
         </table>
@@ -94,7 +94,7 @@
                             </span>
                     </button>
                 </div>
-                <div class="col-md-2 col-sm-12">
+                <div v-if="dev" class="col-md-2 col-sm-12">
                     <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published">
                         <span v-if="newPost.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
@@ -124,6 +124,7 @@
 </template>
 
 <script>
+"use strict"
 // Import this component
 import trumbowyg from 'vue-trumbowyg';
 
@@ -133,6 +134,7 @@ import 'trumbowyg/dist/ui/trumbowyg.css';
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 export default {
+    props: ['user','dev'],
     validator: null,
     mounted() {
         this.getIndex()

@@ -15,9 +15,9 @@ class ShowcaseTagsController extends ContentController
     public function index(Showcase $showcase, $normalized)
     {
         $tag = $normalized;
-        $showcases = $showcase->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get();
+        $tagShowcases = $showcase->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get();
         $pagetitle = 'Showcases tagged ' . "'$normalized'";
-        return view('showcases.tags', compact('showcases' , 'pagetitle', 'tag'));
+        return view('showcases.tags', compact('tagShowcases' , 'pagetitle', 'tag'));
     }
 
     public function show(Showcase $showcase, $id)

@@ -16,7 +16,7 @@ class PostsApiController extends ApiController
      */
     public function index()
     {
-        return Post::orderBy('created_at', 'desc')->paginate(50, ['title', 'id']);
+        return Post::orderBy('created_at', 'desc')->paginate(50, ['title', 'id', 'user_id', 'author']);
     }
 
     /**
