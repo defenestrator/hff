@@ -22,7 +22,7 @@
         </div>
         <div class="col-sm-8">
             <article id="author-bio">
-                {{$author->bio}}
+                {!!$author->bio!!}
             </article>
         </div>
     </div>
