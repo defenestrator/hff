@@ -111,6 +111,8 @@ Route::group(['middleware' => ['auth:web', 'dev']], function () {
 
     // CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
+        // email template previews
+        Route::get('/preview/newsletter/{id}', 'NewsletterPreviewController@show');
         //Publications
         Route::get('/publications', 'PublicationsController@index');
         // Posts

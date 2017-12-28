@@ -3,10 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Newsletter;
+use App\NewsletterSubscription;
 use Illuminate\Http\Request;
+use App\Mail\NewsletterEmail;
 
 class NewsletterController extends Controller
 {
+    public $email;
+
+    public function __construct(NewsletterEmail $email)
+    {
+        $this->email = $email;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,14 +48,12 @@ class NewsletterController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Newsletter  $newsletter
-     * @return \Illuminate\Http\Response
+     * @param $id
      */
-    public function show(Newsletter $newsletter)
+    public function send(NewsletterSubscription $subscription, $id)
     {
-        //
+        $subscribers = $subscription->whereConfirmed(true)->pluck('email_address');
+        return $this->email->to($subscribers)->send(new NewsletterEmail($id));
     }
 
     /**

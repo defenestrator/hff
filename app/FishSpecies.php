@@ -27,6 +27,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\FishSpecies whereUpdatedAt($value)
  * @mixin \Eloquent
  */
+
 class FishSpecies extends Model
 {
     protected $fillable = ['common_name', 'genus', 'species', 'description'];
