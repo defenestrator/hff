@@ -6,7 +6,7 @@ use App\Post;
 use App\Publication;
 use App\Showcase;
 use Illuminate\Http\Request;
-
+use App\User;
 
 class PublishedPostsController extends ContentController
 {
