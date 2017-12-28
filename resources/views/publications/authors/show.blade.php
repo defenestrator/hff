@@ -29,8 +29,9 @@
     <div class="row">
         <hr>
         <div class="col-sm-8 col-sm-offset-2">
+            <h3>Posts by {{$author->name}}:</h3>
     @foreach($posts as $post)
-        <h3>Posts by {{$author->name}}:</h3>
+
         <ul>
             <li>
                 <a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a> - {{$post->created_at->diffForHumans()}}
