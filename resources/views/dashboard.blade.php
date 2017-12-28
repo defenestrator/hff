@@ -60,17 +60,6 @@
         @if (Spark::developer(Auth::user()->email))
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Primitive Analytics Dashboard</div>
-                <div class="panel-body">
-                    <h4>click the orange thingy and login with your @hoboflyfishing.com account</h4>
-                    <div id="embed-api-auth-container"></div>
-                    <div id="chart-container"></div>
-                    <div id="view-selector-container"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
                 <div class="panel-heading">Administration Dashboard</div>
                 <div class="panel-body">
                     <div class="row">
@@ -94,6 +83,17 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Primitive Analytics Dashboard</div>
+                <div class="panel-body">
+                    <h4>click the orange thingy and login with your @hoboflyfishing.com account</h4>
+                    <div id="embed-api-auth-container"></div>
+                    <div id="chart-container"></div>
+                    <div id="view-selector-container"></div>
                 </div>
             </div>
         </div>
