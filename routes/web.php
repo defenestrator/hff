@@ -106,7 +106,7 @@ Route::group(['middleware' => ['auth:web']], function () {
     Route::post('/cms/posts/images', 'ImagesController@wysiwyg');
     Route::post('/cms/images', 'ImagesController@wysiwyg');
     // Tags
-    Route::get('/cms/posts/{id}/tags', 'PostTagsController@edit');
+    Route::get('/posts/{id}/tags', 'PostTagsController@edit');
 });
 
 // DEVELOPER LEVEL AUTH ROUTES

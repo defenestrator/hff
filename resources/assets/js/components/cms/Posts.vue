@@ -18,9 +18,9 @@
             </tr>
             </thead>
             <tbody class="resource-list">
-            <tr v-for="post in posts" v-if="dev == 'yes' || user.id == post.user_id" class="table-hover">
+            <tr v-for="post in posts" v-if="user.id == post.user_id || isDev" class="table-hover">
                 <td><strong>{{ post.title }}</strong></td>
-                <td><button v-if="dev == 'yes' || user.id == post.user_id" @click.prevent="(edit(post.id))"role="button" class="btn btn-warning">Edit</button></td>
+                <td><button @click.prevent="(edit(post.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>
             </tbody>
         </table>
@@ -94,7 +94,7 @@
                             </span>
                     </button>
                 </div>
-                <div v-if="dev" class="col-md-2 col-sm-12">
+                <div v-if="isDev" class="col-md-2 col-sm-12">
                     <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published">
                         <span v-if="newPost.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
@@ -108,7 +108,7 @@
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newPost.published }">
+                    <button v-if="isDev" @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newPost.published }">
                         Unpublish
                     </button>
                 </div>
@@ -146,6 +146,7 @@ export default {
         return {
             index: true,
             posts: [],
+            isDev: this.isADev(),
             newPost: new SparkForm ({
                 header_photo:'',
                 title: '',
@@ -233,7 +234,13 @@ export default {
         }
     },
     methods: {
-
+        isADev() {
+            if(this.dev == 'yes')
+            {
+                return true
+            }
+            return false
+        },
         getIndex() {
             axios.get(`/api/posts`, {})
             .then(result  => {

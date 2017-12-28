@@ -23,3 +23,5 @@ Route::redirect('/publications/posts/steelhead-on-the-salmon-river-with-backcoun
     Route::redirect('/destinations/naknek-river-camp', '/destinations/alaska/naknek-river-camp');
     Route::redirect('/destinations/blackfish-lodge', '/destinations/british-columbia/blackfish-lodge');
     Route::redirect('/destinations/two-boys-inn-andros', '/destinations/bahamas/two-boys-inn-andros');
+
+    Route::redirect('/showcases/looking-for-that-perfect-holiday-gift-', '/');

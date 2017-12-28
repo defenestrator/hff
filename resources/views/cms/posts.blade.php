@@ -22,7 +22,7 @@
 <div class="row">
     <div class="col-md-12">
         <div id="posts">
-            <posts :user="user" :dev={{ $dev }}></posts>
+            <posts :user="user" dev="{{ $dev }}"></posts>
         </div>
     </div>
 </div>
