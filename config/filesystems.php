@@ -57,23 +57,13 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => env('AWS_KEY'),
-            'secret' => env('AWS_SECRET'),
+            'key' => env('AWS_KEY', 'test'),
+            'secret' => env('AWS_SECRET', 'secret'),
             'region' => env('AWS_REGION'),
             'endpoint' => env('AWS_URL'),
             'bucket' => env('AWS_BUCKET'),
             'fullpath' => env('AWS_FULLPATH'),
-        ],
-
-        'DO' => [
-            'driver' => 's3',
-            'key' => env('AWS_KEY'),
-            'secret' => env('AWS_SECRET'),
-            'region' => env('AWS_REGION'),
-            'endpoint' => env('AWS_URL'),
-            'bucket' => env('AWS_BUCKET'),
-            'fullpath' => env('AWS_FULLPATH'),
-        ],
+        ]
     ],
 
 ];
