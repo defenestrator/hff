@@ -34,8 +34,30 @@
 @stop
 {{-- content --}}
 @section('content')
-    @if (Spark::developer(Auth::user()->email))
     <div class="container-fluid">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">User Dashboard</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-sm-4 dashboard-links">
+                                    <a class="btn btn-default btn-dashboard" href="cms/posts">Posts</a>
+                                </div>
+                                <div class="col-sm-4 dashboard-links">
+                                    <a class="btn btn-default btn-dashboard" href="/settings">Your Settings</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        @if (Spark::developer(Auth::user()->email))
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Primitive Analytics Dashboard</div>
@@ -77,27 +99,6 @@
         </div>
     </div>
     @endif
-    <div class="container-fluid">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">User Dashboard</div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="row">
-                                <div class="col-sm-4 dashboard-links">
-                                    <a class="btn btn-default btn-dashboard" href="/settings">Your Settings</a>
-                                </div>
-                                <div class="col-sm-4 dashboard-links">
-                                    <a class="btn btn-default btn-dashboard" href="cms/posts">Posts</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @stop
 @section('page_scripts')
     <script>

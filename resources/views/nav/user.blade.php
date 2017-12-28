@@ -31,7 +31,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     @includeIf('nav.user-right')
-                    @if (Spark::developer(Auth::user()->email))
+
                     <li>
                         <a href="/dashboard" class="has-activity-indicator">
                         <div class="navbar-icon">
@@ -39,7 +39,7 @@
                         </div>
                         </a>
                     </li>
-                            <!-- Notifications -->
+                    @if (Spark::developer(Auth::user()->email))    <!-- Notifications -->
                     <li>
                         <a @click="showNotifications" class="has-activity-indicator">
                         <div class="navbar-icon">
@@ -86,6 +86,12 @@
                             <li>
                                 <a href="/settings">
                                     <i class="fa fa-fw fa-btn fa-cog"></i>Your Settings
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="/dashboard">
+                                    <i class="fa fa-fw fa-btn fa-tachometer"></i>Dashboard
                                 </a>
                             </li>
                             <li class="divider"></li>

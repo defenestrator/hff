@@ -7760,7 +7760,7 @@ a.btn-primary {
 }
 .scrollable-menu {
   height: auto;
-  max-height: 223px;
+  max-height: 250px;
   overflow-x: hidden;
 }
 .VueCarousel-slide img {
