@@ -55,7 +55,7 @@ class UserController extends Controller
     public function show(User $user, Post $post, $uuid)
     {
         $author = $user->where('uuid', '=', $uuid)->first();
-        $posts = $author->posts;
+        $posts = $author->posts->sortByDesc('created_at');
         return view('publications.authors.show', ['author' => $author, 'posts' => $posts]);
     }
 }

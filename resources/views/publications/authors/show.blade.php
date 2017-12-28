@@ -31,12 +31,16 @@
         <div class="col-sm-8 col-sm-offset-2">
             <h3>Posts by {{$author->name}}:</h3>
     @foreach($posts as $post)
-
-        <ul>
-            <li>
-                <a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a> - {{$post->created_at->diffForHumans()}}
-            </li>
-        </ul>
+        <div style="margin:16px 0;" class="row">
+            <div class="col-md-6">
+                <img style="max-width:300px;" alt="{{$post->title}}" title="{{$post->title}}" src="{{$post->header_photo}}"/>
+            </div>
+            <div class="col-md-6">
+                <a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a>
+                <br>
+                - {{$post->created_at->diffForHumans()}}
+            </div>
+        </div>
     @endforeach
         </div>
     </div>
