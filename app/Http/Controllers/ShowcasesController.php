@@ -17,7 +17,7 @@ class ShowcasesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function edit()
     {
         return view('cms.showcases');
     }

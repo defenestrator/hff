@@ -292,7 +292,7 @@ export default {
                 ],
                 plugins: {
                     upload: {
-                        serverPath: '/cms/posts/images',
+                        serverPath: '/cms/images',
                         fileFieldName: 'image',
                         urlPropertyName: 'large',
                         headers: {

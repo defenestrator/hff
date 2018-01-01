@@ -23,5 +23,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Newsletter extends Model
 {
-    //
+    protected $fillable = ['body', 'subject', 'sent_on'];
+
 }

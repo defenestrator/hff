@@ -16,6 +16,7 @@ require('./../spark-components/bootstrap')
 require('./profile/update-profile-details.js');
 // Internal CMS - Routes/Controllers should have Developer access only!
 Vue.component('posts', require('./cms/Posts.vue'))
+Vue.component('newsletters', require('./cms/Newsletters.vue'))
 Vue.component('publications', require('./cms/Publications.vue'))
 Vue.component('showcases', require('./cms/Showcases.vue'))
 Vue.component('input-tag', require('./InputTag.vue'))

@@ -24,6 +24,14 @@ Route::group([
     Route::delete('/posts/{id}', 'Api\PostsApiController@destroy');
     Route::get('/posts/publications/{postId}', 'Api\PostsApiController@show');
 
+    // Newsletters
+    Route::get('/newsletters', 'Api\NewslettersApiController@index');
+    Route::post('/newsletters', 'Api\NewslettersApiController@create');
+    Route::put('/newsletters/{id}', 'Api\NewslettersApiController@update');
+    Route::get('/newsletters/{id}', 'Api\NewslettersApiController@edit');
+    Route::delete('/newsletters/{id}', 'Api\NewslettersApiController@destroy');
+    Route::get('/newsletters/publications/{postId}', 'Api\NewslettersApiController@show');
+
     // Showcases
     Route::get('/showcases', 'Api\ShowcasesApiController@index');
     Route::post('/showcases', 'Api\ShowcasesApiController@create');
