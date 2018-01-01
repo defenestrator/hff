@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth:web', 'dev']], function () {
     // DEVELOPER CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
 
-        Route::get('/newsletters', 'NewsletterController@edit');
+        Route::view('/newsletters', 'cms.newsletters');
         // email template previews
         Route::get('/preview/newsletter/{id}', 'NewsletterPreviewController@show');
         //Publications

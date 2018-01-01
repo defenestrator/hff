@@ -5,10 +5,19 @@ namespace App\Http\Controllers\Api;
 
 use App\Newsletter;
 use Illuminate\Http\Request;
-
+use App\Mail\NewsletterEmail;
+use App\NewsletterSubscription;
+use Illuminate\Contracts\Mail\Mailer;
 class NewslettersApiController extends ApiController
 
 {
+    public $mail;
+
+    public function __construct(Mailer $mail)
+    {
+        $this->mail = $mail;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -34,17 +43,6 @@ class NewslettersApiController extends ApiController
             'body' => $request->body,
             'subject' => $request->subject
         ]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Newsletter  $newsletter
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Newsletter $newsletter, $id)
-    {
-        return $newsletter->where('id', $id)->first();
     }
 
     /**
@@ -78,6 +76,23 @@ class NewslettersApiController extends ApiController
         ]);
         $content->save();
         return $content;
+    }
+
+    /**
+     * @param NewsletterSubscription $subscription
+     * @param Newsletter $newsletter
+     * @param $id
+     * @return mixed
+     */
+    public function send(NewsletterSubscription $subscription, Newsletter $newsletter, $id)
+    {
+        $news = $newsletter->find($id);
+        $news->update([
+            'sent_on'=> date('Y-m-d')
+        ]);
+        $news->save();
+        $subscribers = $subscription->whereConfirmed(true)->pluck('email_address');
+        return $this->mail->to('mailing-list@hoboflyfishing.com')->bcc($subscribers)->send(new NewsletterEmail($news));
     }
 
     /**

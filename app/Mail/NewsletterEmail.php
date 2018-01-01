@@ -19,16 +19,14 @@ class NewsletterEmail extends Mailable
      */
     public function __construct(Newsletter $newsletter)
     {
-        $this->middleware('dev');
         $this->newsletter = $newsletter;
     }
 
     /**
-     * @param $id
      * @return $this
      */
-    public function build($id)
+    public function build()
     {
-        return $this->view('mail.newsletter', ['newsletter' => $this->newsletter->whereId($id), 'date' => date('Y-m-d')]);
+        return $this->from('newsletter@hoboflyfishing.com', 'Hobo Fly Newsletter')->subject('Hobo Fly News ' . date('F, Y'))->view('mail.newsletter', ['date' => date('F, Y')]);
     }
 }

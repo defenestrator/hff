@@ -30,7 +30,7 @@ Route::group([
     Route::put('/newsletters/{id}', 'Api\NewslettersApiController@update');
     Route::get('/newsletters/{id}', 'Api\NewslettersApiController@edit');
     Route::delete('/newsletters/{id}', 'Api\NewslettersApiController@destroy');
-    Route::get('/newsletters/publications/{postId}', 'Api\NewslettersApiController@show');
+    Route::post('/newsletters/send/{id}', 'Api\NewslettersApiController@send');
 
     // Showcases
     Route::get('/showcases', 'Api\ShowcasesApiController@index');

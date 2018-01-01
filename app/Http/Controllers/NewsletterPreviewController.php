@@ -27,6 +27,7 @@ class NewsletterPreviewController extends Controller
      */
     public function show($id)
     {
-        return view('mail.newsletter', ['newsletter' => $this->newsletter->whereId($id),'date' => date('F, Y')]);
+        $newsletter = $this->newsletter->whereId($id)->first();
+        return view('mail.newsletter', ['newsletter' => $newsletter,'date' => date('F, Y')]);
     }
 }

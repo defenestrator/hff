@@ -38370,6 +38370,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 // Import this component
@@ -38398,15 +38401,13 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             newNewsletter: new SparkForm({
                 subject: '',
                 body: '',
+                sent_on: null,
                 newsletterId: null,
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
                 saved: false,
                 serverErrors: null,
-                publishBusy: false,
-                published: null,
-                publicationId: null,
                 errors: null
             }),
             trumbowygConfig: {
@@ -38494,6 +38495,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     _this2.newNewsletter.saveBusy = false;
                     _this2.newNewsletter.saved = true;
                     _this2.newNewsletter.newsletterId = result.data.id;
+                    _this2.newNewsletter.sent_on = result.data.sent_on;
                     return result;
                 }).catch(function (error) {
                     _this2.newNewsletter.saveError = true;
@@ -38511,25 +38513,27 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         send: function send() {
             var _this3 = this;
 
-            this.newNewsletter.publishBusy = true;
+            this.newNewsletter.sendBusy = true;
             if (this.newNewsletter.newsletterId === null) {
-                this.newNewsletter.publishBusy = false;
+                this.newNewsletter.sendBusy = false;
                 this.save();
                 return;
             }
-            axios.post('/api/newsletter/send', {
-                type: 'newsletter',
-                newsletter_id: this.newNewsletter.newsletterId
-            }).then(function (result) {
-                _this3.newNewsletter.publishBusy = false;
-                _this3.newNewsletter.publicationId = result.data.id;
-                return result;
-            }).catch(function (error) {
-                _this3.newNewsletter.publishBusy = false;
-                return Promise.reject(error);
-            });
-            this.newNewsletter.publishBusy = false;
-            this.newNewsletter.published = true;
+            this.update();
+            if (confirm('Are you sure you want to send this email to all Hobo Fly Fishing Newsletter Subscribers?')) {
+                axios.post('/api/newsletters/send/' + this.newNewsletter.newsletterId, {}).then(function (result) {
+                    _this3.newNewsletter.sendBusy = false;
+                    _this3.newNewsletter.sent_on = result.data.sent_on;
+                    _this3.newNewsletter.sent = true;
+                    _this3.clear();
+                    _this3.toggleIndex();
+                    return result;
+                }).catch(function (error) {
+                    _this3.newNewsletter.sendBusy = false;
+                    return Promise.reject(error);
+                });
+            }
+            this.newNewsletter.sendBusy = false;
         },
         update: function update() {
             var _this4 = this;
@@ -38584,9 +38588,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.newNewsletter.saved = false;
             this.newNewsletter.saveBusy = false;
             this.newNewsletter.saveDisabled = false;
-            this.newNewsletter.publishBusy = false;
-            this.newNewsletter.published = null;
-            this.newNewsletter.publicationId = null;
+            this.newNewsletter.sendBusy = false;
+            this.newNewsletter.sent = null;
+            this.newNewsletter.sent_on = null;
             this.newNewsletter.newsletterId = null;
             this.newNewsletter.subject = '';
             this.newNewsletter.body = '';
@@ -48173,7 +48177,7 @@ exports.push([module.i, "\n.vue-input-tag-wrapper {\n    background-color: #fff;
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn.btn-warning.is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus, .btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\nbackground-color:transparent;\nborder:none;\noutline: 0;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 991px) {\n.new-newsletter .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n.newsletter-index {\n    position:relative;\n    display:block\n}\n", ""]);
+exports.push([module.i, "\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn:hover, .btn.disabled:focus, .btn[disabled]:focus, fieldset[disabled] .btn:focus{\n    background-color:#cbb956 !important;\n}\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn.btn-warning.is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus, .btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\nbackground-color:transparent;\nborder:none;\noutline: 0;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 991px) {\n.new-newsletter .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n.newsletter-index {\n    position:relative;\n    display:block\n}\n", ""]);
 
 /***/ }),
 /* 306 */
@@ -56658,7 +56662,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "row"
   }, [_c('div', {
     staticClass: "container"
-  }, [_c('h2', [_vm._v("Almost ready, we can write but we can't send it yet.")]), _vm._v(" "), _c('button', {
+  }, [_c('h2', [_vm._v("Be careful not to email them too often!")]), _vm._v(" "), _c('button', {
     staticClass: "btn btn-create",
     attrs: {
       "id": "create"
@@ -56700,10 +56704,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.newsletters), function(newsletter) {
     return _c('tr', {
       staticClass: "table-hover"
-    }, [_c('td', [_c('strong', [_vm._v(_vm._s(newsletter.subject))])]), _vm._v(" "), _c('td', [_c('button', {
+    }, [_c('td', [_c('strong', [_vm._v(_vm._s(newsletter.subject))])]), _vm._v(" "), (newsletter.sent_on) ? _c('td', [_vm._v(_vm._s(newsletter.sent_on))]) : _c('td', [_vm._v("Not yet!")]), _vm._v(" "), _c('td', [_c('button', {
       staticClass: "btn btn-warning",
       attrs: {
-        "role": "button"
+        "role": "button",
+        "disabled": newsletter.sent_on
       },
       on: {
         "click": function($event) {
@@ -56857,10 +56862,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-md-2 col-sm-12"
   }, [_c('button', {
     class: {
-      'btn': true, 'btn-warning': true, 'is-success': _vm.newNewsletter.published
+      'btn': true, 'btn-warning': true, 'is-success': _vm.newNewsletter.sent_on
     },
     attrs: {
-      "disabled": "newNewsletter.published"
+      "disabled": _vm.newNewsletter.sent_on
     },
     on: {
       "click": function($event) {
@@ -56868,9 +56873,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.send($event)
       }
     }
-  }, [(_vm.newNewsletter.publishBusy) ? _c('span', [_c('i', {
+  }, [(_vm.newNewsletter.sendBusy) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-spinner fa-spin"
-  }), _vm._v("Sending\n                             ")]) : (_vm.newNewsletter.published !== null) ? _c('span', {
+  }), _vm._v("Sending\n                             ")]) : (_vm.newNewsletter.sent_on !== null) ? _c('span', {
     staticClass: "is-success"
   }, [_c('i', {
     staticClass: "fa fa-btn btn-success fa-newspaper-o"
@@ -56907,7 +56912,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"
-  }, [_c('tr', [_c('th', [_vm._v("Subject")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+  }, [_c('tr', [_c('th', [_vm._v("Subject")]), _vm._v(" "), _c('th', [_vm._v("Sent On")]), _vm._v(" "), _c('th')])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('label', {
     attrs: {

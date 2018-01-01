@@ -6,15 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', config('app.name'))</title>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
-    <style>
-        @import "/css/styles.css";
-    </style>
+    <link href="/css/styles.css" rel="stylesheet">
 
     <!-- Scripts -->
     @yield('scripts', '')
 </head>
 <body>
     <div>
+        <header class="site-header">
+            {{-- Social and contact icon bar for guests only--}}
+            @if(Auth::guest())
+                @include('parts.icon-section')
+            @endif
+
+            <!-- Navigation -->
+            @if (Auth::check())
+                @include('nav.user')
+            @else
+                @include('nav.guest')
+            @endif
+        </header>
+
         @yield('top')
         <!-- Main Content -->
         <div class="container">

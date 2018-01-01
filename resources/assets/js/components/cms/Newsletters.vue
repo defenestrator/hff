@@ -1,7 +1,7 @@
 <template>
 <div class="row">
     <div class="container">
-        <h2>Almost ready, we can write but we can't send it yet.</h2>
+        <h2>Be careful not to email them too often!</h2>
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Write</span>
             <span v-if="! index">Index</span>
@@ -15,13 +15,16 @@
             <thead class="thead-inverse">
             <tr>
                 <th>Subject</th>
-                <th>Edit</th>
+                <th>Sent On</th>
+                <th> </th>
             </tr>
             </thead>
             <tbody class="resource-list">
             <tr v-for="newsletter in newsletters" class="table-hover">
                 <td><strong>{{ newsletter.subject }}</strong></td>
-                <td><button @click.prevent="(edit(newsletter.id))"role="button" class="btn btn-warning">Edit</button></td>
+                <td v-if="newsletter.sent_on">{{newsletter.sent_on}}</td>
+                <td v-else>Not yet!</td>
+                <td><button @click.prevent="(edit(newsletter.id))"role="button" class="btn btn-warning" :disabled="newsletter.sent_on">Edit</button></td>
             </tr>
             </tbody>
         </table>
@@ -75,11 +78,11 @@
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newNewsletter.published }"  @click.prevent="send" disabled="newNewsletter.published">
-                        <span v-if="newNewsletter.publishBusy">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newNewsletter.sent_on }"  @click.prevent="send" :disabled="newNewsletter.sent_on">
+                        <span v-if="newNewsletter.sendBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Sending
                              </span>
-                             <span class="is-success" v-else-if="newNewsletter.published !== null">
+                             <span class="is-success" v-else-if="newNewsletter.sent_on !== null">
                                 <i class="fa fa-btn btn-success fa-newspaper-o"></i>Sent!
                              </span>
                             <span v-else>
@@ -130,15 +133,13 @@ export default {
             newNewsletter: new SparkForm ({
                 subject: '',
                 body: '',
+                sent_on: null,
                 newsletterId: null,
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
                 saved: false,
                 serverErrors: null,
-                publishBusy: false,
-                published: null,
-                publicationId: null,
                 errors: null
             }),
             trumbowygConfig: {
@@ -234,6 +235,7 @@ export default {
                                 this.newNewsletter.saveBusy = false
                                 this.newNewsletter.saved= true
                                 this.newNewsletter.newsletterId = result.data.id
+                                this.newNewsletter.sent_on = result.data.sent_on
                              return result
                             })
                             .catch(error => {
@@ -252,30 +254,30 @@ export default {
         },
 
         send() {
-            this.newNewsletter.publishBusy = true
+            this.newNewsletter.sendBusy = true
             if (this.newNewsletter.newsletterId === null) {
-                this.newNewsletter.publishBusy = false
+                this.newNewsletter.sendBusy = false
                 this.save()
                 return
             }
-             axios.post(`/api/newsletter/send`, {
-                    type:    'newsletter',
-                    newsletter_id: this.newNewsletter.newsletterId
-                 })
-                 .then(result  => {
-                     this.newNewsletter.publishBusy = false
-                     this.newNewsletter.publicationId = result.data.id
-                     return result
-                 })
-                 .catch(error => {
-                     this.newNewsletter.publishBusy = false
-                     return Promise.reject(error)
-                 });
-                this.newNewsletter.publishBusy = false
-                this.newNewsletter.published = true
-
-            },
-
+            this.update()
+            if (confirm('Are you sure you want to send this email to all Hobo Fly Fishing Newsletter Subscribers?')) {
+                axios.post(`/api/newsletters/send/` +this.newNewsletter.newsletterId, {})
+                .then(result  => {
+                    this.newNewsletter.sendBusy = false
+                    this.newNewsletter.sent_on = result.data.sent_on
+                    this.newNewsletter.sent = true
+                    this.clear()
+                    this.toggleIndex()
+                    return result
+                })
+                .catch(error => {
+                    this.newNewsletter.sendBusy = false
+                    return Promise.reject(error)
+                })
+            }
+            this.newNewsletter.sendBusy = false
+        },
         update() {
             this.newNewsletter.saveError = false
             this.newNewsletter.saveBusy = true
@@ -323,17 +325,17 @@ export default {
                 if (confirm('Abandon this newsletter and start over?')) {
                     this.clear()
                 }
-            } else {
-                this.clear()
-            }
+                } else {
+                    this.clear()
+                }
         },
         clear() {
             this.newNewsletter.saved = false
             this.newNewsletter.saveBusy = false
             this.newNewsletter.saveDisabled = false
-            this.newNewsletter.publishBusy = false
-            this.newNewsletter.published = null
-            this.newNewsletter.publicationId = null
+            this.newNewsletter.sendBusy = false
+            this.newNewsletter.sent = null
+            this.newNewsletter.sent_on = null
             this.newNewsletter.newsletterId = null
             this.newNewsletter.subject = ''
             this.newNewsletter.body = ''
@@ -367,6 +369,9 @@ export default {
 }
 </script>
 <style>
+    .btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn:hover, .btn.disabled:focus, .btn[disabled]:focus, fieldset[disabled] .btn:focus{
+        background-color:#cbb956 !important;
+    }
     .help.is-danger {
     color : #ef6f6c;
     }
