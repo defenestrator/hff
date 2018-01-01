@@ -10,6 +10,9 @@
                 <a href="/cms/showcases">Showcases</a>
             </li>
             <li>
+                <a href="/cms/newsletters">Newsletters</a>
+            </li>
+            <li>
                 <a href="/cms/publications">Publications</a>
             </li>
             <li role="presentation" class="divider"></li>

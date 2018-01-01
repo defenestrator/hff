@@ -48156,7 +48156,7 @@ exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-dange
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.publication{margin:1em; border-bottom:1px solid #666; min-height:60px;\n}\n", ""]);
+exports.push([module.i, "\n.publication{margin:1em; min-height:60px;\n}\n", ""]);
 
 /***/ }),
 /* 303 */
@@ -55998,9 +55998,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('div', {
     staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-6"
-  }, [(_vm.unpublishedPosts.length > 0) ? _c('h3', [_vm._v("Unpublished Posts")]) : _vm._e(), _vm._v(" "), _vm._l((_vm.unpublishedPosts), function(unpublishedPost) {
+  }, [(_vm.unpublishedPosts.length > 0) ? _c('div', {
+    staticClass: "col-md-6",
+    staticStyle: {
+      "border": "1px solid #666"
+    }
+  }, [_c('h3', [_vm._v("Unpublished Posts")]), _vm._v(" "), _vm._l((_vm.unpublishedPosts), function(unpublishedPost) {
     return _c('div', {
       staticClass: "col-md-12 publication"
     }, [_c('div', {
@@ -56016,9 +56019,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("\n                        Publish\n                    ")])])])
-  })], 2), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [(_vm.unpublishedShowcases.length > 0) ? _c('h3', [_vm._v("Unpublished Showcases")]) : _vm._e(), _vm._v(" "), _vm._l((_vm.unpublishedShowcases), function(unpublishedShowcase) {
+  })], 2) : _vm._e(), _vm._v(" "), (_vm.unpublishedShowcases.length > 0) ? _c('div', {
+    staticClass: "col-md-6",
+    staticStyle: {
+      "border": "1px solid #666"
+    }
+  }, [_c('h3', [_vm._v("Unpublished Showcases")]), _vm._v(" "), _vm._l((_vm.unpublishedShowcases), function(unpublishedShowcase) {
     return _c('div', {
       staticClass: "col-md-12 publication"
     }, [_c('div', {
@@ -56034,11 +56040,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("\n                        Publish\n                    ")])])])
-  })], 2)]), _vm._v(" "), _c('div', {
+  })], 2) : _vm._e()]), _vm._v(" "), _c('div', {
     staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-6"
-  }, [(_vm.posts.length > 0) ? _c('h3', [_vm._v("Published Posts")]) : _vm._e(), _vm._v(" "), _vm._l((_vm.posts), function(post) {
+  }, [(_vm.posts.length > 0) ? _c('div', {
+    staticClass: "col-md-6",
+    staticStyle: {
+      "border": "1px solid #666"
+    }
+  }, [_c('h3', [_vm._v("Published Posts")]), _vm._v(" "), _vm._l((_vm.posts), function(post) {
     return _c('div', {
       staticClass: "col-md-12 publication"
     }, [_c('div', {
@@ -56054,9 +56063,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("\n                        Unpublish\n                    ")])])])
-  })], 2), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [(_vm.showcases.length > 0) ? _c('h3', [_vm._v("Published Showcases")]) : _vm._e(), _vm._v(" "), _vm._l((_vm.showcases), function(showcase) {
+  })], 2) : _vm._e(), _vm._v(" "), (_vm.showcases.length > 0) ? _c('div', {
+    staticClass: "col-md-6",
+    staticStyle: {
+      "border": "1px solid #666"
+    }
+  }, [_c('h3', [_vm._v("Published Showcases")]), _vm._v(" "), _vm._l((_vm.showcases), function(showcase) {
     return _c('div', {
       staticClass: "col-md-12 publication"
     }, [_c('div', {
@@ -56072,7 +56084,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("\n                        Unpublish\n                    ")])])])
-  })], 2)])])
+  })], 2) : _vm._e()])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
