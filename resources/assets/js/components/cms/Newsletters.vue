@@ -82,7 +82,7 @@
                         <span v-if="newNewsletter.sendBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Sending
                              </span>
-                             <span class="is-success" v-else-if="newNewsletter.sent_on !== null">
+                             <span class="is-success" v-else-if="newNewsletter.sent_on !== undefined && newNewsletter.sent_on !== null">
                                 <i class="fa fa-btn btn-success fa-newspaper-o"></i>Sent!
                              </span>
                             <span v-else>

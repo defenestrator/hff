@@ -56887,7 +56887,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [(_vm.newNewsletter.sendBusy) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-spinner fa-spin"
-  }), _vm._v("Sending\n                             ")]) : (_vm.newNewsletter.sent_on !== null) ? _c('span', {
+  }), _vm._v("Sending\n                             ")]) : (_vm.newNewsletter.sent_on !== undefined && _vm.newNewsletter.sent_on !== null) ? _c('span', {
     staticClass: "is-success"
   }, [_c('i', {
     staticClass: "fa fa-btn btn-success fa-newspaper-o"
