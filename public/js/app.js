@@ -56865,7 +56865,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'btn': true, 'btn-warning': true, 'is-success': _vm.newNewsletter.sent_on
     },
     attrs: {
-      "disabled": _vm.newNewsletter.sent_on
+      "disabled": _vm.newNewsletter.sent_on || !_vm.newNewsletter.newsletterId
     },
     on: {
       "click": function($event) {
@@ -56885,6 +56885,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-md-2 col-sm-12"
   }, [_c('button', {
     staticClass: "btn btn-default",
+    attrs: {
+      "disabled": !_vm.newNewsletter.newsletterId
+    },
     on: {
       "click": function($event) {
         $event.preventDefault();

@@ -78,7 +78,7 @@
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newNewsletter.sent_on }"  @click.prevent="send" :disabled="newNewsletter.sent_on">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newNewsletter.sent_on }"  @click.prevent="send" :disabled="newNewsletter.sent_on || ! newNewsletter.newsletterId">
                         <span v-if="newNewsletter.sendBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Sending
                              </span>
@@ -91,7 +91,7 @@
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button class="btn btn-default"  @click.prevent="preview">
+                    <button class="btn btn-default"  @click.prevent="preview" :disabled="! newNewsletter.newsletterId">
                         <i class="fa fa-btn fa-newspaper-o"></i>Preview
                     </button>
                 </div>
