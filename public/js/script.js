@@ -38369,6 +38369,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 // Import this component
@@ -56902,7 +56903,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.leeroyjenkins($event)
       }
     }
-  }, [_vm._v("\n                        Delete\n                    ")])])])]) : _vm._e()])])
+  }, [_vm._v("\n                        Delete\n                    ")])])])]) : _vm._e()]), _vm._v(" "), _c('hr')])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', {
     staticClass: "thead-inverse"
