@@ -37752,11 +37752,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 //
 //
 //
-//
-//
-//
-//
-//
 
 Vue.component('newsletter-signup', __webpack_require__(326));
 
@@ -37767,7 +37762,6 @@ Vue.component('newsletter-signup', __webpack_require__(326));
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(4);
-//
 //
 //
 //
@@ -55578,7 +55572,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'form-control': true, 'is-danger': _vm.errors.has('email')
     },
     staticStyle: {
-      "height": "41px",
       "border": "1px solid #535965"
     },
     attrs: {
@@ -55620,17 +55613,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_c('i', {
-    staticClass: "livicon",
+    staticClass: "fa fa-envelope",
     staticStyle: {
-      "width": "20px",
-      "height": "20px"
+      "height": "22px"
     },
     attrs: {
-      "data-name": "mail",
-      "data-size": "20",
-      "data-loop": "true",
-      "data-c": "#fff",
-      "data-hc": "#F0F8FF"
+      "aria-hidden": "true"
     }
   })])])]), _vm._v(" "), _c('span', {
     directives: [{
@@ -56152,13 +56140,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": "tel:1-208-859-9133"
     }
   }, [_c('i', {
-    staticClass: "livicon icon4 icon3",
+    staticClass: "fa fa-phone",
     attrs: {
-      "data-name": "cellphone",
-      "data-size": "18",
-      "data-loop": "true",
-      "data-c": "#ccc",
-      "data-hc": "#ccc"
+      "aria-hidden": "true"
     }
   }), _vm._v(" (208)859-9133\n                    ")])]), _vm._v(" "), _c('li', {
     staticClass: "footer-link"
@@ -56167,13 +56151,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": "/contact"
     }
   }, [_c('i', {
-    staticClass: "livicon icon3",
+    staticClass: "fa fa-envelope",
     attrs: {
-      "data-name": "mail-alt",
-      "data-size": "20",
-      "data-loop": "true",
-      "data-c": "#ccc",
-      "data-hc": "#ccc"
+      "aria-hidden": "true"
     }
   }), _vm._v("\n                        info@hoboflyshing.com\n                    ")])])]), _vm._v(" "), _c('hr', {
     attrs: {
@@ -56192,52 +56172,48 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": "https://fb.me/hoboflyfishing"
     }
   }, [_c('i', {
-    staticClass: "livicon",
+    staticClass: "fa fa-facebook",
+    staticStyle: {
+      "color": "white"
+    },
     attrs: {
-      "data-name": "facebook",
-      "data-size": "18",
-      "data-loop": "true",
-      "data-c": "#fff",
-      "data-hc": "#757b87"
+      "aria-hidden": "true"
     }
   })])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "https://twitter.com/flyfishidaho"
     }
   }, [_c('i', {
-    staticClass: "livicon",
+    staticClass: "fa fa-twitter",
+    staticStyle: {
+      "color": "white"
+    },
     attrs: {
-      "data-name": "twitter",
-      "data-size": "18",
-      "data-loop": "true",
-      "data-c": "#fff",
-      "data-hc": "#757b87"
+      "aria-hidden": "true"
     }
   })])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "https://www.instagram.com/hoboflyfishing/"
     }
   }, [_c('i', {
-    staticClass: "livicon",
+    staticClass: "fa fa-instagram",
+    staticStyle: {
+      "color": "white"
+    },
     attrs: {
-      "data-name": "instagram",
-      "data-size": "18",
-      "data-loop": "true",
-      "data-c": "#fff",
-      "data-hc": "#757b87"
+      "aria-hidden": "true"
     }
   })])]), _vm._v(" "), _c('li', [_c('a', {
     attrs: {
       "href": "https://www.youtube.com/channel/UCJwjEQAWMuxqnw5VT4a9zpg"
     }
   }, [_c('i', {
-    staticClass: "livicon",
+    staticClass: "fa fa-youtube-play",
+    staticStyle: {
+      "color": "white"
+    },
     attrs: {
-      "data-name": "youtube",
-      "data-size": "18",
-      "data-loop": "true",
-      "data-c": "#fff",
-      "data-hc": "#757b87"
+      "aria-hidden": "true"
     }
   })])])])])
 }]}

@@ -14,24 +14,16 @@ mix.webpackConfig({
     .js('./resources/assets/js/app.js', 'public/js/')
     .combine([
             './resources/assets/js/sweetalert.min.js',
-            './resources/assets/js/raphael-min.js',
-            './resources/assets/js/livicons-1.4.min.js',
-            './resources/assets/js/wow.min.js',
             './node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js',
-
         ],
         'public/js/hoboscript.js' )
-    mix.less('resources/assets/less/app.less', 'public/css')
-        .styles([
-            './resources/assets/less/sweetalert2.min.css',
-            './resources/assets/less/animate.min.css',
-        ], 'public/css/libs.css')
     if(process.env.APP_ENV === "production"){
         mix.combine(['public/js/app.js','public/js/hoboscript.js'], 'public/js/script.js')
-        .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css')
+            .less('resources/assets/less/styles.less', 'public/css')
+            .version()
     } else {
         mix.combine(['public/js/app.js','public/js/hoboscript.js'], 'public/js/script.js')
-        .combine(['public/css/app.css','public/css/libs.css' ], 'public/css/styles.css')
+            .less('resources/assets/less/styles.less', 'public/css')
     }
 
 

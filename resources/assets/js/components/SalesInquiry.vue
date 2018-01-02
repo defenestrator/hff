@@ -10,7 +10,7 @@
                             <!--</button>-->
                         <!--</a>-->
                 <!--</span>-->
-                <input style="height:41px; border:1px solid #535965;"
+                <input style="border:1px solid #535965;"
                        @click="touched" class="form-control" placeholder="your email address"
                        v-validate="'required|email'"
                        v-model="email" name="email" id="newsletter-email"
@@ -24,8 +24,7 @@
                                 type="submit"
                                 role="button"
                                 :disabled="errors.has('email')">
-                            <i data-name="mail" data-size="20" data-loop="true" data-c="#fff"
-                               data-hc="#F0F8FF" class="livicon" style="width: 20px; height: 20px;"></i>
+                            <i style="height:22px;" class="fa fa-envelope" aria-hidden="true"></i>
                         </button>
                     </span>
 

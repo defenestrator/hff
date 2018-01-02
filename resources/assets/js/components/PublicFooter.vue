@@ -24,22 +24,12 @@
                 <li>Star, ID 83669</li>
                 <li class="footer-link">
                     <a href="tel:1-208-859-9133">
-                        <i class="livicon icon4 icon3"
-                           data-name="cellphone"
-                           data-size="18"
-                           data-loop="true"
-                           data-c="#ccc" data-hc="#ccc"></i> (208)859-9133
+                        <i class="fa fa-phone" aria-hidden="true"></i> (208)859-9133
                     </a>
                 </li>
                 <li class="footer-link">
                     <a href="/contact">
-                        <i class="livicon icon3"
-                           data-name="mail-alt"
-                           data-size="20"
-                           data-loop="true"
-                           data-c="#ccc"
-                           data-hc="#ccc"
-                        ></i>
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
                         info@hoboflyshing.com
                     </a>
                 </li>
@@ -48,19 +38,24 @@
             <a href="#follow"><h4 class="menu">Hop Aboard</h4></a>
             <ul class="list-inline">
                 <li>
-                    <a href="https://fb.me/hoboflyfishing"> <i class="livicon" data-name="facebook" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
+                    <a href="https://fb.me/hoboflyfishing">
+                        <i style="color:white;" class="fa fa-facebook" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://twitter.com/flyfishidaho"> <i class="livicon" data-name="twitter" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
+                    <a href="https://twitter.com/flyfishidaho">
+                        <i style="color:white;" class="fa fa-twitter" aria-hidden="true"></i>
+
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/hoboflyfishing/"> <i class="livicon" data-name="instagram" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
+                    <a href="https://www.instagram.com/hoboflyfishing/">
+                        <i style="color:white;" class="fa fa-instagram" aria-hidden="true"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com/channel/UCJwjEQAWMuxqnw5VT4a9zpg"> <i class="livicon" data-name="youtube" data-size="18" data-loop="true" data-c="#fff" data-hc="#757b87"></i>
+                    <a href="https://www.youtube.com/channel/UCJwjEQAWMuxqnw5VT4a9zpg">
+                        <i style="color:white;" class="fa fa-youtube-play" aria-hidden="true"></i>
                     </a>
                 </li>
             </ul>

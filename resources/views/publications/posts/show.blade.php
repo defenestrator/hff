@@ -97,8 +97,7 @@
                                 </div>
                                 @if($showcase->special)
                                     <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="btn btn-warning">
-                                        <i data-name="question" data-size="16" data-loop="true" data-c="#fff"
-                                           data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 16px; height: 16px;"></i>
+                                        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
                                         <span>Learn More</span>
                                     </button>
                                 @endif

@@ -16,7 +16,7 @@
 
 @section('top')
     <div class="tagline text-center">
-        <h1 style="font-weight:600;" class="wow pulse" data-wow-duration="0.7s">
+        <h1 style="font-weight:600;">
             Fly Fishing Adventure
         </h1>
         <h2 style="font-weight:600;">
@@ -50,8 +50,7 @@
                             </div>
                             @if($showcase->special)
                                 <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="btn btn-warning">
-                                    <i data-name="question" data-size="16" data-loop="true" data-c="#fff"
-                                       data-hc="#F0F8FF" class="livicon" style="width: 16px; height: 16px;"></i>
+                                    <i class="fa fa-question-circle-o" aria-hidden="true"></i>
                                     <span>Learn More</span>
                                 </button>
                             @endif
@@ -101,7 +100,7 @@
     </div>
     <!-- Service Section Start-->
     <div class="row">
-        <div class="col-sm-6 col-md-4 wow bounceInLeft" data-wow-duration="0.5s">
+        <div class="col-sm-6 col-md-4">
             <div class="box">
                 <div class="box-icon">
                     <img src="{{Storage::disk('s3')->url('images')}}/go.png" title="go"/>
@@ -118,7 +117,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-4 wow bounceInDown" data-wow-duration="0.5s" data-wow-delay="0.1s">
+        <div class="col-sm-6 col-md-4">
             <div class="box">
                 <div class="box-icon">
                     <img src="{{Storage::disk('s3')->url('images')}}/very-good.png" title="very good"/>
@@ -132,7 +131,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4 wow bounceInRight" data-wow-duration="0.5s" data-wow-delay="0.2s">
+        <div class="col-sm-12 col-md-4">
             <div class="box">
                 <div class="box-icon">
                     <img src="{{Storage::disk('s3')->url('images')}}/safe-camp.png" title="safe camp"/>
@@ -172,7 +171,7 @@
                         <li>
                             <a href="https://hoboflyfishing.com/publications/posts/we-learned-the-hard-way-so-you-don-t-have-to"
                                title="We learned the hard way so you don't have to">
-                                Learn from Our Mistakes</a>.&trade;
+                                Learn from Our Mistakes</a>.
                             We've made a few, maybe.
                         </li>
                         <li>Surprises, merchandise and promo items.</li>
@@ -208,9 +207,6 @@
     </div>
     <br>
 @stop
-{{-- footer scripts --}}
+
 @section('page_scripts')
-    <script>
-        new WOW().init();
-    </script>
 @stop
