@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon-100.png" sizes="100x100">
     <title>@yield('title', config('app.name'))</title>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.3.1/sweetalert2.min.css" type='text/css' />
     <link href="{{ mix('css/styles.css') }}" rel="stylesheet">
     <!-- Page level Styles -->
     @yield('page_styles', '')
@@ -85,7 +86,7 @@
     </div>
     <!-- JavaScript -->
     <script src="{{ mix('js/script.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.3.1/sweetalert2.min.js"></script>
     @yield('page_scripts')
 </body>
 </html>
