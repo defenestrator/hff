@@ -195,7 +195,7 @@
                         90% are meaningless headshots next to the name of some random clown they met at the bar.
                     </p>
 
-                    <img src="{{Storage::disk('s3')->url('images')}}/bully.jpg" style="border-radius:6px; margin-top:10px;;"
+                    <img src="{{Storage::disk('s3')->url('images')}}/bullymd.jpg" style="border-radius:6px; margin-top:10px;;"
                          alt="Yeah, well, that's just, like, your opinion, man."
                          title="Yeah, well, that's just, like, your opinion, man.">
                 </section>
