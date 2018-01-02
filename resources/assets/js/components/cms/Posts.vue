@@ -46,7 +46,9 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <label for="title"><p>Title:</p></label>
-                    <input v-validate="'required|min:3|max:140'" id="title" name="title" v-model="newPost.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title" style="width:100%" autofocus>
+                    <input v-validate="'required|min:3|max:140'" id="title" name="title" v-model="newPost.title"
+                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title"
+                           style="width:100%" autofocus>
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>
