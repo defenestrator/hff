@@ -37658,15 +37658,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                         timer: 2000
                     });
                     return Promise.reject(error);
-                }).catch(function (error) {
-                    _this.error = true;
-                    swal({
-                        title: 'Something\'s not right',
-                        text: 'Something went wrong.',
-                        type: 'danger',
-                        timer: 2000
-                    });
-                    return Promise.reject(error);
                 });
             });
         }
@@ -58021,11 +58012,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     class: {
       'form-control': true, 'is-danger': _vm.errors.has('newsletter-email')
     },
+    staticStyle: {
+      "font-size": "18px"
+    },
     attrs: {
       "placeholder": "your email",
       "name": "newsletter-email",
       "type": "email",
       "aria-describedby": "basic-addon2",
+      "autofocus": "",
       "required": ""
     },
     domProps: {
@@ -58041,7 +58036,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "input-group-btn"
   }, [_c('button', {
     class: {
-      'btn': true, 'btn-danger': true, 'is-danger': _vm.errors.has('newsletter-email')
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.errors.has('newsletter-email')
     },
     staticStyle: {
       "font-size": "18px"

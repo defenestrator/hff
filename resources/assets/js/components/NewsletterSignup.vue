@@ -3,14 +3,14 @@
         <p class="text-center">Get timely updates and exclusive offers</p>
         <form>
             <div class="input-group">
-                <input class="form-control" placeholder="your email"
+                <input style="font-size:18px;"class="form-control" placeholder="your email"
                        v-validate="'required|email'" v-model="email" name="newsletter-email"
                        type="email"
                        :class="{'form-control': true, 'is-danger': errors.has('newsletter-email') }"
                        aria-describedby="basic-addon2"
-                       required>
+                       autofocus required>
                     <span class="input-group-btn">
-                        <button :class="{'btn': true, 'btn-danger': true, 'is-danger': errors.has('newsletter-email') }"
+                        <button :class="{'btn': true, 'btn-primary': true, 'is-danger': errors.has('newsletter-email') }"
                                 @click.prevent="signup"
                                 type="submit"
                                 style="font-size:18px;"
@@ -68,16 +68,6 @@ export default {
                         });
                         return Promise.reject(error)
                     })
-                .catch(error => {
-                    this.error = true
-                    swal({
-                        title: 'Something\'s not right',
-                        text: 'Something went wrong.',
-                        type: 'danger',
-                        timer: 2000
-                    });
-                  return Promise.reject(error)
-                })
             })
         }
     },
