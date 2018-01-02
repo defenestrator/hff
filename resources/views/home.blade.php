@@ -36,11 +36,11 @@
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
             <newsletter-signup></newsletter-signup>
+            <br>
         </div>
     </div>
     @foreach(array_chunk($showcases->all(), 2) as $showcaseRow)
         <div class="row">
-            <br>
             @foreach($showcaseRow as $showcase)
                 <div style="margin:9px 0;" class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
                     <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
