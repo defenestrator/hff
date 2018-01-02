@@ -38009,6 +38009,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 // Import this component
 
@@ -39418,6 +39419,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -39846,6 +39848,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 // Import this component
 
@@ -39881,8 +39884,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 sidebar_bottom: '',
                 homepage_top: '',
                 homepage_bottom: '',
-                destinationId: null,
-                regionId: null,
+                destinationId: 0,
+                regionId: 0,
                 special: false,
                 header_photo: '',
                 image_id: null,
@@ -55754,7 +55757,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "name",
       "name": "name",
       "type": "text",
-      "placeholder": "Destination Name"
+      "placeholder": "Destination Name",
+      "autofocus": ""
     },
     domProps: {
       "value": (_vm.newRegion.name)
@@ -56341,7 +56345,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "name",
       "name": "name",
       "type": "text",
-      "placeholder": "Destination Name"
+      "placeholder": "Destination Name",
+      "autofocus": ""
     },
     domProps: {
       "value": (_vm.newDestination.name)
@@ -56762,7 +56767,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "subject",
       "name": "subject",
       "type": "text",
-      "placeholder": "Newsletter Title"
+      "placeholder": "Newsletter Title",
+      "autofocus": ""
     },
     domProps: {
       "value": (_vm.newNewsletter.subject)
@@ -57038,7 +57044,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "name": "title",
       "type": "text",
-      "placeholder": "Showcase Title"
+      "placeholder": "Showcase Title",
+      "autofocus": ""
     },
     domProps: {
       "value": (_vm.newShowcase.title)
@@ -57323,13 +57330,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.$set(_vm.newShowcase, "destinationId", $event.target.multiple ? $$selectedVal : $$selectedVal[0])
       }
     }
-  }, _vm._l((_vm.destinations), function(destination) {
+  }, [_c('option', {
+    attrs: {
+      "value": "0",
+      "default": ""
+    }
+  }, [_vm._v("N/A")]), _vm._v(" "), _vm._l((_vm.destinations), function(destination) {
     return _c('option', {
       domProps: {
         "value": destination.id
       }
     }, [_vm._v(_vm._s(destination.name))])
-  }))])])]), _vm._v(" "), _c('div', {
+  })], 2)])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -57826,7 +57838,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "title",
       "name": "title",
       "type": "text",
-      "placeholder": "Post Title"
+      "placeholder": "Post Title",
+      "autofocus": ""
     },
     domProps: {
       "value": (_vm.newPost.title)

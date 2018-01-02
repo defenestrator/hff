@@ -30,7 +30,8 @@
                     <div class="col-md-12">
                         <label for="name">Name:</label>
                         <input v-validate="'required|min:8'" id="name" name="name" v-model="newDestination.name"
-                               :class="{'form-control': true, 'input': true, 'is-danger': errors.has('name') }" type="text" placeholder="Destination Name" style="width:100%">
+                               :class="{'form-control': true, 'input': true, 'is-danger': errors.has('name') }"
+                               type="text" placeholder="Destination Name" style="width:100%" autofocus>
                         <span v-show="errors.has('name')" class="help is-danger">{{ errors.first('name') }}</span>
                     </div>
                 </div>

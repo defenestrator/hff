@@ -35,7 +35,7 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <label for="subject"><p>Subject:</p></label>
-                    <input v-validate="'required|min:3|max:140'" id="subject" name="subject" v-model="newNewsletter.subject" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('subject') }" type="text" placeholder="Newsletter Title" style="width:100%">
+                    <input v-validate="'required|min:3|max:140'" id="subject" name="subject" v-model="newNewsletter.subject" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('subject') }" type="text" placeholder="Newsletter Title" style="width:100%" autofocus>
                     <span v-show="errors.has('subject')" class="help is-danger">{{ errors.first('subject') }}</span>
                 </div>
             </div>

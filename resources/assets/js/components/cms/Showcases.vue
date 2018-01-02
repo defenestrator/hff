@@ -37,7 +37,7 @@
                 <div class="col-md-12">
                     <p role="presentation" name="title"><strong>Title: </strong></p>
                     <input v-validate="'required|min:8|max:140'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
-                           type="text" placeholder="Showcase Title" style="width:100%">
+                           type="text" placeholder="Showcase Title" style="width:100%" autofocus>
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>
@@ -93,6 +93,7 @@
                     <div class="col-md-6">
                         <label for="selected-destination">Select Destination:</label>
                         <select v-model="newShowcase.destinationId" id="selected-destination">
+                            <option value="0" default>N/A</option>
                             <option v-for="destination in destinations" v-bind:value="destination.id">{{destination.name}}</option>
                         </select>
                     </div>
@@ -251,8 +252,8 @@ export default {
                 sidebar_bottom: '',
                 homepage_top: '',
                 homepage_bottom: '',
-                destinationId:null,
-                regionId:null,
+                destinationId: 0,
+                regionId: 0,
                 special: false,
                 header_photo:'',
                 image_id: null,
