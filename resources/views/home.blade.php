@@ -24,8 +24,8 @@
         </h2>
     </div>
     <div style="margin:22px;" class="text-center">
-        <h2 style="color:#262626; margin:10px; font-weight: 600;">Once in a lifetime trip, or a lifetime of trips?</h2>
-        <h2 style="color:#262626; font-weight: 600; font-size:36px; margin:10px 10px 20px 10px; ">
+        <h3 style="color:#262626; margin:10px; font-weight: 600;">Once in a lifetime trip, or a lifetime of trips?</h3>
+        <h2 style="color:#262626; font-weight: 600; margin:10px 10px 20px 10px; ">
             Hobo Fly Fishing has the answer
         </h2>
 

@@ -68,6 +68,7 @@ Route::group(['prefix' => 'destinations'], function () {
     // Costa Rica
     Route::redirect('/costa-rica/bahia-rica', '/showcases/bahia-rica-costa-rica');
     Route::redirect('/costa-rica/silver-king-lodge', '/showcases/silver-king-lodge-costa-rica');
+    Route::redirect('/showcases/costa-rica-roosterfish', '/showcases/bahia-rica-costa-rica');
 
     // Florida
     Route::redirect('/florida/bahia-honda-sporting-club', '/showcases/bahia-honda-sporting-club');
