@@ -2,7 +2,7 @@
 <footer>
     <div class="container footer-text">
         <!-- About Us Section Start -->
-        <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+        <div class="col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-1">
             <a href="#about"><h4>About Us?</h4></a>
             <p>
                 We listen to local anglers who smell like the water they fish. You know the ones.
@@ -11,10 +11,6 @@
             </p>
             <h5>Forget <a style="color:#ababab;" href="/about" title="if you must know, click here.">about us.</a></h5>
             <br>
-        </div>
-        <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-            <a href="#newsletter"><h4>Riding the Reels</h4></a>
-            <newsletter-signup id="newsletter-signup"></newsletter-signup>
         </div>
         <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
             <!-- Contact Section Start -->

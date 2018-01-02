@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>Get timely updates and exclusive offers with our newsletter</p>
+        <p class="text-center">Get timely updates and exclusive offers</p>
         <form>
             <div class="input-group">
                 <input class="form-control" placeholder="your email"
@@ -16,13 +16,14 @@
                                 style="font-size:18px;"
                                 role="button"
                                 :disabled="email == '' || errors.has('newsletter-email')">
-                            Go!
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
                         </button>
                     </span>
 
             </div>
-            <div style="min-height:24px;"><span v-show="errors.has('newsletter-email')" class="help is-danger">{{ errors.first('newsletter-email') }}</span></div>
-            <p>We only send about one email per month.</p>
+            <div style="min-height:24px;">
+                <span v-show="errors.has('newsletter-email')" class="help is-danger">{{ errors.first('newsletter-email') }}</span>
+            </div>
         </form>
     </div>
 </template>

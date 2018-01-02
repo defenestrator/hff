@@ -37619,6 +37619,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
@@ -37687,10 +37688,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 /* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
-//
-//
-//
-//
 //
 //
 //
@@ -56093,18 +56090,12 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _vm._m(0, false, false)
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('footer', [_c('div', {
     staticClass: "container footer-text"
-  }, [_vm._m(0, false, false), _vm._v(" "), _c('div', {
-    staticClass: "col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"
-  }, [_vm._m(1, false, false), _vm._v(" "), _c('newsletter-signup', {
-    attrs: {
-      "id": "newsletter-signup"
-    }
-  })], 1), _vm._v(" "), _vm._m(2, false, false)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"
+  }, [_c('div', {
+    staticClass: "col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-1"
   }, [_c('a', {
     attrs: {
       "href": "#about"
@@ -56117,15 +56108,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": "/about",
       "title": "if you must know, click here."
     }
-  }, [_vm._v("about us.")])]), _vm._v(" "), _c('br')])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('a', {
-    attrs: {
-      "href": "#newsletter"
-    }
-  }, [_c('h4', [_vm._v("Riding the Reels")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  }, [_vm._v("about us.")])]), _vm._v(" "), _c('br')]), _vm._v(" "), _c('div', {
     staticClass: "col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"
   }, [_c('a', {
     attrs: {
@@ -56215,7 +56198,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })])])])])
+  })])])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -58018,7 +58001,9 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('p', [_vm._v("Get timely updates and exclusive offers with our newsletter")]), _vm._v(" "), _c('form', [_c('div', {
+  return _c('div', [_c('p', {
+    staticClass: "text-center"
+  }, [_vm._v("Get timely updates and exclusive offers")]), _vm._v(" "), _c('form', [_c('div', {
     staticClass: "input-group"
   }, [_c('input', {
     directives: [{
@@ -58072,7 +58057,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.signup($event)
       }
     }
-  }, [_vm._v("\n                        Go!\n                    ")])])]), _vm._v(" "), _c('div', {
+  }, [_c('i', {
+    staticClass: "fa fa-envelope",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  })])])]), _vm._v(" "), _c('div', {
     staticStyle: {
       "min-height": "24px"
     }
@@ -58084,7 +58074,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "errors.has('newsletter-email')"
     }],
     staticClass: "help is-danger"
-  }, [_vm._v(_vm._s(_vm.errors.first('newsletter-email')))])]), _vm._v(" "), _c('p', [_vm._v("We only send about one email per month.")])])])
+  }, [_vm._v(_vm._s(_vm.errors.first('newsletter-email')))])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

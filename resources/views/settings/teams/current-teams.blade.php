@@ -43,7 +43,7 @@
                             <td>
                                 <a :href="'/settings/{{str_plural(Spark::teamString())}}/'+team.id">
                                     <button class="btn btn-primary">
-                                        <div class="livicon" data-name="gear" data-loop="true" data-c="#ffffff" data-hc="#cdf"></div>
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
                                     </button>
                                 </a>
                             </td>
@@ -53,7 +53,7 @@
                                 <button class="btn btn-warning" @click="approveLeavingTeam(team)"
                                 data-toggle="tooltip" title="Leave Team"
                                 v-if="user.id !== team.owner_id">
-                                <div class="livicon" data-name="gears" data-loop="true" data-c="#f00" data-hc="#ff0"></div>
+                                    <i class="fa fa-cogs" aria-hidden="true"></i>
                                 </button>
                             </td>
 
@@ -61,7 +61,7 @@
                                 <!-- Delete Button -->
                                 <td>
                                     <button class="btn btn-danger" @click="approveTeamDelete(team)" v-if="user.id === team.owner_id">
-                                    <div class="livicon" data-name="remove" data-loop="true" data-c="#fff" data-hc="#fdc"></div>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
                                     </button>
                                 </td>
                             @endif

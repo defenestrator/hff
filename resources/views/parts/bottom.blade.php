@@ -1,7 +1,7 @@
 <div class="copyright">
     <div class="container">
         <div class="payment-types"><ul class="inline">
-                <li class="small" >We accept all major credit cards, Paypal, ACH, BitCoin, and many others:</li>
+                <li class="small" >We accept all major credit cards, Paypal, ACH, Bitcoin, and many others</li>
             </ul>
         </div>
     </div>
@@ -37,7 +37,7 @@
                 </li>
                 <li>
                     <img src="{{Storage::disk('s3')->url('images')}}/payment-types/currency_bitcoin_sign.png"
-                         alt="We accept Bitcoin!" title="We accept Bitcoin!">
+                         alt="We accept BTC" title="We accept BTC">
                 </li>
                 <li>
                     <img src="{{Storage::disk('s3')->url('images')}}/payment-types/currency_euro_sign.png"
@@ -49,7 +49,7 @@
     </div>
     <div class="container">
         <div class="payment-types"><ul class="inline">
-                <li class="small" >We adhere to proven security and end-to-end encryption practices, through our partnership with Stripe.com</li>
+                <li class="small" >Payments processed using proven security practices through our partnership with Stripe.com</li>
 
             </ul>
         </div>
