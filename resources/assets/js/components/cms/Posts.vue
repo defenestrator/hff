@@ -25,9 +25,64 @@
             </tbody>
         </table>
     </div>
-    <hr>
     <div class="container">
+        <hr>
         <form class="form-horizontal new-post" v-if="! index" role="form">
+            <div class="form-group">
+                <div v-show="newPost.postId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saveDisabled">
+                            <span v-if="newPost.saveBusy">
+                                <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
+                             </span>
+                            <span v-else-if="newPost.saved">
+                                <i class="fa fa-btn fa-check-circle"></i>Saved!
+                             </span>
+                        <span v-else-if="newPost.saved == false">
+                                <i class="fa fa-btn fa-check-circle"></i>Update
+                             </span>
+                            <span v-else>
+                                <i class="fa fa-btn fa-check-circle"></i>Updated
+                            </span>
+
+                    </button>
+                </div>
+                <div v-show="! newPost.postId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saveDisabled">
+                            <span v-if="newPost.saveBusy">
+                                <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
+                             </span>
+                            <span v-else-if="newPost.postId !== null">
+                                <i class="fa fa-btn fa-check-circle"></i>Saved!
+                             </span>
+                            <span v-else>
+                                <i class="fa fa-btn fa-check-circle"></i>Save
+                            </span>
+                    </button>
+                </div>
+                <div v-if="isDev" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published">
+                        <span v-if="newPost.publishBusy">
+                                <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
+                             </span>
+                             <span class="is-success" v-else-if="newPost.published !== null">
+                                <i class="fa fa-btn btn-success fa-newspaper-o"></i>Published!
+                             </span>
+                            <span v-else>
+                                <i class="fa fa-btn fa-newspaper-o"></i>Publish
+                            </span>
+                    </button>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <button v-if="isDev" @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newPost.published }">
+                        Unpublish
+                    </button>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newPost.published }" :disabled="! newPost.postId">
+                        Delete
+                    </button>
+                </div>
+            </div>
             <!-- Header Photo Button -->
             <div class="form-group">
                 <div class="container">

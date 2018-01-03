@@ -38735,6 +38735,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 // Import this component
@@ -39604,6 +39659,64 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(4);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -56957,13 +57070,121 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v("Edit")])])])
   }))])]), _vm._v(" "), _c('div', {
     staticClass: "container"
-  }, [(!_vm.index) ? _c('form', {
+  }, [_c('hr'), _vm._v(" "), (!_vm.index) ? _c('form', {
     staticClass: "form-horizontal new-post",
     attrs: {
       "enctype": "multipart/form-data",
       "role": "form"
     }
   }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.newShowcase.showcaseId),
+      expression: "newShowcase.showcaseId"
+    }],
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newShowcase.saveError
+    },
+    attrs: {
+      "disabled": _vm.newShowcase.saveBusy
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.update($event)
+      }
+    }
+  }, [(_vm.newShowcase.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Updating\n                             ")]) : (_vm.newShowcase.saved) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : (_vm.newShowcase.saved == false) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Update\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Updated\n                            ")])])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.newShowcase.showcaseId),
+      expression: "! newShowcase.showcaseId"
+    }],
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newShowcase.saveError
+    },
+    attrs: {
+      "disabled": _vm.newShowcase.saveBusy
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.save($event)
+      }
+    }
+  }, [(_vm.newShowcase.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Saving\n                             ")]) : (_vm.newShowcase.showcaseId !== null) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-warning': true, 'is-success': _vm.newShowcase.published
+    },
+    attrs: {
+      "disabled": _vm.newShowcase.published
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.publish($event)
+      }
+    }
+  }, [(_vm.newShowcase.publishBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Publishing\n                             ")]) : (_vm.newShowcase.published !== null) ? _c('span', {
+    staticClass: "is-success"
+  }, [_c('i', {
+    staticClass: "fa fa-btn btn-success fa-newspaper-o"
+  }), _vm._v("Published!\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-newspaper-o"
+  }), _vm._v("Publish\n                            ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-warning': true, 'hidden': !_vm.newShowcase.published
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.unpublish($event)
+      }
+    }
+  }, [_vm._v("\n                        Unpublish\n                    ")])]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-danger': true, 'hidden': _vm.newShowcase.published
+    },
+    attrs: {
+      "disabled": !_vm.newShowcase.showcaseId
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.leeroyjenkins($event)
+      }
+    }
+  }, [_vm._v("\n                        Delete\n                    ")])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -57313,18 +57534,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "#"
     }
-  }, [_c('button', {
-    staticClass: "btn btn-warning",
-    staticStyle: {
-      "padding": "6px 12px",
-      "box-shadow": "2px 2px 2px #000",
-      "margin": "0 15%",
-      "width": "70%"
-    },
-    attrs: {
-      "role": "button"
-    }
-  }, [_vm._v("\n                                        learn more\n                                    ")])]) : _vm._e()])])]), _vm._v(" "), _vm._m(7, false, false), _vm._v(" "), _c('div', {
+  }, [_vm._m(7, false, false)]) : _vm._e()])])]), _vm._v(" "), _vm._m(8, false, false), _vm._v(" "), _c('div', {
     staticClass: "col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0"
   }, [_c('div', {
     staticClass: "checkbox",
@@ -57374,7 +57584,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_vm._m(8, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(9, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -57397,7 +57607,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(9, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(10, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -57418,7 +57628,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
-  }, [_vm._m(10, false, false), _vm._v(" "), _c('trumbowyg', {
+  }, [_vm._m(11, false, false), _vm._v(" "), _c('trumbowyg', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -57606,6 +57816,24 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('strong', [_vm._v("Homepage preview")])])
 },function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('button', {
+    staticClass: "btn btn-warning",
+    staticStyle: {
+      "padding": "6px 12px",
+      "box-shadow": "2px 2px 2px #000",
+      "margin": "0 15%",
+      "width": "70%"
+    },
+    attrs: {
+      "role": "button"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-question-circle-o",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v("\n                                        learn more\n                                    ")])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('p', {
     attrs: {
       "role": "presentation"
@@ -57701,14 +57929,122 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("Edit")])])]) : _vm._e()
-  }))])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
+  }))])]), _vm._v(" "), _c('div', {
     staticClass: "container"
-  }, [(!_vm.index) ? _c('form', {
+  }, [_c('hr'), _vm._v(" "), (!_vm.index) ? _c('form', {
     staticClass: "form-horizontal new-post",
     attrs: {
       "role": "form"
     }
   }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.newPost.postId),
+      expression: "newPost.postId"
+    }],
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newPost.saveError
+    },
+    attrs: {
+      "disabled": _vm.newPost.saveDisabled
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.update($event)
+      }
+    }
+  }, [(_vm.newPost.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Updating\n                             ")]) : (_vm.newPost.saved) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : (_vm.newPost.saved == false) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Update\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Updated\n                            ")])])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.newPost.postId),
+      expression: "! newPost.postId"
+    }],
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newPost.saveError
+    },
+    attrs: {
+      "disabled": _vm.newPost.saveDisabled
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.save($event)
+      }
+    }
+  }, [(_vm.newPost.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Saving\n                             ")]) : (_vm.newPost.postId !== null) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), (_vm.isDev) ? _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-warning': true, 'is-success': _vm.newPost.published
+    },
+    attrs: {
+      "disabled": _vm.newPost.published
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.publish($event)
+      }
+    }
+  }, [(_vm.newPost.publishBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Publishing\n                             ")]) : (_vm.newPost.published !== null) ? _c('span', {
+    staticClass: "is-success"
+  }, [_c('i', {
+    staticClass: "fa fa-btn btn-success fa-newspaper-o"
+  }), _vm._v("Published!\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-newspaper-o"
+  }), _vm._v("Publish\n                            ")])])]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [(_vm.isDev) ? _c('button', {
+    class: {
+      'btn': true, 'btn-warning': true, 'hidden': !_vm.newPost.published
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.unpublish($event)
+      }
+    }
+  }, [_vm._v("\n                        Unpublish\n                    ")]) : _vm._e()]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-danger': true, 'hidden': _vm.newPost.published
+    },
+    attrs: {
+      "disabled": !_vm.newPost.postId
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        _vm.leeroyjenkins($event)
+      }
+    }
+  }, [_vm._v("\n                        Delete\n                    ")])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "container"

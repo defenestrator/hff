@@ -10,6 +10,7 @@
                 New
             </button>
         </div>
+
         <table v-show="index" class="table table-striped table-inverse">
             <thead class="thead-inverse">
             <tr>
@@ -32,7 +33,63 @@
         </table>
     </div>
     <div class="container">
+        <hr>
         <form enctype="multipart/form-data" class="form-horizontal new-post" v-if="! index" role="form">
+            <div class="form-group">
+                <div v-show="newShowcase.showcaseId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newShowcase.saveError }" @click.prevent="update" :disabled="newShowcase.saveBusy">
+                            <span v-if="newShowcase.saveBusy">
+                                <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
+                             </span>
+                            <span v-else-if="newShowcase.saved">
+                                <i class="fa fa-btn fa-check-circle"></i>Saved!
+                             </span>
+                        <span v-else-if="newShowcase.saved == false">
+                                <i class="fa fa-btn fa-check-circle"></i>Update
+                             </span>
+                            <span v-else>
+                                <i class="fa fa-btn fa-check-circle"></i>Updated
+                            </span>
+
+                    </button>
+                </div>
+                <div v-show="! newShowcase.showcaseId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newShowcase.saveError }" @click.prevent="save" :disabled="newShowcase.saveBusy">
+                            <span v-if="newShowcase.saveBusy">
+                                <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
+                             </span>
+                            <span v-else-if="newShowcase.showcaseId !== null">
+                                <i class="fa fa-btn fa-check-circle"></i>Saved!
+                             </span>
+                            <span v-else>
+                                <i class="fa fa-btn fa-check-circle"></i>Save
+                            </span>
+                    </button>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newShowcase.published }"  @click.prevent="publish" :disabled="newShowcase.published">
+                        <span v-if="newShowcase.publishBusy">
+                                <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
+                             </span>
+                             <span class="is-success" v-else-if="newShowcase.published !== null">
+                                <i class="fa fa-btn btn-success fa-newspaper-o"></i>Published!
+                             </span>
+                            <span v-else>
+                                <i class="fa fa-btn fa-newspaper-o"></i>Publish
+                            </span>
+                    </button>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <button @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newShowcase.published }">
+                        Unpublish
+                    </button>
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newShowcase.published }" :disabled="! newShowcase.showcaseId">
+                        Delete
+                    </button>
+                </div>
+            </div>
             <div class="form-group">
                 <div class="col-md-12">
                     <p role="presentation" name="title"><strong>Title: </strong></p>
@@ -114,6 +171,7 @@
                                     <button role="button"
                                             style="padding:6px 12px; box-shadow: 2px 2px 2px #000; margin:0 15%;
                                             width:70%;" class="btn btn-warning">
+                                        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
                                         learn more
                                     </button>
                                 </a>
