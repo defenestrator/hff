@@ -42,5 +42,5 @@ return [
      *
      * You may use a string are an array here.
      */
-    'cache_tag' => '',
+    'cache_tag' => 'responsecache',
 ];
