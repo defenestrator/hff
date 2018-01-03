@@ -23,8 +23,7 @@ Route::group(['prefix' => 'showcases'], function () {
 // Published posts
 Route::get('/publications/posts', 'PublishedPostsController@index')->name('publications.posts.index');
 Route::get('/publications/posts/{slug}', 'PublishedPostsController@show')->name('publications.posts.show');
-Route::get('/publications/showcases', 'ShowcasesController@index');
-Route::get('/publications/showcases/{slug}', 'PublishedShowcasesController@show');
+
 Route::get('/posts/{tag}/tag', 'PostTagsController@index');
 Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index');
 Route::get('regions/{slug}', 'RegionController@show');

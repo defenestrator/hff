@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 Route::redirect('/publications/posts/steelhead-on-the-salmon-river-with-backcountry-river-guides-and-brent-sawyer',
     '/publications/posts/backcountry-river-guides-steelhead');
 
+// Showcases
+Route::redirect('/publications/showcases', '/showcases');
+Route::redirect('/publications/showcases/{slug}', '/showcases/{slug}');
+
 // Redirected Static Trip Pages, 301
 // features
 Route::redirect('/publications/podcasts', 'https://have-rod-will-travel.fireside.fm/');
