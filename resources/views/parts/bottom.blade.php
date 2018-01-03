@@ -20,29 +20,25 @@
                          alt="We accept Mastercard" title="We accept Mastercard">
                 </li>
                 <li>
-                    <img src="{{Storage::disk('s3')->url('images')}}/payment-types/discover.png"
-                         alt="We accept Discover" title="We accept Discover">
-                </li>
-                <li>
                     <img src="{{Storage::disk('s3')->url('images')}}/payment-types/diners_club.png"
                          alt="We accept Diners Club" title="We accept Diners Club">
                 </li>
                 <li>
                     <img src="{{Storage::disk('s3')->url('images')}}/payment-types/paypal.png"
-                         alt="We accept Paypal" title="We accept Paypal">
+                         alt="We accept Paypal" title="We accept Paypal" style="height:50px;">
                 </li>
                 <li>
                     <img src="{{Storage::disk('s3')->url('images')}}/payment-types/ach-payment.png"
-                         alt="We accept ACH Payments" title="We accept ACH Payments">
+                         alt="We accept ACH Payments" title="We accept ACH Payments" style="height:50px;">
                 </li>
                 <li>
                     <img src="{{Storage::disk('s3')->url('images')}}/payment-types/currency_bitcoin_sign.png"
-                         alt="We accept BTC" title="We accept BTC">
+                         alt="We accept BTC" title="We accept BTC" style="height:50px;">
                 </li>
                 <li>
                     <img src="{{Storage::disk('s3')->url('images')}}/payment-types/currency_euro_sign.png"
                          alt="We accept Euros, and more than 130 other currencies!"
-                         title="We accept Euros, and more than 130 other currencies!">
+                         title="We accept Euros, and more than 130 other currencies!" style="height:50px;">
                 </li>
             </ul>
         </div>
