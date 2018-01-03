@@ -36,7 +36,7 @@
         <hr>
         <form enctype="multipart/form-data" class="form-horizontal new-post" v-if="! index" role="form">
             <div class="form-group">
-                <div v-show="newShowcase.showcaseId" class="col-md-2 col-sm-12">
+                <div v-show="newShowcase.showcaseId" class="col-md-2 hidden-sm hidden-xs">
                     <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newShowcase.saveError }" @click.prevent="update" :disabled="newShowcase.saveBusy">
                             <span v-if="newShowcase.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
@@ -53,7 +53,7 @@
 
                     </button>
                 </div>
-                <div v-show="! newShowcase.showcaseId" class="col-md-2 col-sm-12">
+                <div v-show="! newShowcase.showcaseId" class="col-md-2 hidden-sm hidden-xs">
                     <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newShowcase.saveError }" @click.prevent="save" :disabled="newShowcase.saveBusy">
                             <span v-if="newShowcase.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
@@ -66,7 +66,7 @@
                             </span>
                     </button>
                 </div>
-                <div class="col-md-2 col-sm-12">
+                <div class="col-md-2 hidden-sm hidden-xs">
                     <button :class="{'btn': true, 'btn-warning': true, 'is-success': newShowcase.published }"  @click.prevent="publish" :disabled="newShowcase.published">
                         <span v-if="newShowcase.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
@@ -79,12 +79,12 @@
                             </span>
                     </button>
                 </div>
-                <div class="col-md-2 col-sm-12">
+                <div class="col-md-2 hidden-sm hidden-xs">
                     <button @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newShowcase.published }">
                         Unpublish
                     </button>
                 </div>
-                <div class="col-md-2 col-sm-12">
+                <div class="col-md-2 hidden-sm hidden-xs">
                     <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newShowcase.published }" :disabled="! newShowcase.showcaseId">
                         Delete
                     </button>
@@ -94,7 +94,7 @@
                 <div class="col-md-12">
                     <p role="presentation" name="title"><strong>Title: </strong></p>
                     <input v-validate="'required|min:8|max:140'" name="title" v-model="newShowcase.title" :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }"
-                           type="text" placeholder="Showcase Title" style="width:100%" autofocus>
+                           type="text" placeholder="Showcase Title" style="width:100%">
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>

@@ -57085,7 +57085,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.newShowcase.showcaseId),
       expression: "newShowcase.showcaseId"
     }],
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-primary': true, 'is-danger': _vm.newShowcase.saveError
@@ -57114,7 +57114,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (!_vm.newShowcase.showcaseId),
       expression: "! newShowcase.showcaseId"
     }],
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-primary': true, 'is-danger': _vm.newShowcase.saveError
@@ -57135,7 +57135,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Save\n                            ")])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-warning': true, 'is-success': _vm.newShowcase.published
@@ -57158,7 +57158,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v("Published!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-newspaper-o"
   }), _vm._v("Publish\n                            ")])])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-warning': true, 'hidden': !_vm.newShowcase.published
@@ -57170,7 +57170,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_vm._v("\n                        Unpublish\n                    ")])]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-danger': true, 'hidden': _vm.newShowcase.published
@@ -57209,8 +57209,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "name": "title",
       "type": "text",
-      "placeholder": "Showcase Title",
-      "autofocus": ""
+      "placeholder": "Showcase Title"
     },
     domProps: {
       "value": (_vm.newShowcase.title)
@@ -57945,7 +57944,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (_vm.newPost.postId),
       expression: "newPost.postId"
     }],
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-primary': true, 'is-danger': _vm.newPost.saveError
@@ -57974,7 +57973,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       value: (!_vm.newPost.postId),
       expression: "! newPost.postId"
     }],
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-primary': true, 'is-danger': _vm.newPost.saveError
@@ -57995,7 +57994,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Save\n                            ")])])]), _vm._v(" "), (_vm.isDev) ? _c('div', {
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-warning': true, 'is-success': _vm.newPost.published
@@ -58018,7 +58017,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v("Published!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-newspaper-o"
   }), _vm._v("Publish\n                            ")])])]) : _vm._e(), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [(_vm.isDev) ? _c('button', {
     class: {
       'btn': true, 'btn-warning': true, 'hidden': !_vm.newPost.published
@@ -58030,7 +58029,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   }, [_vm._v("\n                        Unpublish\n                    ")]) : _vm._e()]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-2 col-sm-12"
+    staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
       'btn': true, 'btn-danger': true, 'hidden': _vm.newPost.published
@@ -58118,8 +58117,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "id": "title",
       "name": "title",
       "type": "text",
-      "placeholder": "Post Title",
-      "autofocus": ""
+      "placeholder": "Post Title"
     },
     domProps: {
       "value": (_vm.newPost.title)

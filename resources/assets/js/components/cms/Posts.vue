@@ -29,7 +29,7 @@
         <hr>
         <form class="form-horizontal new-post" v-if="! index" role="form">
             <div class="form-group">
-                <div v-show="newPost.postId" class="col-md-2 col-sm-12">
+                <div v-show="newPost.postId" class="col-md-2 hidden-sm hidden-xs">
                     <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saveDisabled">
                             <span v-if="newPost.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
@@ -46,7 +46,7 @@
 
                     </button>
                 </div>
-                <div v-show="! newPost.postId" class="col-md-2 col-sm-12">
+                <div v-show="! newPost.postId" class="col-md-2 hidden-sm hidden-xs">
                     <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saveDisabled">
                             <span v-if="newPost.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
@@ -59,7 +59,7 @@
                             </span>
                     </button>
                 </div>
-                <div v-if="isDev" class="col-md-2 col-sm-12">
+                <div v-if="isDev" class="col-md-2 hidden-sm hidden-xs">
                     <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published">
                         <span v-if="newPost.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
@@ -72,12 +72,12 @@
                             </span>
                     </button>
                 </div>
-                <div class="col-md-2 col-sm-12">
+                <div class="col-md-2 hidden-sm hidden-xs">
                     <button v-if="isDev" @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newPost.published }">
                         Unpublish
                     </button>
                 </div>
-                <div class="col-md-2 col-sm-12">
+                <div class="col-md-2 hidden-sm hidden-xs">
                     <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newPost.published }" :disabled="! newPost.postId">
                         Delete
                     </button>
@@ -103,7 +103,7 @@
                     <label for="title"><p>Title:</p></label>
                     <input v-validate="'required|min:3|max:140'" id="title" name="title" v-model="newPost.title"
                            :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title"
-                           style="width:100%" autofocus>
+                           style="width:100%">
                     <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
                 </div>
             </div>
