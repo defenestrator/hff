@@ -10,7 +10,7 @@
 
 @section('top')
     <div style="padding:2em 0;
-            background: #1a1a1a url('/images/flats/Roger_Permit.jpg') center center no-repeat;
+            background: #1a1a1a url('https://hobo-assets.s3-us-west-2.amazonaws.com/images/flats/Roger_Permit.jpg') center center no-repeat;
             background-size:cover;" >
         <h2 class="feature-tagline text-center">
             Flats Fishing Special

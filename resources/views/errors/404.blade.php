@@ -8,7 +8,7 @@
 
 @section('top')
     <div class="tagline text-center"
-         style="background: linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0, 0.4)), url('/images/tangle.jpg') top center no-repeat; background-size:cover; ">
+         style="background: linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0, 0.4)), url('https://hobo-assets.s3-us-west-2.amazonaws.com/images/tangle.jpg') top center no-repeat; background-size:cover; ">
         <h1 style="font-weight:600; text-shadow:4px 4px 3px #000000;" class="wow pulse" data-wow-duration="0.7s">
             404
         </h1>
@@ -63,7 +63,7 @@
 
 @section('bottom')
     <div class="tagline text-center"
-         style="margin-bottom:0; background:linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0, 0.4)), url('/images/tangle.jpg') bottom center no-repeat; background-size:cover;">
+         style="margin-bottom:0; background:linear-gradient(rgba(0,0,0, 0.4),rgba(0,0,0, 0.4)), url('https://hobo-assets.s3-us-west-2.amazonaws.com/images/tangle.jpg') bottom center no-repeat; background-size:cover;">
         <h2 style="visibility:hidden;">
             404
         </h2>

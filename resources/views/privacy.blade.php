@@ -9,7 +9,7 @@ Privacy Policy
 @stop
 
 @section('top')
-    <img style="width:100%;" src="{{ asset('/images/gourley/rod-rack.jpg') }}" >
+    <img style="width:100%;" src="https://hobo-assets.s3-us-west-2.amazonaws.com/images/gourley/rod-rack.jpg" >
 @stop
 
 @section('content')
