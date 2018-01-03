@@ -68,7 +68,6 @@ Contact us using this handy web form! Welcome to the future!
 
 @section('content')
 
-    <!-- //map Section End -->
     <!-- Container Section Start -->
     <div class="container">
         <div class="row">
@@ -118,8 +117,8 @@ Contact us using this handy web form! Welcome to the future!
                 <div class="media media-right">
                     <div class="media-left media-top">
                         <a href="#address" title="write us!">
-                            <div class="box-icon">
-                                <i class="livicon" data-name="home" data-size="22" data-loop="true" data-c="#fff" data-hc="#fff"></i>
+                            <div>
+                                <i class="fa fa-home" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
@@ -136,8 +135,8 @@ Contact us using this handy web form! Welcome to the future!
                 <div class="media padleft10">
                     <div class="media-left media-top">
                         <a href="tel:1-208-859-9133" title="call us!">
-                            <div class="box-icon">
-                                <i class="livicon" data-name="phone" data-size="22" data-loop="true" data-c="#fff" data-hc="#fff"></i>
+                            <div>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
                             </div>
                         </a>
                     </div>
@@ -155,28 +154,5 @@ Contact us using this handy web form! Welcome to the future!
 
 {{-- page level scripts --}}
 @section('page_scripts')
-    <script>
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                el: '#map',
-                center: {
-                    lat: 43.6939533,
-                    lng: -116.4674612,
-                },
-                zoom: 13
-            })
-            var myLatLng ={lat:43.6936333, lng:-116.4819652}
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hobo Fly Fishing, LLC',
-                label: {text: 'Hobo Fly Fishing, LLC'},
-                animation: google.maps.Animation.DROP,
-//                icon: '/img/fish-icon-black-blue.png'
-            });
-        }
-    </script>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAlEAneL0N4yo8Le6I57Whheu-BqgtvDhU&callback=initMap" async defer>
-    </script>
+
 @stop

@@ -51,14 +51,8 @@
         @endif
     </div>
     <!-- JavaScript -->
-    <script src="{{ asset('js/script.js') }}"></script>
+    <script src="{{ mix('js/script.js') }}"></script>
     @if(config('app.env') == 'production')
-    <script type="text/javascript">
-        var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq ||
-                {widgetcode:"e0874322f75d50cec866f910a689558b35a5657cc193aa69072010f52c4d8107235e9be4eefa2a5d772b10d6e3e9e349", values:{},ready:function(){}};
-        var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;
-        s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
-    </script>
     @endif
     @yield('page_scripts')
 </body>
