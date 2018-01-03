@@ -8,29 +8,37 @@ Route::redirect('/publications/posts/steelhead-on-the-salmon-river-with-backcoun
 // Redirected Static Trip Pages, 301
 // features
 Route::redirect('/publications/podcasts', 'https://have-rod-will-travel.fireside.fm/');
-Route::redirect('/flats-special', '/features/flats-special');
+Route::redirect('/flats-special', '/showcases/costa-de-cocos');
 Route::redirect('/showcases/weekly-special', '/showcases/costa-rica-roosterfish');
 // trips changed to destinations
-Route::redirect('/trips/backcountry-river-guides', '/destinations/idaho/backcountry-river-guides');
-Route::redirect('/trips/costa-de-cocos', '/destinations/yucatan/costa-de-cocos');
-Route::redirect('/trips/deep-creek-lodge', '/destinations/british-columbia/deep-creek-lodge');
-Route::redirect('/trips/naknek-river-camp', '/destinations/alaska/naknek-river-camp');
-Route::redirect('/features/weekly-special', '/');
-// 'destinations/lodge' changed to to 'destinations/region/lodge'
-Route::redirect('/destinations/backcountry-river-guides', '/destinations/idaho/backcountry-river-guides');
-Route::redirect('/destinations/costa-de-cocos', '/destinations/yucatan/costa-de-cocos');
-Route::redirect('/destinations/deep-creek-lodge', '/destinations/british-columbia/deep-creek-lodge');
-Route::redirect('/destinations/naknek-river-camp', '/destinations/alaska/naknek-river-camp');
-Route::redirect('/destinations/blackfish-lodge', '/destinations/british-columbia/blackfish-lodge');
-Route::redirect('/destinations/two-boys-inn-andros', '/destinations/bahamas/two-boys-inn-andros');
+Route::redirect('/trips/backcountry-river-guides', '/showcases/backcountry-river-guides');
+Route::redirect('/trips/costa-de-cocos', '/showcases/costa-de-cocos');
+Route::redirect('/trips/deep-creek-lodge', '/showcases/deep-creek-lodge');
+Route::redirect('/trips/naknek-river-camp', '/showcases/naknek-river-camp');
+// Features and Specials
+Route::group(['prefix' => 'features'], function () {
+    Route::redirect('/weekly-special', '/');
+    Route::redirect('/flats-special', '/showcases/costa-de-cocos');
+    Route::redirect('/alaska-special', '/showcases/naknek-river-camp');
+    Route::redirect('/idaho-steelhead-special', '/showcases/backcountry-river-guides');
+});
 
+// 'destinations/lodge' changed to to 'destinations/region/lodge'
+Route::redirect('/destinations/backcountry-river-guides', '/showcases/backcountry-river-guides');
+Route::redirect('/destinations/costa-de-cocos', '/showcases/costa-de-cocos');
+Route::redirect('/destinations/deep-creek-lodge', '/showcases/deep-creek-lodge');
+Route::redirect('/destinations/naknek-river-camp', '/showcases/naknek-river-camp');
+Route::redirect('/destinations/blackfish-lodge', '/showcases/blackfish-lodge');
+Route::redirect('/destinations/two-boys-inn-andros', '/showcases/two-boys-inn');
+
+// Holiday 2017
 Route::redirect('/showcases/looking-for-that-perfect-holiday-gift-', '/');
 
 Route::group(['prefix' => 'destinations'], function () {
     // Alaska
     Route::redirect('/alaska/boardwalk-lodge', '/showcases/boardwalk-lodge-alaska');
     Route::redirect('/alaska/bristol-bay-sportfishing', '/showcases/bristol-bay-sportfishing');
-    Route::redirect('/alaska/hidden-basin', '/showcases/-hidden-basin-kidiak-ak');
+    Route::redirect('/alaska/hidden-basin', '/showcases/-hidden-basin-kodiak-ak');
     Route::redirect('/alaska/kvichak-lodge', '/showcases/kvichak-lodge');
     Route::redirect('/alaska/midnight-sun-trophy-pike', '/showcases/midnight-sun-trophy-pike-adventures');
     Route::redirect('/alaska/naknek-river-camp', '/showcases/naknek-river-camp');

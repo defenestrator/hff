@@ -6,18 +6,14 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/terms', 'terms')->name('terms');
 Route::view('/privacy','privacy')->name('privacy');
-Route::view('/contact', 'contact')->name('contact');
+Route::group(['middleware' => ['doNotCacheResponse']], function() {
+    Route::view('/contact', 'contact')->name('contact');
+});
+
 Route::post('/contact','ContactFormController@create')->name('contact');
 Route::get('/tag/{tag}', 'TagsController@index');
 
-// Features and Specials
 
-Route::group(['prefix' => 'features'], function () {
-    Route::view('/weekly-special', 'features.weekly-special')->name('weekly-special');
-    Route::view('/flats-special', 'features.flats-special')->name('flats-special');
-    Route::view('/alaska-special', 'features.alaska-special')->name('alaska-special');
-    Route::view('/idaho-steelhead-special', 'features.idaho-steelhead-special')->name('idaho-steelhead-special');
-});
 // Showcases
 Route::group(['prefix' => 'showcases'], function () {
     Route::get('{slug}', 'PublishedShowcasesController@show');
@@ -35,6 +31,7 @@ Route::get('regions/{slug}', 'RegionController@show');
 
 // Authors
 Route::get('/publications/authors/{uuid}', 'UserController@show');
+
 Route::group(['middleware' => ['auth:web']], function () {
     Route::view('/dashboard', 'dashboard');
     Route::put('/settings/profile/details', 'ProfileDetailsController@update');
@@ -46,7 +43,7 @@ Route::group(['middleware' => ['auth:web']], function () {
 });
 
 // DEVELOPER LEVEL AUTH ROUTES
-Route::group(['middleware' => ['auth:web', 'dev']], function () {
+Route::group(['middleware' => ['auth:web', 'dev', 'doNotCacheResponse']], function () {
     // Tags
     Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
     // DEVELOPER CMS ROUTES
