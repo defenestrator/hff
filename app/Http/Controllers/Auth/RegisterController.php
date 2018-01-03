@@ -2,72 +2,67 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Laravel\Spark\Spark;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Spark\Events\Auth\UserRegistered;
+use Laravel\Spark\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\RedirectsUsers;
+use Laravel\Spark\Contracts\Interactions\Auth\Register;
+use Laravel\Spark\Contracts\Http\Requests\Auth\RegisterRequest;
 
 class RegisterController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Register Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
-    | provide this functionality without requiring any additional code.
-    |
-    */
-
-    use RegistersUsers;
+    use RedirectsUsers;
 
     /**
-     * Where to redirect users after registration.
+     * Create a new authentication controller instance.
      *
-     * @var string
-     */
-    protected $redirectTo = '/login';
-
-    /**
-     * RegisterController constructor.
+     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest');
+
+        $this->redirectTo = Spark::afterLoginRedirect();
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Show the application registration form.
      *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @param  Request  $request
+     * @return Response
      */
-    protected function validator(array $data)
+    public function showRegistrationForm(Request $request)
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+        if (Spark::promotion() && ! $request->filled('coupon')) {
+            // If the application is running a site-wide promotion, we will redirect the user
+            // to a register URL that contains the promotional coupon ID, which will force
+            // all new registrations to use this coupon when creating the subscriptions.
+            return redirect($request->fullUrlWithQuery([
+                'coupon' => Spark::promotion()
+            ]));
+        }
+
+        return view('spark::auth.register');
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     * Handle a registration request for the application.
      *
-     * @param  array  $data
-     * @return \App\User
+     * @param  RegisterRequest  $request
+     * @return Response
      */
-    protected function create(array $data)
+    public function register(RegisterRequest $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+        Auth::login($user = Spark::interact(
+            Register::class, [$request]
+        ));
+
+        event(new UserRegistered($user));
+
+        return response()->json([
+            'redirect' => $this->redirectPath()
         ]);
-    }
-    public function no()
-    {
-        return 'no';
     }
 }

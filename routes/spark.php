@@ -175,8 +175,8 @@ $router->group(['middleware' => ['web', 'doNotCacheResponse']], function ($route
     $router->post('/login-via-emergency-token', 'Auth\EmergencyLoginController@login');
 
     // Registration...
-//    $router->get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-//    $router->post('/register', 'Auth\RegisterController@register');
+    $router->get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    $router->post('/register', 'Auth\RegisterController@register');
 
     // Password Reset...
     $router->get('/password/reset/{token?}', 'Auth\PasswordController@showResetForm')->name('password.reset');
