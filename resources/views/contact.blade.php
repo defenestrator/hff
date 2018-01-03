@@ -6,8 +6,6 @@ Contact us using this handy web form! Welcome to the future!
 @stop
 @section('page_styles')
 <style>
-
-
     form {
     padding: 15px 15px 15px 0;
     }
@@ -38,7 +36,6 @@ Contact us using this handy web form! Welcome to the future!
 @section('top')
     <img style="width:100%;" src="https://hobo-assets.s3-us-west-2.amazonaws.com/images/gourley/rod-rack.jpg">
 @stop
-
 
 @section('content')
 
@@ -126,7 +123,6 @@ Contact us using this handy web form! Welcome to the future!
     
 @stop
 
-{{-- page level scripts --}}
 @section('page_scripts')
 
 @stop
