@@ -10,7 +10,7 @@
 
 @section('top')
     <div class="tagline text-center" style="background-image: none;">
-        <h1 class="wow pulse" data-wow-duration="0.7s">
+        <h1>
             {{$message}}
         </h1>
     </div>
@@ -96,7 +96,5 @@
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
-    <script>
-        new WOW().init();
-    </script>
+
 @stop

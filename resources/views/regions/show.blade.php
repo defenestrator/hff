@@ -17,7 +17,7 @@
 
 @section('top')
     <div class="tagline">
-        <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center wow pulse" data-wow-duration="0.5s">
+        <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center">
             <a title="{{$region->name}}"></a>
             {{$region->name}}
         </h1>
@@ -74,7 +74,5 @@
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
-    <script>
-        new WOW().init();
-    </script>
+
 @stop

@@ -17,7 +17,7 @@
         </h2>
         <h2 class="feature-tagline text-center">Four anglers, six days of salmon and trout fishing</h2>
         <h2 class="feature-tagline text-center">Alaska's Most Productive Waters</h2>
-        <h2 style="font-size:40px;"class="feature-tagline text-center  wow pulse" data-wow-duration="2.5s">$2,500 per angler</h2>
+        <h2 style="font-size:40px;"class="feature-tagline text-center">$2,500 per angler</h2>
         <div style="margin: 0 auto;width:300px; max-width:70%"><sales-inquiry></sales-inquiry></div>
 
     </div>
@@ -36,7 +36,5 @@
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
-    <script>
-        new WOW().init();
-    </script>
+
 @stop

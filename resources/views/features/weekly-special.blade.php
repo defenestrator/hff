@@ -12,11 +12,11 @@
     <div style="padding:2em 0;
             background: #1a1a1a url('/images/flats/Roger_Permit.jpg') center center no-repeat;
             background-size:cover;" >
-        <h2 class="feature-tagline text-center wow pulse" data-wow-duration="1.5s">
+        <h2 class="feature-tagline text-center">
             Flats Fishing Special
         </h2>
         <h2 class="feature-tagline text-center">Bonefish, tarpon, permit, barracuda and jacks</h2>
-        <h2 style="font-size:xx-large"class="feature-tagline text-center  wow pulse" data-wow-duration="2.5s">6 days for $1000</h2>
+        <h2 style="font-size:xx-large"class="feature-tagline text-center">6 days for $1000</h2>
         <div style="margin: 0 auto;width:300px; max-width:70%"><sales-inquiry></sales-inquiry></div>
 
         <h2 class="feature-tagline text-center">Make it happen, at Hobo Fly Fishing</h2>
@@ -67,7 +67,5 @@
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
-    <script>
-        new WOW().init();
-    </script>
+
 @stop

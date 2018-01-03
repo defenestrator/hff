@@ -55560,6 +55560,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'form-control': true, 'is-danger': _vm.errors.has('email')
     },
     staticStyle: {
+      "font-size": "18px",
       "border": "1px solid #535965"
     },
     attrs: {

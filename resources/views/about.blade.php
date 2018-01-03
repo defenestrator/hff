@@ -11,7 +11,7 @@
 @section('top')
 
     <div class="tagline text-center">
-        <h1 style="padding-left:1em; padding-right:1em;" data-wow-duration="0.5s">
+        <h1 style="padding-left:1em; padding-right:1em;">
             More than 30 fly fishing lodges worldwide
         </h1>
         <h2 class="text-center">Trust us to represent them.</h2>
@@ -36,8 +36,5 @@
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
-    <script>
-        new WOW().init();
-    </script>
 @stop
 

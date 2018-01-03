@@ -12,12 +12,12 @@
     <div style="padding:2em 0;
                 background: #1a1a1a url('/images/backcountry-river-guides/slide1-178.jpg') center center no-repeat;
                 background-size:cover;" >
-        <h2 class="feature-tagline text-center wow pulse" data-wow-duration="1.5s">
+        <h2 class="feature-tagline text-center">
            Idaho's Wild Salmon River
         </h2>
         <h2 class="feature-tagline text-center">4 anglers, 4 days, fully outfitted</h2>
         <h2 class="feature-tagline text-center">Swinging for Hot Steel</h2>
-        <h2 style="font-size:xx-large"class="feature-tagline text-center  wow pulse" data-wow-duration="2.5s">$1000 per Angler</h2>
+        <h2 style="font-size:xx-large"class="feature-tagline text-center">$1000 per Angler</h2>
         <div style="margin: 0 auto;width:300px; max-width:70%"><sales-inquiry></sales-inquiry></div>
     </div>
 @stop
@@ -59,7 +59,5 @@
 @stop
 {{-- footer scripts --}}
 @section('page_scripts')
-<script>
-    new WOW().init();
-</script>
-  @stop
+
+@stop
