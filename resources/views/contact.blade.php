@@ -6,15 +6,7 @@ Contact us using this handy web form! Welcome to the future!
 @stop
 @section('page_styles')
 <style>
-    .form-control {
-    background-color: #fff;
-    border: 1px solid #D6D4D4;
-    width: 100%;
-    }
 
-    .contact .input-group {
-    display: block;
-    }
 
     form {
     padding: 15px 15px 15px 0;
@@ -28,36 +20,18 @@ Contact us using this handy web form! Welcome to the future!
     .input-group{ margin-bottom: 15px;}
 
     .media-right{
-    padding-top: 7%;
+        padding-top: 7%;
 
     }
     .address1>li{margin-bottom: 30px;}
-    .media-top .box-icon {
-    background-color: #464b17;
-    border: 1px solid #464b17;
-    border-radius: 50%;
-    display: table;
-    height: 40px;
-    width: 40px;
-    margin:0px;
-    }
-    .media-top .box-icon>i{position: relative;
-    left: 8px;
-    top:7px;
-    }
-    .padleft10{
-    padding-left: 10px;
-    }
-    .padbtm2{
-    padding-bottom: 5%;
-    }
 
-    #address_margt{
+    .pad{padding-left: 10px; padding-bottom:20px;}
+
+
+    .address_margin{
     margin-top: 40px;
     }
-    .resize_vertical{
-    resize: vertical;
-    }
+
 </style>
 @stop
 
@@ -99,7 +73,7 @@ Contact us using this handy web form! Welcome to the future!
                     </div>
                     <div class="form-group">
                         <textarea name="contact-msg"
-                                  class="form-control input-lg no-resize resize_vertical"
+                                  class="form-control input-lg"
                                   rows="6"
                                   placeholder="message" required>{{ old('contact-msg') }}</textarea>
                     </div>
@@ -113,7 +87,7 @@ Contact us using this handy web form! Welcome to the future!
             </div>
             <!-- //Contact Form Section End -->
             <!-- Address Section Start -->
-            <div class="col-md-6 col-sm-6" id="address_margt">
+            <div class="col-md-6 col-sm-6 address_margin" id="">
                 <div class="media media-right">
                     <div class="media-left media-top">
                         <a href="#address" title="write us!">
@@ -132,7 +106,7 @@ Contact us using this handy web form! Welcome to the future!
                         </address>
                     </div>
                 </div>
-                <div class="media padleft10">
+                <div class="media pad">
                     <div class="media-left media-top">
                         <a href="tel:1-208-859-9133" title="call us!">
                             <div>
@@ -140,7 +114,7 @@ Contact us using this handy web form! Welcome to the future!
                             </div>
                         </a>
                     </div>
-                    <div class="media-body padbtm2">
+                    <div class="media-body">
 
                         <h4 class="media-heading">Telephone:</h4> <a href="tel:1-208-859-9133">(208) 859-9133</a>
                     </div>
