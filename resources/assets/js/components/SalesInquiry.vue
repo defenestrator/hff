@@ -30,7 +30,7 @@
 
             </div>
         <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
-            <div style="font-weight:600;" class="text-center">Simply enter your email
+            <div style="font-weight:600;" class="text-center">Enter your email
                 <br> or call <a href="tel:12088599133">1-208-859-9133</a>
             </div>
         <hr>
@@ -101,14 +101,6 @@ export default {
                   return Promise.reject(error)
                 })
             })
-        }
-    },
-    created() {
-        this.validator = new VeeValidate.Validator({
-            email: 'required|email'
-        });
-        if (this.validator.errors) {
-            this.$set(this, 'errors', this.validator.errors)
         }
     },
     watch: {

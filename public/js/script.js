@@ -37854,15 +37854,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             });
         }
     },
-    created: function created() {
-        this.validator = new __WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */].Validator({
-            email: 'required|email'
-        });
-        if (this.validator.errors) {
-            this.$set(this, 'errors', this.validator.errors);
-        }
-    },
-
     watch: {
         newsletterEmail: function newsletterEmail(value) {
             this.untouched(false);
@@ -55624,7 +55615,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "font-weight": "600"
     }
-  }, [_vm._v("Simply enter your email\n            "), _c('br'), _vm._v(" or call "), _c('a', {
+  }, [_vm._v("Enter your email\n            "), _c('br'), _vm._v(" or call "), _c('a', {
     attrs: {
       "href": "tel:12088599133"
     }
