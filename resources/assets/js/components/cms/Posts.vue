@@ -212,6 +212,7 @@ export default {
                 tags: [],
                 link: '',
                 postId: null,
+                image_id: null,
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
