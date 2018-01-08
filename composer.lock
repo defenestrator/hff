@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2663eee7f3b7d8b5d3d5b6130240b9bc",
+    "content-hash": "7830d9be7458fc8ed58bf534c47a9b26",
     "packages": [
         {
             "name": "alchemy/binary-driver",
@@ -482,6 +482,50 @@
                 "tls"
             ],
             "time": "2017-11-29T09:37:33+00:00"
+        },
+        {
+            "name": "cooperaj/laravel-redis-sentinel",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cooperaj/laravel-redis-sentinel.git",
+                "reference": "544ab4d82c9ce0af4547560cca49456e32ee1e13"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cooperaj/laravel-redis-sentinel/zipball/544ab4d82c9ce0af4547560cca49456e32ee1e13",
+                "reference": "544ab4d82c9ce0af4547560cca49456e32ee1e13",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.3.0",
+                "illuminate/queue": "^5.3.0",
+                "illuminate/redis": "^5.3.0",
+                "illuminate/support": "^5.3.0",
+                "php": ">5.5.0",
+                "predis/predis": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "RedisSentinel\\": "src/RedisSentinel/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Adam Cooper",
+                    "email": "adam@networkpie.co.uk"
+                }
+            ],
+            "description": "Provides a laravel queue driver that works with Redis Sentinels.",
+            "time": "2017-06-08T15:03:52+00:00"
         },
         {
             "name": "cviebrock/eloquent-taggable",
