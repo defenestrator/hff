@@ -193,6 +193,9 @@ Vue.use(VeeValidate);
 export default {
     props: ['user','dev'],
     validator: null,
+    created() {
+        this.isADev()
+    },
     mounted() {
         this.getIndex()
     },

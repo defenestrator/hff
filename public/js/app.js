@@ -38794,6 +38794,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // Import this component
 
+var _props$validator$crea;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 // Import editor css
@@ -38801,9 +38805,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (_props$validator$crea = {
     props: ['user', 'dev'],
     validator: null,
+    created: function created() {
+        this.isADev();
+    },
     mounted: function mounted() {
         this.getIndex();
     },
@@ -38824,6 +38831,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 tags: [],
                 link: '',
                 postId: null,
+                image_id: null,
                 saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
@@ -38836,7 +38844,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             }),
             trumbowygConfig: {
                 id: 'trumbowyg',
-                autogrowOnEnter: true,
+                autogrow: true,
                 btnsDef: {
                     // Customizables dropdowns
                     image: {
@@ -39151,32 +39159,29 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 return Promise.reject(error);
             });
         }
-    },
-
-    created: function created() {
-        this.validator = new __WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */].Validator({
-            title: 'required|min:2',
-            body: 'required|min:40',
-            slug: 'required'
-        });
-    },
-
-    computed: {
-        /**
-         * Get the URL for updating the team photo.
-         */
-        urlForUpdate: function urlForUpdate() {
-            return '/api/photo';
-        },
-
-        /**
-         * Calculate the style attribute for the photo preview.
-         */
-        previewStyle: function previewStyle() {
-            return 'background-image: url(' + this.newPost.header_photo + ')';
-        }
     }
-});
+
+}, _defineProperty(_props$validator$crea, 'created', function created() {
+    this.validator = new __WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */].Validator({
+        title: 'required|min:2',
+        body: 'required|min:40',
+        slug: 'required'
+    });
+}), _defineProperty(_props$validator$crea, 'computed', {
+    /**
+     * Get the URL for updating the team photo.
+     */
+    urlForUpdate: function urlForUpdate() {
+        return '/api/photo';
+    },
+
+    /**
+     * Calculate the style attribute for the photo preview.
+     */
+    previewStyle: function previewStyle() {
+        return 'background-image: url(' + this.newPost.header_photo + ')';
+    }
+}), _props$validator$crea);
 
 /***/ }),
 /* 176 */
