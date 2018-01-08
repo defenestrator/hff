@@ -8,7 +8,7 @@ return [
          * The name of this application. You can use this name to monitor
          * the backups.
          */
-        'name' => config('app.name'),
+        'name' => 'backups',
 
         'source' => [
 
@@ -56,7 +56,7 @@ return [
             /*
              * The filename prefix used for the backup zip file.
              */
-            'filename_prefix' => 'full-backup-',
+            'filename_prefix' => config('app.name') . '-full-backup-',
 
             /*
              * The disk names on which the backups will be stored.
