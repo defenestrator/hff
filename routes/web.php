@@ -31,7 +31,7 @@ Route::get('regions/{slug}', 'RegionController@show');
 // Authors
 Route::get('/publications/authors/{uuid}', 'UserController@show');
 
-Route::group(['middleware' => ['auth:web']], function () {
+Route::group(['middleware' => ['auth:web', 'doNotCacheResponse']], function () {
     Route::view('/dashboard', 'dashboard');
     Route::put('/settings/profile/details', 'ProfileDetailsController@update');
     // Posts

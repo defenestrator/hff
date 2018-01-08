@@ -224,7 +224,7 @@ export default {
             }),
             trumbowygConfig: {
                 id: 'trumbowyg',
-                autogrowOnEnter: true,
+                autogrow: true,
                 btnsDef: {
                     // Customizables dropdowns
                     image: {
