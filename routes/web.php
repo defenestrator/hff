@@ -1,11 +1,11 @@
 <?php
 
 // PUBLIC GUEST VIEW ROUTES
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home')->middleware(['cacheResponse']);
 
-Route::view('/about', 'about')->name('about');
-Route::view('/terms', 'terms')->name('terms');
-Route::view('/privacy','privacy')->name('privacy');
+Route::view('/about', 'about')->name('about')->middleware(['cacheResponse']);
+Route::view('/terms', 'terms')->name('terms')->middleware(['cacheResponse']);
+Route::view('/privacy','privacy')->name('privacy')->middleware(['cacheResponse']);
 Route::group(['middleware' => ['doNotCacheResponse']], function() {
     Route::view('/contact', 'contact')->name('contact');
 });
@@ -15,21 +15,20 @@ Route::get('/tag/{tag}', 'TagsController@index');
 
 
 // Showcases
-Route::group(['prefix' => 'showcases'], function () {
+Route::group(['middleware'=> ['cacheResponse'] ,'prefix' => 'showcases'], function () {
     Route::get('{slug}', 'PublishedShowcasesController@show');
-
 });
 
 // Published posts
 Route::get('/publications/posts', 'PublishedPostsController@index')->name('publications.posts.index');
 Route::get('/publications/posts/{slug}', 'PublishedPostsController@show')->name('publications.posts.show');
 
-Route::get('/posts/{tag}/tag', 'PostTagsController@index');
-Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index');
-Route::get('regions/{slug}', 'RegionController@show');
+Route::get('/posts/{tag}/tag', 'PostTagsController@index')->middleware(['cacheResponse']);
+Route::get('/showcases/{tag}/tag', 'ShowcaseTagsController@index')->middleware(['cacheResponse']);
+Route::get('regions/{slug}', 'RegionController@show')->middleware(['cacheResponse']);
 
 // Authors
-Route::get('/publications/authors/{uuid}', 'UserController@show');
+Route::get('/publications/authors/{uuid}', 'UserController@show')->middleware(['cacheResponse']);
 
 Route::group(['middleware' => ['auth:web', 'doNotCacheResponse']], function () {
     Route::view('/dashboard', 'dashboard');

@@ -31,7 +31,6 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Laravel\Spark\Http\Middleware\CreateFreshApiToken::class,
-            \Spatie\ResponseCache\Middlewares\CacheResponse::class,
         ],
 
         'api' => [
@@ -48,14 +47,15 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'dev' => \Laravel\Spark\Http\Middleware\VerifyUserIsDeveloper::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'doNotCacheResponse' => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
+        'auth'                  => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic'            => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'              => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'                   => \Illuminate\Auth\Middleware\Authorize::class,
+        'dev'                   => \Laravel\Spark\Http\Middleware\VerifyUserIsDeveloper::class,
+        'guest'                 => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle'              => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'doNotCacheResponse'    => \Spatie\ResponseCache\Middlewares\DoNotCacheResponse::class,
+        'cacheResponse'         => \Spatie\ResponseCache\Middlewares\CacheResponse::class,
         //Archived until needed
 //        'subscribed' => \Laravel\Spark\Http\Middleware\VerifyUserIsSubscribed::class,
 //        'teamSubscribed' => \Laravel\Spark\Http\Middleware\VerifyTeamIsSubscribed::class,
