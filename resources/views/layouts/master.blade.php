@@ -15,9 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon-100.png" sizes="100x100">
     <title>@yield('title', config('app.name'))</title>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.3.1/sweetalert2.min.css" type='text/css' />
-    <link href="{{ mix('css/styles.css') }}" rel="stylesheet">
+    <link href="{{ url(mix('css/styles.css')) }}" rel="stylesheet">
     <!-- Page level Styles -->
     @yield('page_styles', '')
     <!-- Page level Scripts -->
@@ -43,7 +41,7 @@
         <!-- End Facebook Pixel Code -->
     @endif
     <!-- Global Spark Object -->
-    <script>
+    <script defer>
         window.Spark = <?php echo json_encode(array_merge(
             Spark::scriptVariables(), []
         )); ?>;
@@ -85,8 +83,19 @@
         @endif
     </div>
     <!-- JavaScript -->
-    <script src="{{ mix('js/script.js') }}"></script>
+    <script defer src="{{ url(mix('js/script.js')) }}"></script>
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.3.1/sweetalert2.min.js"></script>
+    <script async>
+        // Async loading of external fonts.
+        fa=document.createElement('link');
+        fa.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css';
+        fa.rel='stylesheet';
+        swa=document.createElement('link');
+        swa.href='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.3.1/sweetalert2.min.css';
+        swa.rel='stylesheet';
+        document.getElementsByTagName('head')[0].appendChild(fa);
+        document.getElementsByTagName('head')[0].appendChild(swa);
+    </script>
     @yield('page_scripts')
 </body>
 </html>
