@@ -43,7 +43,7 @@
         <!-- End Facebook Pixel Code -->
     @endif
     <!-- Global Spark Object -->
-    <script defer>
+    <script>
         window.Spark = <?php echo json_encode(array_merge(
             Spark::scriptVariables(), []
         )); ?>;
@@ -85,7 +85,7 @@
         @endif
     </div>
     <!-- JavaScript -->
-    <script defer src="{{ mix('js/script.js') }}"></script>
+    <script src="{{ mix('js/script.js') }}"></script>
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.3.1/sweetalert2.min.js"></script>
     @yield('page_scripts')
 </body>
