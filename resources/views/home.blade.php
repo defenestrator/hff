@@ -6,12 +6,6 @@
 @stop
 
 @section('page_styles')
-    <style>
-        .map-container {
-            width: 500px;
-            height: 300px;
-        }
-    </style>
 @stop
 
 @section('top')
@@ -28,10 +22,9 @@
         <h2 style="color:#262626; font-weight: 600; margin:10px 10px 20px 10px; ">
             Hobo Fly Fishing has the answer
         </h2>
-
     </div>
-
 @stop
+
 @section('content')
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
@@ -87,13 +80,13 @@
                         </span>&nbsp;&nbsp;
                     </p>
                     <p class="additional-post-wrap">
-                            <span class="taglinks">Tags:
-                                @forelse($post->tags as $tag)
-                                    <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
-                                @empty
-                                    No Tags
-                                @endforelse
-                            </span>
+                        <span class="taglinks">Tags:
+                            @forelse($post->tags as $tag)
+                                <a href="{{ URL::to('posts/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
+                            @empty
+                                No Tags
+                            @endforelse
+                        </span>
                     </p>
                 </div>
             </div>

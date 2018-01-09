@@ -7,8 +7,7 @@
                        v-validate="'required|email'" v-model="email" name="newsletter-email"
                        type="email"
                        :class="{'form-control': true, 'is-danger': errors.has('newsletter-email') }"
-                       aria-describedby="basic-addon2"
-                       autofocus required>
+                       aria-describedby="basic-addon2" required>
                     <span class="input-group-btn">
                         <button :class="{'btn': true, 'btn-primary': true, 'is-danger': errors.has('newsletter-email') }"
                                 @click.prevent="signup"

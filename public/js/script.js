@@ -37619,7 +37619,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
@@ -58351,7 +58350,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "newsletter-email",
       "type": "email",
       "aria-describedby": "basic-addon2",
-      "autofocus": "",
       "required": ""
     },
     domProps: {

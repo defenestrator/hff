@@ -9,15 +9,11 @@ use Illuminate\Http\Request;
 class PublishedShowcasesController extends ContentController
 {
     /**
-     * @param Showcase $showcase
-     * @param Publication $publication
-     * @return $this
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(Showcase $showcase, Publication $publication)
+    public function index()
     {
-        $published = $publication->all('post_id');
-        $showcases = $showcase->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(50);
-        return view('publications.showcases.index', compact('showcases'));
+        return view('showcases.index', ['pagetitle' => 'All destination showcases']);
     }
 
     /**
