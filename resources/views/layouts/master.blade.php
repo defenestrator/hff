@@ -50,7 +50,7 @@
     </script>
 </head>
 <body>
-    <div id="spark-app" v-cloak>
+    <div id="spark-app">
         <header class="site-header">
             {{-- Social and contact icon bar for guests only--}}
             @if(Auth::guest())
