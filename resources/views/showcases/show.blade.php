@@ -59,7 +59,6 @@
                                 No Tags
                             @endforelse
                         </p>
-                        <div id="disqus_thread"></div>
                     </div>
                 </article>
             </section>

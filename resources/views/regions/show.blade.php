@@ -51,7 +51,6 @@
                 <article class="article">
                     <hr>
                     <div>
-                        <div id="disqus_thread"></div>
                     </div>
                 </article>
             </section>

@@ -80,7 +80,6 @@
                         @endforelse
                     </p>
                     <p>
-                    <div id="disqus_thread"></div>
                     </p>
                     @endif
                 </div>
