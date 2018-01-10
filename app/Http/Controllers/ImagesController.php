@@ -60,6 +60,7 @@ class ImagesController extends Controller
         $resize = Image::make($img)
             ->resize(575, 575, function ($constraint) {
                 $constraint->aspectRatio();
+                $constraint->upsize();
             })->encode('jpg', 80)->stream();
         $hash = md5($resize->__toString());
         Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
@@ -71,6 +72,7 @@ class ImagesController extends Controller
         $resize = Image::make($img)
             ->resize(200, 200, function ($constraint) {
                 $constraint->aspectRatio();
+                $constraint->upsize();
             })->encode('jpg', 80);
         $hash = md5($resize->__toString());
         Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
