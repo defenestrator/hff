@@ -4,21 +4,21 @@ Route::group(['middleware' => ['cacheResponse']], function() {
     Route::redirect('/publications/posts/steelhead-on-the-salmon-river-with-backcountry-river-guides-and-brent-sawyer',
         '/publications/posts/backcountry-river-guides-steelhead');
 
-// Showcases
+    // Showcases
     Route::redirect('/publications/showcases', '/showcases');
-    Route::redirect('/publications/showcases/{slug}', '/');
+    Route::get('/publications/showcases/{slug}', 'PublishedShowcasesController@redirect');
 
-// Redirected Static Trip Pages, 301
-// features
+    // Redirected Static Trip Pages, 301
+    // features
     Route::redirect('/publications/podcasts', 'https://have-rod-will-travel.fireside.fm/');
     Route::redirect('/flats-special', '/showcases/costa-de-cocos');
     Route::redirect('/showcases/weekly-special', '/showcases/costa-rica-roosterfish');
-// trips changed to destinations
+    // trips changed to destinations
     Route::redirect('/trips/backcountry-river-guides', '/showcases/backcountry-river-guides');
     Route::redirect('/trips/costa-de-cocos', '/showcases/costa-de-cocos');
     Route::redirect('/trips/deep-creek-lodge', '/showcases/deep-creek-lodge');
     Route::redirect('/trips/naknek-river-camp', '/showcases/naknek-river-camp');
-// Features and Specials
+    // Features and Specials
     Route::group(['prefix' => 'features'], function () {
         Route::redirect('/weekly-special', '/');
         Route::redirect('/flats-special', '/showcases/costa-de-cocos');
@@ -26,7 +26,7 @@ Route::group(['middleware' => ['cacheResponse']], function() {
         Route::redirect('/idaho-steelhead-special', '/showcases/backcountry-river-guides');
     });
 
-// 'destinations/lodge' changed to to 'destinations/region/lodge'
+    // 'destinations/lodge' changed to to 'destinations/region/lodge'
     Route::redirect('/destinations/backcountry-river-guides', '/showcases/backcountry-river-guides');
     Route::redirect('/destinations/costa-de-cocos', '/showcases/costa-de-cocos');
     Route::redirect('/destinations/deep-creek-lodge', '/showcases/deep-creek-lodge');
@@ -34,7 +34,7 @@ Route::group(['middleware' => ['cacheResponse']], function() {
     Route::redirect('/destinations/blackfish-lodge', '/showcases/blackfish-lodge');
     Route::redirect('/destinations/two-boys-inn-andros', '/showcases/two-boys-inn');
 
-// Holiday 2017
+    // Holiday 2017
     Route::redirect('/showcases/looking-for-that-perfect-holiday-gift-', '/');
 
     Route::group(['prefix' => 'destinations'], function () {

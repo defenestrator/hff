@@ -12,7 +12,7 @@ Route::middleware('cacheResponse')->group( function(){
     Route::post('/contact','ContactFormController@create')->name('contact');
 
     // Published Showcases
-    Route::get('/showcases/{slug}', 'PublishedShowcasesController@show');
+    Route::get('/showcases/{slug}', 'PublishedShowcasesController@show')->name('published.showcase.show');
     Route::get('/showcases', 'PublishedShowcasesController@index');
 
     // Published posts

@@ -43,4 +43,8 @@ class PublishedShowcasesController extends ContentController
         return view('showcases.show')->with('showcase', $data);
     }
 
+    public function redirect($slug)
+    {
+        return redirect()->action('PublishedShowcasesController@show', $slug, 301);
+    }
 }

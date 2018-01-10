@@ -14,6 +14,14 @@ use GuzzleHttp\Client;
 |
 */
 
+Artisan::command('purgelog', function(){
+    $f = @fopen(storage_path("logs/laravel.log"), "r+");
+    if ($f !== false) {
+        ftruncate($f, 0);
+        fclose($f);
+    }
+});
+
 Artisan::command('sitemap', function () {
     $this->comment('Generating Sitemap');
         SitemapGenerator::create('https://hoboflyfishing.com')->writeToFile(public_path('sitemap.xml'));
