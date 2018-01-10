@@ -40379,7 +40379,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         getTags: function getTags(id) {
             var _this12 = this;
 
-            axios.get('/showcases/' + id + '/tags', {}).then(function (result) {
+            axios.get('/cms/showcases/' + id + '/tags', {}).then(function (result) {
                 _this12.newShowcase.tags = result.data;
                 return result.data.tags;
             }).catch(function (error) {

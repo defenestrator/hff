@@ -726,7 +726,7 @@ export default {
             })
         },
         getTags(id) {
-            axios.get(`/showcases/`+ id + '/tags', {})
+            axios.get(`/cms/showcases/`+ id + '/tags', {})
                 .then(result => {
                     this.newShowcase.tags = result.data;
                     return result.data.tags

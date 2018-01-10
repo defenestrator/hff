@@ -53,8 +53,7 @@ Route::middleware(['auth:web', 'doNotCacheResponse'])->group(function () {
 
 // DEVELOPER LEVEL AUTH ROUTES
 Route::middleware(['auth:web', 'dev', 'doNotCacheResponse'])->group(function () {
-    // Tags
-    Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
+
 
     // DEVELOPER CMS ROUTES
     Route::group(['middleware' => [], 'prefix' => 'cms'], function () {
@@ -70,7 +69,8 @@ Route::middleware(['auth:web', 'dev', 'doNotCacheResponse'])->group(function () 
         // CMS Showcases
         Route::get('/showcases', 'ShowcasesController@edit');
 
-
+        // Tags
+        Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
 
         // CMS Destinations
         Route::view('/destinations', 'cms.destinations');
