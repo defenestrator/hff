@@ -6,7 +6,7 @@ Route::group(['middleware' => ['cacheResponse']], function() {
 
 // Showcases
     Route::redirect('/publications/showcases', '/showcases');
-    Route::redirect('/publications/showcases/{slug}', '/showcases/{slug}');
+    Route::redirect('/publications/showcases/{slug}', '/');
 
 // Redirected Static Trip Pages, 301
 // features
