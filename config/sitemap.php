@@ -46,7 +46,7 @@ return [
      * The package will make an educated guess as to where Google Chrome is installed.
      * You can also manually pass it's location here.
      */
-    'chrome_binary_path' => null,
+    'chrome_binary_path' => '/usr/bin/chromium-browser',
 
     /*
      * The sitemap generator uses a CrawlProfile implementation to determine
