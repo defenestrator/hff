@@ -22,6 +22,11 @@ Artisan::command('purgelog', function(){
     }
 });
 
+Artisan::command('warmcache', function(){
+    $this->comment('Warming Cache');
+    shell_exec('wget -q http://hoboflyfishing.com/sitemap.xml --no-cache -O - | egrep -o "https://hoboflyfishing.com[^<]+" | wget --spider -i - --wait 1 &');
+});
+
 Artisan::command('sitemap', function () {
     $this->comment('Generating Sitemap');
         SitemapGenerator::create('https://hoboflyfishing.com')->writeToFile(public_path('sitemap.xml'));

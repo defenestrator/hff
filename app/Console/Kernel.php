@@ -35,7 +35,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('sitemap')
             ->environments(['production'])
-            ->dailyAt('04:00')
+            ->dailyAt('03:00')
             ->thenPing('http://beats.envoyer.io/heartbeat/JvGR9IUR1XPQbxg');
 
     }
