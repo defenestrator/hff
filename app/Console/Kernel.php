@@ -30,7 +30,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->command('backup:run')
             ->environments(['production'])
-            ->twiceDaily('03:00')
+            ->twiceDaily()
             ->thenPing('http://beats.envoyer.io/heartbeat/g3nDXfWLuLTQQ8f');
 
         $schedule->command('sitemap')
