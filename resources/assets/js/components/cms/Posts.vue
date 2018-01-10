@@ -555,7 +555,7 @@ export default {
             })
         },
         getTags(id) {
-            axios.get(`/posts/`+ id + '/tags', {})
+            axios.get(`/cms/posts/`+ id + '/tags', {})
                 .then(result => {
                     this.newPost.tags = result.data;
                     return result.data.tags

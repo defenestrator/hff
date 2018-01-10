@@ -44,11 +44,11 @@ Route::middleware('doNotCacheResponse')->group(function() {
 Route::middleware(['auth:web', 'doNotCacheResponse'])->group(function () {
     Route::view('/dashboard', 'dashboard');
     Route::put('/settings/profile/details', 'ProfileDetailsController@update');
-    // Posts
+
+    // CMS Posts
     Route::get('/cms/posts', 'PostsController@create');
     Route::post('/cms/images', 'ImagesController@wysiwyg');
-    // Tags
-    Route::get('/posts/{id}/tags', 'PostTagsController@edit');
+    Route::get('/cms/posts/{id}/tags', 'PostTagsController@edit');
 });
 
 // DEVELOPER LEVEL AUTH ROUTES
@@ -68,8 +68,6 @@ Route::middleware(['auth:web', 'dev', 'doNotCacheResponse'])->group(function () 
 
         // CMS Showcases
         Route::get('/showcases', 'ShowcasesController@edit');
-
-        // Tags
         Route::get('/showcases/{id}/tags', 'ShowcaseTagsController@edit');
 
         // CMS Destinations
