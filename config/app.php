@@ -173,7 +173,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Yajra\Disqus\DisqusServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Spatie\ResponseCache\ResponseCacheServiceProvider::class,
