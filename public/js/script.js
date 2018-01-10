@@ -39154,7 +39154,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         getTags: function getTags(id) {
             var _this10 = this;
 
-            axios.get('/posts/' + id + '/tags', {}).then(function (result) {
+            axios.get('/cms/posts/' + id + '/tags', {}).then(function (result) {
                 _this10.newPost.tags = result.data;
                 return result.data.tags;
             }).catch(function (error) {
