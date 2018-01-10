@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Hobo Fly Fishing | Have Rod, Will Travel
+    Hobo Fly Fishing | Elite Destinations, Local Flavor
     @parent
 @stop
 
@@ -11,7 +11,7 @@
 @section('top')
     <div class="tagline text-center" style="padding:8em 0; background-image:url('https://s3-us-west-2.amazonaws.com/hobo-assets/images/closeup-bone.jpg'); background-position:right center; background-size:cover;">
         <h1 style="text-shadow:#000 1px 1px 3px; font-weight:600;">
-            Fly Fishing Adventure
+            Fly Fishing Travel
         </h1>
         <h2 style="text-shadow:#000 1px 1px 3px;  font-weight:600;">
             Elite Destinations, Local Flavor
