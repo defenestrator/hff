@@ -14,9 +14,9 @@ var app = new Vue({
     mixins: [require('spark')],
     mounted() {
         // Async loading of external fonts.
-        const link = document.createElement('link');
-        link.href ='https://fonts.googleapis.com/css?family=Raleway:100,300,600';
-        link.rel = 'stylesheet';
+        const mainFont = document.createElement('link');
+        mainFont.href ='https://fonts.googleapis.com/css?family=Raleway:100,300,600';
+        mainFont.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(link)
         // Async loading of css.
         const fa=document.createElement('link');
