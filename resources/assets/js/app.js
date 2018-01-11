@@ -1,13 +1,4 @@
-
-/*
- |--------------------------------------------------------------------------
- | Laravel Spark Bootstrap
- |--------------------------------------------------------------------------
- |
- |
- */
 require('spark-bootstrap');
-
 require('./components/bootstrap');
 //Vue.config.silent = true
 var app = new Vue({
