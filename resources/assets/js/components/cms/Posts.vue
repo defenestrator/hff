@@ -30,7 +30,7 @@
         <form class="form-horizontal new-post" v-if="! index" role="form">
             <div class="form-group">
                 <div v-show="newPost.postId" class="col-md-2 hidden-sm hidden-xs">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saveDisabled">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saved">
                             <span v-if="newPost.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
                              </span>
@@ -47,7 +47,7 @@
                     </button>
                 </div>
                 <div v-show="! newPost.postId" class="col-md-2 hidden-sm hidden-xs">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saveDisabled">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saved || saveBusy">
                             <span v-if="newPost.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                              </span>
@@ -60,7 +60,7 @@
                     </button>
                 </div>
                 <div v-if="isDev" class="col-md-2 hidden-sm hidden-xs">
-                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published || ! newPost.successful">
                         <span v-if="newPost.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
                              </span>
@@ -139,7 +139,7 @@
                     </button>
                 </div>
                 <div v-show="! newPost.postId" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saveDisabled">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saved">
                             <span v-if="newPost.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                              </span>
@@ -152,7 +152,7 @@
                     </button>
                 </div>
                 <div v-if="isDev" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published || newPost.saved">
                         <span v-if="newPost.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
                              </span>
@@ -216,10 +216,9 @@ export default {
                 link: '',
                 postId: null,
                 image_id: null,
-                saveDisabled: false,
                 saveBusy: false,
                 saveError: false,
-                saved: false,
+                saved: true,
                 serverErrors: null,
                 publishBusy: false,
                 published: null,
@@ -264,7 +263,6 @@ export default {
     watch: {
         'newPost.header_photo': function (val, oldVal) {
             this.newPost.saved = false
-            this.newPost.saveDisabled = false
         },
         title(value) {
             this.validator.validate('title', value);
@@ -272,26 +270,24 @@ export default {
         body(value) {
             this.validator.validate('body', value);
         },
+
         /**
             * Watch the title and create slug.
         */
         'newPost.title': function (val, oldVal) {
             this.newPost.serverErrors = null
             if (this.newPost.slug == '' ||
-                    this.newPost.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
+                    this.newPost.slug == this.makeSlug(oldVal)
             ) {
-                this.newPost.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
+                this.newPost.slug = this.makeSlug(val)
             }
             this.newPost.saved = false
-            this.newPost.saveDisabled = false
         },
         'newPost.body': function (val, oldVal) {
             this.newPost.saved = false
-            this.newPost.saveDisabled = false
         },
         'newPost.tags': function (val, oldVal) {
                 this.newPost.saved = false
-                this.newPost.saveDisabled = false
         }
     },
     methods: {
@@ -301,6 +297,9 @@ export default {
                 return true
             }
             return false
+        },
+        makeSlug(inputString) {
+            return inputString.toLowerCase().trim().replace(/[\s\W-]+/g, '-')
         },
         getIndex() {
             axios.get(`/api/posts`, {})
@@ -340,7 +339,6 @@ export default {
                                 tags: this.newPost.tags
                             })
                             .then(result  => {
-                                this.newPost.saveDisabled = true
                                 this.newPost.saveBusy = false
                                 this.newPost.saved= true
                                 this.newPost.postId = result.data.id
@@ -424,7 +422,6 @@ export default {
         update() {
             this.newPost.saveError = false
             this.newPost.saveBusy = true
-            this.newPost.saveDisabled = true
             this.validator.validateAll({
                 title: this.newPost.title,
                 body: this.newPost.body
@@ -519,7 +516,6 @@ export default {
         clear() {
             this.newPost.saved = false
             this.newPost.saveBusy = false
-            this.newPost.saveDisabled = false
             this.newPost.publishBusy = false
             this.newPost.published = null
             this.newPost.publicationId = null
@@ -531,7 +527,6 @@ export default {
             this.newPost.tags = []
         },
         edit(id){
-            this.newPost.saveDisabled = true
             this.saveBusy = true
             this.index = false
             this.newPost.postId = id
@@ -546,7 +541,6 @@ export default {
                 this.checkPublication(id)
                 this.saveBusy = false
                 this.newPost.saved = true
-                this.newPost.saveDisabled = true
 
                 return result.data
                 })

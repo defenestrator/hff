@@ -39,8 +39,15 @@ class ImagesController extends Controller
                 $constraint->upsize();
             })->encode('jpg', 80)->stream();
         $hash = md5($resize->__toString());
-        Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
-        $large = Storage::disk('s3')->url('images/'.$hash.'.jpg');
+
+        if (config('app.env') == 'production') {
+            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
+            $large =  Storage::disk('s3')->url('images/'.$hash.'.jpg');
+        } else {
+            Storage::disk('local')->put('/public/images/'.$hash.'.jpg' , $resize->__toString());
+            $large =  Storage::disk('local')->url('images/'.$hash.'.jpg');
+        }
+
         $record = ImageModel::create([
             'thumbnail' => $thumbnail,
             'stamp' => $stamp,
@@ -63,8 +70,14 @@ class ImagesController extends Controller
                 $constraint->upsize();
             })->encode('jpg', 80)->stream();
         $hash = md5($resize->__toString());
-        Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
-        return Storage::disk('s3')->url('images/'.$hash.'.jpg');
+        if (config('app.env') == 'production') {
+            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
+            $location =  Storage::disk('s3')->url('images/'.$hash.'.jpg');
+        } else {
+            Storage::disk('local')->put('/public/images/'.$hash.'.jpg' , $resize->__toString());
+            $location =  Storage::disk('local')->url('images/'.$hash.'.jpg');
+        }
+        return $location;
     }
 
     public function stamp($img)
@@ -75,7 +88,13 @@ class ImagesController extends Controller
                 $constraint->upsize();
             })->encode('jpg', 80);
         $hash = md5($resize->__toString());
-        Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
-        return Storage::disk('s3')->url('images/'.$hash.'.jpg');
+        if (config('app.env') == 'production') {
+            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
+            $location =  Storage::disk('s3')->url('images/'.$hash.'.jpg');
+        } else {
+            Storage::disk('local')->put('/public/images/'.$hash.'.jpg' , $resize->__toString());
+            $location =  Storage::disk('local')->url('images/'.$hash.'.jpg');
+        }
+        return $location;
     }
 }

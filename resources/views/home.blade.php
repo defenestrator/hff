@@ -9,7 +9,7 @@
 @stop
 
 @section('top')
-    <div class="tagline text-center" style="padding:8em 0; background-image:url('https://s3-us-west-2.amazonaws.com/hobo-assets/images/closeup-bone.jpg'); background-position:right center; background-size:cover;">
+    <div class="tagline text-center" style="padding:8em 0; background-image:url('https://hobo-assets.s3-us-west-2.amazonaws.com/images/closeup-bone.jpg'); background-position:right center; background-size:cover;">
         <h1 style="text-shadow:#000 1px 1px 3px; font-weight:600;">
             Fly Fishing Travel
         </h1>
