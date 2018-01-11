@@ -38,6 +38,10 @@ class Kernel extends ConsoleKernel
             ->dailyAt('03:00')
             ->thenPing('http://beats.envoyer.io/heartbeat/JvGR9IUR1XPQbxg');
 
+        $schedule->command('reheat')
+            ->environments(['production'])
+            ->dailyAt('04:00')
+            ->thenPing('http://beats.envoyer.io/heartbeat/Pmeg8HGRelhFZug');
     }
 
     /**

@@ -14,7 +14,7 @@ use GuzzleHttp\Client;
 |
 */
 
-Artisan::command('purgelog', function(){
+Artisan::command('purgelog', function() {
     $f = @fopen(storage_path("logs/laravel.log"), "r+");
     if ($f !== false) {
         ftruncate($f, 0);
@@ -22,13 +22,22 @@ Artisan::command('purgelog', function(){
     }
 });
 
-Artisan::command('warmcache', function(){
+Artisan::command('warmcache', function() {
     $this->comment('Warming Cache');
     shell_exec('wget -q http://hoboflyfishing.com/sitemap.xml --no-cache -O - | egrep -o "https://hoboflyfishing.com[^<]+" | wget --spider -i - --wait 1 &');
 });
 
+Artisan::command('reheat', function() {
+    $this->comment('flush and reheat response cache');
+    Artisan::call('responsecache:flush');
+    $this->comment('Flushing Cache');
+    Artisan::call('warmcache');
+    $this->comment('Warming Cache');
+});
+
 Artisan::command('sitemap', function () {
     $this->comment('Generating Sitemap');
-        SitemapGenerator::create('https://hoboflyfishing.com')->writeToFile(public_path('sitemap.xml'));
+    SitemapGenerator::create('https://hoboflyfishing.com')
+        ->writeToFile(public_path('sitemap.xml'));
     $this->comment('Sitemap Generated!');
 })->describe('Generate an updated sitemap for teh googlebots pleasure, slave.');
