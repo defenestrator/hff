@@ -36557,9 +36557,9 @@ var app = new Vue({
     mixins: [__webpack_require__(285)],
     mounted: function mounted() {
         // Async loading of external fonts.
-        var link = document.createElement('link');
-        link.href = 'https://fonts.googleapis.com/css?family=Raleway:100,300,600';
-        link.rel = 'stylesheet';
+        var mainFont = document.createElement('link');
+        mainFont.href = 'https://fonts.googleapis.com/css?family=Raleway:100,300,600';
+        mainFont.rel = 'stylesheet';
         document.getElementsByTagName('head')[0].appendChild(link);
         // Async loading of css.
         var fa = document.createElement('link');

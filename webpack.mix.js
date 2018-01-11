@@ -12,19 +12,14 @@ mix.webpackConfig({
         }
     })
     .js('./resources/assets/js/app.js', 'public/js/')
-    if(process.env.APP_ENV === "production"){
-        mix.combine([
+    mix.combine(
+        [
             'public/js/app.js',
             './node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js'
-        ], 'public/js/script.js')
-        .less('resources/assets/less/styles.less', 'public/css')
-    } else {
-        mix.combine([
-            'public/js/app.js',
-            './node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js'
-        ], 'public/js/script.js')
-        .less('resources/assets/less/styles.less', 'public/css')
-    }
+        ],
+        'public/js/script.js'
+    )
+    .less('resources/assets/less/styles.less', 'public/css')
 
 
 
