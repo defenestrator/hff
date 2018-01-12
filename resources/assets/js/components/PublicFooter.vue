@@ -1,19 +1,7 @@
 <template>
 <footer>
     <div class="container footer-text">
-        <!-- About Us Section Start -->
-        <div class="col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-            <a href="#about"><h4>About Us?</h4></a>
-            <p>
-                We listen to local anglers who smell like the water they fish. You know the ones.
-                They give you 'the look' when they see rods on your truck. They know who the locals are.
-                We are lucky enough to know a few anglers who <strong><em>live</em></strong> the water.
-            </p>
-            <h5>Forget <a style="color:#ababab;" href="/about" title="if you must know, click here.">about us.</a></h5>
-            <br>
-        </div>
-        <div class="col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-            <!-- Contact Section Start -->
+        <div class="col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1">
             <a href="#contact"><h4>Shout!</h4></a>
             <ul class="list-unstyled">
                 <li>289 N. Hullen Pl.</li>
@@ -31,31 +19,44 @@
                 </li>
             </ul>
             <hr id="hr_border2">
-            <a href="#follow"><h4 class="menu">Hop Aboard</h4></a>
-            <ul class="list-inline">
-                <li>
-                    <a href="https://fb.me/hoboflyfishing">
-                        <i style="color:white;" class="fa fa-facebook" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://twitter.com/flyfishidaho">
-                        <i style="color:white;" class="fa fa-twitter" aria-hidden="true"></i>
+            <div class="hidden-xs">
+                <a href="#follow"><h4 class="menu">Hop Aboard</h4></a>
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://fb.me/hoboflyfishing">
+                            <i style="color:white;" class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/flyfishidaho">
+                            <i style="color:white;" class="fa fa-twitter" aria-hidden="true"></i>
 
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/hoboflyfishing/">
-                        <i style="color:white;" class="fa fa-instagram" aria-hidden="true"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCJwjEQAWMuxqnw5VT4a9zpg">
-                        <i style="color:white;" class="fa fa-youtube-play" aria-hidden="true"></i>
-                    </a>
-                </li>
-            </ul>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/hoboflyfishing/">
+                            <i style="color:white;" class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCJwjEQAWMuxqnw5VT4a9zpg">
+                            <i style="color:white;" class="fa fa-youtube-play" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
+        <div class="col-sm-8 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+            <a href="#about"><h4>About Us?</h4></a>
+            <p>
+                We listen to local anglers who smell like the water they fish. You know the ones.
+                They give you 'the look' when they see rods on your truck. They know who the locals are.
+                We are lucky enough to know a few anglers who <strong><em>live</em></strong> the water.
+            </p>
+            <h5>Forget <a style="color:#ababab;" href="/about" title="if you must know, click here.">about us.</a></h5>
+            <br>
+        </div>
+
     </div>
 </footer>
 </template>

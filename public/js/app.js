@@ -38155,6 +38155,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 //
 //
 //
+//
 
 Vue.component('newsletter-signup', __webpack_require__(326));
 
@@ -56597,21 +56598,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('footer', [_c('div', {
     staticClass: "container footer-text"
   }, [_c('div', {
-    staticClass: "col-sm-8 col-sm-offset-0 col-xs-10 col-xs-offset-1"
-  }, [_c('a', {
-    attrs: {
-      "href": "#about"
-    }
-  }, [_c('h4', [_vm._v("About Us?")])]), _vm._v(" "), _c('p', [_vm._v("\n                We listen to local anglers who smell like the water they fish. You know the ones.\n                They give you 'the look' when they see rods on your truck. They know who the locals are.\n                We are lucky enough to know a few anglers who "), _c('strong', [_c('em', [_vm._v("live")])]), _vm._v(" the water.\n            ")]), _vm._v(" "), _c('h5', [_vm._v("Forget "), _c('a', {
-    staticStyle: {
-      "color": "#ababab"
-    },
-    attrs: {
-      "href": "/about",
-      "title": "if you must know, click here."
-    }
-  }, [_vm._v("about us.")])]), _vm._v(" "), _c('br')]), _vm._v(" "), _c('div', {
-    staticClass: "col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"
+    staticClass: "col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1"
   }, [_c('a', {
     attrs: {
       "href": "#contact"
@@ -56644,7 +56631,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "hr_border2"
     }
-  }), _vm._v(" "), _c('a', {
+  }), _vm._v(" "), _c('div', {
+    staticClass: "hidden-xs"
+  }, [_c('a', {
     attrs: {
       "href": "#follow"
     }
@@ -56700,7 +56689,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })])])])])])])
+  })])])])])]), _vm._v(" "), _c('div', {
+    staticClass: "col-sm-8 col-sm-offset-1 col-xs-10 col-xs-offset-1"
+  }, [_c('a', {
+    attrs: {
+      "href": "#about"
+    }
+  }, [_c('h4', [_vm._v("About Us?")])]), _vm._v(" "), _c('p', [_vm._v("\n                We listen to local anglers who smell like the water they fish. You know the ones.\n                They give you 'the look' when they see rods on your truck. They know who the locals are.\n                We are lucky enough to know a few anglers who "), _c('strong', [_c('em', [_vm._v("live")])]), _vm._v(" the water.\n            ")]), _vm._v(" "), _c('h5', [_vm._v("Forget "), _c('a', {
+    staticStyle: {
+      "color": "#ababab"
+    },
+    attrs: {
+      "href": "/about",
+      "title": "if you must know, click here."
+    }
+  }, [_vm._v("about us.")])]), _vm._v(" "), _c('br')])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
