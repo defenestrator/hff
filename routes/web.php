@@ -25,8 +25,8 @@ Route::middleware('cacheResponse')->group( function(){
     Route::get('/tag/{tag}', 'TagsController@index');
 
     // Regions
-    Route::get('regions/{slug}', 'RegionController@show');
-    Route::get('regions', 'RegionController@index');
+    Route::get('/regions/{slug}', 'RegionController@show');
+    Route::get('/regions', 'RegionController@index');
     // Authors
     Route::get('/publications/authors/{uuid}', 'UserController@show');
 
