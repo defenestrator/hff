@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Region;
+use App\Publication;
 
 class RegionController extends ContentController
 {
@@ -16,7 +17,8 @@ class RegionController extends ContentController
     {
         $published = $publication->all('post_id');
         $regions = $region->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(50);
-        return view('publications.regions.index', compact('regions'));
+        $pagetitle = 'Regions around the world';
+        return view('regions.index', compact('regions', 'pagetitle'));
     }
 
     /**
