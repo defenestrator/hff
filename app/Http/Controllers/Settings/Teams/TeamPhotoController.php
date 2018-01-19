@@ -18,10 +18,8 @@ class TeamPhotoController extends Controller
     protected $images;
 
     /**
-     * Create a new interaction instance.
-     *
-     * @param  ImageManager  $images
-     * @return void
+     * TeamPhotoController constructor.
+     * @param ImageManager $images
      */
     public function __construct(ImageManager $images)
     {
@@ -30,11 +28,8 @@ class TeamPhotoController extends Controller
     }
 
     /**
-     * Update the given team's photo.
-     *
-     * @param  UpdateTeamPhotoRequest  $request
-     * @param  \Laravel\Spark\Team  $team
-     * @return Response
+     * @param Request $request
+     * @param $team
      */
     public function update(Request $request, $team)
     {
@@ -62,9 +57,6 @@ class TeamPhotoController extends Controller
 
         $path = $file->hashName('images/teams');
 
-        // We will store the profile photos on the "public" disk, which is a convention
-        // for where to place assets we want to be publicly accessible. Then, we can
-        // grab the URL for the image to store with this user in the database row.
         $disk = Storage::disk('s3');
 
         $disk->put(

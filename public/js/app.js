@@ -41184,83 +41184,8 @@ var base = __webpack_require__(246);
 
 Vue.component('spark-notifications', {
     props: ['notifications', 'hasUnreadAnnouncements', 'loadingNotifications'],
-    mixins: [base],
+    mixins: [base]
 
-    /**
-     * The component's data.
-     */
-    data: function data() {
-        return {
-            showingNotifications: true,
-            showingAnnouncements: false
-        };
-    },
-
-
-    methods: {
-        /**
-         * Show the user notifications.
-         */
-        showNotifications: function showNotifications() {
-            this.showingNotifications = false;
-            this.showingAnnouncements = true;
-            this.updateLastReadAnnouncementsTimestamp();
-        },
-
-
-        /**
-         * Show the product announcements.
-         */
-        showAnnouncements: function showAnnouncements() {
-            this.showingNotifications = false;
-            this.showingAnnouncements = true;
-
-            this.updateLastReadAnnouncementsTimestamp();
-        },
-
-
-        /**
-         * Update the last read announcements timestamp.
-         */
-        updateLastReadAnnouncementsTimestamp: function updateLastReadAnnouncementsTimestamp() {
-            axios.put('/user/last-read-announcements-at').then(function () {
-                Bus.$emit('updateUser');
-            });
-        }
-    },
-
-    computed: {
-        /**
-         * Get the active notifications or announcements.
-         */
-        activeNotifications: function activeNotifications() {
-            if (!this.notifications) {
-                return [];
-            }
-
-            if (this.showingNotifications) {
-                return this.notifications.notifications;
-            } else {
-                return this.notifications.announcements;
-            }
-        },
-
-
-        /**
-         * Determine if the user has any notifications.
-         */
-        hasNotifications: function hasNotifications() {
-            return this.notifications && this.notifications.notifications.length > 0;
-        },
-
-
-        /**
-         * Determine if the user has any announcements.
-         */
-        hasAnnouncements: function hasAnnouncements() {
-            return this.notifications && this.notifications.announcements.length > 0;
-        }
-    }
 });
 
 /***/ }),
@@ -58609,7 +58534,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'btn': true, 'btn-primary': true, 'is-danger': _vm.newPost.saveError
     },
     attrs: {
-      "disabled": _vm.newPost.saveDisabled
+      "disabled": _vm.newPost.saved
     },
     on: {
       "click": function($event) {
@@ -58638,7 +58563,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'btn': true, 'btn-primary': true, 'is-danger': _vm.newPost.saveError
     },
     attrs: {
-      "disabled": _vm.newPost.saved
+      "disabled": _vm.newPost.saved || _vm.saveBusy
     },
     on: {
       "click": function($event) {

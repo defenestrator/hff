@@ -122,7 +122,7 @@
             </div>
             <div class="form-group">
                 <div v-show="newPost.postId" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saveDisabled">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saved">
                             <span v-if="newPost.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
                              </span>
@@ -139,7 +139,7 @@
                     </button>
                 </div>
                 <div v-show="! newPost.postId" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saved">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saved || saveBusy">
                             <span v-if="newPost.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                              </span>

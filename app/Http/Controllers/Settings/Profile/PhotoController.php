@@ -63,9 +63,6 @@ class PhotoController extends Controller
 
         $path = $file->hashName('images/profiles');
 
-        // We will store the profile photos on the "public" disk, which is a convention
-        // for where to place assets we want to be publicly accessible. Then, we can
-        // grab the URL for the image to store with this user in the database row.
         $disk = Storage::disk('s3');
 
         $disk->put(
