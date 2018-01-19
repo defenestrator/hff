@@ -30,7 +30,7 @@ class UpdateTeamPhotoTest extends TestCase
 
         Storage::shouldReceive('disk')
                         ->once()
-                        ->with('public')
+                        ->with('s3')
                         ->andReturn($disk = Mockery::mock('StdClass'));
 
         $disk->shouldReceive('put');
