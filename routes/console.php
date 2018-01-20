@@ -28,16 +28,16 @@ Artisan::command('warmcache', function() {
 })->describe('Warm spatie responsecache');
 
 Artisan::command('reheat', function() {
-    $this->comment('flush and reheat response cache');
-    Artisan::call('responsecache:flush');
     $this->comment('Flushing Cache');
-    Artisan::call('warmcache');
+    Artisan::call('responsecache:flush');
     $this->comment('Warming Cache');
-})->describe('flush and re-warm responsecache');
+    Artisan::call('warmcache');
+    $this->comment('Cache warmed');
+})->describe('Flush and re-warm responsecache');
 
 Artisan::command('sitemap', function () {
     $this->comment('Generating Sitemap');
     SitemapGenerator::create('https://hoboflyfishing.com')
         ->writeToFile(public_path('sitemap.xml'));
-    $this->comment('Sitemap Generated!');
+    $this->comment('Sitemap generated');
 })->describe('Generate an updated sitemap for teh googlebots pleasure, slave.');
