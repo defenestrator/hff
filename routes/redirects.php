@@ -41,7 +41,6 @@ Route::group(['prefix' => 'destinations'], function () {
     Route::redirect('/alaska/boardwalk-lodge', '/showcases/boardwalk-lodge-alaska');
     Route::redirect('/alaska/bristol-bay-sportfishing', '/showcases/bristol-bay-sportfishing');
     Route::redirect('/alaska/hidden-basin', '/showcases/hidden-basin-kodiak-ak');
-    Route::redirect('/showcases/-hidden-basin-kodiak-ak', '/showcases/hidden-basin-kodiak-ak');
     Route::redirect('/alaska/kvichak-lodge', '/showcases/kvichak-lodge');
     Route::redirect('/alaska/midnight-sun-trophy-pike', '/showcases/midnight-sun-trophy-pike-adventures');
     Route::redirect('/alaska/naknek-river-camp', '/showcases/naknek-river-camp');
@@ -110,3 +109,5 @@ Route::redirect('/publications/posts/all-fish-lives-matter', '/publications/post
 Route::redirect('/compareproducts', '/');
 Route::redirect('/forgot-password', '/password/reset');
 Route::redirect('/destinations/yucatan/da', '/regions/mexico');
+
+Route::redirect('/showcases/-hidden-basin-kodiak-ak', '/showcases/hidden-basin-kodiak-ak');
