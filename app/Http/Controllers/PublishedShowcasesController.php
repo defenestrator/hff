@@ -23,24 +23,7 @@ class PublishedShowcasesController extends ContentController
      */
     public function show(Showcase $showcase, $slug)
     {
-        $title = $this->slugger->titleify($slug);
-        $data = new $showcase([
-            'special'=> false,
-            'slug' => $title ,
-            'tagline' => 'Doesn\'t exist' ,
-            'thumbnail' => '/images/tangle.jpg',
-            'region' => 'utopia' ,
-            'fishery_type' => 'noncorporeal' ,
-            'sidebar_top' => 'Nothing' ,
-            'sidebar_bottom' => 'More nothing' ,
-            'header_photo' => '/images/tangle.jpg',
-            'body'  => 'There is nothing here, sorry.',
-            'title' => "'" . $title . "'",
-        ]);
-        if ($showcase->where('slug', '=', $slug)->count() > 0) {
-            $data = $showcase->where('slug', '=', $slug)->first();
-        }
-        return view('showcases.show')->with('showcase', $data);
+        return view('showcases.show')->with('showcase', $showcase->where('slug', '=', $slug)->first());
     }
 
     public function redirect($slug)
