@@ -20,12 +20,12 @@ Artisan::command('purgelog', function() {
         ftruncate($f, 0);
         fclose($f);
     }
-});
+})->describe('Clear application log at storage/logs/laravel.log');
 
 Artisan::command('warmcache', function() {
     $this->comment('Warming Cache');
-    shell_exec('wget -q http://hoboflyfishing.com/sitemap.xml --no-cache -O - | egrep -o "https://hoboflyfishing.com[^<]+" | wget --spider -i - --wait 1 &');
-});
+    shell_exec('wget -q https://hoboflyfishing.com/sitemap.xml --no-cache -O - | egrep -o "https://hoboflyfishing.com[^<]+" | wget --spider -i - --wait 1 &');
+})->describe('Warm spatie responsecache');
 
 Artisan::command('reheat', function() {
     $this->comment('flush and reheat response cache');
@@ -33,7 +33,7 @@ Artisan::command('reheat', function() {
     $this->comment('Flushing Cache');
     Artisan::call('warmcache');
     $this->comment('Warming Cache');
-});
+})->describe('flush and re-warm responsecache');
 
 Artisan::command('sitemap', function () {
     $this->comment('Generating Sitemap');
