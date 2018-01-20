@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ImagesController extends Controller
 {
-    public $options = ['visibility' => 'public','Cache-Control' => 'max-age=315360000, no-transform, public',
-        'Content-Encoding' => 'gzip'];
+    public $options = ['visibility' => 'public','Cache-Control' => 'max-age=315360000, no-transform, public'];
 
     public function wysiwyg(Request $request)
     {
@@ -27,6 +26,7 @@ class ImagesController extends Controller
         $request->validate([
             'header_photo' => 'required|image'
         ]);
+
         return $this->build($request->file('header_photo') );
     }
 
@@ -50,21 +50,18 @@ class ImagesController extends Controller
             Storage::disk('local')->put('/public/images/'.$hash.'.jpg' , $resize->__toString());
             $large =  Storage::disk('local')->url('images/'.$hash.'.jpg');
         }
-
-        if ($thumbnail && $stamp && $large) {
-            $record = ImageModel::create([
-                'thumbnail' => $thumbnail,
-                'stamp' => $stamp,
-                'large' => $large
-            ]);
-            return response()->json([
-                'image_id' => $record->id,
-                'thumbnail' => $thumbnail,
-                'stamp' => $stamp,
-                'large' => $large,
-                'success' => true,
-            ]);
-        }
+        $record = ImageModel::create([
+            'thumbnail' => $thumbnail,
+            'stamp' => $stamp,
+            'large' => $large
+        ]);
+        return response()->json([
+            'image_id' => $record->id,
+            'thumbnail' => $thumbnail,
+            'stamp' => $stamp,
+            'large' => $large,
+            'success' => true,
+        ]);
     }
 
     public function thumbnail($img)
