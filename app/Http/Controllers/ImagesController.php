@@ -15,7 +15,7 @@ class ImagesController extends Controller
     public function wysiwyg(Request $request)
     {
         $request->validate([
-            'image' => 'required|image|mimes:jpg,jpeg,png'
+            'image' => 'required|image'
         ]);
         $builder = $this->build($request->image);
 
@@ -25,7 +25,7 @@ class ImagesController extends Controller
     public function header(Request $request)
     {
         $request->validate([
-            'header_photo' => 'required|image|mimes:jpg,jpeg,png'
+            'header_photo' => 'required|image'
         ]);
         return $this->build($request->file('header_photo') );
     }
