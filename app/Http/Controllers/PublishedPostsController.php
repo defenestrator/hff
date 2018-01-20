@@ -32,10 +32,23 @@ class PublishedPostsController extends ContentController
      */
     public function show(Post $post, User $user, $slug)
     {
-        return view('publications.posts.show',[
-            'post' => $post->where('slug', '=', $slug)->first(),
-            'author' => $user->where('id', '=', $item->user_id)->first()
+        $item = new $post([
+            'user_id'  => 0,
+            'author' => 'Nobody Nullington',
+            'header_photo' => '/images/tangle.jpg',
+            'body'  => 'There is nothing here, sorry.',
+            'title' => "There is no post called: ". "'".$this->slugger->titleify($slug)."'",
+            'slug' => $slug
         ]);
+        $author = new $user([
+                'name' =>'Nobody Nullington',
+                'uuid' => ''
+            ]);
+        if ($post->where('slug', '=', $slug)->count() > 0){
+            $item = $post->where('slug', '=', $slug)->first();
+            $author = $user->where('id', '=', $item->user_id)->first();
+        }
+        return view('publications.posts.show',['post' => $item, 'author' => $author]);
     }
 
 }
