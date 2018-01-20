@@ -16,9 +16,13 @@ class ImagesController extends Controller
         $request->validate([
             'image' => 'required|image'
         ]);
-        $builder = $this->build($request->image);
 
-        return $builder;
+        $large = $this->large($request->image);
+
+        return response()->json([
+            'large' => $large,
+            'success' => true,
+        ]);
     }
 
     public function header(Request $request)
@@ -27,29 +31,10 @@ class ImagesController extends Controller
             'header_photo' => 'required|image'
         ]);
 
-        return $this->build($request->file('header_photo') );
-    }
+        $large = $this->large($request->file('header_photo'));
+        $thumbnail = $this->thumbnail($request->file('header_photo'));
+        $stamp = $this->stamp($request->file('header_photo'));
 
-    public function build($image)
-    {
-        $thumbnail = $this->thumbnail($image);
-
-        $stamp = $this->stamp($image);
-
-        $resize = Image::make($image)
-            ->resize(1280, 1280, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            })->encode('jpg', 70)->stream();
-        $hash = md5($resize->__toString());
-
-        if (config('app.env') == 'production') {
-            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), $this->options);
-            $large =  Storage::disk('s3')->url('images/'.$hash.'.jpg');
-        } else {
-            Storage::disk('local')->put('/public/images/'.$hash.'.jpg' , $resize->__toString());
-            $large =  Storage::disk('local')->url('images/'.$hash.'.jpg');
-        }
         $record = ImageModel::create([
             'thumbnail' => $thumbnail,
             'stamp' => $stamp,
@@ -62,6 +47,25 @@ class ImagesController extends Controller
             'large' => $large,
             'success' => true,
         ]);
+    }
+
+    public function large($image)
+    {
+        $resize = Image::make($image)
+            ->resize(1280, 1280, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            })->encode('jpg', 70)->stream();
+        $hash = md5($resize->__toString());
+
+        if (config('app.env') == 'production') {
+            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), $this->options);
+            $location =  Storage::disk('s3')->url('images/'.$hash.'.jpg');
+        } else {
+            Storage::disk('local')->put('/public/images/'.$hash.'.jpg' , $resize->__toString());
+            $location =  Storage::disk('local')->url('images/'.$hash.'.jpg');
+        }
+        return $location;
     }
 
     public function thumbnail($img)
