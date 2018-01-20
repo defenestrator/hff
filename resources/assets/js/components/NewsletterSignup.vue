@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p class="text-center">Get timely updates and exclusive offers</p>
+        <p class="text-center">Get exclusive offers with our monthly newsletter</p>
         <form>
             <div class="input-group">
                 <input style="font-size:18px;"class="form-control" placeholder="your email"

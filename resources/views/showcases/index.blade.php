@@ -20,27 +20,44 @@
 @stop
 @section('content')
 <div class="row">
-        <div class="col-md-8 col-md-offset-0">
-            @foreach($showcases as $showcase)
-                <div class="article showcase">
-                    <h2 class="primary"><a href="/showcases/{{$showcase->slug}}">{{$showcase->title}}</a></h2>
-                    <p><a href="/showcases/{{$showcase->slug}}">
-                        <img style="width:100%;" src="{{$showcase->header_photo}}" alt="{{$showcase->title}}" title="{{$showcase->title}}">
-                    </a></p>
-                    <article>
-                        <p><a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}">
-                            {!! str_limit(strip_tags($showcase->body), 200, '...') !!}
-                        </a></p>
-                    </article>
-                    <p class="additional-showcase-wrap">
-                        <span class="taglinks">Tags:
-                            @forelse($showcase->tags as $tag)
-                                <a href="{{ URL::to('showcases/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
-                            @empty
-                                No Tags
-                            @endforelse
-                        </span>
-                    </p>
+        <div class="col-md-12 col-md-offset-0">
+            @foreach(array_chunk($showcases->all(), 2) as $showcaseRow)
+                <div class="row">
+                    @foreach($showcaseRow as $showcase)
+                        <div style="margin:20px 0;" class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
+                            <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
+                                <div class="thumbnail"
+                                     style="background: linear-gradient(rgba(0,0,0, 0.2),rgba(0,0,0, 0.2)), url('{{$showcase->thumbnail}}') no-repeat; background-size:cover;">
+                                    <div class="caption">
+                                        <h3 style="font-weight:600;">{{$showcase->homepage_top}}</h3>
+                                        <h3 style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>
+                                    </div>
+                                    @if($showcase->special)
+                                        <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="btn btn-warning">
+                                            <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+                                            <span>Learn More</span>
+                                        </button>
+                                    @endif
+                                </div>
+                                <article>
+                                    <p>
+                                        <a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}">
+                                            {!! str_limit(strip_tags($showcase->body), 200, '...') !!}
+                                        </a>
+                                    </p>
+                                </article>
+                                <p class="additional-showcase-wrap">
+                                    <span class="taglinks">Tags:
+                                        @forelse($showcase->tags as $tag)
+                                            <a href="{{ URL::to('showcases/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
+                                        @empty
+                                            No Tags
+                                        @endforelse
+                                    </span>
+                                </p>
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
             @endforeach
         </div>

@@ -26,17 +26,12 @@
 @stop
 
 @section('content')
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-            <newsletter-signup></newsletter-signup>
-            <br>
-        </div>
-    </div>
 
-    @foreach(array_chunk($showcases->all(), 3) as $showcaseRow)
+
+    @foreach(array_chunk(array_slice($showcases->all(), 0, 6), 2) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)
-                <div style="margin:9px 0;" class="col-md-4 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
+                <div style="margin:9px 0;" class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
                     <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                         <div class="thumbnail"
                              style="background: linear-gradient(rgba(0,0,0, 0.2),rgba(0,0,0, 0.2)), url('{{$showcase->thumbnail}}') no-repeat; background-size:cover;">
@@ -56,6 +51,18 @@
             @endforeach
         </div>
     @endforeach
+    <div class="row">
+        <div style="margin:9px 0; padding-bottom:24px; border-bottom:2px solid #c5c7ca;" class="text-center col-md-12">
+            <a href="/showcases"><button class="btn btn-primary" style="font-size:24px;">See All Destinations</button></a>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+            <newsletter-signup></newsletter-signup>
+            <br>
+        </div>
+    </div>
     <div class="row">
         <div class="container"><h2>Latest Blog Posts</h2></div>
         @foreach($posts as $post)

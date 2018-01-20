@@ -58632,7 +58632,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('p', {
     staticClass: "text-center"
-  }, [_vm._v("Get timely updates and exclusive offers")]), _vm._v(" "), _c('form', [_c('div', {
+  }, [_vm._v("Get exclusive offers with our monthly newsletter")]), _vm._v(" "), _c('form', [_c('div', {
     staticClass: "input-group"
   }, [_c('input', {
     directives: [{
