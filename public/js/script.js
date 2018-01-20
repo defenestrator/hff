@@ -48581,7 +48581,7 @@ exports.push([module.i, "\n.vue-input-tag-wrapper {\n    background-color: #fff;
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn:hover, .btn.disabled:focus, .btn[disabled]:focus, fieldset[disabled] .btn:focus{\n    background-color:#cbb956 !important;\n}\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn.btn-warning.is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus, .btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\nbackground-color:transparent;\nborder:none;\noutline: 0;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 991px) {\n.new-newsletter .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n.newsletter-index {\n    position:relative;\n    display:block\n}\n", ""]);
+exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn.btn-warning.is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 991px) {\n.new-newsletter .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n.newsletter-index {\n    position:relative;\n    display:block\n}\n", ""]);
 
 /***/ }),
 /* 307 */
@@ -48595,7 +48595,7 @@ exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-dange
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn.btn-warning.is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus, .btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\nbackground-color:transparent;\nborder:none;\noutline: 0;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 991px) {\n.new-post .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n.post-index {\n    position:relative;\n    display:block\n}\n", ""]);
+exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn.btn-warning.is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus, .btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\nbackground-color:transparent;\nborder:none;\noutline: 0;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 991px) {\n.new-post .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n.post-index {\n    position:relative;\n    display:block\n}\n.btn-warning.disabled:hover,\n.btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus,\n.btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\n    background-color:transparent !important;\n}\n", ""]);
 
 /***/ }),
 /* 309 */
@@ -57086,10 +57086,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     return _c('tr', {
       staticClass: "table-hover"
     }, [_c('td', [_c('strong', [_vm._v(_vm._s(newsletter.subject))])]), _vm._v(" "), (newsletter.sent_on) ? _c('td', [_vm._v(_vm._s(newsletter.sent_on))]) : _c('td', [_vm._v("Not yet!")]), _vm._v(" "), _c('td', [_c('button', {
+      directives: [{
+        name: "show",
+        rawName: "v-show",
+        value: (!newsletter.sent_on),
+        expression: "! newsletter.sent_on"
+      }],
       staticClass: "btn btn-warning",
       attrs: {
-        "role": "button",
-        "disabled": newsletter.sent_on
+        "role": "button"
       },
       on: {
         "click": function($event) {
@@ -58307,7 +58312,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'btn': true, 'btn-warning': true, 'is-success': _vm.newPost.published
     },
     attrs: {
-      "disabled": _vm.newPost.published || !_vm.newPost.successful
+      "disabled": _vm.newPost.published || !_vm.newPost.saved
     },
     on: {
       "click": function($event) {
@@ -58557,7 +58562,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'btn': true, 'btn-warning': true, 'is-success': _vm.newPost.published
     },
     attrs: {
-      "disabled": _vm.newPost.published || _vm.newPost.saved
+      "disabled": _vm.newPost.published || !_vm.newPost.saved
     },
     on: {
       "click": function($event) {

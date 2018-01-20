@@ -60,7 +60,7 @@
                     </button>
                 </div>
                 <div v-if="isDev" class="col-md-2 hidden-sm hidden-xs">
-                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published || ! newPost.successful">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published || ! newPost.saved">
                         <span v-if="newPost.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
                              </span>
@@ -152,7 +152,7 @@
                     </button>
                 </div>
                 <div v-if="isDev" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published || newPost.saved">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published || ! newPost.saved">
                         <span v-if="newPost.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
                              </span>
@@ -631,5 +631,13 @@ export default {
     .post-index {
         position:relative;
         display:block
+    }
+    .btn-warning.disabled:hover,
+    .btn-warning[disabled]:hover,
+    fieldset[disabled] .btn:hover,
+    .btn.disabled:focus,
+    .btn[disabled]:focus,
+    fieldset[disabled] .btn:focus {
+        background-color:transparent !important;
     }
 </style>

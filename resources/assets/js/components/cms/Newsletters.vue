@@ -24,7 +24,7 @@
                 <td><strong>{{ newsletter.subject }}</strong></td>
                 <td v-if="newsletter.sent_on">{{newsletter.sent_on}}</td>
                 <td v-else>Not yet!</td>
-                <td><button @click.prevent="(edit(newsletter.id))"role="button" class="btn btn-warning" :disabled="newsletter.sent_on">Edit</button></td>
+                <td><button @click.prevent="(edit(newsletter.id))"role="button" class="btn btn-warning" v-show="! newsletter.sent_on">Edit</button></td>
             </tr>
             </tbody>
         </table>
@@ -369,9 +369,6 @@ export default {
 }
 </script>
 <style>
-    .btn-warning.disabled:hover, .btn-warning[disabled]:hover, fieldset[disabled] .btn:hover, .btn.disabled:focus, .btn[disabled]:focus, fieldset[disabled] .btn:focus{
-        background-color:#cbb956 !important;
-    }
     .help.is-danger {
     color : #ef6f6c;
     }
@@ -386,14 +383,6 @@ export default {
     box-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;
     background-color:transparent;
     color: #0A8A4A;
-    }
-    .btn-warning.disabled:hover, .btn-warning[disabled]:hover,
-    fieldset[disabled] .btn:hover,
-    .btn.disabled:focus, .btn[disabled]:focus,
-    fieldset[disabled] .btn:focus {
-    background-color:transparent;
-    border:none;
-    outline: 0;
     }
     input.is-danger, textarea.is-danger {
     border-color: #ef6f6c;

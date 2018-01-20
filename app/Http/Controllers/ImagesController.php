@@ -9,10 +9,13 @@ use Illuminate\Support\Facades\Storage;
 
 class ImagesController extends Controller
 {
+    public $options = ['visibility' => 'public','CacheControl' => 'max-age=315360000, no-transform, public',
+        'Content-Encoding' => 'gzip'];
+
     public function wysiwyg(Request $request)
     {
         $request->validate([
-            'image' => 'required|image'
+            'image' => 'required|image|mimes:jpg,jpeg,png'
         ]);
         $builder = $this->build($request->image);
 
@@ -37,29 +40,31 @@ class ImagesController extends Controller
             ->resize(1280, 1280, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
-            })->encode('jpg', 80)->stream();
+            })->encode('jpg', 70)->stream();
         $hash = md5($resize->__toString());
 
         if (config('app.env') == 'production') {
-            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
+            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), $this->options);
             $large =  Storage::disk('s3')->url('images/'.$hash.'.jpg');
         } else {
             Storage::disk('local')->put('/public/images/'.$hash.'.jpg' , $resize->__toString());
             $large =  Storage::disk('local')->url('images/'.$hash.'.jpg');
         }
 
-        $record = ImageModel::create([
-            'thumbnail' => $thumbnail,
-            'stamp' => $stamp,
-            'large' => $large
-        ]);
-        return response()->json([
-            'image_id' => $record->id,
-            'thumbnail' => $thumbnail,
-            'stamp' => $stamp,
-            'large' => $large,
-            'success' => true,
-        ]);
+        if ($thumbnail && $stamp && $large) {
+            $record = ImageModel::create([
+                'thumbnail' => $thumbnail,
+                'stamp' => $stamp,
+                'large' => $large
+            ]);
+            return response()->json([
+                'image_id' => $record->id,
+                'thumbnail' => $thumbnail,
+                'stamp' => $stamp,
+                'large' => $large,
+                'success' => true,
+            ]);
+        }
     }
 
     public function thumbnail($img)
@@ -68,10 +73,10 @@ class ImagesController extends Controller
             ->resize(575, 575, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
-            })->encode('jpg', 80)->stream();
+            })->encode('jpg', 75)->stream();
         $hash = md5($resize->__toString());
         if (config('app.env') == 'production') {
-            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
+            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), $this->options);
             $location =  Storage::disk('s3')->url('images/'.$hash.'.jpg');
         } else {
             Storage::disk('local')->put('/public/images/'.$hash.'.jpg' , $resize->__toString());
@@ -89,7 +94,7 @@ class ImagesController extends Controller
             })->encode('jpg', 80);
         $hash = md5($resize->__toString());
         if (config('app.env') == 'production') {
-            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), 'public');
+            Storage::disk('s3')->put('/images/'.$hash.'.jpg' , $resize->__toString(), $this->options);
             $location =  Storage::disk('s3')->url('images/'.$hash.'.jpg');
         } else {
             Storage::disk('local')->put('/public/images/'.$hash.'.jpg' , $resize->__toString());
