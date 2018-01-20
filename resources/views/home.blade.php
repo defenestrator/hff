@@ -32,16 +32,17 @@
             <br>
         </div>
     </div>
-    @foreach(array_chunk($showcases->all(), 2) as $showcaseRow)
+
+    @foreach(array_chunk($showcases->all(), 3) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)
-                <div style="margin:9px 0;" class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
+                <div style="margin:9px 0;" class="col-md-4 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
                     <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                         <div class="thumbnail"
                              style="background: linear-gradient(rgba(0,0,0, 0.2),rgba(0,0,0, 0.2)), url('{{$showcase->thumbnail}}') no-repeat; background-size:cover;">
                             <div class="caption">
                                 <h3 style="font-weight:600;">{{$showcase->homepage_top}}</h3>
-                                <h3 style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>
+                                {{--<h3 style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>--}}
                             </div>
                             @if($showcase->special)
                                 <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="btn btn-warning">
