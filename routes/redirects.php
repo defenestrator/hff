@@ -105,7 +105,9 @@ Route::group(['middleware' => ['cacheResponse']], function() {
     Route::redirect('/blog', '/publications/posts');
     Route::redirect('/blogitem/tequila-and-popcorn', '/publications/posts/tequila-and-popcorn');
     Route::redirect('/posts/tequila/mi', '/publications/posts/tequila-and-popcorn');
+    Route::redirect('/publications/posts/all-fish-lives-matter', '/publications/posts/any-fish-any-time');
     Route::redirect('/compareproducts', '/');
     Route::redirect('/forgot-password', '/password/reset');
     Route::redirect('/destinations/yucatan/da', '/regions/mexico');
+
 });
