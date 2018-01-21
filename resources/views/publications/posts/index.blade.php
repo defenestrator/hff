@@ -67,6 +67,7 @@
                          style="background-image: url('{{$showcase->thumbnail}}');
                                  background-position: center center;">
                         <div class="caption">
+                            <h3 style="font-weight:600;">{{$showcase->homepage_top}}</h3>
                             <h3 style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>
                         </div>
                         @if($showcase->special)
