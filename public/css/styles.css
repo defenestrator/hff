@@ -7837,20 +7837,30 @@ a:active.btn-primary {
   margin-bottom: 22px;
   line-height: 1.6;
 }
+.sidebar-thumbnail h3 {
+  font-weight: 600;
+  font-size: 18px;
+}
 @media (min-width: 500px) {
   .thumbnail {
     height: 366px;
   }
   .sidebar-thumbnail {
-    height: 300px;
+    height: 350px;
+  }
+  .sidebar-thumbnail h3 {
+    font-size: 24px;
   }
 }
 @media (min-width: 768px) {
   .thumbnail {
-    height: 350px;
+    height: 400px;
   }
   .thumbnail p {
     text-align: left;
+  }
+  .sidebar-thumbnail {
+    height: 150px;
   }
 }
 @media (min-width: 992px) {
@@ -7858,7 +7868,10 @@ a:active.btn-primary {
     height: 285px;
   }
   .sidebar-thumbnail {
-    height: 150px;
+    height: 180px;
+  }
+  .sidebar-thumbnail h3 {
+    font-size: 24px;
   }
 }
 @media (min-width: 1200px) {
