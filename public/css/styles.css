@@ -7839,7 +7839,6 @@ a:active.btn-primary {
 }
 .sidebar-thumbnail h3 {
   font-weight: 600;
-  font-size: 18px;
 }
 @media (min-width: 500px) {
   .thumbnail {
@@ -7861,6 +7860,9 @@ a:active.btn-primary {
   }
   .sidebar-thumbnail {
     height: 150px;
+  }
+  .sidebar-thumbnail h3 {
+    font-size: 18px;
   }
 }
 @media (min-width: 992px) {
