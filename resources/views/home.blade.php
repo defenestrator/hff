@@ -63,7 +63,7 @@
     </div>
 
     <div class="row">
-        <div class="container"><h2>Latest Blog Posts</h2></div>
+        <h2 class="text-center">FRESH FROM THE HOBO BLOG</h2>
         @foreach($posts as $post)
             <div class="col-sm-4">
             <div class="post">
