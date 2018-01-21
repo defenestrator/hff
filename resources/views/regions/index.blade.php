@@ -12,13 +12,30 @@
 @section('top')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-0">
-                <h1>{{$pagetitle}}</h1>
+            <div class="col-sm-12 col-sm-offset-0">
+                <h4>Jump to:</h4>
             </div>
         </div>
+        @foreach(array_chunk($regions->all(), 2) as $regionRow)
+            <div class="row">
+                @foreach($regionRow as $region)
+                    <div class="col-xs-6">
+                        @if($region->id != 0)
+
+                            <a class="text-center" href="#{{$region->slug}}" title="{{$region->name}}">
+                                <i class="fa fa-globe" aria-hidden="true"></i> {{$region->name}}
+                            </a>
+                        @endif
+                    </div>
+                @endforeach
+
+            </div>
+        @endforeach
     </div>
 @stop
 @section('content')
+<hr>
+
 <div class="row">
     <div class="col-md-8 col-md-offset-0">
     @foreach($regions as $region)
@@ -26,7 +43,7 @@
             <div>
                 <h2 style="font-weight:bold; border-bottom:2px solid #c5c7ca; padding:1em; padding-left:0.2em;">
                     <i class="fa fa-globe" aria-hidden="true"></i>
-                    <a class="text-center" href="/regions/{{$region->slug}}" title="{{$region->name}}">
+                    <a class="text-center" id="{{$region->slug}}" href="/regions/{{$region->slug}}" title="{{$region->name}}">
                     {{$region->name}}
                     </a>
                 </h2>
