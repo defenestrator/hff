@@ -52,7 +52,7 @@
     @endforeach
     <div class="row">
         <div style="margin:9px 0; padding-bottom:24px; border-bottom:2px solid #c5c7ca;" class="text-center col-md-12">
-            <a href="/showcases"><button class="btn btn-primary" style="font-size:24px;">See All Destinations</button></a>
+            <a style="width:100%;" href="/showcases"><button class="btn btn-primary" style="width:100%; font-size:24px;">See All Destinations</button></a>
             <br>
         </div>
     </div>
