@@ -52,16 +52,16 @@
     @endforeach
     <div class="row">
         <div style="margin:9px 0; padding-bottom:24px; border-bottom:2px solid #c5c7ca;" class="text-center col-md-12">
-            <a style="width:100%;" href="/showcases"><button class="btn btn-primary" style="width:100%; font-size:24px;">See All Destinations</button></a>
+            <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+                <newsletter-signup />
+                <br>
+            </div>
+
+            <a style="width:100%;" href="/showcases"><button class="btn btn-danger" style="width:100%; font-size:24px;">See All Destinations</button></a>
             <br>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-            <newsletter-signup></newsletter-signup>
-            <br>
-        </div>
-    </div>
+
     <div class="row">
         <div class="container"><h2>Latest Blog Posts</h2></div>
         @foreach($posts as $post)
