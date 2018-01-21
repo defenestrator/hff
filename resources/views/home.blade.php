@@ -55,14 +55,13 @@
                 <newsletter-signup />
                 <br>
             </div>
-
             <a style="width:100%;" href="/showcases"><button class="btn btn-danger" style="width:100%; font-size:24px;">See All Destinations</button></a>
             <br>
         </div>
     </div>
 
     <div class="row">
-        <h2 class="text-center">FRESH FROM THE HOBO BLOG</h2>
+        <h2 class="text-center" style="font-size:40px; font-weight:bold;"><a href="/publications/posts">HOBO BLOG</a></h2>
         @foreach($posts as $post)
             <div class="col-sm-4">
             <div class="post">

@@ -88,10 +88,10 @@
                     <div class="col-md-12 info">
                         <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                             <div class="sidebar-thumbnail"
-                                 style="background-image: url('{{$showcase->thumbnail}}');
-                                         background-position: center center;">
+                                 style="background: linear-gradient(rgba(0,0,0, 0.2),rgba(0,0,0, 0.2)), url('{{$showcase->thumbnail}}') no-repeat; background-size:cover;">
                                 <div class="caption">
 
+                                    <h3 style="font-weight:600;">{{$showcase->homepage_top}}</h3>
                                     <h3 style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>
                                 </div>
                                 @if($showcase->special)
