@@ -52,7 +52,7 @@
                     <hr>
                     <div>
                         <p>
-                            <strong>Tags: </strong>
+                            Tags:
                             @forelse($showcase->tags as $tag)
                                 <a href="{{ URL::to('showcases/' . ($tag->normalized) . '/tag') }}">{{ $tag->name }}</a>,
                             @empty

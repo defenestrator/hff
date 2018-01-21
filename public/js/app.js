@@ -55950,7 +55950,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "font-weight": "600"
     }
-  }, [_vm._v("Contact Hobo Fly Fishing for details")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Contact Hobo Fly Fishing for details.")]), _vm._v(" "), _c('div', {
     staticClass: "input-group"
   }, [_c('input', {
     directives: [{
@@ -56499,7 +56499,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1"
   }, [_c('a', {
     attrs: {
-      "href": "#contact"
+      "href": "/contact"
     }
   }, [_c('h4', [_vm._v("Shout!")])]), _vm._v(" "), _c('ul', {
     staticClass: "list-unstyled"
@@ -56531,13 +56531,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "hidden-xs"
-  }, [_c('a', {
-    attrs: {
-      "href": "#follow"
-    }
   }, [_c('h4', {
     staticClass: "menu"
-  }, [_vm._v("Hop Aboard")])]), _vm._v(" "), _c('ul', {
+  }, [_vm._v("Hop Aboard")]), _vm._v(" "), _c('ul', {
     staticClass: "list-inline"
   }, [_c('li', [_c('a', {
     attrs: {
@@ -56591,7 +56587,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-sm-8 col-sm-offset-1 col-xs-10 col-xs-offset-1"
   }, [_c('a', {
     attrs: {
-      "href": "#about"
+      "href": "/about"
     }
   }, [_c('h4', [_vm._v("About Us?")])]), _vm._v(" "), _c('p', [_vm._v("\n                We listen to local anglers who smell like the water they fish. You know the ones.\n                They give you 'the look' when they see rods on your truck. They know who the locals are.\n                We are lucky enough to know a few anglers who "), _c('strong', [_c('em', [_vm._v("live")])]), _vm._v(" the water.\n            ")]), _vm._v(" "), _c('h5', [_vm._v("Forget "), _c('a', {
     staticStyle: {

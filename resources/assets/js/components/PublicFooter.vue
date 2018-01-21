@@ -2,7 +2,7 @@
 <footer>
     <div class="container footer-text">
         <div class="col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-            <a href="#contact"><h4>Shout!</h4></a>
+            <a href="/contact"><h4>Shout!</h4></a>
             <ul class="list-unstyled">
                 <li>289 N. Hullen Pl.</li>
                 <li>Star, ID 83669</li>
@@ -20,7 +20,7 @@
             </ul>
             <hr id="hr_border2">
             <div class="hidden-xs">
-                <a href="#follow"><h4 class="menu">Hop Aboard</h4></a>
+                <h4 class="menu">Hop Aboard</h4>
                 <ul class="list-inline">
                     <li>
                         <a href="https://fb.me/hoboflyfishing">
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="col-sm-8 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-            <a href="#about"><h4>About Us?</h4></a>
+            <a href="/about"><h4>About Us?</h4></a>
             <p>
                 We listen to local anglers who smell like the water they fish. You know the ones.
                 They give you 'the look' when they see rods on your truck. They know who the locals are.
