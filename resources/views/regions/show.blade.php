@@ -21,7 +21,6 @@
             <a title="{{$region->name}}"></a>
             {{$region->name}}
         </h1>
-        <h2 class="showcase-header text-center">Yeah, we fish there too.</h2>
     </div>
     <div class="container">
         <div class="row">
@@ -33,59 +32,44 @@
 
 @stop
 @section('content')
+    @foreach(array_chunk($region->showcases->all(), 2) as $showcaseRow)
     <div class="row">
-        <div class="col-sm-10 col-sm-offset-1">
+        @foreach($showcaseRow as $showcase)
+        <div class="col-sm-6 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <h2>Places we book in {{$region->name}}</h2>
-                    @foreach($region->showcases as $showcase)
-                    <div style="padding-bottom: 24px; border-bottom:2px solid #c5c7ca;" class="article">
-                        <p><a href="/showcases/{{ $showcase->slug }}"><h3>{{$showcase->title}}</h3><img src="{{$showcase->header_photo}}"/></a></p>
-                        <article>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <h4>
-                                        <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->homepage_top}}">{{$showcase->tagline}}</a>
-                                    </h4>
-                                </div>
-                                <div class="col-md-8">
-                                    <p>
-                                        <a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}" title="{{$showcase->homepage_bottom}}">
-                                            {!! str_limit(strip_tags($showcase->body), 200, '...') !!}
-                                        </a>
-                                    </p>
-                                    <p>
-                                        <span class="taglinks">Tags:
-                                            @forelse($showcase->tags as $tag)
-                                                <a href="{{ URL::to('showcases/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
-                                            @empty
-                                                No Tags
-                                            @endforelse
-                                    </span>
-                                    </p>
-                                </div>
-                            </div>
-                        </article>
-                        <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
-
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </article>
-            </section>
-        </div>
-        <div class="col-sm-4 col-sm-offset-0">
-            <section>
-                <article class="article">
-                    <hr>
-                    <div>
+                    <div style="padding: 24px;" class="article">
+                        <p>
+                            <a href="/showcases/{{ $showcase->slug }}">
+                                <h3>{{$showcase->title}}</h3>
+                                <img src="{{$showcase->header_photo}}"/>
+                            </a>
+                        </p>
+                        <h4>
+                            <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->homepage_top}}">{{$showcase->tagline}}</a>
+                        </h4>
+                        <p>
+                            <a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}" title="{{$showcase->homepage_bottom}}">
+                                {!! str_limit(strip_tags($showcase->body), 200, '...') !!}
+                            </a>
+                        </p>
+                        <p>
+                            <span class="taglinks">Tags:
+                                @forelse($showcase->tags as $tag)
+                                    <a href="{{ URL::to('showcases/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
+                                @empty
+                                    No Tags
+                                @endforelse
+                        </span>
+                        </p>
                     </div>
                 </article>
             </section>
         </div>
+        @endforeach
     </div>
+    @endforeach
+
 @stop
 
 @section('bottom')

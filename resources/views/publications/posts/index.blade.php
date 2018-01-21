@@ -59,27 +59,7 @@
             </div>
         </div>
     <div class="col-sm-4 col-sm-offset-0">
-        <h3 class="text-center">Top 10</h3>
-        @foreach($showcases->take(10) as $showcase)
-            <div class="col-md-12 info">
-                <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
-                    <div class="sidebar-thumbnail"
-                         style="background: linear-gradient(rgba(0,0,0, 0.3),rgba(0,0,0, 0.3)), url('{{$showcase->thumbnail}}') no-repeat; background-size:cover;">
-                        <div class="caption">
-                            <h3 style="margin-top:0;">{{$showcase->homepage_top}}</h3>
-                            <h3 class="hidden-sm hidden-md hidden-lg" style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>
-                        </div>
-                        @if($showcase->special)
-                                <button role="button" style=" margin:0 15%; width:70%;" class="btn btn-warning">
-                                    <i class="fa fa-question-circle-o" aria-hidden="true"></i>
-                                    Learn More
-                                </button>
-                        @endif
-                    </div>
-                </a>
-            </div>
-        @endforeach
-
+        @include('parts.top10')
     </div>
 
 </div>
