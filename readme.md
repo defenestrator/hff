@@ -1,6 +1,6 @@
 # Hobo Fly Fishing
 
-[![CircleCI](https://circleci.com/gh/defenestrator/hff/tree/master.svg?style=svg)](https://circleci.com/gh/defenestrator/hff/tree/master)
+[![CircleCI](https://circleci.com/gh/defenestrator/hff.svg?style=svg&circle-token=e78d26d01ba3b3e72951363b255277684049b766)](https://circleci.com/gh/defenestrator/hff)
 
 ### This is a Laravel PHP App
 
