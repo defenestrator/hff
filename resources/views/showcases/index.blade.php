@@ -39,7 +39,9 @@
                                         </button>
                                     @endif
                                 </div>
+                            </a>
                                 <article>
+                                    <h4><a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">{{$showcase->tagline}}</a></h4>
                                     <p>
                                         <a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}">
                                             {!! str_limit(strip_tags($showcase->body), 200, '...') !!}
@@ -55,7 +57,7 @@
                                         @endforelse
                                     </span>
                                 </section>
-                            </a>
+
                         </div>
                     @endforeach
                 </div>
