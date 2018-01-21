@@ -63,7 +63,7 @@
 
     <div class="row">
         <h2 class="text-center" style="font-size:40px; font-weight:bold;"><a href="/publications/posts">HOBO BLOG</a></h2>
-        @foreach($posts as $post)
+        @foreach($posts->take(3) as $post)
             <div class="col-sm-4">
             <div class="post">
                 <div class="latest-posts">

@@ -5,20 +5,30 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Region;
 use App\Publication;
+use App\Post;
 
 class RegionController extends ContentController
 {
+
     /**
-     * @param Region $region
      * @param Publication $publication
-     * @return $this
+     * @param Post $post
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(Region $region, Publication $publication)
+    public function index(Publication $publication, Post $post)
     {
-        $published = $publication->all('post_id');
-        $regions = $region->whereIn('id', $published)->orderBy('created_at', 'desc')->paginate(50);
+        $puBlogs = $publication->all('post_id');
+        $posts = $post
+            ->whereIn('id', $puBlogs)
+            ->orderBy('created_at', 'desc')
+            ->take(40)->get()
+            ->map( function ($post) {
+                $post['sentence'] = str_limit(strip_tags($post->body), 200, '...');
+                // can also surround that with this, maybe break on sentence? preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', )
+                return $post;
+            });
         $pagetitle = 'Regions around the world';
-        return view('regions.index', compact('regions', 'pagetitle'));
+        return view('regions.index', compact('pagetitle', 'posts'));
     }
 
     /**

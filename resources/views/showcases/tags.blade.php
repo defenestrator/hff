@@ -12,7 +12,7 @@
 @section('top')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-0">
+            <div class="col-md-12 col-md-offset-0">
                 <h1> {{$pagetitle}}</h1>
                 <h4><a href="/tag/{{$tag}}">Show all results for '{{$tag}}' tag</a></h4>
 
@@ -23,7 +23,7 @@
 
 @section('content')
 <div class="row">
-        <div class="col-md-8 col-md-offset-0">
+        <div class="col-md-12 col-md-offset-0">
             @if(count($tagShowcases) == 0)
                 <h2>Sorry, there are no showcases with the '{{$tag}}' tag</h2>
             @endif
@@ -57,10 +57,6 @@
                 </div>
             @endforeach
         </div>
-    <div class="col-md-4 col-md-offset-0">
-
-        &nbsp;
-    </div>
     </div>
 @stop
 

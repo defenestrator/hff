@@ -12,7 +12,7 @@
 @section('top')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-0">
+            <div class="col-md-12 col-md-offset-0">
                 <h1>{{$pagetitle}}</h1>
             </div>
         </div>
@@ -21,7 +21,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-8 col-md-offset-0">
+        <div class="col-md-12 col-md-offset-0">
             @foreach($contents as $content)
                 <div class="post">
                     <div class="featured-text relative-left">
@@ -52,15 +52,6 @@
                     </div>
                 </div>
             @endforeach
-        </div>
-        <div class="col-md-4 col-md-offset-0">
-            <h3 class="text-center">&nbsp;</h3>
-            {{--<nav class="navbar navbar-default">--}}
-            {{--<ul class="nav navbar-nav side-menu">--}}
-            {{--@include('nav.places')--}}
-            {{--</ul>--}}
-            {{--</nav>--}}
-
         </div>
     </div>
 @stop

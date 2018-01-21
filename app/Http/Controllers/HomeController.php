@@ -40,10 +40,6 @@ class HomeController extends Controller
                         // can also surround that with this, maybe break on sentence? preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', )
                         return $post;
                     });
-
-        $puShowcases = $this->publication->all('showcase_id');
-        $showcases = $this->showcase->whereIn('id', $puShowcases)->orderBy('updated_at', 'desc')->paginate(27);
-
-        return view('home', compact('showcases', 'posts'));
+        return view('home', compact('posts'));
     }
 }
