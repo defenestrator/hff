@@ -1,6 +1,6 @@
 <template>
     <div>
-            <h3 class="text-center" style="font-weight:600;">Contact us for details and available dates</h3>
+            <h3 class="text-center" style="font-weight:600;">Contact Hobo Fly Fishing for details</h3>
             <div class="input-group">
                 <!--<span class="input-group-btn">-->
                         <!--<a @click.prevent="telephone" title="Give us a call, just click!">-->

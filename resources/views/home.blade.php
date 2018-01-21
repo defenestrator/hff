@@ -17,17 +17,15 @@
             Elite Destinations, Local Flavor
         </h2>
     </div>
-    <div style="margin:22px;" class="text-center">
-        <h3 style="color:#262626; margin:10px; font-weight: 600;">Once in a lifetime trip, or a lifetime of trips?</h3>
-        <h2 style="color:#262626; font-weight: 600; margin:10px 10px 20px 10px; ">
-            Hobo Fly Fishing has the answer
-        </h2>
+    <div class="text-center">
+        <h3 style="margin:10px; font-weight: 600;">Once in a lifetime trip, or a lifetime of trips?</h3>
     </div>
 @stop
 
 @section('content')
-
-
+    <div class="col-md-6 col-md-offset-3">
+        @include('sales-inquiry')
+    </div>
     @foreach(array_chunk(array_slice($showcases->all(), 0, 6), 2) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)
