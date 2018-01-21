@@ -73,13 +73,13 @@
                          style="background:url('{{$post->header_photo}}') no-repeat; background-size:cover;">
                     </div>
                     </a>
-                    <br>
-                    <article>
-                        <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
-                            <strong>{!! $post->sentence !!}</strong>
-                        </a>
+                    <article class="article">
+                        <p>
+                            <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}" title="{{$post->title}}">
+                                {!! $post->sentence !!}
+                            </a>
+                        </p>
                     </article>
-                    <br>
                     <p>
                         <span class="text-right">
                             <a href="/publications/posts/{{ $post->slug }}"> <button class="btn btn-primary">Read More</button></a>
@@ -100,6 +100,7 @@
         @endforeach
     </div>
     <div class="row"  style="margin-top:24px;">
+        <hr>
         <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-0">
             <article>
                 <section>

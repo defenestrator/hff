@@ -8005,7 +8005,7 @@ a:focus .thumbnail .caption {
 }
 @media (min-width: 992px) {
   .latest-posts {
-    height: 650px;
+    height: 600px;
     overflow: hidden;
   }
   .latest-posts-image {
@@ -8015,7 +8015,7 @@ a:focus .thumbnail .caption {
 }
 @media (min-width: 1200px) {
   .latest-posts {
-    height: 650px;
+    height: 600px;
     overflow: hidden;
   }
   .latest-posts-image {
