@@ -46,7 +46,7 @@
                                         </a>
                                     </p>
                                 </article>
-                                <p class="additional-showcase-wrap">
+                                <section class="additional-showcase-wrap">
                                     <span class="taglinks">Tags:
                                         @forelse($showcase->tags as $tag)
                                             <a href="{{ URL::to('showcases/'. $tag->normalized .'/tag') }}">{{ $tag->name }}</a>,
@@ -54,7 +54,7 @@
                                             No Tags
                                         @endforelse
                                     </span>
-                                </p>
+                                </section>
                             </a>
                         </div>
                     @endforeach
