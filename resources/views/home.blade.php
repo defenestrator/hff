@@ -99,60 +99,7 @@
         </div>
         @endforeach
     </div>
-    <!-- Service Section Start-->
-    <div class="row">
-        <div class="col-sm-6 col-md-4">
-            <div class="box">
-                <div class="box-icon">
-                    <img src="{{Storage::disk('s3')->url('images')}}/go.png" title="go"/>
-                </div>
-                <div class="info">
-                    <h3 class="text-center">Self-Guided Adventures</h3>
-                    <p>Find some quiet places, and some uneducated fish. If you love to challenge yourself, and expand
-                        your understanding of what this great sport has to offer,
-                        these trips are for you.
-                    </p>
-                    <p>Self-guided fly fishing has a significant learning curve, we can help you shorten it.
-                    </p>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <div class="box">
-                <div class="box-icon">
-                    <img src="{{Storage::disk('s3')->url('images')}}/very-good.png" title="very good"/>
-                </div>
-                <div class="info">
-                    <h3 class="text-center">Full Service Expeditions</h3>
-                    <p>When you want the finest angling vacation experience check out our carefully curated full-service
-                        lodges and resorts.</p>
-                    <p> These are often fun family getaways, as they typically offer activities for the non-angling
-                        members of the group, in addition to the great fishing!</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4">
-            <div class="box">
-                <div class="box-icon">
-                    <img src="{{Storage::disk('s3')->url('images')}}/safe-camp.png" title="safe camp"/>
-                </div>
-                <div class="info">
-                    <h3 class="text-center">Hybrid Fly Fishing Trips</h3>
-                    <p>
-                        After fishing with local guides to get your feet wet, spend a few days exploring local
-                        fisheries with your buddies, and our help.
-                    </p>
-                    <p>
-                        Hybrid trips are a signature service of Hobo Fly Fishing, we expect them to sell fast,
-                        ask for more details.
-                        We also build custom fly fishing travel packages as needed.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
+    <div class="row"  style="margin-top:24px;">
         <div class="col-md-6 col-md-offset-0 col-sm-8 col-sm-offset-0">
             <article>
                 <section>
@@ -199,6 +146,58 @@
                          title="Yeah, well, that's just, like, your opinion, man.">
                 </section>
             </article>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4">
+            <div class="box">
+                <div class="box-icon">
+                    <img src="{{Storage::disk('s3')->url('images')}}/go.png" title="go"/>
+                </div>
+                <div class="info">
+                    <h3 class="text-center">Self-Guided Adventures</h3>
+                    <p>Find some quiet places, and some uneducated fish. If you love to challenge yourself, and expand
+                        your understanding of what this great sport has to offer,
+                        these trips are for you.
+                    </p>
+                    <p>Self-guided fly fishing has a significant learning curve, we can help you shorten it.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <div class="box">
+                <div class="box-icon">
+                    <img src="{{Storage::disk('s3')->url('images')}}/very-good.png" title="very good"/>
+                </div>
+                <div class="info">
+                    <h3 class="text-center">Full Service Expeditions</h3>
+                    <p>When you want the finest angling vacation experience check out our carefully curated full-service
+                        lodges and resorts.</p>
+                    <p> These are often fun family getaways, as they typically offer activities for the non-angling
+                        members of the group in addition to the great fishing!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="box">
+                <div class="box-icon">
+                    <img src="{{Storage::disk('s3')->url('images')}}/safe-camp.png" title="safe camp"/>
+                </div>
+                <div class="info">
+                    <h3 class="text-center">Hybrid Fly Fishing Trips</h3>
+                    <p>
+                        After fishing with local guides to get your feet wet, spend a few days exploring local
+                        fisheries with your buddies, and our help.
+                    </p>
+                    <p>
+                        Hybrid trips are a signature service of Hobo Fly Fishing, we expect them to sell fast,
+                        ask for more details.
+                        We also build custom fly fishing travel packages as needed.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 @stop
