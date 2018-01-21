@@ -32,10 +32,10 @@
                 <div style="margin:20px 0; padding-left:30px; padding-right:30px;" class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
                     <a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->title}}">
                         <div class="thumbnail"
-                             style="background: linear-gradient(rgba(0,0,0, 0.2),rgba(0,0,0, 0.2)), url('{{$showcase->thumbnail}}') no-repeat; background-size:cover;">
+                             style="background: linear-gradient(rgba(0,0,0, 0.25),rgba(0,0,0, 0.25)), url('{{$showcase->thumbnail}}') no-repeat; background-size:cover;">
                             <div class="caption">
                                 <h3 style="font-weight:600;">{{$showcase->homepage_top}}</h3>
-                                <h3 style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>
+                                <h3 class="hidden-sm hidden-md hidden-lg" style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>
                             </div>
                             @if($showcase->special)
                                 <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="btn btn-warning">
