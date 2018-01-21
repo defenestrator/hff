@@ -7827,7 +7827,6 @@ a:active.btn-primary {
   overflow: hidden;
 }
 .sidebar-thumbnail {
-  border: 1px solid #3ab0f5;
   border-radius: 6px;
   background-size: cover;
   transition: all 0.3s;

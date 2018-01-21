@@ -37,7 +37,7 @@
 <hr>
 
 <div class="row">
-    <div class="col-md-8 col-md-offset-0">
+    <div class="col-sm-8 col-sm-offset-0">
     @foreach($regions as $region)
         @if($region->id != 0)
             <div>
@@ -77,7 +77,7 @@
             @endif
         @endforeach
     </div>
-    <div class="col-md-4 col-md-offset-0">
+    <div class="col-sm-4 col-sm-offset-0">
         <h4 class="text-center" style="font-weight:bold;"><a href="/publications/posts">FROM THE HOBO BLOG</a></h4>
         @foreach($posts->take(40) as $post)
             <div class="col-sm-12">
@@ -85,7 +85,7 @@
                     <div class="article">
                         <h2 class="primary"><a href="/publications/posts/{{$post->slug}}">{{$post->title}}</a></h2>
                         <a href="/publications/posts/{{$post->slug}}">
-                            <div class="latest-posts-image"
+                            <div class="sidebar-thumbnail"
                                  style="background:url('{{$post->header_photo}}') no-repeat; background-size:cover;">
                             </div>
                         </a>
