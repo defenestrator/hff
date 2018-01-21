@@ -7811,6 +7811,9 @@ a:active.btn-primary {
   z-index: 300;
   background-color: #fafaff;
 }
+.dropdown-menu {
+  border-bottom: 1px solid #c5c7ca;
+}
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus,
 .navbar .dropdown-menu > li > a:focus i,
@@ -7910,6 +7913,9 @@ a:focus .thumbnail {
     background-color: #ffffff;
     color: #3097D1;
     transition: all 0.25s;
+  }
+  .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 16px;
   }
 }
 .thumbnail .caption,
