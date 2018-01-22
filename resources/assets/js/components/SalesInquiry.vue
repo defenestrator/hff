@@ -30,8 +30,7 @@
 
             </div>
         <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
-            <div style="font-weight:600;" class="text-center">Enter your email
-                <br> or call <a href="tel:12088599133">1-208-859-9133</a>
+            <div style="font-weight:600;" class="text-center">or call <a href="tel:12088599133">1-208-859-9133</a>
             </div>
         <hr>
     </div>
