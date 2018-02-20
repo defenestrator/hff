@@ -38242,6 +38242,12 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             });
         }
     },
+    created: function created() {
+        this.validator = new __WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */].Validator({
+            email: 'required|email'
+        });
+    },
+
     watch: {
         newsletterEmail: function newsletterEmail(value) {
             this.untouched(false);

@@ -102,6 +102,11 @@ export default {
             })
         }
     },
+    created() {
+        this.validator = new VeeValidate.Validator({
+            email: 'required|email'
+        });
+    },
     watch: {
         newsletterEmail(value) {
             this.untouched(false)
