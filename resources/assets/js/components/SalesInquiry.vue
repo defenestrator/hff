@@ -77,7 +77,7 @@ export default {
                             type: 'success',
                             timer: 3000
                         });
-                        return result
+                        return 'success'
                     })
                     .catch(error => {
                         this.error = true

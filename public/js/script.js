@@ -38219,7 +38219,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                         type: 'success',
                         timer: 3000
                     });
-                    return result;
+                    return 'success';
                 }).catch(function (error) {
                     _this.error = true;
                     swal({
