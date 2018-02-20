@@ -5,7 +5,7 @@ namespace Tests\Browser;
 use Tests\DuskTestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class NewsletterSubscriptionTest extends DuskTestCase
+class SalesInquiryFormTest extends DuskTestCase
 {
     use DatabaseMigrations;
     /**
