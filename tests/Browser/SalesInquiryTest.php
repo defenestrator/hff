@@ -15,7 +15,10 @@ class SalesInquiryFormTest extends DuskTestCase
      */
     public function test_valid_email()
     {
-        $response = $this->withoutMiddleware()->post('/api/sales-inquiry', ['email' => 'test@example.com', 'message' => 'test sales inquiry message']);
+        $response = $this->withoutMiddleware()->post('/api/sales-inquiry', [
+            'email' => 'test@example.com',
+            'message' => 'test sales inquiry message'
+        ]);
         $response->assertJson(['message'  => 'test sales inquiry message']);
         $response->assertStatus(200);
     }
@@ -27,7 +30,10 @@ class SalesInquiryFormTest extends DuskTestCase
      */
     function test_invalid_email()
     {
-        $response = $this->withoutMiddleware()->post('/api/sales-inquiry', ['email' => 'testexamplecom', 'message' => 'test failed sales inquiry message']);
+        $response = $this->withoutMiddleware()->post('/api/sales-inquiry', [
+            'email' => 'testexamplecom',
+            'message' => 'test failed sales inquiry message'
+        ]);
         $response->assertStatus(302);
     }
 }
