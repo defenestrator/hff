@@ -9,7 +9,7 @@ class SalesInquiryFormTest extends DuskTestCase
 {
     use DatabaseMigrations;
     /**
-     * Test Newsletter Subscription with Valid Email
+     * Test Sales Inquiry Form with Valid Email
      *
      * @return void
      */
@@ -24,7 +24,7 @@ class SalesInquiryFormTest extends DuskTestCase
     }
 
     /**
-     * Test Newsletter Subscription with INVALID address
+     * Test Sales Inquiry Form with INVALID address
      *
      * @return void
      */
