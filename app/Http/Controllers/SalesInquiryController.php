@@ -24,12 +24,6 @@ class SalesInquiryController extends Controller
             'message' => 'required|min:8|max:640',
         ]);
 
-//        if (config('app.env') !== 'testing') {
-//            $this->validate($request, [
-//                'g-recaptcha-response' => 'required|recaptcha'
-//            ]);
-//        }
-
         $contact = Contact::create([
             'address' => $request->email,
             'message' =>  $request->message
