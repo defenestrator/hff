@@ -6,7 +6,7 @@ Route::redirect('/blog', '/publications/posts');
 Route::redirect('/blogitem/tequila-and-popcorn', '/publications/posts/tequila-and-popcorn');
 Route::redirect('/posts/tequila/mi', '/publications/posts/tequila-and-popcorn');
 Route::redirect('/publications/posts/all-fish-lives-matter', '/publications/posts/any-fish-any-time');
-
+Route::redirect('/publications/posts/test-header-photo', 'up-your-flyfishing-game-by-mastering-the-strip-strike');
 // Showcases
 Route::redirect('/publications/showcases', '/showcases');
 Route::get('/publications/showcases/{slug}', 'PublishedShowcasesController@redirect');
