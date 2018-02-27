@@ -38225,7 +38225,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                     swal({
                         title: 'Something went wrong',
                         text: 'Is that a valid email address?',
-                        type: 'danger',
+                        type: 'error',
                         timer: 2000
                     });
                     return Promise.reject(error);
@@ -38234,7 +38234,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                     swal({
                         title: 'Invalid email address',
                         text: 'Please enter a valid email address',
-                        type: 'danger',
+                        type: 'error',
                         timer: 2000
                     });
                     return Promise.reject(error);
@@ -40330,6 +40330,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 // Import this component
 
@@ -40430,6 +40434,12 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         },
         tagline: function tagline(value) {
             this.validator.validate('tagline', value);
+        },
+        destination: function destination(value) {
+            this.validator.validate('destination', value);
+        },
+        region: function region(value) {
+            this.validator.validate('region', value);
         },
 
         /**
@@ -40541,18 +40551,30 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     _this4.newShowcase.saveBusy = false;
                     _this4.newShowcase.saved = true;
                     _this4.newShowcase.showcaseId = result.data.id;
-                    console.log(result);
+                    swal({
+                        title: 'SUCCESS!',
+                        text: 'The showcase was saved.',
+                        type: 'success',
+                        timer: 2000
+                    });
                     return result;
                 }).catch(function (error) {
                     _this4.newShowcase.saveError = true;
                     _this4.newShowcase.saveBusy = false;
-                    _this4.newShowcase.serverErrors = error.response.data.errors.slug[0];
+                    var saveErrors = error.response.data.errors;
+                    var thisError = error.response.data.errors[Object.keys(saveErrors)[0]];
+                    swal({
+                        title: 'FAILED!',
+                        text: thisError,
+                        type: 'error',
+                        timer: 3000
+
+                    });
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
                 _this4.newShowcase.saveBusy = false;
                 _this4.newShowcase.saveError = true;
-                _this4.errors = Promise.reject(error);
                 return Promise.reject(error);
             });
         },
@@ -40639,11 +40661,24 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     _this8.newShowcase.saveBusy = false;
                     _this8.newShowcase.slug = result.data.slug;
                     _this8.newShowcase.saved = true;
+                    swal({
+                        title: 'SUCCESS!',
+                        text: 'The showcase was updated.',
+                        type: 'success',
+                        timer: 2000
+                    });
                     return result;
                 }).catch(function (error) {
                     _this8.newShowcase.saveError = true;
                     _this8.newShowcase.saveBusy = false;
-                    _this8.newShowcase.serverErrors = error.response.data.errors.slug[0];
+                    var saveErrors = error.response.data.errors;
+                    var thisError = error.response.data.errors[Object.keys(saveErrors)[0]];
+                    swal({
+                        title: 'FAILED!',
+                        text: thisError,
+                        type: 'error',
+                        timer: 3000
+                    });
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
@@ -40655,7 +40690,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         leeroyjenkins: function leeroyjenkins() {
             var _this9 = this;
 
-            if (confirm("Permanently destroy this showcase?")) {
+            if (confirm("Permanently destroy this post?")) {
                 axios.delete('/api/showcases/' + this.newShowcase.showcaseId, {}).then(function (result) {
                     _this9.clear();
                 }).catch(function (error) {
@@ -40722,8 +40757,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.newShowcase.slug = '';
             this.newShowcase.header_photo = '';
             this.newShowcase.thumbnail = '';
-            this.newShowcase.destinationId = null;
-            this.newShowcase.regionId = null;
+            this.newShowcase.destinationId = 0;
+            this.newShowcase.regionId = 0;
             this.newShowcase.sidebar_bottom = '';
             this.newShowcase.sidebar_top = '';
             this.newShowcase.homepage_bottom = '';
@@ -57443,7 +57478,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [(_vm.newShowcase.saveBusy) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-spinner fa-spin"
-  }), _vm._v("Saving\n                             ")]) : (_vm.newShowcase.showcaseId !== null) ? _c('span', [_c('i', {
+  }), _vm._v("Saving\n                             ")]) : (_vm.newShowcase.saved == true) ? _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
@@ -57549,8 +57584,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     directives: [{
       name: "validate",
       rawName: "v-validate",
-      value: ('required|min:4|max:140'),
-      expression: "'required|min:4|max:140'"
+      value: ('required|min:8|max:140'),
+      expression: "'required|min:8|max:140'"
     }, {
       name: "model",
       rawName: "v-model",
@@ -57757,7 +57792,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "newShowcase.regionId"
     }],
     attrs: {
-      "id": "selected-region"
+      "id": "selected-region",
+      "name": "selected-region"
     },
     on: {
       "change": function($event) {
@@ -57780,7 +57816,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": region.id
       }
     }, [_vm._v(_vm._s(region.name))])
-  })], 2)]), _vm._v(" "), _c('div', {
+  })], 2), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('selected-region')),
+      expression: "errors.has('selected-region')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('selected-region')))])]), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
   }, [_c('label', {
     attrs: {
@@ -57818,7 +57862,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": destination.id
       }
     }, [_vm._v(_vm._s(destination.name))])
-  })], 2)])])]), _vm._v(" "), _c('div', {
+  })], 2), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('selected-destination')),
+      expression: "errors.has('selected-destination')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('selected-destination')))])])])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -57915,7 +57967,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "newShowcase.body"
     }
-  })], 1)]), _vm._v(" "), _c('div', [_c('div', {
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('selected-destination')),
+      expression: "errors.has('selected-destination')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('selected-destination')))])], 1)]), _vm._v(" "), _c('div', [_c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-6"

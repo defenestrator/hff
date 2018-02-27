@@ -58,7 +58,7 @@
                             <span v-if="newShowcase.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                              </span>
-                            <span v-else-if="newShowcase.showcaseId !== null">
+                            <span v-else-if="newShowcase.saved == true">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
                             <span v-else>
@@ -101,7 +101,7 @@
             <div class="form-group">
                 <div class="col-md-12">
                     <p role="presentation"><strong>Sub-title: </strong></p>
-                    <input v-validate="'required|min:4|max:140'" id="tagline" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
+                    <input v-validate="'required|min:8|max:140'" id="tagline" class="form-control input" name="tagline" v-model="newShowcase.tagline" placeholder="Make it a zinger" />
                     <span v-show="errors.has('tagline')" class="help is-danger">{{ errors.first('tagline') }}</span>
                 </div>
             </div>
@@ -142,10 +142,11 @@
                 <div class="form-group">
                     <div class="col-md-6">
                         <label for="selected-region">Select Region:</label>
-                        <select v-model="newShowcase.regionId" id="selected-region">
+                        <select v-model="newShowcase.regionId" id="selected-region" name="selected-region">
                             <option value="0">Worldwide or N/A</option>
                             <option v-for="region in regions" v-bind:value="region.id">{{region.name}}</option>
                         </select>
+                        <span v-show="errors.has('selected-region')" class="help is-danger">{{ errors.first('selected-region') }}</span>
                     </div>
                     <div class="col-md-6">
                         <label for="selected-destination">Select Destination:</label>
@@ -153,6 +154,8 @@
                             <option value="0" default>N/A</option>
                             <option v-for="destination in destinations" v-bind:value="destination.id">{{destination.name}}</option>
                         </select>
+                        <span v-show="errors.has('selected-destination')" class="help is-danger">{{ errors.first('selected-destination') }}</span>
+
                     </div>
                 </div>
             </div>
@@ -194,6 +197,7 @@
                 <div class="col-md-12">
                     <h4 role="presentation"><strong>Showcase Body:</strong></h4>
                     <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:20'" v-model="newShowcase.body"></trumbowyg>
+                    <span v-show="errors.has('selected-destination')" class="help is-danger">{{ errors.first('selected-destination') }}</span>
                 </div>
             </div>
             <div>
@@ -385,6 +389,13 @@ export default {
         tagline(value) {
             this.validator.validate('tagline', value);
         },
+        destination(value) {
+            this.validator.validate('destination', value)
+        },
+
+        region(value) {
+            this.validator.validate('region', value)
+        },
         /**
             * Watch the title and create slug.
         */
@@ -495,20 +506,32 @@ export default {
                                 this.newShowcase.saveBusy = false
                                 this.newShowcase.saved= true
                                 this.newShowcase.showcaseId = result.data.id
-                                console.log(result)
-                             return result
+                                swal({
+                                    title: 'SUCCESS!',
+                                    text: 'The showcase was saved.',
+                                    type: 'success',
+                                    timer: 2000
+                                });
+                                return result
                             })
                             .catch(error => {
                                 this.newShowcase.saveError = true
                                 this.newShowcase.saveBusy = false
-                                this.newShowcase.serverErrors = error.response.data.errors.slug[0]
+                                var saveErrors = error.response.data.errors
+                                var thisError = error.response.data.errors[Object.keys(saveErrors) [0]]
+                                swal({
+                                    title: 'FAILED!',
+                                    text: thisError,
+                                    type: 'error',
+                                    timer: 3000,
+
+                                });
                                 return Promise.reject(error)
                             })
                         })
             .catch(error => {
                 this.newShowcase.saveBusy = false
                 this.newShowcase.saveError = true
-                this.errors = Promise.reject(error)
                 return Promise.reject(error)
             })
         },
@@ -600,12 +623,25 @@ export default {
                         this.newShowcase.saveBusy = false
                         this.newShowcase.slug = result.data.slug
                         this.newShowcase.saved = true
+                        swal({
+                            title: 'SUCCESS!',
+                            text: 'The showcase was updated.',
+                            type: 'success',
+                            timer: 2000
+                        });
                         return result
                     })
                     .catch(error => {
                         this.newShowcase.saveError = true
                         this.newShowcase.saveBusy = false
-                        this.newShowcase.serverErrors = error.response.data.errors.slug[0]
+                        var saveErrors = error.response.data.errors
+                        var thisError = error.response.data.errors[Object.keys(saveErrors) [0]]
+                        swal({
+                            title: 'FAILED!',
+                            text: thisError,
+                            type: 'error',
+                            timer: 3000,
+                        });
                         return Promise.reject(error)
                     })
             })
@@ -617,7 +653,7 @@ export default {
         },
 
         leeroyjenkins() {
-            if(confirm("Permanently destroy this showcase?")) {
+            if(confirm("Permanently destroy this post?")) {
                 axios.delete(`/api/showcases/` + this.newShowcase.showcaseId, {})
                 .then(result  => {
                     this.clear()
@@ -685,8 +721,8 @@ export default {
             this.newShowcase.slug = ''
             this.newShowcase.header_photo = ''
             this.newShowcase.thumbnail = ''
-            this.newShowcase.destinationId = null
-            this.newShowcase.regionId = null
+            this.newShowcase.destinationId = 0
+            this.newShowcase.regionId = 0
             this.newShowcase.sidebar_bottom = ''
             this.newShowcase.sidebar_top = ''
             this.newShowcase.homepage_bottom =''
