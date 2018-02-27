@@ -84,7 +84,7 @@ export default {
                         swal({
                             title: 'Something went wrong',
                             text: 'Is that a valid email address?',
-                            type: 'danger',
+                            type: 'error',
                             timer: 2000
                         });
                         return Promise.reject(error)
@@ -94,7 +94,7 @@ export default {
                     swal({
                         title: 'Invalid email address',
                         text: 'Please enter a valid email address',
-                        type: 'danger',
+                        type: 'error',
                         timer: 2000
                     });
                   return Promise.reject(error)

@@ -26,7 +26,7 @@ class ShowcasesApiController extends ApiController
     {
 
         $request->validate([
-            'slug' => 'required|alpha_dash|unique:showcases,slug',
+            'slug' => 'unique:showcases,slug',
             'body' => 'required|min:20',
             'title' => 'required|min:8',
             'tagline' => 'required|min:8',
