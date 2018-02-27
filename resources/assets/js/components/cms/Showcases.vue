@@ -641,7 +641,6 @@ export default {
                             text: thisError,
                             type: 'error',
                             timer: 3000,
-                            dangerMode:true
                         });
                         return Promise.reject(error)
                     })

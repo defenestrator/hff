@@ -40677,8 +40677,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                         title: 'FAILED!',
                         text: thisError,
                         type: 'error',
-                        timer: 3000,
-                        dangerMode: true
+                        timer: 3000
                     });
                     return Promise.reject(error);
                 });
