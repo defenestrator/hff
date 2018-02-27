@@ -40566,8 +40566,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     swal({
                         title: 'FAILED!',
                         text: thisError,
-                        button: { type: 'error', text: "Try again", class: "danger" },
-                        dangerMode: true,
                         type: 'error',
                         timer: 3000
 

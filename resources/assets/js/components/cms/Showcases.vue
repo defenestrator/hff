@@ -522,8 +522,6 @@ export default {
                                 swal({
                                     title: 'FAILED!',
                                     text: thisError,
-                                    button: {type:'error', text:"Try again",class:"danger"},
-                                    dangerMode:true,
                                     type: 'error',
                                     timer: 3000,
 
