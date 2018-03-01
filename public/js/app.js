@@ -39207,6 +39207,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
     },
     mounted: function mounted() {
         this.getIndex();
+        this.confirmNavAway();
     },
 
     components: {
@@ -39317,6 +39318,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.getIndex();
             return this.index = true;
         },
+        confirmNavAway: function confirmNavAway() {
+            window.onbeforeunload = function () {
+                return 'You may lose unsaved changes!';
+            };
+        },
         save: function save() {
             var _this2 = this;
 
@@ -39340,17 +39346,38 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                     _this2.newPost.saveBusy = false;
                     _this2.newPost.saved = true;
                     _this2.newPost.postId = result.data.id;
+                    swal({
+                        title: 'SUCCESS!',
+                        text: 'The post was saved.',
+                        type: 'success',
+                        timer: 2000
+                    });
                     return result;
                 }).catch(function (error) {
                     _this2.newPost.saveError = true;
                     _this2.newPost.saveBusy = false;
-                    _this2.newPost.serverErrors = error.response.data.errors.slug[0];
+                    var saveErrors = error.response.data.errors;
+                    var thisError = error.response.data.errors[Object.keys(saveErrors)[0]];
+                    swal({
+                        title: 'SAVE FAILED!',
+                        text: thisError,
+                        type: 'error',
+                        timer: 3000
+                    });
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
                 _this2.newPost.saveBusy = false;
                 _this2.newPost.saveError = true;
+                var saveErrors = error.response.data.errors;
+                var thisError = error.response.data.errors[Object.keys(saveErrors)[0]];
                 _this2.errors = Promise.reject(error);
+                swal({
+                    title: 'SAVE FAILED!',
+                    text: thisError,
+                    type: 'error',
+                    timer: 3000
+                });
                 return Promise.reject(error);
             });
         },
@@ -39429,11 +39456,24 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 }).then(function (result) {
                     _this6.newPost.saveBusy = false;
                     _this6.newPost.saved = true;
+                    swal({
+                        title: 'SUCCESS!',
+                        text: 'The post was updated.',
+                        type: 'success',
+                        timer: 2000
+                    });
                     return result;
                 }).catch(function (error) {
                     _this6.newPost.saveError = true;
                     _this6.newPost.saveBusy = false;
-                    _this6.newPost.serverErrors = error.response.data.errors.slug[0];
+                    var saveErrors = error.response.data.errors;
+                    var thisError = error.response.data.errors[Object.keys(saveErrors)[0]];
+                    swal({
+                        title: 'UPDATE FAILED!',
+                        text: thisError,
+                        type: 'error',
+                        timer: 3000
+                    });
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
@@ -39556,6 +39596,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         slug: 'required'
     });
 }), _defineProperty(_props$validator$crea, 'computed', {
+
     /**
      * Get the URL for updating the team photo.
      */
@@ -40349,6 +40390,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         this.getIndex();
         this.getRegions();
         this.getDestinations();
+        this.confirmNavAway();
     },
 
     components: {
@@ -40514,6 +40556,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             }).catch(function (error) {
                 return Promise.reject(error);
             });
+        },
+        confirmNavAway: function confirmNavAway() {
+            window.onbeforeunload = function () {
+                return 'You may lose unsaved changes!';
+            };
         },
         toggleIndex: function toggleIndex() {
             if (this.index == true) {
@@ -40690,7 +40737,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         leeroyjenkins: function leeroyjenkins() {
             var _this9 = this;
 
-            if (confirm("Permanently destroy this post?")) {
+            if (confirm("Permanently destroy this showcase?")) {
                 axios.delete('/api/showcases/' + this.newShowcase.showcaseId, {}).then(function (result) {
                     _this9.clear();
                 }).catch(function (error) {

@@ -27,11 +27,11 @@ class PostsApiController extends ApiController
     public function create(Request $request, Post $post)
     {
         $request->validate([
-            'body' => 'required|min:8',
-            'slug' => 'required|alpha_dash|unique:posts,slug',
-            'title' => 'required|min:2',
-            'image_id' => 'required|integer',
-            'header_photo' => 'required'
+            'slug' => 'unique:posts,slug',
+            'header_photo' => 'required|string',
+            'title' => 'required|min:3|max:140',
+            'body' => 'required|min:16',
+            'image_id' => 'required|integer'
         ]);
         return $post->create([
             'user_id'  => $request->user_id,
@@ -74,9 +74,9 @@ class PostsApiController extends ApiController
     public function update(Request $request, Post $post, $id)
     {
         $request->validate([
-            'body' => 'required|min:8',
-            'title' => 'required|min:2',
-            'header_photo' => 'required'
+            'header_photo' => 'required|string',
+            'title' => 'required|min:3|max:140',
+            'body' => 'required|min:16'
         ]);
         $content = $post->find($id);
 
