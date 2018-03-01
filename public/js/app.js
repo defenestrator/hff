@@ -38128,7 +38128,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 //
 //
 //
-//
 
 Vue.component('newsletter-signup', __webpack_require__(326));
 
@@ -56676,7 +56675,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "/about"
     }
-  }, [_c('h4', [_vm._v("About Us?")])]), _vm._v(" "), _c('p', [_vm._v("\n                We listen to local anglers who smell like the water they fish. You know the ones.\n                They give you 'the look' when they see rods on your truck. They know who the locals are.\n                We are lucky enough to know a few anglers who "), _c('strong', [_c('em', [_vm._v("live")])]), _vm._v(" the water.\n            ")]), _vm._v(" "), _c('h5', [_vm._v("Forget "), _c('a', {
+  }, [_c('h4', [_c('i', {
+    staticClass: "fa fa-fw fa-btn fa-question-circle"
+  }), _vm._v("About Us")])]), _vm._v(" "), _c('p', [_vm._v("\n                We listen to local anglers who smell like the water they fish. You know the ones.\n                They give you 'the look' when they see rods on your truck. They know who the locals are.\n                We are lucky enough to know a few anglers who "), _c('strong', [_c('em', [_vm._v("live")])]), _vm._v(" the water.\n            ")]), _vm._v(" "), _c('h5', [_vm._v("Forget "), _c('a', {
     staticStyle: {
       "color": "#ababab"
     },
@@ -56684,7 +56685,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "href": "/about",
       "title": "if you must know, click here."
     }
-  }, [_vm._v("about us.")])]), _vm._v(" "), _c('br')])])])
+  }, [_vm._v("about us.")])])])])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
