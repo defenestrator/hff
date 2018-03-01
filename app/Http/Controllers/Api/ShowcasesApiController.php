@@ -27,10 +27,10 @@ class ShowcasesApiController extends ApiController
 
         $request->validate([
             'slug' => 'unique:showcases,slug',
-            'body' => 'required|min:20',
+            'header_photo' => 'required|string',
             'title' => 'required|min:8',
             'tagline' => 'required|min:8',
-            'header_photo' => 'required|string',
+            'body' => 'required|min:20',
             'image_id' => 'required|integer',
             'homepage_top' => 'required|min:3|max:40',
             'homepage_bottom' => 'required|min:3|max:40',

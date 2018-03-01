@@ -295,6 +295,7 @@ export default {
         this.getIndex()
         this.getRegions()
         this.getDestinations()
+        this.confirmNavAway()
     },
     components: {
         trumbowyg
@@ -468,8 +469,12 @@ export default {
             })
             .catch(error => {
                 return Promise.reject(error)
-        })}
-            ,
+        })},
+        confirmNavAway() {
+            window.onbeforeunload = function() {
+                return 'You may lose unsaved changes!'
+            }
+        },
         toggleIndex() {
             if(this.index == true) {
                 return this.index = false
@@ -653,7 +658,7 @@ export default {
         },
 
         leeroyjenkins() {
-            if(confirm("Permanently destroy this post?")) {
+            if(confirm("Permanently destroy this showcase?")) {
                 axios.delete(`/api/showcases/` + this.newShowcase.showcaseId, {})
                 .then(result  => {
                     this.clear()

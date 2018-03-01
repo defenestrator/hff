@@ -198,6 +198,7 @@ export default {
     },
     mounted() {
         this.getIndex()
+        this.confirmNavAway()
     },
     components: {
         trumbowyg
@@ -319,7 +320,11 @@ export default {
             this.getIndex()
             return this.index = true
         },
-
+        confirmNavAway() {
+            window.onbeforeunload = function() {
+                return 'You may lose unsaved changes!'
+            }
+        },
         save() {
             this.newPost.saveError = false
             this.newPost.saveBusy = true
@@ -342,19 +347,40 @@ export default {
                                 this.newPost.saveBusy = false
                                 this.newPost.saved= true
                                 this.newPost.postId = result.data.id
-                             return result
+                                swal({
+                                    title: 'SUCCESS!',
+                                    text: 'The post was saved.',
+                                    type: 'success',
+                                    timer: 2000
+                                });
+                                return result
                             })
                             .catch(error => {
                                 this.newPost.saveError = true
                                 this.newPost.saveBusy = false
-                                this.newPost.serverErrors = error.response.data.errors.slug[0]
+                                var saveErrors = error.response.data.errors
+                                var thisError = error.response.data.errors[Object.keys(saveErrors) [0]]
+                                swal({
+                                    title: 'SAVE FAILED!',
+                                    text: thisError,
+                                    type: 'error',
+                                    timer: 3000,
+                                });
                                 return Promise.reject(error)
                             })
                         })
             .catch(error => {
                 this.newPost.saveBusy = false
                 this.newPost.saveError = true
+                var saveErrors = error.response.data.errors
+                var thisError = error.response.data.errors[Object.keys(saveErrors) [0]]
                 this.errors = Promise.reject(error)
+                swal({
+                    title: 'SAVE FAILED!',
+                    text: thisError,
+                    type: 'error',
+                    timer: 3000,
+                });
                 return Promise.reject(error)
             })
         },
@@ -438,12 +464,25 @@ export default {
                     .then(result  => {
                         this.newPost.saveBusy = false
                         this.newPost.saved = true
+                        swal({
+                            title: 'SUCCESS!',
+                            text: 'The post was updated.',
+                            type: 'success',
+                            timer: 2000
+                        });
                         return result
                     })
                     .catch(error => {
                         this.newPost.saveError = true
                         this.newPost.saveBusy = false
-                        this.newPost.serverErrors = error.response.data.errors.slug[0]
+                        var saveErrors = error.response.data.errors
+                        var thisError = error.response.data.errors[Object.keys(saveErrors) [0]]
+                        swal({
+                            title: 'UPDATE FAILED!',
+                            text: thisError,
+                            type: 'error',
+                            timer: 3000,
+                        });
                         return Promise.reject(error)
                     })
             })
@@ -568,6 +607,7 @@ export default {
         });
     },
     computed: {
+
         /**
          * Get the URL for updating the team photo.
          */
