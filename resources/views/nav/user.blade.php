@@ -57,6 +57,12 @@
                         </a>
 
                         <ul class="dropdown-menu scrollable-menu" role="menu">
+                            <li>
+                                <a href="/dashboard">
+                                    <i class="fa fa-fw fa-btn fa-tachometer"></i>Dashboard
+                                </a>
+                            </li>
+                            <li class="divider"></li>
                             <!-- Impersonation -->
                             @if (session('spark:impersonator'))
                                 <li class="dropdown-header">Impersonation</li>
@@ -78,6 +84,7 @@
 
                             <!-- Subscription Reminders -->
                             @include('nav.subscriptions')
+
                             <!-- Settings -->
                             <li class="dropdown-header">Settings</li>
 
@@ -88,12 +95,12 @@
                                 </a>
                             </li>
                             <li class="divider"></li>
-                                <li>
-                                    <a href="/dashboard">
-                                        <i class="fa fa-fw fa-btn fa-tachometer"></i>Dashboard
-                                    </a>
-                                </li>
-                            <li class="divider"></li>
+
+                            @if (Spark::hasSupportAddress())
+                                <!-- Support -->
+                                @include('spark::nav.support')
+                            @endif
+
                             <!-- Logout -->
                             <li>
                                 <a href="/logout">

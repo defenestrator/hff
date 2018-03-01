@@ -47,14 +47,13 @@
             </div>
         </div>
         <div class="col-sm-8 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-            <a href="/about"><h4>About Us?</h4></a>
+            <a href="/about"><h4><i class="fa fa-fw fa-btn fa-question-circle"></i>About Us</h4></a>
             <p>
                 We listen to local anglers who smell like the water they fish. You know the ones.
                 They give you 'the look' when they see rods on your truck. They know who the locals are.
                 We are lucky enough to know a few anglers who <strong><em>live</em></strong> the water.
             </p>
             <h5>Forget <a style="color:#ababab;" href="/about" title="if you must know, click here.">about us.</a></h5>
-            <br>
         </div>
 
     </div>
