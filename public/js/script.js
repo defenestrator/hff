@@ -56587,7 +56587,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "/contact"
     }
-  }, [_c('h4', [_vm._v("Shout!")])]), _vm._v(" "), _c('ul', {
+  }, [_c('h4', [_c('i', {
+    staticClass: "fa fa-fw fa-btn fa-exclamation-circle"
+  }), _vm._v("Shout")])]), _vm._v(" "), _c('ul', {
     staticClass: "list-unstyled"
   }, [_c('li', [_vm._v("289 N. Hullen Pl.")]), _vm._v(" "), _c('li', [_vm._v("Star, ID 83669")]), _vm._v(" "), _c('li', {
     staticClass: "footer-link"
@@ -56619,7 +56621,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "hidden-xs"
   }, [_c('h4', {
     staticClass: "menu"
-  }, [_vm._v("Hop Aboard")]), _vm._v(" "), _c('ul', {
+  }, [_c('i', {
+    staticClass: "fa fa-fw fa-btn fa-globe"
+  }), _vm._v("Hop Aboard")]), _vm._v(" "), _c('ul', {
     staticClass: "list-inline"
   }, [_c('li', [_c('a', {
     attrs: {

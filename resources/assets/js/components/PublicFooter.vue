@@ -2,7 +2,7 @@
 <footer>
     <div class="container footer-text">
         <div class="col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-            <a href="/contact"><h4>Shout!</h4></a>
+            <a href="/contact"><h4><i class="fa fa-fw fa-btn fa-exclamation-circle"></i>Shout</h4></a>
             <ul class="list-unstyled">
                 <li>289 N. Hullen Pl.</li>
                 <li>Star, ID 83669</li>
@@ -20,7 +20,7 @@
             </ul>
             <hr id="hr_border2">
             <div class="hidden-xs">
-                <h4 class="menu">Hop Aboard</h4>
+                <h4 class="menu"><i class="fa fa-fw fa-btn fa-globe"></i>Hop Aboard</h4>
                 <ul class="list-inline">
                     <li>
                         <a href="https://fb.me/hoboflyfishing">
