@@ -27,11 +27,15 @@ Route::middleware('cacheResponse')->group( function(){
     // Regions
     Route::get('/regions/{slug}', 'RegionController@show');
     Route::get('/regions', 'RegionController@index');
+
     // Authors
     Route::get('/publications/authors/{uuid}', 'UserController@show');
 
-});
 
+
+});
+// World Map
+Route::get('/maps', 'MapsController@index');
 Route::middleware('doNotCacheResponse')->group(function() {
     // Confirm Newsletter Subscription
     Route::get('/newsletter-subscription/{token}', 'NewsletterSubscriptionsController@confirm');
