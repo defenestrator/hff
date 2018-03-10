@@ -327,7 +327,7 @@ export default {
             this.newDestination.destinationId = null
             this.newDestination.name = ''
             this.newDestination.description = ''
-            this.newDestination.regionId = null
+            this.newDestination.regionId = 0
             this.newDestination
             this.newDestination.lat = null
             this.newDestination.lng = null
@@ -340,6 +340,7 @@ export default {
             .then(result => {
                 this.newDestination.name = result.data.name;
                 this.newDestination.description = result.data.description
+                this.newDestination.regionId = result.data.region_id
                 this.newDestination.lat = result.data.lat;
                 this.newDestination.lng = result.data.lng;
                 this.saveBusy = false

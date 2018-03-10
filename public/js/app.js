@@ -50759,6 +50759,7 @@ exports.default = function (input) {
 
 __webpack_require__(371);
 __webpack_require__(266);
+
 var app = new Vue({
     mixins: [__webpack_require__(372)],
     mounted: function mounted() {
@@ -52515,7 +52516,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.newDestination.destinationId = null;
             this.newDestination.name = '';
             this.newDestination.description = '';
-            this.newDestination.regionId = null;
+            this.newDestination.regionId = 0;
             this.newDestination;
             this.newDestination.lat = null;
             this.newDestination.lng = null;
@@ -52529,6 +52530,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             axios.get('/api/destinations/' + id, {}).then(function (result) {
                 _this6.newDestination.name = result.data.name;
                 _this6.newDestination.description = result.data.description;
+                _this6.newDestination.regionId = result.data.region_id;
                 _this6.newDestination.lat = result.data.lat;
                 _this6.newDestination.lng = result.data.lng;
                 _this6.saveBusy = false;
