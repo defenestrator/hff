@@ -78962,7 +78962,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('gmap-map', {
     staticStyle: {
       "width": "100%",
-      "height": "80vh"
+      "height": "70vh"
     },
     attrs: {
       "center": _vm.center,
