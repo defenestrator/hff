@@ -4,8 +4,6 @@
         <div class="col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1">
             <a href="/contact"><h4><i class="fa fa-fw fa-btn fa-exclamation-circle"></i>Shout</h4></a>
             <ul class="list-unstyled">
-                <li>289 N. Hullen Pl.</li>
-                <li>Star, ID 83669</li>
                 <li class="footer-link">
                     <a href="tel:1-208-859-9133">
                         <i class="fa fa-phone" aria-hidden="true"></i> (208)859-9133
