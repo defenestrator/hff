@@ -7838,16 +7838,15 @@ a:active.btn-primary {
   padding: 4px;
   margin-bottom: 22px;
   line-height: 1.6;
+  height: 272px;
 }
 .sidebar-thumbnail h3 {
   font-weight: 600;
 }
 @media (min-width: 500px) {
-  .thumbnail {
-    height: 366px;
-  }
+  .thumbnail,
   .sidebar-thumbnail {
-    height: 350px;
+    height: 366px;
   }
   .sidebar-thumbnail h3 {
     font-size: 24px;

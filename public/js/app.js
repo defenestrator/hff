@@ -51946,8 +51946,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
 //
 //
 //
-//
-//
 
 Vue.component('newsletter-signup', __webpack_require__(529));
 
@@ -76746,7 +76744,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "fa fa-fw fa-btn fa-exclamation-circle"
   }), _vm._v("Shout")])]), _vm._v(" "), _c('ul', {
     staticClass: "list-unstyled"
-  }, [_c('li', [_vm._v("289 N. Hullen Pl.")]), _vm._v(" "), _c('li', [_vm._v("Star, ID 83669")]), _vm._v(" "), _c('li', {
+  }, [_c('li', {
     staticClass: "footer-link"
   }, [_c('a', {
     attrs: {
