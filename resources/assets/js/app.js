@@ -1,5 +1,6 @@
 require('spark-bootstrap');
 require('./components/bootstrap');
+
 let app = new Vue({
     mixins: [require('spark')],
     mounted() {
