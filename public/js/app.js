@@ -78970,6 +78970,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('gmap-info-window', {
     attrs: {
+      "zIndex": 300,
       "maxWidth": 240,
       "options": _vm.infoOptions,
       "position": _vm.infoWindowPos,

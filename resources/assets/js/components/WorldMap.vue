@@ -4,7 +4,7 @@
             :zoom="3"
             style="width: 100%; height: 100vh;"
     >
-<gmap-info-window  :maxWidth="240" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
+<gmap-info-window  :zIndex="300" :maxWidth="240" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <h2>{{infoWindowTitle}}</h2>
         <div class="map-info-window" style="max-width:240px;" v-html="infoContent">{{infoContent }}</div>
         </gmap-info-window>
