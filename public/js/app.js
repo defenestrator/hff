@@ -78961,6 +78961,8 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('gmap-map', {
     staticStyle: {
+      "top": "-50px",
+      "margin-top": "50px",
       "width": "100%",
       "height": "100vh"
     },
