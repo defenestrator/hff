@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Destination;
-use App\Showcase;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,9 +12,8 @@ class WorldMapApiController extends Controller
      * @param Destination $destination
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
-    public function index(Destination $destination, Showcase $showcase)
+    public function index(Destination $destination)
     {
-        $showcases = $showcase->all();
         $destinations = $destination->orderBy('created_at', 'desc')->get()->map(function ($destination) {
             $destination['position'] = ['lat' => (float) $destination['lat'], 'lng' => (float) $destination['lng']];
             $destination['infoText'] = $destination['description'];
