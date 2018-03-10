@@ -1,8 +1,8 @@
 <template>
     <gmap-map
             :center="center"
-            :zoom="3"
-            style="top: -50px; margin-top:50px; width: 100%; height: 100vh;"
+            :zoom="2"
+            style="width: 100%; height: 80vh;"
     >
 <gmap-info-window  :zIndex="300" :maxWidth="240" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <h2>{{infoWindowTitle}}</h2>
@@ -38,7 +38,7 @@
     export default {
         data () {
             return {
-                center: {lat: 17.5046, lng: -88.1962},
+                center: {lat: 21.3279758, lng: -157.939159117},
                 destinations: [],
                 markers:[],
                 infoContent: '',

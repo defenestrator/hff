@@ -52125,7 +52125,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            center: { lat: 17.5046, lng: -88.1962 },
+            center: { lat: 21.3279758, lng: -157.939159117 },
             destinations: [],
             markers: [],
             infoContent: '',
@@ -78961,14 +78961,12 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('gmap-map', {
     staticStyle: {
-      "top": "-50px",
-      "margin-top": "50px",
       "width": "100%",
-      "height": "100vh"
+      "height": "80vh"
     },
     attrs: {
       "center": _vm.center,
-      "zoom": 3
+      "zoom": 2
     }
   }, [_c('gmap-info-window', {
     attrs: {

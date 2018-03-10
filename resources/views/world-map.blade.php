@@ -11,10 +11,11 @@
 @stop
 
 @section('top')
-    <world-map></world-map>
+&nbsp;
 @stop
 
 @section('content')
+    <world-map></world-map>
 @stop
 
 @section('bottom')

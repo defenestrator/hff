@@ -24,9 +24,11 @@
 @stop
 
 @section('content')
+
     <div class="col-md-6 col-md-offset-3">
         @include('sales-inquiry')
     </div>
+
     @foreach(array_chunk(array_slice($showcases->all(), 0, 6), 2) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)
@@ -58,6 +60,9 @@
             </div>
             <a style="width:100%;" href="/showcases"><button class="btn btn-danger" style="width:100%; font-size:24px;">See All Destinations</button></a>
             <br>
+        </div>
+        <div class="col-md-12">
+            <world-map></world-map>
         </div>
     </div>
 
