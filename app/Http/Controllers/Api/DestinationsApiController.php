@@ -13,7 +13,7 @@ class DestinationsApiController extends ApiController
      */
     public function index(Destination $destination)
     {
-        return $destination->orderBy('created_at', 'desc')->paginate(50);
+        return $destination->orderBy('name', 'asc')->paginate(50);
     }
 
     /**

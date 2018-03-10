@@ -13,7 +13,7 @@ class RegionsApiController extends ApiController
      */
     public function index(Region $region)
     {
-        return $region->orderBy('created_at', 'desc')->paginate(50);
+        return $region->orderBy('name', 'asc')->paginate(50);
     }
 
     /**
