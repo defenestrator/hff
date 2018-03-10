@@ -10,17 +10,20 @@
     "axios": "^0.15.2",
     "bootstrap": "^3.0.0",
     "cross-env": "^3.2.3",
+    "fs": "0.0.1-security",
     "jquery": "^2.1.4",
     "jquery-circliful": "^0.1.1",
     "js-cookie": "^2.2.0",
     "laravel-mix": "0.*",
-    "moment": "^2.19.3",
+    "moment": "^2.21.0",
     "promise": "^7.1.1",
     "underscore": "^1.8.3",
-    "urijs": "^1.17.0",
-    "vee-validate": "^2.0.0-rc.25",
-    "vue": "^2.5.9",
+    "urijs": "^1.19.1",
+    "vee-validate": "^2.0.5",
+    "vue": "^2.5.14",
+    "vue-template-compiler": "^2.5.14",
     "vue-trumbowyg": "^3.1.1",
-    "vue-upload-component": "^2.7.2"
+    "vue-upload-component": "^2.8.3",
+    "vue2-google-maps": "^0.8.11"
   }
 }

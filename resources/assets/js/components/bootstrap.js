@@ -9,8 +9,6 @@
  | your components that you write while building your applications.
  */
 
-//require('./home') keep this around to test when things go awry?
-
 // Laravel Spark
 require('./../spark-components/bootstrap')
 require('./profile/update-profile-details.js');
@@ -25,3 +23,4 @@ Vue.component('regions', require('./cms/Regions.vue'))
 // Public "guest" components
 Vue.component('public-footer', require('./PublicFooter.vue'))
 Vue.component('sales-inquiry', require('./SalesInquiry.vue'))
+Vue.component('world-map', require('./WorldMap.vue'))

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Map;
 use Illuminate\Http\Request;
 
-class MapsController extends Controller
+class WorldMapController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class MapsController extends Controller
      */
     public function index()
     {
-
+        return view('world-map');
     }
 
     /**
@@ -41,10 +40,10 @@ class MapsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Map  $map
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Map $map)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class MapsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Map  $map
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Map $map)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class MapsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Map  $map
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Map $map)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class MapsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Map  $map
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Map $map)
+    public function destroy($id)
     {
         //
     }

@@ -35,7 +35,7 @@ Route::middleware('cacheResponse')->group( function(){
 
 });
 // World Map
-Route::get('/maps', 'MapsController@index');
+Route::get('/maps/world', 'WorldMapController@index');
 Route::middleware('doNotCacheResponse')->group(function() {
     // Confirm Newsletter Subscription
     Route::get('/newsletter-subscription/{token}', 'NewsletterSubscriptionsController@confirm');

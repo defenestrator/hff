@@ -1,7 +1,6 @@
 require('spark-bootstrap');
 require('./components/bootstrap');
-//Vue.config.silent = true
-var app = new Vue({
+let app = new Vue({
     mixins: [require('spark')],
     mounted() {
         // Async loading of external fonts.
