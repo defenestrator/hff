@@ -43,7 +43,7 @@ Contact us using this handy web form! Welcome to the future!
     <div class="container">
         <div class="row">
             <!-- Contact form Section Start -->
-            <div class="col-md-6">
+            <div class="col-sm-6">
                 <h2>Holler at us!</h2>
                 <!-- Notifications -->
                 <div id="errors">
@@ -84,7 +84,7 @@ Contact us using this handy web form! Welcome to the future!
             </div>
             <!-- //Contact Form Section End -->
             <!-- Address Section Start -->
-            <div class="col-md-6 col-sm-6 address_margin" id="">
+            <div class="col-sm-6 address_margin" id="">
                 <div class="media media-right">
                     <div class="media-left media-top">
                         <a href="#address" title="write us!">
@@ -98,8 +98,7 @@ Contact us using this handy web form! Welcome to the future!
                         <address>
                             Hobo Fly Fishing, LLC
                             <br> 289 N Hullen Place
-                            <br> Star, ID
-                            <br> 83669
+                            <br> Star, ID 83669
                         </address>
                     </div>
                 </div>

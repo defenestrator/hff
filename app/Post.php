@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentTaggable\Taggable;
+use Laravel\Scout\Searchable;
 
 /**
  * App\Post
@@ -46,7 +47,9 @@ use Cviebrock\EloquentTaggable\Taggable;
 class Post extends Model
 {
     use Taggable;
+    use Searchable;
 
+    public $asYouType = true;
     protected $fillable = [ 'title', 'slug', 'user_id', 'body', 'author', 'header_photo', 'image_id'];
     protected $publication = null;
 
@@ -82,5 +85,17 @@ class Post extends Model
         $published = Publication::where('post_id', '!=', null)->get();
         return $this->whereNotIn('id', $published->pluck('post_id'))->get();
     }
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
 
+        // Customize array...
+
+        return $array;
+    }
 }

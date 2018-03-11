@@ -62,7 +62,7 @@
             <br>
         </div>
         <div class="col-md-12">
-            <world-map></world-map>
+            <world-map :infoWindowTitle="''" ></world-map>
         </div>
     </div>
 

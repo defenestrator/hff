@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentTaggable\Taggable;
+use Laravel\Scout\Searchable;
 /**
  * App\Showcase
  *
@@ -69,6 +70,7 @@ use Cviebrock\EloquentTaggable\Taggable;
 class Showcase extends Model
 {
     use Taggable;
+    use Searchable;
     protected $fillable = [
         'title',
         'slug',
@@ -118,5 +120,19 @@ class Showcase extends Model
     {
         $published = Publication::where('showcase_id', '!=', null)->get();
         return $this->whereNotIn('id', $published->pluck('showcase_id'))->get();
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        // Customize array...
+
+        return $array;
     }
 }

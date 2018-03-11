@@ -178,6 +178,8 @@ return [
         Spatie\ResponseCache\ResponseCacheServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Mpociot\VatCalculator\VatCalculatorServiceProvider::class,
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -190,6 +192,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ComposerServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
     ],
 
     /*

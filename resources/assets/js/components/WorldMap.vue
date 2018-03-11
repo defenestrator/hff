@@ -2,7 +2,7 @@
     <gmap-map
             :center="center"
             :zoom="2"
-            style="width: 100%; height: 70vh;"
+            style="width: 100%; height: 75vh;"
     >
 <gmap-info-window  :zIndex="300" :maxWidth="240" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <h2>{{infoWindowTitle}}</h2>
@@ -31,7 +31,7 @@
     Vue.use(VueGoogleMaps, {
         load: {
             key: 'AIzaSyA7cOmgsewiTB9MjES7Ho8auSVcxqf34cY',
-             libraries: 'places', //// If you need to use place input
+            libraries: 'places', //// If you need to use place input
         }
     });
 
@@ -40,9 +40,11 @@
             return {
                 center: {lat: 21.3279758, lng: -157.939159117},
                 destinations: [],
+                mapTypeId: "satellite",
                 markers:[],
                 infoContent: '',
                 infoWindowContent: '',
+                infoWindowTitle: '',
                 infoWindowPos: {
                     lat: 0,
                     lng: 0
