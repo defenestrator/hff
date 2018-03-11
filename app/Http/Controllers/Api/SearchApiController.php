@@ -27,7 +27,7 @@ class SearchApiController extends Controller
             $region['type'] = 'Region';
             $region['title'] = $region['name'];
             $region['link'] = '/regions/'. $region['slug'];
-            $region['header_photo'] = 'https://hobo-assets.s3-us-west-2.amazonaws.com/images/authenticated_hobo.png';
+            $region['header_photo'] = 'https://images.fireside.fm/podcasts/images/e/e806aded-313d-462f-9181-8447502bda33/episodes/3/3c5758b3-7c00-4221-b3f8-8636e5c36448/header.jpg';
             return $region;
         });
 

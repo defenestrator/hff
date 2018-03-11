@@ -52106,6 +52106,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'site-search',
@@ -79079,16 +79084,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })]), _vm._v(" "), (_vm.results && _vm.results.length != 0) ? _c('div', {
-    staticClass: "scrollable-menu",
+    staticClass: "col-md-8 scrollable-menu",
     staticStyle: {
       "border": "1px solid #c5c7ca",
       "max-height": "650px",
+      "width": "100%",
       "border-top": "none",
-      "overflow-y": "scroll",
-      "overflow-x": "hidden",
       "z-index": "1000",
       "background": "white",
-      "width": "800px",
       "position": "absolute",
       "top": "46px"
     },
@@ -79115,7 +79118,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })]) : _vm._e(), _vm._v(" "), _c('span', [_vm._v("Results for \"" + _vm._s(_vm.query) + "\"")]), _vm._v(" "), _c('ul', {
+  }), _vm._v(" close\n        ")]) : _vm._e(), _vm._v(" "), _c('ul', {
     staticStyle: {
       "padding-left": "0"
     }
@@ -79126,24 +79129,47 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('li', {
       staticStyle: {
-        "margin": "6px 0",
-        "border-bottom": "1px solid #c5c7ca",
-        "overflow-x": "hidden"
+        "margin": "10px 0",
+        "border-bottom": "1px solid #c5c7ca"
       }
     }, [_c('img', {
       staticStyle: {
-        "width": "80px",
+        "width": "100%",
         "padding": "6px"
       },
       attrs: {
         "src": result.header_photo
       }
-    }), _vm._v("\n                    " + _vm._s(result.title) + "\n                    "), _c('span', {
+    }), _c('br'), _vm._v(" "), _c('span', {
+      staticStyle: {
+        "overflow-x": "hidden"
+      }
+    }, [_vm._v(_vm._s(result.title))]), _c('br'), _vm._v(" "), _c('span', {
       staticStyle: {
         "color": "#535965"
       }
-    }, [_vm._v(" - " + _vm._s(result.type))])])])
-  }))]) : _vm._e()])
+    }, [_vm._v(_vm._s(result.type))])])])
+  })), _vm._v(" "), (_vm.results.length > 1) ? _c('button', {
+    staticClass: "btn btn-default",
+    staticStyle: {
+      "font-size": "18px",
+      "border": "none"
+    },
+    attrs: {
+      "role": "button"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.clear($event)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-close",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" close\n        ")]) : _vm._e()]) : _vm._e()])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
