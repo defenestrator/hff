@@ -1,10 +1,9 @@
 <template>
-    <div>
-        <div style="margin:6px 0;" class="col-sm-3">
-            <form>
+        <li class="navbar-link" style="margin:6px auto;width:auto; padding: 0 8px;">
+                <form>
                 <input v-model="query" style="font-size:18px;"class="form-control" placeholder="search..." @keyup="search">
             </form>
-            <div style="border:1px solid #c5c7ca; border-top:none; overflow-x:hidden; z-index:1000; background:white; width:300%; position:absolute; top:46px; left:15px;"
+            <div style="border:1px solid #c5c7ca; border-top:none; overflow-x:hidden; z-index:1000; background:white; width:800px; position:absolute; top:46px;"
                  v-if="results && results.length != 0" class="" id="results">
                 <button v-if="query.length !== 0" class="btn btn-default"
                         @click.prevent="clear"
@@ -23,8 +22,7 @@
                     </a>
                 </ul>
             </div>
-        </div>
-    </div>
+        </li>
 </template>
 
 <script  type="text/babel">

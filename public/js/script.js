@@ -52106,8 +52106,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'site-search',
@@ -79039,10 +79037,12 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "col-sm-3",
+  return _c('li', {
+    staticClass: "navbar-link",
     staticStyle: {
-      "margin": "6px 0"
+      "margin": "6px auto",
+      "width": "auto",
+      "padding": "0 8px"
     }
   }, [_c('form', [_c('input', {
     directives: [{
@@ -79075,10 +79075,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "overflow-x": "hidden",
       "z-index": "1000",
       "background": "white",
-      "width": "300%",
+      "width": "800px",
       "position": "absolute",
-      "top": "46px",
-      "left": "15px"
+      "top": "46px"
     },
     attrs: {
       "id": "results"
@@ -79123,12 +79122,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "src": result.header_photo
       }
-    }), _vm._v("\n                        " + _vm._s(result.title) + "\n                        "), _c('span', {
+    }), _vm._v("\n                    " + _vm._s(result.title) + "\n                    "), _c('span', {
       staticStyle: {
         "color": "#535965"
       }
     }, [_vm._v(" - " + _vm._s(result.type))])])])
-  }))]) : _vm._e()])])
+  }))]) : _vm._e()])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

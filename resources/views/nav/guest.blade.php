@@ -11,13 +11,12 @@
             </div>
             @include('nav.brand')
         </div>
-        <site-search></site-search>
         <div class="collapse navbar-collapse" id="spark-navbar-collapse">
             {{-- Left Side Of Navbar --}}
             <ul class="nav navbar-nav" style="z-index:100">
                 {{-- Places Menu --}}
                 {{--@include('nav.places')--}}
-
+                <site-search></site-search>
                 <li><a href="{{route('publications.posts.index')}}" class="navbar-link dropdown">Blog</a></li>
 
                 @include('nav.places')
