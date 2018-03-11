@@ -79069,9 +79069,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }
   })]), _vm._v(" "), (_vm.results && _vm.results.length != 0) ? _c('div', {
+    staticClass: "scrollable-menu",
     staticStyle: {
       "border": "1px solid #c5c7ca",
+      "max-height": "650px",
       "border-top": "none",
+      "overflow-y": "scroll",
       "overflow-x": "hidden",
       "z-index": "1000",
       "background": "white",

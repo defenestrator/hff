@@ -3,8 +3,8 @@
                 <form>
                 <input v-model="query" style="font-size:18px;"class="form-control" placeholder="search..." @keyup="search">
             </form>
-            <div style="border:1px solid #c5c7ca; border-top:none; overflow-x:hidden; z-index:1000; background:white; width:800px; position:absolute; top:46px;"
-                 v-if="results && results.length != 0" class="" id="results">
+            <div style="border:1px solid #c5c7ca; max-height:650px; border-top:none; overflow-y:scroll; overflow-x:hidden; z-index:1000; background:white; width:800px; position:absolute; top:46px;"
+                 v-if="results && results.length != 0" class="scrollable-menu" id="results">
                 <button v-if="query.length !== 0" class="btn btn-default"
                         @click.prevent="clear"
                         type="submit"
