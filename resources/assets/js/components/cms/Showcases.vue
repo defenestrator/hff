@@ -779,7 +779,7 @@ export default {
     },
     computed: {
         /**
-         * Get the URL for updating the team photo.
+         * Get the URL for updating the header photo.
          */
         urlForUpdate() {
             return `/api/photo`;

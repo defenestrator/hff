@@ -79115,7 +79115,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })]) : _vm._e(), _vm._v(" "), _c('span', [_vm._v("Results for \"" + _vm._s(_vm.query) + "\"")]), _vm._v(" "), _c('ul', _vm._l((_vm.results), function(result) {
+  })]) : _vm._e(), _vm._v(" "), _c('span', [_vm._v("Results for \"" + _vm._s(_vm.query) + "\"")]), _vm._v(" "), _c('ul', {
+    staticStyle: {
+      "padding-left": "0"
+    }
+  }, _vm._l((_vm.results), function(result) {
     return _c('a', {
       attrs: {
         "href": result.link

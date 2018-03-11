@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 /**
  * App\Region
@@ -32,6 +33,7 @@ class Region extends Model
     protected $fillable = [
         'geojson', 'lat','lng','name', 'slug'
     ];
+    use Searchable;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -43,5 +45,19 @@ class Region extends Model
     public function showcases()
     {
         return $this->hasMany(Showcase::class);
+    }
+
+    /**
+ * Get the indexable data array for the model.
+ *
+ * @return array
+ */
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        // Customize array...
+
+        return $array;
     }
 }

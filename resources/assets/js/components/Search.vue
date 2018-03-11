@@ -12,7 +12,7 @@
                     <i class="fa fa-close" aria-hidden="true"></i>
                 </button>
                 <span>Results for "{{query}}"</span>
-                <ul>
+                <ul style="padding-left:0;">
                     <a v-for="result in results" :href="result.link">
                         <li style="margin: 6px 0; border-bottom:1px solid #c5c7ca; overflow-x:hidden;">
                             <img style="width:80px;padding:6px;" :src="result.header_photo"/>
