@@ -9,7 +9,7 @@
                     <h3 class="hidden-sm hidden-md hidden-lg">{{$showcase->homepage_bottom}}</h3>
                 </div>
                 @if($showcase->special)
-                    <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="btn btn-warning">
+                    <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="hidden-sm btn btn-warning">
                         <i class="fa fa-question-circle-o" aria-hidden="true"></i>
                         <span>Learn More</span>
                     </button>
