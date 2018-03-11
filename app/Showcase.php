@@ -129,9 +129,19 @@ class Showcase extends Model
      */
     public function toSearchableArray()
     {
-        $array = $this->toArray();
-
-        // Customize array...
+        $array = $this->only([
+            'id',
+            'title',
+            'slug',
+            'outfitter_name',
+            'body',
+            'sidebar_bottom',
+            'sidebar_top',
+            'homepage_top',
+            'homepage_bottom',
+            'tagline',
+            'fishery_type'
+        ]);
 
         return $array;
     }

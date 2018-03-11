@@ -92,7 +92,7 @@ class Post extends Model
      */
     public function toSearchableArray()
     {
-        $array = $this->toArray();
+        $array = $this->only(['id','title', 'body', 'author', 'slug']);
 
         // Customize array...
 
