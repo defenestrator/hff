@@ -116,7 +116,6 @@ export default {
             index: true,
             regions: [],
             newRegion: new SparkForm ({
-                header_photo: ''
                 name: '',
                 geojson: '',
                 slug: '',
@@ -139,9 +138,6 @@ export default {
         lng(value) {
             this.validator.validate('lng', value);
         },
-        'newRegion.header_photo': function (val, oldVal) {
-            this.newRegion.saved = false
-        },
         'newRegion.name': function (val, oldVal) {
             if (this.newRegion.slug == '' ||
                     this.newRegion.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')
@@ -161,45 +157,7 @@ export default {
         }
     },
     methods: {
-        /**
-         * Update the showcase photo.
-         */
-        update_header(e) {
-            e.preventDefault();
 
-            if ( ! this.$refs.header_photo.files.length) {
-                return;
-            }
-
-            var self = this;
-
-            this.newRegion.startProcessing();
-
-            // We need to gather a fresh FormData instance with the profile photo appended to
-            // the data so we can POST it up to the server. This will allow us to do async
-            // uploads of the profile photos. We will update the user after this action.
-            axios.post(this.urlForUpdate, this.gatherFormData())
-                    .then(result  => {
-                this.newRegion.header_photo = result.data.large
-            this.newRegion.thumbnail = result.data.thumbnail
-            this.newRegion.image_id = result.data.image_id
-            self.newRegion.finishProcessing();
-        },
-            (error) => {
-                self.newShowcase.setErrors(error.response.data.errors);
-            }
-        );
-        },
-        /**
-         * Gather the form data for the photo upload.
-         */
-        gatherFormData() {
-            const data = new FormData();
-
-            data.append('header_photo', this.$refs.header_photo.files[0]);
-
-            return data;
-        },
         getIndex() {
             axios.get(`/api/regions`, {})
             .then(result  => {
@@ -231,7 +189,6 @@ export default {
                                 name: this.newRegion.name,
                                 lat:  this.newRegion.lat,
                                 lng:  this.newRegion.lng,
-                                header_photo: this.newRegion.header_photo,
                                 geojson: this.newRegion.geojson,
                                 slug: this.newRegion.slug,
                             })
@@ -265,7 +222,6 @@ export default {
                 }).then((result) => {
                     axios.put(`/api/regions/` + this.newRegion.regionId, {
                         name: this.newRegion.name,
-                        header_photo: this.newRegion.header_photo,
                         geojson: this.newRegion.geojson,
                         lat: this.newRegion.lat,
                         lng: this.newRegion.lng
@@ -308,7 +264,6 @@ export default {
             }
         },
         clear() {
-            this.newRegion.header_photo = ''
             this.newRegion.saved = false
             this.newRegion.saveBusy = false
             this.newRegion.regionId = null
@@ -323,7 +278,6 @@ export default {
             this.newRegion.regionId = id
             axios.get(`/api/regions/`+ id , {})
             .then(result => {
-                this.newRegion.header_photo = result.data.header_photo
                 this.newRegion.name = result.data.name;
                 this.newRegion.geojson = result.data.geojson
                 this.newRegion.lat = result.data.lat;
@@ -346,21 +300,6 @@ export default {
         });
     },
     computed: {
-        /**
-         * Get the URL for updating the header photo.
-         */
-        urlForUpdate() {
-            return `/api/photo`;
-        },
-        /**
-         * Calculate the style attribute for the photo preview.
-         */
-        previewStyle() {
-            return `padding:2em 0; background-image: url(${this.newShowcase.header_photo});`;
-        },
-        tileStyle() {
-            return `background-position: center center;background-image: url(${this.newShowcase.header_photo});`;
-        }
     },
 }
 </script>
