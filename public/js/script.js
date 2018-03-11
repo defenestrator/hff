@@ -5477,345 +5477,6 @@ exports.default = function (vueElement, googleMapObject, events) {
 
 /***/ }),
 /* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _deferredReady = __webpack_require__(36);
-
-/**
- * @class MapElementMixin @mixins DeferredReadyMixin
- *
- * Extends components to include the following fields:
- *
- * @property $map        The Google map (valid only after the promise returns)
- *
- *
- * */
-exports.default = {
-
-  mixins: [_deferredReady.DeferredReadyMixin],
-
-  created: function created() {
-    var _this = this;
-
-    /* Search for the Map component in the parent */
-    var search = this.$findAncestor(function (ans) {
-      return ans.$mapCreated;
-    });
-
-    if (!search) {
-      throw new Error(this.constructor.name + ' component must be used within a <Map>');
-    }
-
-    this.$mapPromise = search.$mapCreated.then(function (map) {
-      _this.$map = map;
-    });
-    // FIXME: This is a hack to ensure correct loading
-    // when the map has already be instantiated.
-    if (search.$mapObject) {
-      this.$map = search.$mapObject;
-    }
-    this.$MapElementMixin = search;
-    this.$map = null;
-  },
-  beforeDeferredReady: function beforeDeferredReady() {
-    return this.$mapPromise;
-  },
-
-
-  methods: {
-    $findAncestor: function $findAncestor(condition) {
-      var search = this.$parent;
-
-      while (search) {
-        if (condition(search)) {
-          return search;
-        }
-        search = search.$parent;
-      }
-      return null;
-    }
-  }
-
-}; /* vim: set softtabstop=2 shiftwidth=2 expandtab : */
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-/*
- * This mixin is primarily used to share code for the "interval" selector
- * on the registration and subscription screens, which is used to show
- * all of the various subscription plans offered by the application.
- */
-module.exports = {
-    data: function data() {
-        return {
-            selectedPlan: null,
-            detailingPlan: null,
-
-            showingMonthlyPlans: true,
-            showingYearlyPlans: false
-        };
-    },
-
-
-    methods: {
-        /**
-         * Switch to showing monthly plans.
-         */
-        showMonthlyPlans: function showMonthlyPlans() {
-            this.showingMonthlyPlans = true;
-
-            this.showingYearlyPlans = false;
-        },
-
-
-        /**
-         * Switch to showing yearly plans.
-         */
-        showYearlyPlans: function showYearlyPlans() {
-            this.showingMonthlyPlans = false;
-
-            this.showingYearlyPlans = true;
-        },
-
-
-        /**
-         * Show the plan details for the given plan.
-         */
-        showPlanDetails: function showPlanDetails(plan) {
-            this.detailingPlan = plan;
-
-            $('#modal-plan-details').modal('show');
-        }
-    },
-
-    computed: {
-        /**
-         * Get the active "interval" being displayed.
-         */
-        activeInterval: function activeInterval() {
-            return this.showingMonthlyPlans ? 'monthly' : 'yearly';
-        },
-
-
-        /**
-         * Get all of the plans for the active interval.
-         */
-        plansForActiveInterval: function plansForActiveInterval() {
-            var _this = this;
-
-            return _.filter(this.plans, function (plan) {
-                return plan.active && (plan.price == 0 || plan.interval == _this.activeInterval);
-            });
-        },
-
-
-        /**
-         * Get all of the paid plans.
-         */
-        paidPlans: function paidPlans() {
-            return _.filter(this.plans, function (plan) {
-                return plan.active && plan.price > 0;
-            });
-        },
-
-
-        /**
-         * Get all of the paid plans for the active interval.
-         */
-        paidPlansForActiveInterval: function paidPlansForActiveInterval() {
-            return _.filter(this.plansForActiveInterval, function (plan) {
-                return plan.active && plan.price > 0;
-            });
-        },
-
-
-        /**
-         * Determine if both monthly and yearly plans are available.
-         */
-        hasMonthlyAndYearlyPlans: function hasMonthlyAndYearlyPlans() {
-            return this.monthlyPlans.length > 0 && this.yearlyPlans.length > 0;
-        },
-
-
-        /**
-         * Determine if both monthly and yearly plans are available.
-         */
-        hasMonthlyAndYearlyPaidPlans: function hasMonthlyAndYearlyPaidPlans() {
-            return _.where(this.paidPlans, { interval: 'monthly' }).length > 0 && _.where(this.paidPlans, { interval: 'yearly' }).length > 0;
-        },
-
-
-        /**
-         * Determine if only yearly plans are available.
-         */
-        onlyHasYearlyPlans: function onlyHasYearlyPlans() {
-            return this.monthlyPlans.length == 0 && this.yearlyPlans.length > 0;
-        },
-
-
-        /**
-         * Determine if both monthly and yearly plans are available.
-         */
-        onlyHasYearlyPaidPlans: function onlyHasYearlyPaidPlans() {
-            return _.where(this.paidPlans, { interval: 'monthly' }).length == 0 && _.where(this.paidPlans, { interval: 'yearly' }).length > 0;
-        },
-
-
-        /**
-         * Get all of the monthly plans.
-         */
-        monthlyPlans: function monthlyPlans() {
-            return _.filter(this.plans, function (plan) {
-                return plan.active && plan.interval == 'monthly';
-            });
-        },
-
-
-        /**
-         * Get all of the yearly plans.
-         */
-        yearlyPlans: function yearlyPlans() {
-            return _.filter(this.plans, function (plan) {
-                return plan.active && plan.interval == 'yearly';
-            });
-        }
-    }
-};
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var baseIsNative = __webpack_require__(420),
-    getValue = __webpack_require__(456);
-
-/**
- * Gets the native function at `key` of `object`.
- *
- * @private
- * @param {Object} object The object to query.
- * @param {string} key The key of the method to get.
- * @returns {*} Returns the function if it's native, else `undefined`.
- */
-function getNative(object, key) {
-  var value = getValue(object, key);
-  return baseIsNative(value) ? value : undefined;
-}
-
-module.exports = getNative;
-
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-  var type = typeof value;
-  return value != null && (type == 'object' || type == 'function');
-}
-
-module.exports = isObject;
-
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var arrayMap = __webpack_require__(44),
-    baseClone = __webpack_require__(77),
-    baseUnset = __webpack_require__(435),
-    castPath = __webpack_require__(19),
-    copyObject = __webpack_require__(24),
-    customOmitClone = __webpack_require__(450),
-    flatRest = __webpack_require__(453),
-    getAllKeysIn = __webpack_require__(49);
-
-/** Used to compose bitmasks for cloning. */
-var CLONE_DEEP_FLAG = 1,
-    CLONE_FLAT_FLAG = 2,
-    CLONE_SYMBOLS_FLAG = 4;
-
-/**
- * The opposite of `_.pick`; this method creates an object composed of the
- * own and inherited enumerable property paths of `object` that are not omitted.
- *
- * **Note:** This method is considerably slower than `_.pick`.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Object
- * @param {Object} object The source object.
- * @param {...(string|string[])} [paths] The property paths to omit.
- * @returns {Object} Returns the new object.
- * @example
- *
- * var object = { 'a': 1, 'b': '2', 'c': 3 };
- *
- * _.omit(object, ['a', 'c']);
- * // => { 'b': '2' }
- */
-var omit = flatRest(function(object, paths) {
-  var result = {};
-  if (object == null) {
-    return result;
-  }
-  var isDeep = false;
-  paths = arrayMap(paths, function(path) {
-    path = castPath(path, object);
-    isDeep || (isDeep = path.length > 1);
-    return path;
-  });
-  copyObject(object, getAllKeysIn(object), result);
-  if (isDeep) {
-    result = baseClone(result, CLONE_DEEP_FLAG | CLONE_FLAT_FLAG | CLONE_SYMBOLS_FLAG, customOmitClone);
-  }
-  var length = paths.length;
-  while (length--) {
-    baseUnset(result, paths[length]);
-  }
-  return result;
-});
-
-module.exports = omit;
-
-
-/***/ }),
-/* 16 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12795,6 +12456,345 @@ var index_esm = {
 
 
 /***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _deferredReady = __webpack_require__(36);
+
+/**
+ * @class MapElementMixin @mixins DeferredReadyMixin
+ *
+ * Extends components to include the following fields:
+ *
+ * @property $map        The Google map (valid only after the promise returns)
+ *
+ *
+ * */
+exports.default = {
+
+  mixins: [_deferredReady.DeferredReadyMixin],
+
+  created: function created() {
+    var _this = this;
+
+    /* Search for the Map component in the parent */
+    var search = this.$findAncestor(function (ans) {
+      return ans.$mapCreated;
+    });
+
+    if (!search) {
+      throw new Error(this.constructor.name + ' component must be used within a <Map>');
+    }
+
+    this.$mapPromise = search.$mapCreated.then(function (map) {
+      _this.$map = map;
+    });
+    // FIXME: This is a hack to ensure correct loading
+    // when the map has already be instantiated.
+    if (search.$mapObject) {
+      this.$map = search.$mapObject;
+    }
+    this.$MapElementMixin = search;
+    this.$map = null;
+  },
+  beforeDeferredReady: function beforeDeferredReady() {
+    return this.$mapPromise;
+  },
+
+
+  methods: {
+    $findAncestor: function $findAncestor(condition) {
+      var search = this.$parent;
+
+      while (search) {
+        if (condition(search)) {
+          return search;
+        }
+        search = search.$parent;
+      }
+      return null;
+    }
+  }
+
+}; /* vim: set softtabstop=2 shiftwidth=2 expandtab : */
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+/*
+ * This mixin is primarily used to share code for the "interval" selector
+ * on the registration and subscription screens, which is used to show
+ * all of the various subscription plans offered by the application.
+ */
+module.exports = {
+    data: function data() {
+        return {
+            selectedPlan: null,
+            detailingPlan: null,
+
+            showingMonthlyPlans: true,
+            showingYearlyPlans: false
+        };
+    },
+
+
+    methods: {
+        /**
+         * Switch to showing monthly plans.
+         */
+        showMonthlyPlans: function showMonthlyPlans() {
+            this.showingMonthlyPlans = true;
+
+            this.showingYearlyPlans = false;
+        },
+
+
+        /**
+         * Switch to showing yearly plans.
+         */
+        showYearlyPlans: function showYearlyPlans() {
+            this.showingMonthlyPlans = false;
+
+            this.showingYearlyPlans = true;
+        },
+
+
+        /**
+         * Show the plan details for the given plan.
+         */
+        showPlanDetails: function showPlanDetails(plan) {
+            this.detailingPlan = plan;
+
+            $('#modal-plan-details').modal('show');
+        }
+    },
+
+    computed: {
+        /**
+         * Get the active "interval" being displayed.
+         */
+        activeInterval: function activeInterval() {
+            return this.showingMonthlyPlans ? 'monthly' : 'yearly';
+        },
+
+
+        /**
+         * Get all of the plans for the active interval.
+         */
+        plansForActiveInterval: function plansForActiveInterval() {
+            var _this = this;
+
+            return _.filter(this.plans, function (plan) {
+                return plan.active && (plan.price == 0 || plan.interval == _this.activeInterval);
+            });
+        },
+
+
+        /**
+         * Get all of the paid plans.
+         */
+        paidPlans: function paidPlans() {
+            return _.filter(this.plans, function (plan) {
+                return plan.active && plan.price > 0;
+            });
+        },
+
+
+        /**
+         * Get all of the paid plans for the active interval.
+         */
+        paidPlansForActiveInterval: function paidPlansForActiveInterval() {
+            return _.filter(this.plansForActiveInterval, function (plan) {
+                return plan.active && plan.price > 0;
+            });
+        },
+
+
+        /**
+         * Determine if both monthly and yearly plans are available.
+         */
+        hasMonthlyAndYearlyPlans: function hasMonthlyAndYearlyPlans() {
+            return this.monthlyPlans.length > 0 && this.yearlyPlans.length > 0;
+        },
+
+
+        /**
+         * Determine if both monthly and yearly plans are available.
+         */
+        hasMonthlyAndYearlyPaidPlans: function hasMonthlyAndYearlyPaidPlans() {
+            return _.where(this.paidPlans, { interval: 'monthly' }).length > 0 && _.where(this.paidPlans, { interval: 'yearly' }).length > 0;
+        },
+
+
+        /**
+         * Determine if only yearly plans are available.
+         */
+        onlyHasYearlyPlans: function onlyHasYearlyPlans() {
+            return this.monthlyPlans.length == 0 && this.yearlyPlans.length > 0;
+        },
+
+
+        /**
+         * Determine if both monthly and yearly plans are available.
+         */
+        onlyHasYearlyPaidPlans: function onlyHasYearlyPaidPlans() {
+            return _.where(this.paidPlans, { interval: 'monthly' }).length == 0 && _.where(this.paidPlans, { interval: 'yearly' }).length > 0;
+        },
+
+
+        /**
+         * Get all of the monthly plans.
+         */
+        monthlyPlans: function monthlyPlans() {
+            return _.filter(this.plans, function (plan) {
+                return plan.active && plan.interval == 'monthly';
+            });
+        },
+
+
+        /**
+         * Get all of the yearly plans.
+         */
+        yearlyPlans: function yearlyPlans() {
+            return _.filter(this.plans, function (plan) {
+                return plan.active && plan.interval == 'yearly';
+            });
+        }
+    }
+};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsNative = __webpack_require__(420),
+    getValue = __webpack_require__(456);
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : undefined;
+}
+
+module.exports = getNative;
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayMap = __webpack_require__(44),
+    baseClone = __webpack_require__(77),
+    baseUnset = __webpack_require__(435),
+    castPath = __webpack_require__(19),
+    copyObject = __webpack_require__(24),
+    customOmitClone = __webpack_require__(450),
+    flatRest = __webpack_require__(453),
+    getAllKeysIn = __webpack_require__(49);
+
+/** Used to compose bitmasks for cloning. */
+var CLONE_DEEP_FLAG = 1,
+    CLONE_FLAT_FLAG = 2,
+    CLONE_SYMBOLS_FLAG = 4;
+
+/**
+ * The opposite of `_.pick`; this method creates an object composed of the
+ * own and inherited enumerable property paths of `object` that are not omitted.
+ *
+ * **Note:** This method is considerably slower than `_.pick`.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The source object.
+ * @param {...(string|string[])} [paths] The property paths to omit.
+ * @returns {Object} Returns the new object.
+ * @example
+ *
+ * var object = { 'a': 1, 'b': '2', 'c': 3 };
+ *
+ * _.omit(object, ['a', 'c']);
+ * // => { 'b': '2' }
+ */
+var omit = flatRest(function(object, paths) {
+  var result = {};
+  if (object == null) {
+    return result;
+  }
+  var isDeep = false;
+  paths = arrayMap(paths, function(path) {
+    path = castPath(path, object);
+    isDeep || (isDeep = path.length > 1);
+    return path;
+  });
+  copyObject(object, getAllKeysIn(object), result);
+  if (isDeep) {
+    result = baseClone(result, CLONE_DEEP_FLAG | CLONE_FLAT_FLAG | CLONE_SYMBOLS_FLAG, customOmitClone);
+  }
+  var length = paths.length;
+  while (length--) {
+    baseUnset(result, paths[length]);
+  }
+  return result;
+});
+
+module.exports = omit;
+
+
+/***/ }),
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14124,7 +14124,7 @@ module.exports = getMapData;
 /* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(13);
+var getNative = __webpack_require__(14);
 
 /* Built-in method references that are verified to be native. */
 var nativeCreate = getNative(Object, 'create');
@@ -14604,7 +14604,7 @@ module.exports = {
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(13),
+var getNative = __webpack_require__(14),
     root = __webpack_require__(6);
 
 /* Built-in method references that are verified to be native. */
@@ -26017,7 +26017,7 @@ var Stack = __webpack_require__(43),
     initCloneObject = __webpack_require__(465),
     isArray = __webpack_require__(3),
     isBuffer = __webpack_require__(59),
-    isObject = __webpack_require__(14),
+    isObject = __webpack_require__(15),
     keys = __webpack_require__(25);
 
 /** Used to compose bitmasks for cloning. */
@@ -26320,7 +26320,7 @@ module.exports = castFunction;
 /* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(13);
+var getNative = __webpack_require__(14);
 
 var defineProperty = (function() {
   try {
@@ -26554,7 +26554,7 @@ module.exports = getTag;
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(14);
+var isObject = __webpack_require__(15);
 
 /**
  * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
@@ -26703,7 +26703,7 @@ module.exports = toSource;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(18),
-    isObject = __webpack_require__(14);
+    isObject = __webpack_require__(15);
 
 /** `Object#toString` result references. */
 var asyncTag = '[object AsyncFunction]',
@@ -51798,7 +51798,7 @@ var validators = {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(11);
 //
 //
 //
@@ -51955,7 +51955,7 @@ Vue.component('newsletter-signup', __webpack_require__(530));
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(11);
 //
 //
 //
@@ -52268,7 +52268,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(11);
 //
 //
 //
@@ -52634,7 +52634,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(11);
 //
 //
 //
@@ -53004,7 +53004,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(11);
 //
 //
 //
@@ -53784,7 +53784,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vee_validate__ = __webpack_require__(11);
 //
 //
 //
@@ -54095,7 +54095,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(11);
 //
 //
 //
@@ -54909,7 +54909,7 @@ var _pickBy = __webpack_require__(505);
 
 var _pickBy2 = _interopRequireDefault(_pickBy);
 
-var _omit = __webpack_require__(15);
+var _omit = __webpack_require__(16);
 
 var _omit2 = _interopRequireDefault(_omit);
 
@@ -55013,7 +55013,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _omit = __webpack_require__(15);
+var _omit = __webpack_require__(16);
 
 var _omit2 = _interopRequireDefault(_omit);
 
@@ -55029,7 +55029,7 @@ var _eventsBinder = __webpack_require__(10);
 
 var _eventsBinder2 = _interopRequireDefault(_eventsBinder);
 
-var _mapElementMixin = __webpack_require__(11);
+var _mapElementMixin = __webpack_require__(12);
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
@@ -55139,7 +55139,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _omit = __webpack_require__(15);
+var _omit = __webpack_require__(16);
 
 var _omit2 = _interopRequireDefault(_omit);
 
@@ -55352,7 +55352,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _omit = __webpack_require__(15);
+var _omit = __webpack_require__(16);
 
 var _omit2 = _interopRequireDefault(_omit);
 
@@ -55466,7 +55466,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _omit = __webpack_require__(15);
+var _omit = __webpack_require__(16);
 
 var _omit2 = _interopRequireDefault(_omit);
 
@@ -55683,7 +55683,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(11);
 // Import this component
 
 
@@ -56390,7 +56390,7 @@ module.exports = {
     /**
      * Load mixins for the component.
      */
-    mixins: [__webpack_require__(38), __webpack_require__(12), __webpack_require__(70)],
+    mixins: [__webpack_require__(38), __webpack_require__(13), __webpack_require__(70)],
 
     /**
      * The component's data.
@@ -56522,7 +56522,7 @@ module.exports = {
     /**
      * Load mixins for the component.
      */
-    mixins: [__webpack_require__(70), __webpack_require__(12), __webpack_require__(71)],
+    mixins: [__webpack_require__(70), __webpack_require__(13), __webpack_require__(71)],
 
     /**
      * The component's data.
@@ -59190,7 +59190,7 @@ module.exports = {
     /**
      * Load mixins for the component.
      */
-    mixins: [__webpack_require__(12), __webpack_require__(23)],
+    mixins: [__webpack_require__(13), __webpack_require__(23)],
 
     /**
      * The component's data.
@@ -59289,7 +59289,7 @@ module.exports = {
     /**
      * Load mixins for the component.
      */
-    mixins: [__webpack_require__(12), __webpack_require__(23)],
+    mixins: [__webpack_require__(13), __webpack_require__(23)],
 
     /**
      * Prepare the component.
@@ -59331,7 +59331,7 @@ module.exports = {
     /**
      * Load mixins for the component.
      */
-    mixins: [__webpack_require__(38), __webpack_require__(12), __webpack_require__(23)],
+    mixins: [__webpack_require__(38), __webpack_require__(13), __webpack_require__(23)],
 
     /**
      * The component's data.
@@ -59425,7 +59425,7 @@ module.exports = {
     /**
      * Load mixins for the component.
      */
-    mixins: [__webpack_require__(12), __webpack_require__(23), __webpack_require__(71)],
+    mixins: [__webpack_require__(13), __webpack_require__(23), __webpack_require__(71)],
 
     /**
      * The component's data.
@@ -59630,7 +59630,7 @@ module.exports = {
     /**
      * Load mixins for the component.
      */
-    mixins: [__webpack_require__(12), __webpack_require__(23)],
+    mixins: [__webpack_require__(13), __webpack_require__(23)],
 
     /**
      * The component's data.
@@ -63637,7 +63637,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 /* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(13),
+var getNative = __webpack_require__(14),
     root = __webpack_require__(6);
 
 /* Built-in method references that are verified to be native. */
@@ -63688,7 +63688,7 @@ module.exports = Hash;
 /* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(13),
+var getNative = __webpack_require__(14),
     root = __webpack_require__(6);
 
 /* Built-in method references that are verified to be native. */
@@ -63701,7 +63701,7 @@ module.exports = Promise;
 /* 403 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(13),
+var getNative = __webpack_require__(14),
     root = __webpack_require__(6);
 
 /* Built-in method references that are verified to be native. */
@@ -63747,7 +63747,7 @@ module.exports = SetCache;
 /* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(13),
+var getNative = __webpack_require__(14),
     root = __webpack_require__(6);
 
 /* Built-in method references that are verified to be native. */
@@ -63935,7 +63935,7 @@ module.exports = baseAssignIn;
 /* 413 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(14);
+var isObject = __webpack_require__(15);
 
 /** Built-in value references. */
 var objectCreate = Object.create;
@@ -64237,7 +64237,7 @@ module.exports = baseIsMatch;
 
 var isFunction = __webpack_require__(96),
     isMasked = __webpack_require__(468),
-    isObject = __webpack_require__(14),
+    isObject = __webpack_require__(15),
     toSource = __webpack_require__(95);
 
 /**
@@ -64390,7 +64390,7 @@ module.exports = baseKeys;
 /* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isObject = __webpack_require__(14),
+var isObject = __webpack_require__(15),
     isPrototype = __webpack_require__(54),
     nativeKeysIn = __webpack_require__(481);
 
@@ -64577,7 +64577,7 @@ module.exports = basePropertyDeep;
 var assignValue = __webpack_require__(46),
     castPath = __webpack_require__(19),
     isIndex = __webpack_require__(52),
-    isObject = __webpack_require__(14),
+    isObject = __webpack_require__(15),
     toKey = __webpack_require__(20);
 
 /**
@@ -79086,6 +79086,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })]), _vm._v(" "), (_vm.results && _vm.results.length != 0) ? _c('div', {
     staticClass: "col-md-8 scrollable-menu",
     staticStyle: {
+      "box-shadow": "0px 2px 2px #c5c7ca",
       "border": "1px solid #c5c7ca",
       "max-height": "650px",
       "width": "100%",
@@ -79134,22 +79135,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       }
     }, [_c('img', {
       staticStyle: {
+        "border-radius": "1em",
         "width": "100%",
         "padding": "6px"
       },
       attrs: {
         "src": result.header_photo
       }
-    }), _c('br'), _vm._v(" "), _c('span', {
-      staticStyle: {
-        "overflow-x": "hidden"
-      }
-    }, [_vm._v(_vm._s(result.title))]), _c('br'), _vm._v(" "), _c('span', {
+    }), _c('br'), _vm._v("\n                    " + _vm._s(result.title)), _c('br'), _vm._v(" "), _c('span', {
       staticStyle: {
         "color": "#535965"
       }
     }, [_vm._v(_vm._s(result.type))])])])
-  })), _vm._v(" "), (_vm.results.length > 1) ? _c('button', {
+  })), _vm._v(" "), (_vm.results.length !== 1) ? _c('button', {
     staticClass: "btn btn-default",
     staticStyle: {
       "font-size": "18px",
@@ -79646,7 +79644,7 @@ var _propsBinder = __webpack_require__(4);
 
 var _propsBinder2 = _interopRequireDefault(_propsBinder);
 
-var _mapElementMixin = __webpack_require__(11);
+var _mapElementMixin = __webpack_require__(12);
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
@@ -79750,7 +79748,7 @@ var _propsBinder = __webpack_require__(4);
 
 var _propsBinder2 = _interopRequireDefault(_propsBinder);
 
-var _mapElementMixin = __webpack_require__(11);
+var _mapElementMixin = __webpack_require__(12);
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
@@ -79871,7 +79869,7 @@ var _getPropsValuesMixin = __webpack_require__(7);
 
 var _getPropsValuesMixin2 = _interopRequireDefault(_getPropsValuesMixin);
 
-var _mapElementMixin = __webpack_require__(11);
+var _mapElementMixin = __webpack_require__(12);
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
@@ -80020,7 +80018,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _omit = __webpack_require__(15);
+var _omit = __webpack_require__(16);
 
 var _omit2 = _interopRequireDefault(_omit);
 
@@ -80036,7 +80034,7 @@ var _propsBinder = __webpack_require__(4);
 
 var _propsBinder2 = _interopRequireDefault(_propsBinder);
 
-var _mapElementMixin = __webpack_require__(11);
+var _mapElementMixin = __webpack_require__(12);
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
@@ -80196,7 +80194,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _omit = __webpack_require__(15);
+var _omit = __webpack_require__(16);
 
 var _omit2 = _interopRequireDefault(_omit);
 
@@ -80212,7 +80210,7 @@ var _propsBinder = __webpack_require__(4);
 
 var _propsBinder2 = _interopRequireDefault(_propsBinder);
 
-var _mapElementMixin = __webpack_require__(11);
+var _mapElementMixin = __webpack_require__(12);
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
@@ -80332,7 +80330,7 @@ var _propsBinder = __webpack_require__(4);
 
 var _propsBinder2 = _interopRequireDefault(_propsBinder);
 
-var _mapElementMixin = __webpack_require__(11);
+var _mapElementMixin = __webpack_require__(12);
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
@@ -80451,7 +80449,7 @@ var _autocomplete = __webpack_require__(524);
 
 var _autocomplete2 = _interopRequireDefault(_autocomplete);
 
-var _mapElementMixin = __webpack_require__(11);
+var _mapElementMixin = __webpack_require__(12);
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
