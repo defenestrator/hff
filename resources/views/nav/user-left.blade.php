@@ -1,5 +1,6 @@
 <!-- Left Side Of Navbar -->
 {{--@include('nav.places')--}}
+<site-search></site-search>
 <li><a href="{{ route('publications.posts.index') }}" class="navbar-link">Blog</a></li>
 @include('nav.places')
 @if(config('app.env') == 'production')
