@@ -52123,7 +52123,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             axios.get('/api/search?query=' + this.query, {}).then(function (result) {
                 _this.results = result.data;
-                console.log(result);
                 return result;
             }).catch(function (error) {
                 return Promise.reject(error);
@@ -79044,7 +79043,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "width": "auto",
       "padding": "0 8px"
     }
-  }, [_c('form', [_c('input', {
+  }, [_c('form', {
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        return _vm.search($event)
+      }
+    }
+  }, [_c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -79062,6 +79068,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "value": (_vm.query)
     },
     on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.search($event)
+      },
       "keyup": _vm.search,
       "input": function($event) {
         if ($event.target.composing) { return; }
@@ -79092,7 +79102,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "border": "none"
     },
     attrs: {
-      "type": "submit",
       "role": "button"
     },
     on: {
@@ -79106,7 +79115,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  })]) : _vm._e(), _vm._v(" "), _c('ul', _vm._l((_vm.results), function(result) {
+  })]) : _vm._e(), _vm._v(" "), _c('span', [_vm._v("Results for \"" + _vm._s(_vm.query) + "\"")]), _vm._v(" "), _c('ul', _vm._l((_vm.results), function(result) {
     return _c('a', {
       attrs: {
         "href": result.link
