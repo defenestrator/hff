@@ -30,10 +30,12 @@ use Laravel\Scout\Searchable;
  */
 class Region extends Model
 {
+    use Searchable;
+
     protected $fillable = [
         'geojson', 'lat','lng','name', 'slug'
     ];
-    use Searchable;
+    protected $table = 'regions';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -48,10 +50,10 @@ class Region extends Model
     }
 
     /**
- * Get the indexable data array for the model.
- *
- * @return array
- */
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
     public function toSearchableArray()
     {
         $array = $this->toArray();
