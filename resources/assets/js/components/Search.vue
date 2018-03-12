@@ -1,24 +1,27 @@
 <template>
-        <li class="navbar-link hidden-xs" style="margin:6px auto;width:auto; padding: 0 8px;">
+        <li class="navbar-link" style="margin:6px auto;width:auto; padding: 0 8px;">
                 <form @submit.prevent="search">
                 <input v-model="query" @click.prevent="search" style="font-size:18px;"class="form-control" placeholder="search..." @keyup="search">
             </form>
             <div v-if="results && results.length != 0"
                  class="search-results scrollable-menu" id="results">
-                <button v-if="query.length !== 0" class="btn btn-default"
-                        @click.prevent="clear"
-                        style="z-index:102; font-size:18px; border:none;top:15px;"
-                        role="button">
-                    <i class="fa fa-close" aria-hidden="true"></i> close
-                </button>
                 <ul style="padding-left:0;">
-                    <a v-for="result in results" :href="result.link">
-                        <li style="margin: 10px 0; border-bottom:1px solid #c5c7ca;">
-                            <img style="border-radius:1em; width:100%;padding:6px;" :src="result.header_photo"/><br>
-                            {{result.title}}<br>
-                            <span style="color:#535965;">{{result.type}}</span>
+                    <li style="top:15px; position:sticky;">
+                        <button v-if="query.length !== 0" class="btn btn-default"
+                                @click.prevent="clear"
+                                style="z-index:102; font-size:18px; border:none;"
+                                role="button">
+                            <i class="fa fa-close" aria-hidden="true"></i> close
+                        </button>
                     </li>
-                    </a>
+                    <li v-for="result in results" style="margin: 10px 0; border-bottom:1px solid #c5c7ca;">
+                        <a :href="result.link" style="display:block;">
+                        <img style="border-radius:1em; width:100%;padding:6px;" :src="result.header_photo"/><br>
+                        {{result.title}}<br>
+                        <span style="color:#535965;">{{result.type}}</span>
+                        </a>
+                    </li>
+
                 </ul>
                 <button v-if="results.length !== 1" class="btn btn-default"
                         @click.prevent="clear"
@@ -71,13 +74,16 @@ export default {
         box-shadow:0px 2px 2px #c5c7ca;
         border:1px solid #c5c7ca;
         z-index:101;
-        width:97%;
+        width:96.5%;
         padding:1em;
         border-top:none;
         background:white;
         position:absolute;
         height:auto;
         top:46px;
+    }
+    .scrollable-menu .search-results {
+        max-height:600px;
     }
     @media (min-width:768px) {
         .search-results {

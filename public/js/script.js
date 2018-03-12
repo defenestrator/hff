@@ -52111,6 +52111,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'site-search',
@@ -63457,7 +63460,7 @@ exports.push([module.i, "\n.vue-street-view-pano-container {\n  position: relati
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.search-results {\n    box-shadow:0px 2px 2px #c5c7ca;\n    border:1px solid #c5c7ca;\n    z-index:101;\n    width:97%;\n    padding:1em;\n    border-top:none;\n    background:white;\n    position:absolute;\n    height:auto;\n    top:46px;\n}\n@media (min-width:768px) {\n.search-results {\n        width:550px;\n        max-height:750px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.search-results {\n    box-shadow:0px 2px 2px #c5c7ca;\n    border:1px solid #c5c7ca;\n    z-index:101;\n    width:96.5%;\n    padding:1em;\n    border-top:none;\n    background:white;\n    position:absolute;\n    height:auto;\n    top:46px;\n}\n.scrollable-menu .search-results {\n    max-height:600px;\n}\n@media (min-width:768px) {\n.search-results {\n        width:550px;\n        max-height:750px;\n}\n}\n", ""]);
 
 /***/ }),
 /* 399 */
@@ -76885,7 +76888,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  }), _vm._v("\n                        info@hoboflyshing.com\n                    ")])])]), _vm._v(" "), _c('hr', {
+  }), _vm._v("\n                        info\n                    ")])])]), _vm._v(" "), _c('hr', {
     attrs: {
       "id": "hr_border2"
     }
@@ -79053,7 +79056,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('li', {
-    staticClass: "navbar-link hidden-xs",
+    staticClass: "navbar-link",
     staticStyle: {
       "margin": "6px auto",
       "width": "auto",
@@ -79099,13 +79102,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "results"
     }
+  }, [_c('ul', {
+    staticStyle: {
+      "padding-left": "0"
+    }
+  }, [_c('li', {
+    staticStyle: {
+      "top": "15px",
+      "position": "sticky"
+    }
   }, [(_vm.query.length !== 0) ? _c('button', {
     staticClass: "btn btn-default",
     staticStyle: {
       "z-index": "102",
       "font-size": "18px",
-      "border": "none",
-      "top": "15px"
+      "border": "none"
     },
     attrs: {
       "role": "button"
@@ -79121,19 +79132,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "aria-hidden": "true"
     }
-  }), _vm._v(" close\n        ")]) : _vm._e(), _vm._v(" "), _c('ul', {
-    staticStyle: {
-      "padding-left": "0"
-    }
-  }, _vm._l((_vm.results), function(result) {
-    return _c('a', {
-      attrs: {
-        "href": result.link
-      }
-    }, [_c('li', {
+  }), _vm._v(" close\n                ")]) : _vm._e()]), _vm._v(" "), _vm._l((_vm.results), function(result) {
+    return _c('li', {
       staticStyle: {
         "margin": "10px 0",
         "border-bottom": "1px solid #c5c7ca"
+      }
+    }, [_c('a', {
+      staticStyle: {
+        "display": "block"
+      },
+      attrs: {
+        "href": result.link
       }
     }, [_c('img', {
       staticStyle: {
@@ -79144,12 +79154,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "src": result.header_photo
       }
-    }), _c('br'), _vm._v("\n                    " + _vm._s(result.title)), _c('br'), _vm._v(" "), _c('span', {
+    }), _c('br'), _vm._v("\n                " + _vm._s(result.title)), _c('br'), _vm._v(" "), _c('span', {
       staticStyle: {
         "color": "#535965"
       }
     }, [_vm._v(_vm._s(result.type))])])])
-  })), _vm._v(" "), (_vm.results.length !== 1) ? _c('button', {
+  })], 2), _vm._v(" "), (_vm.results.length !== 1) ? _c('button', {
     staticClass: "btn btn-default",
     staticStyle: {
       "z-index": "102",

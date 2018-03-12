@@ -12,7 +12,7 @@
                 <li class="footer-link">
                     <a href="/contact">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                        info@hoboflyshing.com
+                        info
                     </a>
                 </li>
             </ul>

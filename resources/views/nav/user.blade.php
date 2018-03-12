@@ -107,6 +107,10 @@
                                     <i class="fa fa-fw fa-btn fa-sign-out"></i>Logout
                                 </a>
                             </li>
+                            <li class="divider"></li>
+                            <li>
+                                &nbsp;
+                            </li>
                         </ul>
                     </li>
                 </ul>
