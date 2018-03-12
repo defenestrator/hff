@@ -1,5 +1,5 @@
 <template>
-        <li class="navbar-link hidden-sm hidden-xs" style="margin:6px auto;width:auto; padding: 0 8px;">
+        <li class="navbar-link hidden-xs" style="margin:6px auto;width:auto; padding: 0 8px;">
                 <form @submit.prevent="search">
                 <input v-model="query" @click.prevent="search" style="font-size:18px;"class="form-control" placeholder="search..." @keyup="search">
             </form>
@@ -85,5 +85,4 @@ export default {
             max-height:750px;
         }
     }
-
 </style>
