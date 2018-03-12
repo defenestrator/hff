@@ -7,7 +7,7 @@
                  class="search-results scrollable-menu" id="results">
                 <button v-if="query.length !== 0" class="btn btn-default"
                         @click.prevent="clear"
-                        style="z-index:1000; font-size:18px; border:none;top:15px;"
+                        style="z-index:102; font-size:18px; border:none;top:15px;"
                         role="button">
                     <i class="fa fa-close" aria-hidden="true"></i> close
                 </button>
@@ -22,7 +22,7 @@
                 </ul>
                 <button v-if="results.length !== 1" class="btn btn-default"
                         @click.prevent="clear"
-                        style="font-size:18px; border:none;"
+                        style="z-index:102; font-size:18px; border:none;"
                         role="button">
                     <i class="fa fa-close" aria-hidden="true"></i> close
                 </button>

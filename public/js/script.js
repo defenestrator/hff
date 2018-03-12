@@ -79102,7 +79102,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [(_vm.query.length !== 0) ? _c('button', {
     staticClass: "btn btn-default",
     staticStyle: {
-      "z-index": "1000",
+      "z-index": "102",
       "font-size": "18px",
       "border": "none",
       "top": "15px"
@@ -79152,6 +79152,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })), _vm._v(" "), (_vm.results.length !== 1) ? _c('button', {
     staticClass: "btn btn-default",
     staticStyle: {
+      "z-index": "102",
       "font-size": "18px",
       "border": "none"
     },
