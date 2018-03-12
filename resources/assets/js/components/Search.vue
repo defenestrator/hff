@@ -1,13 +1,13 @@
 <template>
-        <li class="navbar-link" style="margin:6px auto;width:auto; padding: 0 8px;">
+        <li class="navbar-link hidden-sm hidden-xs" style="margin:6px auto;width:auto; padding: 0 8px;">
                 <form @submit.prevent="search">
                 <input v-model="query" @click.prevent="search" style="font-size:18px;"class="form-control" placeholder="search..." @keyup="search">
             </form>
-            <div style="box-shadow:0px 2px 2px #c5c7ca ;border:1px solid #c5c7ca; max-height:650px; width:100%; border-top:none; z-index:1000; background:white; position:absolute; top:46px;"
-                 v-if="results && results.length != 0" class="col-md-8 scrollable-menu" id="results">
+            <div v-if="results && results.length != 0"
+                 class="search-results scrollable-menu" id="results">
                 <button v-if="query.length !== 0" class="btn btn-default"
                         @click.prevent="clear"
-                        style="font-size:18px; border:none;"
+                        style="z-index:1000; font-size:18px; border:none; position:sticky; top:15px;"
                         role="button">
                     <i class="fa fa-close" aria-hidden="true"></i> close
                 </button>
@@ -20,12 +20,6 @@
                     </li>
                     </a>
                 </ul>
-                <button v-if="results.length !== 1" class="btn btn-default"
-                        @click.prevent="clear"
-                        style="font-size:18px; border:none;"
-                        role="button">
-                    <i class="fa fa-close" aria-hidden="true"></i> close
-                </button>
             </div>
         </li>
 </template>
@@ -62,6 +56,28 @@ export default {
     created() {
     },
     watch: {
+
     }
 }
 </script>
+<style>
+    .search-results {
+        box-shadow:0px 2px 2px #c5c7ca;
+        border:1px solid #c5c7ca;
+        z-index:101;
+        width:97%;
+        padding:1em;
+        border-top:none;
+        background:white;
+        position:absolute;
+        height:auto;
+        top:46px;
+    }
+    @media (min-width:768px) {
+        .search-results {
+            width:550px;
+            max-height:750px;
+        }
+    }
+
+</style>
