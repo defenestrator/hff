@@ -52105,6 +52105,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     name: 'site-search',
@@ -79099,7 +79105,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "z-index": "1000",
       "font-size": "18px",
       "border": "none",
-      "position": "sticky",
       "top": "15px"
     },
     attrs: {
@@ -79144,7 +79149,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "color": "#535965"
       }
     }, [_vm._v(_vm._s(result.type))])])])
-  }))]) : _vm._e()])
+  })), _vm._v(" "), (_vm.results.length !== 1) ? _c('button', {
+    staticClass: "btn btn-default",
+    staticStyle: {
+      "font-size": "18px",
+      "border": "none"
+    },
+    attrs: {
+      "role": "button"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.clear($event)
+      }
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-close",
+    attrs: {
+      "aria-hidden": "true"
+    }
+  }), _vm._v(" close\n        ")]) : _vm._e()]) : _vm._e()])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
