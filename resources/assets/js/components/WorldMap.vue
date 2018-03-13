@@ -41,7 +41,7 @@
     export default {
         data () {
             return {
-                center: {lat: 21.3279758, lng: -157.939159117},
+                center: {lat:19.3907336, lng:-99.1436127},
                 destinations: [],
                 mapTypeId: "satellite",
                 markers:[],
@@ -81,7 +81,6 @@
                 }
             },
             toggleInfoWindow(destination, index) {
-                this.center = destination.position
                 this.infoWindowPos = destination.position;
                 this.infoWindowTitle = destination.name
                 this.infoContent = destination.infoText;
