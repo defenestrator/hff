@@ -6,16 +6,6 @@ Contact us using this handy web form! Welcome to the future!
 @stop
 @section('page_styles')
 <style>
-    form {
-    padding: 15px 15px 15px 0;
-    }
-    input[type="text"], input[type="email"] {
-    display: block;
-    margin-bottom: 10px;
-    height: 40px;
-    width: 100%;
-    }
-    .input-group{ margin-bottom: 15px;}
 
     .media-right{
         padding-top: 7%;
@@ -38,9 +28,6 @@ Contact us using this handy web form! Welcome to the future!
 @stop
 
 @section('content')
-
-    <!-- Container Section Start -->
-    <div class="container">
         <div class="row">
             <!-- Contact form Section Start -->
             <div class="col-sm-6">
@@ -57,7 +44,7 @@ Contact us using this handy web form! Welcome to the future!
                         </div>
                     @endif
                 </div>
-                <form class="contact" id="contact" action="{{route('contact')}}" method="POST">
+                <form class="contact" id="contact" style="margin-bottom:2em; " action="{{route('contact')}}" method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                     <div class="form-group">
                         <input type="text" name="contact-name"
@@ -84,7 +71,7 @@ Contact us using this handy web form! Welcome to the future!
             </div>
             <!-- //Contact Form Section End -->
             <!-- Address Section Start -->
-            <div class="col-sm-6 address_margin" id="">
+            <div class="col-sm-6 hidden-xs address_margin" id="">
                 <div class="media media-right">
                     <div class="media-left media-top">
                         <a href="#address" title="write us!">
@@ -116,9 +103,8 @@ Contact us using this handy web form! Welcome to the future!
                     </div>
                 </div>
             </div>
-            <!-- //Address Section End -->
+           &nbsp; <!-- //Address Section End -->
         </div>
-    </div>
     
 @stop
 
