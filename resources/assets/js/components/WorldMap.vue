@@ -6,7 +6,7 @@
      ref="vueMap">
 <gmap-info-window  :zIndex="105" :maxWidth="280" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <h5>{{infoWindowTitle}}</h5>
-        <div class="map-info-window" style="max-width:240px;" v-html="infoContent">{{infoContent }}</div>
+        <div class="map-info-window" style="max-width:280px;" v-html="infoContent">{{infoContent }}</div>
         </gmap-info-window>
         <google-cluster>
             <gmap-marker
@@ -103,5 +103,12 @@
 <style>
     .gm-style .gm-style-iw {
         font-size:12px;
+    }
+    .map-info-window img{
+        width:50%;
+        float:left;
+        padding-right:1em;
+    }
+    .map-info-window p{
     }
 </style>

@@ -63467,7 +63467,7 @@ exports.push([module.i, "\n.search-results {\n    box-shadow:0px 2px 2px #c5c7ca
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.gm-style .gm-style-iw {\n    font-size:12px;\n}\n", ""]);
+exports.push([module.i, "\n.gm-style .gm-style-iw {\n    font-size:12px;\n}\n.map-info-window img{\n    width:50%;\n    float:left;\n    padding-right:1em;\n}\n.map-info-window p{\n}\n", ""]);
 
 /***/ }),
 /* 400 */
@@ -79256,7 +79256,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('h5', [_vm._v(_vm._s(_vm.infoWindowTitle))]), _vm._v(" "), _c('div', {
     staticClass: "map-info-window",
     staticStyle: {
-      "max-width": "240px"
+      "max-width": "280px"
     },
     domProps: {
       "innerHTML": _vm._s(_vm.infoContent)
