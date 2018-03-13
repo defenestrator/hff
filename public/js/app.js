@@ -52242,6 +52242,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
             }
         },
         toggleInfoWindow: function toggleInfoWindow(destination, index) {
+            this.center = destination.position;
             this.infoWindowPos = destination.position;
             this.infoWindowTitle = destination.name;
             this.infoContent = destination.infoText;

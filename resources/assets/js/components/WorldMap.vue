@@ -81,6 +81,7 @@
                 }
             },
             toggleInfoWindow(destination, index) {
+                this.center = destination.position
                 this.infoWindowPos = destination.position;
                 this.infoWindowTitle = destination.name
                 this.infoContent = destination.infoText;
