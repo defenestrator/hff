@@ -4,8 +4,8 @@
             :zoom="2"
             style="width: 100%; height: 75vh;"
      ref="vueMap">
-<gmap-info-window  :zIndex="300" :maxWidth="240" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
-        <h4>{{infoWindowTitle}}</h4>
+<gmap-info-window  :zIndex="105" :maxWidth="280" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
+        <h5>{{infoWindowTitle}}</h5>
         <div class="map-info-window" style="max-width:240px;" v-html="infoContent">{{infoContent }}</div>
         </gmap-info-window>
         <google-cluster>
@@ -101,3 +101,8 @@
         }
     }
 </script>
+<style>
+    .gm-style .gm-style-iw {
+        font-size:12px;
+    }
+</style>
