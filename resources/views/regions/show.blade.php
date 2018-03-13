@@ -38,7 +38,7 @@
         <div class="col-sm-6 col-sm-offset-0">
             <section>
                 <article class="article">
-                    <div style="padding: 24px;" class="article">
+                    <div style="padding:12px 20px;" class="article">
                         <p>
                             <a href="/showcases/{{ $showcase->slug }}">
                                 <h3>{{$showcase->title}}</h3>
