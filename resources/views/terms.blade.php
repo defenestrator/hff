@@ -16,7 +16,14 @@
 @section('content')
     <div class="container col-md-6 col-md-offset-3">
     <h1>TERMS OF SERVICE</h1>
-        <p>hoboflyfishing.com - SAAS TERMS OF SERVICE</p>
+        <h3>Hobo Fly Fishing LLC terms of sale</h3>
+        <p>Many destinations that we offer here at Hobo Fly Fishing offer fly fishing travel packages that  are non-refundable. We highly recommend travel insurance for this reason.</p>
+        <p>We do our best to provide complete and accurate information, but this is not always within our control. We cannot be held liable for force majeure or the actions of
+            external entities, but we always do our level best to take care of our customers within our power.</p>
+        <p>Most packages will  typically consist of  a 50 percent total package price per angler with the balance due 90 days in advance prior to the arrival date.
+            Some packages may require full payment for the entire package.
+        </p>
+        <h3>hoboflyfishing.com - SAAS TERMS OF SERVICE</h3>
         <p>IMPORTANT: THIS AGREEMENT IS A LEGALLY BINDING AGREEMENT BETWEEN YOU AND Hobo Fly Fishing APPLICABLE TO YOUR
             PURCHASE AND/OR USE (INCLUDING FREE, “EVALUATION” AND/OR “TRIAL” USES) OF Hobo Fly Fishing's SAAS PRODUCTS
             AND/OR Hobo Fly Fishing's SYSTEM.  BY USING OUR SAAS YOU AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT.
