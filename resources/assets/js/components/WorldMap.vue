@@ -3,22 +3,24 @@
             :center="center"
             :zoom="2"
             style="width: 100%; height: 75vh;"
-    >
+     ref="vueMap">
 <gmap-info-window  :zIndex="300" :maxWidth="240" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
-        <h2>{{infoWindowTitle}}</h2>
+        <h4>{{infoWindowTitle}}</h4>
         <div class="map-info-window" style="max-width:240px;" v-html="infoContent">{{infoContent }}</div>
         </gmap-info-window>
-        <gmap-marker
-                @click="toggleInfoWindow(d,index)"
-                :key="index"
-                v-for="(d, index) in destinations"
-                :position="d.position"
-                :clickable="true"
-                :draggable="false"
-                :title="d.name"
-                :infoWindow="d.description"
-                :enabled="true"
-        ></gmap-marker>
+        <google-cluster>
+            <gmap-marker
+                    @click="toggleInfoWindow(d,index)"
+                    :key="index"
+                    v-for="(d, index) in destinations"
+                    :position="d.position"
+                    :clickable="true"
+                    :draggable="false"
+                    :title="d.name"
+                    :infoWindow="d.description"
+                    :enabled="true"
+            ></gmap-marker>
+        </google-cluster>
     </gmap-map>
 </template>
 
@@ -28,6 +30,7 @@
     import * as VueGoogleMaps from 'vue2-google-maps';
     import Vue from 'vue';
 
+    Vue.component('google-cluster', VueGoogleMaps.Cluster);
     Vue.use(VueGoogleMaps, {
         load: {
             key: 'AIzaSyA7cOmgsewiTB9MjES7Ho8auSVcxqf34cY',
@@ -66,13 +69,10 @@
                         .then(result  => {
                     this.destinations = result.data
                     return this.destinations
-            })
-            .catch(error => {
-                    return Promise.reject(error)
                 })
             },
             getMarkers() {
-                for(d in this.destinations) {
+                for(const d in this.destinations) {
                     const marker = {
                         position: d.position,
                         title: d.title
@@ -81,10 +81,10 @@
                 }
             },
             toggleInfoWindow(destination, index) {
+                this.center = destination.position
                 this.infoWindowPos = destination.position;
                 this.infoWindowTitle = destination.name
                 this.infoContent = destination.infoText;
-                console.log(destination.infoText)
                 //check if its the same marker that was selected if yes toggle
                 if (this.currentMidx == index) {
                     this.infoWinOpen = !this.infoWinOpen;

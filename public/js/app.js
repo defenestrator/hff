@@ -52181,12 +52181,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /////////////////////////////////////////
 // New in 0.4.0
 
 
 
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('google-cluster', __WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__["Cluster"]);
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
     load: {
         key: 'AIzaSyA7cOmgsewiTB9MjES7Ho8auSVcxqf34cY',
@@ -52227,12 +52230,10 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
             axios.get('/api/maps/destinations', {}).then(function (result) {
                 _this.destinations = result.data;
                 return _this.destinations;
-            }).catch(function (error) {
-                return Promise.reject(error);
             });
         },
         getMarkers: function getMarkers() {
-            for (d in this.destinations) {
+            for (var d in this.destinations) {
                 var marker = {
                     position: d.position,
                     title: d.title
@@ -52241,10 +52242,10 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
             }
         },
         toggleInfoWindow: function toggleInfoWindow(destination, index) {
+            this.center = destination.position;
             this.infoWindowPos = destination.position;
             this.infoWindowTitle = destination.name;
             this.infoContent = destination.infoText;
-            console.log(destination.infoText);
             //check if its the same marker that was selected if yes toggle
             if (this.currentMidx == index) {
                 this.infoWinOpen = !this.infoWinOpen;
@@ -79220,6 +79221,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('gmap-map', {
+    ref: "vueMap",
     staticStyle: {
       "width": "100%",
       "height": "75vh"
@@ -79241,7 +79243,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.infoWinOpen = false
       }
     }
-  }, [_c('h2', [_vm._v(_vm._s(_vm.infoWindowTitle))]), _vm._v(" "), _c('div', {
+  }, [_c('h4', [_vm._v(_vm._s(_vm.infoWindowTitle))]), _vm._v(" "), _c('div', {
     staticClass: "map-info-window",
     staticStyle: {
       "max-width": "240px"
@@ -79249,7 +79251,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     domProps: {
       "innerHTML": _vm._s(_vm.infoContent)
     }
-  }, [_vm._v(_vm._s(_vm.infoContent))])]), _vm._v(" "), _vm._l((_vm.destinations), function(d, index) {
+  }, [_vm._v(_vm._s(_vm.infoContent))])]), _vm._v(" "), _c('google-cluster', _vm._l((_vm.destinations), function(d, index) {
     return _c('gmap-marker', {
       key: index,
       attrs: {
@@ -79266,7 +79268,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     })
-  })], 2)
+  }))], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
