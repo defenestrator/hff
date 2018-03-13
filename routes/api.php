@@ -76,6 +76,8 @@ Route::group([
 ], function () {
     Route::post('/newsletter-subscriptions', 'NewsletterSubscriptionsController@create');
     Route::post('/sales-inquiry', 'SalesInquiryController@create');
-    Route::get('/maps/destinations', 'Api\WorldMapApiController@index');
-    Route::get('/search', 'Api\SearchApiController@filter');
+    Route::middleware(['cacheResponse'])->group(function () {
+        Route::get('/maps/destinations', 'Api\WorldMapApiController@index');
+        Route::get('/search', 'Api\SearchApiController@filter');
+    });
 });
