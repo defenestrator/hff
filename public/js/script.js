@@ -52183,6 +52183,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /////////////////////////////////////////
 // New in 0.4.0
@@ -79235,7 +79236,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('gmap-info-window', {
     attrs: {
-      "zIndex": 105,
+      "zIndex": 500,
       "maxWidth": 280,
       "options": _vm.infoOptions,
       "position": _vm.infoWindowPos,
@@ -79254,7 +79255,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     domProps: {
       "innerHTML": _vm._s(_vm.infoContent)
     }
-  }, [_vm._v(_vm._s(_vm.infoContent))])]), _vm._v(" "), _c('google-cluster', _vm._l((_vm.destinations), function(d, index) {
+  }, [_vm._v(_vm._s(_vm.infoContent))])]), _vm._v(" "), _c('google-cluster', {
+    staticStyle: {
+      "z-index": "499"
+    }
+  }, _vm._l((_vm.destinations), function(d, index) {
     return _c('gmap-marker', {
       key: index,
       attrs: {

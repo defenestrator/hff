@@ -3,22 +3,23 @@
             :center="center"
             :zoom="2"
             class="world-map-component"
-     ref="vueMap">
-<gmap-info-window  :zIndex="105" :maxWidth="280" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
-        <h5>{{infoWindowTitle}}</h5>
-        <div class="map-info-window" style="max-width:280px;" v-html="infoContent">{{infoContent }}</div>
+            ref="vueMap">
+        <gmap-info-window  :zIndex="500" :maxWidth="280" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
+            <h5>{{infoWindowTitle}}</h5>
+            <div class="map-info-window" style="max-width:280px;" v-html="infoContent">{{infoContent }}</div>
         </gmap-info-window>
-        <google-cluster>
+
+        <google-cluster style="z-index:499">
             <gmap-marker
-                    @click="toggleInfoWindow(d,index)"
-                    :key="index"
-                    v-for="(d, index) in destinations"
-                    :position="d.position"
-                    :clickable="true"
-                    :draggable="false"
-                    :title="d.name"
-                    :infoWindow="d.description"
-                    :enabled="true"
+                        @click="toggleInfoWindow(d,index)"
+                        :key="index"
+                        v-for="(d, index) in destinations"
+                        :position="d.position"
+                        :clickable="true"
+                        :draggable="false"
+                        :title="d.name"
+                        :infoWindow="d.description"
+                        :enabled="true"
             ></gmap-marker>
         </google-cluster>
     </gmap-map>
