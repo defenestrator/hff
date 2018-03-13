@@ -63461,14 +63461,14 @@ exports.push([module.i, "\n.vue-street-view-pano-container {\n  position: relati
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.search-results {\n    box-shadow:0px 2px 2px #c5c7ca;\n    border:1px solid #c5c7ca;\n    z-index:101;\n    width:96.5%;\n    padding:1em;\n    border-top:none;\n    background:white;\n    position:absolute;\n    height:auto;\n    top:46px;\n}\n.scrollable-menu .search-results {\n    max-height:600px;\n}\n@media (min-width:768px) {\n.search-results {\n        width:550px;\n        max-height:750px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.search-results {\n    box-shadow:0px 2px 2px #c5c7ca;\n    border:1px solid #c5c7ca;\n    z-index:101;\n    width:96.5%;\n    padding:1em;\n    border-top:none;\n    background:white;\n    position:absolute;\n    height:auto;\n    top:46px;\n}\n.searchbar-li {\n    margin:6px auto;  width:auto; padding: 0 8px;\n}\n.scrollable-menu .search-results {\n    max-height:600px;\n}\n@media (min-width:768px) {\n.search-results {\n        width:550px;\n        max-height:750px;\n}\n.searchbar-li {\n        width:200px;\n}\n}\n", ""]);
 
 /***/ }),
 /* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.gm-style .gm-style-iw {\n    font-size:12px;\n}\n.map-info-window img{\n    width:50%;\n    float:left;\n    padding-right:1em;\n}\n.map-info-window p{\n}\n", ""]);
+exports.push([module.i, "\n.gm-style .gm-style-iw {\n    font-size:12px;\n}\n.map-info-window img{\n    width:50%;\n    float:left;\n    padding-right:1em;\n}\n.map-info-window p{\n}\n\n", ""]);
 
 /***/ }),
 /* 400 */
@@ -79068,12 +79068,7 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('li', {
-    staticClass: "navbar-link",
-    staticStyle: {
-      "margin": "6px auto",
-      "width": "auto",
-      "padding": "0 8px"
-    }
+    staticClass: "navbar-link searchbar-li"
   }, [_c('form', {
     on: {
       "submit": function($event) {
@@ -79233,10 +79228,7 @@ if (false) {
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('gmap-map', {
     ref: "vueMap",
-    staticStyle: {
-      "width": "100%",
-      "height": "75vh"
-    },
+    staticClass: "world-map-component",
     attrs: {
       "center": _vm.center,
       "zoom": 2

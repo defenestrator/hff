@@ -2,7 +2,7 @@
     <gmap-map
             :center="center"
             :zoom="2"
-            style="width: 100%; height: 75vh;"
+            class="world-map-component"
      ref="vueMap">
 <gmap-info-window  :zIndex="105" :maxWidth="280" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <h5>{{infoWindowTitle}}</h5>
@@ -112,4 +112,5 @@
     }
     .map-info-window p{
     }
+
 </style>

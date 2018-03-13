@@ -6,6 +6,12 @@
 @stop
 
 @section('page_styles')
+    <style>
+        .world-map-component {
+            width: 100%;
+            height: 75vh;
+        }
+    </style>
 @stop
 
 @section('top')

@@ -31,14 +31,6 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     @includeIf('nav.user-right')
-
-                    <li>
-                        <a href="/dashboard" class="has-activity-indicator">
-                        <div class="navbar-icon">
-                            <i class="icon fa fa-tachometer"></i>
-                        </div>
-                        </a>
-                    </li>
                     @if (Spark::developer(Auth::user()->email))    <!-- Notifications -->
                     <li>
                         <a @click="showNotifications" class="has-activity-indicator">

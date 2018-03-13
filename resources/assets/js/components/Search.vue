@@ -1,5 +1,5 @@
 <template>
-        <li class="navbar-link" style="margin:6px auto;width:auto; padding: 0 8px;">
+        <li class="navbar-link searchbar-li">
                 <form @submit.prevent="search">
                 <input v-model="query" @click.prevent="search" style="font-size:18px;"class="form-control" placeholder="search..." @keyup="search">
             </form>
@@ -82,6 +82,9 @@ export default {
         height:auto;
         top:46px;
     }
+    .searchbar-li {
+        margin:6px auto;  width:auto; padding: 0 8px;
+    }
     .scrollable-menu .search-results {
         max-height:600px;
     }
@@ -89,6 +92,9 @@ export default {
         .search-results {
             width:550px;
             max-height:750px;
+        }
+        .searchbar-li {
+            width:200px;
         }
     }
 </style>

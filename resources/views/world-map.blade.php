@@ -7,15 +7,20 @@
 
 @section('page_styles')
     <style>
+        .world-map-component {
+            width: 100%;
+            height: 90vh;
+            margin-bottom:1em;
+        }
     </style>
 @stop
 
 @section('top')
-&nbsp;
+    <world-map></world-map>
 @stop
 
 @section('content')
-    <world-map></world-map>
+
 @stop
 
 @section('bottom')

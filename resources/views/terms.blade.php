@@ -17,7 +17,7 @@
     <div class="container col-md-6 col-md-offset-3">
     <h1>TERMS OF SERVICE</h1>
         <h3>Hobo Fly Fishing LLC terms of sale</h3>
-        <p>Many destinations that we offer here at Hobo Fly Fishing offer fly fishing travel packages that  are non-refundable. We highly recommend travel insurance for this reason.</p>
+        <p>Many destinations that we offer here at Hobo Fly Fishing offer fly fishing travel packages that are non-refundable. We highly recommend travel insurance for this reason.</p>
         <p>We do our best to provide complete and accurate information, but this is not always within our control. We cannot be held liable for force majeure or the actions of
             external entities, but we always do our level best to take care of our customers within our power.</p>
         <p>Most packages will  typically consist of  a 50 percent total package price per angler with the balance due 90 days in advance prior to the arrival date.
