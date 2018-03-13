@@ -20,7 +20,7 @@
 @stop
 @section('content')
 <div class="row">
-        <div class="col-md-8 col-md-offset-0">
+        <div class="col-sm-8 col-sm-offset-0">
             <div class="text-center">
                 <span class="text-center">{{ $posts->links() }}</span>
             </div>
@@ -58,7 +58,7 @@
                 <span class="text-center">{{ $posts->links() }}</span>
             </div>
         </div>
-    <div class="col-md-4 col-md-offset-0">
+    <div class="col-sm-4 col-sm-offset-0">
         <h3 class="text-center">Top 10 Destinations</h3>
         @foreach($showcases->take(10) as $showcase)
             <div class="col-md-12 info">
