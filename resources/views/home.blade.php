@@ -44,7 +44,7 @@
                              style="background: linear-gradient(rgba(0,0,0, 0.25),rgba(0,0,0, 0.25)), url('{{$showcase->thumbnail}}') no-repeat; background-size:cover;">
                             <div class="caption">
                                 <h3 style="font-weight:600;">{{$showcase->homepage_top}}</h3>
-                                <h3 class="hidden-sm hidden-md hidden-lg" style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>
+                                <h3 class="" style="font-weight:600;">{{$showcase->homepage_bottom}}</h3>
                             </div>
                             @if($showcase->special)
                                 <button role="button" style="box-shadow: 2px 2px 2px #000; margin:0 15%; width:70%;" class="btn btn-warning">
