@@ -5,10 +5,11 @@ let app = new Vue({
     mixins: [require('spark')],
     mounted() {
         // Async loading of external fonts.
-        document.addEventListener('keypress', (event) => {
-            const keyName = event.key;
-            if (keyName == "*"){
+        document.addEventListener('keyup', (event) => {
+            if (event.keyCode == 27 && Spark.state.user === null){
                 window.location.href = '/login'
+            } else {
+                return
             }
         });
         const mainFont = document.createElement('link');

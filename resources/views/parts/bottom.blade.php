@@ -62,6 +62,8 @@
                 </li>
                 <li class="small footer-link"><a href="{{ route('register') }}">Register</a>
                 </li>
+                <li class="small footer-link"><a href="{{ route('login') }}">Login</a>
+                </li>
             </ul>
         </div>
     </div>

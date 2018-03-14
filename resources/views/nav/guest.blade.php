@@ -30,10 +30,10 @@
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                @if (! Auth::check())
-                    <li class="small footer-link"><a href="{{ route('login') }}">Login</a>
-                    </li>
-                @endif
+                {{--@if (! Auth::check())--}}
+                    {{--<li class="small footer-link"><a href="{{ route('login') }}">Login</a>--}}
+                    {{--</li>--}}
+                {{--@endif--}}
             </ul>
         </div>
     </div>

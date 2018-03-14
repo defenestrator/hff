@@ -50764,10 +50764,11 @@ var app = new Vue({
     mixins: [__webpack_require__(373)],
     mounted: function mounted() {
         // Async loading of external fonts.
-        document.addEventListener('keypress', function (event) {
-            var keyName = event.key;
-            if (keyName == "*") {
+        document.addEventListener('keyup', function (event) {
+            if (event.keyCode == 27 && Spark.state.user === null) {
                 window.location.href = '/login';
+            } else {
+                return;
             }
         });
         var mainFont = document.createElement('link');
