@@ -50764,6 +50764,12 @@ var app = new Vue({
     mixins: [__webpack_require__(373)],
     mounted: function mounted() {
         // Async loading of external fonts.
+        document.addEventListener('keypress', function (event) {
+            var keyName = event.key;
+            if (keyName == "*") {
+                window.location.href = '/login';
+            }
+        });
         var mainFont = document.createElement('link');
         mainFont.href = 'https://fonts.googleapis.com/css?family=Raleway:100,300,600';
         mainFont.rel = 'stylesheet';

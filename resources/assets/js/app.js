@@ -5,6 +5,12 @@ let app = new Vue({
     mixins: [require('spark')],
     mounted() {
         // Async loading of external fonts.
+        document.addEventListener('keypress', (event) => {
+            const keyName = event.key;
+            if (keyName == "*"){
+                window.location.href = '/login'
+            }
+        });
         const mainFont = document.createElement('link');
         mainFont.href ='https://fonts.googleapis.com/css?family=Raleway:100,300,600';
         mainFont.rel = 'stylesheet';
