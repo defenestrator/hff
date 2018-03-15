@@ -33,10 +33,12 @@
         "spatie/laravel-responsecache": "^4.0",
         "spatie/laravel-sitemap": "^3.3",
         "spatie/schema-org": "^1.4",
-        "teamtnt/laravel-scout-tntsearch-driver": "^3.0"
+        "teamtnt/laravel-scout-tntsearch-driver": "^3.0",
+        "verysimple/unit-test-printer": "^1.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.4",
+        "copacetic/test-printer": "^1.0",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "laravel/dusk": "^2.0",

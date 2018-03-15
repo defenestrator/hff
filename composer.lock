@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "25c642b1f9f917f94e2043d8f8e4cc21",
+    "content-hash": "bc94f3d1771edb94a6bbc9e029958ae1",
     "packages": [
         {
             "name": "aws/aws-php-sns-message-validator",
@@ -6439,6 +6439,44 @@
             "time": "2017-11-27T11:13:29+00:00"
         },
         {
+            "name": "verysimple/unit-test-printer",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verysimple/unit-test-printer.git",
+                "reference": "ed0e2a41c7923a30f421ccf0175fa04d26fd2243"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verysimple/unit-test-printer/zipball/ed0e2a41c7923a30f421ccf0175fa04d26fd2243",
+                "reference": "ed0e2a41c7923a30f421ccf0175fa04d26fd2243",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/Verysimple/UnitTest"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Formats PHPUnit output with verbose information about tests as they run.",
+            "homepage": "https://github.com/verysimple/unit-test-printer",
+            "keywords": [
+                "formatter",
+                "php",
+                "phpunit",
+                "resultprinter",
+                "unit test"
+            ],
+            "time": "2016-01-06T23:42:37+00:00"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.4.0",
             "source": {
@@ -6661,6 +6699,45 @@
                 }
             ],
             "time": "2016-06-13T19:28:20+00:00"
+        },
+        {
+            "name": "copacetic/test-printer",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/copacetic-co/test-printer.git",
+                "reference": "dbf9fb54b4915798f0ca929a773b5216d62792d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/copacetic-co/test-printer/zipball/dbf9fb54b4915798f0ca929a773b5216d62792d8",
+                "reference": "dbf9fb54b4915798f0ca929a773b5216d62792d8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/Copacetic/UnitTest"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Make the console output useful while the tests are running.",
+            "homepage": "https://github.com/copacetic-co/test-printer",
+            "keywords": [
+                "formatter",
+                "php",
+                "phpunit",
+                "resultprinter",
+                "test printer",
+                "unit test"
+            ],
+            "time": "2018-03-15T15:45:59+00:00"
         },
         {
             "name": "facebook/webdriver",
