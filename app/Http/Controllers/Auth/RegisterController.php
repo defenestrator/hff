@@ -16,9 +16,7 @@ class RegisterController extends Controller
     use RedirectsUsers;
 
     /**
-     * Create a new authentication controller instance.
-     *
-     * @return void
+     * RegisterController constructor.
      */
     public function __construct()
     {
@@ -44,7 +42,7 @@ class RegisterController extends Controller
             ]));
         }
 
-        return view('spark::auth.register');
+        return 'no'; //view('spark::auth.register');
     }
 
     /**
@@ -61,8 +59,9 @@ class RegisterController extends Controller
 
         event(new UserRegistered($user));
 
-        return response()->json([
-            'redirect' => $this->redirectPath()
-        ]);
+        return 'no';
+//        response()->json([
+//            'redirect' => $this->redirectPath()
+//        ]);
     }
 }
