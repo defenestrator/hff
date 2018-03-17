@@ -100,7 +100,7 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <label for="title"><p>Title:</p></label>
+                    <p>Title:</p>
                     <input v-validate="'required|min:3|max:140'" id="title" name="title" v-model="newPost.title"
                            :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title"
                            style="width:100%">
@@ -526,6 +526,7 @@ export default {
                     this.newPost.header_photo = result.data.large
                     this.newPost.thumbnail = result.data.thumbnail
                     this.newPost.image_id = result.data.image_id
+
                     self.newPost.finishProcessing();
                 },
                 (error) => {
@@ -618,7 +619,10 @@ export default {
          * Calculate the style attribute for the photo preview.
          */
         previewStyle() {
-            return `background-image: url(${this.newPost.header_photo})`;
+            if (this.newPost.header_photo == '' ) {
+                return `background-image: url(${this.newPost.header_photo}); display:none; `;
+            }
+            return `background-image: url(${this.newPost.header_photo}); `;
         }
     },
 }

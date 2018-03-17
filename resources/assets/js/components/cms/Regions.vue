@@ -1,12 +1,12 @@
 <template>
     <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
+        <div class="container">
             <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
                 <span v-if="index">Create</span>
                 <span v-if="! index">Index</span>
             </button>
             <div v-show="! index">
-                <button @click.prevent="createNewDestination" class="btn btn-primary" :disabled="! newRegion.name">
+                <button @click.prevent="createNewRegion" class="btn btn-primary" :disabled="! newRegion.name">
                     New
                 </button>
             </div>
@@ -24,8 +24,24 @@
                 </tr>
                 </tbody>
             </table>
-
+        </div>
+        <hr>
+        <div class="container">
             <form class="form-horizontal new-region" v-if="! index" role="form">
+                <!-- Header Photo Button -->
+                <div class="form-group">
+                    <div class="container">
+                        <label type="button" class="btn btn-primary btn-upload" :disabled="newRegion.busy">
+                            <span>Select Header Photo</span>
+                            <input v-validate="'required|mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
+                        </label>
+                        <span v-show="! newRegion.header_photo" class="help is-danger">This is required</span><br>
+                        <span v-show="errors.has('header_photo')" class="help is-danger">{{ errors.first('header_photo') }}</span>
+                        <div role="img" class="header-photo-preview"
+                             :style="previewStyle">
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group">
                     <div class="col-md-12">
                         <label for="name">Name:</label>
@@ -116,6 +132,7 @@ export default {
             index: true,
             regions: [],
             newRegion: new SparkForm ({
+                header_photo:'',
                 name: '',
                 geojson: '',
                 slug: '',
@@ -137,6 +154,9 @@ export default {
         },
         lng(value) {
             this.validator.validate('lng', value);
+        },
+        'newRegion.header_photo': function (val, oldVal) {
+            this.newRegion.saved = false
         },
         'newRegion.name': function (val, oldVal) {
             if (this.newRegion.slug == '' ||
@@ -176,7 +196,46 @@ export default {
             this.getIndex()
             return this.index = true
         },
+        /**
+         * Update the showcase photo.
+         */
+        update_header(e) {
+            e.preventDefault();
 
+            if ( ! this.$refs.header_photo.files.length) {
+                return;
+            }
+
+            var self = this;
+
+            this.newRegion.startProcessing();
+
+            // We need to gather a fresh FormData instance with the profile photo appended to
+            // the data so we can POST it up to the server. This will allow us to do async
+            // uploads of the profile photos. We will update the user after this action.
+            axios.post(this.urlForUpdate, this.gatherFormData())
+                    .then(result  => {
+                this.newRegion.header_photo = result.data.large
+            this.newRegion.thumbnail = result.data.thumbnail
+            this.newRegion.image_id = result.data.image_id
+
+            self.newRegion.finishProcessing();
+        },
+            (error) => {
+                self.newRegion.setErrors(error.response.data.errors);
+            }
+        );
+        },
+        /**
+         * Gather the form data for the photo upload.
+         */
+        gatherFormData() {
+            const data = new FormData();
+
+            data.append('header_photo', this.$refs.header_photo.files[0]);
+
+            return data;
+        },
         save() {
             this.newRegion.saveError = false
             this.newRegion.saveBusy = true
@@ -186,6 +245,7 @@ export default {
                 lng: this.newRegion.lng
                 }).then((result) => {
                     axios.post(`/api/regions`, {
+                                header_photo: this.newRegion.header_photo,
                                 name: this.newRegion.name,
                                 lat:  this.newRegion.lat,
                                 lng:  this.newRegion.lng,
@@ -221,6 +281,7 @@ export default {
                 lng: this.newRegion.lng
                 }).then((result) => {
                     axios.put(`/api/regions/` + this.newRegion.regionId, {
+                        header_photo: this.newRegion.header_photo,
                         name: this.newRegion.name,
                         geojson: this.newRegion.geojson,
                         lat: this.newRegion.lat,
@@ -243,6 +304,7 @@ export default {
                 return Promise.reject(error)
             })
         },
+
         leeroyjenkins() {
             if(confirm("Permanently destroy this region?")) {
                 axios.delete(`/api/regions/` + this.newRegion.regionId, {})
@@ -254,7 +316,7 @@ export default {
                 });
             }
         },
-        createNewDestination() {
+        createNewRegion() {
             if (!this.newRegion.regionId) {
                 if (confirm('Abandon this region and start over?')) {
                     this.clear()
@@ -264,6 +326,7 @@ export default {
             }
         },
         clear() {
+            this.newRegion.header_photo = ''
             this.newRegion.saved = false
             this.newRegion.saveBusy = false
             this.newRegion.regionId = null
@@ -278,6 +341,7 @@ export default {
             this.newRegion.regionId = id
             axios.get(`/api/regions/`+ id , {})
             .then(result => {
+                this.newRegion.header_photo = result.data.header_photo
                 this.newRegion.name = result.data.name;
                 this.newRegion.geojson = result.data.geojson
                 this.newRegion.lat = result.data.lat;
@@ -300,6 +364,22 @@ export default {
         });
     },
     computed: {
+
+        /**
+         * Get the URL for updating the team photo.
+         */
+        urlForUpdate() {
+            return `/api/photo`;
+        },
+        /**
+         * Calculate the style attribute for the photo preview.
+         */
+        previewStyle() {
+            if (this.newRegion.header_photo == '' ) {
+                return `background-image: url(${this.newRegion.header_photo}); display:none; `;
+            }
+            return `background-image: url(${this.newRegion.header_photo}); `;
+        }
     },
 }
 </script>

@@ -27,7 +27,7 @@ class RegionController extends ContentController
                 // can also surround that with this, maybe break on sentence? preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', )
                 return $post;
             });
-        $pagetitle = 'Regions around the world';
+        $pagetitle = 'Fly fishing regions of the world';
         return view('regions.index', compact('pagetitle', 'posts'));
     }
 

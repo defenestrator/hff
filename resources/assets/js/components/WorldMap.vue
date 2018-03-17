@@ -6,7 +6,10 @@
             ref="vueMap">
         <gmap-info-window  :zIndex="500" :maxWidth="280" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
             <h5>{{infoWindowTitle}}</h5>
-            <div class="map-info-window" style="max-width:280px;" v-html="infoContent">{{infoContent }}</div>
+            <div class="map-info-window" style="max-width:280px;">
+                <img style="max-width:140px; float:left; padding-right:1em;" :src="infoWindowImage" />
+                <span v-html="infoContent">{{infoContent }}</span>
+            </div>
         </gmap-info-window>
 
         <google-cluster style="z-index:499">
@@ -49,6 +52,7 @@
                 infoContent: '',
                 infoWindowContent: '',
                 infoWindowTitle: '',
+                infoWindowImage:'',
                 infoWindowPos: {
                     lat: 0,
                     lng: 0
@@ -86,6 +90,7 @@
                 this.infoWindowPos = destination.position;
                 this.infoWindowTitle = destination.name
                 this.infoContent = destination.infoText;
+                this.infoWindowImage = destination.header_photo
                 //check if its the same marker that was selected if yes toggle
                 if (this.currentMidx == index) {
                     this.infoWinOpen = !this.infoWinOpen;
@@ -106,12 +111,8 @@
     .gm-style .gm-style-iw {
         font-size:12px;
     }
-    .map-info-window img{
-        width:50%;
-        float:left;
-        padding-right:1em;
-    }
-    .map-info-window p{
+    .map-info-window span img {
+        display:none;
     }
 
 </style>

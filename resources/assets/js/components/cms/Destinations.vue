@@ -1,6 +1,6 @@
 <template>
 <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="container">
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
             <span v-if="index">Create</span>
             <span v-if="! index">Index</span>
@@ -24,8 +24,22 @@
             </tr>
             </tbody>
         </table>
-
+<hr>
             <form class="form-horizontal new-destination" v-if="! index" role="form">
+                <!-- Header Photo Button -->
+                <div class="form-group">
+                    <div class="container">
+                        <label type="button" class="btn btn-primary btn-upload" :disabled="newDestination.busy">
+                            <span>Select Header Photo</span>
+                            <input v-validate="'required|mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
+                        </label>
+                        <span v-show="! newDestination.header_photo" class="help is-danger">This is required</span><br>
+                        <span v-show="errors.has('header_photo')" class="help is-danger">{{ errors.first('header_photo') }}</span>
+                        <div role="img" class="header-photo-preview"
+                             :style="previewStyle">
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group">
                     <div class="col-md-12">
                         <label for="name">Name:</label>
@@ -132,6 +146,7 @@ export default {
             destinations: [],
             regions: [],
             newDestination: new SparkForm ({
+                header_photo:'',
                 name: '',
                 slug: '',
                 description: '',
@@ -188,6 +203,9 @@ export default {
         lng(value) {
             this.validator.validate('lng', value);
         },
+        'newDestination.header_photo': function (val, oldVal) {
+            this.newDestination.saved = false
+        },
         'newDestination.name': function (val, oldVal) {
             this.newDestination.saved = false
         },
@@ -233,7 +251,46 @@ export default {
             this.getIndex()
             return this.index = true
         },
+        /**
+         * Update the showcase photo.
+         */
+        update_header(e) {
+            e.preventDefault();
 
+            if ( ! this.$refs.header_photo.files.length) {
+                return;
+            }
+
+            var self = this;
+
+            this.newDestination.startProcessing();
+
+            // We need to gather a fresh FormData instance with the profile photo appended to
+            // the data so we can POST it up to the server. This will allow us to do async
+            // uploads of the profile photos. We will update the user after this action.
+            axios.post(this.urlForUpdate, this.gatherFormData())
+                    .then(result  => {
+            this.newDestination.header_photo = result.data.large
+            this.newDestination.thumbnail = result.data.thumbnail
+            this.newDestination.image_id = result.data.image_id
+
+            self.newDestination.finishProcessing();
+        },
+            (error) => {
+                self.newDestination.setErrors(error.response.data.errors);
+            }
+        );
+        },
+        /**
+         * Gather the form data for the photo upload.
+         */
+        gatherFormData() {
+            const data = new FormData();
+
+            data.append('header_photo', this.$refs.header_photo.files[0]);
+
+            return data;
+        },
         save() {
             this.newDestination.saveError = false
             this.newDestination.saveBusy = true
@@ -243,6 +300,7 @@ export default {
                 lng: this.newDestination.lng
                 }).then((result) => {
                     axios.post(`/api/destinations`, {
+                                header_photo: this.newDestination.header_photo,
                                 name: this.newDestination.name,
                                 lat:  this.newDestination.lat,
                                 lng:  this.newDestination.lng,
@@ -273,6 +331,7 @@ export default {
             this.newDestination.saveError = false
             this.newDestination.saveBusy = true
             this.validator.validateAll({
+                header_photo: this.newDestination.header_photo,
                 name: this.newDestination.name,
                 lat: this.newDestination.lat,
                 lng: this.newDestination.lng
@@ -322,6 +381,7 @@ export default {
             }
         },
         clear() {
+            this.newDestination.header_photo = ''
             this.newDestination.saved = false
             this.newDestination.saveBusy = false
             this.newDestination.destinationId = null
@@ -338,6 +398,7 @@ export default {
             this.newDestination.destinationId = id
             axios.get(`/api/destinations/`+ id , {})
             .then(result => {
+                this.newDestination.header_photo = result.data.header_photo
                 this.newDestination.name = result.data.name;
                 this.newDestination.description = result.data.description
                 this.newDestination.regionId = result.data.region_id
@@ -361,6 +422,21 @@ export default {
         });
     },
     computed: {
+        /**
+         * Get the URL for updating the team photo.
+         */
+        urlForUpdate() {
+            return `/api/photo`;
+        },
+        /**
+         * Calculate the style attribute for the photo preview.
+         */
+        previewStyle() {
+            if (this.newDestination.header_photo == '' ) {
+                return `background-image: url(${this.newDestination.header_photo}); display:none; `;
+            }
+            return `background-image: url(${this.newDestination.header_photo}); `;
+        }
     },
 }
 </script>

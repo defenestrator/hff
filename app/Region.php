@@ -33,7 +33,7 @@ class Region extends Model
     use Searchable;
 
     protected $fillable = [
-        'geojson', 'lat','lng','name', 'slug'
+        'header_photo', 'geojson', 'lat','lng','name', 'slug'
     ];
     protected $table = 'regions';
 
@@ -44,6 +44,10 @@ class Region extends Model
     {
         return $this->hasMany(Destination::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function showcases()
     {
         return $this->hasMany(Showcase::class);
@@ -56,7 +60,15 @@ class Region extends Model
      */
     public function toSearchableArray()
     {
-        $array = $this->toArray();
+        $array = $this->only([
+            'id',
+            'header_photo',
+            'geojson',
+            'lat',
+            'lng',
+            'name',
+            'slug'
+        ]);
 
         // Customize array...
 

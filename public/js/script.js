@@ -52191,6 +52191,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /////////////////////////////////////////
 // New in 0.4.0
@@ -52215,6 +52218,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
             infoContent: '',
             infoWindowContent: '',
             infoWindowTitle: '',
+            infoWindowImage: '',
             infoWindowPos: {
                 lat: 0,
                 lng: 0
@@ -52254,6 +52258,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
             this.infoWindowPos = destination.position;
             this.infoWindowTitle = destination.name;
             this.infoContent = destination.infoText;
+            this.infoWindowImage = destination.header_photo;
             //check if its the same marker that was selected if yes toggle
             if (this.currentMidx == index) {
                 this.infoWinOpen = !this.infoWinOpen;
@@ -52391,6 +52396,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // Import this component
 
@@ -52416,6 +52435,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             destinations: [],
             regions: [],
             newDestination: new SparkForm({
+                header_photo: '',
                 name: '',
                 slug: '',
                 description: '',
@@ -52464,6 +52484,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.validator.validate('lng', value);
         },
 
+        'newDestination.header_photo': function newDestinationHeader_photo(val, oldVal) {
+            this.newDestination.saved = false;
+        },
         'newDestination.name': function newDestinationName(val, oldVal) {
             this.newDestination.saved = false;
         },
@@ -52508,41 +52531,48 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.getIndex();
             return this.index = true;
         },
-        save: function save() {
+
+        /**
+         * Update the showcase photo.
+         */
+        update_header: function update_header(e) {
             var _this3 = this;
 
-            this.newDestination.saveError = false;
-            this.newDestination.saveBusy = true;
-            this.validator.validateAll({
-                name: this.newDestination.name,
-                lat: this.newDestination.lat,
-                lng: this.newDestination.lng
-            }).then(function (result) {
-                axios.post('/api/destinations', {
-                    name: _this3.newDestination.name,
-                    lat: _this3.newDestination.lat,
-                    lng: _this3.newDestination.lng,
-                    region_id: _this3.newDestination.regionId,
-                    description: _this3.newDestination.description
-                }).then(function (result) {
-                    _this3.newDestination.saveBusy = false;
-                    _this3.newDestination.saved = true;
-                    _this3.newDestination.destinationId = result.data.id;
-                    return result;
-                }).catch(function (error) {
-                    _this3.newDestination.saveError = true;
-                    _this3.newDestination.saveBusy = false;
-                    _this3.newDestination.serverErrors = error.response.data.errors.slug[0];
-                    return Promise.reject(error);
-                });
-            }).catch(function (error) {
-                _this3.newDestination.saveBusy = false;
-                _this3.newDestination.saveError = true;
-                _this3.errors = Promise.reject(error);
-                return Promise.reject(error);
+            e.preventDefault();
+
+            if (!this.$refs.header_photo.files.length) {
+                return;
+            }
+
+            var self = this;
+
+            this.newDestination.startProcessing();
+
+            // We need to gather a fresh FormData instance with the profile photo appended to
+            // the data so we can POST it up to the server. This will allow us to do async
+            // uploads of the profile photos. We will update the user after this action.
+            axios.post(this.urlForUpdate, this.gatherFormData()).then(function (result) {
+                _this3.newDestination.header_photo = result.data.large;
+                _this3.newDestination.thumbnail = result.data.thumbnail;
+                _this3.newDestination.image_id = result.data.image_id;
+
+                self.newDestination.finishProcessing();
+            }, function (error) {
+                self.newDestination.setErrors(error.response.data.errors);
             });
         },
-        update: function update() {
+
+        /**
+         * Gather the form data for the photo upload.
+         */
+        gatherFormData: function gatherFormData() {
+            var data = new FormData();
+
+            data.append('header_photo', this.$refs.header_photo.files[0]);
+
+            return data;
+        },
+        save: function save() {
             var _this4 = this;
 
             this.newDestination.saveError = false;
@@ -52552,33 +52582,69 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 lat: this.newDestination.lat,
                 lng: this.newDestination.lng
             }).then(function (result) {
-                axios.put('/api/destinations/' + _this4.newDestination.destinationId, {
+                axios.post('/api/destinations', {
+                    header_photo: _this4.newDestination.header_photo,
                     name: _this4.newDestination.name,
-                    description: _this4.newDestination.description,
                     lat: _this4.newDestination.lat,
                     lng: _this4.newDestination.lng,
-                    region_id: _this4.newDestination.regionId
+                    region_id: _this4.newDestination.regionId,
+                    description: _this4.newDestination.description
                 }).then(function (result) {
                     _this4.newDestination.saveBusy = false;
                     _this4.newDestination.saved = true;
+                    _this4.newDestination.destinationId = result.data.id;
                     return result;
                 }).catch(function (error) {
                     _this4.newDestination.saveError = true;
                     _this4.newDestination.saveBusy = false;
+                    _this4.newDestination.serverErrors = error.response.data.errors.slug[0];
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
                 _this4.newDestination.saveBusy = false;
                 _this4.newDestination.saveError = true;
+                _this4.errors = Promise.reject(error);
+                return Promise.reject(error);
+            });
+        },
+        update: function update() {
+            var _this5 = this;
+
+            this.newDestination.saveError = false;
+            this.newDestination.saveBusy = true;
+            this.validator.validateAll({
+                header_photo: this.newDestination.header_photo,
+                name: this.newDestination.name,
+                lat: this.newDestination.lat,
+                lng: this.newDestination.lng
+            }).then(function (result) {
+                axios.put('/api/destinations/' + _this5.newDestination.destinationId, {
+                    name: _this5.newDestination.name,
+                    description: _this5.newDestination.description,
+                    lat: _this5.newDestination.lat,
+                    lng: _this5.newDestination.lng,
+                    region_id: _this5.newDestination.regionId
+                }).then(function (result) {
+                    _this5.newDestination.saveBusy = false;
+                    _this5.newDestination.saved = true;
+                    return result;
+                }).catch(function (error) {
+                    _this5.newDestination.saveError = true;
+                    _this5.newDestination.saveBusy = false;
+                    return Promise.reject(error);
+                });
+            }).catch(function (error) {
+                _this5.newDestination.saveBusy = false;
+                _this5.newDestination.saveError = true;
                 return Promise.reject(error);
             });
         },
         leeroyjenkins: function leeroyjenkins() {
-            var _this5 = this;
+            var _this6 = this;
 
             if (confirm("Permanently destroy this destination?")) {
                 axios.delete('/api/destinations/' + this.newDestination.destinationId, {}).then(function (result) {
-                    _this5.clear();
+                    _this6.clear();
                 }).catch(function (error) {
                     return Promise.reject(error);
                 });
@@ -52594,6 +52660,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             }
         },
         clear: function clear() {
+            this.newDestination.header_photo = '';
             this.newDestination.saved = false;
             this.newDestination.saveBusy = false;
             this.newDestination.destinationId = null;
@@ -52605,19 +52672,20 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             this.newDestination.lng = null;
         },
         edit: function edit(id) {
-            var _this6 = this;
+            var _this7 = this;
 
             this.saveBusy = true;
             this.index = false;
             this.newDestination.destinationId = id;
             axios.get('/api/destinations/' + id, {}).then(function (result) {
-                _this6.newDestination.name = result.data.name;
-                _this6.newDestination.description = result.data.description;
-                _this6.newDestination.regionId = result.data.region_id;
-                _this6.newDestination.lat = result.data.lat;
-                _this6.newDestination.lng = result.data.lng;
-                _this6.saveBusy = false;
-                _this6.newDestination.saved = true;
+                _this7.newDestination.header_photo = result.data.header_photo;
+                _this7.newDestination.name = result.data.name;
+                _this7.newDestination.description = result.data.description;
+                _this7.newDestination.regionId = result.data.region_id;
+                _this7.newDestination.lat = result.data.lat;
+                _this7.newDestination.lng = result.data.lng;
+                _this7.saveBusy = false;
+                _this7.newDestination.saved = true;
                 return result.data;
             }).catch(function (error) {
                 return Promise.reject(error);
@@ -52633,7 +52701,24 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         });
     },
 
-    computed: {}
+    computed: {
+        /**
+         * Get the URL for updating the team photo.
+         */
+        urlForUpdate: function urlForUpdate() {
+            return '/api/photo';
+        },
+
+        /**
+         * Calculate the style attribute for the photo preview.
+         */
+        previewStyle: function previewStyle() {
+            if (this.newDestination.header_photo == '') {
+                return 'background-image: url(' + this.newDestination.header_photo + '); display:none; ';
+            }
+            return 'background-image: url(' + this.newDestination.header_photo + '); ';
+        }
+    }
 });
 
 /***/ }),
@@ -53532,6 +53617,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 _this8.newPost.header_photo = result.data.large;
                 _this8.newPost.thumbnail = result.data.thumbnail;
                 _this8.newPost.image_id = result.data.image_id;
+
                 self.newPost.finishProcessing();
             }, function (error) {
                 self.newPost.setErrors(error.response.data.errors);
@@ -53623,7 +53709,10 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
      * Calculate the style attribute for the photo preview.
      */
     previewStyle: function previewStyle() {
-        return 'background-image: url(' + this.newPost.header_photo + ')';
+        if (this.newPost.header_photo == '') {
+            return 'background-image: url(' + this.newPost.header_photo + '); display:none; ';
+        }
+        return 'background-image: url(' + this.newPost.header_photo + '); ';
     }
 }), _props$validator$crea);
 
@@ -53899,6 +53988,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -53915,6 +54020,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             index: true,
             regions: [],
             newRegion: new SparkForm({
+                header_photo: '',
                 name: '',
                 geojson: '',
                 slug: '',
@@ -53939,6 +54045,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             this.validator.validate('lng', value);
         },
 
+        'newRegion.header_photo': function newRegionHeader_photo(val, oldVal) {
+            this.newRegion.saved = false;
+        },
         'newRegion.name': function newRegionName(val, oldVal) {
             if (this.newRegion.slug == '' || this.newRegion.slug == oldVal.toLowerCase().replace(/[\s\W-]+/g, '-')) {
                 this.newRegion.slug = val.toLowerCase().replace(/[\s\W-]+/g, '-');
@@ -53973,41 +54082,48 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             this.getIndex();
             return this.index = true;
         },
-        save: function save() {
+
+        /**
+         * Update the showcase photo.
+         */
+        update_header: function update_header(e) {
             var _this2 = this;
 
-            this.newRegion.saveError = false;
-            this.newRegion.saveBusy = true;
-            this.validator.validateAll({
-                name: this.newRegion.name,
-                lat: this.newRegion.lat,
-                lng: this.newRegion.lng
-            }).then(function (result) {
-                axios.post('/api/regions', {
-                    name: _this2.newRegion.name,
-                    lat: _this2.newRegion.lat,
-                    lng: _this2.newRegion.lng,
-                    geojson: _this2.newRegion.geojson,
-                    slug: _this2.newRegion.slug
-                }).then(function (result) {
-                    _this2.newRegion.saveBusy = false;
-                    _this2.newRegion.saved = true;
-                    _this2.newRegion.regionId = result.data.id;
-                    return result;
-                }).catch(function (error) {
-                    _this2.newRegion.saveError = true;
-                    _this2.newRegion.saveBusy = false;
-                    _this2.newRegion.serverErrors = error.response.data.errors.slug[0];
-                    return Promise.reject(error);
-                });
-            }).catch(function (error) {
-                _this2.newRegion.saveBusy = false;
-                _this2.newRegion.saveError = true;
-                _this2.errors = Promise.reject(error);
-                return Promise.reject(error);
+            e.preventDefault();
+
+            if (!this.$refs.header_photo.files.length) {
+                return;
+            }
+
+            var self = this;
+
+            this.newRegion.startProcessing();
+
+            // We need to gather a fresh FormData instance with the profile photo appended to
+            // the data so we can POST it up to the server. This will allow us to do async
+            // uploads of the profile photos. We will update the user after this action.
+            axios.post(this.urlForUpdate, this.gatherFormData()).then(function (result) {
+                _this2.newRegion.header_photo = result.data.large;
+                _this2.newRegion.thumbnail = result.data.thumbnail;
+                _this2.newRegion.image_id = result.data.image_id;
+
+                self.newRegion.finishProcessing();
+            }, function (error) {
+                self.newRegion.setErrors(error.response.data.errors);
             });
         },
-        update: function update() {
+
+        /**
+         * Gather the form data for the photo upload.
+         */
+        gatherFormData: function gatherFormData() {
+            var data = new FormData();
+
+            data.append('header_photo', this.$refs.header_photo.files[0]);
+
+            return data;
+        },
+        save: function save() {
             var _this3 = this;
 
             this.newRegion.saveError = false;
@@ -54017,38 +54133,74 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
                 lat: this.newRegion.lat,
                 lng: this.newRegion.lng
             }).then(function (result) {
-                axios.put('/api/regions/' + _this3.newRegion.regionId, {
+                axios.post('/api/regions', {
+                    header_photo: _this3.newRegion.header_photo,
                     name: _this3.newRegion.name,
-                    geojson: _this3.newRegion.geojson,
                     lat: _this3.newRegion.lat,
-                    lng: _this3.newRegion.lng
+                    lng: _this3.newRegion.lng,
+                    geojson: _this3.newRegion.geojson,
+                    slug: _this3.newRegion.slug
                 }).then(function (result) {
                     _this3.newRegion.saveBusy = false;
                     _this3.newRegion.saved = true;
+                    _this3.newRegion.regionId = result.data.id;
                     return result;
                 }).catch(function (error) {
                     _this3.newRegion.saveError = true;
                     _this3.newRegion.saveBusy = false;
+                    _this3.newRegion.serverErrors = error.response.data.errors.slug[0];
                     return Promise.reject(error);
                 });
             }).catch(function (error) {
                 _this3.newRegion.saveBusy = false;
                 _this3.newRegion.saveError = true;
+                _this3.errors = Promise.reject(error);
+                return Promise.reject(error);
+            });
+        },
+        update: function update() {
+            var _this4 = this;
+
+            this.newRegion.saveError = false;
+            this.newRegion.saveBusy = true;
+            this.validator.validateAll({
+                name: this.newRegion.name,
+                lat: this.newRegion.lat,
+                lng: this.newRegion.lng
+            }).then(function (result) {
+                axios.put('/api/regions/' + _this4.newRegion.regionId, {
+                    header_photo: _this4.newRegion.header_photo,
+                    name: _this4.newRegion.name,
+                    geojson: _this4.newRegion.geojson,
+                    lat: _this4.newRegion.lat,
+                    lng: _this4.newRegion.lng
+                }).then(function (result) {
+                    _this4.newRegion.saveBusy = false;
+                    _this4.newRegion.saved = true;
+                    return result;
+                }).catch(function (error) {
+                    _this4.newRegion.saveError = true;
+                    _this4.newRegion.saveBusy = false;
+                    return Promise.reject(error);
+                });
+            }).catch(function (error) {
+                _this4.newRegion.saveBusy = false;
+                _this4.newRegion.saveError = true;
                 return Promise.reject(error);
             });
         },
         leeroyjenkins: function leeroyjenkins() {
-            var _this4 = this;
+            var _this5 = this;
 
             if (confirm("Permanently destroy this region?")) {
                 axios.delete('/api/regions/' + this.newRegion.regionId, {}).then(function (result) {
-                    _this4.clear();
+                    _this5.clear();
                 }).catch(function (error) {
                     return Promise.reject(error);
                 });
             }
         },
-        createNewDestination: function createNewDestination() {
+        createNewRegion: function createNewRegion() {
             if (!this.newRegion.regionId) {
                 if (confirm('Abandon this region and start over?')) {
                     this.clear();
@@ -54058,6 +54210,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             }
         },
         clear: function clear() {
+            this.newRegion.header_photo = '';
             this.newRegion.saved = false;
             this.newRegion.saveBusy = false;
             this.newRegion.regionId = null;
@@ -54067,18 +54220,19 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
             this.newRegion.lng = null;
         },
         edit: function edit(id) {
-            var _this5 = this;
+            var _this6 = this;
 
             this.saveBusy = true;
             this.index = false;
             this.newRegion.regionId = id;
             axios.get('/api/regions/' + id, {}).then(function (result) {
-                _this5.newRegion.name = result.data.name;
-                _this5.newRegion.geojson = result.data.geojson;
-                _this5.newRegion.lat = result.data.lat;
-                _this5.newRegion.lng = result.data.lng;
-                _this5.saveBusy = false;
-                _this5.newRegion.saved = true;
+                _this6.newRegion.header_photo = result.data.header_photo;
+                _this6.newRegion.name = result.data.name;
+                _this6.newRegion.geojson = result.data.geojson;
+                _this6.newRegion.lat = result.data.lat;
+                _this6.newRegion.lng = result.data.lng;
+                _this6.saveBusy = false;
+                _this6.newRegion.saved = true;
                 return result.data;
             }).catch(function (error) {
                 return Promise.reject(error);
@@ -54094,7 +54248,25 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
         });
     },
 
-    computed: {}
+    computed: {
+
+        /**
+         * Get the URL for updating the team photo.
+         */
+        urlForUpdate: function urlForUpdate() {
+            return '/api/photo';
+        },
+
+        /**
+         * Calculate the style attribute for the photo preview.
+         */
+        previewStyle: function previewStyle() {
+            if (this.newRegion.header_photo == '') {
+                return 'background-image: url(' + this.newRegion.header_photo + '); display:none; ';
+            }
+            return 'background-image: url(' + this.newRegion.header_photo + '); ';
+        }
+    }
 });
 
 /***/ }),
@@ -63476,7 +63648,7 @@ exports.push([module.i, "\n.search-results {\n    box-shadow:0px 2px 2px #c5c7ca
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.gm-style .gm-style-iw {\n    font-size:12px;\n}\n.map-info-window img{\n    width:50%;\n    float:left;\n    padding-right:1em;\n}\n.map-info-window p{\n}\n\n", ""]);
+exports.push([module.i, "\n.gm-style .gm-style-iw {\n    font-size:12px;\n}\n.map-info-window span img {\n    display:none;\n}\n\n", ""]);
 
 /***/ }),
 /* 400 */
@@ -76388,7 +76560,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-sm-6 col-sm-offset-3"
+    staticClass: "container"
   }, [_c('button', {
     staticClass: "btn btn-create",
     attrs: {
@@ -76415,7 +76587,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": function($event) {
         $event.preventDefault();
-        return _vm.createNewDestination($event)
+        return _vm.createNewRegion($event)
       }
     }
   }, [_vm._v("\n                New\n            ")])]), _vm._v(" "), _c('table', {
@@ -76443,12 +76615,62 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("Edit")])])])
-  }))]), _vm._v(" "), (!_vm.index) ? _c('form', {
+  }))])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
+    staticClass: "container"
+  }, [(!_vm.index) ? _c('form', {
     staticClass: "form-horizontal new-region",
     attrs: {
       "role": "form"
     }
   }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('label', {
+    staticClass: "btn btn-primary btn-upload",
+    attrs: {
+      "type": "button",
+      "disabled": _vm.newRegion.busy
+    }
+  }, [_c('span', [_vm._v("Select Header Photo")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|mimes:jpg,jpeg,png,gif'),
+      expression: "'required|mimes:jpg,jpeg,png,gif'"
+    }],
+    ref: "header_photo",
+    staticClass: "form-control",
+    attrs: {
+      "type": "file",
+      "name": "header_photo"
+    },
+    on: {
+      "change": _vm.update_header
+    }
+  })]), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.newRegion.header_photo),
+      expression: "! newRegion.header_photo"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v("This is required")]), _c('br'), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('header_photo')),
+      expression: "errors.has('header_photo')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('header_photo')))]), _vm._v(" "), _c('div', {
+    staticClass: "header-photo-preview",
+    style: (_vm.previewStyle),
+    attrs: {
+      "role": "img"
+    }
+  })])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -77002,7 +77224,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "row"
   }, [_c('div', {
-    staticClass: "col-sm-6 col-sm-offset-3"
+    staticClass: "container"
   }, [_c('button', {
     staticClass: "btn btn-create",
     attrs: {
@@ -77057,12 +77279,60 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         }
       }
     }, [_vm._v("Edit")])])])
-  }))]), _vm._v(" "), (!_vm.index) ? _c('form', {
+  }))]), _vm._v(" "), _c('hr'), _vm._v(" "), (!_vm.index) ? _c('form', {
     staticClass: "form-horizontal new-destination",
     attrs: {
       "role": "form"
     }
   }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('label', {
+    staticClass: "btn btn-primary btn-upload",
+    attrs: {
+      "type": "button",
+      "disabled": _vm.newDestination.busy
+    }
+  }, [_c('span', [_vm._v("Select Header Photo")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|mimes:jpg,jpeg,png,gif'),
+      expression: "'required|mimes:jpg,jpeg,png,gif'"
+    }],
+    ref: "header_photo",
+    staticClass: "form-control",
+    attrs: {
+      "type": "file",
+      "name": "header_photo"
+    },
+    on: {
+      "change": _vm.update_header
+    }
+  })]), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.newDestination.header_photo),
+      expression: "! newDestination.header_photo"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v("This is required")]), _c('br'), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('header_photo')),
+      expression: "errors.has('header_photo')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('header_photo')))]), _vm._v(" "), _c('div', {
+    staticClass: "header-photo-preview",
+    style: (_vm.previewStyle),
+    attrs: {
+      "role": "img"
+    }
+  })])]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
@@ -78815,7 +79085,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('div', {
     staticClass: "col-md-12"
-  }, [_vm._m(1), _vm._v(" "), _c('input', {
+  }, [_c('p', [_vm._v("Title:")]), _vm._v(" "), _c('input', {
     directives: [{
       name: "validate",
       rawName: "v-validate",
@@ -79018,12 +79288,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('thead', {
     staticClass: "thead-inverse"
   }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('label', {
-    attrs: {
-      "for": "title"
-    }
-  }, [_c('p', [_vm._v("Title:")])])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -79258,11 +79522,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "map-info-window",
     staticStyle: {
       "max-width": "280px"
+    }
+  }, [_c('img', {
+    staticStyle: {
+      "max-width": "140px",
+      "float": "left",
+      "padding-right": "1em"
     },
+    attrs: {
+      "src": _vm.infoWindowImage
+    }
+  }), _vm._v(" "), _c('span', {
     domProps: {
       "innerHTML": _vm._s(_vm.infoContent)
     }
-  }, [_vm._v(_vm._s(_vm.infoContent))])]), _vm._v(" "), _c('google-cluster', {
+  }, [_vm._v(_vm._s(_vm.infoContent))])])]), _vm._v(" "), _c('google-cluster', {
     staticStyle: {
       "z-index": "499"
     }

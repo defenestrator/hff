@@ -36,6 +36,7 @@ class Destination extends Model
 {
 
     protected $fillable= [
+        'header_photo',
         'name',
         'description',
         'lat',
@@ -59,6 +60,7 @@ class Destination extends Model
     {
         return $this->hasMany(Showcase::class);
     }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

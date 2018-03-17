@@ -16,7 +16,10 @@
 @stop
 
 @section('top')
-    <div class="tagline">
+    <div style="padding:2em 0;
+            background: #1a1a1a url('{{$region->header_photo}}') center center no-repeat;
+            background-size:cover; height:50vh;"
+        class="tagline">
         <h1 style="padding:0 0.5em;" class="showcase-header feature-tagline text-center">
             <a title="{{$region->name}}"></a>
             {{$region->name}}
@@ -35,6 +38,7 @@
     @foreach(array_chunk($region->showcases->all(), 2) as $showcaseRow)
     <div class="row">
         @foreach($showcaseRow as $showcase)
+        @if($showcase->publication == true)
         <div class="col-sm-6 col-sm-offset-0">
             <section>
                 <article class="article">
@@ -66,6 +70,7 @@
                 </article>
             </section>
         </div>
+        @endif
         @endforeach
     </div>
     @endforeach
