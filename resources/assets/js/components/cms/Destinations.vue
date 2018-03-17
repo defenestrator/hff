@@ -337,6 +337,7 @@ export default {
                 lng: this.newDestination.lng
                 }).then((result) => {
                     axios.put(`/api/destinations/` + this.newDestination.destinationId, {
+                        header_photo: this.newDestination.header_photo,
                         name: this.newDestination.name,
                         description: this.newDestination.description,
                         lat: this.newDestination.lat,

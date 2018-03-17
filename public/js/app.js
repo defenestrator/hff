@@ -52619,6 +52619,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 lng: this.newDestination.lng
             }).then(function (result) {
                 axios.put('/api/destinations/' + _this5.newDestination.destinationId, {
+                    header_photo: _this5.newDestination.header_photo,
                     name: _this5.newDestination.name,
                     description: _this5.newDestination.description,
                     lat: _this5.newDestination.lat,
