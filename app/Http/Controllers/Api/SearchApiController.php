@@ -13,17 +13,21 @@ class SearchApiController extends Controller
     public function filter(Post $post, Showcase $showcase, Region $region, Request $request)
     {
         $q = $request->get('query');
-        $posts = $post->search($request->get('query'))->orderBy('created_at', 'desc')->get()->map(function($post) {
+        $queriedPosts = $post->search($q)->orderBy('created_at', 'desc')->get()->map(function($post) {
             $post['type'] = 'Blog Post';
             $post['link'] = '/publications/posts/'. $post['slug'];
             return $post;
         });
-        $showcases = $showcase->search($request->get('query'))->orderBy('created_at', 'desc')->get()->map(function($showcase) {
+        $posts = $queriedPosts->whereIn('publication', true);
+
+        $queriedShowcases = $showcase->search($q)->orderBy('created_at', 'desc')->get()->map(function($showcase) {
             $showcase['type'] = 'Fly Fishing Destination';
-            $showcase['link'] = '/publications/showcases/'. $showcase['slug'];
+            $showcase['link'] = '/showcases/'. $showcase['slug'];
             return $showcase;
         });
-        $regions = $region->search($request->get('query'))->orderBy('created_at', 'desc')->get()->map(function($region, $q) {
+        $showcases = $queriedShowcases->whereIn('publication', true);
+
+        $regions = $region->search($q)->orderBy('created_at', 'desc')->get()->map(function($region) {
             $region['type'] = 'Region';
             $region['title'] = $region['name'];
             $region['link'] = '/regions/'. $region['slug'];
@@ -32,7 +36,6 @@ class SearchApiController extends Controller
         });
 
         $results = $showcases->merge($posts)->merge($regions)->sortByDesc('created_at');
-        // If there are results return them, if none, return the error message.
         return $results;
     }
 }
