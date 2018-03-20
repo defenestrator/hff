@@ -25,10 +25,10 @@ class Keywords
         $ff = [];
         $keywords = [];
         foreach ($this->services as $service) {
-            array_push($f, 'fishing ' . $service . "\n");
-            array_push($ff, 'fly fishing ' . $service  . "\n");
+            array_push($f, "\"fishing " . $service ."\"\n");
+            array_push($ff, "\"fly fishing " . $service  ."\"\n");
             foreach ($words as $word) {
-                array_push($keywords, $word . $service . "\n");
+                array_push($keywords, "\"" . $word . $service ."\"\n");
             }
         }
 
@@ -76,15 +76,15 @@ class Keywords
     }
 
     protected $services = [
-        'guide ',
-        'lodge ',
-        'vacation ',
-        'holiday ',
-        'getaway ',
-        'expedition ',
-        'charter ',
-        'all inclusive ',
-        'package '
+        'guide',
+        'lodge',
+        'vacation',
+        'holiday',
+        'getaway',
+        'expedition',
+        'charter',
+        'all inclusive',
+        'package'
     ];
     protected $destinations;
     protected $regions;
