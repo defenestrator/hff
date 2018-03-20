@@ -10,11 +10,14 @@
             gtag('config', 'UA-107298455-1');
         </script>
     @endif
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon-100.png" sizes="100x100">
-    <title>@yield('title', config('app.name'))</title>
+
+        <title>@yield('title', config('app.name'))</title>
+
     <link href="{{ url(mix('css/styles.css')) }}" rel="stylesheet">
     <!-- Page level Styles -->
     @yield('page_styles', '')

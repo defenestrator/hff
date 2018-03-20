@@ -3,6 +3,7 @@
 use Spatie\Sitemap\SitemapGenerator;
 use Intervention\Image\Facades\Image;
 use GuzzleHttp\Client;
+use App\Transformers\Keywords;
 /*
 |--------------------------------------------------------------------------
 | Console Routes
@@ -41,3 +42,12 @@ Artisan::command('sitemap', function () {
         ->writeToFile(public_path('sitemap.xml'));
     $this->comment('Sitemap generated');
 })->describe('Generate an updated sitemap for teh googlebots\' pleasure, slave.');
+
+Artisan::command('keywordGen', function(Keywords $keywords) {
+    $k = $keywords->generate();
+    file_put_contents(public_path('keywords.txt'), $k);
+    foreach($k as $z) {
+        $this->comment($z);
+    }
+    return $k;
+})->describe('Generate keywords for AdWords\' pleasure, slave.');
