@@ -53,6 +53,9 @@ Route::middleware(['auth:web', 'doNotCacheResponse'])->group(function () {
     Route::get('/cms/posts', 'PostsController@create');
     Route::post('/cms/images', 'ImagesController@wysiwyg');
     Route::get('/cms/posts/{id}/tags', 'PostTagsController@edit');
+
+    // CMS Fish Species
+    Route::get('/cms/fish-species', 'FishSpeciesController@create');
 });
 
 // DEVELOPER LEVEL AUTH ROUTES
@@ -79,6 +82,7 @@ Route::middleware(['auth:web', 'dev', 'doNotCacheResponse'])->group(function () 
 
         // CMS Regions
         Route::view('/regions', 'cms.regions');
+
     });
 });
 

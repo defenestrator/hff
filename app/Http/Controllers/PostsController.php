@@ -2,9 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Laravel\Spark\Spark;
-use Illuminate\Support\Facades\Auth;
 class PostsController extends ContentController
 {
     /**
@@ -12,10 +9,8 @@ class PostsController extends ContentController
      */
     public function create()
     {
-        $dev = 'no';
-        if (Spark::developer(Auth::user()->email)){
-            $dev = 'yes';
-        }
+        $dev = $this->developer();
+
         return view('cms.posts', ['dev' => $dev]);
     }
 }

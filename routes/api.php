@@ -24,6 +24,14 @@ Route::group([
     Route::delete('/posts/{id}', 'Api\PostsApiController@destroy');
     Route::get('/posts/publications/{postId}', 'Api\PostsApiController@show');
 
+    // Posts
+    Route::get('/fish-species', 'Api\FishSpeciesApiController@index');
+    Route::post('/fish-species', 'Api\FishSpeciesApiController@create');
+    Route::put('/fish-species/{id}', 'Api\FishSpeciesApiController@update');
+    Route::get('/fish-species/{id}', 'Api\FishSpeciesApiController@edit');
+    Route::delete('/fish-species/{id}', 'Api\FishSpeciesApiController@destroy');
+    Route::get('/fish-species/publications/{postId}', 'Api\FishSpeciesApiController@show');
+
     // Newsletters
     Route::get('/newsletters', 'Api\NewslettersApiController@index');
     Route::post('/newsletters', 'Api\NewslettersApiController@create');

@@ -2,11 +2,11 @@
 <div class="row">
     <div class="container">
         <button @click.prevent="toggleIndex" id="create" class="btn btn-create">
-            <span v-if="index">Write</span>
+            <span v-if="index">Create</span>
             <span v-if="! index">Index</span>
         </button>
         <div v-show="! index">
-            <button @click.prevent="createNewPost" class="btn btn-primary" :disabled="! newPost.title">
+            <button @click.prevent="createNewContentItem" class="btn btn-primary" :disabled="! newContentItem.common_name">
                 New
             </button>
         </div>
@@ -18,26 +18,26 @@
             </tr>
             </thead>
             <tbody class="resource-list">
-            <tr v-for="post in posts" v-if="user.id == post.user_id || dev" class="table-hover">
-                <td><strong>{{ post.title }}</strong></td>
-                <td><button @click.prevent="(edit(post.id))"role="button" class="btn btn-warning">Edit</button></td>
+            <tr v-for="content in contents" v-if="user.id == content.user_id || dev" class="table-hover">
+                <td><strong>{{ content.common_name }}</strong></td>
+                <td><button @click.prevent="(edit(content.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="container">
         <hr>
-        <form class="form-horizontal new-post" v-if="! index" role="form">
+        <form class="form-horizontal new-content" v-if="! index" role="form">
             <div class="form-group">
-                <div v-show="newPost.postId" class="col-md-2 hidden-sm hidden-xs">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saved">
-                            <span v-if="newPost.saveBusy">
+                <div v-show="newContentItem.contentItemId" class="col-md-2 hidden-sm hidden-xs">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newContentItem.saveError }" @click.prevent="update" :disabled="newContentItem.saved">
+                            <span v-if="newContentItem.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
                              </span>
-                            <span v-else-if="newPost.saved">
+                            <span v-else-if="newContentItem.saved">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
-                        <span v-else-if="newPost.saved == false">
+                        <span v-else-if="newContentItem.saved == false">
                                 <i class="fa fa-btn fa-check-circle"></i>Update
                              </span>
                             <span v-else>
@@ -46,12 +46,12 @@
 
                     </button>
                 </div>
-                <div v-show="! newPost.postId" class="col-md-2 hidden-sm hidden-xs">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saved || saveBusy">
-                            <span v-if="newPost.saveBusy">
+                <div v-show="! newContentItem.contentItemId" class="col-md-2 hidden-sm hidden-xs">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newContentItem.saveError }" @click.prevent="save" :disabled="newContentItem.saved || newContentItem.saveBusy">
+                            <span v-if="newContentItem.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                              </span>
-                            <span v-else-if="newPost.postId !== null">
+                            <span v-else-if="newContentItem.contentItemId !== null">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
                             <span v-else>
@@ -60,11 +60,11 @@
                     </button>
                 </div>
                 <div v-if="dev" class="col-md-2 hidden-sm hidden-xs">
-                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published || ! newPost.saved">
-                        <span v-if="newPost.publishBusy">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newContentItem.published }"  @click.prevent="publish" :disabled="newContentItem.published || ! newContentItem.saved">
+                        <span v-if="newContentItem.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
                              </span>
-                             <span class="is-success" v-else-if="newPost.published !== null">
+                             <span class="is-success" v-else-if="newContentItem.published !== null">
                                 <i class="fa fa-btn btn-success fa-newspaper-o"></i>Published!
                              </span>
                             <span v-else>
@@ -73,12 +73,12 @@
                     </button>
                 </div>
                 <div class="col-md-2 hidden-sm hidden-xs">
-                    <button v-if="dev" @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newPost.published }">
+                    <button v-if="dev" @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newContentItem.published }">
                         Unpublish
                     </button>
                 </div>
                 <div class="col-md-2 hidden-sm hidden-xs">
-                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newPost.published }" :disabled="! newPost.postId">
+                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newContentItem.published }" :disabled="! newContentItem.contentItemId">
                         Delete
                     </button>
                 </div>
@@ -86,11 +86,11 @@
             <!-- Header Photo Button -->
             <div class="form-group">
                 <div class="container">
-                    <label type="button" class="btn btn-primary btn-upload" :disabled="newPost.busy">
+                    <label type="button" class="btn btn-primary btn-upload" :disabled="newContentItem.busy">
                         <span>Select Header Photo</span>
                         <input v-validate="'required|mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
                     </label>
-                    <span v-show="! newPost.header_photo" class="help is-danger">This is required</span><br>
+                    <span v-show="! newContentItem.header_photo" class="help is-danger">This is required</span><br>
                     <span v-show="errors.has('header_photo')" class="help is-danger">{{ errors.first('header_photo') }}</span>
                     <div role="img" class="header-photo-preview"
                          :style="previewStyle">
@@ -99,37 +99,48 @@
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-md-12">
-                    <p>Title:</p>
-                    <input v-validate="'required|min:3|max:140'" id="title" name="title" v-model="newPost.title"
-                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('title') }" type="text" placeholder="Post Title"
+                <div class="col-md-12"><p>Common Name:</p>
+                    <input v-validate="'required|min:2|max:140'" id="common_name" name="common_name" v-model="newContentItem.common_name"
+                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('common_name') }" type="text" placeholder="common name"
                            style="width:100%">
-                    <span v-show="errors.has('title')" class="help is-danger">{{ errors.first('title') }}</span>
+                    <span v-show="errors.has('common_name')" class="help is-danger">{{ errors.first('common_name') }}</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <p>Body:</p>
-                    <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="body" v-validate="'required|min:16'" v-model="newPost.body"></trumbowyg>
-                    <span v-show="errors.has('body')" class="help is-danger">{{ errors.first('body') }}</span>
+                   <p>Genus:</p>
+                    <input v-validate="'required|min:2|max:140'" id="genus" name="genus" v-model="newContentItem.genus"
+                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('genus') }" type="text" placeholder="Genus"
+                           style="width:100%">
+                    <span v-show="errors.has('genus')" class="help is-danger">{{ errors.first('genus') }}</span>
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <input-tag class="input-tag" name="tags" v-model="newPost.tags" :tags="newPost.tags" placeholder="add tag"></input-tag>
-                    <label>Spaces are allowed! Use ENTER/RETURN key, or type a comma to separate tags.</label>
+                    <p>species:</p>
+                    <input v-validate="'required|min:2|max:140'" id="species" name="species" v-model="newContentItem.species"
+                           :class="{'form-control': true, 'input': true, 'is-danger': errors.has('species') }" type="text" placeholder="species"
+                           style="width:100%">
+                    <span v-show="errors.has('species')" class="help is-danger">{{ errors.first('species') }}</span>
                 </div>
             </div>
             <div class="form-group">
-                <div v-show="newPost.postId" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="update" :disabled="newPost.saved">
-                            <span v-if="newPost.saveBusy">
+                <div class="col-md-12">
+                    <p>Description:</p>
+                    <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="description" v-validate="'required|min:16'" v-model="newContentItem.description"></trumbowyg>
+                    <span v-show="errors.has('description')" class="help is-danger">{{ errors.first('description') }}</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div v-show="newContentItem.contentItemId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newContentItem.saveError }" @click.prevent="update" :disabled="newContentItem.saved">
+                            <span v-if="newContentItem.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
                              </span>
-                            <span v-else-if="newPost.saved">
+                            <span v-else-if="newContentItem.saved">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
-                        <span v-else-if="newPost.saved == false">
+                        <span v-else-if="newContentItem.saved == false">
                                 <i class="fa fa-btn fa-check-circle"></i>Update
                              </span>
                             <span v-else>
@@ -138,12 +149,12 @@
 
                     </button>
                 </div>
-                <div v-show="! newPost.postId" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newPost.saveError }" @click.prevent="save" :disabled="newPost.saved || newPost.saveBusy">
-                            <span v-if="newPost.saveBusy">
+                <div v-show="! newContentItem.contentItemId" class="col-md-2 col-sm-12">
+                    <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newContentItem.saveError }" @click.prevent="save" :disabled="newContentItem.saved || newContentItem.saveBusy ">
+                            <span v-if="newContentItem.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                              </span>
-                            <span v-else-if="newPost.postId !== null">
+                            <span v-else-if="newContentItem.contentItemId !== null">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
                             <span v-else>
@@ -152,11 +163,11 @@
                     </button>
                 </div>
                 <div v-if="dev" class="col-md-2 col-sm-12">
-                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newPost.published }"  @click.prevent="publish" :disabled="newPost.published || ! newPost.saved">
-                        <span v-if="newPost.publishBusy">
+                    <button :class="{'btn': true, 'btn-warning': true, 'is-success': newContentItem.published }"  @click.prevent="publish" :disabled="newContentItem.published || ! newContentItem.saved">
+                        <span v-if="newContentItem.publishBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Publishing
                              </span>
-                             <span class="is-success" v-else-if="newPost.published !== null">
+                             <span class="is-success" v-else-if="newContentItem.published !== null">
                                 <i class="fa fa-btn btn-success fa-newspaper-o"></i>Published!
                              </span>
                             <span v-else>
@@ -165,12 +176,12 @@
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button v-if="dev" @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newPost.published }">
+                    <button v-if="dev" @click.prevent="unpublish" :class="{'btn': true, 'btn-warning': true, 'hidden': ! newContentItem.published }">
                         Unpublish
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newPost.published }" :disabled="! newPost.postId">
+                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newContentItem.published }" :disabled="! newContentItem.contentItemId">
                         Delete
                     </button>
                 </div>
@@ -191,9 +202,10 @@ import 'trumbowyg/dist/ui/trumbowyg.css';
 import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 export default {
-    props: ['user', 'dev'],
+    props: ['user', 'dev', 'content-type'],
     validator: null,
     created() {
+
     },
     mounted() {
         this.getIndex()
@@ -205,16 +217,16 @@ export default {
     data() {
         return {
             index: true,
-            posts: [],
-            newPost: new SparkForm ({
+            contents: [],
+            newContentItem: new SparkForm ({
                 header_photo:'',
-                title: '',
+                common_name: '',
+                genus: '',
+                species: '',
                 slug: '',
-                body: '',
-                tags: [],
+                description: '',
                 link: '',
-                postId: null,
-                image_id: null,
+                contentItemId: null,
                 saveBusy: false,
                 saveError: false,
                 saved: true,
@@ -260,51 +272,59 @@ export default {
         }
     },
     watch: {
-        'newPost.header_photo': function (val, oldVal) {
-            this.newPost.saved = false
+        'newContentItem.header_photo': function (val, oldVal) {
+            this.newContentItem.saved = false
         },
-        title(value) {
-            this.validator.validate('title', value);
+        common_name(value) {
+            this.validator.validate('common_name', value);
         },
-        body(value) {
-            this.validator.validate('body', value);
+        description(value) {
+            this.validator.validate('description', value);
+        },
+        genus(value) {
+            this.validator.validate('genus', value);
+        },
+        species(value) {
+            this.validator.validate('species', value);
         },
 
         /**
-            * Watch the title and create slug.
+            * Watch the common_name and create slug.
         */
-        'newPost.title': function (val, oldVal) {
-            this.newPost.serverErrors = null
-            if (this.newPost.slug == '' ||
-                    this.newPost.slug == this.makeSlug(oldVal)
+        'newContentItem.common_name': function (val, oldVal) {
+            this.newContentItem.serverErrors = null
+            if (this.newContentItem.slug == '' ||
+                    this.newContentItem.slug == this.makeSlug(oldVal)
             ) {
-                this.newPost.slug = this.makeSlug(val)
+                this.newContentItem.slug = this.makeSlug(val)
             }
-            this.newPost.saved = false
+            this.newContentItem.saved = false
         },
-        'newPost.body': function (val, oldVal) {
-            this.newPost.saved = false
+        'newContentItem.description': function (val, oldVal) {
+            this.newContentItem.saved = false
         },
-        'newPost.tags': function (val, oldVal) {
-                this.newPost.saved = false
+        'newContentItem.genus': function (val, oldVal) {
+            this.newContentItem.saved = false
+        },
+        'newContentItem.apwxiwa': function (val, oldVal) {
+            this.newContentItem.saved = false
         }
     },
     methods: {
-
         makeSlug(inputString) {
             return inputString.toLowerCase().trim().replace(/[\s\W-]+/g, '-')
         },
+
         getIndex() {
-            axios.get(`/api/posts`, {})
+            axios.get('/api/fish-species', {})
             .then(result  => {
-                this.posts = result.data.data
-                return this.posts
+                this.contents = result.data.data
+                return this.contents
             })
             .catch(error => {
                 return Promise.reject(error)
             })
         },
-
         toggleIndex() {
             if(this.index == true) {
                 return this.index = false
@@ -318,38 +338,36 @@ export default {
             }
         },
         save() {
-            this.newPost.saveError = false
-            this.newPost.saveBusy = true
+            this.newContentItem.saveError = false
+            this.newContentItem.saveBusy = true
             this.validator.validateAll({
-                title: this.newPost.title,
-                body: this.newPost.body,
-                slug: this.newPost.slug
+                common_name: this.newContentItem.common_name,
+                description: this.newContentItem.description,
+                slug: this.newContentItem.slug
                 }).then((result) => {
-                    axios.post(`/api/posts`, {
-                                title: this.newPost.title,
-                                user_id: Spark.state.user.id,
-                                author: Spark.state.user.name,
-                                header_photo: this.newPost.header_photo,
-                                image_id: this.newPost.image_id,
-                                slug:  this.newPost.slug,
-                                body:  this.newPost.body,
-                                tags: this.newPost.tags
+                    axios.post('/api/' + this.contentType + '/', {
+                                common_name: this.newContentItem.common_name,
+                                genus: this.newContentItem.genus,
+                                species: this.newContentItem.species,
+                                header_photo: this.newContentItem.header_photo,
+                                slug:  this.newContentItem.slug,
+                                description:  this.newContentItem.description
                             })
                             .then(result  => {
-                                this.newPost.saveBusy = false
-                                this.newPost.saved= true
-                                this.newPost.postId = result.data.id
+                                this.newContentItem.saveBusy = false
+                                this.newContentItem.saved= true
+                                this.newContentItem.contentItemId = result.data.id
                                 swal({
                                     title: 'SUCCESS!',
-                                    text: 'The post was saved.',
+                                    text: 'The content was saved.',
                                     type: 'success',
                                     timer: 2000
                                 });
                                 return result
                             })
                             .catch(error => {
-                                this.newPost.saveError = true
-                                this.newPost.saveBusy = false
+                                this.newContentItem.saveError = true
+                                this.newContentItem.saveBusy = false
                                 var saveErrors = error.response.data.errors
                                 var thisError = error.response.data.errors[Object.keys(saveErrors) [0]]
                                 swal({
@@ -362,8 +380,8 @@ export default {
                             })
                         })
             .catch(error => {
-                this.newPost.saveBusy = false
-                this.newPost.saveError = true
+                this.newContentItem.saveBusy = false
+                this.newContentItem.saveError = true
                 var saveErrors = error.response.data.errors
                 var thisError = error.response.data.errors[Object.keys(saveErrors) [0]]
                 this.errors = Promise.reject(error)
@@ -378,57 +396,57 @@ export default {
         },
 
         publish() {
-            this.newPost.publishBusy = true
-            if (this.newPost.postId === null) {
-                this.newPost.publishBusy = false
+            this.newContentItem.publishBusy = true
+            if (this.newContentItem.contentItemId === null) {
+                this.newContentItem.publishBusy = false
                 this.save()
                 return
             }
-             axios.post(`/api/publications`, {
-                    type:    'post',
-                    post_id: this.newPost.postId
+             axios.post('/api/publications', {
+                    type:    this.contentType,
+                    content_id: this.newContentItem.contentItemId
                  })
                  .then(result  => {
-                     this.newPost.publishBusy = false
-                     this.newPost.publicationId = result.data.id
+                     this.newContentItem.publishBusy = false
+                     this.newContentItem.publicationId = result.data.id
                      return result
                  })
                  .catch(error => {
-                     this.newPost.publishBusy = false
+                     this.newContentItem.publishBusy = false
                      return Promise.reject(error)
                  });
-                this.newPost.publishBusy = false
-                this.newPost.published = true
+                this.newContentItem.publishBusy = false
+                this.newContentItem.published = true
 
             },
 
         unpublish() {
-            const postId = this.newPost.postId
-            axios.delete(`/api/publications/`
-                + this.newPost.publicationId, {})
+            const contentItemId = this.newContentItem.contentItemId
+            axios.delete('/api/publications/'
+                + this.newContentItem.publicationId, {})
             .then(result  => {
-                this.newPost.publicationId = null
-                this.newPost.publishBusy = false
-                this.newPost.published = null
-                this.checkPublication(postId)
+                this.newContentItem.publicationId = null
+                this.newContentItem.publishBusy = false
+                this.newContentItem.published = null
+                this.checkPublication(contentItemId)
                 return result
             })
             .catch(error => {
-                this.newPost.publishBusy = false
+                this.newContentItem.publishBusy = false
                 return Promise.reject(error)
             });
         },
 
         checkPublication(id){
-            axios.get(`/api/posts/publications/` + id, {})
+            axios.get('/api/' + this.contentType + '/publications/' + id, {})
                 .then(result  => {
-                    this.newPost.publicationId = result.data.id
-                    if (this.newPost.publicationId === undefined) {
-                        this.newPost.publicationId = null
-                        this.newPost.published = null
+                    this.newContentItem.publicationId = result.data.id
+                    if (this.newContentItem.publicationId === undefined) {
+                        this.newContentItem.publicationId = null
+                        this.newContentItem.published = null
                     } else {
-                        this.newPost.published = true
-                        this.newPost.publishBusy = false
+                        this.newContentItem.published = true
+                        this.newContentItem.publishBusy = false
                     }
                     return result.data
                 })
@@ -438,56 +456,43 @@ export default {
         },
 
         update() {
-            this.newPost.saveError = false
-            this.newPost.saveBusy = true
-            this.validator.validateAll({
-                title: this.newPost.title,
-                body: this.newPost.body
-                }).then((result) => {
-                    axios.put(`/api/posts/` + this.newPost.postId, {
-                        title: this.newPost.title,
-                        header_photo: this.newPost.header_photo,
-                        user_id: Spark.state.user.id,
-                        author: Spark.state.user.name,
-                        image_id: this.newPost.image_id,
-                        body:  this.newPost.body,
-                        tags: this.newPost.tags
-                    })
-                    .then(result  => {
-                        this.newPost.saveBusy = false
-                        this.newPost.saved = true
-                        swal({
-                            title: 'SUCCESS!',
-                            text: 'The post was updated.',
-                            type: 'success',
-                            timer: 2000
-                        });
-                        return result
-                    })
-                    .catch(error => {
-                        this.newPost.saveError = true
-                        this.newPost.saveBusy = false
-                        var saveErrors = error.response.data.errors
-                        var thisError = error.response.data.errors[Object.keys(saveErrors) [0]]
-                        swal({
-                            title: 'UPDATE FAILED!',
-                            text: thisError,
-                            type: 'error',
-                            timer: 3000,
-                        });
-                        return Promise.reject(error)
-                    })
+            axios.put('/api/' + this.contentType  + '/'+ this.newContentItem.contentItemId, {
+                common_name: this.newContentItem.common_name,
+                header_photo: this.newContentItem.header_photo,
+                genus: this.newContentItem.genus,
+                species: this.newContentItem.species,
+                slug:  this.newContentItem.slug,
+                description:  this.newContentItem.description
+            })
+            .then(result  => {
+                this.newContentItem.saveBusy = false
+                this.newContentItem.saved = true
+                swal({
+                    title: 'SUCCESS!',
+                    text: 'The content was updated.',
+                    type: 'success',
+                    timer: 2000
+                });
+                return result
             })
             .catch(error => {
-                this.newPost.saveBusy = false
-                this.newPost.saveError = true
+                this.newContentItem.saveError = true
+                this.newContentItem.saveBusy = false
+                var saveErrors = error.response.data.errors
+                var thisError = error.response.data.errors[Object.keys(saveErrors) [0]]
+                swal({
+                    title: 'UPDATE FAILED!',
+                    text: thisError,
+                    type: 'error',
+                    timer: 3000,
+                });
                 return Promise.reject(error)
             })
         },
 
         leeroyjenkins() {
-            if(confirm("Permanently destroy this post?")) {
-                axios.delete(`/api/posts/` + this.newPost.postId, {})
+            if(confirm("Permanently destroy this content?")) {
+                axios.delete('/api' + this.contentType + '/' + this.newContentItem.contentItemId, {})
                 .then(result  => {
                     this.clear()
                 })
@@ -508,21 +513,20 @@ export default {
 
             var self = this;
 
-            this.newPost.startProcessing();
+            this.newContentItem.startProcessing();
 
             // We need to gather a fresh FormData instance with the profile photo appended to
             // the data so we can POST it up to the server. This will allow us to do async
             // uploads of the profile photos. We will update the user after this action.
             axios.post(this.urlForUpdate, this.gatherFormData())
                 .then(result  => {
-                    this.newPost.header_photo = result.data.large
-                    this.newPost.thumbnail = result.data.thumbnail
-                    this.newPost.image_id = result.data.image_id
-
-                    self.newPost.finishProcessing();
+                    this.newContentItem.header_photo = result.data.large
+                    this.newContentItem.thumbnail = result.data.thumbnail
+                    this.newContentItem.image_id = result.data.image_id
+                    self.newContentItem.finishProcessing();
                 },
                 (error) => {
-                    self.newPost.setErrors(error.response.data.errors);
+                    self.newContentItem.setErrors(error.response.data.errors);
                 }
         );
         },
@@ -536,9 +540,9 @@ export default {
 
             return data;
         },
-        createNewPost() {
-            if (!this.newPost.postId) {
-                if (confirm('Abandon this post and start over?')) {
+        createNewContentItem() {
+            if (!this.newContentItem.contentItemId) {
+                if (confirm('Abandon this content and start over?')) {
                     this.clear()
                 }
             } else {
@@ -546,56 +550,54 @@ export default {
             }
         },
         clear() {
-            this.newPost.saved = false
-            this.newPost.saveBusy = false
-            this.newPost.publishBusy = false
-            this.newPost.published = null
-            this.newPost.publicationId = null
-            this.newPost.postId = null
-            this.newPost.header_photo = ''
-            this.newPost.title = ''
-            this.newPost.body = ''
-            this.newPost.slug = ''
-            this.newPost.tags = []
+            this.newContentItem = new SparkForm ({
+                header_photo:'',
+                common_name: '',
+                genus: '',
+                species: '',
+                slug: '',
+                description: '',
+                link: '',
+                contentItemId: null,
+                saveBusy: false,
+                saveError: false,
+                saved: true,
+                serverErrors: null,
+                publishBusy: false,
+                published: null,
+                publicationId: null,
+                errors: null
+            })
         },
         edit(id){
             this.saveBusy = true
             this.index = false
-            this.newPost.postId = id
-            this.getTags(this.newPost.postId)
-            axios.get(`/api/posts/`+ id , {})
+            this.newContentItem.contentItemId = id
+            axios.get('/api/' + this.contentType + '/' + id , {})
             .then(result => {
-                this.newPost.title = result.data.title;
-                this.newPost.header_photo = result.data.header_photo
-                this.newPost.slug = result.data.slug;
-                this.newPost.body = result.data.body;
-                this.newPost.postId = result.data.id;
+                this.newContentItem.common_name = result.data.common_name;
+                this.newContentItem.header_photo = result.data.header_photo
+                this.newContentItem.genus = result.data.genus
+                this.newContentItem.species = result.data.species
+                this.newContentItem.slug = result.data.slug;
+                this.newContentItem.description = result.data.description;
+                this.newContentItem.contentItemId = result.data.id;
                 this.checkPublication(id)
                 this.saveBusy = false
-                this.newPost.saved = true
+                this.newContentItem.saved = true
 
                 return result.data
                 })
             .catch(error => {
                 return Promise.reject(error)
             })
-        },
-        getTags(id) {
-            axios.get(`/cms/posts/`+ id + '/tags', {})
-                .then(result => {
-                    this.newPost.tags = result.data;
-                    return result.data.tags
-                })
-                .catch(error => {
-                    return Promise.reject(error)
-                })
         }
     },
 
     created() {
         this.validator = new VeeValidate.Validator({
-            title: 'required|min:2',
-            body: 'required|min:40',
+            common_name: 'required|min:2',
+            description: 'required|min:40',
             slug: 'required'
         });
     },
@@ -605,16 +607,16 @@ export default {
          * Get the URL for updating the team photo.
          */
         urlForUpdate() {
-            return `/api/photo`;
+            return '/api/photo';
         },
         /**
          * Calculate the style attribute for the photo preview.
          */
         previewStyle() {
-            if (this.newPost.header_photo == '' ) {
-                return `background-image: url(${this.newPost.header_photo}); display:none; `;
+            if (this.newContentItem.header_photo == '' ) {
+                return `background-image: url(${this.newContentItem.header_photo}); display:none; `;
             }
-            return `background-image: url(${this.newPost.header_photo}); `;
+            return `background-image: url(${this.newContentItem.header_photo}); `;
         }
     },
 }
@@ -657,14 +659,14 @@ export default {
     border-top-right-radius: 4px;
     }
     @media (max-width: 991px) {
-        .new-post .btn
+        .new-content .btn
         {
             width:100%;
             padding:1.34em;
             margin: 0.66em 0;
         }
     }
-    .post-index {
+    .content-index {
         position:relative;
         display:block
     }

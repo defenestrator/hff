@@ -53303,9 +53303,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
 /* harmony default export */ __webpack_exports__["default"] = (_props$validator$crea = {
     props: ['user', 'dev'],
     validator: null,
-    created: function created() {
-        this.isADev();
-    },
+    created: function created() {},
     mounted: function mounted() {
         this.getIndex();
         this.confirmNavAway();
@@ -53318,7 +53316,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         return {
             index: true,
             posts: [],
-            isDev: this.isADev(),
             newPost: new SparkForm({
                 header_photo: '',
                 title: '',
@@ -53393,12 +53390,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         }
     },
     methods: {
-        isADev: function isADev() {
-            if (this.dev == 'yes') {
-                return true;
-            }
-            return false;
-        },
         makeSlug: function makeSlug(inputString) {
             return inputString.toLowerCase().trim().replace(/[\s\W-]+/g, '-');
         },
@@ -55857,6 +55848,7 @@ Vue.component('public-footer', __webpack_require__(533));
 Vue.component('sales-inquiry', __webpack_require__(534));
 Vue.component('world-map', __webpack_require__(536));
 Vue.component('site-search', __webpack_require__(535));
+Vue.component('fish-species', __webpack_require__(674));
 
 /***/ }),
 /* 268 */
@@ -78905,7 +78897,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._m(0), _vm._v(" "), _c('tbody', {
     staticClass: "resource-list"
   }, _vm._l((_vm.posts), function(post) {
-    return (_vm.user.id == post.user_id || _vm.isDev) ? _c('tr', {
+    return (_vm.user.id == post.user_id || _vm.dev) ? _c('tr', {
       staticClass: "table-hover"
     }, [_c('td', [_c('strong', [_vm._v(_vm._s(post.title))])]), _vm._v(" "), _c('td', [_c('button', {
       staticClass: "btn btn-warning",
@@ -78984,7 +78976,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
-  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), (_vm.isDev) ? _c('div', {
+  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), (_vm.dev) ? _c('div', {
     staticClass: "col-md-2 hidden-sm hidden-xs"
   }, [_c('button', {
     class: {
@@ -79009,7 +79001,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "fa fa-btn fa-newspaper-o"
   }), _vm._v("Publish\n                            ")])])]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "col-md-2 hidden-sm hidden-xs"
-  }, [(_vm.isDev) ? _c('button', {
+  }, [(_vm.dev) ? _c('button', {
     class: {
       'btn': true, 'btn-warning': true, 'hidden': !_vm.newPost.published
     },
@@ -79220,7 +79212,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       'btn': true, 'btn-primary': true, 'is-danger': _vm.newPost.saveError
     },
     attrs: {
-      "disabled": _vm.newPost.saved || _vm.saveBusy
+      "disabled": _vm.newPost.saved || _vm.newPost.saveBusy
     },
     on: {
       "click": function($event) {
@@ -79234,7 +79226,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "fa fa-btn fa-check-circle"
   }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
     staticClass: "fa fa-btn fa-check-circle"
-  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), (_vm.isDev) ? _c('div', {
+  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), (_vm.dev) ? _c('div', {
     staticClass: "col-md-2 col-sm-12"
   }, [_c('button', {
     class: {
@@ -79259,7 +79251,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "fa fa-btn fa-newspaper-o"
   }), _vm._v("Publish\n                            ")])])]) : _vm._e(), _vm._v(" "), _c('div', {
     staticClass: "col-md-2 col-sm-12"
-  }, [(_vm.isDev) ? _c('button', {
+  }, [(_vm.dev) ? _c('button', {
     class: {
       'btn': true, 'btn-warning': true, 'hidden': !_vm.newPost.published
     },
@@ -80936,6 +80928,1301 @@ function WatchPrimitiveProperties(vueInst, propertiesToTrack, handler) {
 __webpack_require__(229);
 module.exports = __webpack_require__(230);
 
+
+/***/ }),
+/* 581 */,
+/* 582 */,
+/* 583 */,
+/* 584 */,
+/* 585 */,
+/* 586 */,
+/* 587 */,
+/* 588 */,
+/* 589 */,
+/* 590 */,
+/* 591 */,
+/* 592 */,
+/* 593 */,
+/* 594 */,
+/* 595 */,
+/* 596 */,
+/* 597 */,
+/* 598 */,
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */,
+/* 603 */,
+/* 604 */,
+/* 605 */,
+/* 606 */,
+/* 607 */,
+/* 608 */,
+/* 609 */,
+/* 610 */,
+/* 611 */,
+/* 612 */,
+/* 613 */,
+/* 614 */,
+/* 615 */,
+/* 616 */,
+/* 617 */,
+/* 618 */,
+/* 619 */,
+/* 620 */,
+/* 621 */,
+/* 622 */,
+/* 623 */,
+/* 624 */,
+/* 625 */,
+/* 626 */,
+/* 627 */,
+/* 628 */,
+/* 629 */,
+/* 630 */,
+/* 631 */,
+/* 632 */,
+/* 633 */,
+/* 634 */,
+/* 635 */,
+/* 636 */,
+/* 637 */,
+/* 638 */,
+/* 639 */,
+/* 640 */,
+/* 641 */,
+/* 642 */,
+/* 643 */,
+/* 644 */,
+/* 645 */,
+/* 646 */,
+/* 647 */,
+/* 648 */,
+/* 649 */,
+/* 650 */,
+/* 651 */,
+/* 652 */,
+/* 653 */,
+/* 654 */,
+/* 655 */,
+/* 656 */,
+/* 657 */,
+/* 658 */,
+/* 659 */,
+/* 660 */,
+/* 661 */,
+/* 662 */,
+/* 663 */,
+/* 664 */,
+/* 665 */,
+/* 666 */,
+/* 667 */,
+/* 668 */,
+/* 669 */,
+/* 670 */,
+/* 671 */,
+/* 672 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_trumbowyg_dist_ui_trumbowyg_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vee_validate__ = __webpack_require__(11);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+// Import this component
+
+var _props$validator$crea;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+// Import editor css
+
+
+
+Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
+/* harmony default export */ __webpack_exports__["default"] = (_props$validator$crea = {
+    props: ['user', 'dev', 'content-type'],
+    validator: null,
+    created: function created() {},
+    mounted: function mounted() {
+        this.getIndex();
+        this.confirmNavAway();
+    },
+
+    components: {
+        trumbowyg: __WEBPACK_IMPORTED_MODULE_0_vue_trumbowyg___default.a
+    },
+    data: function data() {
+        return {
+            index: true,
+            contents: [],
+            newContentItem: new SparkForm({
+                header_photo: '',
+                common_name: '',
+                genus: '',
+                species: '',
+                slug: '',
+                description: '',
+                link: '',
+                contentItemId: null,
+                saveBusy: false,
+                saveError: false,
+                saved: true,
+                serverErrors: null,
+                publishBusy: false,
+                published: null,
+                publicationId: null,
+                errors: null
+            }),
+            trumbowygConfig: {
+                id: 'trumbowyg',
+                autogrow: true,
+                btnsDef: {
+                    // Customizables dropdowns
+                    image: {
+                        dropdown: ['insertImage', 'upload'],
+                        ico: 'insertImage'
+                    }
+                },
+                btns: [['viewHTML'], ['formatting'], ['strong', 'em', 'underline'], ['link'], ['image'], ['justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'], ['unorderedList', 'orderedList'], ['horizontalRule'], ['removeformat']],
+                plugins: {
+                    upload: {
+                        serverPath: '/cms/images',
+                        fileFieldName: 'image',
+                        urlPropertyName: 'large',
+                        headers: {
+                            'X-CSRF-TOKEN': Spark.csrfToken
+                        },
+                        xhrFields: {}
+                    }
+                }
+            }
+        };
+    },
+
+    watch: {
+        'newContentItem.header_photo': function newContentItemHeader_photo(val, oldVal) {
+            this.newContentItem.saved = false;
+        },
+        common_name: function common_name(value) {
+            this.validator.validate('common_name', value);
+        },
+        description: function description(value) {
+            this.validator.validate('description', value);
+        },
+        genus: function genus(value) {
+            this.validator.validate('genus', value);
+        },
+        species: function species(value) {
+            this.validator.validate('species', value);
+        },
+
+
+        /**
+            * Watch the common_name and create slug.
+        */
+        'newContentItem.common_name': function newContentItemCommon_name(val, oldVal) {
+            this.newContentItem.serverErrors = null;
+            if (this.newContentItem.slug == '' || this.newContentItem.slug == this.makeSlug(oldVal)) {
+                this.newContentItem.slug = this.makeSlug(val);
+            }
+            this.newContentItem.saved = false;
+        },
+        'newContentItem.description': function newContentItemDescription(val, oldVal) {
+            this.newContentItem.saved = false;
+        },
+        'newContentItem.genus': function newContentItemGenus(val, oldVal) {
+            this.newContentItem.saved = false;
+        },
+        'newContentItem.apwxiwa': function newContentItemApwxiwa(val, oldVal) {
+            this.newContentItem.saved = false;
+        }
+    },
+    methods: {
+        makeSlug: function makeSlug(inputString) {
+            return inputString.toLowerCase().trim().replace(/[\s\W-]+/g, '-');
+        },
+        getIndex: function getIndex() {
+            var _this = this;
+
+            axios.get('/api/fish-species', {}).then(function (result) {
+                _this.contents = result.data.data;
+                return _this.contents;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        },
+        toggleIndex: function toggleIndex() {
+            if (this.index == true) {
+                return this.index = false;
+            }
+            this.getIndex();
+            return this.index = true;
+        },
+        confirmNavAway: function confirmNavAway() {
+            window.onbeforeunload = function () {
+                return 'You may lose unsaved changes!';
+            };
+        },
+        save: function save() {
+            var _this2 = this;
+
+            this.newContentItem.saveError = false;
+            this.newContentItem.saveBusy = true;
+            this.validator.validateAll({
+                common_name: this.newContentItem.common_name,
+                description: this.newContentItem.description,
+                slug: this.newContentItem.slug
+            }).then(function (result) {
+                axios.post('/api/' + _this2.contentType + '/', {
+                    common_name: _this2.newContentItem.common_name,
+                    genus: _this2.newContentItem.genus,
+                    species: _this2.newContentItem.species,
+                    header_photo: _this2.newContentItem.header_photo,
+                    slug: _this2.newContentItem.slug,
+                    description: _this2.newContentItem.description
+                }).then(function (result) {
+                    _this2.newContentItem.saveBusy = false;
+                    _this2.newContentItem.saved = true;
+                    _this2.newContentItem.contentItemId = result.data.id;
+                    swal({
+                        title: 'SUCCESS!',
+                        text: 'The content was saved.',
+                        type: 'success',
+                        timer: 2000
+                    });
+                    return result;
+                }).catch(function (error) {
+                    _this2.newContentItem.saveError = true;
+                    _this2.newContentItem.saveBusy = false;
+                    var saveErrors = error.response.data.errors;
+                    var thisError = error.response.data.errors[Object.keys(saveErrors)[0]];
+                    swal({
+                        title: 'SAVE FAILED!',
+                        text: thisError,
+                        type: 'error',
+                        timer: 3000
+                    });
+                    return Promise.reject(error);
+                });
+            }).catch(function (error) {
+                _this2.newContentItem.saveBusy = false;
+                _this2.newContentItem.saveError = true;
+                var saveErrors = error.response.data.errors;
+                var thisError = error.response.data.errors[Object.keys(saveErrors)[0]];
+                _this2.errors = Promise.reject(error);
+                swal({
+                    title: 'SAVE FAILED!',
+                    text: thisError,
+                    type: 'error',
+                    timer: 3000
+                });
+                return Promise.reject(error);
+            });
+        },
+        publish: function publish() {
+            var _this3 = this;
+
+            this.newContentItem.publishBusy = true;
+            if (this.newContentItem.contentItemId === null) {
+                this.newContentItem.publishBusy = false;
+                this.save();
+                return;
+            }
+            axios.post('/api/publications', {
+                type: this.contentType,
+                content_id: this.newContentItem.contentItemId
+            }).then(function (result) {
+                _this3.newContentItem.publishBusy = false;
+                _this3.newContentItem.publicationId = result.data.id;
+                return result;
+            }).catch(function (error) {
+                _this3.newContentItem.publishBusy = false;
+                return Promise.reject(error);
+            });
+            this.newContentItem.publishBusy = false;
+            this.newContentItem.published = true;
+        },
+        unpublish: function unpublish() {
+            var _this4 = this;
+
+            var contentItemId = this.newContentItem.contentItemId;
+            axios.delete('/api/publications/' + this.newContentItem.publicationId, {}).then(function (result) {
+                _this4.newContentItem.publicationId = null;
+                _this4.newContentItem.publishBusy = false;
+                _this4.newContentItem.published = null;
+                _this4.checkPublication(contentItemId);
+                return result;
+            }).catch(function (error) {
+                _this4.newContentItem.publishBusy = false;
+                return Promise.reject(error);
+            });
+        },
+        checkPublication: function checkPublication(id) {
+            var _this5 = this;
+
+            axios.get('/api/' + this.contentType + '/publications/' + id, {}).then(function (result) {
+                _this5.newContentItem.publicationId = result.data.id;
+                if (_this5.newContentItem.publicationId === undefined) {
+                    _this5.newContentItem.publicationId = null;
+                    _this5.newContentItem.published = null;
+                } else {
+                    _this5.newContentItem.published = true;
+                    _this5.newContentItem.publishBusy = false;
+                }
+                return result.data;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        },
+        update: function update() {
+            var _this6 = this;
+
+            axios.put('/api/' + this.contentType + '/' + this.newContentItem.contentItemId, {
+                common_name: this.newContentItem.common_name,
+                header_photo: this.newContentItem.header_photo,
+                genus: this.newContentItem.genus,
+                species: this.newContentItem.species,
+                slug: this.newContentItem.slug,
+                description: this.newContentItem.description
+            }).then(function (result) {
+                _this6.newContentItem.saveBusy = false;
+                _this6.newContentItem.saved = true;
+                swal({
+                    title: 'SUCCESS!',
+                    text: 'The content was updated.',
+                    type: 'success',
+                    timer: 2000
+                });
+                return result;
+            }).catch(function (error) {
+                _this6.newContentItem.saveError = true;
+                _this6.newContentItem.saveBusy = false;
+                var saveErrors = error.response.data.errors;
+                var thisError = error.response.data.errors[Object.keys(saveErrors)[0]];
+                swal({
+                    title: 'UPDATE FAILED!',
+                    text: thisError,
+                    type: 'error',
+                    timer: 3000
+                });
+                return Promise.reject(error);
+            });
+        },
+        leeroyjenkins: function leeroyjenkins() {
+            var _this7 = this;
+
+            if (confirm("Permanently destroy this content?")) {
+                axios.delete('/api' + this.contentType + '/' + this.newContentItem.contentItemId, {}).then(function (result) {
+                    _this7.clear();
+                }).catch(function (error) {
+                    return Promise.reject(error);
+                });
+            }
+        },
+
+        /**
+         * Update the showcase photo.
+         */
+        update_header: function update_header(e) {
+            var _this8 = this;
+
+            e.preventDefault();
+
+            if (!this.$refs.header_photo.files.length) {
+                return;
+            }
+
+            var self = this;
+
+            this.newContentItem.startProcessing();
+
+            // We need to gather a fresh FormData instance with the profile photo appended to
+            // the data so we can POST it up to the server. This will allow us to do async
+            // uploads of the profile photos. We will update the user after this action.
+            axios.post(this.urlForUpdate, this.gatherFormData()).then(function (result) {
+                _this8.newContentItem.header_photo = result.data.large;
+                _this8.newContentItem.thumbnail = result.data.thumbnail;
+                _this8.newContentItem.image_id = result.data.image_id;
+                self.newContentItem.finishProcessing();
+            }, function (error) {
+                self.newContentItem.setErrors(error.response.data.errors);
+            });
+        },
+
+        /**
+         * Gather the form data for the photo upload.
+         */
+        gatherFormData: function gatherFormData() {
+            var data = new FormData();
+
+            data.append('header_photo', this.$refs.header_photo.files[0]);
+
+            return data;
+        },
+        createNewContentItem: function createNewContentItem() {
+            if (!this.newContentItem.contentItemId) {
+                if (confirm('Abandon this content and start over?')) {
+                    this.clear();
+                }
+            } else {
+                this.clear();
+            }
+        },
+        clear: function clear() {
+            this.newContentItem = new SparkForm({
+                header_photo: '',
+                common_name: '',
+                genus: '',
+                species: '',
+                slug: '',
+                description: '',
+                link: '',
+                contentItemId: null,
+                saveBusy: false,
+                saveError: false,
+                saved: true,
+                serverErrors: null,
+                publishBusy: false,
+                published: null,
+                publicationId: null,
+                errors: null
+            });
+        },
+        edit: function edit(id) {
+            var _this9 = this;
+
+            this.saveBusy = true;
+            this.index = false;
+            this.newContentItem.contentItemId = id;
+            axios.get('/api/' + this.contentType + '/' + id, {}).then(function (result) {
+                _this9.newContentItem.common_name = result.data.common_name;
+                _this9.newContentItem.header_photo = result.data.header_photo;
+                _this9.newContentItem.genus = result.data.genus;
+                _this9.newContentItem.species = result.data.species;
+                _this9.newContentItem.slug = result.data.slug;
+                _this9.newContentItem.description = result.data.description;
+                _this9.newContentItem.contentItemId = result.data.id;
+                _this9.checkPublication(id);
+                _this9.saveBusy = false;
+                _this9.newContentItem.saved = true;
+
+                return result.data;
+            }).catch(function (error) {
+                return Promise.reject(error);
+            });
+        }
+    }
+
+}, _defineProperty(_props$validator$crea, 'created', function created() {
+    this.validator = new __WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */].Validator({
+        common_name: 'required|min:2',
+        description: 'required|min:40',
+        slug: 'required'
+    });
+}), _defineProperty(_props$validator$crea, 'computed', {
+
+    /**
+     * Get the URL for updating the team photo.
+     */
+    urlForUpdate: function urlForUpdate() {
+        return '/api/photo';
+    },
+
+    /**
+     * Calculate the style attribute for the photo preview.
+     */
+    previewStyle: function previewStyle() {
+        if (this.newContentItem.header_photo == '') {
+            return 'background-image: url(' + this.newContentItem.header_photo + '); display:none; ';
+        }
+        return 'background-image: url(' + this.newContentItem.header_photo + '); ';
+    }
+}), _props$validator$crea);
+
+/***/ }),
+/* 673 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)();
+exports.push([module.i, "\n.help.is-danger {\ncolor : #ef6f6c;\n}\n.btn.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 0 2px red, 0 0 4px red;\n}\n.btn.btn-warning.is-success {\nborder-color: #0A8A4A;\noutline: 0;\nbox-shadow: inset 0 0 2px #0A8A4A, 0 0 4px #0A8A4A;\nbackground-color:transparent;\ncolor: #0A8A4A;\n}\n.btn-warning.disabled:hover, .btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus, .btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\nbackground-color:transparent;\nborder:none;\noutline: 0;\n}\ninput.is-danger, textarea.is-danger {\nborder-color: #ef6f6c;\noutline: 0;\nbox-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(239, 111, 108, 0.6);\n}\n.ql-container.ql-snow {\nborder-bottom-left-radius: 4px;\nborder-bottom-right-radius: 4px;\n}\n.ql-toolbar.ql-snow {\nborder-top-left-radius: 4px;\nborder-top-right-radius: 4px;\n}\n@media (max-width: 991px) {\n.new-content .btn\n    {\n        width:100%;\n        padding:1.34em;\n        margin: 0.66em 0;\n}\n}\n.content-index {\n    position:relative;\n    display:block\n}\n.btn-warning.disabled:hover,\n.btn-warning[disabled]:hover,\nfieldset[disabled] .btn:hover,\n.btn.disabled:focus,\n.btn[disabled]:focus,\nfieldset[disabled] .btn:focus {\n    background-color:transparent !important;\n}\n", ""]);
+
+/***/ }),
+/* 674 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(676)
+
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(672),
+  /* template */
+  __webpack_require__(675),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/jeremy/Code/hff/resources/assets/js/components/cms/FishSpecies.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] FishSpecies.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-232e8b5e", Component.options)
+  } else {
+    hotAPI.reload("data-v-232e8b5e", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 675 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('button', {
+    staticClass: "btn btn-create",
+    attrs: {
+      "id": "create"
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.toggleIndex($event)
+      }
+    }
+  }, [(_vm.index) ? _c('span', [_vm._v("Create")]) : _vm._e(), _vm._v(" "), (!_vm.index) ? _c('span', [_vm._v("Index")]) : _vm._e()]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.index),
+      expression: "! index"
+    }]
+  }, [_c('button', {
+    staticClass: "btn btn-primary",
+    attrs: {
+      "disabled": !_vm.newContentItem.common_name
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.createNewContentItem($event)
+      }
+    }
+  }, [_vm._v("\n                New\n            ")])]), _vm._v(" "), _c('table', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.index),
+      expression: "index"
+    }],
+    staticClass: "table table-striped table-inverse"
+  }, [_vm._m(0), _vm._v(" "), _c('tbody', {
+    staticClass: "resource-list"
+  }, _vm._l((_vm.contents), function(content) {
+    return (_vm.user.id == content.user_id || _vm.dev) ? _c('tr', {
+      staticClass: "table-hover"
+    }, [_c('td', [_c('strong', [_vm._v(_vm._s(content.common_name))])]), _vm._v(" "), _c('td', [_c('button', {
+      staticClass: "btn btn-warning",
+      attrs: {
+        "role": "button"
+      },
+      on: {
+        "click": function($event) {
+          $event.preventDefault();
+          (_vm.edit(content.id))
+        }
+      }
+    }, [_vm._v("Edit")])])]) : _vm._e()
+  }))])]), _vm._v(" "), _c('div', {
+    staticClass: "container"
+  }, [_c('hr'), _vm._v(" "), (!_vm.index) ? _c('form', {
+    staticClass: "form-horizontal new-content",
+    attrs: {
+      "role": "form"
+    }
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.newContentItem.contentItemId),
+      expression: "newContentItem.contentItemId"
+    }],
+    staticClass: "col-md-2 hidden-sm hidden-xs"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newContentItem.saveError
+    },
+    attrs: {
+      "disabled": _vm.newContentItem.saved
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.update($event)
+      }
+    }
+  }, [(_vm.newContentItem.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Updating\n                             ")]) : (_vm.newContentItem.saved) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : (_vm.newContentItem.saved == false) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Update\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Updated\n                            ")])])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.newContentItem.contentItemId),
+      expression: "! newContentItem.contentItemId"
+    }],
+    staticClass: "col-md-2 hidden-sm hidden-xs"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newContentItem.saveError
+    },
+    attrs: {
+      "disabled": _vm.newContentItem.saved || _vm.newContentItem.saveBusy
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.save($event)
+      }
+    }
+  }, [(_vm.newContentItem.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Saving\n                             ")]) : (_vm.newContentItem.contentItemId !== null) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), (_vm.dev) ? _c('div', {
+    staticClass: "col-md-2 hidden-sm hidden-xs"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-warning': true, 'is-success': _vm.newContentItem.published
+    },
+    attrs: {
+      "disabled": _vm.newContentItem.published || !_vm.newContentItem.saved
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.publish($event)
+      }
+    }
+  }, [(_vm.newContentItem.publishBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Publishing\n                             ")]) : (_vm.newContentItem.published !== null) ? _c('span', {
+    staticClass: "is-success"
+  }, [_c('i', {
+    staticClass: "fa fa-btn btn-success fa-newspaper-o"
+  }), _vm._v("Published!\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-newspaper-o"
+  }), _vm._v("Publish\n                            ")])])]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 hidden-sm hidden-xs"
+  }, [(_vm.dev) ? _c('button', {
+    class: {
+      'btn': true, 'btn-warning': true, 'hidden': !_vm.newContentItem.published
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.unpublish($event)
+      }
+    }
+  }, [_vm._v("\n                        Unpublish\n                    ")]) : _vm._e()]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 hidden-sm hidden-xs"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-danger': true, 'hidden': _vm.newContentItem.published
+    },
+    attrs: {
+      "disabled": !_vm.newContentItem.contentItemId
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.leeroyjenkins($event)
+      }
+    }
+  }, [_vm._v("\n                        Delete\n                    ")])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "container"
+  }, [_c('label', {
+    staticClass: "btn btn-primary btn-upload",
+    attrs: {
+      "type": "button",
+      "disabled": _vm.newContentItem.busy
+    }
+  }, [_c('span', [_vm._v("Select Header Photo")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|mimes:jpg,jpeg,png,gif'),
+      expression: "'required|mimes:jpg,jpeg,png,gif'"
+    }],
+    ref: "header_photo",
+    staticClass: "form-control",
+    attrs: {
+      "type": "file",
+      "name": "header_photo"
+    },
+    on: {
+      "change": _vm.update_header
+    }
+  })]), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.newContentItem.header_photo),
+      expression: "! newContentItem.header_photo"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v("This is required")]), _c('br'), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('header_photo')),
+      expression: "errors.has('header_photo')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('header_photo')))]), _vm._v(" "), _c('div', {
+    staticClass: "header-photo-preview",
+    style: (_vm.previewStyle),
+    attrs: {
+      "role": "img"
+    }
+  })])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('p', [_vm._v("Common Name:")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|min:2|max:140'),
+      expression: "'required|min:2|max:140'"
+    }, {
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newContentItem.common_name),
+      expression: "newContentItem.common_name"
+    }],
+    class: {
+      'form-control': true, 'input': true, 'is-danger': _vm.errors.has('common_name')
+    },
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "id": "common_name",
+      "name": "common_name",
+      "type": "text",
+      "placeholder": "common name"
+    },
+    domProps: {
+      "value": (_vm.newContentItem.common_name)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.newContentItem, "common_name", $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('common_name')),
+      expression: "errors.has('common_name')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('common_name')))])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('p', [_vm._v("Genus:")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|min:2|max:140'),
+      expression: "'required|min:2|max:140'"
+    }, {
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newContentItem.genus),
+      expression: "newContentItem.genus"
+    }],
+    class: {
+      'form-control': true, 'input': true, 'is-danger': _vm.errors.has('genus')
+    },
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "id": "genus",
+      "name": "genus",
+      "type": "text",
+      "placeholder": "Genus"
+    },
+    domProps: {
+      "value": (_vm.newContentItem.genus)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.newContentItem, "genus", $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('genus')),
+      expression: "errors.has('genus')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('genus')))])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('p', [_vm._v("species:")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|min:2|max:140'),
+      expression: "'required|min:2|max:140'"
+    }, {
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.newContentItem.species),
+      expression: "newContentItem.species"
+    }],
+    class: {
+      'form-control': true, 'input': true, 'is-danger': _vm.errors.has('species')
+    },
+    staticStyle: {
+      "width": "100%"
+    },
+    attrs: {
+      "id": "species",
+      "name": "species",
+      "type": "text",
+      "placeholder": "species"
+    },
+    domProps: {
+      "value": (_vm.newContentItem.species)
+    },
+    on: {
+      "input": function($event) {
+        if ($event.target.composing) { return; }
+        _vm.$set(_vm.newContentItem, "species", $event.target.value)
+      }
+    }
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('species')),
+      expression: "errors.has('species')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('species')))])])]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('p', [_vm._v("Description:")]), _vm._v(" "), _c('trumbowyg', {
+    directives: [{
+      name: "validate",
+      rawName: "v-validate",
+      value: ('required|min:16'),
+      expression: "'required|min:16'"
+    }],
+    attrs: {
+      "id": "trumbowyg",
+      "config": _vm.trumbowygConfig,
+      "name": "description"
+    },
+    model: {
+      value: (_vm.newContentItem.description),
+      callback: function($$v) {
+        _vm.$set(_vm.newContentItem, "description", $$v)
+      },
+      expression: "newContentItem.description"
+    }
+  }), _vm._v(" "), _c('span', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.errors.has('description')),
+      expression: "errors.has('description')"
+    }],
+    staticClass: "help is-danger"
+  }, [_vm._v(_vm._s(_vm.errors.first('description')))])], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (_vm.newContentItem.contentItemId),
+      expression: "newContentItem.contentItemId"
+    }],
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newContentItem.saveError
+    },
+    attrs: {
+      "disabled": _vm.newContentItem.saved
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.update($event)
+      }
+    }
+  }, [(_vm.newContentItem.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Updating\n                             ")]) : (_vm.newContentItem.saved) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : (_vm.newContentItem.saved == false) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Update\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Updated\n                            ")])])]), _vm._v(" "), _c('div', {
+    directives: [{
+      name: "show",
+      rawName: "v-show",
+      value: (!_vm.newContentItem.contentItemId),
+      expression: "! newContentItem.contentItemId"
+    }],
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-primary': true, 'is-danger': _vm.newContentItem.saveError
+    },
+    attrs: {
+      "disabled": _vm.newContentItem.saved || _vm.newContentItem.saveBusy
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.save($event)
+      }
+    }
+  }, [(_vm.newContentItem.saveBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Saving\n                             ")]) : (_vm.newContentItem.contentItemId !== null) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Saved!\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-check-circle"
+  }), _vm._v("Save\n                            ")])])]), _vm._v(" "), (_vm.dev) ? _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-warning': true, 'is-success': _vm.newContentItem.published
+    },
+    attrs: {
+      "disabled": _vm.newContentItem.published || !_vm.newContentItem.saved
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.publish($event)
+      }
+    }
+  }, [(_vm.newContentItem.publishBusy) ? _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-spinner fa-spin"
+  }), _vm._v("Publishing\n                             ")]) : (_vm.newContentItem.published !== null) ? _c('span', {
+    staticClass: "is-success"
+  }, [_c('i', {
+    staticClass: "fa fa-btn btn-success fa-newspaper-o"
+  }), _vm._v("Published!\n                             ")]) : _c('span', [_c('i', {
+    staticClass: "fa fa-btn fa-newspaper-o"
+  }), _vm._v("Publish\n                            ")])])]) : _vm._e(), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [(_vm.dev) ? _c('button', {
+    class: {
+      'btn': true, 'btn-warning': true, 'hidden': !_vm.newContentItem.published
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.unpublish($event)
+      }
+    }
+  }, [_vm._v("\n                        Unpublish\n                    ")]) : _vm._e()]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-2 col-sm-12"
+  }, [_c('button', {
+    class: {
+      'btn': true, 'btn-danger': true, 'hidden': _vm.newContentItem.published
+    },
+    attrs: {
+      "disabled": !_vm.newContentItem.contentItemId
+    },
+    on: {
+      "click": function($event) {
+        $event.preventDefault();
+        return _vm.leeroyjenkins($event)
+      }
+    }
+  }, [_vm._v("\n                        Delete\n                    ")])])])]) : _vm._e()])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('thead', {
+    staticClass: "thead-inverse"
+  }, [_c('tr', [_c('th', [_vm._v("Title")]), _vm._v(" "), _c('th', [_vm._v("Edit")])])])
+}]}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-232e8b5e", module.exports)
+  }
+}
+
+/***/ }),
+/* 676 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(673);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("490d3e35", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-232e8b5e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FishSpecies.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-232e8b5e\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FishSpecies.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Cviebrock\EloquentTaggable\Taggable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -30,7 +31,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class FishSpecies extends Model
 {
-    protected $fillable = ['common_name', 'genus', 'species', 'description'];
+    use Taggable;
+    protected $fillable = ['common_name', 'genus', 'species', 'description', 'header_photo', 'slug'];
+
 
     public function habitat()
     {

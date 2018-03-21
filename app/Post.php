@@ -51,7 +51,7 @@ class Post extends Model
 
     public $asYouType = true;
     protected $fillable = [ 'title', 'slug', 'user_id', 'body', 'author', 'header_photo', 'image_id'];
-    protected $publication = null;
+    protected $publication;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
