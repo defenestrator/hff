@@ -85,7 +85,10 @@ class Keywords
         'expedition',
         'charter',
         'all inclusive',
-        'package'
+        'package',
+        'trip',
+        'travel',
+        'booking agent'
     ];
     protected $destinations;
     protected $regions;
