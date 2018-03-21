@@ -1,6 +1,6 @@
 <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown">CMS<span class="caret"></span></a>
-    <ul class="scrollable-menu dropdown-menu" role="menu">
+    <ul class="scrollable-menu dropdown-menu" role="menu" style="max-height:500px;">
         <li role="presentation" class="dropdown-header">Content</li>
         <li>
             <a href="/cms/posts">Blog</a>
@@ -19,6 +19,9 @@
             <li role="presentation" class="dropdown-header">Data</li>
             <li>
                 <a href="/cms/destinations">Destinations</a>
+            </li>
+            <li>
+                <a href="/cms/fish-species">Fish Species</a>
             </li>
             <li>
                 <a href="/cms/regions">Regions</a>

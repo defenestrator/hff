@@ -6,14 +6,7 @@
 @parent
 @stop
 @section('scripts')
-    <script>
-        (function(w,d,s,g,js,fs){
-            g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
-            js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
-            js.src='https://apis.google.com/js/platform.js';
-            fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
-        }(window,document,'script'));
-    </script>
+
 @stop
 @section('page_styles')
     <style>
@@ -75,28 +68,20 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-sm-4 dashboard-links">
+                        <div class="col-sm-3 dashboard-links">
+                            <a class="btn btn-default btn-dashboard" href="/cms/fish-species">Fish Species</a>
+                        </div>
+                        <div class="col-sm-3 dashboard-links">
                             <a class="btn btn-default btn-dashboard" href="/cms/destinations">Destinations</a>
                         </div>
-                        <div class="col-sm-4 dashboard-links">
+                        <div class="col-sm-3 dashboard-links">
                             <a class="btn btn-default btn-dashboard" href="/cms/regions">Regions</a>
                         </div>
-                        <div class="col-sm-4 dashboard-links">
+                        <div class="col-sm-3 dashboard-links">
                             <a class="btn btn-default btn-dashboard" href="/spark/kiosk">Site Admin</a>
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </div>
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Primitive Analytics Dashboard</div>
-                <div class="panel-body">
-                    <h4>click the orange thingy and login with your @hoboflyfishing.com account</h4>
-                    <div id="embed-api-auth-container"></div>
-                    <div id="chart-container"></div>
-                    <div id="view-selector-container"></div>
                 </div>
             </div>
         </div>

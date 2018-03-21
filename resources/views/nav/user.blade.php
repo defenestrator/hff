@@ -88,10 +88,10 @@
                             </li>
                             <li class="divider"></li>
 
-                            @if (Spark::hasSupportAddress())
+                            {{--@if (Spark::hasSupportAddress())--}}
                                 <!-- Support -->
-                                @include('spark::nav.support')
-                            @endif
+                                {{--@include('spark::nav.support')--}}
+                            {{--@endif--}}
 
                             <!-- Logout -->
                             <li>
