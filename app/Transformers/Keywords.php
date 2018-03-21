@@ -69,10 +69,11 @@ class Keywords
         $base = array_merge($d, $h, $fs, $r);
         $words = [];
         foreach ($base as $x) {
-            array_push($words, $x . ' fishing ');
-            array_push($words, $x . ' fly fishing ');
+            array_push($words, trim($x . ' fishing') . " ");
+            array_push($words, trim($x . ' fly fishing') . " ");
         }
-        return $this->services($words);
+
+        return  $this->services(preg_replace("/('|’)/", "", $words));
     }
 
     protected $services = [
