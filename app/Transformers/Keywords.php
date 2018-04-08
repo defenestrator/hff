@@ -88,7 +88,7 @@ class Keywords
         'package',
         'trip',
         'travel',
-        'booking agent'
+        'on a budget'
     ];
     protected $destinations;
     protected $regions;
