@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ImagesController extends Controller
 {
-    public $options = ['visibility' => 'public','Cache-Control' => 'max-age=315360000, no-transform, public'];
+    public $options = ['visibility' => 'public', 'Cache-Control' => 'max-age=315360000'];
 
     public function wysiwyg(Request $request)
     {
