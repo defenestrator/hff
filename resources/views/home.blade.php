@@ -31,11 +31,11 @@
 
 @section('content')
 
-    <div class="col-md-6 col-md-offset-3">
-        @include('sales-inquiry')
-    </div>
+    {{--<div class="col-md-6 col-md-offset-3">--}}
+        {{--@include('sales-inquiry')--}}
+    {{--</div>--}}
 
-    @foreach(array_chunk(array_slice($showcases->all(), 0, 6), 2) as $showcaseRow)
+    @foreach(array_chunk(array_slice($showcases->all(), 0, 30), 2) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)
                 <div style="margin:20px 0; padding-left:30px; padding-right:30px;" class="col-md-6 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 info">
@@ -60,12 +60,17 @@
     @endforeach
     <div class="row">
         <div style="margin:9px 0; padding-bottom:24px; border-bottom:2px solid #c5c7ca;" class="text-center col-md-12">
+            <p>
+                <a style="width:100%;" href="/showcases">
+                    <button class="btn btn-danger" style="width:100%; font-size:24px;">
+                        Get More Details
+                    </button>
+                </a>
+            </p>
+            <hr>
             <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-                <newsletter-signup />
-                <br>
+                <p style="font-weight: 600;"><newsletter-signup /></p>
             </div>
-            <a style="width:100%;" href="/showcases"><button class="btn btn-danger" style="width:100%; font-size:24px;">See All Destinations</button></a>
-            <br>
         </div>
         <div class="col-md-12">
             <world-map :infoWindowTitle="''" ></world-map>
