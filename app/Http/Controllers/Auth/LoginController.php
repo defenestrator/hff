@@ -42,6 +42,6 @@ class LoginController extends Controller
      */
     public function login()
     {
-        return 'login unavailable until next board meeting';
+        return 'login disabled';
     }
 }
