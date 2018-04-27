@@ -30,11 +30,16 @@
 @stop
 
 @section('content')
-
-    {{--<div class="col-md-6 col-md-offset-3">--}}
-        {{--@include('sales-inquiry')--}}
-    {{--</div>--}}
-
+    <div class="row">
+        <div class="col-md-12">
+            <world-map :infoWindowTitle="''" ></world-map>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            @include('sales-inquiry')
+        </div>
+    </div>
     @foreach(array_chunk(array_slice($showcases->all(), 0, 30), 2) as $showcaseRow)
         <div class="row">
             @foreach($showcaseRow as $showcase)
@@ -58,6 +63,7 @@
             @endforeach
         </div>
     @endforeach
+
     <div class="row">
         <div style="margin:9px 0; padding-bottom:24px; border-bottom:2px solid #c5c7ca;" class="text-center col-md-12">
             <p>
@@ -68,15 +74,13 @@
                 </a>
             </p>
             <hr>
-            <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
-                <p style="font-weight: 600;"><newsletter-signup /></p>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <world-map :infoWindowTitle="''" ></world-map>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+            <newsletter-signup />
+        </div>
+    </div>
     <div class="row">
         <h2 class="text-center" style="font-size:40px; font-weight:bold;"><a href="/publications/posts">HOBO BLOG</a></h2>
         @foreach($posts->take(3) as $post)
