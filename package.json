@@ -27,6 +27,7 @@
     "vue-trumbowyg": "^3.3.0",
     "vue-upload-component": "^2.8.5",
     "vue2-google-maps": "^0.8.12",
-    "cross-env": "^5.1.4"
+    "cross-env": "^5.1.4",
+    "ajv": "^6.0.0"
   }
 }
