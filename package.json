@@ -7,27 +7,23 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
-    "ajv": "^6.0.0",
     "axios": "^0.15.2",
     "bootstrap": "^3.0.0",
-    "cross-env": "^5.1.4",
+    "cross-env": "^3.2.3",
     "fs": "0.0.1-security",
-    "fs-events": "~1.2.3",
     "jquery": "^2.1.4",
     "jquery-circliful": "^0.1.1",
     "js-cookie": "^2.2.0",
-    "laravel-mix": "2.0.*",
-    "lodash": "^4.17.10",
-    "moment": "^2.22.1",
-    "popper.js": "^1.12",
+    "laravel-mix": "0.*",
+    "moment": "^2.21.0",
     "promise": "^7.1.1",
-    "underscore": "^1.9.0",
+    "underscore": "^1.8.3",
     "urijs": "^1.19.1",
-    "vee-validate": "^2.0.8",
-    "vue": "^2.5.16",
-    "vue-template-compiler": "^2.5.16",
-    "vue-trumbowyg": "^3.3.0",
-    "vue-upload-component": "^2.8.5",
-    "vue2-google-maps": "^0.8.12"
+    "vee-validate": "^2.0.5",
+    "vue": "^2.5.14",
+    "vue-template-compiler": "^2.5.14",
+    "vue-trumbowyg": "^3.1.1",
+    "vue-upload-component": "^2.8.3",
+    "vue2-google-maps": "^0.8.11"
   }
 }
