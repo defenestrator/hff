@@ -12,7 +12,6 @@
     "bootstrap": "^3.0.0",
     "cross-env": "^5.1.4",
     "fs": "0.0.1-security",
-    "fs-events": "~1.2.3",
     "jquery": "^2.1.4",
     "jquery-circliful": "^0.1.1",
     "js-cookie": "^2.2.0",
