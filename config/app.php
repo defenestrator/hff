@@ -131,6 +131,8 @@ return [
 
     'gmaps_key' => env('GOOGLE_MAPS_KEY'),
 
+    'backup_hook' => env('BACKUP_HOOK', 'https://elbow.farm/owner/is/dumb'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
