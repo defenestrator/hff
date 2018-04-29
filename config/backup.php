@@ -92,7 +92,7 @@ return [
         'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
 
         'mail' => [
-            'to' => 'jeremy@hoboflyfishing.com.com',
+            'to' => 'jeremy@hoboflyfishing.com',
         ],
 
         'slack' => [
