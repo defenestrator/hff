@@ -63,6 +63,16 @@ return [
             'endpoint' => env('AWS_URL'),
             'bucket' => env('AWS_BUCKET'),
             'fullpath' => env('AWS_FULLPATH')
+        ],
+
+        'backups' => [
+            'driver' => 's3',
+            'key' => env('AWS_KEY', 'test'),
+            'secret' => env('AWS_SECRET', 'secret'),
+            'region' => env('AWS_REGION'),
+            'endpoint' => env('AWS_URL'),
+            'bucket' => 'hobo-backups',
+            'fullpath' => 'https://hobo-backups.s3-us-west-2.amazonaws.com'
         ]
     ],
 

@@ -62,7 +62,7 @@ return [
              * The disk names on which the backups will be stored.
              */
             'disks' => [
-                's3',
+                'backups',
             ],
         ],
     ],
@@ -113,7 +113,7 @@ return [
     'monitorBackups' => [
         [
             'name' => config('app.name'),
-            'disks' => ['s3'],
+            'disks' => ['backups'],
             'newestBackupsShouldNotBeOlderThanDays' => 1,
             'storageUsedMayNotBeHigherThanMegabytes' => 5000,
         ],
