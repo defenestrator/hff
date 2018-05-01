@@ -59,9 +59,8 @@ class RegisterController extends Controller
 
         event(new UserRegistered($user));
 
-        return 'no';
-//        response()->json([
-//            'redirect' => $this->redirectPath()
-//        ]);
+        response()->json([
+            'redirect' => $this->redirectPath()
+        ]);
     }
 }
