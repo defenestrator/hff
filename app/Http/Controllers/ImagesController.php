@@ -14,7 +14,7 @@ class ImagesController extends Controller
     public function wysiwyg(Request $request)
     {
         $request->validate([
-            'image' => 'required|image'
+            'image' => 'required|image|mimes:jpeg,jpg,png,bmp,gif,svg'
         ]);
 
         $large = $this->large($request->image);
