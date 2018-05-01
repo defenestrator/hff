@@ -86,6 +86,7 @@ Route::middleware(['auth:web', 'dev', 'doNotCacheResponse'])->group(function () 
     });
 });
 
-
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
 // LOADER.IO TEST AUTHENTICATION
 Route::view('/loaderio-f9078dd3e7e9c306ca90d525395dc64b', 'loader-io');
