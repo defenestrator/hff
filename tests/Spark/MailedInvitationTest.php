@@ -11,6 +11,7 @@ class MailedInvitationTest extends TestCase
 {
     use CreatesTeams, DatabaseMigrations, InteractsWithPaymentProviders;
 
+
     public function test_invitations_can_be_created()
     {
         $team = $this->createTeam();
@@ -20,7 +21,7 @@ class MailedInvitationTest extends TestCase
                     'email' => 'test@hoboflyfishing.com',
                 ]);
 
-        $this->assertEquals(1, count($team->invitations()->count()));
+        $this->assertEquals(1, $team->invitations->count());
     }
 
 

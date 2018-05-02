@@ -8,7 +8,8 @@
     ],
     "license": "Copyright 2017 Hobo Fly Fishing, LLC. All Rights Reserved, No License for Re-Use is granted.",
     "type": "project",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.0.0",
         "aws/aws-php-sns-message-validator": "^1.3",

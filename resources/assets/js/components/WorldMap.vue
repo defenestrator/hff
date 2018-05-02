@@ -2,9 +2,10 @@
     <gmap-map
             :center="center"
             :zoom="2"
+            :mapTypeId="satellite"
             class="world-map-component"
             ref="vueMap">
-        <gmap-info-window  :zIndex="500" :maxWidth="280" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
+        <gmap-info-window  :zIndex="500" :maxWidth="280" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false" :map-type="satellite">
             <h5>{{infoWindowTitle}}</h5>
             <div class="map-info-window" style="max-width:280px;">
                 <img style="max-width:140px; float:left; padding-right:1em;" :src="infoWindowImage" />
@@ -47,7 +48,7 @@
             return {
                 center: {lat:19.3907336, lng:-99.1436127},
                 destinations: [],
-                mapTypeId: "satellite",
+                mapTypeId: 2,
                 markers:[],
                 infoContent: '',
                 infoWindowContent: '',

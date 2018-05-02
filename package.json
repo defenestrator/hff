@@ -14,16 +14,22 @@
     "jquery": "^3.0.0",
     "jquery-circliful": "^0.1.1",
     "js-cookie": "^2.2.0",
-    "laravel-mix": "0.*",
+    "laravel-mix": "^1.0",
     "moment": "^2.21.0",
     "promise": "^7.1.1",
     "underscore": "^1.8.3",
     "urijs": "^1.19.1",
     "vee-validate": "^2.0.5",
     "vue": "^2.5.14",
+    "ajv": "^6.0.0",
     "vue-template-compiler": "^2.5.14",
     "vue-trumbowyg": "^3.1.1",
     "vue-upload-component": "^2.8.3",
-    "vue2-google-maps": "^0.8.11"
+    "vue2-google-maps": "^0.8.11",
+    "less": "^3.0.2",
+    "less-loader": "^4.1.0"
+  },
+  "devDependencies": {
+
   }
 }
