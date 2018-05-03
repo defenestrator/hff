@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 229);
@@ -63237,7 +63237,7 @@ Vue.component('update-profile-details', {
 /* 383 */
 /***/ (function(module, exports) {
 
-module.exports = "/fonts/vendor/trumbowyg/dist/ui/icons.svg?a61f908579a2fc1a4ead0508c599dd2f";
+module.exports = "/images/vendor/trumbowyg/dist/ui/icons.svg?46661d6d65debc63884004fed6e37e5c";
 
 /***/ }),
 /* 384 */

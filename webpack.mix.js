@@ -18,6 +18,7 @@ mix.webpackConfig({
                 './node_modules/trumbowyg/dist/plugins/upload/trumbowyg.upload.min.js'
             ], 'public/js/script.js')
             .less('resources/assets/less/styles.less', 'public/css')
+            .version()
     } else {
         mix.combine([
                 'public/js/app.js',
