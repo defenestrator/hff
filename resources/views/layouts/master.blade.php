@@ -15,6 +15,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://hobo-assets.s3-us-west-2.amazonaws.com">
     <link rel="icon" href="/favicon-100.png" sizes="100x100">
 
         <title>@yield('title', config('app.name'))</title>
