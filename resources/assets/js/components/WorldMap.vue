@@ -30,6 +30,7 @@
                         :title="d.name"
                         :infoWindow="d.description"
                         :enabled="true"
+                        :icon="icon"
             ></gmap-marker>
         </google-cluster>
     </gmap-map>
@@ -53,6 +54,7 @@
                 center: {lat:19.3907336, lng:-99.1436127},
                 destinations: [],
                 markers:[],
+                icon: '/images/marker.png',
                 infoContent: '',
                 infoWindowContent: '',
                 infoWindowTitle: '',
@@ -66,8 +68,8 @@
                 //optional: offset infowindow so it visually sits nicely on top of our marker
                 infoOptions: {
                     pixelOffset: {
-                        width: 0,
-                        height: -35
+                        width: -0,
+                        height: -15
                     }
                 }
             }

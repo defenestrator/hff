@@ -74448,6 +74448,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -74466,6 +74467,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
             center: { lat: 19.3907336, lng: -99.1436127 },
             destinations: [],
             markers: [],
+            icon: '/images/marker.png',
             infoContent: '',
             infoWindowContent: '',
             infoWindowTitle: '',
@@ -74479,8 +74481,8 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
             //optional: offset infowindow so it visually sits nicely on top of our marker
             infoOptions: {
                 pixelOffset: {
-                    width: 0,
-                    height: -35
+                    width: -0,
+                    height: -15
                 }
             }
         };
@@ -81896,7 +81898,8 @@ var render = function() {
               draggable: false,
               title: d.name,
               infoWindow: d.description,
-              enabled: true
+              enabled: true,
+              icon: _vm.icon
             },
             on: {
               click: function($event) {

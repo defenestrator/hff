@@ -26,7 +26,7 @@
     </div>
     <div class="text-center">
         <h3 style="margin:10px; font-weight: 600;">Once in a lifetime trip, or a lifetime of trips?</h3>
-        <h3 style="margin:10px; font-weight: 600;">We have the answer.</h3>
+        <h3 style="margin:10px; font-weight: 600;">Hobo Fly Fishing has the answer.</h3>
     </div>
 @stop
 
