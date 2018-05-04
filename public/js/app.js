@@ -74449,8 +74449,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/////////////////////////////////////////
-// New in 0.4.0
 
 
 

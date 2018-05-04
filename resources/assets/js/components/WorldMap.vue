@@ -36,8 +36,6 @@
 </template>
 
 <script>
-    /////////////////////////////////////////
-    // New in 0.4.0
     import * as VueGoogleMaps from 'vue2-google-maps';
     import Vue from 'vue';
 
