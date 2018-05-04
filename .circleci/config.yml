@@ -10,10 +10,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Download NodeJS v6
-          command: curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+          name: Download NodeJS v8
+          command: curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
       - run:
-          name: Install Nodejs 6
+          name: Install Nodejs 8
           command: sudo apt-get install -y nodejs
       - run: sudo apt install -y libsqlite3-dev
       - run: sudo apt-get install -y libmagickwand-dev
@@ -66,4 +66,4 @@ jobs:
 notify:
   webhooks:
     # A list of hook hashes, containing the URL field
-    - url: https://hoboflyfishing.com/api/deploy-HfDamFwqhXEUUsHg6t4L?api_token=$API_KEY
+    - url: https://hoboflyfishing.com/api/deploy-HfDamFwqhXEUUsHg6t4L?api_token=1Db8alaPXxEJwZnLrLxap9t7CfNivsiv1QAwxCUKav1rzgpkDuaXUYenYvVB

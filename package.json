@@ -7,8 +7,9 @@
     "watch-poll": "npm run watch -- --watch-poll",
     "prod": "npm run production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
-},
+  },
   "dependencies": {
+    "ajv": "^6.0.0",
     "axios": "^0.15.2",
     "bootstrap": "^3.0.0",
     "cross-env": "^5.1.4",
@@ -17,21 +18,18 @@
     "jquery-circliful": "^0.1.1",
     "js-cookie": "^2.2.0",
     "laravel-mix": "^2.0",
+    "less": "^3.0.2",
+    "less-loader": "^4.1.0",
     "moment": "^2.21.0",
     "promise": "^7.1.1",
     "underscore": "^1.8.3",
     "urijs": "^1.19.1",
-    "vee-validate": "^2.0.5",
+    "vee-validate": "^2.0.9",
     "vue": "^2.5.14",
-    "ajv": "^6.0.0",
     "vue-template-compiler": "^2.5.14",
-    "vue-trumbowyg": "^3.1.1",
+    "vue-trumbowyg": "^3.3.0",
     "vue-upload-component": "^2.8.3",
-    "vue2-google-maps": "^0.8.11",
-    "less": "^3.0.2",
-    "less-loader": "^4.1.0"
+    "vue2-google-maps": "^0.8.11"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }
