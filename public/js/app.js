@@ -74098,7 +74098,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vee_validate__["a" /* default */]);
@@ -74193,6 +74192,22 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "input-group" }, [
+      _c("span", { staticClass: "input-group-btn" }, [
+        _c(
+          "a",
+          {
+            attrs: { title: "Give us a call, just click!" },
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.telephone($event)
+              }
+            }
+          },
+          [_vm._m(0)]
+        )
+      ]),
+      _vm._v(" "),
       _c("input", {
         directives: [
           {
@@ -74212,7 +74227,7 @@ var render = function() {
         class: { "form-control": true, "is-danger": _vm.errors.has("email") },
         staticStyle: { "font-size": "18px", border: "1px solid #535965" },
         attrs: {
-          placeholder: "your email address",
+          placeholder: "<- call or enter your email ->",
           name: "email",
           id: "newsletter-email",
           type: "email",
@@ -74236,7 +74251,7 @@ var render = function() {
           {
             class: {
               btn: true,
-              "btn-warning": true,
+              "btn-danger": true,
               "is-danger": _vm.errors.has("email")
             },
             staticStyle: { border: "1px solid #535965", "border-left": "none" },
@@ -74279,7 +74294,7 @@ var render = function() {
       [_vm._v(_vm._s(_vm.errors.first("email")))]
     ),
     _vm._v(" "),
-    _vm._m(0),
+    _vm._m(1),
     _vm._v(" "),
     _c("hr")
   ])
@@ -74290,10 +74305,28 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
+      "button",
+      {
+        staticClass: "btn btn-danger",
+        staticStyle: {
+          border: "1px solid #535965",
+          "border-right": "none",
+          "border-bottom-right-radius": "0",
+          "border-top-right-radius": "0"
+        },
+        attrs: { role: "link" }
+      },
+      [_c("i", { staticClass: "fa fa-phone", staticStyle: { height: "22px" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
       "div",
       { staticClass: "text-center", staticStyle: { "font-weight": "600" } },
       [
-        _vm._v("or call "),
         _c("a", { attrs: { href: "tel:12088599133" } }, [
           _vm._v("1-208-859-9133")
         ])
@@ -74411,6 +74444,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_google_maps___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
+//
 //
 //
 //

@@ -31,6 +31,7 @@
                         :infoWindow="d.description"
                         :enabled="true"
                         :icon="icon"
+
             ></gmap-marker>
         </google-cluster>
     </gmap-map>

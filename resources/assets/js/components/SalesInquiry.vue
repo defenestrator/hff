@@ -2,16 +2,15 @@
     <div>
             <h3 class="text-center" style="font-weight:600;">Contact Hobo Fly Fishing for details.</h3>
             <div class="input-group">
-                <!--<span class="input-group-btn">-->
-                        <!--<a @click.prevent="telephone" title="Give us a call, just click!">-->
-                            <!--<button class="btn btn-warning" role="link" style="border:1px solid #535965; border-right:none; border-bottom-right-radius: 0; border-top-right-radius: 0;">-->
-                                <!--<i data-name="phone" data-size="20" data-loop="true" data-c="#fff"-->
-                                   <!--data-hc="#F0F8FF" class="livicon icon4 icon3" style="width: 20px; height: 20px;"></i>-->
-                            <!--</button>-->
-                        <!--</a>-->
-                <!--</span>-->
+                <span class="input-group-btn">
+                        <a @click.prevent="telephone" title="Give us a call, just click!">
+                            <button class="btn btn-danger" role="link" style="border:1px solid #535965; border-right:none; border-bottom-right-radius: 0; border-top-right-radius: 0;">
+                                <i style="height:22px;" class="fa fa-phone"></i>
+                            </button>
+                        </a>
+                </span>
                 <input style="font-size:18px; border:1px solid #535965;"
-                       @click="touched" class="form-control" placeholder="your email address"
+                       @click="touched" class="form-control" placeholder="<- call or enter your email ->"
                        v-validate="'required|email'"
                        v-model="email" name="email" id="newsletter-email"
                        type="email"
@@ -19,7 +18,7 @@
                        aria-describedby="basic-addon2">
                     <span class="input-group-btn">
                         <button style="border:1px solid #535965; border-left:none;"
-                                :class="{'btn': true, 'btn-warning': true, 'is-danger': errors.has('email') }"
+                                :class="{'btn': true, 'btn-danger': true, 'is-danger': errors.has('email') }"
                                 @click.prevent="signup"
                                 type="submit"
                                 role="button"
@@ -30,7 +29,7 @@
 
             </div>
         <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
-            <div style="font-weight:600;" class="text-center">or call <a href="tel:12088599133">1-208-859-9133</a>
+            <div style="font-weight:600;" class="text-center"><a href="tel:12088599133">1-208-859-9133</a>
             </div>
         <hr>
     </div>
