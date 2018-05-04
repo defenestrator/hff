@@ -227,6 +227,7 @@ export default {
             trumbowygConfig: {
                 id: 'trumbowyg',
                 autogrow: true,
+                svgPath: '/images/icons.svg',
                 btnsDef: {
                     // Customizables dropdowns
                     image: {

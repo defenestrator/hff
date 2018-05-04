@@ -160,7 +160,8 @@ export default {
             }),
             trumbowygConfig: {
                 id: 'trumbowyg',
-                autogrowOnEnter: true,
+                autogrow: true,
+                svgPath: '/images/icons.svg',
                 btnsDef: {
                     // Customizables dropdowns
                     image: {
