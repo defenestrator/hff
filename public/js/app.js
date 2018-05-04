@@ -74461,7 +74461,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
         return {
             center: { lat: 19.3907336, lng: -99.1436127 },
             destinations: [],
-            mapTypeId: 2,
+            mapTypeId: "satellite",
             markers: [],
             infoContent: '',
             infoWindowContent: '',
@@ -81835,7 +81835,7 @@ var render = function() {
     {
       ref: "vueMap",
       staticClass: "world-map-component",
-      attrs: { center: _vm.center, zoom: 2, mapTypeId: _vm.satellite }
+      attrs: { center: _vm.center, zoom: 2, "map-type-id": "satellite" }
     },
     [
       _c(
@@ -81846,8 +81846,7 @@ var render = function() {
             maxWidth: 280,
             options: _vm.infoOptions,
             position: _vm.infoWindowPos,
-            opened: _vm.infoWinOpen,
-            "map-type": _vm.satellite
+            opened: _vm.infoWinOpen
           },
           on: {
             closeclick: function($event) {
