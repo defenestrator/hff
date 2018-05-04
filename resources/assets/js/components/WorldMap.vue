@@ -3,9 +3,15 @@
             :center="center"
             :zoom="2"
             class="world-map-component"
-            map-type-id="satellite"
+            map-type-id="hybrid"
             ref="vueMap">
-        <gmap-info-window  :zIndex="500" :maxWidth="280" :options="infoOptions" :position="infoWindowPos" :opened="infoWinOpen" @closeclick="infoWinOpen=false">
+        <gmap-info-window
+                :zIndex="500"
+                :maxWidth="280"
+                :options="infoOptions"
+                :position="infoWindowPos"
+                :opened="infoWinOpen"
+                @closeclick="infoWinOpen=false">
             <h5>{{infoWindowTitle}}</h5>
             <div class="map-info-window" style="max-width:280px;">
                 <img style="max-width:140px; float:left; padding-right:1em;" :src="infoWindowImage" />
@@ -48,7 +54,6 @@
             return {
                 center: {lat:19.3907336, lng:-99.1436127},
                 destinations: [],
-                mapTypeId: "satellite",
                 markers:[],
                 infoContent: '',
                 infoWindowContent: '',

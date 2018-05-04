@@ -74442,6 +74442,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /////////////////////////////////////////
 // New in 0.4.0
@@ -74461,7 +74467,6 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
         return {
             center: { lat: 19.3907336, lng: -99.1436127 },
             destinations: [],
-            mapTypeId: "satellite",
             markers: [],
             infoContent: '',
             infoWindowContent: '',
@@ -81835,7 +81840,7 @@ var render = function() {
     {
       ref: "vueMap",
       staticClass: "world-map-component",
-      attrs: { center: _vm.center, zoom: 2, "map-type-id": "satellite" }
+      attrs: { center: _vm.center, zoom: 2, "map-type-id": "hybrid" }
     },
     [
       _c(
