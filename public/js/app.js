@@ -83440,19 +83440,14 @@ var render = function() {
                       {
                         directives: [
                           {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: "required|unique:fish_species",
-                            expression: "'required|unique:fish_species'"
-                          },
-                          {
                             name: "show",
                             rawName: "v-show",
                             value: _vm.errors.has("slug"),
                             expression: "errors.has('slug')"
                           }
                         ],
-                        staticClass: "help is-danger"
+                        staticClass: "help is-danger",
+                        attrs: { name: "slug" }
                       },
                       [
                         _vm._v(

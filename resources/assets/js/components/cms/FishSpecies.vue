@@ -94,7 +94,7 @@
                 </div>
                 <div class="col-md-12">
                         <p>Slug: <span class="help is-success">{{ newContentItem.slug }}</span><br>
-                        <span v-validate="'required|unique:fish_species'" v-show="errors.has('slug')" class="help is-danger">
+                        <span name="slug" v-show="errors.has('slug')" class="help is-danger">
                             {{ newContentItem.slug }}
                         </span>
                     </p>
