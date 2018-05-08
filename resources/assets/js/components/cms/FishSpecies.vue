@@ -29,7 +29,7 @@
         <hr>
         <form class="form-horizontal new-content" v-if="! index" role="form">
             <div class="form-group">
-                <div v-show="newContentItem.contentItemId" class="col-md-2 hidden-sm hidden-xs">
+                <div v-show="newContentItem.id" class="col-md-2 hidden-sm hidden-xs">
                     <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newContentItem.saveError }" @click.prevent="update" :disabled="newContentItem.saved">
                             <span v-if="newContentItem.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
@@ -37,7 +37,7 @@
                             <span v-else-if="newContentItem.saved">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
-                        <span v-else-if="newContentItem.saved == false">
+                        <span v-else-if="newContentItem.saved === false">
                                 <i class="fa fa-btn fa-check-circle"></i>Update
                              </span>
                             <span v-else>
@@ -46,12 +46,12 @@
 
                     </button>
                 </div>
-                <div v-show="! newContentItem.contentItemId" class="col-md-2 hidden-sm hidden-xs">
+                <div v-show="! newContentItem.id" class="col-md-2 hidden-sm hidden-xs">
                     <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newContentItem.saveError }" @click.prevent="save" :disabled="newContentItem.saved || newContentItem.saveBusy">
                             <span v-if="newContentItem.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                              </span>
-                            <span v-else-if="newContentItem.contentItemId !== null">
+                            <span v-else-if="newContentItem.id !== null">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
                             <span v-else>
@@ -78,7 +78,7 @@
                     </button>
                 </div>
                 <div class="col-md-2 hidden-sm hidden-xs">
-                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newContentItem.published }" :disabled="! newContentItem.contentItemId">
+                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newContentItem.published }" :disabled="! newContentItem.id">
                         Delete
                     </button>
                 </div>
@@ -93,6 +93,7 @@
 
                 </div>
                 <div class="col-md-12">
+                    <br>
                         <p>Slug: <span class="help is-success">{{ newContentItem.slug }}</span><br>
                         <span name="slug" v-show="errors.has('slug')" class="help is-danger">
                             {{ newContentItem.slug }}
@@ -140,7 +141,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <div v-show="newContentItem.contentItemId" class="col-md-2 col-sm-12">
+                <div v-show="newContentItem.id" class="col-md-2 col-sm-12">
                     <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newContentItem.saveError }" @click.prevent="update" :disabled="newContentItem.saved">
                             <span v-if="newContentItem.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Updating
@@ -157,12 +158,12 @@
 
                     </button>
                 </div>
-                <div v-show="! newContentItem.contentItemId" class="col-md-2 col-sm-12">
+                <div v-show="! newContentItem.id" class="col-md-2 col-sm-12">
                     <button :class="{'btn': true, 'btn-primary': true, 'is-danger': newContentItem.saveError }" @click.prevent="save" :disabled="newContentItem.saved || newContentItem.saveBusy ">
                             <span v-if="newContentItem.saveBusy">
                                 <i class="fa fa-btn fa-spinner fa-spin"></i>Saving
                              </span>
-                            <span v-else-if="newContentItem.contentItemId !== null">
+                            <span v-else-if="newContentItem.id !== null">
                                 <i class="fa fa-btn fa-check-circle"></i>Saved!
                              </span>
                             <span v-else>
@@ -189,7 +190,7 @@
                     </button>
                 </div>
                 <div class="col-md-2 col-sm-12">
-                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newContentItem.published }" :disabled="! newContentItem.contentItemId">
+                    <button @click.prevent="leeroyjenkins" :class="{'btn': true, 'btn-danger': true, 'hidden': newContentItem.published }" :disabled="! newContentItem.id">
                         Delete
                     </button>
                 </div>
@@ -217,7 +218,6 @@ export default {
     },
     mounted() {
         this.getIndex()
-        this.confirmNavAway()
     },
     components: {
         trumbowyg
@@ -234,7 +234,7 @@ export default {
                 slug: '',
                 description: '',
                 link: '',
-                contentItemId: null,
+                id: null,
                 saveBusy: false,
                 saveError: false,
                 saved: true,
@@ -249,7 +249,6 @@ export default {
                 autogrow: true,
                 svgPath: '/images/icons.svg',
                 btnsDef: {
-                    // Customizables dropdowns
                     image: {
                         dropdown: ['insertImage', 'upload'],
                         ico: 'insertImage'
@@ -295,21 +294,23 @@ export default {
             * Watch the common_name and create slug.
         */
         'newContentItem.common_name': function (val, oldVal) {
-            this.newContentItem.serverErrors = null
-            if (this.newContentItem.slug == '' ||
-                    this.newContentItem.slug == this.makeSlug(oldVal)
-            ) {
-                this.newContentItem.slug = this.makeSlug(val)
+
+            if (this.newContentItem.id === null) {
+                if ( this.newContentItem.slug === '' ||
+                        this.newContentItem.slug == this.makeSlug(oldVal)
+                ) {
+                    this.newContentItem.slug = this.makeSlug(val)
+                }
             }
             this.newContentItem.saved = false
         },
         'newContentItem.description': function (val, oldVal) {
             this.newContentItem.saved = false
         },
-        'newContentItem.genus': function (val, oldVal) {
+        'newContentItem.species': function (val, oldVal) {
             this.newContentItem.saved = false
         },
-        'newContentItem.apwxiwa': function (val, oldVal) {
+        'newContentItem.genus': function (val, oldVal) {
             this.newContentItem.saved = false
         }
     },
@@ -359,7 +360,7 @@ export default {
                             .then(result  => {
                                 this.newContentItem.saveBusy = false
                                 this.newContentItem.saved= true
-                                this.newContentItem.contentItemId = result.data.id
+                                this.newContentItem.id = result.data.id
                                 swal({
                                     title: 'SUCCESS!',
                                     text: 'The content was saved.',
@@ -400,14 +401,14 @@ export default {
 
         publish() {
             this.newContentItem.publishBusy = true
-            if (this.newContentItem.contentItemId === null) {
+            if (this.newContentItem.id === null) {
                 this.newContentItem.publishBusy = false
                 this.save()
                 return
             }
              axios.post('/api/publications', {
                     type:    this.contentType,
-                    content_id: this.newContentItem.contentItemId
+                    content_id: this.newContentItem.id
                  })
                  .then(result  => {
                      this.newContentItem.publishBusy = false
@@ -424,14 +425,14 @@ export default {
             },
 
         unpublish() {
-            const contentItemId = this.newContentItem.contentItemId
+            const id = this.newContentItem.id
             axios.delete('/api/publications/'
                 + this.newContentItem.publicationId, {})
             .then(result  => {
                 this.newContentItem.publicationId = null
                 this.newContentItem.publishBusy = false
                 this.newContentItem.published = null
-                this.checkPublication(contentItemId)
+                this.checkPublication(id)
                 return result
             })
             .catch(error => {
@@ -459,14 +460,7 @@ export default {
         },
 
         update() {
-            axios.put('/api/' + this.contentType  + '/'+ this.newContentItem.contentItemId, {
-                common_name: this.newContentItem.common_name,
-                header_photo: this.newContentItem.header_photo,
-                genus: this.newContentItem.genus,
-                species: this.newContentItem.species,
-                slug:  this.newContentItem.slug,
-                description:  this.newContentItem.description
-            })
+            axios.put('/api/' + this.contentType  + '/'+ this.newContentItem.id, this.newContentItem)
             .then(result  => {
                 this.newContentItem.saveBusy = false
                 this.newContentItem.saved = true
@@ -495,7 +489,7 @@ export default {
 
         leeroyjenkins() {
             if(confirm("Permanently destroy this content?")) {
-                axios.delete('/api' + this.contentType + '/' + this.newContentItem.contentItemId, {})
+                axios.delete('/api' + this.contentType + '/' + this.newContentItem.id, {})
                 .then(result  => {
                     this.clear()
                 })
@@ -544,7 +538,7 @@ export default {
             return data;
         },
         createNewContentItem() {
-            if (!this.newContentItem.contentItemId) {
+            if (!this.newContentItem.id) {
                 if (confirm('Abandon this content and start over?')) {
                     this.clear()
                 }
@@ -561,7 +555,7 @@ export default {
                 slug: '',
                 description: '',
                 link: '',
-                contentItemId: null,
+                id: null,
                 saveBusy: false,
                 saveError: false,
                 saved: true,
@@ -575,16 +569,10 @@ export default {
         edit(id){
             this.saveBusy = true
             this.index = false
-            this.newContentItem.contentItemId = id
+            this.newContentItem.id = id
             axios.get('/api/' + this.contentType + '/' + id , {})
             .then(result => {
-                this.newContentItem.common_name = result.data.common_name;
-                this.newContentItem.header_photo = result.data.header_photo
-                this.newContentItem.genus = result.data.genus
-                this.newContentItem.species = result.data.species
-                this.newContentItem.slug = result.data.slug;
-                this.newContentItem.description = result.data.description;
-                this.newContentItem.contentItemId = result.data.id;
+                this.newContentItem = result.data;
                 this.checkPublication(id)
                 this.saveBusy = false
                 this.newContentItem.saved = true

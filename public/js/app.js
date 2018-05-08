@@ -82604,6 +82604,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 // Import this component
@@ -82625,7 +82626,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
     created: function created() {},
     mounted: function mounted() {
         this.getIndex();
-        this.confirmNavAway();
     },
 
     components: {
@@ -82643,7 +82643,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 slug: '',
                 description: '',
                 link: '',
-                contentItemId: null,
+                id: null,
                 saveBusy: false,
                 saveError: false,
                 saved: true,
@@ -82658,7 +82658,6 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 autogrow: true,
                 svgPath: '/images/icons.svg',
                 btnsDef: {
-                    // Customizables dropdowns
                     image: {
                         dropdown: ['insertImage', 'upload'],
                         ico: 'insertImage'
@@ -82696,19 +82695,21 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             * Watch the common_name and create slug.
         */
         'newContentItem.common_name': function newContentItemCommon_name(val, oldVal) {
-            this.newContentItem.serverErrors = null;
-            if (this.newContentItem.slug == '' || this.newContentItem.slug == this.makeSlug(oldVal)) {
-                this.newContentItem.slug = this.makeSlug(val);
+
+            if (this.newContentItem.id === null) {
+                if (this.newContentItem.slug === '' || this.newContentItem.slug == this.makeSlug(oldVal)) {
+                    this.newContentItem.slug = this.makeSlug(val);
+                }
             }
             this.newContentItem.saved = false;
         },
         'newContentItem.description': function newContentItemDescription(val, oldVal) {
             this.newContentItem.saved = false;
         },
-        'newContentItem.genus': function newContentItemGenus(val, oldVal) {
+        'newContentItem.species': function newContentItemSpecies(val, oldVal) {
             this.newContentItem.saved = false;
         },
-        'newContentItem.apwxiwa': function newContentItemApwxiwa(val, oldVal) {
+        'newContentItem.genus': function newContentItemGenus(val, oldVal) {
             this.newContentItem.saved = false;
         }
     },
@@ -82758,7 +82759,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 }).then(function (result) {
                     _this2.newContentItem.saveBusy = false;
                     _this2.newContentItem.saved = true;
-                    _this2.newContentItem.contentItemId = result.data.id;
+                    _this2.newContentItem.id = result.data.id;
                     swal({
                         title: 'SUCCESS!',
                         text: 'The content was saved.',
@@ -82798,14 +82799,14 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             var _this3 = this;
 
             this.newContentItem.publishBusy = true;
-            if (this.newContentItem.contentItemId === null) {
+            if (this.newContentItem.id === null) {
                 this.newContentItem.publishBusy = false;
                 this.save();
                 return;
             }
             axios.post('/api/publications', {
                 type: this.contentType,
-                content_id: this.newContentItem.contentItemId
+                content_id: this.newContentItem.id
             }).then(function (result) {
                 _this3.newContentItem.publishBusy = false;
                 _this3.newContentItem.publicationId = result.data.id;
@@ -82820,12 +82821,12 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         unpublish: function unpublish() {
             var _this4 = this;
 
-            var contentItemId = this.newContentItem.contentItemId;
+            var id = this.newContentItem.id;
             axios.delete('/api/publications/' + this.newContentItem.publicationId, {}).then(function (result) {
                 _this4.newContentItem.publicationId = null;
                 _this4.newContentItem.publishBusy = false;
                 _this4.newContentItem.published = null;
-                _this4.checkPublication(contentItemId);
+                _this4.checkPublication(id);
                 return result;
             }).catch(function (error) {
                 _this4.newContentItem.publishBusy = false;
@@ -82852,14 +82853,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         update: function update() {
             var _this6 = this;
 
-            axios.put('/api/' + this.contentType + '/' + this.newContentItem.contentItemId, {
-                common_name: this.newContentItem.common_name,
-                header_photo: this.newContentItem.header_photo,
-                genus: this.newContentItem.genus,
-                species: this.newContentItem.species,
-                slug: this.newContentItem.slug,
-                description: this.newContentItem.description
-            }).then(function (result) {
+            axios.put('/api/' + this.contentType + '/' + this.newContentItem.id, this.newContentItem).then(function (result) {
                 _this6.newContentItem.saveBusy = false;
                 _this6.newContentItem.saved = true;
                 swal({
@@ -82887,7 +82881,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             var _this7 = this;
 
             if (confirm("Permanently destroy this content?")) {
-                axios.delete('/api' + this.contentType + '/' + this.newContentItem.contentItemId, {}).then(function (result) {
+                axios.delete('/api' + this.contentType + '/' + this.newContentItem.id, {}).then(function (result) {
                     _this7.clear();
                 }).catch(function (error) {
                     return Promise.reject(error);
@@ -82935,7 +82929,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             return data;
         },
         createNewContentItem: function createNewContentItem() {
-            if (!this.newContentItem.contentItemId) {
+            if (!this.newContentItem.id) {
                 if (confirm('Abandon this content and start over?')) {
                     this.clear();
                 }
@@ -82952,7 +82946,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
                 slug: '',
                 description: '',
                 link: '',
-                contentItemId: null,
+                id: null,
                 saveBusy: false,
                 saveError: false,
                 saved: true,
@@ -82968,15 +82962,9 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
 
             this.saveBusy = true;
             this.index = false;
-            this.newContentItem.contentItemId = id;
+            this.newContentItem.id = id;
             axios.get('/api/' + this.contentType + '/' + id, {}).then(function (result) {
-                _this9.newContentItem.common_name = result.data.common_name;
-                _this9.newContentItem.header_photo = result.data.header_photo;
-                _this9.newContentItem.genus = result.data.genus;
-                _this9.newContentItem.species = result.data.species;
-                _this9.newContentItem.slug = result.data.slug;
-                _this9.newContentItem.description = result.data.description;
-                _this9.newContentItem.contentItemId = result.data.id;
+                _this9.newContentItem = result.data;
                 _this9.checkPublication(id);
                 _this9.saveBusy = false;
                 _this9.newContentItem.saved = true;
@@ -83142,8 +83130,8 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.newContentItem.contentItemId,
-                        expression: "newContentItem.contentItemId"
+                        value: _vm.newContentItem.id,
+                        expression: "newContentItem.id"
                       }
                     ],
                     staticClass: "col-md-2 hidden-sm hidden-xs"
@@ -83180,7 +83168,7 @@ var render = function() {
                                 }),
                                 _vm._v("Saved!\n                             ")
                               ])
-                            : _vm.newContentItem.saved == false
+                            : _vm.newContentItem.saved === false
                               ? _c("span", [
                                   _c("i", {
                                     staticClass: "fa fa-btn fa-check-circle"
@@ -83209,8 +83197,8 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: !_vm.newContentItem.contentItemId,
-                        expression: "! newContentItem.contentItemId"
+                        value: !_vm.newContentItem.id,
+                        expression: "! newContentItem.id"
                       }
                     ],
                     staticClass: "col-md-2 hidden-sm hidden-xs"
@@ -83244,7 +83232,7 @@ var render = function() {
                               }),
                               _vm._v("Saving\n                             ")
                             ])
-                          : _vm.newContentItem.contentItemId !== null
+                          : _vm.newContentItem.id !== null
                             ? _c("span", [
                                 _c("i", {
                                   staticClass: "fa fa-btn fa-check-circle"
@@ -83352,7 +83340,7 @@ var render = function() {
                         "btn-danger": true,
                         hidden: _vm.newContentItem.published
                       },
-                      attrs: { disabled: !_vm.newContentItem.contentItemId },
+                      attrs: { disabled: !_vm.newContentItem.id },
                       on: {
                         click: function($event) {
                           $event.preventDefault()
@@ -83433,6 +83421,8 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-12" }, [
+                  _c("br"),
+                  _vm._v(" "),
                   _c("p", [
                     _vm._v("Slug: "),
                     _c("span", { staticClass: "help is-success" }, [
@@ -83691,8 +83681,8 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: _vm.newContentItem.contentItemId,
-                        expression: "newContentItem.contentItemId"
+                        value: _vm.newContentItem.id,
+                        expression: "newContentItem.id"
                       }
                     ],
                     staticClass: "col-md-2 col-sm-12"
@@ -83758,8 +83748,8 @@ var render = function() {
                       {
                         name: "show",
                         rawName: "v-show",
-                        value: !_vm.newContentItem.contentItemId,
-                        expression: "! newContentItem.contentItemId"
+                        value: !_vm.newContentItem.id,
+                        expression: "! newContentItem.id"
                       }
                     ],
                     staticClass: "col-md-2 col-sm-12"
@@ -83793,7 +83783,7 @@ var render = function() {
                               }),
                               _vm._v("Saving\n                             ")
                             ])
-                          : _vm.newContentItem.contentItemId !== null
+                          : _vm.newContentItem.id !== null
                             ? _c("span", [
                                 _c("i", {
                                   staticClass: "fa fa-btn fa-check-circle"
@@ -83901,7 +83891,7 @@ var render = function() {
                         "btn-danger": true,
                         hidden: _vm.newContentItem.published
                       },
-                      attrs: { disabled: !_vm.newContentItem.contentItemId },
+                      attrs: { disabled: !_vm.newContentItem.id },
                       on: {
                         click: function($event) {
                           $event.preventDefault()
