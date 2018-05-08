@@ -33,6 +33,7 @@ Class Slugger {
     }
     public static function titleify($slug)
     {
-        return ucfirst(preg_replace('~-~', ' ', $slug));
+        $title = preg_replace('~-~', ' ', $slug);
+        return ucwords($title);
     }
 }

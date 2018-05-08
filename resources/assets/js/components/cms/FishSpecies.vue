@@ -83,27 +83,21 @@
                     </button>
                 </div>
             </div>
-            <!-- Header Photo Button -->
-            <div class="form-group">
-                <div class="container">
-                    <label type="button" class="btn btn-primary btn-upload" :disabled="newContentItem.busy">
-                        <span>Select Header Photo</span>
-                        <input v-validate="'required|mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
-                    </label>
-                    <span v-show="! newContentItem.header_photo" class="help is-danger">This is required</span><br>
-                    <span v-show="errors.has('header_photo')" class="help is-danger">{{ errors.first('header_photo') }}</span>
-                    <div role="img" class="header-photo-preview"
-                         :style="previewStyle">
 
-                    </div>
-                </div>
-            </div>
             <div class="form-group">
                 <div class="col-md-12"><p>Common Name:</p>
                     <input v-validate="'required|min:2|max:140'" id="common_name" name="common_name" v-model="newContentItem.common_name"
                            :class="{'form-control': true, 'input': true, 'is-danger': errors.has('common_name') }" type="text" placeholder="common name"
                            style="width:100%">
                     <span v-show="errors.has('common_name')" class="help is-danger">{{ errors.first('common_name') }}</span>
+
+                </div>
+                <div class="col-md-12">
+                        <p>Slug: <span class="help is-success">{{ newContentItem.slug }}</span><br>
+                        <span v-validate="'required|unique:fish_species'" v-show="errors.has('slug')" class="help is-danger">
+                            {{ newContentItem.slug }}
+                        </span>
+                    </p>
                 </div>
             </div>
             <div class="form-group">
@@ -126,9 +120,23 @@
             </div>
             <div class="form-group">
                 <div class="col-md-12">
-                    <p>Description:</p>
-                    <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="description" v-validate="'required|min:16'" v-model="newContentItem.description"></trumbowyg>
-                    <span v-show="errors.has('description')" class="help is-danger">{{ errors.first('description') }}</span>
+                    <p>Description:</p><small>(optional)</small>
+                    <trumbowyg id="trumbowyg" :config="trumbowygConfig" name="description" v-model="newContentItem.description"></trumbowyg>
+                </div>
+            </div>
+            <!-- Header Photo Button -->
+            <div class="form-group">
+                <div class="container">
+                    <label type="button" class="btn btn-primary btn-upload" :disabled="newContentItem.busy">
+                        <span>Select Header Photo</span>
+                        <input v-validate="'mimes:jpg,jpeg,png,gif'" ref="header_photo" type="file" class="form-control" name="header_photo" @change="update_header">
+                    </label>
+                    <span class="help">This is optional, a default picture will be placed.</span><br>
+                    <span v-show="errors.has('header_photo')" class="help is-danger">{{ errors.first('header_photo') }}</span>
+                    <div role="img" class="header-photo-preview"
+                         :style="previewStyle">
+
+                    </div>
                 </div>
             </div>
             <div class="form-group">
@@ -219,7 +227,7 @@ export default {
             index: true,
             contents: [],
             newContentItem: new SparkForm ({
-                header_photo:'',
+                header_photo:'https://hobo-assets.s3-us-west-2.amazonaws.com/images/dd15471bfc9041829b5bf5eda3600c11.jpg',
                 common_name: '',
                 genus: '',
                 species: '',
@@ -273,14 +281,8 @@ export default {
         }
     },
     watch: {
-        'newContentItem.header_photo': function (val, oldVal) {
-            this.newContentItem.saved = false
-        },
         common_name(value) {
             this.validator.validate('common_name', value);
-        },
-        description(value) {
-            this.validator.validate('description', value);
         },
         genus(value) {
             this.validator.validate('genus', value);

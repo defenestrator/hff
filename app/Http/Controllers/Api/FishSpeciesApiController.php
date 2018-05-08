@@ -5,10 +5,24 @@ namespace App\Http\Controllers\Api;
 
 use App\FishSpecies;
 use Illuminate\Http\Request;
+use Validator;
 
 class FishSpeciesApiController extends ApiController
 
 {
+    protected $validator;
+
+    public function __construct(Validator $validator)
+    {
+        $this->validator = $validator;
+    }
+
+    public function messages()
+    {
+        return [
+            'slug.unique' => 'The name of this fish matches another, already in the database.',
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -27,11 +41,10 @@ class FishSpeciesApiController extends ApiController
     public function create(Request $request, FishSpecies $fishSpecies)
     {
         $request->validate([
-            'header_photo' => 'required|string',
             'common_name' => 'required|min:2|max:140',
             'genus' => 'required|min:2|max:140',
-            'species' => 'required|min:2|max:140',
-            'description' => 'required|min:16'
+            'slug' => 'required|unique:fish_species',
+            'species' => 'required|min:2|max:140'
         ]);
         return $fishSpecies->create($request->all());
     }
@@ -68,9 +81,9 @@ class FishSpeciesApiController extends ApiController
         $request->validate([
             'header_photo' => 'required|string',
             'common_name' => 'required|min:2|max:140',
+            'slug' => 'required|unique:fish_species',
             'genus' => 'required|min:2|max:140',
-            'species' => 'required|min:2|max:140',
-            'description' => 'required|min:16'
+            'species' => 'required|min:2|max:140'
         ]);
         $content = $fishSpecies->find($id);
 
@@ -89,4 +102,5 @@ class FishSpeciesApiController extends ApiController
         $fishSpecies->destroy($id);
         return response()->json(['data' => 'ok']);
     }
+
 }

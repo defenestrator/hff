@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Post;
 use App\Showcase;
-
+use App\Transformers\Slugger;
 
 class TagsController extends Controller
 {
+    protected $slugger;
+    public function __construct(Slugger $slugger)
+    {
+        $this->slugger = $slugger;
+    }
+
     /**
      * @param Post $post
      * @param Showcase $showcase
@@ -28,7 +34,7 @@ class TagsController extends Controller
         });
         $contents = $showcases->merge($posts)->sortByDesc('created_at');
 
-        $pagetitle = 'All content for '."'$normalized'" . ' tag';
+        $pagetitle = 'Everything tagged "'. $this->slugger->titleify($normalized) . '" at Hobo Fly Fishing';
         return view('tags.index', compact('contents', 'pagetitle'));
     }
 

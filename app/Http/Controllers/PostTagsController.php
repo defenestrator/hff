@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Post;
 use App\Tag;
-use Illuminate\Http\Request;
+use App\Transformers\Slugger;
 
 class PostTagsController extends ContentController
 {
@@ -16,7 +16,7 @@ class PostTagsController extends ContentController
     {
         $tag = $normalized;
         $tagPosts = $post->withAnyTags([$normalized])->orderBy('created_at', 'desc')->get();
-        $pagetitle = 'Posts tagged ' . "'$normalized'";
+        $pagetitle = 'Blog posts tagged "' . $this->slugger->titleify($normalized) .  '" at Hobo Fly Fishing';
         return view('publications.posts.tags', compact('tagPosts' , 'pagetitle', 'tag'));
     }
 

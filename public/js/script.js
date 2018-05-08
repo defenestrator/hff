@@ -49716,9 +49716,8 @@ module.exports = __webpack_require__(585);
 
 /***/ }),
 /* 230 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
 __webpack_require__(231);
 __webpack_require__(284);
 
@@ -74491,7 +74490,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.component('google-cluster', __WEBPAC
 __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2_google_maps__, {
     load: {
         key: 'AIzaSyA7cOmgsewiTB9MjES7Ho8auSVcxqf34cY',
-        libraries: 'places' //// If you need to use place input
+        libraries: 'places'
     }
 });
 
@@ -82592,6 +82591,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 // Import this component
@@ -82624,7 +82631,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
             index: true,
             contents: [],
             newContentItem: new SparkForm({
-                header_photo: '',
+                header_photo: 'https://hobo-assets.s3-us-west-2.amazonaws.com/images/dd15471bfc9041829b5bf5eda3600c11.jpg',
                 common_name: '',
                 genus: '',
                 species: '',
@@ -82669,14 +82676,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
     },
 
     watch: {
-        'newContentItem.header_photo': function newContentItemHeader_photo(val, oldVal) {
-            this.newContentItem.saved = false;
-        },
         common_name: function common_name(value) {
             this.validator.validate('common_name', value);
-        },
-        description: function description(value) {
-            this.validator.validate('description', value);
         },
         genus: function genus(value) {
             this.validator.validate('genus', value);
@@ -83364,78 +83365,6 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
-                _c("div", { staticClass: "container" }, [
-                  _c(
-                    "label",
-                    {
-                      staticClass: "btn btn-primary btn-upload",
-                      attrs: {
-                        type: "button",
-                        disabled: _vm.newContentItem.busy
-                      }
-                    },
-                    [
-                      _c("span", [_vm._v("Select Header Photo")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: "required|mimes:jpg,jpeg,png,gif",
-                            expression: "'required|mimes:jpg,jpeg,png,gif'"
-                          }
-                        ],
-                        ref: "header_photo",
-                        staticClass: "form-control",
-                        attrs: { type: "file", name: "header_photo" },
-                        on: { change: _vm.update_header }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !_vm.newContentItem.header_photo,
-                          expression: "! newContentItem.header_photo"
-                        }
-                      ],
-                      staticClass: "help is-danger"
-                    },
-                    [_vm._v("This is required")]
-                  ),
-                  _c("br"),
-                  _vm._v(" "),
-                  _c(
-                    "span",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: _vm.errors.has("header_photo"),
-                          expression: "errors.has('header_photo')"
-                        }
-                      ],
-                      staticClass: "help is-danger"
-                    },
-                    [_vm._v(_vm._s(_vm.errors.first("header_photo")))]
-                  ),
-                  _vm._v(" "),
-                  _c("div", {
-                    staticClass: "header-photo-preview",
-                    style: _vm.previewStyle,
-                    attrs: { role: "img" }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
                 _c("div", { staticClass: "col-md-12" }, [
                   _c("p", [_vm._v("Common Name:")]),
                   _vm._v(" "),
@@ -83496,6 +83425,44 @@ var render = function() {
                     },
                     [_vm._v(_vm._s(_vm.errors.first("common_name")))]
                   )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("p", [
+                    _vm._v("Slug: "),
+                    _c("span", { staticClass: "help is-success" }, [
+                      _vm._v(_vm._s(_vm.newContentItem.slug))
+                    ]),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c(
+                      "span",
+                      {
+                        directives: [
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "required|unique:fish_species",
+                            expression: "'required|unique:fish_species'"
+                          },
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.errors.has("slug"),
+                            expression: "errors.has('slug')"
+                          }
+                        ],
+                        staticClass: "help is-danger"
+                      },
+                      [
+                        _vm._v(
+                          "\n                            " +
+                            _vm._s(_vm.newContentItem.slug) +
+                            "\n                        "
+                        )
+                      ]
+                    )
+                  ])
                 ])
               ]),
               _vm._v(" "),
@@ -83633,16 +83600,9 @@ var render = function() {
                   { staticClass: "col-md-12" },
                   [
                     _c("p", [_vm._v("Description:")]),
+                    _c("small", [_vm._v("(optional)")]),
                     _vm._v(" "),
                     _c("trumbowyg", {
-                      directives: [
-                        {
-                          name: "validate",
-                          rawName: "v-validate",
-                          value: "required|min:16",
-                          expression: "'required|min:16'"
-                        }
-                      ],
                       attrs: {
                         id: "trumbowyg",
                         config: _vm.trumbowygConfig,
@@ -83655,26 +83615,72 @@ var render = function() {
                         },
                         expression: "newContentItem.description"
                       }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        directives: [
-                          {
-                            name: "show",
-                            rawName: "v-show",
-                            value: _vm.errors.has("description"),
-                            expression: "errors.has('description')"
-                          }
-                        ],
-                        staticClass: "help is-danger"
-                      },
-                      [_vm._v(_vm._s(_vm.errors.first("description")))]
-                    )
+                    })
                   ],
                   1
                 )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group" }, [
+                _c("div", { staticClass: "container" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass: "btn btn-primary btn-upload",
+                      attrs: {
+                        type: "button",
+                        disabled: _vm.newContentItem.busy
+                      }
+                    },
+                    [
+                      _c("span", [_vm._v("Select Header Photo")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "validate",
+                            rawName: "v-validate",
+                            value: "mimes:jpg,jpeg,png,gif",
+                            expression: "'mimes:jpg,jpeg,png,gif'"
+                          }
+                        ],
+                        ref: "header_photo",
+                        staticClass: "form-control",
+                        attrs: { type: "file", name: "header_photo" },
+                        on: { change: _vm.update_header }
+                      })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "help" }, [
+                    _vm._v(
+                      "This is optional, a default picture will be placed."
+                    )
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.errors.has("header_photo"),
+                          expression: "errors.has('header_photo')"
+                        }
+                      ],
+                      staticClass: "help is-danger"
+                    },
+                    [_vm._v(_vm._s(_vm.errors.first("header_photo")))]
+                  ),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "header-photo-preview",
+                    style: _vm.previewStyle,
+                    attrs: { role: "img" }
+                  })
+                ])
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "form-group" }, [
