@@ -9,7 +9,7 @@
                             </button>
                         </a>
                 </span>
-                <input style="font-size:18px; border:1px solid #535965;"
+                <input style="font-size:18px; border:1px solid #535965; border-left:none;border-right:none;"
                        @click="touched" class="form-control" placeholder="<- call or enter your email ->"
                        v-validate="'required|email'"
                        v-model="email" name="email" id="newsletter-email"

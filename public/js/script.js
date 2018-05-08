@@ -74224,7 +74224,12 @@ var render = function() {
         ],
         staticClass: "form-control",
         class: { "form-control": true, "is-danger": _vm.errors.has("email") },
-        staticStyle: { "font-size": "18px", border: "1px solid #535965" },
+        staticStyle: {
+          "font-size": "18px",
+          border: "1px solid #535965",
+          "border-left": "none",
+          "border-right": "none"
+        },
         attrs: {
           placeholder: "<- call or enter your email ->",
           name: "email",
@@ -82940,7 +82945,7 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_2_vee_validate__["a" /* default */]);
         },
         clear: function clear() {
             this.newContentItem = new SparkForm({
-                header_photo: '',
+                header_photo: 'https://hobo-assets.s3-us-west-2.amazonaws.com/images/dd15471bfc9041829b5bf5eda3600c11.jpg',
                 common_name: '',
                 genus: '',
                 species: '',

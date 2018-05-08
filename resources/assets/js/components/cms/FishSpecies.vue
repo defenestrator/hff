@@ -554,7 +554,7 @@ export default {
         },
         clear() {
             this.newContentItem = new SparkForm ({
-                header_photo:'',
+                header_photo:'https://hobo-assets.s3-us-west-2.amazonaws.com/images/dd15471bfc9041829b5bf5eda3600c11.jpg',
                 common_name: '',
                 genus: '',
                 species: '',
