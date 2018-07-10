@@ -66,7 +66,6 @@
                 },
                 infoWinOpen: false,
                 currentMidx: null,
-                //optional: offset infowindow so it visually sits nicely on top of our marker
                 infoOptions: {
                     pixelOffset: {
                         width: -0,
@@ -98,11 +97,9 @@
                 this.infoWindowTitle = destination.name
                 this.infoContent = destination.infoText;
                 this.infoWindowImage = destination.header_photo
-                //check if its the same marker that was selected if yes toggle
                 if (this.currentMidx == index) {
                     this.infoWinOpen = !this.infoWinOpen;
                 }
-                //if different marker set infowindow to open and reset current marker index
                 else {
                     this.infoWinOpen = true;
                     this.currentMidx = index;
