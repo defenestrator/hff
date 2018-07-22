@@ -73863,12 +73863,12 @@ var staticRenderFns = [
             _vm._v(" "),
             _c("ul", { staticClass: "list-unstyled" }, [
               _c("li", { staticClass: "footer-link" }, [
-                _c("a", { attrs: { href: "tel:1-208-859-9133" } }, [
+                _c("a", { attrs: { href: "tel:1-208-283-8654" } }, [
                   _c("i", {
                     staticClass: "fa fa-phone",
                     attrs: { "aria-hidden": "true" }
                   }),
-                  _vm._v(" (208)859-9133\n                    ")
+                  _vm._v(" (208)283-8654\n                    ")
                 ])
               ]),
               _vm._v(" "),
@@ -74314,9 +74314,9 @@ var staticRenderFns = [
         staticClass: "btn btn-danger",
         staticStyle: {
           border: "1px solid #535965",
-          "border-right": "none",
           "border-bottom-right-radius": "0",
-          "border-top-right-radius": "0"
+          "border-top-right-radius": "0",
+          "margin-right": "-1px"
         },
         attrs: { role: "link" }
       },
@@ -74332,7 +74332,7 @@ var staticRenderFns = [
       { staticClass: "text-center", staticStyle: { "font-weight": "600" } },
       [
         _c("a", { attrs: { href: "tel:12088599133" } }, [
-          _vm._v("1-208-859-9133")
+          _vm._v("1-208-283-8654")
         ])
       ]
     )
@@ -74516,7 +74516,6 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
             },
             infoWinOpen: false,
             currentMidx: null,
-            //optional: offset infowindow so it visually sits nicely on top of our marker
             infoOptions: {
                 pixelOffset: {
                     width: -0,
@@ -74550,15 +74549,12 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_0_vue2
             this.infoWindowTitle = destination.name;
             this.infoContent = destination.infoText;
             this.infoWindowImage = destination.header_photo;
-            //check if its the same marker that was selected if yes toggle
             if (this.currentMidx == index) {
                 this.infoWinOpen = !this.infoWinOpen;
+            } else {
+                this.infoWinOpen = true;
+                this.currentMidx = index;
             }
-            //if different marker set infowindow to open and reset current marker index
-            else {
-                    this.infoWinOpen = true;
-                    this.currentMidx = index;
-                }
         }
     },
     created: function created() {

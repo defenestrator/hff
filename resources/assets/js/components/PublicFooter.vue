@@ -5,8 +5,8 @@
             <a href="/contact"><h4><i class="fa fa-fw fa-btn fa-exclamation-circle"></i>Shout</h4></a>
             <ul class="list-unstyled">
                 <li class="footer-link">
-                    <a href="tel:1-208-859-9133">
-                        <i class="fa fa-phone" aria-hidden="true"></i> (208)859-9133
+                    <a href="tel:1-208-283-8654">
+                        <i class="fa fa-phone" aria-hidden="true"></i> (208)283-8654
                     </a>
                 </li>
                 <li class="footer-link">

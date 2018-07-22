@@ -91,7 +91,7 @@ Contact us using this handy web form! Welcome to the future!
                 </div>
                 <div class="media pad">
                     <div class="media-left media-top">
-                        <a href="tel:1-208-859-9133" title="call us!">
+                        <a href="tel:1-208-283-8654" title="call us!">
                             <div>
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                             </div>
@@ -99,7 +99,7 @@ Contact us using this handy web form! Welcome to the future!
                     </div>
                     <div class="media-body">
 
-                        <h4 class="media-heading">Telephone:</h4> <a href="tel:1-208-859-9133">(208) 859-9133</a>
+                        <h4 class="media-heading">Telephone:</h4> <a href="tel:1-208-283-8654">(208) 283-8654</a>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
             <div class="input-group">
                 <span class="input-group-btn">
                         <a @click.prevent="telephone" title="Give us a call, just click!">
-                            <button class="btn btn-danger" role="link" style="border:1px solid #535965; border-right:none; border-bottom-right-radius: 0; border-top-right-radius: 0;">
+                            <button class="btn btn-danger" role="link" style="border:1px solid #535965; border-bottom-right-radius: 0; border-top-right-radius: 0; margin-right:-1px;">
                                 <i style="height:22px;" class="fa fa-phone"></i>
                             </button>
                         </a>
@@ -29,7 +29,7 @@
 
             </div>
         <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
-            <div style="font-weight:600;" class="text-center"><a href="tel:12088599133">1-208-859-9133</a>
+            <div style="font-weight:600;" class="text-center"><a href="tel:12088599133">1-208-283-8654</a>
             </div>
         <hr>
     </div>
