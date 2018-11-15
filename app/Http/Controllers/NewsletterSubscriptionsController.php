@@ -34,7 +34,7 @@ class NewsletterSubscriptionsController extends Controller
                 $resend->update(['token' => Uuid::uuid4()]);
             }
 
-            $this->mail->to($request->email)->send(new NewsletterSubscriptionConfirmation($resend));
+            $this->mail->to($request->email)->queue(new NewsletterSubscriptionConfirmation($resend));
             return response([
                     'message' => 'Subscription already exists for ' . $request->email . '. Please confirm your email address',
                     'success' => true

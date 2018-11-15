@@ -28,7 +28,7 @@ class SalesInquiryController extends Controller
             'address' => $request->email,
             'message' =>  $request->message
         ]);
-        $this->mail->to('support@mg.hoboflyfishing.com')->send(new SalesInquiryContact($contact));
+        $this->mail->to('support@mg.hoboflyfishing.com')->queue(new SalesInquiryContact($contact));
         return $contact;
     }
 }

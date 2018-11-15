@@ -92,7 +92,7 @@ class NewslettersApiController extends ApiController
         ]);
         $news->save();
         $subscribers = $subscription->whereConfirmed(true)->pluck('email_address');
-        return $this->mail->to('mailing-list@hoboflyfishing.com')->bcc($subscribers)->send(new NewsletterEmail($news));
+        return $this->mail->to('mailing-list@hoboflyfishing.com')->bcc($subscribers)->queue(new NewsletterEmail($news));
     }
 
     /**
