@@ -9,27 +9,30 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "dependencies": {
-    "ajv": "^6.0.0",
+    "ajv": "^6.6.2",
     "axios": "^0.15.2",
-    "bootstrap": "^3.0.0",
-    "cross-env": "^5.1.4",
+    "bootstrap": "^3.4.0",
+    "cross-env": "^5.2.0",
     "fs": "0.0.1-security",
     "jquery": "^3.0.0",
     "jquery-circliful": "^0.1.1",
     "js-cookie": "^2.2.0",
-    "laravel-mix": "^2.0",
-    "less": "^3.0.2",
+    "laravel-mix": "^2.1.14",
+    "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "moment": "^2.21.0",
+    "moment": "^2.23.0",
     "promise": "^7.1.1",
-    "underscore": "^1.8.3",
+    "underscore": "^1.9.1",
     "urijs": "^1.19.1",
-    "vee-validate": "^2.0.9",
-    "vue": "^2.5.14",
-    "vue-template-compiler": "^2.5.14",
-    "vue-trumbowyg": "^3.3.0",
-    "vue-upload-component": "^2.8.3",
+    "vee-validate": "^2.1.5",
+    "vue": "^2.5.21",
+    "vue-template-compiler": "^2.5.21",
+    "vue-trumbowyg": "^3.4.1",
+    "vue-upload-component": "^2.8.18",
     "vue2-google-maps": "^0.8.11"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.0.1"
+  }
 }

@@ -20,7 +20,7 @@ class SparkServiceProvider extends ServiceProvider
         'product' => 'HoboFlyFishing.com',
         'street' => '289 N Hullen Place',
         'location' => 'Star, ID 83669',
-        'phone' => '(208) 283-8654'
+        'phone' => '(208) 859-9133'
     ];
 
     /**

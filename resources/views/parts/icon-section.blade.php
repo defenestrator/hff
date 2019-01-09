@@ -29,9 +29,9 @@
                             <label style="bottom: 0; color:#fff;" class="hidden-xs"> info@hoboflyfishing.com</label></a>
                     </li>
                     <li>
-                        <a href="tel:1-208-283-8654">
+                        <a href="tel:1-208-859-9133">
                             <i class="fa fa-phone" aria-hidden="true"></i>
-                        <label style="bottom: 0; color:#fff;"  class="hidden-xs">(208)283-8654</label></a>
+                        <label style="bottom: 0; color:#fff;"  class="hidden-xs">(208)859-9133</label></a>
                     </li>
                 </ul>
             </li>
