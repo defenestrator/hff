@@ -21,7 +21,7 @@
         "illuminate/pagination": "^5.5",
         "laravel/cashier": "~7.0",
         "laravel/framework": "5.5.*",
-        "laravel/scout": "^4.0",
+        "laravel/scout": "^5.0",
         "laravel/spark": "*@dev",
         "laravel/tinker": "~1.0",
         "league/flysystem": "^1.0",
@@ -35,7 +35,7 @@
         "spatie/laravel-responsecache": "^4.0",
         "spatie/laravel-sitemap": "^3.3",
         "spatie/schema-org": "^1.4",
-        "teamtnt/laravel-scout-tntsearch-driver": "^3.0"
+        "teamtnt/laravel-scout-tntsearch-driver": "^3.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.4",
