@@ -83949,24 +83949,23 @@ __webpack_require__.r(__webpack_exports__);
  | your components that you write while building your applications.
  */
 // Laravel Spark
-__webpack_require__(/*! ./../spark-components/bootstrap */ "./resources/assets/js/spark-components/bootstrap.js");
+__webpack_require__(/*! ./../spark-components/bootstrap */ "./resources/assets/js/spark-components/bootstrap.js").default;
+__webpack_require__(/*! ./profile/update-profile-details.js */ "./resources/assets/js/components/profile/update-profile-details.js").default; // Internal CMS - Routes/Controllers should have Developer access only!
 
-__webpack_require__(/*! ./profile/update-profile-details.js */ "./resources/assets/js/components/profile/update-profile-details.js"); // Internal CMS - Routes/Controllers should have Developer access only!
+Vue.component('posts', __webpack_require__(/*! ./cms/Posts.vue */ "./resources/assets/js/components/cms/Posts.vue").default);
+Vue.component('newsletters', __webpack_require__(/*! ./cms/Newsletters.vue */ "./resources/assets/js/components/cms/Newsletters.vue").default);
+Vue.component('publications', __webpack_require__(/*! ./cms/Publications.vue */ "./resources/assets/js/components/cms/Publications.vue").default);
+Vue.component('showcases', __webpack_require__(/*! ./cms/Showcases.vue */ "./resources/assets/js/components/cms/Showcases.vue").default);
+Vue.component('input-tag', __webpack_require__(/*! ./InputTag.vue */ "./resources/assets/js/components/InputTag.vue").default);
+Vue.component('destinations', __webpack_require__(/*! ./cms/Destinations.vue */ "./resources/assets/js/components/cms/Destinations.vue").default);
+Vue.component('regions', __webpack_require__(/*! ./cms/Regions.vue */ "./resources/assets/js/components/cms/Regions.vue").default); // Public "guest" components
 
-
-Vue.component('posts', __webpack_require__(/*! ./cms/Posts.vue */ "./resources/assets/js/components/cms/Posts.vue"));
-Vue.component('newsletters', __webpack_require__(/*! ./cms/Newsletters.vue */ "./resources/assets/js/components/cms/Newsletters.vue"));
-Vue.component('publications', __webpack_require__(/*! ./cms/Publications.vue */ "./resources/assets/js/components/cms/Publications.vue"));
-Vue.component('showcases', __webpack_require__(/*! ./cms/Showcases.vue */ "./resources/assets/js/components/cms/Showcases.vue"));
-Vue.component('input-tag', __webpack_require__(/*! ./InputTag.vue */ "./resources/assets/js/components/InputTag.vue"));
-Vue.component('destinations', __webpack_require__(/*! ./cms/Destinations.vue */ "./resources/assets/js/components/cms/Destinations.vue"));
-Vue.component('regions', __webpack_require__(/*! ./cms/Regions.vue */ "./resources/assets/js/components/cms/Regions.vue")); // Public "guest" components
-
-Vue.component('public-footer', __webpack_require__(/*! ./PublicFooter.vue */ "./resources/assets/js/components/PublicFooter.vue"));
-Vue.component('sales-inquiry', __webpack_require__(/*! ./SalesInquiry.vue */ "./resources/assets/js/components/SalesInquiry.vue"));
-Vue.component('world-map', __webpack_require__(/*! ./WorldMap.vue */ "./resources/assets/js/components/WorldMap.vue"));
-Vue.component('site-search', __webpack_require__(/*! ./Search.vue */ "./resources/assets/js/components/Search.vue"));
-Vue.component('fish-species', __webpack_require__(/*! ./cms/FishSpecies.vue */ "./resources/assets/js/components/cms/FishSpecies.vue"));
+Vue.component('public-footer', __webpack_require__(/*! ./PublicFooter.vue */ "./resources/assets/js/components/PublicFooter.vue").default);
+Vue.component('sales-inquiry', __webpack_require__(/*! ./SalesInquiry.vue */ "./resources/assets/js/components/SalesInquiry.vue").default);
+Vue.component('newsletter-signup', __webpack_require__(/*! ./NewsletterSignup.vue */ "./resources/assets/js/components/NewsletterSignup.vue").default);
+Vue.component('world-map', __webpack_require__(/*! ./WorldMap.vue */ "./resources/assets/js/components/WorldMap.vue").default);
+Vue.component('site-search', __webpack_require__(/*! ./Search.vue */ "./resources/assets/js/components/Search.vue").default);
+Vue.component('fish-species', __webpack_require__(/*! ./cms/FishSpecies.vue */ "./resources/assets/js/components/cms/FishSpecies.vue").default);
 
 /***/ }),
 
@@ -90804,8 +90803,8 @@ __webpack_require__(/*! ./forms/bootstrap */ "./spark/resources/assets/js/forms/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/vagrant/Code/hff/resources/assets/js/app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! /home/vagrant/Code/hff/resources/assets/less/styles.less */"./resources/assets/less/styles.less");
+__webpack_require__(/*! /Users/jeremy/Code/hff/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/jeremy/Code/hff/resources/assets/less/styles.less */"./resources/assets/less/styles.less");
 
 
 /***/ })

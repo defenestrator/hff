@@ -10,19 +10,20 @@
  */
 
 // Laravel Spark
-require('./../spark-components/bootstrap')
-require('./profile/update-profile-details.js');
+require('./../spark-components/bootstrap').default
+require('./profile/update-profile-details.js').default
 // Internal CMS - Routes/Controllers should have Developer access only!
-Vue.component('posts', require('./cms/Posts.vue'))
-Vue.component('newsletters', require('./cms/Newsletters.vue'))
-Vue.component('publications', require('./cms/Publications.vue'))
-Vue.component('showcases', require('./cms/Showcases.vue'))
-Vue.component('input-tag', require('./InputTag.vue'))
-Vue.component('destinations', require('./cms/Destinations.vue'))
-Vue.component('regions', require('./cms/Regions.vue'))
+Vue.component('posts', require('./cms/Posts.vue').default)
+Vue.component('newsletters', require('./cms/Newsletters.vue').default)
+Vue.component('publications', require('./cms/Publications.vue').default)
+Vue.component('showcases', require('./cms/Showcases.vue').default)
+Vue.component('input-tag', require('./InputTag.vue').default)
+Vue.component('destinations', require('./cms/Destinations.vue').default)
+Vue.component('regions', require('./cms/Regions.vue').default)
 // Public "guest" components
-Vue.component('public-footer', require('./PublicFooter.vue'))
-Vue.component('sales-inquiry', require('./SalesInquiry.vue'))
-Vue.component('world-map', require('./WorldMap.vue'))
-Vue.component('site-search', require('./Search.vue'))
-Vue.component('fish-species', require('./cms/FishSpecies.vue'))
+Vue.component('public-footer', require('./PublicFooter.vue').default)
+Vue.component('sales-inquiry', require('./SalesInquiry.vue').default)
+Vue.component('newsletter-signup', require('./NewsletterSignup.vue').default)
+Vue.component('world-map', require('./WorldMap.vue').default)
+Vue.component('site-search', require('./Search.vue').default)
+Vue.component('fish-species', require('./cms/FishSpecies.vue').default)
