@@ -36,7 +36,7 @@
         "spatie/laravel-responsecache": "^4.0",
         "spatie/laravel-sitemap": "^3.3",
         "spatie/schema-org": "^1.4",
-        "teamtnt/laravel-scout-tntsearch-driver": "^3.1"
+        "teamtnt/laravel-scout-tntsearch-driver": "~3.1.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.4",
