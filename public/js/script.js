@@ -2061,24 +2061,24 @@ var validators = {
   props: {
     tags: {
       type: Array,
-      default: function _default() {
+      "default": function _default() {
         return [];
       }
     },
     placeholder: {
       type: String,
-      default: ''
+      "default": ''
     },
     onChange: {
       type: Function
     },
     readOnly: {
       type: Boolean,
-      default: false
+      "default": false
     },
     validate: {
       type: String,
-      default: ''
+      "default": ''
     }
   },
   data: function data() {
@@ -2200,7 +2200,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_0__["default"]);
             timer: 2000
           });
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this.error = true;
           swal({
             title: 'Something\'s not right',
@@ -2387,7 +2387,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_0__["default"]);
             timer: 3000
           });
           return 'success';
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this.error = true;
           swal({
             title: 'Something went wrong',
@@ -2396,7 +2396,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_0__["default"]);
             timer: 2000
           });
           return Promise.reject(error);
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this.error = true;
           swal({
             title: 'Invalid email address',
@@ -2484,7 +2484,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/api/search?query=' + this.query, {}).then(function (result) {
         _this.results = result.data;
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -2862,7 +2862,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get("/api/destinations", {}).then(function (result) {
         _this.destinations = result.data.data;
         return _this.destinations;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -2872,7 +2872,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get("/api/regions", {}).then(function (result) {
         _this2.regions = result.data.data;
         return _this2.regions;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -2942,13 +2942,13 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           _this4.newDestination.saved = true;
           _this4.newDestination.destinationId = result.data.id;
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this4.newDestination.saveError = true;
           _this4.newDestination.saveBusy = false;
           _this4.newDestination.serverErrors = error.response.data.errors.slug[0];
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this4.newDestination.saveBusy = false;
         _this4.newDestination.saveError = true;
         _this4.errors = Promise.reject(error);
@@ -2977,12 +2977,12 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           _this5.newDestination.saveBusy = false;
           _this5.newDestination.saved = true;
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this5.newDestination.saveError = true;
           _this5.newDestination.saveBusy = false;
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this5.newDestination.saveBusy = false;
         _this5.newDestination.saveError = true;
         return Promise.reject(error);
@@ -2992,9 +2992,9 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       var _this6 = this;
 
       if (confirm("Permanently destroy this destination?")) {
-        axios.delete("/api/destinations/" + this.newDestination.destinationId, {}).then(function (result) {
+        axios["delete"]("/api/destinations/" + this.newDestination.destinationId, {}).then(function (result) {
           _this6.clear();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           return Promise.reject(error);
         });
       }
@@ -3036,7 +3036,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this7.saveBusy = false;
         _this7.newDestination.saved = true;
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     }
@@ -3398,7 +3398,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get('/api/fish-species', {}).then(function (result) {
         _this.contents = result.data.data;
         return _this.contents;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -3443,7 +3443,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
             timer: 2000
           });
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this2.newContentItem.saveError = true;
           _this2.newContentItem.saveBusy = false;
           var saveErrors = error.response.data.errors;
@@ -3456,7 +3456,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           });
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this2.newContentItem.saveBusy = false;
         _this2.newContentItem.saveError = true;
         var saveErrors = error.response.data.errors;
@@ -3489,7 +3489,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this3.newContentItem.publishBusy = false;
         _this3.newContentItem.publicationId = result.data.id;
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this3.newContentItem.publishBusy = false;
         return Promise.reject(error);
       });
@@ -3500,7 +3500,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       var _this4 = this;
 
       var id = this.newContentItem.id;
-      axios.delete('/api/publications/' + this.newContentItem.publicationId, {}).then(function (result) {
+      axios["delete"]('/api/publications/' + this.newContentItem.publicationId, {}).then(function (result) {
         _this4.newContentItem.publicationId = null;
         _this4.newContentItem.publishBusy = false;
         _this4.newContentItem.published = null;
@@ -3508,7 +3508,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this4.checkPublication(id);
 
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this4.newContentItem.publishBusy = false;
         return Promise.reject(error);
       });
@@ -3528,7 +3528,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         }
 
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -3545,7 +3545,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           timer: 2000
         });
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this6.newContentItem.saveError = true;
         _this6.newContentItem.saveBusy = false;
         var saveErrors = error.response.data.errors;
@@ -3563,9 +3563,9 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       var _this7 = this;
 
       if (confirm("Permanently destroy this content?")) {
-        axios.delete('/api' + this.contentType + '/' + this.newContentItem.id, {}).then(function (result) {
+        axios["delete"]('/api' + this.contentType + '/' + this.newContentItem.id, {}).then(function (result) {
           _this7.clear();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           return Promise.reject(error);
         });
       }
@@ -3649,7 +3649,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this9.saveBusy = false;
         _this9.newContentItem.saved = true;
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     }
@@ -3891,7 +3891,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get("/api/newsletters", {}).then(function (result) {
         _this.newsletters = result.data.data;
         return _this.newsletters;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -3925,13 +3925,13 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           _this2.newNewsletter.newsletterId = result.data.id;
           _this2.newNewsletter.sent_on = result.data.sent_on;
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this2.newNewsletter.saveError = true;
           _this2.newNewsletter.saveBusy = false;
           _this2.newNewsletter.serverErrors = error.response.data.errors.slug[0];
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this2.newNewsletter.saveBusy = false;
         _this2.newNewsletter.saveError = true;
         _this2.errors = Promise.reject(error);
@@ -3962,7 +3962,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           _this3.toggleIndex();
 
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this3.newNewsletter.sendBusy = false;
           return Promise.reject(error);
         });
@@ -3987,13 +3987,13 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           _this4.newNewsletter.saveBusy = false;
           _this4.newNewsletter.saved = true;
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this4.newNewsletter.saveError = true;
           _this4.newNewsletter.saveBusy = false;
           _this4.newNewsletter.serverErrors = error.response.data.errors.slug[0];
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this4.newNewsletter.saveBusy = false;
         _this4.newNewsletter.saveError = true;
         return Promise.reject(error);
@@ -4003,9 +4003,9 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       var _this5 = this;
 
       if (confirm("Permanently destroy this newsletter?")) {
-        axios.delete("/api/newsletters/" + this.newNewsletter.newsletterId, {}).then(function (result) {
+        axios["delete"]("/api/newsletters/" + this.newNewsletter.newsletterId, {}).then(function (result) {
           _this5.clear();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           return Promise.reject(error);
         });
       }
@@ -4045,7 +4045,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this6.newNewsletter.saved = true;
         _this6.newNewsletter.saveDisabled = true;
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     }
@@ -4366,7 +4366,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get("/api/posts", {}).then(function (result) {
         _this.posts = result.data.data;
         return _this.posts;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -4413,7 +4413,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
             timer: 2000
           });
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this2.newPost.saveError = true;
           _this2.newPost.saveBusy = false;
           var saveErrors = error.response.data.errors;
@@ -4426,7 +4426,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           });
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this2.newPost.saveBusy = false;
         _this2.newPost.saveError = true;
         var saveErrors = error.response.data.errors;
@@ -4459,7 +4459,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this3.newPost.publishBusy = false;
         _this3.newPost.publicationId = result.data.id;
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this3.newPost.publishBusy = false;
         return Promise.reject(error);
       });
@@ -4470,7 +4470,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       var _this4 = this;
 
       var postId = this.newPost.postId;
-      axios.delete("/api/publications/" + this.newPost.publicationId, {}).then(function (result) {
+      axios["delete"]("/api/publications/" + this.newPost.publicationId, {}).then(function (result) {
         _this4.newPost.publicationId = null;
         _this4.newPost.publishBusy = false;
         _this4.newPost.published = null;
@@ -4478,7 +4478,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this4.checkPublication(postId);
 
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this4.newPost.publishBusy = false;
         return Promise.reject(error);
       });
@@ -4498,7 +4498,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         }
 
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -4529,7 +4529,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
             timer: 2000
           });
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this6.newPost.saveError = true;
           _this6.newPost.saveBusy = false;
           var saveErrors = error.response.data.errors;
@@ -4542,7 +4542,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           });
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this6.newPost.saveBusy = false;
         _this6.newPost.saveError = true;
         return Promise.reject(error);
@@ -4552,9 +4552,9 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       var _this7 = this;
 
       if (confirm("Permanently destroy this post?")) {
-        axios.delete("/api/posts/" + this.newPost.postId, {}).then(function (result) {
+        axios["delete"]("/api/posts/" + this.newPost.postId, {}).then(function (result) {
           _this7.clear();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           return Promise.reject(error);
         });
       }
@@ -4636,7 +4636,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this9.saveBusy = false;
         _this9.newPost.saved = true;
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -4646,7 +4646,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get("/cms/posts/" + id + '/tags', {}).then(function (result) {
         _this10.newPost.tags = result.data;
         return result.data.tags;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     }
@@ -4776,7 +4776,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.unpublishedPosts = result.data.unpublished_posts;
         _this.unpublishedShowcases = result.data.unpublished_showcases;
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -4790,7 +4790,7 @@ __webpack_require__.r(__webpack_exports__);
         _this2.getIndex();
 
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this2.newPost.publishBusy = false;
         return Promise.reject(error);
       });
@@ -4805,7 +4805,7 @@ __webpack_require__.r(__webpack_exports__);
         _this3.getIndex();
 
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this3.newPost.publishBusy = false;
         return Promise.reject(error);
       });
@@ -4813,22 +4813,22 @@ __webpack_require__.r(__webpack_exports__);
     unpubShowcase: function unpubShowcase(id) {
       var _this4 = this;
 
-      axios.delete("/api/publications/showcase/" + id, {}).then(function (result) {
+      axios["delete"]("/api/publications/showcase/" + id, {}).then(function (result) {
         _this4.getIndex();
 
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
     unpubPost: function unpubPost(id) {
       var _this5 = this;
 
-      axios.delete("/api/publications/post/" + id, {}).then(function (result) {
+      axios["delete"]("/api/publications/post/" + id, {}).then(function (result) {
         _this5.getIndex();
 
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     }
@@ -5037,7 +5037,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_0__["default"]);
       axios.get("/api/regions", {}).then(function (result) {
         _this.regions = result.data.data;
         return _this.regions;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -5107,13 +5107,13 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_0__["default"]);
           _this3.newRegion.saved = true;
           _this3.newRegion.regionId = result.data.id;
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this3.newRegion.saveError = true;
           _this3.newRegion.saveBusy = false;
           _this3.newRegion.serverErrors = error.response.data.errors.slug[0];
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this3.newRegion.saveBusy = false;
         _this3.newRegion.saveError = true;
         _this3.errors = Promise.reject(error);
@@ -5140,12 +5140,12 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_0__["default"]);
           _this4.newRegion.saveBusy = false;
           _this4.newRegion.saved = true;
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this4.newRegion.saveError = true;
           _this4.newRegion.saveBusy = false;
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this4.newRegion.saveBusy = false;
         _this4.newRegion.saveError = true;
         return Promise.reject(error);
@@ -5155,9 +5155,9 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_0__["default"]);
       var _this5 = this;
 
       if (confirm("Permanently destroy this region?")) {
-        axios.delete("/api/regions/" + this.newRegion.regionId, {}).then(function (result) {
+        axios["delete"]("/api/regions/" + this.newRegion.regionId, {}).then(function (result) {
           _this5.clear();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           return Promise.reject(error);
         });
       }
@@ -5196,7 +5196,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_0__["default"]);
         _this6.saveBusy = false;
         _this6.newRegion.saved = true;
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     }
@@ -5682,7 +5682,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get("/api/showcases", {}).then(function (result) {
         _this.showcases = result.data.data;
         return _this.showcases;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -5692,7 +5692,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get("/api/regions", {}).then(function (result) {
         _this2.regions = result.data.data;
         return _this2.regions;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -5702,7 +5702,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get("/api/destinations", {}).then(function (result) {
         _this3.destinations = result.data.data;
         return _this3.destinations;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -5755,7 +5755,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
             timer: 2000
           });
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this4.newShowcase.saveError = true;
           _this4.newShowcase.saveBusy = false;
           var saveErrors = error.response.data.errors;
@@ -5768,7 +5768,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           });
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this4.newShowcase.saveBusy = false;
         _this4.newShowcase.saveError = true;
         return Promise.reject(error);
@@ -5792,7 +5792,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this5.newShowcase.publishBusy = false;
         _this5.newShowcase.publicationId = result.data.id;
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this5.newShowcase.publishBusy = false;
         return Promise.reject(error);
       });
@@ -5803,7 +5803,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       var _this6 = this;
 
       var showcaseId = this.newShowcase.showcaseId;
-      axios.delete("/api/publications/" + this.newShowcase.publicationId, {}).then(function (result) {
+      axios["delete"]("/api/publications/" + this.newShowcase.publicationId, {}).then(function (result) {
         _this6.newShowcase.publicationId = null;
         _this6.newShowcase.publishBusy = false;
         _this6.newShowcase.published = null;
@@ -5811,7 +5811,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this6.checkPublication(showcaseId);
 
         return result;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this6.newShowcase.publishBusy = false;
         return Promise.reject(error);
       });
@@ -5831,7 +5831,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         }
 
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -5870,7 +5870,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
             timer: 2000
           });
           return result;
-        }).catch(function (error) {
+        })["catch"](function (error) {
           _this8.newShowcase.saveError = true;
           _this8.newShowcase.saveBusy = false;
           var saveErrors = error.response.data.errors;
@@ -5883,7 +5883,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
           });
           return Promise.reject(error);
         });
-      }).catch(function (error) {
+      })["catch"](function (error) {
         _this8.newShowcase.saveBusy = false;
         _this8.newShowcase.saveError = true;
         return Promise.reject(error);
@@ -5893,9 +5893,9 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       var _this9 = this;
 
       if (confirm("Permanently destroy this showcase?")) {
-        axios.delete("/api/showcases/" + this.newShowcase.showcaseId, {}).then(function (result) {
+        axios["delete"]("/api/showcases/" + this.newShowcase.showcaseId, {}).then(function (result) {
           _this9.clear();
-        }).catch(function (error) {
+        })["catch"](function (error) {
           return Promise.reject(error);
         });
       }
@@ -5992,7 +5992,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
         _this11.saveBusy = false;
         _this11.newShowcase.saved = true;
         return result.data;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     },
@@ -6002,7 +6002,7 @@ Vue.use(vee_validate__WEBPACK_IMPORTED_MODULE_2__["default"]);
       axios.get("/cms/showcases/" + id + '/tags', {}).then(function (result) {
         _this12.newShowcase.tags = result.data;
         return result.data.tags;
-      }).catch(function (error) {
+      })["catch"](function (error) {
         return Promise.reject(error);
       });
     }
@@ -6071,10 +6071,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: affix.js v3.4.0
+ * Bootstrap: affix.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#affix
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -6102,7 +6102,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     this.checkPosition()
   }
 
-  Affix.VERSION  = '3.4.0'
+  Affix.VERSION  = '3.4.1'
 
   Affix.RESET    = 'affix affix-top affix-bottom'
 
@@ -6246,10 +6246,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: alert.js v3.4.0
+ * Bootstrap: alert.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#alerts
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -6265,7 +6265,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     $(el).on('click', dismiss, this.close)
   }
 
-  Alert.VERSION = '3.4.0'
+  Alert.VERSION = '3.4.1'
 
   Alert.TRANSITION_DURATION = 150
 
@@ -6352,10 +6352,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: button.js v3.4.0
+ * Bootstrap: button.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#buttons
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -6372,7 +6372,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     this.isLoading = false
   }
 
-  Button.VERSION  = '3.4.0'
+  Button.VERSION  = '3.4.1'
 
   Button.DEFAULTS = {
     loadingText: 'loading...'
@@ -6488,10 +6488,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: carousel.js v3.4.0
+ * Bootstrap: carousel.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#carousel
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -6519,7 +6519,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
       .on('mouseleave.bs.carousel', $.proxy(this.cycle, this))
   }
 
-  Carousel.VERSION  = '3.4.0'
+  Carousel.VERSION  = '3.4.1'
 
   Carousel.TRANSITION_DURATION = 600
 
@@ -6745,10 +6745,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: collapse.js v3.4.0
+ * Bootstrap: collapse.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#collapse
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -6776,7 +6776,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     if (this.options.toggle) this.toggle()
   }
 
-  Collapse.VERSION  = '3.4.0'
+  Collapse.VERSION  = '3.4.1'
 
   Collapse.TRANSITION_DURATION = 350
 
@@ -6968,10 +6968,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: dropdown.js v3.4.0
+ * Bootstrap: dropdown.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#dropdowns
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -6988,7 +6988,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     $(element).on('click.bs.dropdown', this.toggle)
   }
 
-  Dropdown.VERSION = '3.4.0'
+  Dropdown.VERSION = '3.4.1'
 
   function getParent($this) {
     var selector = $this.attr('data-target')
@@ -6998,7 +6998,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
       selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') // strip for ie7
     }
 
-    var $parent = selector && $(document).find(selector)
+    var $parent = selector !== '#' ? $(document).find(selector) : null
 
     return $parent && $parent.length ? $parent : $this.parent()
   }
@@ -7144,10 +7144,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: modal.js v3.4.0
+ * Bootstrap: modal.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#modals
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -7179,7 +7179,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     }
   }
 
-  Modal.VERSION = '3.4.0'
+  Modal.VERSION = '3.4.1'
 
   Modal.TRANSITION_DURATION = 300
   Modal.BACKDROP_TRANSITION_DURATION = 150
@@ -7513,10 +7513,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: popover.js v3.4.0
+ * Bootstrap: popover.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#popovers
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -7533,7 +7533,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
-  Popover.VERSION  = '3.4.0'
+  Popover.VERSION  = '3.4.1'
 
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
@@ -7559,10 +7559,25 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     var title   = this.getTitle()
     var content = this.getContent()
 
-    $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
-    $tip.find('.popover-content').children().detach().end()[ // we use append for html objects to maintain js events
-      this.options.html ? (typeof content == 'string' ? 'html' : 'append') : 'text'
-    ](content)
+    if (this.options.html) {
+      var typeContent = typeof content
+
+      if (this.options.sanitize) {
+        title = this.sanitizeHtml(title)
+
+        if (typeContent === 'string') {
+          content = this.sanitizeHtml(content)
+        }
+      }
+
+      $tip.find('.popover-title').html(title)
+      $tip.find('.popover-content').children().detach().end()[
+        typeContent === 'string' ? 'html' : 'append'
+      ](content)
+    } else {
+      $tip.find('.popover-title').text(title)
+      $tip.find('.popover-content').children().detach().end().text(content)
+    }
 
     $tip.removeClass('fade top bottom left right in')
 
@@ -7632,10 +7647,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.4.0
+ * Bootstrap: scrollspy.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#scrollspy
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -7661,7 +7676,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     this.process()
   }
 
-  ScrollSpy.VERSION  = '3.4.0'
+  ScrollSpy.VERSION  = '3.4.1'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
@@ -7815,10 +7830,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: tab.js v3.4.0
+ * Bootstrap: tab.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#tabs
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -7835,7 +7850,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     // jscs:enable requireDollarBeforejQueryAssignment
   }
 
-  Tab.VERSION = '3.4.0'
+  Tab.VERSION = '3.4.1'
 
   Tab.TRANSITION_DURATION = 150
 
@@ -7981,17 +7996,147 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: tooltip.js v3.4.0
+ * Bootstrap: tooltip.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
-
 +function ($) {
   'use strict';
+
+  var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn']
+
+  var uriAttrs = [
+    'background',
+    'cite',
+    'href',
+    'itemtype',
+    'longdesc',
+    'poster',
+    'src',
+    'xlink:href'
+  ]
+
+  var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i
+
+  var DefaultWhitelist = {
+    // Global attributes allowed on any supplied element below.
+    '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
+    a: ['target', 'href', 'title', 'rel'],
+    area: [],
+    b: [],
+    br: [],
+    col: [],
+    code: [],
+    div: [],
+    em: [],
+    hr: [],
+    h1: [],
+    h2: [],
+    h3: [],
+    h4: [],
+    h5: [],
+    h6: [],
+    i: [],
+    img: ['src', 'alt', 'title', 'width', 'height'],
+    li: [],
+    ol: [],
+    p: [],
+    pre: [],
+    s: [],
+    small: [],
+    span: [],
+    sub: [],
+    sup: [],
+    strong: [],
+    u: [],
+    ul: []
+  }
+
+  /**
+   * A pattern that recognizes a commonly useful subset of URLs that are safe.
+   *
+   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+   */
+  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi
+
+  /**
+   * A pattern that matches safe data URLs. Only matches image, video and audio types.
+   *
+   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
+   */
+  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i
+
+  function allowedAttribute(attr, allowedAttributeList) {
+    var attrName = attr.nodeName.toLowerCase()
+
+    if ($.inArray(attrName, allowedAttributeList) !== -1) {
+      if ($.inArray(attrName, uriAttrs) !== -1) {
+        return Boolean(attr.nodeValue.match(SAFE_URL_PATTERN) || attr.nodeValue.match(DATA_URL_PATTERN))
+      }
+
+      return true
+    }
+
+    var regExp = $(allowedAttributeList).filter(function (index, value) {
+      return value instanceof RegExp
+    })
+
+    // Check if a regular expression validates the attribute.
+    for (var i = 0, l = regExp.length; i < l; i++) {
+      if (attrName.match(regExp[i])) {
+        return true
+      }
+    }
+
+    return false
+  }
+
+  function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
+    if (unsafeHtml.length === 0) {
+      return unsafeHtml
+    }
+
+    if (sanitizeFn && typeof sanitizeFn === 'function') {
+      return sanitizeFn(unsafeHtml)
+    }
+
+    // IE 8 and below don't support createHTMLDocument
+    if (!document.implementation || !document.implementation.createHTMLDocument) {
+      return unsafeHtml
+    }
+
+    var createdDocument = document.implementation.createHTMLDocument('sanitization')
+    createdDocument.body.innerHTML = unsafeHtml
+
+    var whitelistKeys = $.map(whiteList, function (el, i) { return i })
+    var elements = $(createdDocument.body).find('*')
+
+    for (var i = 0, len = elements.length; i < len; i++) {
+      var el = elements[i]
+      var elName = el.nodeName.toLowerCase()
+
+      if ($.inArray(elName, whitelistKeys) === -1) {
+        el.parentNode.removeChild(el)
+
+        continue
+      }
+
+      var attributeList = $.map(el.attributes, function (el) { return el })
+      var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || [])
+
+      for (var j = 0, len2 = attributeList.length; j < len2; j++) {
+        if (!allowedAttribute(attributeList[j], whitelistedAttributes)) {
+          el.removeAttribute(attributeList[j].nodeName)
+        }
+      }
+    }
+
+    return createdDocument.body.innerHTML
+  }
 
   // TOOLTIP PUBLIC CLASS DEFINITION
   // ===============================
@@ -8008,7 +8153,7 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     this.init('tooltip', element, options)
   }
 
-  Tooltip.VERSION  = '3.4.0'
+  Tooltip.VERSION  = '3.4.1'
 
   Tooltip.TRANSITION_DURATION = 150
 
@@ -8025,7 +8170,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     viewport: {
       selector: 'body',
       padding: 0
-    }
+    },
+    sanitize : true,
+    sanitizeFn : null,
+    whiteList : DefaultWhitelist
   }
 
   Tooltip.prototype.init = function (type, element, options) {
@@ -8066,13 +8214,25 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
   }
 
   Tooltip.prototype.getOptions = function (options) {
-    options = $.extend({}, this.getDefaults(), this.$element.data(), options)
+    var dataAttributes = this.$element.data()
+
+    for (var dataAttr in dataAttributes) {
+      if (dataAttributes.hasOwnProperty(dataAttr) && $.inArray(dataAttr, DISALLOWED_ATTRIBUTES) !== -1) {
+        delete dataAttributes[dataAttr]
+      }
+    }
+
+    options = $.extend({}, this.getDefaults(), dataAttributes, options)
 
     if (options.delay && typeof options.delay == 'number') {
       options.delay = {
         show: options.delay,
         hide: options.delay
       }
+    }
+
+    if (options.sanitize) {
+      options.template = sanitizeHtml(options.template, options.whiteList, options.sanitizeFn)
     }
 
     return options
@@ -8288,7 +8448,16 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     var $tip  = this.tip()
     var title = this.getTitle()
 
-    $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
+    if (this.options.html) {
+      if (this.options.sanitize) {
+        title = sanitizeHtml(title, this.options.whiteList, this.options.sanitizeFn)
+      }
+
+      $tip.find('.tooltip-inner').html(title)
+    } else {
+      $tip.find('.tooltip-inner').text(title)
+    }
+
     $tip.removeClass('fade in top bottom left right')
   }
 
@@ -8469,6 +8638,9 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
     })
   }
 
+  Tooltip.prototype.sanitizeHtml = function (unsafeHtml) {
+    return sanitizeHtml(unsafeHtml, this.options.whiteList, this.options.sanitizeFn)
+  }
 
   // TOOLTIP PLUGIN DEFINITION
   // =========================
@@ -8512,10 +8684,10 @@ __webpack_require__(/*! ../../js/affix.js */ "./node_modules/bootstrap/js/affix.
 /***/ (function(module, exports) {
 
 /* ========================================================================
- * Bootstrap: transition.js v3.4.0
+ * Bootstrap: transition.js v3.4.1
  * https://getbootstrap.com/docs/3.4/javascript/#transitions
  * ========================================================================
- * Copyright 2011-2018 Twitter, Inc.
+ * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -8916,7 +9088,7 @@ function toComment(sourceMap) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
- * jQuery JavaScript Library v3.3.1
+ * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
  *
  * Includes Sizzle.js
@@ -8926,7 +9098,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * Released under the MIT license
  * https://jquery.org/license
  *
- * Date: 2018-01-20T17:24Z
+ * Date: 2019-05-01T21:04Z
  */
 ( function( global, factory ) {
 
@@ -9008,20 +9180,33 @@ var isWindow = function isWindow( obj ) {
 	var preservedScriptAttributes = {
 		type: true,
 		src: true,
+		nonce: true,
 		noModule: true
 	};
 
-	function DOMEval( code, doc, node ) {
+	function DOMEval( code, node, doc ) {
 		doc = doc || document;
 
-		var i,
+		var i, val,
 			script = doc.createElement( "script" );
 
 		script.text = code;
 		if ( node ) {
 			for ( i in preservedScriptAttributes ) {
-				if ( node[ i ] ) {
-					script[ i ] = node[ i ];
+
+				// Support: Firefox 64+, Edge 18+
+				// Some browsers don't support the "nonce" property on scripts.
+				// On the other hand, just using `getAttribute` is not enough as
+				// the `nonce` attribute is reset to an empty string whenever it
+				// becomes browsing-context connected.
+				// See https://github.com/whatwg/html/issues/2369
+				// See https://html.spec.whatwg.org/#nonce-attributes
+				// The `node.getAttribute` check was added for the sake of
+				// `jQuery.globalEval` so that it can fake a nonce-containing node
+				// via an object.
+				val = node[ i ] || node.getAttribute && node.getAttribute( i );
+				if ( val ) {
+					script.setAttribute( i, val );
 				}
 			}
 		}
@@ -9046,7 +9231,7 @@ function toType( obj ) {
 
 
 var
-	version = "3.3.1",
+	version = "3.4.1",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -9175,25 +9360,28 @@ jQuery.extend = jQuery.fn.extend = function() {
 
 			// Extend the base object
 			for ( name in options ) {
-				src = target[ name ];
 				copy = options[ name ];
 
+				// Prevent Object.prototype pollution
 				// Prevent never-ending loop
-				if ( target === copy ) {
+				if ( name === "__proto__" || target === copy ) {
 					continue;
 				}
 
 				// Recurse if we're merging plain objects or arrays
 				if ( deep && copy && ( jQuery.isPlainObject( copy ) ||
 					( copyIsArray = Array.isArray( copy ) ) ) ) {
+					src = target[ name ];
 
-					if ( copyIsArray ) {
-						copyIsArray = false;
-						clone = src && Array.isArray( src ) ? src : [];
-
+					// Ensure proper type for the source value
+					if ( copyIsArray && !Array.isArray( src ) ) {
+						clone = [];
+					} else if ( !copyIsArray && !jQuery.isPlainObject( src ) ) {
+						clone = {};
 					} else {
-						clone = src && jQuery.isPlainObject( src ) ? src : {};
+						clone = src;
 					}
+					copyIsArray = false;
 
 					// Never move original objects, clone them
 					target[ name ] = jQuery.extend( deep, clone, copy );
@@ -9246,9 +9434,6 @@ jQuery.extend( {
 	},
 
 	isEmptyObject: function( obj ) {
-
-		/* eslint-disable no-unused-vars */
-		// See https://github.com/eslint/eslint/issues/6125
 		var name;
 
 		for ( name in obj ) {
@@ -9258,8 +9443,8 @@ jQuery.extend( {
 	},
 
 	// Evaluates a script in a global context
-	globalEval: function( code ) {
-		DOMEval( code );
+	globalEval: function( code, options ) {
+		DOMEval( code, { nonce: options && options.nonce } );
 	},
 
 	each: function( obj, callback ) {
@@ -9415,14 +9600,14 @@ function isArrayLike( obj ) {
 }
 var Sizzle =
 /*!
- * Sizzle CSS Selector Engine v2.3.3
+ * Sizzle CSS Selector Engine v2.3.4
  * https://sizzlejs.com/
  *
- * Copyright jQuery Foundation and other contributors
+ * Copyright JS Foundation and other contributors
  * Released under the MIT license
- * http://jquery.org/license
+ * https://js.foundation/
  *
- * Date: 2016-08-08
+ * Date: 2019-04-08
  */
 (function( window ) {
 
@@ -9456,6 +9641,7 @@ var i,
 	classCache = createCache(),
 	tokenCache = createCache(),
 	compilerCache = createCache(),
+	nonnativeSelectorCache = createCache(),
 	sortOrder = function( a, b ) {
 		if ( a === b ) {
 			hasDuplicate = true;
@@ -9517,8 +9703,7 @@ var i,
 
 	rcomma = new RegExp( "^" + whitespace + "*," + whitespace + "*" ),
 	rcombinators = new RegExp( "^" + whitespace + "*([>+~]|" + whitespace + ")" + whitespace + "*" ),
-
-	rattributeQuotes = new RegExp( "=" + whitespace + "*([^\\]'\"]*?)" + whitespace + "*\\]", "g" ),
+	rdescend = new RegExp( whitespace + "|>" ),
 
 	rpseudo = new RegExp( pseudos ),
 	ridentifier = new RegExp( "^" + identifier + "$" ),
@@ -9539,6 +9724,7 @@ var i,
 			whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
 	},
 
+	rhtml = /HTML$/i,
 	rinputs = /^(?:input|select|textarea|button)$/i,
 	rheader = /^h\d$/i,
 
@@ -9593,9 +9779,9 @@ var i,
 		setDocument();
 	},
 
-	disabledAncestor = addCombinator(
+	inDisabledFieldset = addCombinator(
 		function( elem ) {
-			return elem.disabled === true && ("form" in elem || "label" in elem);
+			return elem.disabled === true && elem.nodeName.toLowerCase() === "fieldset";
 		},
 		{ dir: "parentNode", next: "legend" }
 	);
@@ -9708,18 +9894,22 @@ function Sizzle( selector, context, results, seed ) {
 
 			// Take advantage of querySelectorAll
 			if ( support.qsa &&
-				!compilerCache[ selector + " " ] &&
-				(!rbuggyQSA || !rbuggyQSA.test( selector )) ) {
+				!nonnativeSelectorCache[ selector + " " ] &&
+				(!rbuggyQSA || !rbuggyQSA.test( selector )) &&
 
-				if ( nodeType !== 1 ) {
-					newContext = context;
-					newSelector = selector;
-
-				// qSA looks outside Element context, which is not what we want
-				// Thanks to Andrew Dupont for this workaround technique
-				// Support: IE <=8
+				// Support: IE 8 only
 				// Exclude object elements
-				} else if ( context.nodeName.toLowerCase() !== "object" ) {
+				(nodeType !== 1 || context.nodeName.toLowerCase() !== "object") ) {
+
+				newSelector = selector;
+				newContext = context;
+
+				// qSA considers elements outside a scoping root when evaluating child or
+				// descendant combinators, which is not what we want.
+				// In such cases, we work around the behavior by prefixing every selector in the
+				// list with an ID selector referencing the scope context.
+				// Thanks to Andrew Dupont for this technique.
+				if ( nodeType === 1 && rdescend.test( selector ) ) {
 
 					// Capture the context ID, setting it first if necessary
 					if ( (nid = context.getAttribute( "id" )) ) {
@@ -9741,17 +9931,16 @@ function Sizzle( selector, context, results, seed ) {
 						context;
 				}
 
-				if ( newSelector ) {
-					try {
-						push.apply( results,
-							newContext.querySelectorAll( newSelector )
-						);
-						return results;
-					} catch ( qsaError ) {
-					} finally {
-						if ( nid === expando ) {
-							context.removeAttribute( "id" );
-						}
+				try {
+					push.apply( results,
+						newContext.querySelectorAll( newSelector )
+					);
+					return results;
+				} catch ( qsaError ) {
+					nonnativeSelectorCache( selector, true );
+				} finally {
+					if ( nid === expando ) {
+						context.removeAttribute( "id" );
 					}
 				}
 			}
@@ -9915,7 +10104,7 @@ function createDisabledPseudo( disabled ) {
 					// Where there is no isDisabled, check manually
 					/* jshint -W018 */
 					elem.isDisabled !== !disabled &&
-						disabledAncestor( elem ) === disabled;
+						inDisabledFieldset( elem ) === disabled;
 			}
 
 			return elem.disabled === disabled;
@@ -9972,10 +10161,13 @@ support = Sizzle.support = {};
  * @returns {Boolean} True iff elem is a non-HTML XML node
  */
 isXML = Sizzle.isXML = function( elem ) {
-	// documentElement is verified for cases where it doesn't yet exist
-	// (such as loading iframes in IE - #4833)
-	var documentElement = elem && (elem.ownerDocument || elem).documentElement;
-	return documentElement ? documentElement.nodeName !== "HTML" : false;
+	var namespace = elem.namespaceURI,
+		docElem = (elem.ownerDocument || elem).documentElement;
+
+	// Support: IE <=8
+	// Assume HTML when documentElement doesn't yet exist, such as inside loading iframes
+	// https://bugs.jquery.com/ticket/4833
+	return !rhtml.test( namespace || docElem && docElem.nodeName || "HTML" );
 };
 
 /**
@@ -10397,11 +10589,8 @@ Sizzle.matchesSelector = function( elem, expr ) {
 		setDocument( elem );
 	}
 
-	// Make sure that attribute selectors are quoted
-	expr = expr.replace( rattributeQuotes, "='$1']" );
-
 	if ( support.matchesSelector && documentIsHTML &&
-		!compilerCache[ expr + " " ] &&
+		!nonnativeSelectorCache[ expr + " " ] &&
 		( !rbuggyMatches || !rbuggyMatches.test( expr ) ) &&
 		( !rbuggyQSA     || !rbuggyQSA.test( expr ) ) ) {
 
@@ -10415,7 +10604,9 @@ Sizzle.matchesSelector = function( elem, expr ) {
 					elem.document && elem.document.nodeType !== 11 ) {
 				return ret;
 			}
-		} catch (e) {}
+		} catch (e) {
+			nonnativeSelectorCache( expr, true );
+		}
 	}
 
 	return Sizzle( expr, document, null, [ elem ] ).length > 0;
@@ -10874,7 +11065,7 @@ Expr = Sizzle.selectors = {
 		"contains": markFunction(function( text ) {
 			text = text.replace( runescape, funescape );
 			return function( elem ) {
-				return ( elem.textContent || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
+				return ( elem.textContent || getText( elem ) ).indexOf( text ) > -1;
 			};
 		}),
 
@@ -11013,7 +11204,11 @@ Expr = Sizzle.selectors = {
 		}),
 
 		"lt": createPositionalPseudo(function( matchIndexes, length, argument ) {
-			var i = argument < 0 ? argument + length : argument;
+			var i = argument < 0 ?
+				argument + length :
+				argument > length ?
+					length :
+					argument;
 			for ( ; --i >= 0; ) {
 				matchIndexes.push( i );
 			}
@@ -12063,18 +12258,18 @@ jQuery.each( {
 		return siblings( elem.firstChild );
 	},
 	contents: function( elem ) {
-        if ( nodeName( elem, "iframe" ) ) {
-            return elem.contentDocument;
-        }
+		if ( typeof elem.contentDocument !== "undefined" ) {
+			return elem.contentDocument;
+		}
 
-        // Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
-        // Treat the template element as a regular one in browsers that
-        // don't support it.
-        if ( nodeName( elem, "template" ) ) {
-            elem = elem.content || elem;
-        }
+		// Support: IE 9 - 11 only, iOS 7 only, Android Browser <=4.3 only
+		// Treat the template element as a regular one in browsers that
+		// don't support it.
+		if ( nodeName( elem, "template" ) ) {
+			elem = elem.content || elem;
+		}
 
-        return jQuery.merge( [], elem.childNodes );
+		return jQuery.merge( [], elem.childNodes );
 	}
 }, function( name, fn ) {
 	jQuery.fn[ name ] = function( until, selector ) {
@@ -13383,6 +13578,26 @@ var rcssNum = new RegExp( "^(?:([+-])=|)(" + pnum + ")([a-z%]*)$", "i" );
 
 var cssExpand = [ "Top", "Right", "Bottom", "Left" ];
 
+var documentElement = document.documentElement;
+
+
+
+	var isAttached = function( elem ) {
+			return jQuery.contains( elem.ownerDocument, elem );
+		},
+		composed = { composed: true };
+
+	// Support: IE 9 - 11+, Edge 12 - 18+, iOS 10.0 - 10.2 only
+	// Check attachment across shadow DOM boundaries when possible (gh-3504)
+	// Support: iOS 10.0-10.2 only
+	// Early iOS 10 versions support `attachShadow` but not `getRootNode`,
+	// leading to errors. We need to check for `getRootNode`.
+	if ( documentElement.getRootNode ) {
+		isAttached = function( elem ) {
+			return jQuery.contains( elem.ownerDocument, elem ) ||
+				elem.getRootNode( composed ) === elem.ownerDocument;
+		};
+	}
 var isHiddenWithinTree = function( elem, el ) {
 
 		// isHiddenWithinTree might be called from jQuery#filter function;
@@ -13397,7 +13612,7 @@ var isHiddenWithinTree = function( elem, el ) {
 			// Support: Firefox <=43 - 45
 			// Disconnected elements can have computed display: none, so first confirm that elem is
 			// in the document.
-			jQuery.contains( elem.ownerDocument, elem ) &&
+			isAttached( elem ) &&
 
 			jQuery.css( elem, "display" ) === "none";
 	};
@@ -13439,7 +13654,8 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 		unit = valueParts && valueParts[ 3 ] || ( jQuery.cssNumber[ prop ] ? "" : "px" ),
 
 		// Starting value computation is required for potential unit mismatches
-		initialInUnit = ( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
+		initialInUnit = elem.nodeType &&
+			( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
 			rcssNum.exec( jQuery.css( elem, prop ) );
 
 	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
@@ -13586,7 +13802,7 @@ jQuery.fn.extend( {
 } );
 var rcheckableType = ( /^(?:checkbox|radio)$/i );
 
-var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]+)/i );
+var rtagName = ( /<([a-z][^\/\0>\x20\t\r\n\f]*)/i );
 
 var rscriptType = ( /^$|^module$|\/(?:java|ecma)script/i );
 
@@ -13658,7 +13874,7 @@ function setGlobalEval( elems, refElements ) {
 var rhtml = /<|&#?\w+;/;
 
 function buildFragment( elems, context, scripts, selection, ignored ) {
-	var elem, tmp, tag, wrap, contains, j,
+	var elem, tmp, tag, wrap, attached, j,
 		fragment = context.createDocumentFragment(),
 		nodes = [],
 		i = 0,
@@ -13722,13 +13938,13 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 			continue;
 		}
 
-		contains = jQuery.contains( elem.ownerDocument, elem );
+		attached = isAttached( elem );
 
 		// Append to fragment
 		tmp = getAll( fragment.appendChild( elem ), "script" );
 
 		// Preserve script evaluation history
-		if ( contains ) {
+		if ( attached ) {
 			setGlobalEval( tmp );
 		}
 
@@ -13771,8 +13987,6 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 	div.innerHTML = "<textarea>x</textarea>";
 	support.noCloneChecked = !!div.cloneNode( true ).lastChild.defaultValue;
 } )();
-var documentElement = document.documentElement;
-
 
 
 var
@@ -13788,8 +14002,19 @@ function returnFalse() {
 	return false;
 }
 
+// Support: IE <=9 - 11+
+// focus() and blur() are asynchronous, except when they are no-op.
+// So expect focus to be synchronous when the element is already active,
+// and blur to be synchronous when the element is not already active.
+// (focus and blur are always synchronous in other supported browsers,
+// this just defines when we can count on it).
+function expectSync( elem, type ) {
+	return ( elem === safeActiveElement() ) === ( type === "focus" );
+}
+
 // Support: IE <=9 only
-// See #13393 for more info
+// Accessing document.activeElement can throw unexpectedly
+// https://bugs.jquery.com/ticket/13393
 function safeActiveElement() {
 	try {
 		return document.activeElement;
@@ -14089,9 +14314,10 @@ jQuery.event = {
 			while ( ( handleObj = matched.handlers[ j++ ] ) &&
 				!event.isImmediatePropagationStopped() ) {
 
-				// Triggered event must either 1) have no namespace, or 2) have namespace(s)
-				// a subset or equal to those in the bound event (both can have no namespace).
-				if ( !event.rnamespace || event.rnamespace.test( handleObj.namespace ) ) {
+				// If the event is namespaced, then each handler is only invoked if it is
+				// specially universal or its namespaces are a superset of the event's.
+				if ( !event.rnamespace || handleObj.namespace === false ||
+					event.rnamespace.test( handleObj.namespace ) ) {
 
 					event.handleObj = handleObj;
 					event.data = handleObj.data;
@@ -14215,39 +14441,51 @@ jQuery.event = {
 			// Prevent triggered image.load events from bubbling to window.load
 			noBubble: true
 		},
-		focus: {
-
-			// Fire native event if possible so blur/focus sequence is correct
-			trigger: function() {
-				if ( this !== safeActiveElement() && this.focus ) {
-					this.focus();
-					return false;
-				}
-			},
-			delegateType: "focusin"
-		},
-		blur: {
-			trigger: function() {
-				if ( this === safeActiveElement() && this.blur ) {
-					this.blur();
-					return false;
-				}
-			},
-			delegateType: "focusout"
-		},
 		click: {
 
-			// For checkbox, fire native event so checked state will be right
-			trigger: function() {
-				if ( this.type === "checkbox" && this.click && nodeName( this, "input" ) ) {
-					this.click();
-					return false;
+			// Utilize native event to ensure correct state for checkable inputs
+			setup: function( data ) {
+
+				// For mutual compressibility with _default, replace `this` access with a local var.
+				// `|| data` is dead code meant only to preserve the variable through minification.
+				var el = this || data;
+
+				// Claim the first handler
+				if ( rcheckableType.test( el.type ) &&
+					el.click && nodeName( el, "input" ) ) {
+
+					// dataPriv.set( el, "click", ... )
+					leverageNative( el, "click", returnTrue );
 				}
+
+				// Return false to allow normal processing in the caller
+				return false;
+			},
+			trigger: function( data ) {
+
+				// For mutual compressibility with _default, replace `this` access with a local var.
+				// `|| data` is dead code meant only to preserve the variable through minification.
+				var el = this || data;
+
+				// Force setup before triggering a click
+				if ( rcheckableType.test( el.type ) &&
+					el.click && nodeName( el, "input" ) ) {
+
+					leverageNative( el, "click" );
+				}
+
+				// Return non-false to allow normal event-path propagation
+				return true;
 			},
 
-			// For cross-browser consistency, don't fire native .click() on links
+			// For cross-browser consistency, suppress native .click() on links
+			// Also prevent it if we're currently inside a leveraged native-event stack
 			_default: function( event ) {
-				return nodeName( event.target, "a" );
+				var target = event.target;
+				return rcheckableType.test( target.type ) &&
+					target.click && nodeName( target, "input" ) &&
+					dataPriv.get( target, "click" ) ||
+					nodeName( target, "a" );
 			}
 		},
 
@@ -14263,6 +14501,93 @@ jQuery.event = {
 		}
 	}
 };
+
+// Ensure the presence of an event listener that handles manually-triggered
+// synthetic events by interrupting progress until reinvoked in response to
+// *native* events that it fires directly, ensuring that state changes have
+// already occurred before other listeners are invoked.
+function leverageNative( el, type, expectSync ) {
+
+	// Missing expectSync indicates a trigger call, which must force setup through jQuery.event.add
+	if ( !expectSync ) {
+		if ( dataPriv.get( el, type ) === undefined ) {
+			jQuery.event.add( el, type, returnTrue );
+		}
+		return;
+	}
+
+	// Register the controller as a special universal handler for all event namespaces
+	dataPriv.set( el, type, false );
+	jQuery.event.add( el, type, {
+		namespace: false,
+		handler: function( event ) {
+			var notAsync, result,
+				saved = dataPriv.get( this, type );
+
+			if ( ( event.isTrigger & 1 ) && this[ type ] ) {
+
+				// Interrupt processing of the outer synthetic .trigger()ed event
+				// Saved data should be false in such cases, but might be a leftover capture object
+				// from an async native handler (gh-4350)
+				if ( !saved.length ) {
+
+					// Store arguments for use when handling the inner native event
+					// There will always be at least one argument (an event object), so this array
+					// will not be confused with a leftover capture object.
+					saved = slice.call( arguments );
+					dataPriv.set( this, type, saved );
+
+					// Trigger the native event and capture its result
+					// Support: IE <=9 - 11+
+					// focus() and blur() are asynchronous
+					notAsync = expectSync( this, type );
+					this[ type ]();
+					result = dataPriv.get( this, type );
+					if ( saved !== result || notAsync ) {
+						dataPriv.set( this, type, false );
+					} else {
+						result = {};
+					}
+					if ( saved !== result ) {
+
+						// Cancel the outer synthetic event
+						event.stopImmediatePropagation();
+						event.preventDefault();
+						return result.value;
+					}
+
+				// If this is an inner synthetic event for an event with a bubbling surrogate
+				// (focus or blur), assume that the surrogate already propagated from triggering the
+				// native event and prevent that from happening again here.
+				// This technically gets the ordering wrong w.r.t. to `.trigger()` (in which the
+				// bubbling surrogate propagates *after* the non-bubbling base), but that seems
+				// less bad than duplication.
+				} else if ( ( jQuery.event.special[ type ] || {} ).delegateType ) {
+					event.stopPropagation();
+				}
+
+			// If this is a native event triggered above, everything is now in order
+			// Fire an inner synthetic event with the original arguments
+			} else if ( saved.length ) {
+
+				// ...and capture the result
+				dataPriv.set( this, type, {
+					value: jQuery.event.trigger(
+
+						// Support: IE <=9 - 11+
+						// Extend with the prototype to reset the above stopImmediatePropagation()
+						jQuery.extend( saved[ 0 ], jQuery.Event.prototype ),
+						saved.slice( 1 ),
+						this
+					)
+				} );
+
+				// Abort handling of the native event
+				event.stopImmediatePropagation();
+			}
+		}
+	} );
+}
 
 jQuery.removeEvent = function( elem, type, handle ) {
 
@@ -14376,6 +14701,7 @@ jQuery.each( {
 	shiftKey: true,
 	view: true,
 	"char": true,
+	code: true,
 	charCode: true,
 	key: true,
 	keyCode: true,
@@ -14421,6 +14747,33 @@ jQuery.each( {
 		return event.which;
 	}
 }, jQuery.event.addProp );
+
+jQuery.each( { focus: "focusin", blur: "focusout" }, function( type, delegateType ) {
+	jQuery.event.special[ type ] = {
+
+		// Utilize native event if possible so blur/focus sequence is correct
+		setup: function() {
+
+			// Claim the first handler
+			// dataPriv.set( this, "focus", ... )
+			// dataPriv.set( this, "blur", ... )
+			leverageNative( this, type, expectSync );
+
+			// Return false to allow normal processing in the caller
+			return false;
+		},
+		trigger: function() {
+
+			// Force setup before trigger
+			leverageNative( this, type );
+
+			// Return non-false to allow normal event-path propagation
+			return true;
+		},
+
+		delegateType: delegateType
+	};
+} );
 
 // Create mouseenter/leave events using mouseover/out and event-time checks
 // so that event delegation works in jQuery.
@@ -14672,11 +15025,13 @@ function domManip( collection, args, callback, ignored ) {
 						if ( node.src && ( node.type || "" ).toLowerCase()  !== "module" ) {
 
 							// Optional AJAX dependency, but won't run scripts if not present
-							if ( jQuery._evalUrl ) {
-								jQuery._evalUrl( node.src );
+							if ( jQuery._evalUrl && !node.noModule ) {
+								jQuery._evalUrl( node.src, {
+									nonce: node.nonce || node.getAttribute( "nonce" )
+								} );
 							}
 						} else {
-							DOMEval( node.textContent.replace( rcleanScript, "" ), doc, node );
+							DOMEval( node.textContent.replace( rcleanScript, "" ), node, doc );
 						}
 					}
 				}
@@ -14698,7 +15053,7 @@ function remove( elem, selector, keepData ) {
 		}
 
 		if ( node.parentNode ) {
-			if ( keepData && jQuery.contains( node.ownerDocument, node ) ) {
+			if ( keepData && isAttached( node ) ) {
 				setGlobalEval( getAll( node, "script" ) );
 			}
 			node.parentNode.removeChild( node );
@@ -14716,7 +15071,7 @@ jQuery.extend( {
 	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
 		var i, l, srcElements, destElements,
 			clone = elem.cloneNode( true ),
-			inPage = jQuery.contains( elem.ownerDocument, elem );
+			inPage = isAttached( elem );
 
 		// Fix IE cloning issues
 		if ( !support.noCloneChecked && ( elem.nodeType === 1 || elem.nodeType === 11 ) &&
@@ -15012,8 +15367,10 @@ var rboxStyle = new RegExp( cssExpand.join( "|" ), "i" );
 
 		// Support: IE 9 only
 		// Detect overflow:scroll screwiness (gh-3699)
+		// Support: Chrome <=64
+		// Don't get tricked when zoom affects offsetWidth (gh-4029)
 		div.style.position = "absolute";
-		scrollboxSizeVal = div.offsetWidth === 36 || "absolute";
+		scrollboxSizeVal = roundPixelMeasures( div.offsetWidth / 3 ) === 12;
 
 		documentElement.removeChild( container );
 
@@ -15084,7 +15441,7 @@ function curCSS( elem, name, computed ) {
 	if ( computed ) {
 		ret = computed.getPropertyValue( name ) || computed[ name ];
 
-		if ( ret === "" && !jQuery.contains( elem.ownerDocument, elem ) ) {
+		if ( ret === "" && !isAttached( elem ) ) {
 			ret = jQuery.style( elem, name );
 		}
 
@@ -15140,29 +15497,12 @@ function addGetHookIf( conditionFn, hookFn ) {
 }
 
 
-var
+var cssPrefixes = [ "Webkit", "Moz", "ms" ],
+	emptyStyle = document.createElement( "div" ).style,
+	vendorProps = {};
 
-	// Swappable if display is none or starts with table
-	// except "table", "table-cell", or "table-caption"
-	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
-	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
-	rcustomProp = /^--/,
-	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
-	cssNormalTransform = {
-		letterSpacing: "0",
-		fontWeight: "400"
-	},
-
-	cssPrefixes = [ "Webkit", "Moz", "ms" ],
-	emptyStyle = document.createElement( "div" ).style;
-
-// Return a css property mapped to a potentially vendor prefixed property
+// Return a vendor-prefixed property or undefined
 function vendorPropName( name ) {
-
-	// Shortcut for names that are not vendor prefixed
-	if ( name in emptyStyle ) {
-		return name;
-	}
 
 	// Check for vendor prefixed names
 	var capName = name[ 0 ].toUpperCase() + name.slice( 1 ),
@@ -15176,15 +15516,32 @@ function vendorPropName( name ) {
 	}
 }
 
-// Return a property mapped along what jQuery.cssProps suggests or to
-// a vendor prefixed property.
+// Return a potentially-mapped jQuery.cssProps or vendor prefixed property
 function finalPropName( name ) {
-	var ret = jQuery.cssProps[ name ];
-	if ( !ret ) {
-		ret = jQuery.cssProps[ name ] = vendorPropName( name ) || name;
+	var final = jQuery.cssProps[ name ] || vendorProps[ name ];
+
+	if ( final ) {
+		return final;
 	}
-	return ret;
+	if ( name in emptyStyle ) {
+		return name;
+	}
+	return vendorProps[ name ] = vendorPropName( name ) || name;
 }
+
+
+var
+
+	// Swappable if display is none or starts with table
+	// except "table", "table-cell", or "table-caption"
+	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
+	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
+	rcustomProp = /^--/,
+	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
+	cssNormalTransform = {
+		letterSpacing: "0",
+		fontWeight: "400"
+	};
 
 function setPositiveNumber( elem, value, subtract ) {
 
@@ -15257,7 +15614,10 @@ function boxModelAdjustment( elem, dimension, box, isBorderBox, styles, computed
 			delta -
 			extra -
 			0.5
-		) );
+
+		// If offsetWidth/offsetHeight is unknown, then we can't determine content-box scroll gutter
+		// Use an explicit zero to avoid NaN (gh-3964)
+		) ) || 0;
 	}
 
 	return delta;
@@ -15267,9 +15627,16 @@ function getWidthOrHeight( elem, dimension, extra ) {
 
 	// Start with computed style
 	var styles = getStyles( elem ),
+
+		// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-4322).
+		// Fake content-box until we know it's needed to know the true value.
+		boxSizingNeeded = !support.boxSizingReliable() || extra,
+		isBorderBox = boxSizingNeeded &&
+			jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+		valueIsBorderBox = isBorderBox,
+
 		val = curCSS( elem, dimension, styles ),
-		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-		valueIsBorderBox = isBorderBox;
+		offsetProp = "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 );
 
 	// Support: Firefox <=54
 	// Return a confounding non-pixel value or feign ignorance, as appropriate.
@@ -15280,22 +15647,29 @@ function getWidthOrHeight( elem, dimension, extra ) {
 		val = "auto";
 	}
 
-	// Check for style in case a browser which returns unreliable values
-	// for getComputedStyle silently falls back to the reliable elem.style
-	valueIsBorderBox = valueIsBorderBox &&
-		( support.boxSizingReliable() || val === elem.style[ dimension ] );
 
 	// Fall back to offsetWidth/offsetHeight when value is "auto"
 	// This happens for inline elements with no explicit setting (gh-3571)
 	// Support: Android <=4.1 - 4.3 only
 	// Also use offsetWidth/offsetHeight for misreported inline dimensions (gh-3602)
-	if ( val === "auto" ||
-		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) {
+	// Support: IE 9-11 only
+	// Also use offsetWidth/offsetHeight for when box sizing is unreliable
+	// We use getClientRects() to check for hidden/disconnected.
+	// In those cases, the computed value can be trusted to be border-box
+	if ( ( !support.boxSizingReliable() && isBorderBox ||
+		val === "auto" ||
+		!parseFloat( val ) && jQuery.css( elem, "display", false, styles ) === "inline" ) &&
+		elem.getClientRects().length ) {
 
-		val = elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ];
+		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
 
-		// offsetWidth/offsetHeight provide border-box values
-		valueIsBorderBox = true;
+		// Where available, offsetWidth/offsetHeight approximate border box dimensions.
+		// Where not available (e.g., SVG), assume unreliable box-sizing and interpret the
+		// retrieved value as a content box dimension.
+		valueIsBorderBox = offsetProp in elem;
+		if ( valueIsBorderBox ) {
+			val = elem[ offsetProp ];
+		}
 	}
 
 	// Normalize "" and auto
@@ -15341,6 +15715,13 @@ jQuery.extend( {
 		"flexGrow": true,
 		"flexShrink": true,
 		"fontWeight": true,
+		"gridArea": true,
+		"gridColumn": true,
+		"gridColumnEnd": true,
+		"gridColumnStart": true,
+		"gridRow": true,
+		"gridRowEnd": true,
+		"gridRowStart": true,
 		"lineHeight": true,
 		"opacity": true,
 		"order": true,
@@ -15396,7 +15777,9 @@ jQuery.extend( {
 			}
 
 			// If a number was passed in, add the unit (except for certain CSS properties)
-			if ( type === "number" ) {
+			// The isCustomProp check can be removed in jQuery 4.0 when we only auto-append
+			// "px" to a few hardcoded values.
+			if ( type === "number" && !isCustomProp ) {
 				value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
 			}
 
@@ -15496,18 +15879,29 @@ jQuery.each( [ "height", "width" ], function( i, dimension ) {
 		set: function( elem, value, extra ) {
 			var matches,
 				styles = getStyles( elem ),
-				isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
-				subtract = extra && boxModelAdjustment(
-					elem,
-					dimension,
-					extra,
-					isBorderBox,
-					styles
-				);
+
+				// Only read styles.position if the test has a chance to fail
+				// to avoid forcing a reflow.
+				scrollboxSizeBuggy = !support.scrollboxSize() &&
+					styles.position === "absolute",
+
+				// To avoid forcing a reflow, only fetch boxSizing if we need it (gh-3991)
+				boxSizingNeeded = scrollboxSizeBuggy || extra,
+				isBorderBox = boxSizingNeeded &&
+					jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+				subtract = extra ?
+					boxModelAdjustment(
+						elem,
+						dimension,
+						extra,
+						isBorderBox,
+						styles
+					) :
+					0;
 
 			// Account for unreliable border-box dimensions by comparing offset* to computed and
 			// faking a content-box to get border and padding (gh-3699)
-			if ( isBorderBox && support.scrollboxSize() === styles.position ) {
+			if ( isBorderBox && scrollboxSizeBuggy ) {
 				subtract -= Math.ceil(
 					elem[ "offset" + dimension[ 0 ].toUpperCase() + dimension.slice( 1 ) ] -
 					parseFloat( styles[ dimension ] ) -
@@ -15675,9 +16069,9 @@ Tween.propHooks = {
 			// Use .style if available and use plain properties where available.
 			if ( jQuery.fx.step[ tween.prop ] ) {
 				jQuery.fx.step[ tween.prop ]( tween );
-			} else if ( tween.elem.nodeType === 1 &&
-				( tween.elem.style[ jQuery.cssProps[ tween.prop ] ] != null ||
-					jQuery.cssHooks[ tween.prop ] ) ) {
+			} else if ( tween.elem.nodeType === 1 && (
+					jQuery.cssHooks[ tween.prop ] ||
+					tween.elem.style[ finalPropName( tween.prop ) ] != null ) ) {
 				jQuery.style( tween.elem, tween.prop, tween.now + tween.unit );
 			} else {
 				tween.elem[ tween.prop ] = tween.now;
@@ -17384,6 +17778,10 @@ jQuery.param = function( a, traditional ) {
 				encodeURIComponent( value == null ? "" : value );
 		};
 
+	if ( a == null ) {
+		return "";
+	}
+
 	// If an array was passed in, assume that it is an array of form elements.
 	if ( Array.isArray( a ) || ( a.jquery && !jQuery.isPlainObject( a ) ) ) {
 
@@ -17886,12 +18284,14 @@ jQuery.extend( {
 						if ( !responseHeaders ) {
 							responseHeaders = {};
 							while ( ( match = rheaders.exec( responseHeadersString ) ) ) {
-								responseHeaders[ match[ 1 ].toLowerCase() ] = match[ 2 ];
+								responseHeaders[ match[ 1 ].toLowerCase() + " " ] =
+									( responseHeaders[ match[ 1 ].toLowerCase() + " " ] || [] )
+										.concat( match[ 2 ] );
 							}
 						}
-						match = responseHeaders[ key.toLowerCase() ];
+						match = responseHeaders[ key.toLowerCase() + " " ];
 					}
-					return match == null ? null : match;
+					return match == null ? null : match.join( ", " );
 				},
 
 				// Raw string
@@ -18280,7 +18680,7 @@ jQuery.each( [ "get", "post" ], function( i, method ) {
 } );
 
 
-jQuery._evalUrl = function( url ) {
+jQuery._evalUrl = function( url, options ) {
 	return jQuery.ajax( {
 		url: url,
 
@@ -18290,7 +18690,16 @@ jQuery._evalUrl = function( url ) {
 		cache: true,
 		async: false,
 		global: false,
-		"throws": true
+
+		// Only evaluate the response if it is successful (gh-4126)
+		// dataFilter is not invoked for failure responses, so using it instead
+		// of the default converter is kludgy but it works.
+		converters: {
+			"text script": function() {}
+		},
+		dataFilter: function( response ) {
+			jQuery.globalEval( response, options );
+		}
 	} );
 };
 
@@ -18573,24 +18982,21 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 // Bind script tag hack transport
 jQuery.ajaxTransport( "script", function( s ) {
 
-	// This transport only deals with cross domain requests
-	if ( s.crossDomain ) {
+	// This transport only deals with cross domain or forced-by-attrs requests
+	if ( s.crossDomain || s.scriptAttrs ) {
 		var script, callback;
 		return {
 			send: function( _, complete ) {
-				script = jQuery( "<script>" ).prop( {
-					charset: s.scriptCharset,
-					src: s.url
-				} ).on(
-					"load error",
-					callback = function( evt ) {
+				script = jQuery( "<script>" )
+					.attr( s.scriptAttrs || {} )
+					.prop( { charset: s.scriptCharset, src: s.url } )
+					.on( "load error", callback = function( evt ) {
 						script.remove();
 						callback = null;
 						if ( evt ) {
 							complete( evt.type === "error" ? 404 : 200, evt.type );
 						}
-					}
-				);
+					} );
 
 				// Use native DOM manipulation to avoid our domManip AJAX trickery
 				document.head.appendChild( script[ 0 ] );
@@ -28053,13 +28459,12 @@ function webpackContext(req) {
 	return __webpack_require__(id);
 }
 function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) { // check for number or string
+	if(!__webpack_require__.o(map, req)) {
 		var e = new Error("Cannot find module '" + req + "'");
 		e.code = 'MODULE_NOT_FOUND';
 		throw e;
 	}
-	return id;
+	return map[req];
 }
 webpackContext.keys = function webpackContextKeys() {
 	return Object.keys(map);
@@ -83949,23 +84354,23 @@ __webpack_require__.r(__webpack_exports__);
  | your components that you write while building your applications.
  */
 // Laravel Spark
-__webpack_require__(/*! ./../spark-components/bootstrap */ "./resources/assets/js/spark-components/bootstrap.js").default;
-__webpack_require__(/*! ./profile/update-profile-details.js */ "./resources/assets/js/components/profile/update-profile-details.js").default; // Internal CMS - Routes/Controllers should have Developer access only!
+__webpack_require__(/*! ./../spark-components/bootstrap */ "./resources/assets/js/spark-components/bootstrap.js")["default"];
+__webpack_require__(/*! ./profile/update-profile-details.js */ "./resources/assets/js/components/profile/update-profile-details.js")["default"]; // Internal CMS - Routes/Controllers should have Developer access only!
 
-Vue.component('posts', __webpack_require__(/*! ./cms/Posts.vue */ "./resources/assets/js/components/cms/Posts.vue").default);
-Vue.component('newsletters', __webpack_require__(/*! ./cms/Newsletters.vue */ "./resources/assets/js/components/cms/Newsletters.vue").default);
-Vue.component('publications', __webpack_require__(/*! ./cms/Publications.vue */ "./resources/assets/js/components/cms/Publications.vue").default);
-Vue.component('showcases', __webpack_require__(/*! ./cms/Showcases.vue */ "./resources/assets/js/components/cms/Showcases.vue").default);
-Vue.component('input-tag', __webpack_require__(/*! ./InputTag.vue */ "./resources/assets/js/components/InputTag.vue").default);
-Vue.component('destinations', __webpack_require__(/*! ./cms/Destinations.vue */ "./resources/assets/js/components/cms/Destinations.vue").default);
-Vue.component('regions', __webpack_require__(/*! ./cms/Regions.vue */ "./resources/assets/js/components/cms/Regions.vue").default); // Public "guest" components
+Vue.component('posts', __webpack_require__(/*! ./cms/Posts.vue */ "./resources/assets/js/components/cms/Posts.vue")["default"]);
+Vue.component('newsletters', __webpack_require__(/*! ./cms/Newsletters.vue */ "./resources/assets/js/components/cms/Newsletters.vue")["default"]);
+Vue.component('publications', __webpack_require__(/*! ./cms/Publications.vue */ "./resources/assets/js/components/cms/Publications.vue")["default"]);
+Vue.component('showcases', __webpack_require__(/*! ./cms/Showcases.vue */ "./resources/assets/js/components/cms/Showcases.vue")["default"]);
+Vue.component('input-tag', __webpack_require__(/*! ./InputTag.vue */ "./resources/assets/js/components/InputTag.vue")["default"]);
+Vue.component('destinations', __webpack_require__(/*! ./cms/Destinations.vue */ "./resources/assets/js/components/cms/Destinations.vue")["default"]);
+Vue.component('regions', __webpack_require__(/*! ./cms/Regions.vue */ "./resources/assets/js/components/cms/Regions.vue")["default"]); // Public "guest" components
 
-Vue.component('public-footer', __webpack_require__(/*! ./PublicFooter.vue */ "./resources/assets/js/components/PublicFooter.vue").default);
-Vue.component('sales-inquiry', __webpack_require__(/*! ./SalesInquiry.vue */ "./resources/assets/js/components/SalesInquiry.vue").default);
-Vue.component('newsletter-signup', __webpack_require__(/*! ./NewsletterSignup.vue */ "./resources/assets/js/components/NewsletterSignup.vue").default);
-Vue.component('world-map', __webpack_require__(/*! ./WorldMap.vue */ "./resources/assets/js/components/WorldMap.vue").default);
-Vue.component('site-search', __webpack_require__(/*! ./Search.vue */ "./resources/assets/js/components/Search.vue").default);
-Vue.component('fish-species', __webpack_require__(/*! ./cms/FishSpecies.vue */ "./resources/assets/js/components/cms/FishSpecies.vue").default);
+Vue.component('public-footer', __webpack_require__(/*! ./PublicFooter.vue */ "./resources/assets/js/components/PublicFooter.vue")["default"]);
+Vue.component('sales-inquiry', __webpack_require__(/*! ./SalesInquiry.vue */ "./resources/assets/js/components/SalesInquiry.vue")["default"]);
+Vue.component('newsletter-signup', __webpack_require__(/*! ./NewsletterSignup.vue */ "./resources/assets/js/components/NewsletterSignup.vue")["default"]);
+Vue.component('world-map', __webpack_require__(/*! ./WorldMap.vue */ "./resources/assets/js/components/WorldMap.vue")["default"]);
+Vue.component('site-search', __webpack_require__(/*! ./Search.vue */ "./resources/assets/js/components/Search.vue")["default"]);
+Vue.component('fish-species', __webpack_require__(/*! ./cms/FishSpecies.vue */ "./resources/assets/js/components/cms/FishSpecies.vue")["default"]);
 
 /***/ }),
 
@@ -85680,7 +86085,7 @@ module.exports = {
 
       axios.get('/coupon/' + this.query.coupon).then(function (response) {
         _this2.coupon = response.data;
-      }).catch(function (response) {
+      })["catch"](function (response) {
         _this2.invalidCoupon = true;
       });
     },
@@ -85818,8 +86223,8 @@ module.exports = {
         if (response.data != 'ZZ') {
           _this.registerForm.country = response.data;
         }
-      }).catch(function (response) {//
-      }).finally(function () {
+      })["catch"](function (response) {//
+      })["finally"](function () {
         this.refreshStatesAndProvinces();
       });
     },
@@ -85832,7 +86237,7 @@ module.exports = {
 
       axios.get('/coupon/' + this.query.coupon).then(function (response) {
         _this2.coupon = response.data;
-      }).catch(function (response) {
+      })["catch"](function (response) {
         _this2.invalidCoupon = true;
       });
     },
@@ -86112,7 +86517,7 @@ window.SparkFormErrors = function () {
     if (typeof field === 'undefined') {
       this.errors = {};
     } else {
-      Vue.delete(this.errors, field);
+      Vue["delete"](this.errors, field);
     }
   };
 };
@@ -86212,7 +86617,7 @@ module.exports = {
   /**
    * Helper method for making DELETE HTTP requests.
    */
-  delete: function _delete(uri, form) {
+  "delete": function _delete(uri, form) {
     return Spark.sendForm('delete', uri, form);
   },
 
@@ -86227,7 +86632,7 @@ module.exports = {
       axios[method](uri, JSON.parse(JSON.stringify(form))).then(function (response) {
         form.finishProcessing();
         resolve(response.data);
-      }).catch(function (errors) {
+      })["catch"](function (errors) {
         form.setErrors(errors.response.data.errors);
         reject(errors.response.data);
       });
@@ -86406,7 +86811,7 @@ module.exports = {
     deleteAnnouncement: function deleteAnnouncement() {
       var _this4 = this;
 
-      Spark.delete('/spark/kiosk/announcements/' + this.deletingAnnouncement.id, this.deleteForm).then(function () {
+      Spark["delete"]('/spark/kiosk/announcements/' + this.deletingAnnouncement.id, this.deleteForm).then(function () {
         _this4.getAnnouncements();
 
         $('#modal-delete-announcement').modal('hide');
@@ -87370,7 +87775,7 @@ module.exports = {
 
       axios.get("/invitations/".concat(this.query.invitation)).then(function (response) {
         _this2.invitation = response.data;
-      }).catch(function (response) {
+      })["catch"](function (response) {
         _this2.invalidInvitation = true;
       });
     },
@@ -87504,7 +87909,7 @@ module.exports = {
       }).then(function () {
         Bus.$emit('updateUser');
         Bus.$emit('updateTeam');
-      }).catch(function (errors) {
+      })["catch"](function (errors) {
         if (errors.response.status == 422) {
           _this.planForm.errors.set(errors.response.data);
         } else {
@@ -87512,7 +87917,7 @@ module.exports = {
             plan: ["We were unable to update your subscription. Please contact customer support."]
           });
         }
-      }).finally(function () {
+      })["finally"](function () {
         _this.selectingPlan = null;
       });
     },
@@ -87971,7 +88376,7 @@ module.exports = {
      */
     assignDefaultAbilities: function assignDefaultAbilities() {
       var defaults = _.filter(this.availableAbilities, function (a) {
-        return a.default;
+        return a["default"];
       });
 
       this.form.abilities = _.pluck(defaults, 'value');
@@ -88149,7 +88554,7 @@ module.exports = {
     deleteToken: function deleteToken() {
       var _this2 = this;
 
-      Spark.delete("/settings/api/token/".concat(this.deletingToken.id), this.deleteTokenForm).then(function () {
+      Spark["delete"]("/settings/api/token/".concat(this.deletingToken.id), this.deleteTokenForm).then(function () {
         _this2.$parent.$emit('updateTokens');
 
         $('#modal-delete-token').modal('hide');
@@ -88957,7 +89362,7 @@ module.exports = {
      * Disable two-factor authentication for the user.
      */
     disable: function disable() {
-      Spark.delete('/settings/two-factor-auth', this.form).then(function () {
+      Spark["delete"]('/settings/two-factor-auth', this.form).then(function () {
         Bus.$emit('updateUser');
       });
     }
@@ -89164,7 +89569,7 @@ module.exports = {
      * Cancel the current subscription.
      */
     cancel: function cancel() {
-      Spark.delete(this.urlForCancellation, this.form).then(function () {
+      Spark["delete"](this.urlForCancellation, this.form).then(function () {
         Bus.$emit('updateUser');
         Bus.$emit('updateTeam');
         $('#modal-confirm-cancellation').modal('hide');
@@ -89802,7 +90207,7 @@ module.exports = {
      * Leave the given team.
      */
     leaveTeam: function leaveTeam() {
-      Spark.delete(this.urlForLeaving, this.leaveTeamForm).then(function () {
+      Spark["delete"](this.urlForLeaving, this.leaveTeamForm).then(function () {
         Bus.$emit('updateUser');
         Bus.$emit('updateTeams');
         $('#modal-leave-team').modal('hide');
@@ -89821,7 +90226,7 @@ module.exports = {
      * Delete the given team.
      */
     deleteTeam: function deleteTeam() {
-      Spark.delete("/settings/".concat(Spark.pluralTeamString, "/").concat(this.deletingTeam.id), this.deleteTeamForm).then(function () {
+      Spark["delete"]("/settings/".concat(Spark.pluralTeamString, "/").concat(this.deletingTeam.id), this.deleteTeamForm).then(function () {
         Bus.$emit('updateUser');
         Bus.$emit('updateTeams');
         $('#modal-delete-team').modal('hide');
@@ -89856,7 +90261,7 @@ module.exports = {
     cancel: function cancel(invitation) {
       var _this = this;
 
-      axios.delete("/settings/invitations/".concat(invitation.id)).then(function () {
+      axios["delete"]("/settings/invitations/".concat(invitation.id)).then(function () {
         _this.$parent.$emit('updateInvitations');
       });
     }
@@ -90131,7 +90536,7 @@ module.exports = {
      * Delete the given team member.
      */
     deleteMember: function deleteMember() {
-      Spark.delete(this.urlForDeleting, this.deleteTeamMemberForm).then(function () {
+      Spark["delete"](this.urlForDeleting, this.deleteTeamMemberForm).then(function () {
         Bus.$emit('updateTeam');
         $('#modal-delete-member').modal('hide');
       });
@@ -90660,7 +91065,7 @@ module.exports = {
 
       axios.get("/".concat(Spark.pluralTeamString, "/current")).then(function (response) {
         _this4.currentTeam = response.data;
-      }).catch(function (response) {//
+      })["catch"](function (response) {//
       });
     },
 
@@ -90803,8 +91208,8 @@ __webpack_require__(/*! ./forms/bootstrap */ "./spark/resources/assets/js/forms/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jeremy/Code/hff/resources/assets/js/app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jeremy/Code/hff/resources/assets/less/styles.less */"./resources/assets/less/styles.less");
+__webpack_require__(/*! /home/jeremy/code/hff/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /home/jeremy/code/hff/resources/assets/less/styles.less */"./resources/assets/less/styles.less");
 
 
 /***/ })
