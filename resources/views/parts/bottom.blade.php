@@ -55,7 +55,7 @@
 <div class="copyright">
     <div class="container">
         <div class="legal"><ul class="inline">
-                <li style="opacity:0.3;"class="small">&copy; Hobo Fly Fishing, LLC - {{ date('M d, Y') }}</li>
+                <li style="opacity:0.3;"class="small">&copy;  Hobo Fly Fishing  - {{ date('M d, Y') }}</li>
                 <li class="small footer-link"><a href="{{ route('terms') }}">Terms</a>
                 </li>
                 <li class="small footer-link"><a href="{{ route('privacy') }}">Privacy</a>

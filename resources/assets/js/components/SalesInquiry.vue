@@ -29,7 +29,7 @@
 
             </div>
         <span v-show="errors.has('email')" class="help is-danger">{{ errors.first('email') }}</span>
-            <div style="font-weight:600;" class="text-center"><a href="tel:12088599133">1-208-859-9133</a>
+            <div style="font-weight:600;" class="text-center"><a href="tel:12088599133">1-208-283-8654</a>
             </div>
         <hr>
     </div>

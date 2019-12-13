@@ -16,11 +16,11 @@ class SparkServiceProvider extends ServiceProvider
      * @var array
      */
     protected $details = [
-        'vendor' => 'Hobo Fly Fishing, LLC ',
+        'vendor' => ' Hobo Fly Fishing  ',
         'product' => 'HoboFlyFishing.com',
         'street' => '289 N Hullen Place',
         'location' => 'Star, ID 83669',
-        'phone' => '(208) 859-9133'
+        'phone' => '(208) 283-8654'
     ];
 
     /**

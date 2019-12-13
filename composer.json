@@ -6,7 +6,7 @@
         "travel",
         "awesome"
     ],
-    "license": "Copyright 2019 Hobo Fly Fishing, LLC. All Rights Reserved, No License for Re-Use is granted.",
+    "license": "Copyright 2019  Hobo Fly Fishing . All Rights Reserved, No License for Re-Use is granted.",
     "type": "project",
     "minimum-stability": "dev",
     "prefer-stable": true,

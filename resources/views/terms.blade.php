@@ -16,7 +16,7 @@
 @section('content')
     <div class="container col-md-6 col-md-offset-3">
     <h1>TERMS OF SERVICE</h1>
-        <h3>Hobo Fly Fishing LLC terms of sale</h3>
+        <h3>Hobo Fly Fishing  terms of sale</h3>
         <p>Many destinations that we offer here at Hobo Fly Fishing offer fly fishing travel packages that are non-refundable. We highly recommend travel insurance for this reason.</p>
         <p>We do our best to provide complete and accurate information, but this is not always within our control. We cannot be held liable for force majeure or the actions of
             external entities, but we always do our level best to take care of our customers within our power.</p>
@@ -29,7 +29,7 @@
             AND/OR Hobo Fly Fishing's SYSTEM.  BY USING OUR SAAS YOU AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT.
             IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS OF THIS AGREEMENT YOU MAY NOT USE ANY Hobo Fly Fishing SAAS
             PRODUCT NOR ACCESS THE SYSTEM.</p>
-        <p>This Terms of Service Agreement (&quot;Agreement&quot;) is by and between Hobo Fly Fishing LLC
+        <p>This Terms of Service Agreement (&quot;Agreement&quot;) is by and between Hobo Fly Fishing 
             (including its wholly-owned subsidiaries, licensors, and affiliates, collectively referred to as; “Hobo Fly Fishing”)
             and the person or entity executing this Agreement (referred to herein as “You” or “Customer”). The terms “You”
             , “Your”,  and “Customer” include you and any of your owners, employees, partners, independent contractors,
