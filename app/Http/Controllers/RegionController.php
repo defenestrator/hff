@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Region;
 use App\Publication;
 use App\Post;
+use Illuminate\Support\Str;
 
 class RegionController extends ContentController
 {
@@ -23,7 +24,7 @@ class RegionController extends ContentController
             ->orderBy('created_at', 'desc')
             ->take(40)->get()
             ->map( function ($post) {
-                $post['sentence'] = str_limit(strip_tags($post->body), 200, '...');
+                $post['sentence'] = Str::limit(strip_tags($post->body), 200, '...');
                 // can also surround that with this, maybe break on sentence? preg_replace('/(.*?[?!.](?=\s|$)).*/', '\\1', )
                 return $post;
             });

@@ -31,7 +31,7 @@
                         </a>
                         <article>
                             <p><a style="color:rgb(83, 89, 101);" href="/publications/{{$content->type}}/{{$content->slug}}">
-                                {!! str_limit(strip_tags($content->body), 200, '...') !!}
+                                {!! Str::limit(strip_tags($content->body), 200, '...') !!}
                             </a></p>
                         </article>
                         <br>

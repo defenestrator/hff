@@ -35,7 +35,7 @@
                         </a>
                         <article>
                             <p> <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
-                                {!! str_limit(strip_tags($post->body), 200, '...') !!}
+                                {!! Str::limit(strip_tags($post->body), 200, '...') !!}
                             </a></p>
                         </article>
                         <p>
