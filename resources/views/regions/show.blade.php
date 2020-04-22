@@ -7,10 +7,6 @@
 
 @section('page_styles')
     <style>
-        .g-recaptcha {
-            width: 304px;
-            margin: 0 auto;
-        }
     </style>
 
 @stop

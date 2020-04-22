@@ -175,7 +175,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         Spatie\ResponseCache\ResponseCacheServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
@@ -243,7 +242,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
         'Bugsnag' => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
         'Image' => Intervention\Image\Facades\Image::class
     ],

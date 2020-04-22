@@ -1121,6 +1121,7 @@ img {
   background-color: #f5f8fa;
   border: 1px solid #ddd;
   border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
@@ -2650,6 +2651,7 @@ output {
   border: 1px solid #ccd0d2;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
@@ -3508,6 +3510,7 @@ input[type="button"].btn-block {
 }
 .fade {
   opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 .fade.in {
@@ -3529,8 +3532,11 @@ tbody.collapse.in {
   position: relative;
   height: 0;
   overflow: hidden;
+  -webkit-transition-property: height, visibility;
   transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 .caret {
@@ -5031,6 +5037,7 @@ a.badge:focus {
   background-color: #f5f8fa;
   border: 1px solid #ddd;
   border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;
 }
 .thumbnail > img,
@@ -5156,6 +5163,7 @@ a.thumbnail.active {
   text-align: center;
   background-color: #3097D1;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 .progress-striped .progress-bar,
@@ -5880,6 +5888,7 @@ button.close {
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
@@ -6233,6 +6242,7 @@ button.close {
 .carousel-inner > .item {
   position: relative;
   display: none;
+  -webkit-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
 }
 .carousel-inner > .item > img,
@@ -6241,6 +6251,7 @@ button.close {
 }
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner > .item {
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
     transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
@@ -6314,6 +6325,7 @@ button.close {
   opacity: 0.5;
 }
 .carousel-control.left {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
   background-repeat: repeat-x;
@@ -6321,6 +6333,7 @@ button.close {
 .carousel-control.right {
   right: 0;
   left: auto;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
   background-repeat: repeat-x;
@@ -6860,6 +6873,7 @@ button.close {
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
+  -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
 .btn-primary,
@@ -7206,10 +7220,15 @@ fieldset[disabled] .btn-danger-outline.active {
 .navbar-brand,
 .hamburger {
   height: 70px;
+  display: -webkit-box;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
 }
 .navbar-icon {
   padding-top: 3px;
@@ -7223,6 +7242,7 @@ fieldset[disabled] .btn-danger-outline.active {
   border-radius: 10px;
   position: absolute;
   right: -1px;
+  -webkit-transition: all 0.15s;
   transition: all 0.15s;
   -webkit-transform: scale(0.85);
           transform: scale(0.85);
@@ -7331,11 +7351,13 @@ fieldset[disabled] .btn-danger-outline.active {
   padding-left: 70px;
 }
 #modal-notifications .notification-content .meta {
+  display: -webkit-box;
   display: flex;
   align-content: flex-end;
 }
 #modal-notifications .notification-content .title {
-  flex: 1;
+  -webkit-box-flex: 1;
+          flex: 1;
   font-weight: bold;
   line-height: 1.2;
   margin: 2px 0 10px;
@@ -7560,12 +7582,14 @@ p label {
 .footer-link a:visited,
 .footer-link a:link {
   color: #cccfd1;
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 .footer-link a:hover,
 .footer-link a:active,
 .footer-link a:focus {
   color: #FFFFFF;
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 .text-danger {
@@ -7713,6 +7737,7 @@ blockquote {
 }
 footer {
   background: #060609;
+  background: -webkit-gradient(linear, left top, left bottom, from(#20303f), to(#1a1a1a));
   background: linear-gradient(to bottom, #20303f 0%, #1a1a1a 100%);
 }
 footer h4 {
@@ -7773,11 +7798,13 @@ footer img {
 }
 a.contact-link {
   color: #fff;
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   font-weight: 300;
 }
 a.contact-link:hover {
   color: #eaeafa;
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 a.btn-primary {
@@ -7884,18 +7911,21 @@ a:active.btn-primary {
 .navbar .dropdown-menu > li > a:hover i {
   color: #3097D1;
   background-color: inherit;
+  -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
 .thumbnail {
   border: 1px solid #3097D1;
   background-size: cover;
   background-position: center center;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   overflow: hidden;
 }
 .sidebar-thumbnail {
   border-radius: 6px;
   background-size: cover;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   overflow: hidden;
   display: block;
@@ -7950,6 +7980,7 @@ a:hover .thumbnail,
 a:active .thumbnail,
 a:focus .thumbnail {
   border: 1px solid transparent;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .navbar-default .navbar-nav > .open > a,
@@ -7964,10 +7995,12 @@ a:focus .thumbnail {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #3097D1;
+  -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
 .navbar-default .navbar-nav > li > a {
   color: #262626;
+  -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
 @media (max-width: 767px) {
@@ -7975,6 +8008,7 @@ a:focus .thumbnail {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
     background-color: #ffffff;
     color: #3097D1;
+    -webkit-transition: all 0.25s;
     transition: all 0.25s;
   }
   .navbar-nav .open .dropdown-menu > li > a {
@@ -7990,6 +8024,7 @@ a:focus .thumbnail {
   font-weight: 600;
   font-size: 1.2em;
   margin: 5% 5% 10px 5%;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .sidebar-thumbnail .caption {
@@ -7999,6 +8034,7 @@ a:hover .thumbnail .caption,
 a:active .thumbnail .caption,
 a:focus .thumbnail .caption {
   text-shadow: 2px 2px 4px #bf542a, 2px 2px 3px #000;
+  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 .spark-nav-profile-photo {

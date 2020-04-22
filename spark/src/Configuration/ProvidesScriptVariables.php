@@ -6,6 +6,8 @@ use Laravel\Spark\Spark;
 use Laravel\Cashier\Cashier;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Spark\Contracts\InitialFrontendState;
+use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 use Braintree\ClientToken as BraintreeClientToken;
 
 trait ProvidesScriptVariables
@@ -25,13 +27,13 @@ trait ProvidesScriptVariables
             'collectsEuropeanVat' => Spark::collectsEuropeanVat(),
             'createsAdditionalTeams' => Spark::createsAdditionalTeams(),
             'csrfToken' => csrf_token(),
-            'currencySymbol' => Cashier::usesCurrencySymbol(),
+            'currencySymbol' => env('CASHIER_CURRENCY', 'usd'),
             'env' => config('app.env'),
             'roles' => Spark::roles(),
             'state' => Spark::call(InitialFrontendState::class.'@forUser', [Auth::user()]),
             'stripeKey' => config('services.stripe.key'),
             'teamString' => Spark::teamString(),
-            'pluralTeamString' => str_plural(Spark::teamString()),
+            'pluralTeamString' => Str::plural(Spark::teamString()),
             'userId' => Auth::id(),
             'usesApi' => Spark::usesApi(),
             'usesBraintree' => Spark::billsUsingBraintree(),

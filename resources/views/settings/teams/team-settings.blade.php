@@ -57,8 +57,8 @@
                                 <!-- View All Teams -->
                                 @if (Spark::createsAdditionalTeams())
                                     <li role="presentation">
-                                        <a href="/settings#/{{str_plural(Spark::teamString())}}">
-                                            <i class="fa fa-fw fa-btn fa-arrow-left"></i>View All {{ ucfirst(str_plural(Spark::teamString())) }}
+                                        <a href="/settings#/{{Str::plural(Spark::teamString())}}">
+                                            <i class="fa fa-fw fa-btn fa-arrow-left"></i>View All {{ ucfirst(Str::plural(Spark::teamString())) }}
                                         </a>
                                     </li>
                                 @else

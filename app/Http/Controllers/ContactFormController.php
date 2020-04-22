@@ -25,12 +25,6 @@ class ContactFormController extends Controller
             'contact-msg' => 'required|min:7'
         ]);
 
-        if (config('app.env') !== 'testing') {
-            $request->validate([
-                'g-recaptcha-response' => 'required|recaptcha'
-            ]);
-        }
-
         // Save the message to DB
         $data = ContactFormMessage::create([
             'name' => $request

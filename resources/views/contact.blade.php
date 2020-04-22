@@ -61,9 +61,6 @@ Contact us using this handy web form! Welcome to the future!
                                   rows="6"
                                   placeholder="message" required>{{ old('contact-msg') }}</textarea>
                     </div>
-                    <div class="form-group recaptcha">
-                        {!! Recaptcha::render() !!}
-                    </div>
                     <div class="input-group">
                         <button class="btn btn-primary input-lg" type="submit">Submit</button>
                     </div>

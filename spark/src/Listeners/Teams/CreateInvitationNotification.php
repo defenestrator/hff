@@ -38,7 +38,7 @@ class CreateInvitationNotification
             'icon' => 'fa-users',
             'body' => 'You have been invited to join the '.$event->team->name.' '.Spark::teamString().'!',
             'action_text' => 'View Invitations',
-            'action_url' => '/settings#/'.str_plural(Spark::teamString()),
+            'action_url' => '/settings#/'.Str::plural(Spark::teamString()),
         ]);
     }
 }
