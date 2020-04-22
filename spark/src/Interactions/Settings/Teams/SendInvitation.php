@@ -8,6 +8,7 @@ use Laravel\Spark\Invitation;
 use Illuminate\Support\Facades\Mail;
 use Laravel\Spark\Events\Teams\UserInvitedToTeam;
 use Laravel\Spark\Contracts\Interactions\Settings\Teams\SendInvitation as Contract;
+use Illuminate\Support\Str;
 
 class SendInvitation implements Contract
 {
@@ -56,7 +57,7 @@ class SendInvitation implements Contract
             'id' => Uuid::uuid4(),
             'user_id' => $invitedUser ? $invitedUser->id : null,
             'email' => $email,
-            'token' => str_random(40),
+            'token' => Str::random(40),
         ]);
     }
 

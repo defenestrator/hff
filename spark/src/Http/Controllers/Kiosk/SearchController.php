@@ -6,6 +6,7 @@ use Laravel\Spark\Spark;
 use Illuminate\Http\Request;
 use Laravel\Spark\Http\Controllers\Controller;
 use Laravel\Spark\Contracts\Repositories\UserRepository;
+use Illuminate\Support\Str;
 
 class SearchController extends Controller
 {
@@ -28,7 +29,7 @@ class SearchController extends Controller
      */
     public function performBasicSearch(Request $request)
     {
-        $query = str_replace('*', '%', $request->input('query'));
+        $query = Str::replace('*', '%', $request->input('query'));
 
         return Spark::interact(UserRepository::class.'@search', [
             $query, $request->user()

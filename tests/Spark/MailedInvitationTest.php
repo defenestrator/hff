@@ -6,6 +6,7 @@ use App\User;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Support\Str;
 
 class MailedInvitationTest extends TestCase
 {
@@ -54,7 +55,7 @@ class MailedInvitationTest extends TestCase
         $team->invitations()->create([
             'id' => Uuid::uuid4(),
             'email' => 'test@hoboflyfishing.com',
-            'token' => str_random(40),
+            'token' => Str::random(40),
         ]);
 
         $this->actingAs($team->owner)
@@ -110,7 +111,7 @@ class MailedInvitationTest extends TestCase
         $invitation = $team->invitations()->create([
             'id' => Uuid::uuid4(),
             'email' => 'test@hoboflyfishing.com',
-            'token' => str_random(40),
+            'token' => Str::random(40),
         ]);
 
         $this->actingAs($team->owner)
@@ -126,7 +127,7 @@ class MailedInvitationTest extends TestCase
         $invitation = $team->invitations()->create([
             'id' => Uuid::uuid4(),
             'email' => 'test@hoboflyfishing.com',
-            'token' => str_random(40),
+            'token' => Str::random(40),
         ]);
 
         $this->actingAs(factory(User::class)->create())

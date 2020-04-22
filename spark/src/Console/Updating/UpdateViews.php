@@ -3,6 +3,7 @@
 namespace Laravel\Spark\Console\Updating;
 
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Str;
 
 class UpdateViews
 {
@@ -193,7 +194,7 @@ class UpdateViews
 
         $downloadPath = implode(DIRECTORY_SEPARATOR, [$this->downloadPath, 'resources', 'views']);
 
-        return str_replace(
+        return Str::replace(
             [$sparkPath.DIRECTORY_SEPARATOR, $downloadPath.DIRECTORY_SEPARATOR],
             '',
             $view->getRealPath()

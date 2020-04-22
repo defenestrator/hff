@@ -6,6 +6,7 @@ use Tests\TestCase;
 use App\User;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Str;
 
 class UpdateApiTokenTest extends TestCase
 {
@@ -21,7 +22,7 @@ class UpdateApiTokenTest extends TestCase
 //        $token = $user->tokens()->create([
 //            'id' => Uuid::uuid4(),
 //            'name' => 'New Token',
-//            'token' => str_random(40),
+//            'token' => Str::random(40),
 //            'metadata' => [],
 //        ]);
 //
@@ -44,7 +45,7 @@ class UpdateApiTokenTest extends TestCase
         $token = $user->tokens()->create([
             'id' => Uuid::uuid4(),
             'name' => 'New Token',
-            'token' => str_random(40),
+            'token' => Str::random(40),
             'metadata' => [],
         ]);
 
@@ -68,7 +69,7 @@ class UpdateApiTokenTest extends TestCase
 //        $token = $user->tokens()->create([
 //            'id' => Uuid::uuid4(),
 //            'name' => 'New Token',
-//            'token' => str_random(40),
+//            'token' => Str::random(40),
 //            'metadata' => [],
 //        ]);
 //
@@ -94,7 +95,7 @@ class UpdateApiTokenTest extends TestCase
         $token = $user->tokens()->create([
             'id' => Uuid::uuid4(),
             'name' => 'New Token',
-            'token' => str_random(40),
+            'token' => Str::random(40),
             'metadata' => [],
         ]);
 

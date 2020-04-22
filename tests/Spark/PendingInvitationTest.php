@@ -5,6 +5,7 @@ use Tests\TestCase;
 use App\User;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Str;
 
 class PendingInvitationTest extends TestCase
 {
@@ -20,7 +21,7 @@ class PendingInvitationTest extends TestCase
             'id' => Uuid::uuid4(),
             'user_id' => $user->id,
             'email' => 'test@hoboflyfishing.com',
-            'token' => str_random(40),
+            'token' => Str::random(40),
         ]);
 
         $this->actingAs($user)
@@ -41,7 +42,7 @@ class PendingInvitationTest extends TestCase
             'id' => Uuid::uuid4(),
             'user_id' => $user->id,
             'email' => 'test@hoboflyfishing.com',
-            'token' => str_random(40),
+            'token' => Str::random(40),
         ]);
 
         $this->actingAs($team->owner)
@@ -60,7 +61,7 @@ class PendingInvitationTest extends TestCase
             'id' => Uuid::uuid4(),
             'user_id' => $user->id,
             'email' => 'test@hoboflyfishing.com',
-            'token' => str_random(40),
+            'token' => Str::random(40),
         ]);
 
         $this->actingAs($user)
@@ -80,7 +81,7 @@ class PendingInvitationTest extends TestCase
             'id' => Uuid::uuid4(),
             'user_id' => $user->id,
             'email' => 'test@hoboflyfishing.com',
-            'token' => str_random(40),
+            'token' => Str::random(40),
         ]);
 
         $this->actingAs($team->owner)

@@ -4,6 +4,7 @@ namespace Laravel\Spark\Console\Installation;
 
 use Carbon\Carbon;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Str;
 
 class InstallMigrations
 {
@@ -62,7 +63,7 @@ class InstallMigrations
      */
     protected function formatName($migration)
     {
-        return str_replace(
+        return Str::replace(
             ['migrations/braintree/', 'migrations/'], '', $migration
         );
     }

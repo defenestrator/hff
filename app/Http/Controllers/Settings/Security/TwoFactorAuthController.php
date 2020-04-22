@@ -10,6 +10,7 @@ use Illuminate\Contracts\Debug\ExceptionHandler;
 use Laravel\Spark\Http\Requests\Settings\Security\EnableTwoFactorAuthRequest;
 use Laravel\Spark\Contracts\Interactions\Settings\Security\EnableTwoFactorAuth;
 use Laravel\Spark\Contracts\Interactions\Settings\Security\DisableTwoFactorAuth;
+use Illuminate\Support\Str;
 
 class TwoFactorAuthController extends Controller
 {
@@ -58,7 +59,7 @@ class TwoFactorAuthController extends Controller
             'uses_two_factor_auth' => true,
             'country_code' => $request->country_code,
             'phone' => $request->phone,
-            'two_factor_reset_code' => bcrypt($code = str_random(40)),
+            'two_factor_reset_code' => bcrypt($code = Str::random(40)),
         ])->save();
 
         return $code;

@@ -7,6 +7,7 @@ use Ramsey\Uuid\Uuid;
 use Laravel\Spark\JWT;
 use Laravel\Spark\Token;
 use Laravel\Spark\Contracts\Repositories\TokenRepository as Contract;
+use Illuminate\Support\Str;
 
 class TokenRepository implements Contract
 {
@@ -43,7 +44,7 @@ class TokenRepository implements Contract
             'id' => Uuid::uuid4(),
             'user_id' => $user->id,
             'name' => $name,
-            'token' => str_random(60),
+            'token' => Str::random(60),
             'metadata' => $data,
             'transient' => false,
             'expires_at' => null,

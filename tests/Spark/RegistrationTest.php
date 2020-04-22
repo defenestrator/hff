@@ -5,6 +5,7 @@ use Tests\TestCase;
 use App\User;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Str;
 
 /**
  * @group stripe
@@ -67,7 +68,7 @@ class RegistrationTest extends TestCase
 //        $invitation = $team->invitations()->create([
 //            'id' => Uuid::uuid4(),
 //            'email' => 'test@hoboflyfishing.com',
-//            'token' => str_random(40),
+//            'token' => Str::random(40),
 //        ]);
 //
 //        $this->json('POST', '/register', [
