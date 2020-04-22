@@ -44,7 +44,7 @@
                                     <h4><a href="/showcases/{{ $showcase->slug}}" title="{{$showcase->homepage_top}}">{{$showcase->tagline}}</a></h4>
                                     <p>
                                         <a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}" title="{{$showcase->homepage_bottom}}">
-                                            {!! Str::limit(strip_tags($showcase->body), 200, '...') !!}
+                                            {!! Illuminate\Support\Str::limit(strip_tags($showcase->body), 200, '...') !!}
                                         </a>
                                     </p>
                                 </article>

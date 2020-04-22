@@ -56,7 +56,7 @@
                             </a></p>
                         <article>
                             <p><a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}">
-                                    {!! Str::limit(strip_tags($showcase->body), 200, '...') !!}
+                                    {!! Illuminate\Support\Str::limit(strip_tags($showcase->body), 200, '...') !!}
                                 </a>
                             </p>
                         </article>
@@ -90,7 +90,7 @@
                             </div>
                         </a>
                         <a style="color:rgb(83, 89, 101);" href="/publications/posts/{{$post->slug}}">
-                            {!! Str::limit(strip_tags($post->body), 200, '...') !!}
+                            {!! Illuminate\Support\Str::limit(strip_tags($post->body), 200, '...') !!}
                         </a>
                     </div>
                 </div>

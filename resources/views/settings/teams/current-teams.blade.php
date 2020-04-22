@@ -1,7 +1,7 @@
 <spark-current-teams :user="user" :teams="teams" inline-template>
     <div>
         <div class="panel panel-default">
-            <div class="panel-heading">Current {{ ucfirst(Str::plural(Spark::teamString())) }}</div>
+            <div class="panel-heading">Current {{ ucfirst(Illuminate\Support\Str::plural(Spark::teamString())) }}</div>
 
             <div class="panel-body">
                 <table class="table table-borderless m-b-none">
@@ -41,7 +41,7 @@
                             </td>
 
                             <td>
-                                <a :href="'/settings/{{Str::plural(Spark::teamString())}}/'+team.id">
+                                <a :href="'/settings/{{Illuminate\Support\Str::plural(Spark::teamString())}}/'+team.id">
                                     <button class="btn btn-primary">
                                         <i class="fa fa-cog" aria-hidden="true"></i>
                                     </button>

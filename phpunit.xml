@@ -7,7 +7,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         printerClass="Copacetic\TestResultPrinter"
+         printerClass="Defenestrator\TestPrinter"
          stopOnFailure="false">
     <testsuites>
         <testsuite name="Feature">

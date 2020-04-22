@@ -36,7 +36,7 @@
                         </a>
                         <article>
                             <a style="color:rgb(83, 89, 101);" href="/showcases/{{$showcase->slug}}">
-                                <p>{!! Str::limit(strip_tags($showcase->body), 200, '...') !!}</p>
+                                <p>{!! Illuminate\Support\Str::limit(strip_tags($showcase->body), 200, '...') !!}</p>
                             </a>
                         </article>
                         <p class="additional-showcase-wrap">
