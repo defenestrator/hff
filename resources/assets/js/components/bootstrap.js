@@ -9,6 +9,9 @@
  | your components that you write while building your applications.
  */
 
+window.axios = require('axios');
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // Laravel Spark
 require('./../spark-components/bootstrap').default
 require('./profile/update-profile-details.js').default

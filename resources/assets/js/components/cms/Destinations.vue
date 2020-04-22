@@ -18,7 +18,7 @@
             </tr>
             </thead>
             <tbody class="resource-list">
-            <tr v-for="destination in destinations" class="table-hover">
+            <tr v-for="destination in destinations" v-bind:key="destination.id" class="table-hover">
                 <td><strong>{{ destination.name }}</strong></td>
                 <td><button @click.prevent="(edit(destination.id))"role="button" class="btn btn-warning">Edit</button></td>
             </tr>

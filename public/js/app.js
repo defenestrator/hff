@@ -67209,26 +67209,30 @@ var render = function() {
             "tbody",
             { staticClass: "resource-list" },
             _vm._l(_vm.destinations, function(destination) {
-              return _c("tr", { staticClass: "table-hover" }, [
-                _c("td", [_c("strong", [_vm._v(_vm._s(destination.name))])]),
-                _vm._v(" "),
-                _c("td", [
-                  _c(
-                    "button",
-                    {
-                      staticClass: "btn btn-warning",
-                      attrs: { role: "button" },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          _vm.edit(destination.id)
+              return _c(
+                "tr",
+                { key: destination.id, staticClass: "table-hover" },
+                [
+                  _c("td", [_c("strong", [_vm._v(_vm._s(destination.name))])]),
+                  _vm._v(" "),
+                  _c("td", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-warning",
+                        attrs: { role: "button" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.edit(destination.id)
+                          }
                         }
-                      }
-                    },
-                    [_vm._v("Edit")]
-                  )
-                ])
-              ])
+                      },
+                      [_vm._v("Edit")]
+                    )
+                  ])
+                ]
+              )
             }),
             0
           )
@@ -87739,7 +87743,9 @@ __webpack_require__.r(__webpack_exports__);
  | application. This is also a convenient spot for you to load all of
  | your components that you write while building your applications.
  */
-// Laravel Spark
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'; // Laravel Spark
+
 __webpack_require__(/*! ./../spark-components/bootstrap */ "./resources/assets/js/spark-components/bootstrap.js")["default"];
 __webpack_require__(/*! ./profile/update-profile-details.js */ "./resources/assets/js/components/profile/update-profile-details.js")["default"]; // Internal CMS - Routes/Controllers should have Developer access only!
 
