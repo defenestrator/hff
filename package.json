@@ -17,7 +17,7 @@
     "browser-sync-webpack-plugin": "^2.2.2",
     "cross-env": "^5.2.1",
     "fs": "0.0.1-security",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "jquery-circliful": "^0.1.1",
     "js-cookie": "^2.2.1",
     "laravel-mix": "^4.1.4",
