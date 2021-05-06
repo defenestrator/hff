@@ -25,7 +25,7 @@
     "less-loader": "^4.1.0",
     "moment": "^2.24.0",
     "promise": "^7.1.1",
-    "underscore": "^1.9.2",
+    "underscore": "^1.12.1",
     "urijs": "^1.19.2",
     "vee-validate": "^2.2.15",
     "vue": "^2.6.11",
