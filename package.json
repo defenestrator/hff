@@ -10,7 +10,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "axios": "^0.19.1",
     "bootstrap": "^3.4.1",
     "browser-sync": "^2.26.7",
