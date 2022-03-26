@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.5.9",
-        "erusev/parsedown": "~1.0",
+        "erusev/parsedown": "~9999999-dev",
         "firebase/php-jwt": "~3.0|~4.0",
         "guzzlehttp/guzzle": "~6.0",
         "ramsey/uuid": "^3.1",
