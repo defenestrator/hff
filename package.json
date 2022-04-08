@@ -23,7 +23,7 @@
     "laravel-mix": "^4.1.4",
     "less": "^3.10.3",
     "less-loader": "^4.1.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "promise": "^7.1.1",
     "underscore": "^1.9.2",
     "urijs": "^1.19.2",
